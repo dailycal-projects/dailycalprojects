@@ -8,6 +8,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/styles/typography.js', 
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

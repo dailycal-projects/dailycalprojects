@@ -5,12 +5,12 @@ import { styles } from '../styles/customStyles.js';
 import NavBar from "../components/navbar"
 import Seo from "../components/seo"
 
-const IndexPage = ({classes}) => (
-  <div className={classes.main}>
-      <NavBar/>
-      <Seo title="About" />
-        <h1>Daily Cal Projects</h1>
+const About = ( {classes} ) => (
+    <div className={classes.main}>
+        <NavBar/>
+        <Seo title="About" />
+        <h1>Meet The Team</h1>
     </div>
 )
 
-export default withStyles(styles)(IndexPage)
+export default withStyles(styles)(About)
