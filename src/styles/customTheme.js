@@ -59,7 +59,7 @@ export const styles = () =>
             transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
             "&:hover": {
                 color: theme.palette.dcalBlue,
-                transform: 'translate(-2px, -5px)', 
+                transform: 'translate(0px, -5px)', 
                 transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)'
               }
         }
