@@ -13,8 +13,8 @@ const ArticleCard = ({classes, title, author, date, image}) => {
     return (
         <Card style={backgroundImage} className={classes.card}>
             <h3>{title}</h3>
-            {date} {'•'} 
-            {author}
+            <p>{date}</p>
+            <p> {author} </p>
         </Card>
     )
 }

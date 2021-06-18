@@ -9,7 +9,9 @@ const About = ( {classes} ) => (
     <div className={classes.main}>
         <NavBar/>
         <Seo title="About" />
-        <h1>Meet The Team</h1>
+        <div className={classes.header}> 
+            <h1>Meet The Team</h1>
+        </div>
     </div>
 )
 
