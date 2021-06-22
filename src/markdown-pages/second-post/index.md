@@ -5,6 +5,7 @@ title: "Second Post"
 byline: "author 1, author 2" 
 tags: ['not gulp ', 'yes']
 subhead: "DESCRIPTION HERE" 
+featuredImage: "./pnp.png"
 --- 
 alkdsfj;alsdjf a;slkga;oignvdgj we
 slakfjad

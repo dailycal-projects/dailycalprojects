@@ -7,6 +7,8 @@ import { styles } from '../styles/customTheme.js';
 const ArticlePost = ({classes, data}) => {
     const { markdownRemark } = data // data.markdownRemark holds your article data
     const { frontmatter, html } = markdownRemark
+
+    // console.log(frontmatter.featuredImage.publicURL)
     
     return (
         <div className={classes.articleRoot}>
@@ -14,6 +16,7 @@ const ArticlePost = ({classes, data}) => {
             <h4>{frontmatter.subhead}</h4>
             <h5>{frontmatter.byline}</h5>
             <h5>{frontmatter.date}</h5>
+            <img src={frontmatter.featuredImage.publicURL}/>
             <div
             className={classes.articleContent}
             dangerouslySetInnerHTML={{ __html: html }}
@@ -32,6 +35,9 @@ export const pageQuery = graphql`
         title
         byline
         subhead
+        featuredImage {
+          publicURL
+        } 
       }
     }
   }

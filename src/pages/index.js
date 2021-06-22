@@ -11,7 +11,7 @@ import Seo from "../components/seo"
 
 const IndexPage = ({classes, data}) => {
   const {edges} = data.allMarkdownRemark // returns nodes; each node is an article post 
-  // console.log(edges)
+  console.log(edges)
 
   return (
     <div className={classes.main}>
@@ -21,6 +21,8 @@ const IndexPage = ({classes, data}) => {
         <div className={classes.index}>
           {edges.map(edge => { //map over edges and render frontmatter content from markdown files 
             const {frontmatter} = edge.node 
+
+
             return (
               <div key={frontmatter.path}>
                 <Link to={frontmatter.path}>
@@ -28,7 +30,7 @@ const IndexPage = ({classes, data}) => {
                   title={frontmatter.title}
                   author={frontmatter.byline}
                   date={frontmatter.date}
-                  image={butterfly}/> 
+                  image={frontmatter.featuredImage.publicURL}/> 
                 </Link>
               </div>
             )
@@ -51,6 +53,9 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             subhead
             byline
+            featuredImage {
+              publicURL
+            } 
           } 
         }
       } 
