@@ -7,41 +7,101 @@
 // You can delete this file if you're not using it
 
 const path = require('path')
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = (({graphql, actions}) => {
-    const { createPage } = actions //destructure 
+exports.createPages = async({graphql, actions}) => {
+    const {createPage} = actions 
 
-    return new Promise((resolve, reject) => {
-        const articlePostTemplate = path.resolve('src/templates/articlePost.js')
-
-        resolve( //get all markdown data ready
-            graphql( 
-                `
-                    query {
-                        allMarkdownRemark {
-                            edges {
-                                node {
-                                    frontmatter {
-                                        path 
-                                    }
-                                }
-                            }
+    const articlePost = path.resolve('src/templates/articlePost.js')
+    const result = await graphql(
+        `
+        {
+            allMdx(
+                sort: { fields: [frontmatter___date], order: DESC }
+                limit: 1000
+            ) {
+                edges {
+                    node {
+                        fields {
+                            slug
+                        }
+                        frontmatter {
+                            title
+                            date
                         }
                     }
-                `
-            ).then(result => { // create pages for each markdown file 
-                result.data.allMarkdownRemark.edges.forEach(({node}) => {
-                    const path = node.frontmatter.path //get url path
-                    createPage({
-                        path, 
-                        component: articlePostTemplate, //component that displays markdown file content
-                        context: {
-                            pathSlug: path
-                        }
-                    })
-                    resolve()
-                })
-            })
-        )
-    }) 
-})
+                }
+            }
+        }
+        `
+    )
+
+    if (result.errors) {
+        throw results.errors 
+    }
+
+    //Create article post pages 
+
+    const posts = result.data.allMdx.edges 
+    
+    posts.forEach((post, index) => {
+        createPage({
+            path: post.node.fields.slug, 
+            component: articlePost, 
+            context: {
+                slug: post.node.fields.slug
+            },
+        })
+    })
+}
+
+exports.onCreateNode = ({node, actions, getNode}) => {
+    const {createNodeField} = actions 
+
+    if (node.internal.type === 'Mdx') {
+        const value = createFilePath({node, getNode})
+        createNodeField({
+            name: `slug`, 
+            node, 
+            value,
+        })
+    }
+}
+
+// exports.createPages = (({graphql, actions}) => {
+//     const { createPage } = actions //destructure 
+
+//     return new Promise((resolve, reject) => {
+//         const articlePostTemplate = path.resolve('src/templates/articlePost.js')
+
+//         resolve( //get all markdown data ready
+//             graphql( 
+//                 `
+//                     query {
+//                         allMdx {
+//                             edges {
+//                                 node {
+//                                     frontmatter {
+//                                         path 
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 `
+//             ).then(result => { // create pages for each markdown file 
+//                 result.data.allMarkdownRemark.edges.forEach(({node}) => {
+//                     const path = node.frontmatter.path //get url path
+//                     createPage({
+//                         path, 
+//                         component: articlePostTemplate, //component that displays markdown file content
+//                         context: {
+//                             pathSlug: path
+//                         }
+//                     })
+//                     resolve()
+//                 })
+//             })
+//         )
+//     }) 
+// })

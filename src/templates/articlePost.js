@@ -2,13 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../styles/customTheme.js';
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 
-const ArticlePost = ({classes, data}) => {
-    const { markdownRemark } = data // data.markdownRemark holds your article data
-    const { frontmatter, html } = markdownRemark
-
-    // console.log(frontmatter.featuredImage.publicURL)
+const ArticlePost = ({classes, data}) => { // data.markdownRemark holds your article data
+    const { frontmatter, body } = data.mdx
     
     return (
         <div className={classes.articleRoot}>
@@ -17,20 +15,16 @@ const ArticlePost = ({classes, data}) => {
             <h5>{frontmatter.byline}</h5>
             <h5>{frontmatter.date}</h5>
             <img src={frontmatter.featuredImage.publicURL}/>
-            <div
-            className={classes.articleContent}
-            dangerouslySetInnerHTML={{ __html: html }}
-            />
+            <MDXRenderer>{body}</MDXRenderer>
         </div>
     )
 }
     
 export const pageQuery = graphql`
-  query($pathSlug: String!) {
-    markdownRemark(frontmatter: {path: { eq: $pathSlug }} ) {
-      html
+  query($slug: String!) {
+    mdx(fields: {slug: { eq: $slug }} ) {
+      body
       frontmatter {
-        path 
         date(formatString: "MMMM DD, YYYY")
         title
         byline
