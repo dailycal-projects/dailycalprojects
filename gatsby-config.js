@@ -16,12 +16,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-page-creator",
-      options: {
-        path: `${__dirname}/src/markdown-pages`,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/styles/typography.js', 
