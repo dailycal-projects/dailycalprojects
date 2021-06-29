@@ -9,10 +9,8 @@ import NavBar from "../components/navBar"
 import Seo from "../components/seo"
 
 const IndexPage = ({classes, data}) => {
-  // const {edges} = data.allMarkdownRemark // returns nodes; each node is an article post 
-  // console.log(edges)
 
-  const posts = data.allMdx.edges
+  const articles = data.allMdx.edges
 
   return (
     <div className={classes.main}>
@@ -21,12 +19,11 @@ const IndexPage = ({classes, data}) => {
         <Header/> 
         <div className={classes.index}>
           
-          {posts.map( ({node}) => { //map over edges and render frontmatter content from markdown files 
-            const {frontmatter} = node
-
+          {articles.map( ( {node} ) => { //map over edges and render frontmatter content from markdown files 
+            const {frontmatter, slug} = node
 
             return (
-                <Link to={node.fields.slug}>
+                <Link to={slug}>
                 <ArticleCard
                   title={frontmatter.title}
                   author={frontmatter.byline}
@@ -47,9 +44,8 @@ export const query = graphql`
     ){
       edges {
         node {
-          fields {
-            slug
-          }
+          id 
+          slug
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")

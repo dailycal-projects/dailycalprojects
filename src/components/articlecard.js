@@ -11,8 +11,6 @@ const ArticleCard = ({classes, title, author, date, image}) => {
         backgroundSize: 'cover'
     }
 
-    console.log(image)
-
     return (
         <Card style={backgroundImage} className={classes.card}>
             <h3>{title}</h3>
