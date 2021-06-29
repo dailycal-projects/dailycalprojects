@@ -1,68 +1,59 @@
 import * as React from "react"
 import { withStyles } from '@material-ui/core';
 import { styles } from '../styles/customTheme.js';
-import ArticleCard from '../components/articlecard.js'
-import butterfly from '../images/butterfly.png'
+import ArticleCard from '../components/articleCard.js'
 import Header from '../components/header.js'
 import { graphql, Link } from 'gatsby'
 
-import NavBar from "../components/navbar"
+import NavBar from "../components/navBar"
 import Seo from "../components/seo"
 
 const IndexPage = ({classes, data}) => {
-  const {edges} = data.allMarkdownRemark // returns nodes 
-  console.log(edges)
-  // map over edges 
+
+  const articles = data.allMdx.edges
 
   return (
     <div className={classes.main}>
       <NavBar/>
-      <Seo title="About" />
+      <Seo title="Daily Cal Projects" />
         <Header/> 
-        {edges.map(edge => {
-          const {frontmatter} = edge.node 
-          return (
-            <div key={frontmatter.path}>
-              <Link to={frontmatter.path}>
-                {frontmatter.title}
-              </Link>
-            </div>
-          )
-        })}
-        {/* <div className={classes.index}> 
-          <ArticleCard
-            title="Gulp is Trash"
-            author="Maia Alviar, Shannon Bonet, Michelle Li"
-            date="January 1, 2021"
-            image={butterfly}/> 
-          <ArticleCard
-            title="Gulp is Trash"
-            author="Shannon Bonet"
-            date="January 1, 2021"
-            image={butterfly}
-            /> 
-          <ArticleCard
-            title="Gulp is Trash"
-            author="Shannon Bonet"
-            date="January 1, 2021"
-            image={butterfly}/> 
-        </div> */}
+        <div className={classes.index}>
+          
+          {articles.map( ( {node} ) => { //map over edges and render frontmatter content from markdown files 
+            const {frontmatter, slug} = node
+
+            return (
+                <Link to={slug} key={slug}>
+                <ArticleCard
+                  title={frontmatter.title}
+                  author={frontmatter.byline}
+                  date={frontmatter.date}
+                  image={frontmatter.featuredImage.publicURL}/> 
+                </Link>
+            )
+          })}
+        </div>
     </div>
   )
 }
 
 export const query = graphql`
   query HomepageQuery {
-    allMarkdownRemark (
+    allMdx (
       sort: {order: DESC, fields: [frontmatter___date]}
     ){
       edges {
         node {
+          id 
+          slug
           frontmatter {
             title
-            path
-            date
+            date(formatString: "MMMM DD, YYYY")
             subhead
+            byline
+            featuredImage {
+              publicURL
+            } 
           } 
         }
       } 

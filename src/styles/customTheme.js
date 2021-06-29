@@ -12,7 +12,7 @@ const theme = {
         },
     greyShadow: '2px 2px 5px rgba(14, 20, 27, 0.15)',
     blueShadow: '2px 2px 5px #C5EAFC',
-    spacing: [16, 20, 24, 30, 36, 48]
+    spacing: [16, 20, 24, 30, 36, 48, 60]
 }
 
 export const styles = () => 
@@ -20,7 +20,12 @@ export const styles = () =>
         main: {
             display: 'flex',
             flexDirection: 'column',
-            margin: '3rem', 
+            margin: '3rem'
+        },
+        header: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
         },
         navHeader: {
             display: 'flex', 
@@ -62,5 +67,15 @@ export const styles = () =>
                 transform: 'translate(0px, -5px)', 
                 transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)'
               }
+        }, 
+        articleRoot: {
+            display: 'flex', 
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: theme.spacing[6]
+        }, 
+        articleContent: {
+            maxWidth: '650px', 
+            textAlign: 'justify'
         }
     }); 
