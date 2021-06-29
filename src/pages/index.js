@@ -23,7 +23,7 @@ const IndexPage = ({classes, data}) => {
             const {frontmatter, slug} = node
 
             return (
-                <Link to={slug}>
+                <Link to={slug} key={slug}>
                 <ArticleCard
                   title={frontmatter.title}
                   author={frontmatter.byline}

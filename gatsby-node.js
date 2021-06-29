@@ -22,9 +22,8 @@ exports.createPages = async({graphql, actions}) => {
             ) {
                 edges {
                     node {
-                        fields {
-                            slug
-                        }
+                        id
+                        slug
                         frontmatter {
                             title
                             date
@@ -46,10 +45,10 @@ exports.createPages = async({graphql, actions}) => {
     
     posts.forEach((post, index) => {
         createPage({
-            path: post.node.fields.slug, 
+            path: post.node.slug, 
             component: articlePost, 
             context: {
-                slug: post.node.fields.slug
+                slug: post.node.slug
             },
         })
     })

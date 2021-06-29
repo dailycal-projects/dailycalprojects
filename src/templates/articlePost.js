@@ -22,7 +22,7 @@ const ArticlePost = ({classes, data}) => { // data.markdownRemark holds your art
     
 export const pageQuery = graphql`
   query($slug: String!) {
-    mdx(fields: {slug: { eq: $slug }} ) {
+    mdx(slug: { eq: $slug } ) {
       body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
