@@ -77,4 +77,7 @@ export const styles = () => createStyles({
   articleContent: {
     maxWidth: '650px',
   },
+  byline: {
+    textTransform: 'uppercase',
+  },
 });

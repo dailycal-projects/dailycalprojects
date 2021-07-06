@@ -21,15 +21,27 @@ const IndexPage = ({ classes, data }) => {
         {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
           const { frontmatter, slug } = node;
 
+          if (!frontmatter.oldLink) {
+            return (
+              <Link to={slug} key={slug}>
+                <ArticleCard
+                  title={frontmatter.title}
+                  author={frontmatter.byline}
+                  date={frontmatter.date}
+                  image={frontmatter.featuredImage.publicURL}
+                />
+              </Link>
+            );
+          }
           return (
-            <Link to={slug} key={slug}>
+            <a href={frontmatter.oldLink} key={slug}>
               <ArticleCard
                 title={frontmatter.title}
                 author={frontmatter.byline}
                 date={frontmatter.date}
                 image={frontmatter.featuredImage.publicURL}
               />
-            </Link>
+            </a>
           );
         })}
       </div>
@@ -51,6 +63,7 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             subhead
             byline
+            oldLink
             featuredImage {
               publicURL
             } 
