@@ -2,9 +2,9 @@ import * as React from 'react';
 import { withStyles } from '@material-ui/core';
 import { graphql, Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-import { styles } from '../styles/customTheme.js';
-import ArticleCard from '../components/articleCard.js';
-import Header from '../components/header.js';
+import { styles } from '../styles/customTheme';
+import ArticleCard from '../components/articleCard';
+import Header from '../components/header';
 
 import NavBar from '../components/navBar';
 import Seo from '../components/seo';
