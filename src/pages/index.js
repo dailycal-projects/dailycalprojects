@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core';
 import { graphql, Link } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme.js';
 import ArticleCard from '../components/articleCard.js';
 import Header from '../components/header.js';
@@ -20,6 +21,7 @@ const IndexPage = ({ classes, data }) => {
 
         {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
           const { frontmatter, slug } = node;
+          const image = getImage(frontmatter.featuredImage);
 
           if (!frontmatter.oldLink) {
             return (
@@ -27,7 +29,7 @@ const IndexPage = ({ classes, data }) => {
                 <ArticleCard
                   title={frontmatter.title}
                   date={frontmatter.date}
-                  image={frontmatter.featuredImage.publicURL}
+                  image={image}
                 />
               </Link>
             );
@@ -37,7 +39,7 @@ const IndexPage = ({ classes, data }) => {
               <ArticleCard
                 title={frontmatter.title}
                 date={frontmatter.date}
-                image={frontmatter.featuredImage.publicURL}
+                image={image}
               />
             </a>
           );
@@ -63,8 +65,10 @@ export const query = graphql`
             byline
             oldLink
             featuredImage {
-              publicURL
-            } 
+              childImageSharp {
+                gatsbyImageData(width: 450 height: 250)
+              } 
+            }
           } 
         }
       } 
@@ -73,3 +77,9 @@ export const query = graphql`
 `;
 
 export default withStyles(styles)(IndexPage);
+
+// featuredImage {
+//   childImageSharp {
+//     gatsbyImageData(width: 1000)
+//   }
+// }

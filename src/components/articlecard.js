@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 
 const ArticleCard = ({
@@ -14,7 +15,9 @@ const ArticleCard = ({
   return (
     <div>
       <Card className={classes.card}>
-        <div style={backgroundImage} className={classes.cardImage} />
+        <div className={classes.cardImage}>
+          <GatsbyImage image={image} alt="pride illustration" />
+        </div>
         <div className="cardContent">
           <h3 style={{ paddingBottom: 'none' }}>
             {title}
