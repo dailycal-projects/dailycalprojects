@@ -4,6 +4,11 @@ module.exports = {
     description: 'Site for Daily Cal Projects',
     author: '@shannonbonet',
   },
+  flags: {
+    //preserves files + cache except on `gatsby clean`
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
