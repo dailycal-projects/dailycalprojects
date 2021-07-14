@@ -50,9 +50,12 @@ export const styles = () => createStyles({
   navText: {
     textDecoration: 'none',
     color: theme.palette.black,
+    padding: 4,
+    transform: 'translate(-2px, 0px)',
+    transition: 'all 300ms ease-out',
     '&:hover': {
-      color: theme.palette.orangeAccent,
-      transform: 'translate(2px, 2px)',
+      color: theme.palette.darkBlueGreen,
+      transform: 'translate(2px, 0px)',
       transition: 'all 300ms ease-out',
     },
   },

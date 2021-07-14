@@ -77,9 +77,3 @@ export const query = graphql`
 `;
 
 export default withStyles(styles)(IndexPage);
-
-// featuredImage {
-//   childImageSharp {
-//     gatsbyImageData(width: 1000)
-//   }
-// }
