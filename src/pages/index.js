@@ -23,10 +23,9 @@ const IndexPage = ({ classes, data }) => {
 
           if (!frontmatter.oldLink) {
             return (
-              <Link to={slug} key={slug}>
+              <Link to={slug} key={slug} style={{ textDecoration: 'none' }}>
                 <ArticleCard
                   title={frontmatter.title}
-                  author={frontmatter.byline}
                   date={frontmatter.date}
                   image={frontmatter.featuredImage.publicURL}
                 />
@@ -34,10 +33,9 @@ const IndexPage = ({ classes, data }) => {
             );
           }
           return (
-            <a href={frontmatter.oldLink} key={slug}>
+            <a href={frontmatter.oldLink} key={slug} style={{ textDecoration: 'none' }}>
               <ArticleCard
                 title={frontmatter.title}
-                author={frontmatter.byline}
                 date={frontmatter.date}
                 image={frontmatter.featuredImage.publicURL}
               />
