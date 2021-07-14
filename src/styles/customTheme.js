@@ -30,6 +30,7 @@ export const styles = () => createStyles({
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: theme.palette.background,
+    overflow: 'hidden',
   },
   header: {
     display: 'flex',
@@ -44,7 +45,7 @@ export const styles = () => createStyles({
     display: 'flex',
     flexDirection: 'column',
     fontSize: theme.spacing[1],
-    padding: '3rem 3rem 0rem 0rem',
+    padding: '2rem 2rem 0rem 0rem',
   },
   navText: {
     textDecoration: 'none',
