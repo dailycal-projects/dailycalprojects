@@ -21,7 +21,7 @@ const theme = {
     redViolet: '#B8607E',
   },
   cardShadow: '0px 2px 0px 0.5px rgba(14, 20, 27, 0.15)',
-  blueShadow: '2px 2px 5px #C5EAFC',
+  iconShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   spacing: [16, 20, 24, 30, 36, 48, 60],
 };
 
@@ -36,6 +36,7 @@ export const styles = () => createStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    marginBottom: '2rem',
   },
   navHeader: {
     display: 'flex',
@@ -57,6 +58,19 @@ export const styles = () => createStyles({
       color: theme.palette.darkBlueGreen,
       transform: 'translate(2px, 0px)',
       transition: 'all 300ms ease-out',
+    },
+  },
+  icons: {
+    display: 'flex',
+    width: '10vh',
+    justifyContent: 'space-between',
+  },
+  iconHover: {
+    transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+    '&:hover': {
+      // boxShadow: theme.iconShadow,
+      transform: 'translate(0px, -7px)',
+      transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
     },
   },
   index: {

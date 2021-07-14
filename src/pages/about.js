@@ -2,7 +2,7 @@ import * as React from 'react';
 import { withStyles } from '@material-ui/core';
 import { styles } from '../styles/customTheme.js';
 
-import NavBar from '../components/navbar';
+import NavBar from '../components/navBar';
 import Seo from '../components/seo';
 
 const About = ({ classes }) => (
