@@ -14,17 +14,17 @@ import LineChart from "../visuals/LineChart.js"
 
 What began as an attempt to aid homebuyers and stimulate the economy resulted in the segregation of neighborhoods across the country, with lasting impacts that are still felt by marginalized Americans today.
 
-At the tail end of the Great Depression, more than 1 million Americans faced the foreclosure of their homes and looked to the federal government for assistance. This assistance came in the National Housing Act of 1934’s Federal Housing Administration, which backed homeowner loans and guaranteed mortgages for homebuyers.
+At the tail end of the Great Depression, more than 1 million Americans [faced](https://www.history.com/news/housing-segregation-new-deal-program) the foreclosure of their homes and looked to the federal government for assistance. This assistance came in the National Housing Act of 1934’s Federal Housing Administration, which backed homeowner loans and guaranteed mortgages for homebuyers.
 
-On top of existing laws that ingrained racial segregation in daily American life, however, the FHA refused to subsidize mortgages in and around Black neighborboods. This policy, known as redlining, drew a stark line between Black and white neighborhoods, including those in Berkeley.
+On top of existing laws that ingrained racial segregation in daily American life, however, the [FHA refused to subsidize mortgages](https://www.npr.org/2017/05/03/526655831/a-forgotten-history-of-how-the-u-s-government-segregated-america) in and around Black neighborboods. This policy, known as redlining, drew a stark line between Black and white neighborhoods, including those in Berkeley.
 
-SUBHEAD: Berkeley divisions
+## Berkeley divisions
 
-In 1937, the federal government’s Home Owners’ Loan Corporation, or HOLC, devised a map of Oakland, Berkeley and the surrounding East Bay that graded neighborhoods by their respective mortgage security. Neighborhoods were graded as either “A, best”; “B, still desirable”; “C, definitely declining” or “D, hazardous,” with lower grades assigned to predominantly immigrant and Black neighborhoods.
+In 1937, the federal government’s Home Owners’ Loan Corporation, or HOLC, devised a map of Oakland, Berkeley and the surrounding East Bay that graded neighborhoods by their respective mortgage security. Neighborhoods [were graded](https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58) as either “A, best”; “B, still desirable”; “C, definitely declining” or “D, hazardous,” with lower grades assigned to predominantly immigrant and Black neighborhoods.
 
-In West Berkeley, which HOLC maps refer to as D3, “favorable” neighborhood influences included its proximity to public transportation, schools and shopping centers. “Detrimental” influences included unpleasant industrial odors, cheap construction and Black and Asian residents.
+In West Berkeley, which HOLC maps refer to as [D3](https://dsl.richmond.edu/panorama/redlining/#loc=14/37.854/-122.286&city=oakland-ca&area=D3&adimage=2/46.68/-136.406), “favorable” neighborhood influences included its proximity to public transportation, schools and shopping centers. “Detrimental” influences included unpleasant industrial odors, cheap construction and Black and Asian residents.
 
-In contrast, A3 in the eastern corner of the North Berkeley hills was favorably influenced by vistas, improved streets and a “harmonious population with high degrees of culture” while detrimentally influenced by its distance from schools, shopping and public transportation.
+In contrast, [A3](https://dsl.richmond.edu/panorama/redlining/#loc=14/37.882/-122.27&city=oakland-ca&area=A3&adview=full&adimage=2/46.68/-136.406) in the eastern corner of the North Berkeley hills was favorably influenced by vistas, improved streets and a “harmonious population with high degrees of culture” while detrimentally influenced by its distance from schools, shopping and public transportation.
 
 These designations resulted in a physical division between Berkeley’s residents still felt today.
 
@@ -34,7 +34,7 @@ Though the Fair Housing Act of 1968 made it illegal to discriminate against indi
 
 MAP (HOLC on left, Leaflet on right)
 
-    On the left, a HOLC redlining map shows the East Bay geographically color-coded by lending security grade.
+On the left, a HOLC redlining map shows the East Bay geographically color-coded by lending security grade.
 
 import App from "../visuals/map-materials/map.js"
 
@@ -42,13 +42,13 @@ import App from "../visuals/map-materials/map.js"
 
 The interactive map displays the housing burden of each zip code area in Alameda County. The California Office of Environmental Health Hazard Assessment, or OEHHA, defines a housing-burdened household as one with an income of less than 80% of its county's median family income that allocates more than 50% of its income toward housing costs.
 
-SUBHEAD: Plotting divisions
+## Plotting divisions
 
 Every few years, the OEHHA releases new data for its pioneering screening tool, CalEnviroScreen, which tracks various burdens that California communities face. On June 11, OEHHA released an updated draft of CalEnviroScreen using the most recent available data.
 
 We downloaded the dataset and filtered for Alameda County entries. From there, we chose to omit indicators that did not vary widely on a local level, such as drinking water and particulate matter. We grouped entries by ZIP code, then plotted results for each indicator. Our scatter plots also feature a z-axis attribute, reflected by dot size and color, that represents the housing burden percentile of each data point. Unknown or blank values were omitted.
 
-The ZIP code map displays all eight ZIP codes within the city of Berkeley. Image from Berkeleyside.
+The ZIP code map displays all eight ZIP codes within the city of Berkeley. Image from [Berkeleyside](https://www.berkeleyside.org/2010/07/23/berkeley-94703-the-hottest-zip-code-in-the-nation).
 
 In the following plots, housing burden refers to the housing burden percentile of one census tract in relation to all other census tracts in California. For example, one census tract that falls in 94705 has a housing burden percentile of 57.15, so it contains more low-income households that are “highly burdened” by housing costs than 57.15% of census tracts in California.
 
@@ -66,30 +66,30 @@ Hazardous waste sites paint a similar story to cleanup sites. Aside from a few o
 
 [health plot]
 
-The cardiovascular disease plot appears to show a trend that demonstrates the well-documented racial and ethnic disparities in cardiovascular health. Those in the previously redlined communities of 94710 and 94702 see more residents in the emergency room for heart attacks, while the predominantly white population of 94707 and 94708 fall below the 7th percentile.
+The cardiovascular disease plot appears to show a trend that demonstrates the well-documented racial and ethnic disparities in cardiovascular health. Those in the previously redlined communities of 94710 and 94702 see more residents in the emergency room for heart attacks, while the [predominantly white population](https://www.census.gov/quickfacts/kensingtoncdpcalifornia) of 94707 and 94708 fall below the 7th percentile.
 
-The low birth weight plot seems more scattered across the board. However, an interdepartmental, public access study from UC Berkeley found that babies born in communities with lower HOLC scores were more likely to be small for gestational age.
+The low birth weight plot seems more scattered across the board. However, an interdepartmental, public access [study](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0237241) from UC Berkeley found that babies born in communities with lower HOLC scores were more likely to be small for gestational age.
 
-Though asthma emergency room visits trend high for all areas of Berkeley except the Berkeley Hills and Thousand Oaks, a joint UC Berkeley-UCSF study found a link between historically redlined communities and asthma-related emergency room visit rates. This is a result of increased diesel particulate matter, air pollution and the psychological stresses of poverty and high crime rates, among other factors.
+Though asthma emergency room visits trend high for all areas of Berkeley except the Berkeley Hills and Thousand Oaks, a joint UC Berkeley-UCSF [study](https://www.atsjournals.org/doi/10.1164/ajrccm-conference.2019.199.1_MeetingAbstracts.A7054) found a link between historically redlined communities and asthma-related emergency room visit rates. This is a result of increased diesel particulate matter, air pollution and the psychological stresses of poverty and high crime rates, among other factors.
 
 [socioeconomic plot]
 
-Unsurprisingly, poverty and housing burden appear highly correlated. South and Central Berkeley, represented by 94704 and 94703, hold the highest poverty rates in Alameda County, with at least 98% of the population living below double the federal poverty line of $26,500. These areas also hold the highest housing burden rates, suggesting a positive linear relationship between income level and housing condition.
+Unsurprisingly, poverty and housing burden appear highly correlated. South and Central Berkeley, represented by 94704 and 94703, hold the highest poverty rates in Alameda County, with at least 98% of the population living below double the [federal poverty line of $26,500](https://www.medicaid.gov/federal-policy-guidance/downloads/cib031821.pdf). These areas also hold the highest housing burden rates, suggesting a positive linear relationship between income level and housing condition.
 
 The education and linguistic isolation plots reflect similar trends to each other. 94710, the area between Berkeley’s borders with Emeryville and Albany west of San Pablo Avenue, holds the highest proportions of uneducated individuals. 94703, an area directly west of MLK Jr. Way, holds the highest percentage of households that speak little to no English.
 
 Traffic rates are highest in ZIP code areas near a major highway entrance. 94710 is closest to the intersection of Interstates 80 and 580. 94707 and 94708 consist mostly of Berkeley Hills neighborhoods and Tilden Regional Park.
 
-SUBHEAD: Fuck divisions (or something like that)
+## Fuck divisions
 
-About 105 years ago, Berkeley became the first city in the United States to implement single-family zoning, which makes building anything other than a single-family home on a single lot illegal, a common practice in suburbs.
+About 105 years ago, Berkeley became the first city in the United States to [implement single-family zoning](https://www.kqed.org/news/11840548/the-racist-history-of-single-family-home-zoning), which makes building anything other than a single-family home on a single lot illegal, a common practice in suburbs.
 The policy was implemented in Berkeley’s Elmwood neighborhood in 1916 and from there, expanded to cover half the city, including the Thousand Oaks, Berkeley Hills and Claremont neighborhoods, Owens said.
 
-    Owens, who grew up in Central Berkeley, added that his district was zoned for the “unlimited infiltration” of Black and East Asian Americans. In contrast, Berkeley Hills was an “elite district” zoned for single-family homes and prohibited Black and Asian residents.
+Owens, who grew up in Central Berkeley, added that his district was zoned for the “unlimited infiltration” of Black and East Asian Americans. In contrast, Berkeley Hills was an “elite district” zoned for single-family homes and prohibited Black and Asian residents.
 
-    According to Owens, single-family zoning keeps poorer people out of specific areas, as there is a lack of more affordable multifamily housing, such as apartments. Coupled with the refusal of white residents to sell their homes to Black residents, he added, this further exacerbated neighborhood segregation in Berkeley.
+According to Owens, single-family zoning keeps poorer people out of specific areas, as there is a lack of more affordable multifamily housing, such as apartments. Coupled with the refusal of white residents to sell their homes to Black residents, he added, this further exacerbated neighborhood segregation in Berkeley.
 
-That is why, Owens noted, Berkeley’s move last February to replace single-family zoning in the next two years was “the most meaningful thing Berkeley has done in maybe 50 years.”
+That is why, Owens noted, Berkeley’s move last February to [replace](https://www.dailycal.org/2021/02/24/berkeley-city-council-passes-resolution-to-end-single-family-zoning/) single-family zoning in the next two years was “the most meaningful thing Berkeley has done in maybe 50 years.”
 
 “It has to take a two-year process just to agree on what to replace it with if they even replace it at all,” Owens said. “Because when you do something, if it's performative, it'll get done really quickly. If it's meaningful, it'll take a generation worth of battling.”
 
