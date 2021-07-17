@@ -132,7 +132,7 @@ export const styles = () => createStyles({
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing[6],
-    textAlign: 'justify',
+    textAlign: 'center',
   },
   articleContent: {
     maxWidth: '650px',

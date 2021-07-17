@@ -30,8 +30,8 @@ const ScatterPlot = (props: any) => {
 
   return (
     <ScatterChart
-      width={750}
-      height={400}
+      width={950}
+      height={450}
       margin={{ top: 0, right: 20, bottom: 30, left: 10 }}
     >
       <CartesianGrid strokeDasharray="3" horizontal={false} />
@@ -59,31 +59,31 @@ const ScatterPlot = (props: any) => {
       <Scatter
         name={"< 15"}
         data={ranges[0]}
-        legendType={"triangle"}
+        legendType={"square"}
         fill={colors[0]}
       />
       <Scatter
         name={"15-30"}
         data={ranges[1]}
-        legendType={"triangle"}
+        legendType={"square"}
         fill={colors[1]}
       />
       <Scatter
         name={"30-50"}
         data={ranges[2]}
-        legendType={"triangle"}
+        legendType={"square"}
         fill={colors[2]}
       />
       <Scatter
         name={"50-80"}
         data={ranges[3]}
-        legendType={"triangle"}
+        legendType={"square"}
         fill={colors[3]}
       />
       <Scatter
         name={"80-100"}
         data={ranges[4]}
-        legendType={"triangle"}
+        legendType={"square"}
         fill={colors[4]}
       />
     </ScatterChart>
