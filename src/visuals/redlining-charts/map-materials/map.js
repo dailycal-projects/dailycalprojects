@@ -1,23 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
-  Map, CircleMarker, TileLayer, Tooltip,
+  MapContainer, CircleMarker, TileLayer, Tooltip, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
-import data from './coordinates';
+import 'leaflet/dist/leaflet.css';
+import { data } from './coordinates';
 
-const BurdenMap = () => {
-  const centerLat = (data.minLat + data.maxLat) / 2;
-  const distanceLat = data.maxLat - data.minLat;
-  const bufferLat = distanceLat * 0.05;
-  const centerLong = (data.minLong + data.maxLong) / 2;
-  const distanceLong = data.maxLong - data.minLong;
-  const bufferLong = distanceLong * 0.05;
+class MyMap extends Component {
+  render() {
+    const centerLat = (data.minLat + data.maxLat) / 2;
+    const distanceLat = data.maxLat - data.minLat;
+    const bufferLat = distanceLat * 0.05;
+    const centerLong = (data.minLong + data.maxLong) / 2;
+    const distanceLong = data.maxLong - data.minLong;
+    const bufferLong = distanceLong * 0.05;
 
-  if (typeof window !== 'undefined') { // fixes the window error @cameron
-    return (
-      <div>
-        <Map
-          style={{ height: '480px', width: '100%' }}
-          zoom={7}
+    if (typeof window !== 'undefined') { // fixes the window error @cameron
+      return (
+        <MapContainer
+          style={{ height: '600px', width: '50%' }}
+          zoom={13.25}
           center={[centerLat, centerLong]}
           bounds={[
             [data.minLat - bufferLat, data.minLong - bufferLong],
@@ -42,11 +43,11 @@ const BurdenMap = () => {
               </Tooltip>
             </CircleMarker>
           ))}
-        </Map>
-      </div>
-    );
+        </MapContainer>
+      );
+    }
+    return null;
   }
-  return null;
-};
+}
 
-export default BurdenMap;
+export default MyMap;

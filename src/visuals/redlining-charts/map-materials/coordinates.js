@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   info: [
     {
       ct: 6001422000, coordinates: [37.8590327, -122.3013426], hbp: 50.05, cespr: '70-75%', color: 'orange', ZIP: 94710, pbp: 93.68,
@@ -93,5 +93,3 @@ const data = {
   minLong: -122.3256618,
   maxLong: -122.2319033,
 };
-
-export default data;

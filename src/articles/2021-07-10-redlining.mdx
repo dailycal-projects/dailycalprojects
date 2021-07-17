@@ -10,11 +10,7 @@ import WaterPlot from "../visuals/redlining-charts/scatterplots/waterPlot.tsx"
 import ChemPlot from "../visuals/redlining-charts/scatterplots/chemPlot.tsx"
 import HealthPlot from "../visuals/redlining-charts/scatterplots/healthPlot.tsx"
 import EconPlot from "../visuals/redlining-charts/scatterplots/econPlot.tsx"
-
-<WaterPlot />
-<ChemPlot />
-<HealthPlot />
-<EconPlot />
+import Map from "../visuals/redlining-charts/map-materials/map.js"
 
 What began as an attempt to aid homebuyers and stimulate the economy resulted in the segregation of neighborhoods across the country, with lasting impacts that are still felt by marginalized Americans today.
 
@@ -36,7 +32,9 @@ These designations resulted in a physical division between Berkeley’s resident
 
 Though the Fair Housing Act of 1968 made it illegal to discriminate against individuals seeking a mortgage or housing assistance on the basis of race, it ended redlining “in name only,” according to Owens. He claims that the redline still exists in Berkeley but has shifted, preventing Black people from living north of University Avenue and east of Sacramento Street.
 
-MAP (HOLC on left, Leaflet on right)
+<Map />
+
+[include HOLC map on left]
 
 On the left, a HOLC redlining map shows the East Bay geographically color-coded by lending security grade.
 
@@ -52,11 +50,11 @@ The ZIP code map displays all eight ZIP codes within the city of Berkeley. Image
 
 In the following plots, housing burden refers to the housing burden percentile of one census tract in relation to all other census tracts in California. For example, one census tract that falls in 94705 has a housing burden percentile of 57.15, so it contains more low-income households that are “highly burdened” by housing costs than 57.15% of census tracts in California.
 
-[water plot]
+<WaterPlot />
 
 Trends in groundwater threats across ZIP codes illustrate a strong association between housing burden and contamination. For 94707 and 94708 neighborhoods, Thousand Oaks and Kensington, the approximate median household income is $150,000 as of 2019. Our plot shows that less than 15% of households are low income. Contamination burdens in these areas range from as low as the 0th to 41st percentile and are significantly less than those in 94702, 94703 and 94710 — areas directly west of MLK Jr. Way, the original redline.
 
-[chemicals plot]
+<ChemPlot />
 
 Lead risk percentiles seem high across the board, with only five ZIP code areas falling below the 50th percentile. Similarly, toxic release is high across all ZIP codes measured, with almost all being between the 60th and 80th percentile. These measurements may indicate the existence of citywide issues rather than those that affect redlined communities.
 
@@ -64,7 +62,7 @@ Meanwhile, greater pollution and cleanup sites seem correlated with increased ho
 
 Hazardous waste sites paint a similar story to cleanup sites. Aside from a few outliers, ZIP codes that rise above the 75th percentile are concentrated in 94702, 94703 and 94710, all three of which are west of MLK Jr. Way, the “old redline.” However, it is important to note these outliers and recognize that even though some communities are higher income and less burdened by housing cost, there are still hazardous waste sites within or near their area.
 
-[health plot]
+<HealthPlot />
 
 The cardiovascular disease plot appears to show a trend that demonstrates the well-documented racial and ethnic disparities in cardiovascular health. Those in the previously redlined communities of 94710 and 94702 see more residents in the emergency room for heart attacks, while the [predominantly white population](https://www.census.gov/quickfacts/kensingtoncdpcalifornia) of 94707 and 94708 fall below the 7th percentile.
 
@@ -72,7 +70,7 @@ The low birth weight plot seems more scattered across the board. However, an int
 
 Though asthma emergency room visits trend high for all areas of Berkeley except the Berkeley Hills and Thousand Oaks, a joint UC Berkeley-UCSF [study](https://www.atsjournals.org/doi/10.1164/ajrccm-conference.2019.199.1_MeetingAbstracts.A7054) found a link between historically redlined communities and asthma-related emergency room visit rates. This is a result of increased diesel particulate matter, air pollution and the psychological stresses of poverty and high crime rates, among other factors.
 
-[socioeconomic plot]
+<EconPlot />
 
 Unsurprisingly, poverty and housing burden appear highly correlated. South and Central Berkeley, represented by 94704 and 94703, hold the highest poverty rates in Alameda County, with at least 98% of the population living below double the [federal poverty line of $26,500](https://www.medicaid.gov/federal-policy-guidance/downloads/cib031821.pdf). These areas also hold the highest housing burden rates, suggesting a positive linear relationship between income level and housing condition.
 
