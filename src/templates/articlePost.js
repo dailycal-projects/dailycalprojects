@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 
 const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your article data
@@ -12,12 +13,16 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
 
   return (
     <div className={classes.articleRoot}>
-      <h1>{frontmatter.title}</h1>
-      <h4>{frontmatter.subhead}</h4>
-      <div className={classes.byline}>{frontmatter.byline}</div>
-      <h5>{frontmatter.date}</h5>
-      <GatsbyImage image={image} alt="pride illustration" />
-      <MDXRenderer className={classes.articleContent}>{body}</MDXRenderer>
+      <Layout>
+        <h1>{frontmatter.title}</h1>
+        <h4>{frontmatter.subhead}</h4>
+        <div className={classes.byline}>{frontmatter.byline}</div>
+        <h5>{frontmatter.date}</h5>
+        <GatsbyImage image={image} alt="card illustration" />
+        <div className={classes.articleContent}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </div>
+      </Layout>
     </div>
   );
 };

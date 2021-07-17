@@ -2,15 +2,9 @@
 date: "2021-07-18"
 title: "Redlining Title"
 byline: "By Shannon Bonet, Cameron Fozi and Veronica Roseborough"
-subhead: "Examining redlinig trends"
+subhead: "subhead"
 featuredImage: "../images/gatsby-icon.png"
 ---
-
-import WaterPlot from "../visuals/redlining-charts/scatterplots/waterPlot.tsx"
-import ChemPlot from "../visuals/redlining-charts/scatterplots/chemPlot.tsx"
-import HealthPlot from "../visuals/redlining-charts/scatterplots/healthPlot.tsx"
-import EconPlot from "../visuals/redlining-charts/scatterplots/econPlot.tsx"
-import Map from "../visuals/redlining-charts/map-materials/map.js"
 
 What began as an attempt to aid homebuyers and stimulate the economy resulted in the segregation of neighborhoods across the country, with lasting impacts that are still felt by marginalized Americans today.
 
@@ -32,7 +26,7 @@ These designations resulted in a physical division between Berkeley’s resident
 
 Though the Fair Housing Act of 1968 made it illegal to discriminate against individuals seeking a mortgage or housing assistance on the basis of race, it ended redlining “in name only,” according to Owens. He claims that the redline still exists in Berkeley but has shifted, preventing Black people from living north of University Avenue and east of Sacramento Street.
 
-<Map />
+<RedlineMap />
 
 [include HOLC map on left]
 
@@ -46,7 +40,7 @@ Every few years, the OEHHA releases new data for its pioneering screening tool, 
 
 We downloaded the dataset and filtered for Alameda County entries. From there, we chose to omit indicators that did not vary widely on a local level, such as drinking water and particulate matter. We grouped entries by ZIP code, then plotted results for each indicator. Our scatter plots also feature a z-axis attribute, reflected by dot size and color, that represents the housing burden percentile of each data point. Unknown or blank values were omitted.
 
-The ZIP code map displays all eight ZIP codes within the city of Berkeley. Image from [Berkeleyside](https://www.berkeleyside.org/2010/07/23/berkeley-94703-the-hottest-zip-code-in-the-nation).
+The ZIP code map displays all eight ZIP codes within the city of Berkeley. [change later] Image from [Berkeleyside](https://www.berkeleyside.org/2010/07/23/berkeley-94703-the-hottest-zip-code-in-the-nation).
 
 In the following plots, housing burden refers to the housing burden percentile of one census tract in relation to all other census tracts in California. For example, one census tract that falls in 94705 has a housing burden percentile of 57.15, so it contains more low-income households that are “highly burdened” by housing costs than 57.15% of census tracts in California.
 

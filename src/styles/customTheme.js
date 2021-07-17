@@ -81,8 +81,8 @@ export const styles = () => createStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    width: '450px',
-    height: '350px',
+    width: '40vh',
+    height: '32vh',
     margin: '20px',
     boxShadow: 'none',
     borderRadius: '15px',
@@ -132,12 +132,12 @@ export const styles = () => createStyles({
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing[6],
-    textAlign: 'center',
   },
   articleContent: {
-    maxWidth: '650px',
+    maxWidth: '70vh',
+    textAlign: 'justify',
   },
   byline: {
-    textTransform: 'uppercase',
+    // textTransform: 'uppercase',
   },
 });

@@ -9,7 +9,7 @@ type AnimationProps = {
 const ButtonList = (props: AnimationProps) => {
 
   return (
-  <div>
+  <div style={{textAlign: 'center', padding: '30px'}}>
     {props.list.map((buttonLabel: string, i) => (
         <button
           className="button"
