@@ -1,4 +1,4 @@
-export const all_data = [
+export const allData = [
   {
     zip: 94702,
     lead_risk: 75.36,

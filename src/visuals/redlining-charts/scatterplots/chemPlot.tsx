@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { all_data } from '../data';
+import { allData } from '../data';
 import ScatterPlot from '../scatterPlot';
 import Key from '../dataKey';
 import ButtonList from '../../../components/buttonList';
 
 const ChemPlot = () => {
-  const data = all_data;
+  const data = allData;
 
   const [chemKey, setChemKey] = useState('pollution');
   const chemicalLabels = [

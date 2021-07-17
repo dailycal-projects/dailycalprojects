@@ -18,7 +18,7 @@ type tableProps = {
   rows: any
 }
 
-const BasicTable = ({rows}: tableProps) => { //
+const BasicTable = ({rows}: tableProps) => {
   const classes = useStyles();
 
   return (

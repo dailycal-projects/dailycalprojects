@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import ButtonList from '../../../components/buttonList';
 import Key from '../dataKey';
-import { all_data } from '../data';
+import { allData } from '../data';
 import ScatterPlot from '../scatterPlot';
 
 const HealthPlot = () => {
-  const data = all_data;
+  const data = allData;
 
   const [healthKey, setHealthKey] = useState('pollution');
   const healthLabels = ['cardiovascular disease', 'low birth weight', 'asthma'];

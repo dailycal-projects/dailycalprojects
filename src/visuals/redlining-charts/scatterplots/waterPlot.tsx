@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import ButtonList from '../../../components/buttonList';
 import Key from '../dataKey';
-import { all_data } from '../data';
+import { allData } from '../data';
 import ScatterPlot from '../scatterPlot';
 
 const WaterPlot = () => {
-  const data = all_data;
+  const data = allData;
 
   const [waterKey, setWaterKey] = useState('groundwater_threats');
   const waterLabels = ['groundwater threats', 'impaired waterbodies'];
