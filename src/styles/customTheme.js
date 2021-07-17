@@ -46,7 +46,7 @@ export const styles = () => createStyles({
     display: 'flex',
     flexDirection: 'column',
     fontSize: theme.spacing[1],
-    padding: '2rem 2rem 0rem 0rem',
+    padding: '2rem',
   },
   navText: {
     textDecoration: 'none',
@@ -81,8 +81,8 @@ export const styles = () => createStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    width: '40vh',
-    height: '32vh',
+    // width: cardWidth,
+    height: '350px',
     margin: '20px',
     boxShadow: 'none',
     borderRadius: '15px',
@@ -90,7 +90,6 @@ export const styles = () => createStyles({
     fontSize: theme.spacing[0],
     transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
     '&:hover': {
-      // color: theme.palette.dcalBlue,
       boxShadow: theme.cardShadow,
       transform: 'translate(0px, -7px)',
       transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
@@ -119,7 +118,7 @@ export const styles = () => createStyles({
   },
   cardImage: {
     width: '100%',
-    height: '250px',
+    height: '240px',
   },
   imageHolder: {
     background: 'linear-gradient(180deg, rgba(0,0,0,0.7471580933988764) 0%, rgba(0,0,0,0.4090260709269663) 16%, rgba(0,0,0,0.0916103405898876) 67%, rgba(0,0,0,0) 89%)',
