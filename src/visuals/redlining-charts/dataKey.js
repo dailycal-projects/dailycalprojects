@@ -1,24 +1,21 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
 const useStyles = makeStyles({
   table: {
     margin: 20,
-    maxWidth: "70vh",
-  }
+    maxWidth: '70vh',
+  },
 });
 
-type tableProps = {
-  rows: any
-}
-
-const BasicTable = ({rows}: tableProps) => {
+const BasicTable = ({ rows }) => {
   const classes = useStyles();
 
   return (
@@ -45,6 +42,10 @@ const BasicTable = ({rows}: tableProps) => {
       </Table>
     </TableContainer>
   );
-}
+};
 
-export default BasicTable
+export default BasicTable;
+
+BasicTable.propTypes = {
+  rows: PropTypes.any,
+};

@@ -20,11 +20,11 @@
   overflow: hidden;
   background: none;
   cursor: pointer;
-  transition: 0.08s ease-in;
-  -o-transition: 0.08s ease-in;
-  -ms-transition: 0.08s ease-in;
-  -moz-transition: 0.08s ease-in;
-  -webkit-transition: 0.08s ease-in;
+  transition: all 0.08s ease-in;
+  -o-transition: all 0.08s ease-in;
+  -ms-transition: all 0.08s ease-in;
+  -moz-transition: all 0.08s ease-in;
+  -webkit-transition: all 0.08s ease-in;
 }
 .button:hover {
   color: whitesmoke;
@@ -39,7 +39,7 @@
   right: 0;
   top: 100%;
   z-index: -1;
-  /* -webkit-transition: top 0.09s ease-in; */
+  transition: top 0.09s ease-in;
 }
 
 .button:hover:before {
