@@ -10,13 +10,32 @@ module.exports = {
     PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-theme-material-ui',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp', // Needed for dynamic images
+    'gatsby-plugin-image',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          quality: 70,
+          placeholder: 'blurred',
+        },
+      },
+    },
     'gatsby-remark-images',
-    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1000,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

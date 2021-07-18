@@ -81,7 +81,7 @@ export const styles = () => createStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    // width: cardWidth,
+    width: '350px',
     height: '350px',
     margin: '20px',
     boxShadow: 'none',
@@ -120,9 +120,6 @@ export const styles = () => createStyles({
     width: '100%',
     height: '240px',
   },
-  imageHolder: {
-    background: 'linear-gradient(180deg, rgba(0,0,0,0.7471580933988764) 0%, rgba(0,0,0,0.4090260709269663) 16%, rgba(0,0,0,0.0916103405898876) 67%, rgba(0,0,0,0) 89%)',
-  },
   cardContent: {
     padding: '1rem 1rem 0rem 1rem',
   },
@@ -135,8 +132,5 @@ export const styles = () => createStyles({
   articleContent: {
     maxWidth: '70vh',
     textAlign: 'justify',
-  },
-  byline: {
-    // textTransform: 'uppercase',
   },
 });

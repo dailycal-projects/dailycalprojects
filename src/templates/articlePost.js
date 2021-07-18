@@ -9,7 +9,6 @@ import { styles } from '../styles/customTheme';
 const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
   const image = getImage(frontmatter.featuredImage);
-  console.log(image);
 
   return (
     <div className={classes.articleRoot}>
@@ -20,7 +19,10 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
         <h5>{frontmatter.date}</h5>
         <GatsbyImage image={image} alt="card illustration" />
         <div className={classes.articleContent}>
-          <MDXRenderer>{body}</MDXRenderer>
+          <MDXRenderer 
+            localImages={frontmatter.embeddedImages}> 
+            {body}
+          </MDXRenderer>
         </div>
       </Layout>
     </div>
@@ -40,6 +42,11 @@ export const pageQuery = graphql`
           childImageSharp {
             gatsbyImageData(width: 1000)
           } 
+        }
+        embeddedImages {
+          childImageSharp {
+            gatsbyImageData(width: 1000)
+          }
         }
       }
     }

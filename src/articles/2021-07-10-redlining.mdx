@@ -4,7 +4,12 @@ title: "Redlining Title"
 byline: "By Shannon Bonet, Cameron Fozi and Veronica Roseborough"
 subhead: "subhead"
 featuredImage: "../images/gatsby-icon.png"
+embeddedImages:
+  - "../images/holc.png"
+  - "../images/holc.png"
 ---
+
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
 What began as an attempt to aid homebuyers and stimulate the economy resulted in the segregation of neighborhoods across the country, with lasting impacts that are still felt by marginalized Americans today.
 
@@ -26,11 +31,12 @@ These designations resulted in a physical division between Berkeley’s resident
 
 Though the Fair Housing Act of 1968 made it illegal to discriminate against individuals seeking a mortgage or housing assistance on the basis of race, it ended redlining “in name only,” according to Owens. He claims that the redline still exists in Berkeley but has shifted, preventing Black people from living north of University Avenue and east of Sacramento Street.
 
+<GatsbyImage alt="HOLC Map" image={getImage(props.localImages[0])} />
+
+A HOLC redlining map shows the East Bay geographically color-coded by lending security
+grade.
+
 <RedlineMap />
-
-[include HOLC map on left]
-
-On the left, a HOLC redlining map shows the East Bay geographically color-coded by lending security grade.
 
 The interactive map displays the housing burden of each zip code area in Alameda County. The California Office of Environmental Health Hazard Assessment, or OEHHA, defines a housing-burdened household as one with an income of less than 80% of its county's median family income that allocates more than 50% of its income toward housing costs.
 

@@ -17,7 +17,7 @@ class MyMap extends Component {
     if (typeof window !== 'undefined') { // fixes the window error @cameron
       return (
         <MapContainer
-          style={{ height: '600px', width: '50%' }}
+          style={{ height: '600px', width: '1000px' }}
           zoom={13.25}
           center={[centerLat, centerLong]}
           bounds={[
