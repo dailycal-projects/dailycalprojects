@@ -21,50 +21,51 @@ class MyMap extends Component {
       boxShadow: '0px 6px 6px rgba(0, 0, 0, 0.25)',
     };
 
-    if (typeof window !== 'undefined') { // fixes the window error @cameron
-      return (
-        <MapContainer
-          scrollWheelZoom={false}
-          style={containerStyle}
-          zoom={13}
-          center={[centerLat, centerLong]}
-          bounds={[
-            [data.minLat - bufferLat, data.minLong - bufferLong],
-            [data.maxLat + bufferLat, data.maxLong + bufferLong],
-          ]}
-        >
-          <TileLayer url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    return (
+      <div>
+        {(typeof window !== 'undefined') ? (
+          <MapContainer
+            scrollWheelZoom={false}
+            style={containerStyle}
+            zoom={13}
+            center={[centerLat, centerLong]}
+            bounds={[
+              [data.minLat - bufferLat, data.minLong - bufferLong],
+              [data.maxLat + bufferLat, data.maxLong + bufferLong],
+            ]}
+          >
+            <TileLayer url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-          {data.info.map((info, k) => (
-            <CircleMarker
-              key={k}
-              center={[info.coordinates[0], info.coordinates[1]]}
-              radius={10}
-              color={[info.color]}
-              fillOpacity={0.6}
-            >
-              <Tooltip opacity={1}>
-                <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                  Click me!
-                </div>
-              </Tooltip>
-              <Popup>
-                <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                  {'ZIP code: '}
-                  {info.ZIP}
-                  <br />
-                  <div style={{ color: info.color }}>
-                    {'Housing burden percentile: '}
-                    {info.hbp}
+            {data.info.map((info, k) => (
+              <CircleMarker
+                key={k}
+                center={[info.coordinates[0], info.coordinates[1]]}
+                radius={10}
+                color={[info.color]}
+                fillOpacity={0.6}
+              >
+                <Tooltip opacity={1}>
+                  <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                    Click me!
                   </div>
-                </div>
-              </Popup>
-            </CircleMarker>
-          ))}
-        </MapContainer>
-      );
-    }
-    return null;
+                </Tooltip>
+                <Popup>
+                  <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                    {'ZIP code: '}
+                    {info.ZIP}
+                    <br />
+                    <div style={{ color: info.color }}>
+                      {'Housing burden percentile: '}
+                      {info.hbp}
+                    </div>
+                  </div>
+                </Popup>
+              </CircleMarker>
+            ))}
+          </MapContainer>
+        ) : <p> no map here</p>}
+      </div>
+    );
   }
 }
 
