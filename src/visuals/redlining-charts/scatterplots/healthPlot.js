@@ -36,7 +36,14 @@ const HealthPlot = () => {
     <div>
       <Key rows={key} />
       <ButtonList list={healthLabels} handleClick={buttonToData} />
-      <p className="legend-title"> Housing burden percentile</p>
+      <p style={{
+        display: 'flex', flexDirection: 'row-reverse', textAlign: 'center', fontWeight: '500',
+      }}
+      >
+        Housing burden
+        <br />
+        percentile
+      </p>
       <ScatterPlot data={data} xDataKey="zip" yDataKey={healthKey} />
     </div>
   );

@@ -14,13 +14,16 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
     <div className={classes.articleRoot}>
       <Layout>
         <h1>{frontmatter.title}</h1>
-        <h4>{frontmatter.subhead}</h4>
+        <h3>{frontmatter.subhead}</h3>
         <div className={classes.byline}>{frontmatter.byline}</div>
         <h5>{frontmatter.date}</h5>
-        <GatsbyImage image={image} alt="card illustration" />
+        <div style={{ margin: 50 }}>
+          <GatsbyImage image={image} alt="card illustration" />
+        </div>
         <div className={classes.articleContent}>
-          <MDXRenderer 
-            localImages={frontmatter.embeddedImages}> 
+          <MDXRenderer
+            localImages={frontmatter.embeddedImages} // props that allows <GatsbyImage/> usage possible in MDX
+          >
             {body}
           </MDXRenderer>
         </div>
@@ -45,7 +48,7 @@ export const pageQuery = graphql`
         }
         embeddedImages {
           childImageSharp {
-            gatsbyImageData(width: 1000)
+            gatsbyImageData
           }
         }
       }

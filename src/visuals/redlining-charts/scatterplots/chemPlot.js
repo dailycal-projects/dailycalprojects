@@ -50,7 +50,14 @@ const ChemPlot = () => {
     <div>
       <Key rows={key} />
       <ButtonList list={chemicalLabels} handleClick={buttonToData} />
-      <p className="legend-title"> Housing burden percentile</p>
+      <p style={{
+        display: 'flex', flexDirection: 'row-reverse', textAlign: 'center', fontWeight: '500',
+      }}
+      >
+        Housing burden
+        <br />
+        percentile
+      </p>
       <ScatterPlot data={data} xDataKey="zip" yDataKey={chemKey} />
     </div>
   );

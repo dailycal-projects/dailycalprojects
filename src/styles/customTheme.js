@@ -22,7 +22,7 @@ const theme = {
   },
   cardShadow: '0px 2px 0px 0.5px rgba(14, 20, 27, 0.15)',
   iconShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-  spacing: [16, 20, 24, 30, 36, 48, 60],
+  spacing: [17, 18, 24, 30, 36, 48, 60],
 };
 
 export const styles = () => createStyles({
@@ -68,7 +68,6 @@ export const styles = () => createStyles({
   iconHover: {
     transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
     '&:hover': {
-      // boxShadow: theme.iconShadow,
       transform: 'translate(0px, -7px)',
       transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
     },
@@ -130,7 +129,11 @@ export const styles = () => createStyles({
     padding: theme.spacing[6],
   },
   articleContent: {
-    maxWidth: '70vh',
+    fontSize: theme.spacing[1],
+    maxWidth: '60%',
     textAlign: 'justify',
+  },
+  byline: {
+    fontSize: theme.spacing[0],
   },
 });

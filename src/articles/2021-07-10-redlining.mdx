@@ -1,11 +1,10 @@
 ---
 date: "2021-07-18"
-title: "Redlining Title"
+title: "Reading between the redlines"
 byline: "By Shannon Bonet, Cameron Fozi and Veronica Roseborough"
-subhead: "subhead"
+subhead: "How 1934 redlining policies meet Berkeley's housing burdens of today"
 featuredImage: "../images/gatsby-icon.png"
 embeddedImages:
-  - "../images/holc.png"
   - "../images/holc.png"
 ---
 
@@ -33,18 +32,15 @@ Though the Fair Housing Act of 1968 made it illegal to discriminate against indi
 
 <GatsbyImage alt="HOLC Map" image={getImage(props.localImages[0])} />
 
-A HOLC redlining map shows the East Bay geographically color-coded by lending security
-grade.
-
 <RedlineMap />
 
-The interactive map displays the housing burden of each zip code area in Alameda County. The California Office of Environmental Health Hazard Assessment, or OEHHA, defines a housing-burdened household as one with an income of less than 80% of its county's median family income that allocates more than 50% of its income toward housing costs.
+Above, a 1938 HOLC redlining map shows the East Bay geographically color-coded by lending security grade, with Berkeley in the top left corner. The interactive map reflects the modern day housing burdens of eachzip code area in Berkeley. The California Office of Environmental Health Hazard Assessment, or OEHHA, defines a housing-burdened household as one with an incomeof less than 80% of its county's median family income that allocates more than50% of its income toward housing costs.
 
 ## Plotting divisions
 
 Every few years, the OEHHA releases new data for its pioneering screening tool, CalEnviroScreen, which tracks various burdens that California communities face. On June 11, OEHHA released an updated draft of CalEnviroScreen using the most recent available data.
 
-We downloaded the dataset and filtered for Alameda County entries. From there, we chose to omit indicators that did not vary widely on a local level, such as drinking water and particulate matter. We grouped entries by ZIP code, then plotted results for each indicator. Our scatter plots also feature a z-axis attribute, reflected by dot size and color, that represents the housing burden percentile of each data point. Unknown or blank values were omitted.
+We downloaded the dataset and filtered for Alameda County entries. From there, we chose to omit indicators that did not vary widely on a local level, such as drinking water and particulate matter. We grouped entries by ZIP code, then plotted results for each indicator. Our scatter plots also feature a z-axis attribute, reflected by dot size and color, that represents the housing burden percentile of each data point. Unknown or blank values are omitted.
 
 The ZIP code map displays all eight ZIP codes within the city of Berkeley. [change later] Image from [Berkeleyside](https://www.berkeleyside.org/2010/07/23/berkeley-94703-the-hottest-zip-code-in-the-nation).
 

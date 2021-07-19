@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  MapContainer, CircleMarker, TileLayer, Tooltip, // Map is outdated; Leaflet now uses MapContainer
+  MapContainer, CircleMarker, TileLayer, Tooltip, Popup, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { data } from './coordinates';
@@ -14,11 +14,19 @@ class MyMap extends Component {
     const distanceLong = data.maxLong - data.minLong;
     const bufferLong = distanceLong * 0.05;
 
+    const containerStyle = { // omit width for responsive map width
+      height: '600px',
+      margin: '30px 0px 30px 0px',
+      borderRadius: '15px',
+      boxShadow: '0px 6px 6px rgba(0, 0, 0, 0.25)',
+    };
+
     if (typeof window !== 'undefined') { // fixes the window error @cameron
       return (
         <MapContainer
-          style={{ height: '600px', width: '1000px' }}
-          zoom={13.25}
+          scrollWheelZoom={false}
+          style={containerStyle}
+          zoom={13}
           center={[centerLat, centerLong]}
           bounds={[
             [data.minLat - bufferLat, data.minLong - bufferLong],
@@ -31,16 +39,26 @@ class MyMap extends Component {
             <CircleMarker
               key={k}
               center={[info.coordinates[0], info.coordinates[1]]}
-              radius={7.5}
+              radius={10}
               color={[info.color]}
-              fillOpacity={0.5}
-              stroke={false}
+              fillOpacity={0.6}
             >
-              <Tooltip direction="right" offset={[-8, -2]} opacity={1}>
-                <p>{`${'Census tract' + ': '}${info.ct}`}</p>
-                <p>{`${'ZIP code' + ': '}${info.ZIP}`}</p>
-                <p>{`${'Housing burden percentile' + ': '}${info.hbp}`}</p>
+              <Tooltip opacity={1}>
+                <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                  Click me!
+                </div>
               </Tooltip>
+              <Popup>
+                <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                  {'ZIP code: '}
+                  {info.ZIP}
+                  <br />
+                  <div style={{ color: info.color }}>
+                    {'Housing burden percentile: '}
+                    {info.hbp}
+                  </div>
+                </div>
+              </Popup>
             </CircleMarker>
           ))}
         </MapContainer>

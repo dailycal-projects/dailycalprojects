@@ -7,20 +7,30 @@ import EconPlot from '../visuals/redlining-charts/scatterplots/econPlot';
 import RedlineMap from '../visuals/redlining-charts/map-materials/map';
 
 /*
-To avoid using exact paths to MDX files, import your components here
-and add them to the shortcodes array to be globally accessible.
-To use a component, simply type <MyComponent />
+To avoid using exact paths in MDX files, import your components here
+and add them to the shortcodes list to be globally accessible.
+To use a component in MDX, simply type <MyComponent />
+
+Note: Moving React components into a separate array as seen https://mdxjs.com/blog/shortcodes
+is not recommended. It seems like MDXProvider doesn't like
+parsing individual HTML elements followed by an array of React components.
 */
+
 const shortcodes = {
-  WaterPlot, ChemPlot, HealthPlot, EconPlot, RedlineMap,
+  a: (props) => <a {...props} style={{ textDecoration: 'none' }} />, // styles MDX hyperlinks
+  p: (props) => <p {...props} style={{ textIndent: '40px' }} />,
+  img: (props) => <img style={{ display: 'flex', flexDirection: 'column' }} />,
+  WaterPlot,
+  ChemPlot,
+  HealthPlot,
+  EconPlot,
+  RedlineMap,
 };
 
 export default function Layout({ children }) {
   return (
     <MDXProvider
-      components={{
-        a: (props) => <a {...props} style={{ textDecoration: 'none' }} />, // styles MDX hyperlinks
-      }, shortcodes}
+      components={shortcodes}
     >
       {children}
     </MDXProvider>

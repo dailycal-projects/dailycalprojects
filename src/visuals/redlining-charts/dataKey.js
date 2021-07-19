@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 const useStyles = makeStyles({
   table: {
     margin: 20,
-    maxWidth: '70vh',
+    maxWidth: '100%',
   },
 });
 

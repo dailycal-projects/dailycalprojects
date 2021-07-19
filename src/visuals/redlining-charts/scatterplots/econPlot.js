@@ -50,7 +50,14 @@ const EconPlot = () => {
     <div>
       <Key rows={key} />
       <ButtonList list={econLabels} handleClick={buttonToData} />
-      <p className="legend-title"> Housing burden percentile</p>
+      <p style={{
+        display: 'flex', flexDirection: 'row-reverse', textAlign: 'center', fontWeight: '500',
+      }}
+      >
+        Housing burden
+        <br />
+        percentile
+      </p>
       <ScatterPlot data={data} xDataKey="zip" yDataKey={econKey} />
     </div>
   );
