@@ -113,5 +113,6 @@ export const styles = () => createStyles({
     display: 'flex',
     flexDirection: 'row',
     fontSize: theme.spacing[0],
+    textDecoration: 'none',
   },
 });

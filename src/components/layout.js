@@ -16,9 +16,10 @@ by an array of React components, so we must include them in the same array.
 */
 
 const shortcodes = {
-  a: (props) => <a {...props} style={{ textDecoration: 'none' }} />, // styles MDX hyperlinks
-  // p: (props) => <p {...props} style={{ textIndent: '40px' }} />,
-  img: (props) => <img style={{ display: 'flex', flexDirection: 'column' }} />,
+  a: (props) => (
+    <a {...props} style={{ textDecoration: 'underline', color: 'black' }} />), // styles MDX hyperlinks
+  p: (props) => <p {...props} style={{ color: '#0E141B' }} />,
+  img: (props) => <img {...props} style={{ display: 'flex', flexDirection: 'column' }} />,
   WaterPlot,
   ChemPlot,
   HealthPlot,

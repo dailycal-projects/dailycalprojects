@@ -16,20 +16,20 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
       <Layout>
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.subhead}</h3>
-        <div className={classes.bylineName}>
-          {bylineName.map((author, i) => {
-            const url = bylineUrl[i];
-            return (
-              <a href={url} style={{ textDecoration: 'none' }}>
-                {' '}
-                {author}
-                {' '}
-              </a>
-            );
-          })}
-        </div>
-
-        {/* <div className={classes.bylineName}>{frontmatter.bylineName}</div> */}
+        {(bylineName && bylineUrl) ? (
+          <div className={classes.byline}>
+            {bylineName.map((author, i) => {
+              const url = bylineUrl[i];
+              return (
+                <a href={url} style={{ color: 'black' }}>
+                  {' '}
+                  {`${author} `}
+                  {' '}
+                </a>
+              );
+            })}
+          </div>
+        ) : null }
         <h5>{frontmatter.date}</h5>
         <div style={{ margin: 50 }}>
           <GatsbyImage image={image} alt="card illustration" />
