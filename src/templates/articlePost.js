@@ -5,6 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
+import { theme } from '../styles/theme';
 
 const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
@@ -21,9 +22,9 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
             {bylineName.map((author, i) => {
               const url = bylineUrl[i];
               return (
-                <a href={url} style={{ color: 'black' }}>
+                <a href={url} style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }}>
                   {' '}
-                  {`${author} `}
+                  {author}
                   {' '}
                 </a>
               );

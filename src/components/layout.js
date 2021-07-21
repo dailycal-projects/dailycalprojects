@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { theme } from '../styles/theme';
 import WaterPlot from '../visuals/redlining-charts/scatterplots/waterPlot';
 import ChemPlot from '../visuals/redlining-charts/scatterplots/chemPlot';
 import HealthPlot from '../visuals/redlining-charts/scatterplots/healthPlot';
@@ -16,10 +17,12 @@ by an array of React components, so we must include them in the same array.
 */
 
 const shortcodes = {
+  // style MDX files for any html element here!!
   a: (props) => (
-    <a {...props} style={{ textDecoration: 'underline', color: 'black' }} />), // styles MDX hyperlinks
-  p: (props) => <p {...props} style={{ color: '#0E141B' }} />,
+    <a {...props} style={{ textDecoration: 'underline', color: theme.palette.black }} />), // styles MDX hyperlinks
+  p: (props) => <p {...props} style={{ color: theme.palette.black }} />,
   img: (props) => <img {...props} style={{ display: 'flex', flexDirection: 'column' }} />,
+  // cap: (props) => <cap {...props} style={{ text:  }} />,
   WaterPlot,
   ChemPlot,
   HealthPlot,
