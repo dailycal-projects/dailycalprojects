@@ -8,6 +8,7 @@ import { styles } from '../styles/customTheme';
 
 const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
+  const { bylineName, bylineUrl } = frontmatter;
   const image = getImage(frontmatter.featuredImage);
 
   return (
@@ -15,14 +16,27 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
       <Layout>
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.subhead}</h3>
-        <div className={classes.byline}>{frontmatter.byline}</div>
+        <div className={classes.bylineName}>
+          {bylineName.map((author, i) => {
+            const url = bylineUrl[i];
+            return (
+              <a href={url} style={{ textDecoration: 'none' }}>
+                {' '}
+                {author}
+                {' '}
+              </a>
+            );
+          })}
+        </div>
+
+        {/* <div className={classes.bylineName}>{frontmatter.bylineName}</div> */}
         <h5>{frontmatter.date}</h5>
         <div style={{ margin: 50 }}>
           <GatsbyImage image={image} alt="card illustration" />
         </div>
         <div className={classes.articleContent}>
           <MDXRenderer
-            localImages={frontmatter.embeddedImages} // props that allows <GatsbyImage/> usage possible in MDX
+            localImages={frontmatter.embeddedImages} // prop that allows <GatsbyImage/> usage possible in MDX
           >
             {body}
           </MDXRenderer>
@@ -39,7 +53,8 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        byline
+        bylineName
+        bylineUrl
         subhead
         featuredImage {
           childImageSharp {

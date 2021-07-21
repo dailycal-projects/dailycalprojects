@@ -8,7 +8,7 @@ const WaterPlot = () => {
   const data = allData;
 
   const [waterKey, setWaterKey] = useState('groundwater_threats');
-  const waterLabels = ['groundwater threats', 'impaired waterbodies'];
+  const waterLabels = ['groundwater threats', 'impaired bodies of water'];
 
   const createData = (indicator, description) => ({ indicator, description });
   const key = [
@@ -18,7 +18,7 @@ const WaterPlot = () => {
     ),
     createData(
       'Impaired waterbodies',
-      'Pollutants in all imparied water bodies near populated streets in specified census tract ',
+      'Pollutants in all impaired bodies of water near populated streets in specified census tract',
     ),
   ];
 

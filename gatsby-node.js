@@ -63,6 +63,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
+// during server side rendering, leaflet maps will be ignored
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html' || stage === 'develop-html') {
     actions.setWebpackConfig({

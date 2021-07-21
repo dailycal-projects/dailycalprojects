@@ -32,11 +32,11 @@ const ChemPlot = () => {
     ),
     createData(
       'Toxic release',
-      'Toxin concentrations in emissions from both on and off site facilities as determined by risk-screening environmental indicators',
+      'Toxin concentrations in emissions from both on and off-site facilities as determined by risk-screening environmental indicators',
     ),
     createData(
       'Hazardous waste',
-      'Hazardous waste facilities and large quantity generators near populated blocks in specified census tract ',
+      'Hazardous waste facilities and large quantity generators near populated blocks in specified census tract',
     ),
   ];
 
