@@ -42,8 +42,8 @@ const Header = ({ classes }) => (
           query {
             site {
               siteMetadata {
-                title 
-                description 
+                title
+                description
               }
             }
           }

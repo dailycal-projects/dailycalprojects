@@ -4,6 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
+import ArticleNav from '../components/articleNav';
+
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 
@@ -15,6 +17,7 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
   return (
     <div className={classes.articleRoot}>
       <Layout>
+        <ArticleNav />
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.subhead}</h3>
         {(bylineName && bylineUrl) ? (
@@ -60,7 +63,7 @@ export const pageQuery = graphql`
         featuredImage {
           childImageSharp {
             gatsbyImageData(width: 1000)
-          } 
+          }
         }
         embeddedImages {
           childImageSharp {
