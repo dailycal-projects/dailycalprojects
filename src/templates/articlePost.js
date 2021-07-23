@@ -5,6 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import ArticleNav from '../components/articleNav';
+import Footer from '../components/footer';
 
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
@@ -45,6 +46,7 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
             {body}
           </MDXRenderer>
         </div>
+        <Footer />
       </Layout>
     </div>
   );
