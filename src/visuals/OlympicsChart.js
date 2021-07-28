@@ -135,7 +135,7 @@ const allData = [
     Name: 'Matt Biondi',
     Sport: "Men's Swimming",
     'Olympic Year': 1992,
-    Bronze: 1,
+    Bronze: 0,
     Gold: 2,
     Silver: 1,
     Medals: 4,
@@ -1734,13 +1734,14 @@ class OlympicsChart extends Component {
         document.querySelector('.container').offsetWidth / demoninator,
       );
 
-    const sportText = `Top Medalists ${
-      this.state.sport === null ? '(All Sports)' : `(${this.state.sport})`}`;
+    const sportText = `Top medalists ${
+      this.state.viewSport === null
+        ? this.state.sport === null ? '(All Sports)' : `(${this.state.sport})` : `(${this.state.viewSport})`}`;
     // Return DOM elements
     return (
       <div className="OlympicsChart">
         <div className="container">
-          <h1>Cal Olympics Medalists</h1>
+          <h1>Cal Olympics medalists</h1>
         </div>
 
         <div className="container">
@@ -1767,15 +1768,15 @@ class OlympicsChart extends Component {
                 domain={[left - 2, right + 2]}
               >
                 <Label
-                  value="Medals by Year"
+                  value="Medals by year"
                   position="bottom"
                 />
               </XAxis>
               <YAxis type="number" />
               <Tooltip />
-              <Bar dataKey="Bronze" fill="#cd7f32" stackId="a" />
-              <Bar dataKey="Silver" fill="#c0c0c0" stackId="a" />
               <Bar dataKey="Gold" fill="#FFD700" stackId="a" />
+              <Bar dataKey="Silver" fill="#c0c0c0" stackId="a" />
+              <Bar dataKey="Bronze" fill="#cd7f32" stackId="a" />
 
               {refAreaLeft && refAreaRight ? (
                 <ReferenceArea
@@ -1804,10 +1805,10 @@ class OlympicsChart extends Component {
             </XAxis>
             <YAxis type="category" dataKey="Name" />
             <Tooltip />
+            <Bar dataKey="Gold" fill="#FFD700" stackId="a" />
+            <Bar dataKey="Silver" fill="#c0c0c0" stackId="a" />
             <Bar dataKey="Bronze" fill="#cd7f32" stackId="a" />
 
-            <Bar dataKey="Silver" fill="#c0c0c0" stackId="a" />
-            <Bar dataKey="Gold" fill="#FFD700" stackId="a" />
           </BarChart>
 
           <div className="chart">
@@ -1825,7 +1826,7 @@ class OlympicsChart extends Component {
               height={height}
               width={width}
             />
-            <span className="treemapLabel">Medalists by Sport</span>
+            <span className="treemapLabel">Medalists by sport</span>
           </div>
         </div>
       </div>
