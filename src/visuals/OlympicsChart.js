@@ -1740,9 +1740,6 @@ class OlympicsChart extends Component {
     // Return DOM elements
     return (
       <div className="OlympicsChart">
-        <div className="container">
-          <h1>Cal Olympics medalists</h1>
-        </div>
 
         <div className="container">
 
