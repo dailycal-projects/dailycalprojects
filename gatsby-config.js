@@ -5,7 +5,7 @@ module.exports = {
     author: '@shannonbonet',
   },
   flags: {
-    //preserves files + cache except on `gatsby clean`
+    // preserves files + cache except on `gatsby clean`
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
     PRESERVE_WEBPACK_CACHE: true,
   },
