@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Treemap } from 'react-vis';
+import { Treemap, Hint } from 'react-vis';
 import {
   Label,
   XAxis,
@@ -1774,9 +1774,9 @@ class OlympicsChart extends Component {
               </XAxis>
               <YAxis type="number" />
               <Tooltip />
-              <Bar dataKey="Gold" fill="#FFD700" stackId="a" />
-              <Bar dataKey="Silver" fill="#c0c0c0" stackId="a" />
-              <Bar dataKey="Bronze" fill="#cd7f32" stackId="a" />
+              <Bar dataKey="Gold" fill="#FED23B" stackId="a" />
+              <Bar dataKey="Silver" fill="#C0C0C0" stackId="a" />
+              <Bar dataKey="Bronze" fill="#B7823E" stackId="a" />
 
               {refAreaLeft && refAreaRight ? (
                 <ReferenceArea
@@ -1805,15 +1805,15 @@ class OlympicsChart extends Component {
             </XAxis>
             <YAxis type="category" dataKey="Name" />
             <Tooltip />
-            <Bar dataKey="Gold" fill="#FFD700" stackId="a" />
-            <Bar dataKey="Silver" fill="#c0c0c0" stackId="a" />
-            <Bar dataKey="Bronze" fill="#cd7f32" stackId="a" />
+            <Bar dataKey="Gold" fill="#FED23B" stackId="a" />
+            <Bar dataKey="Silver" fill="#C0C0C0" stackId="a" />
+            <Bar dataKey="Bronze" fill="#B7823E" stackId="a" />
 
           </BarChart>
 
           <div className="chart">
             <Treemap
-              color="rgb(0, 59, 98)"
+              color="#215675"
               animation
               onLeafMouseOut={() => this.setState({
                 viewSport: null,
@@ -1826,7 +1826,7 @@ class OlympicsChart extends Component {
               height={height}
               width={width}
             />
-            <span className="treemapLabel">Medalists by sport</span>
+            <span className="treemapLabel">Medalist by sport</span>
           </div>
         </div>
       </div>
