@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'gatsby';
-import { styles } from '../styles/customTheme.js';
+import { styles } from '../styles/customTheme';
 import MenuIcon from '../assets/menu.svg';
 
 const NavBar = ({ classes }) => (

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core';
-import { styles } from '../styles/customTheme.js';
+import { styles } from '../styles/customTheme';
 
 import NavBar from '../components/navBar';
 import Seo from '../components/seo';
