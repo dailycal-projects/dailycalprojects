@@ -11,7 +11,7 @@ import {
   ReferenceArea,
   ResponsiveContainer,
 } from 'recharts';
-import '../styles/olympicsTheme.css';
+import '../../styles/olympicsTheme.css';
 
 const allData = [
   {
