@@ -110,7 +110,7 @@ const allData = [
     Result: '',
   },
   {
-    Name: 'Hugo Gonz�lez',
+    Name: 'Hugo Gonzalez',
     Country: 'Spain',
     Sport: "Men's Swimming",
     Event: '100m Backstroke',
@@ -118,7 +118,7 @@ const allData = [
     Result: '',
   },
   {
-    Name: 'Hugo Gonz�lez',
+    Name: 'Hugo Gonzalez',
     Country: 'Spain',
     Sport: "Men's Swimming",
     Event: '200m IM',
@@ -142,7 +142,7 @@ const allData = [
     Result: '',
   },
   {
-    Name: 'Bj�rn Seeliger',
+    Name: 'Bjorn Seeliger',
     Country: 'Sweden',
     Sport: "Men's Swimming",
     Event: '',
@@ -3446,8 +3446,8 @@ const allData = [
     Result: '17th',
   },
   {
-    Name: 'Marjanovic,�Marko�',
-    Country: 'Serbia����',
+    Name: 'Marjanovic,Marko',
+    Country: 'Serbia',
     Sport: "Men's Rowing",
     Event: 'Double',
     'Olympic Year': 2016,
@@ -5086,7 +5086,7 @@ const allData = [
     Result: 'Gold',
   },
   {
-    Name: 'Thomas,�Noemie',
+    Name: 'Thomas,Noemie',
     Country: 'Canada',
     Sport: "Women's Swimming",
     Event: '100m Butterfly',
@@ -5414,7 +5414,7 @@ const allData = [
     Result: '5th (B Final)',
   },
   {
-    Name: 'Wegrzycki-Szmczyk,�Natan',
+    Name: 'Wegrzycki-Szmczyk, Natan',
     Country: 'Poland',
     Sport: "Men's Rowing",
     Event: 'Single Scull',
