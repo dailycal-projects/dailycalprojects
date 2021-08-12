@@ -65,10 +65,10 @@ export const pageQuery = graphql`
         title
         bylineName
         bylineUrl
-        subhead
+        subhead(pruneLength: 160)
         featuredImage {
           childImageSharp {
-            resize(width: 400) {
+            resize(width: 1200) {
               src
               height
               width

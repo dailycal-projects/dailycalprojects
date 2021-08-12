@@ -21,6 +21,7 @@ function Seo({
             title
             description
             author
+            siteUrl
           }
         }
       }
