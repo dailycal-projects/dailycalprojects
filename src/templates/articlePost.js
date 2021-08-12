@@ -68,7 +68,7 @@ export const pageQuery = graphql`
         subhead
         featuredImage {
           childImageSharp {
-            resize(width: 1200) {
+            resize(width: 400) {
               src
               height
               width
