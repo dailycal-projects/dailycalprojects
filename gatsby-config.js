@@ -13,6 +13,7 @@ module.exports = {
     'gatsby-theme-material-ui',
     'gatsby-transformer-sharp', // Needed for dynamic images
     'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {

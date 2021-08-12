@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function Seo({
-  description, lang, meta, title,
+  description, lang, meta, title, image: metaImage,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -29,6 +29,11 @@ function Seo({
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
+  const image = metaImage && metaImage.src
+    ? `${site.siteMetadata.siteUrl}${metaImage.src}`
+    : null;
+
+  console.log(image);
 
   return (
     <Helmet
@@ -59,10 +64,6 @@ function Seo({
           content: 'summary',
         },
         {
-          name: 'twitter:creator',
-          content: site.siteMetadata?.author || '',
-        },
-        {
           name: 'twitter:title',
           content: title,
         },
@@ -70,7 +71,34 @@ function Seo({
           name: 'twitter:description',
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]
+        .concat(
+          metaImage
+            ? [
+              {
+                property: 'og:image',
+                content: image,
+              },
+              {
+                property: 'og:image:width',
+                content: metaImage.width,
+              },
+              {
+                property: 'og:image:height',
+                content: metaImage.height,
+              },
+              {
+                name: 'twitter:card',
+                content: 'summary_large_image',
+              },
+            ]
+            : [
+              {
+                name: 'twitter:card',
+                content: 'summary',
+              },
+            ],
+        ).concat(meta)}
     />
   );
 }
@@ -86,6 +114,11 @@ Seo.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
 };
 
 export default Seo;
