@@ -107,20 +107,12 @@ function Seo({
                 name: 'twitter:card',
                 content: 'summary_large_image',
               },
-              {
-                name: 'twitter:image',
-                content: `${site.siteMetadata.siteUrl}${image}`,
-              },
             ]
             : [
               {
                 name: 'twitter:card',
                 content: 'summary',
               },
-              {
-                name: 'twitter:image',
-                content: `${site.siteMetadata.siteUrl}${image}`,
-            },
             ],
         ).concat(meta)}
     />
