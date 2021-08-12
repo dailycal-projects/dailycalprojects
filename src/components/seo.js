@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function Seo({
-  description, lang, meta, title, image: metaImage,
+  description, lang, meta, title, image: metaImage, pathname,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -29,6 +29,7 @@ function Seo({
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
   const defaultTitle = site.siteMetadata?.title;
   const image = metaImage && metaImage.src
     ? `${site.siteMetadata.siteUrl}${metaImage.src}`
@@ -43,6 +44,16 @@ function Seo({
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      link={
+        canonical
+          ? [
+            {
+              rel: 'canonical',
+              href: canonical,
+            },
+          ]
+          : []
+      }
       meta={[
         {
           name: 'description',
@@ -51,6 +62,14 @@ function Seo({
         {
           property: 'og:title',
           content: title,
+        },
+        {
+          name: 'keywords',
+          content: keywords,
+        },
+        {
+          property: 'og:url',
+          content: url,
         },
         {
           property: 'og:description',
@@ -120,6 +139,7 @@ Seo.propTypes = {
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
   }),
+  pathname: PropTypes.string,
 };
 
 export default Seo;

@@ -8,7 +8,7 @@ import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 
-const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your article data
+const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
   const { bylineName, bylineUrl } = frontmatter;
   const image = getImage(frontmatter.featuredImage);
@@ -23,6 +23,7 @@ const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your a
           title={frontmatter.title}
           description={frontmatter.subhead}
           image={socialImage}
+          pathname={location.pathname}
         />
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.subhead}</h3>
