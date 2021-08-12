@@ -109,7 +109,7 @@ function Seo({
               },
               {
                 name: 'twitter:image',
-                content: `${site.siteMetadata.siteUrl}${image}`,
+                content: image,
               },
             ]
             : [
@@ -119,7 +119,7 @@ function Seo({
               },
               {
                 name: 'twitter:image',
-                content: `${site.siteMetadata.siteUrl}${image}`,
+                content: image,
             },
             ],
         ).concat(meta)}
