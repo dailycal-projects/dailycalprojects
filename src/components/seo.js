@@ -117,6 +117,10 @@ function Seo({
                 name: 'twitter:card',
                 content: 'summary',
               },
+              {
+                name: 'twitter:image',
+                content: `${site.siteMetadata.siteUrl}${image}`,
+            },
             ],
         ).concat(meta)}
     />
