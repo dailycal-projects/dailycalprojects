@@ -32,7 +32,7 @@ function Seo({
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
   const defaultTitle = site.siteMetadata?.title;
   const image = metaImage && metaImage.src
-    ? `${site.siteMetadata.siteUrl}${metaImage.src}`
+    ? `${metaImage.src}`
     : null;
 
   console.log(image);
