@@ -64,12 +64,8 @@ function Seo({
           content: title,
         },
         {
-          name: 'keywords',
-          content: keywords,
-        },
-        {
           property: 'og:url',
-          content: url,
+          content: canonical,
         },
         {
           property: 'og:description',

@@ -3,7 +3,7 @@ module.exports = {
     title: 'Daily Cal Projects',
     description: 'Site for Daily Cal Projects',
     author: '@shannonbonet',
-    siteUrl: 'https://dailycal-projects.netlify.app/'
+    siteUrl: 'https://dailycal-projects.netlify.app/',
   },
   flags: {
     // preserves files + cache except on `gatsby clean`
