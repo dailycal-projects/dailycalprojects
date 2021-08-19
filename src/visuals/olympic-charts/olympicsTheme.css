@@ -1,0 +1,8 @@
+.rv-treemap__leaf {
+  display: inline-block;
+  position: absolute;
+}
+
+.rv-treemap {
+  position: relative;
+}

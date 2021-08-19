@@ -6,6 +6,8 @@ import ChemPlot from '../visuals/redlining-charts/scatterplots/chemPlot';
 import HealthPlot from '../visuals/redlining-charts/scatterplots/healthPlot';
 import EconPlot from '../visuals/redlining-charts/scatterplots/econPlot';
 import RedlineMap from '../visuals/redlining-charts/map-materials/map';
+import OlympicsChart from '../visuals/olympic-charts/OlympicsChart.js';
+import OlympicsTable from '../visuals/olympic-charts/OlympicsTable.js';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -28,6 +30,8 @@ const shortcodes = {
   HealthPlot,
   EconPlot,
   RedlineMap,
+  OlympicsChart,
+  OlympicsTable,
 };
 
 export default function Layout({ children }) {
