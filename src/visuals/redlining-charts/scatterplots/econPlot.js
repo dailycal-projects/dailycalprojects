@@ -24,11 +24,11 @@ const EconPlot = () => {
     ),
     createData(
       'Unemployment',
-      'Population that is over 16 years old, eligible to work and unemployed',
+      'Population that is older than 16, eligible to work and unemployed',
     ),
     createData(
       'Education',
-      'Population with less than a high school education aged over 25',
+      'Population with less than a high school education older than 25',
     ),
     createData(
       'Traffic',

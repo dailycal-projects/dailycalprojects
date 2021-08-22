@@ -12,8 +12,15 @@ import {
   Legend,
 } from 'recharts';
 
+import { theme } from '../../styles/theme';
+
 const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
-  const colors = ['#30B189', '#96C066', '#F9A84A', '#F28147', '#E2565F'];
+  const colors = [
+    theme.palette.green,
+    theme.palette.yellowGreen,
+    theme.palette.yellowOrange,
+    theme.palette.orange,
+    theme.palette.red];
 
   const ranges = [];
   ranges[0] = data.filter((d) => d.housing_burden < 15);

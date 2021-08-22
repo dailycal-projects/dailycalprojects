@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { theme } from '../styles/theme';
 import WaterPlot from '../visuals/redlining-charts/scatterplots/waterPlot';
 import ChemPlot from '../visuals/redlining-charts/scatterplots/chemPlot';
 import HealthPlot from '../visuals/redlining-charts/scatterplots/healthPlot';
@@ -12,15 +13,17 @@ To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.
 To use a component in MDX, simply type <MyComponent />
 
-Note: Moving React components into a separate array as seen https://mdxjs.com/blog/shortcodes
-is not recommended. It seems like MDXProvider doesn't like
-parsing individual HTML elements followed by an array of React components.
+Note: MDXProvider doesn't like parsing individual HTML elements followed
+by an array of React components, so we must include them in the same array.
 */
 
 const shortcodes = {
-  a: (props) => <a {...props} style={{ textDecoration: 'none' }} />, // styles MDX hyperlinks
-  p: (props) => <p {...props} style={{ textIndent: '40px' }} />,
-  img: (props) => <img style={{ display: 'flex', flexDirection: 'column' }} />,
+  // style MDX files for any html element here!!
+  a: (props) => (
+    <a {...props} style={{ textDecoration: 'underline', color: theme.palette.black }} />), // styles MDX hyperlinks
+  p: (props) => <p {...props} style={{ color: theme.palette.black }} />,
+  img: (props) => <img {...props} style={{ display: 'flex', flexDirection: 'column' }} />,
+  // cap: (props) => <cap {...props} style={{ text:  }} />,
   WaterPlot,
   ChemPlot,
   HealthPlot,

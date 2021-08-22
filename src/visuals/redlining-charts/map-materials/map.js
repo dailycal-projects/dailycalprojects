@@ -23,7 +23,7 @@ class MyMap extends Component {
 
     return (
       <div>
-        {(typeof window !== 'undefined') ? (
+        {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
           <MapContainer
             scrollWheelZoom={false}
             style={containerStyle}
@@ -54,6 +54,9 @@ class MyMap extends Component {
                     {'ZIP code: '}
                     {info.ZIP}
                     <br />
+                    {'Census tract: '}
+                    {info.ct}
+                    <br />
                     <div style={{ color: info.color }}>
                       {'Housing burden percentile: '}
                       {info.hbp}
@@ -63,7 +66,7 @@ class MyMap extends Component {
               </CircleMarker>
             ))}
           </MapContainer>
-        ) : <p> no map here</p>}
+        ) : <p> Map is loading... </p>}
       </div>
     );
   }
