@@ -3,18 +3,28 @@ import { graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 
-const ArticlePost = ({ classes, data }) => { // data.markdownRemark holds your article data
+const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
   const { bylineName, bylineUrl } = frontmatter;
   const image = getImage(frontmatter.featuredImage);
+  const socialImage = frontmatter.featuredImage
+    ? frontmatter.featuredImage.childImageSharp.resize
+    : null;
 
   return (
     <div className={classes.articleRoot}>
       <Layout>
+        <SEO
+          title={frontmatter.title}
+          description={frontmatter.subhead}
+          image={socialImage}
+          pathname={location.pathname}
+        />
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.subhead}</h3>
         {(bylineName && bylineUrl) ? (
@@ -59,6 +69,11 @@ export const pageQuery = graphql`
         subhead
         featuredImage {
           childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
             gatsbyImageData(width: 1000)
           } 
         }

@@ -3,6 +3,7 @@ module.exports = {
     title: 'Daily Cal Projects',
     description: 'Site for Daily Cal Projects',
     author: '@shannonbonet',
+    siteUrl: 'https://dailycal-projects.netlify.app/',
   },
   flags: {
     // preserves files + cache except on `gatsby clean`
@@ -13,6 +14,7 @@ module.exports = {
     'gatsby-theme-material-ui',
     'gatsby-transformer-sharp', // Needed for dynamic images
     'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
