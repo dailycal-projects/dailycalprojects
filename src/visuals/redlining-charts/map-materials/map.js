@@ -34,7 +34,7 @@ class MyMap extends Component {
               [data.maxLat + bufferLat, data.maxLong + bufferLong],
             ]}
           >
-            <TileLayer url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
             {data.info.map((info, k) => (
               <CircleMarker

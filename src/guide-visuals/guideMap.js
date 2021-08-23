@@ -28,13 +28,13 @@ class MyMap extends Component {
             scrollWheelZoom={false}
             style={containerStyle}
             zoom={13}
-            center={[centerLat, centerLong]}
+            center={[centerLat - 0.015, centerLong + 0.005]}
             bounds={[
               [data.minLat - bufferLat, data.minLong - bufferLong],
               [data.maxLat + bufferLat, data.maxLong + bufferLong],
             ]}
           >
-            <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png" />
+            <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
             {data.info.map((info, k) => (
               <CircleMarker
@@ -44,15 +44,17 @@ class MyMap extends Component {
                 color={[info.color]}
                 fillOpacity={0.6}
               >
-                <Tooltip direction="right" offset={[-8, -2]} opacity={1}>
-                  {'Type of place: '}
-                  {' '}
-                  {info.type}
-                  {' '}
-                  <br />
-                  {'Name: '}
-                  {' '}
-                  {info.name}
+                <Tooltip opacity={1}>
+                  <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                    {'Type of place: '}
+                    {' '}
+                    {info.type}
+                    {' '}
+                    <br />
+                    {'Name: '}
+                    {' '}
+                    {info.name}
+                  </div>
                 </Tooltip>
               </CircleMarker>
             ))}
