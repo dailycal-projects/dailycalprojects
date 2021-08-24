@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  MapContainer, CircleMarker, TileLayer, Tooltip,
+  MapContainer, Popup, CircleMarker, TileLayer, Tooltip,
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { data } from './guideCoordinates';
@@ -28,7 +28,7 @@ class MyMap extends Component {
             scrollWheelZoom={false}
             style={containerStyle}
             zoom={13}
-            center={[centerLat - 0.015, centerLong + 0.005]}
+            center={[centerLat - 0.017, centerLong + 0.005]}
             bounds={[
               [data.minLat - bufferLat, data.minLong - bufferLong],
               [data.maxLat + bufferLat, data.maxLong + bufferLong],
@@ -46,6 +46,11 @@ class MyMap extends Component {
               >
                 <Tooltip opacity={1}>
                   <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                    Click me!
+                  </div>
+                </Tooltip>
+                <Popup>
+                  <div style={{ fontWeight: 500, fontSize: '16px' }}>
                     {'Type of place: '}
                     {' '}
                     {info.type}
@@ -53,9 +58,9 @@ class MyMap extends Component {
                     <br />
                     {'Name: '}
                     {' '}
-                    {info.name}
+                    <a href={info.link} target="_blank" rel="noreferrer">{info.name}</a>
                   </div>
-                </Tooltip>
+                </Popup>
               </CircleMarker>
             ))}
           </MapContainer>
