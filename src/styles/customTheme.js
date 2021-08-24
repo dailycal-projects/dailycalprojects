@@ -39,12 +39,13 @@ export const styles = () => createStyles({
   icons: {
     display: 'flex',
     width: '10vh',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   iconHover: {
+    margin: '0px 10px 0px 10px',
     transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
     '&:hover': {
-      transform: 'translate(0px, -7px)',
+      transform: 'translate(0px, -4px)',
       transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
     },
   },
