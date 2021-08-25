@@ -5,7 +5,7 @@
 export const data = {
   info: [
     {
-      name: 'Artichoke Pizza',
+      name: 'Artichoke Basille’s Pizza',
       type: 'Late night',
       coordinates: [37.867971974372644, -122.25682735915225],
       color: '#fcc988',
@@ -19,7 +19,7 @@ export const data = {
       link: 'https://www.mezzo-berkeley.com',
     },
     {
-      name: 'Sliver',
+      name: 'Sliver Pizzeria',
       type: 'Lunch',
       coordinates: [37.870202354323766, -122.2677602520181],
       color: '#fcc988',
@@ -40,14 +40,14 @@ export const data = {
       link: 'https://tacossinaloaoakland.com',
     },
     {
-      name: 'sweetgreen',
+      name: 'Sweetgreen',
       type: 'Lunch',
       coordinates: [37.87402319013602, -122.26884720089355],
       color: '#fcc988',
       link: 'https://www.sweetgreen.com',
     },
     {
-      name: "Gypsy's",
+      name: "Gypsy's Trattoria Italiana",
       type: 'Dinner',
       coordinates: [37.86807136858306, -122.25817572844822],
       color: '#fcc988',
