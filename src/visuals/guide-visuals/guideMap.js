@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {
-  MapContainer, CircleMarker, TileLayer, Tooltip, Popup, // Map is outdated; Leaflet now uses MapContainer
+  MapContainer, Popup, CircleMarker, TileLayer, Tooltip,
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { data } from './coordinates';
+import { data } from './guideCoordinates';
 
 class MyMap extends Component {
   render() {
@@ -23,12 +23,12 @@ class MyMap extends Component {
 
     return (
       <div>
-        {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
+        {(typeof window !== 'undefined') ? (
           <MapContainer
             scrollWheelZoom={false}
             style={containerStyle}
             zoom={13}
-            center={[centerLat, centerLong]}
+            center={[centerLat - 0.017, centerLong + 0.005]}
             bounds={[
               [data.minLat - bufferLat, data.minLong - bufferLong],
               [data.maxLat + bufferLat, data.maxLong + bufferLong],
@@ -51,22 +51,20 @@ class MyMap extends Component {
                 </Tooltip>
                 <Popup>
                   <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                    {'ZIP code: '}
-                    {info.ZIP}
+                    {'Type of place: '}
+                    {' '}
+                    {info.type}
+                    {' '}
                     <br />
-                    {'Census tract: '}
-                    {info.ct}
-                    <br />
-                    <div style={{ color: info.color }}>
-                      {'Housing burden percentile: '}
-                      {info.hbp}
-                    </div>
+                    {'Name: '}
+                    {' '}
+                    <a href={info.link} target="_blank" rel="noreferrer">{info.name}</a>
                   </div>
                 </Popup>
               </CircleMarker>
             ))}
           </MapContainer>
-        ) : <p> Map is loading... </p>}
+        ) : <p> no map here</p>}
       </div>
     );
   }
