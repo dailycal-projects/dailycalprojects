@@ -6,7 +6,7 @@ import ChemPlot from '../visuals/redlining-charts/scatterplots/chemPlot';
 import HealthPlot from '../visuals/redlining-charts/scatterplots/healthPlot';
 import EconPlot from '../visuals/redlining-charts/scatterplots/econPlot';
 import RedlineMap from '../visuals/redlining-charts/map-materials/map';
-import GuideMap from '../guide-visuals/guideMap';
+import GuideMap from '../visuals/guide-visuals/guideMap';
 
 /*
 To avoid using exact paths in MDX files, import your components here
