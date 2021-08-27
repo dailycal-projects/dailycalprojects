@@ -74,6 +74,13 @@ export const data = {
       link: 'https://delhidiner.net',
     },
     {
+      name: "La Val's Pizza",
+      type: 'Dinner',
+      coordinates: [37.87553089065567, -122.26036927040379],
+      color: '#fcc988',
+      link: 'http://www.lavals.com',
+    },
+    {
       name: 'Toss',
       type: 'Dinner',
       coordinates: [37.86799318843059, -122.26814369856285],

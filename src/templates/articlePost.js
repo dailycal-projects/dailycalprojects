@@ -44,6 +44,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
         <h5>{frontmatter.date}</h5>
         <div style={{ margin: 50 }}>
           <GatsbyImage image={image} alt="card illustration" />
+          <h5><b>{frontmatter.imageAttribution}</b></h5>
         </div>
         <div className={classes.articleContent}>
           <MDXRenderer
@@ -77,6 +78,7 @@ export const pageQuery = graphql`
             gatsbyImageData(width: 1000)
           } 
         }
+        imageAttribution
         embeddedImages {
           childImageSharp {
             gatsbyImageData
