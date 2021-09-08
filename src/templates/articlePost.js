@@ -53,6 +53,57 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
             {body}
           </MDXRenderer>
         </div>
+
+        <div className={classes.articleFooter} style={{ marginTop: '50px' }}>
+          <h3>
+            <b>
+              About this story
+            </b>
+          </h3>
+
+          <div style={{ marginTop: '15px' }}>
+            {frontmatter.aboutStory}
+          </div>
+
+          <div style={{ marginTop: '10px' }}>
+            This project was written and developed by the Daily Californian's Projects Department.
+          </div>
+
+          <div style={{ marginTop: '15px' }}>
+            Questions, comments or corrections? Email
+            {' '}
+            <a href="mailto: projects@dailycal.org.">projects@dailycal.org</a>
+            .
+          </div>
+
+          <div style={{ marginTop: '15px' }}>
+            Code, data, and text are open-source on
+            {' '}
+            <a href="https://github.com/dailycal-projects/dailycalprojects">GitHub</a>
+            .
+            <div style={{ marginTop: '25px' }}>
+              <h3>
+                <b>
+                  Support us
+                </b>
+              </h3>
+            </div>
+
+            <div style={{ marginTop: '15px' }}>
+              We're a nonprofit, student-run newsroom. Please consider
+              {' '}
+              <a href="https://donate.dailycal.org">donating</a>
+              {' '}
+              to support our coverage.
+            </div>
+          </div>
+        </div>
+
+        <div className={classes.articleCopyright} style={{ marginTop: '20px' }}>
+          <b>
+            Copyright © 2021 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc.
+          </b>
+        </div>
       </Layout>
     </div>
   );
@@ -68,6 +119,7 @@ export const pageQuery = graphql`
         bylineName
         bylineUrl
         subhead
+        aboutStory
         featuredImage {
           childImageSharp {
             resize(width: 1200) {

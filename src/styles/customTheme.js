@@ -115,4 +115,20 @@ export const styles = () => createStyles({
     fontSize: theme.spacing[0],
     textDecoration: 'none',
   },
+  articleFooter: {
+    fontSize: theme.spacing[0],
+    maxWidth: '45%',
+    padding: '25px',
+    backgroundColor: '#e9edf0',
+    overflow: 'hidden',
+    textAlign: 'justify',
+  },
+  articleCopyright: {
+    fontSize: theme.spacing[0],
+    maxWidth: '45%',
+    padding: '25px',
+    backgroundColor: '#e9edf0',
+    overflow: 'hidden',
+    textAlign: 'justify',
+  },
 });
