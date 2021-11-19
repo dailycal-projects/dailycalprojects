@@ -7,6 +7,7 @@ import HealthPlot from '../visuals/redlining-charts/scatterplots/healthPlot';
 import EconPlot from '../visuals/redlining-charts/scatterplots/econPlot';
 import RedlineMap from '../visuals/redlining-charts/map-materials/map';
 import GuideMap from '../visuals/guide-visuals/guideMap';
+import HateBar from '../visuals/hate-charts/hateBar';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -30,6 +31,7 @@ const shortcodes = {
   EconPlot,
   RedlineMap,
   GuideMap,
+  HateBar,
 };
 
 export default function Layout({ children }) {
