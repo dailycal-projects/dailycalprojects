@@ -33,7 +33,7 @@ const shortcodes = {
   RedlineMap,
   GuideMap,
   HateBar,
-  HateLine
+  HateLine,
 };
 
 export default function Layout({ children }) {
