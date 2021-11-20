@@ -12,8 +12,8 @@ import {
 import { alldata } from './data.js';
 
 const HateLine = () => {
-    return(
-        <div className="container">
+    return (
+  <div className="container">
     <h1> Crimes in City of Berkeley and UC Berkeley, 1995-2020 </h1>
     <LineChart
       width={600}
@@ -46,7 +46,6 @@ const HateLine = () => {
     </LineChart>
   </div>
 );
-};
-  
+ };
 
 export default HateLine;
