@@ -3,7 +3,7 @@ import {
   Legend, BarChart, XAxis, YAxis, Tooltip, Bar,
 } from 'recharts';
 
-import { data1, data2 } from './Data.js';
+import { data1, data2 } from './data.js';
 
 const HateBar = () => {
   const yellowOrange = '#F9A84A';
