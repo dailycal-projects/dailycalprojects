@@ -52,14 +52,14 @@ class ShelterChart extends Component {
             stroke="#95C361"
             fill="url(#colorPv)"
           />
-          <XAxis dataKey="year">
+          <XAxis dataKey="year" tick={{ fontSize: 17 }}>
             <Label value="Year" offset={-15} position="insideBottom" />
           </XAxis>
           <YAxis>
             <Label
-              value="Gross Median Rent ($)"
-              offset={0}
-              position="insideLeft"
+              value="Point-in-Time count"
+              offset={15}
+              position="left"
               angle={-90}
             />
           </YAxis>
@@ -73,7 +73,7 @@ class ShelterChart extends Component {
             alignItems: 'center',
           }}
         >
-          <h4> Point-in-Rime counts of houseless population in Berkeley </h4>
+          <h4> Point-in-Time counts of houseless population in Berkeley </h4>
         </div>
 
         <AreaChart
@@ -103,14 +103,14 @@ class ShelterChart extends Component {
             </linearGradient>
           </defs>
 
-          <XAxis dataKey="year">
+          <XAxis dataKey="year" tick={{ fontSize: 17 }}>
             <Label value="Year" offset={-15} position="insideBottom" />
           </XAxis>
           <YAxis>
             <Label
-              value="Count experiencing homelessness"
-              offset={0}
-              position="insideLeft"
+              value="Point-in-Time count"
+              offset={15}
+              position="left"
               angle={-90}
             />
           </YAxis>

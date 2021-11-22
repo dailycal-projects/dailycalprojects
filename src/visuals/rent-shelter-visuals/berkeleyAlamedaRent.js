@@ -36,7 +36,7 @@ class RentChart extends Component {
           }}
         >
           <defs>
-            <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="colorRentAlameda" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#b399bc" stopOpacity={0.9} />
               <stop offset="95%" stopColor="#b399bc" stopOpacity={0.3} />
             </linearGradient>
@@ -46,7 +46,7 @@ class RentChart extends Component {
             type="monotone"
             dataKey="Alameda County Median Rent"
             stroke="#b399bc"
-            fill="url(#colorPv)"
+            fill="url(#colorRentAlameda)"
           />
           <XAxis dataKey="year">
             <Label value="Year" offset={-15} position="insideBottom" />
@@ -61,6 +61,9 @@ class RentChart extends Component {
           </YAxis>
           <Tooltip />
         </AreaChart>
+
+        <br />
+        <br />
 
         <div
           style={{
@@ -85,16 +88,16 @@ class RentChart extends Component {
           }}
         >
           <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="colorRentBerkeley" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#487A9B" stopOpacity={0.9} />
-              <stop offset="95%" stopColor="#489BD1" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#487A9B" stopOpacity={0.3} />
             </linearGradient>
           </defs>
 
           <XAxis dataKey="year">
             <Label value="Year" offset={-15} position="insideBottom" />
           </XAxis>
-          <YAxis>
+          <YAxis offset={50}>
             <Label
               value="Gross Median Rent ($)"
               offset={-15}
@@ -107,8 +110,8 @@ class RentChart extends Component {
           <Area
             type="monotone"
             dataKey="Berkeley Median Rent"
-            stroke="#489BD1"
-            fill="url(#colorUv)"
+            fill="url(#colorRentBerkeley)"
+            stroke="#487A9B"
           />
         </AreaChart>
       </div>
