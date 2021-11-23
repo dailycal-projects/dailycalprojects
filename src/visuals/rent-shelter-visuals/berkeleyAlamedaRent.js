@@ -54,7 +54,7 @@ class RentChart extends Component {
           <YAxis>
             <Label
               value="Gross Median Rent ($)"
-              offset={-15}
+              offset={-20}
               position="insideLeft"
               angle={-90}
             />
@@ -100,7 +100,7 @@ class RentChart extends Component {
           <YAxis offset={50}>
             <Label
               value="Gross Median Rent ($)"
-              offset={-15}
+              offset={-20}
               position="insideLeft"
               angle={-90}
             />

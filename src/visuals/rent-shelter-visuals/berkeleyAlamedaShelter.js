@@ -58,8 +58,8 @@ class ShelterChart extends Component {
           <YAxis>
             <Label
               value="Point-in-Time count"
-              offset={15}
-              position="left"
+              offset={-20}
+              position="insideLeft"
               angle={-90}
             />
           </YAxis>
@@ -109,8 +109,8 @@ class ShelterChart extends Component {
           <YAxis>
             <Label
               value="Point-in-Time count"
-              offset={15}
-              position="left"
+              offset={-20}
+              position="insideLeft"
               angle={-90}
             />
           </YAxis>
