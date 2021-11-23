@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { createStyles } from '@material-ui/core';
 import { theme } from './theme';
 
@@ -102,11 +103,11 @@ export const styles = () => createStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: theme.spacing[6],
+    padding: theme.spacing[3],
   },
   articleContent: {
     fontSize: theme.spacing[1],
-    maxWidth: '60%',
+    maxWidth: '75%',
     textAlign: 'justify',
   },
   byline: {

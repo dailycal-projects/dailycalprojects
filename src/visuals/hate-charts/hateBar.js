@@ -3,7 +3,7 @@ import {
   Legend, BarChart, XAxis, YAxis, Tooltip, Bar,
 } from 'recharts';
 
-import { data1, data2 } from './data.js';
+import { data1, data2 } from './data';
 
 const HateBar = () => {
   const yellowOrange = '#F9A84A';
@@ -11,10 +11,9 @@ const HateBar = () => {
   const blueViolet = '#6F82B5';
   const blue = '#4B9CCF';
   return (
-    <div className="container">
-      <h1> (Aggregate) Types of Crimes, National and State-Wide </h1>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
       <BarChart
-        width={500}
+        width={375}
         height={300}
         data={data1}
         margin={{
@@ -29,11 +28,11 @@ const HateBar = () => {
         <YAxis yAxisId="right" orientation="right" stroke="#83a6ed" />
         <Tooltip />
         <Legend />
-        <Bar yAxisId="left" dataKey="california" fill={yellowOrange} />
-        <Bar yAxisId="right" dataKey="national" fill={blueViolet} />
+        <Bar yAxisId="left" dataKey="California" fill={yellowOrange} />
+        <Bar yAxisId="right" dataKey="National" fill={blueViolet} />
       </BarChart>
       <BarChart
-        width={500}
+        width={375}
         height={300}
         data={data2}
         margin={{
@@ -48,8 +47,8 @@ const HateBar = () => {
         <YAxis yAxisId="right" orientation="right" stroke={blue} />
         <Tooltip />
         <Legend />
-        <Bar yAxisId="left" dataKey="california" fill={orange} />
-        <Bar yAxisId="right" dataKey="national" fill={blue} />
+        <Bar yAxisId="left" dataKey="California" fill={orange} />
+        <Bar yAxisId="right" dataKey="National" fill={blue} />
       </BarChart>
     </div>
   );

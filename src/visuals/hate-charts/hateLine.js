@@ -9,13 +9,12 @@ import {
   Legend,
 } from 'recharts';
 
-import { alldata } from './data.js';
+import { alldata } from './data';
 
 const HateLine = () => (
   <div className="container">
-    <h1> Crimes in City of Berkeley and UC Berkeley, 1995-2020 </h1>
     <LineChart
-      width={600}
+      width={700}
       height={300}
       data={alldata}
       margin={{
