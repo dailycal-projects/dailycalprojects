@@ -40,13 +40,14 @@ class LunchChart extends Component {
           <Line
             type="monotone"
             dataKey="County-wide percent of students"
-            stroke="#8884d8"
+            stroke="#487A9B"
             activeDot={{ r: 8 }}
           />
           <Line
             type="monotone"
             dataKey="BUSD percent of students"
-            stroke="#82ca9d"
+            stroke="#F28147"
+            activeDot={{ r: 8 }}
           />
         </LineChart>
       </>
