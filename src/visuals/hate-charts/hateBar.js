@@ -13,8 +13,8 @@ const HateBar = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <BarChart
-        width={375}
-        height={300}
+        width={500}
+        height={400}
         data={data1}
         margin={{
           top: 20,
@@ -32,8 +32,8 @@ const HateBar = () => {
         <Bar yAxisId="right" dataKey="National" fill={blueViolet} />
       </BarChart>
       <BarChart
-        width={375}
-        height={300}
+        width={510}
+        height={400}
         data={data2}
         margin={{
           top: 20,
