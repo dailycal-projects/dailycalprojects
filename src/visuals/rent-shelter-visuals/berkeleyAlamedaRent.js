@@ -6,6 +6,7 @@ import {
   YAxis,
   Label,
   Tooltip,
+  ResponsiveContainer,
 
 } from 'recharts';
 import { rentShelterData } from './rentShelterData';
@@ -23,44 +24,48 @@ class RentChart extends Component {
         >
           <h4> Gross median rent in Alameda County by year </h4>
         </div>
-        <AreaChart
-          width={750}
-          height={400}
-          data={rentShelterData}
-          syncId="anyId"
-          margin={{
-            top: 15,
-            right: 15,
-            left: 30,
-            bottom: 30,
-          }}
-        >
-          <defs>
-            <linearGradient id="colorRentAlameda" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#b399bc" stopOpacity={0.9} />
-              <stop offset="95%" stopColor="#b399bc" stopOpacity={0.3} />
-            </linearGradient>
-          </defs>
+        <div>
+          <ResponsiveContainer height={400}>
+            <AreaChart
+              width={750}
+              height={400}
+              data={rentShelterData}
+              syncId="anyId"
+              margin={{
+                top: 15,
+                right: 15,
+                left: 30,
+                bottom: 30,
+              }}
+            >
+              <defs>
+                <linearGradient id="colorRentAlameda" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#b399bc" stopOpacity={0.9} />
+                  <stop offset="95%" stopColor="#b399bc" stopOpacity={0.3} />
+                </linearGradient>
+              </defs>
 
-          <Area
-            type="monotone"
-            dataKey="Alameda County Median Rent"
-            stroke="#b399bc"
-            fill="url(#colorRentAlameda)"
-          />
-          <XAxis dataKey="year">
-            <Label value="Year" offset={-15} position="insideBottom" />
-          </XAxis>
-          <YAxis>
-            <Label
-              value="Gross Median Rent ($)"
-              offset={-20}
-              position="insideLeft"
-              angle={-90}
-            />
-          </YAxis>
-          <Tooltip />
-        </AreaChart>
+              <Area
+                type="monotone"
+                dataKey="Alameda County Median Rent"
+                stroke="#b399bc"
+                fill="url(#colorRentAlameda)"
+              />
+              <XAxis dataKey="year">
+                <Label value="Year" offset={-15} position="insideBottom" />
+              </XAxis>
+              <YAxis>
+                <Label
+                  value="Gross Median Rent ($)"
+                  offset={-20}
+                  position="insideLeft"
+                  angle={-90}
+                />
+              </YAxis>
+              <Tooltip />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
 
         <br />
         <br />
@@ -74,46 +79,47 @@ class RentChart extends Component {
         >
           <h4> Gross median rent in Berkeley by year </h4>
         </div>
+        <ResponsiveContainer height={400}>
+          <AreaChart
+            width={750}
+            height={400}
+            data={rentShelterData}
+            syncId="anyId"
+            margin={{
+              top: 15,
+              right: 15,
+              left: 30,
+              bottom: 30,
+            }}
+          >
+            <defs>
+              <linearGradient id="colorRentBerkeley" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#487A9B" stopOpacity={0.9} />
+                <stop offset="95%" stopColor="#487A9B" stopOpacity={0.3} />
+              </linearGradient>
+            </defs>
 
-        <AreaChart
-          width={750}
-          height={400}
-          data={rentShelterData}
-          syncId="anyId"
-          margin={{
-            top: 15,
-            right: 15,
-            left: 30,
-            bottom: 30,
-          }}
-        >
-          <defs>
-            <linearGradient id="colorRentBerkeley" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#487A9B" stopOpacity={0.9} />
-              <stop offset="95%" stopColor="#487A9B" stopOpacity={0.3} />
-            </linearGradient>
-          </defs>
+            <XAxis dataKey="year">
+              <Label value="Year" offset={-15} position="insideBottom" />
+            </XAxis>
+            <YAxis offset={50}>
+              <Label
+                value="Gross Median Rent ($)"
+                offset={-20}
+                position="insideLeft"
+                angle={-90}
+              />
+            </YAxis>
+            <Tooltip />
 
-          <XAxis dataKey="year">
-            <Label value="Year" offset={-15} position="insideBottom" />
-          </XAxis>
-          <YAxis offset={50}>
-            <Label
-              value="Gross Median Rent ($)"
-              offset={-20}
-              position="insideLeft"
-              angle={-90}
+            <Area
+              type="monotone"
+              dataKey="Berkeley Median Rent"
+              fill="url(#colorRentBerkeley)"
+              stroke="#487A9B"
             />
-          </YAxis>
-          <Tooltip />
-
-          <Area
-            type="monotone"
-            dataKey="Berkeley Median Rent"
-            fill="url(#colorRentBerkeley)"
-            stroke="#487A9B"
-          />
-        </AreaChart>
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
     );
   }
