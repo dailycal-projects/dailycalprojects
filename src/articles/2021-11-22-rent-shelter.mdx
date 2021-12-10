@@ -8,13 +8,13 @@ bylineUrl:
   - "https://www.dailycal.org/author/cfozi"
   - "https://www.dailycal.org/author/vroseborough"
 subhead: "Displacement and density amid dizzying costs"
-# featuredImage: "../images/la-vals.png"
-# imageAttribution: "Theo Wyss-Flamm | Staff"
+featuredImage: "../images/rentshelter-feature.png"
+imageAttribution: "William Bennett | Staff"
 ---
 
-# Note: this is an un-Night'd, un-Shannon'd and un-Lisi'd staging link for the article
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
-## Why’s the rent so damn high?
+## Why’s the rent so high?
 
 Following the [passage](https://www.cityofberkeley.info/Rent_Stabilization_Board/Home/What_is_Rent_Control_.aspx) of the Rent Stabilization and Eviction for Good Cause Ordinance in 1980, Berkeley became a very affordable place to live. In part, this was due to the fact that the board could enact vacancy control, according to Berkeley’s Rent Stabilization Board chair Leah Simon-Weisberg.
 
@@ -26,6 +26,7 @@ Vacancy control allows the board to prohibit or limit rent increases while a uni
 
 ## Visualizing rising rent prices
 
+<br />
 <RentChart />
 <br />
 
@@ -54,8 +55,10 @@ The trend we see in Berkeley suggests low-income families are being priced out o
 
 Aside from displacement to other cities, the data suggest that there is an association between rising rents and the increasing homeless population.
 
-<ShelterChart />
 <BerkeleyShelterChart />
+<br />
+<AlamedaShelterChart />
+
 <br />
 
 In biennial counts from 2015 to 2019, the recorded number of individuals experiencing homelessness without shelter in Berkeley has consistently risen. However, the number of people in transitional or emergency housing has stayed fairly consistent, suggesting that more people are facing homelessness but just as many people are afforded temporary shelter.

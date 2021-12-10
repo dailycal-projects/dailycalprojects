@@ -9,7 +9,8 @@ import RedlineMap from '../visuals/redlining-charts/map-materials/map';
 import GuideMap from '../visuals/guide-visuals/guideMap';
 import LunchChart from '../visuals/rent-shelter-visuals/berkeleyAlamedaLunch';
 import RentChart from '../visuals/rent-shelter-visuals/berkeleyAlamedaRent';
-import ShelterChart from '../visuals/rent-shelter-visuals/berkeleyAlamedaShelter';
+import BerkeleyShelterChart from '../visuals/rent-shelter-visuals/berkeleyShelter';
+import AlamedaShelterChart from '../visuals/rent-shelter-visuals/alamedaShelter';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -35,7 +36,8 @@ const shortcodes = {
   GuideMap,
   LunchChart,
   RentChart,
-  ShelterChart,
+  BerkeleyShelterChart,
+  AlamedaShelterChart,
 };
 
 export default function Layout({ children }) {

@@ -35,7 +35,7 @@ class LunchChart extends Component {
             <XAxis dataKey="School year" angle={0} tick={{ fontSize: 16 }}>
               <Label value="School year" offset={-50} position="insideBottom" />
             </XAxis>
-            <YAxis />
+            <YAxis tick={{ fontSize: 16 }} />
             <Tooltip />
             <Legend />
             <Line
