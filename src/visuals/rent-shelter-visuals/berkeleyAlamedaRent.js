@@ -88,11 +88,11 @@ class RentChart extends Component {
                   height={0}
                   axisType="yAxis"
                 >
-                  Gross Median Rent ($)
+                  Gross Median Rent
                 </AlignedAxisLabel>
 )}
             />
-            <Tooltip />
+            <Tooltip separator=": $" />
             {/* content={<RentCustomTooltip />} */}
 
             <Area
@@ -156,11 +156,11 @@ class RentChart extends Component {
                     height={0}
                     axisType="yAxis"
                   >
-                    Gross Median Rent ($)
+                    Gross Median Rent
                   </AlignedAxisLabel>
                   )}
               />
-              <Tooltip />
+              <Tooltip separator=": $" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
