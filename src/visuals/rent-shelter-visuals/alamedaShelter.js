@@ -34,6 +34,8 @@ class AlamedaShelterChart extends Component {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            position: 'relative',
+            left: '20px',
           }}
         >
 
@@ -65,14 +67,14 @@ class AlamedaShelterChart extends Component {
 
             <Area
               type="monotone"
-              dataKey="Alameda Homeless Population"
+              dataKey="Alameda County homeless population"
               stroke="#95C361"
               fill="url(#colorPv)"
             />
             <XAxis dataKey="year" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
-              <Label value="Year" offset={-20} position="insideBottom" />
+              <Label value="Year" offset={-24} position="insideBottom" />
             </XAxis>
-            <YAxis tick={{ fontSize: 16 }} label={<AxisLabel x={20} y={160} width={0} height={0} axisType="yAxis">Point-in-Time Count</AxisLabel>} />
+            <YAxis tick={{ fontSize: 16 }} label={<AxisLabel x={20} y={160} width={0} height={0} axisType="yAxis">Point-in-Time count</AxisLabel>} />
             <Tooltip />
           </AreaChart>
         </ResponsiveContainer>

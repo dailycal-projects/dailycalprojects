@@ -51,6 +51,8 @@ class RentChart extends Component {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            position: 'relative',
+            left: '20px',
           }}
         >
           <h4> Gross median rent in Berkeley by year </h4>
@@ -76,7 +78,7 @@ class RentChart extends Component {
             </defs>
 
             <XAxis dataKey="year" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
-              <Label value="Year" offset={-20} position="insideBottom" />
+              <Label value="Year" offset={-24} position="insideBottom" />
             </XAxis>
             <YAxis
               tick={{ fontSize: 16 }}
@@ -88,7 +90,7 @@ class RentChart extends Component {
                   height={0}
                   axisType="yAxis"
                 >
-                  Gross Median Rent
+                  Gross median rent
                 </AlignedAxisLabel>
 )}
             />
@@ -97,7 +99,7 @@ class RentChart extends Component {
 
             <Area
               type="monotone"
-              dataKey="Berkeley Median Rent"
+              dataKey="Berkeley median rent"
               fill="url(#colorRentBerkeley)"
               stroke="#487A9B"
             />
@@ -112,6 +114,8 @@ class RentChart extends Component {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            position: 'relative',
+            left: '20px',
           }}
         >
           <h4> Gross median rent in Alameda County by year </h4>
@@ -139,12 +143,12 @@ class RentChart extends Component {
 
               <Area
                 type="monotone"
-                dataKey="Alameda County Median Rent"
+                dataKey="Alameda County median rent"
                 stroke="#b399bc"
                 fill="url(#colorRentAlameda)"
               />
               <XAxis dataKey="year" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
-                <Label value="Year" offset={-20} position="insideBottom" />
+                <Label value="Year" offset={-24} position="insideBottom" />
               </XAxis>
               <YAxis
                 tick={{ fontSize: 16 }}
@@ -156,7 +160,7 @@ class RentChart extends Component {
                     height={0}
                     axisType="yAxis"
                   >
-                    Gross Median Rent
+                    Gross median rent
                   </AlignedAxisLabel>
                   )}
               />

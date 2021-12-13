@@ -16,7 +16,14 @@ class LunchChart extends Component {
   render() {
     return (
       <div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'relative',
+          left: '20px',
+        }}
+        >
           <h4> Percent of students in free and reduced-price meals program </h4>
         </div>
         <ResponsiveContainer height={550}>

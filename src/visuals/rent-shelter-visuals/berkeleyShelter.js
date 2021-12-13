@@ -34,6 +34,8 @@ class BerkeleyShelterChart extends Component {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            position: 'relative',
+            left: '20px',
           }}
         >
           <h4> Point-in-Time counts of homeless population in Berkeley </h4>
@@ -68,26 +70,26 @@ class BerkeleyShelterChart extends Component {
             </defs>
 
             <XAxis dataKey="year" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
-              <Label value="Year" offset={-20} position="insideBottom" />
+              <Label value="Year" offset={-24} position="insideBottom" />
             </XAxis>
-            <YAxis tick={{ fontSize: 16 }} label={<AxisLabel x={20} y={160} width={0} height={0} axisType="yAxis">Point-in-Time Count</AxisLabel>} />
+            <YAxis tick={{ fontSize: 16 }} label={<AxisLabel x={20} y={160} width={0} height={0} axisType="yAxis">Point-in-Time count</AxisLabel>} />
             <Tooltip />
 
             <Area
               type="monotone"
-              dataKey="Berkeley Total Count"
+              dataKey="Berkeley total count"
               stroke="#fba93d"
               fill="url(#colorUv)"
             />
             <Area
               type="monotone"
-              dataKey="Berkeley Unsheltered Count"
+              dataKey="Berkeley unsheltered count"
               stroke="#95c361"
               fill="url(#colorUSh)"
             />
             <Area
               type="monotone"
-              dataKey="Berkeley Sheltered Count"
+              dataKey="Berkeley sheltered count"
               stroke="#a07fac"
               fill="url(#colorSh)"
             />
