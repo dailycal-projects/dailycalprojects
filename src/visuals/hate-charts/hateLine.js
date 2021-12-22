@@ -14,8 +14,8 @@ import { alldata } from './data';
 const HateLine = () => (
   <div className="container">
     <LineChart
-      width={700}
-      height={300}
+      width={1200}
+      height={400}
       data={alldata}
       margin={{
         top: 20,
