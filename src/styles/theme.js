@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export const theme = {
   palette: {
     background: '#F8F8F8',
