@@ -21,5 +21,5 @@ export const theme = {
   },
   cardShadow: '0px 2px 0px 0.5px rgba(14, 20, 27, 0.15)',
   iconShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-  spacing: [17, 18, 24, 30, 36, 48, 60],
+  spacing: [15, 17, 24, 30, 36, 48, 60],
 };

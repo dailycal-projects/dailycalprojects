@@ -116,20 +116,16 @@ export const styles = () => createStyles({
     fontSize: theme.spacing[0],
     textDecoration: 'none',
   },
-  articleFooter: {
-    fontSize: theme.spacing[0],
-    maxWidth: '45%',
-    padding: '25px',
-    backgroundColor: '#e9edf0',
-    overflow: 'hidden',
-    textAlign: 'justify',
+  footerContainer: {
+    fontSize: theme.spacing[7],
+    maxWidth: '50%',
   },
-  articleCopyright: {
-    fontSize: theme.spacing[0],
-    maxWidth: '45%',
-    padding: '25px',
+  footerCard: {
     backgroundColor: '#e9edf0',
-    overflow: 'hidden',
-    textAlign: 'justify',
+    padding: '25px 25px 10px 25px',
+    margin: '10px 0px 20px 0px',
+  },
+  footBar: {
+    width: '100%',
   },
 });
