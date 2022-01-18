@@ -64,7 +64,7 @@ class MyMap extends Component {
               </CircleMarker>
             ))}
           </MapContainer>
-        ) : <p> no map here</p>}
+        ) : <p> Map is loading... </p>}
       </div>
     );
   }

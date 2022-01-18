@@ -12,6 +12,7 @@ import RentChart from '../visuals/rent-shelter-visuals/berkeleyAlamedaRent';
 import BerkeleyShelterChart from '../visuals/rent-shelter-visuals/berkeleyShelter';
 import AlamedaShelterChart from '../visuals/rent-shelter-visuals/alamedaShelter';
 import BUSDBlackEnrollment from '../visuals/exodus-visuals/BlackEnrollmentBUSD';
+import DistrictMap from '../visuals/exodus-visuals/district-map-materials/districtMap';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -40,6 +41,7 @@ const shortcodes = {
   BerkeleyShelterChart,
   AlamedaShelterChart,
   BUSDBlackEnrollment,
+  DistrictMap,
 };
 
 export default function Layout({ children }) {
