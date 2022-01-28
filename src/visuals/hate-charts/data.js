@@ -143,7 +143,7 @@ export const data1 = [
     California: 30,
   },
   {
-    name: 'Anti-Disability',
+    name: 'Disability-Motivated',
     National: 1834,
     California: 94,
   },
@@ -156,7 +156,7 @@ export const data2 = [
     California: 5569,
   },
   {
-    name: 'Anti-LGBTQ+',
+    name: 'Anti-LGBTQIA+',
     National: 35731,
     California: 7620,
   },

@@ -12,9 +12,9 @@ const HateBar = () => {
   const blue = '#4B9CCF';
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <ResponsiveContainer width={500} height={400}>
+      <ResponsiveContainer width={550} height={400}>
         <BarChart
-          width={500}
+          width={550}
           height={400}
           data={data1}
           margin={{
@@ -33,9 +33,9 @@ const HateBar = () => {
           <Bar yAxisId="right" dataKey="National" fill={blueViolet} />
         </BarChart>
       </ResponsiveContainer>
-      <ResponsiveContainer width={510} height={400}>
+      <ResponsiveContainer width={550} height={400}>
         <BarChart
-          width={510}
+          width={550}
           height={400}
           data={data2}
           margin={{
