@@ -19,8 +19,8 @@ const HateBar = () => {
           data={data1}
           margin={{
             top: 20,
-            right: 30,
-            left: 20,
+            right: 60,
+            left: -10,
             bottom: 5,
           }}
         >
@@ -40,8 +40,8 @@ const HateBar = () => {
           data={data2}
           margin={{
             top: 20,
-            right: 30,
-            left: 20,
+            right: 50,
+            left: 5,
             bottom: 5,
           }}
         >
