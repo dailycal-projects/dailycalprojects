@@ -33,13 +33,13 @@ const HateLine = () => (
         <Legend />
         <Line
           type="monotone"
-          dataKey="city"
+          dataKey="City"
           stroke="#E2565F"
           activeDot={{ r: 8 }}
         />
         <Line
           type="monotone"
-          dataKey="campus"
+          dataKey="Campus"
           stroke="#000080"
           activeDot={{ r: 8 }}
         />
