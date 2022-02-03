@@ -138,7 +138,7 @@ export const data1 = [
     California: 21,
   },
   {
-    name: 'Multi-bias',
+    name: 'Multibias',
     National: 761,
     California: 30,
   },
