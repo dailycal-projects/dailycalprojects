@@ -46,7 +46,8 @@ const HateBar = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
+          </XAxis>
           <YAxis yAxisId="left" orientation="left" stroke={orange} />
           <YAxis yAxisId="right" orientation="right" stroke={blue} />
           <Tooltip />
