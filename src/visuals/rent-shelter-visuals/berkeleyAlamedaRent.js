@@ -11,23 +11,6 @@ import {
 } from 'recharts';
 import { rentShelterData } from './rentShelterData';
 
-// const RentCustomTooltip = ({
-//   active, payload, label,
-// }) => {
-//   if (active && payload && payload.length) {
-//     return (
-//       <div className="custom-tooltip">
-//         <p className="label">
-//           {`${label} : $`}
-//           {`${payload[0].value}`}
-//         </p>
-//       </div>
-//     );
-//   }
-
-//   return null;
-// };
-
 const AlignedAxisLabel = ({
   axisType, x, y, width, height, stroke, children,
 }) => {

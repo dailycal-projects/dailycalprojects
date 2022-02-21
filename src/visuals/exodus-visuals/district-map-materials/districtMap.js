@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  MapContainer, CircleMarker, TileLayer, Tooltip, Popup, Polygon, // Map is outdated; Leaflet now uses MapContainer
+  MapContainer, CircleMarker, TileLayer, Tooltip, Popup, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { districtData } from './districtData';
@@ -26,8 +26,9 @@ class MyMap extends Component {
         {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
           <MapContainer
             scrollWheelZoom={false}
+            minZoom={8}
             style={containerStyle}
-            zoom={13}
+            zoom={8}
             center={[centerLat, centerLong]}
             bounds={[
               [districtData.minLat - bufferLat, districtData.minLong - bufferLong],
@@ -37,39 +38,31 @@ class MyMap extends Component {
             <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
             {districtData.info.map((info, k) => (
-            //   <CircleMarker
-            //     key={k}
-            //     center={[info.coordinates[0], info.coordinates[1]]}
-            //     radius={10}
-            //     color={[info.color]}
-            //     fillOpacity={0.6}
-            //   >
-
-              //     <Tooltip opacity={1}>
-              //       <div style={{ fontWeight: 500, fontSize: '16px' }}>
-              //         Click me!
-              //       </div>
-              //     </Tooltip>
-
-              //     <Popup>
-              //       <div style={{ fontWeight: 500, fontSize: '16px' }}>
-              //         {'ZIP code: '}
-              //         {info.ZIP}
-              //         <br />
-              //         {'Census tract: '}
-              //         {info.ct}
-              //         <br />
-              //         <div style={{ color: info.color }}>
-              //           {'Housing burden percentile: '}
-              //           {info.hbp}
-              //         </div>
-              //       </div>
-              //     </Popup>
-              //   </CircleMarker>
-              <Polygon pathOptions={{ color: info.colorcode }} positions={info.geometry} key={k}>
-                <Tooltip sticky>sticky Tooltip for Polygon</Tooltip>
-              </Polygon>
-
+              <CircleMarker
+                key={k}
+                center={[info.center[0], info.center[1]]}
+                radius={info.size}
+                color={[info.color]}
+                fillOpacity={0.6}
+              >
+                <Tooltip opacity={1}>
+                  <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                    Click me!
+                  </div>
+                </Tooltip>
+                <Popup>
+                  <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                    {'District: '}
+                    {info.District}
+                    <br />
+                    {'County: '}
+                    {info.County}
+                    <br />
+                    {'Difference: '}
+                    {info.diff}
+                  </div>
+                </Popup>
+              </CircleMarker>
             ))}
           </MapContainer>
         ) : <p> Map is loading... </p>}
