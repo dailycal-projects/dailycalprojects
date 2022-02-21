@@ -46,6 +46,7 @@ class RentChart extends Component {
             height={400}
             data={rentShelterData}
             syncId="anyId"
+          
             margin={{
               top: 15,
               right: 15,
