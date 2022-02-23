@@ -65,11 +65,11 @@ class MyMap extends Component {
                     {info.BEnr2021}
                     <br />
                     {'Composition in 1990-1991: '}
-                    {info.BEnr9091Perc * 100}
+                    {Math.round(info.BEnr9091Perc * 1000) / 10}
                     %
                     <br />
                     {'Composition in 2020-2021: '}
-                    {info.BEnr2021Perc * 100}
+                    {Math.round(info.BEnr2021Perc * 1000) / 10}
                     %
                     <br />
                     {'Difference in percent composition: '}
