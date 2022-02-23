@@ -46,7 +46,6 @@ class BerkeleyShelterChart extends Component {
             width={750}
             height={400}
             data={berkeleyShelterData}
-            syncId="anyId"
             margin={{
               top: 15,
               right: 15,

@@ -26,9 +26,9 @@ class MyMap extends Component {
         {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
           <MapContainer
             scrollWheelZoom={false}
-            minZoom={8}
+            minZoom={7}
             style={containerStyle}
-            zoom={8}
+            zoom={7.5}
             center={[centerLat, centerLong]}
             bounds={[
               [districtData.minLat - bufferLat, districtData.minLong - bufferLong],
@@ -42,7 +42,7 @@ class MyMap extends Component {
                 key={k}
                 center={[info.center[0], info.center[1]]}
                 radius={info.size}
-                color={[info.color]}
+                color={info.color}
                 fillOpacity={0.6}
               >
                 <Tooltip opacity={1}>
@@ -58,7 +58,21 @@ class MyMap extends Component {
                     {'County: '}
                     {info.County}
                     <br />
-                    {'Difference: '}
+                    {'Enrollment in 1990-1991: '}
+                    {info.BEnr9091}
+                    <br />
+                    {'Enrollment in 2020-2021: '}
+                    {info.BEnr2021}
+                    <br />
+                    {'Composition in 1990-1991: '}
+                    {info.BEnr9091Perc * 100}
+                    %
+                    <br />
+                    {'Composition in 2020-2021: '}
+                    {info.BEnr2021Perc * 100}
+                    %
+                    <br />
+                    {'Difference in percent composition: '}
                     {info.diff}
                   </div>
                 </Popup>

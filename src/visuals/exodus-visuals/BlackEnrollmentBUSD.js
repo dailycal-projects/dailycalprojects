@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import {
-  AreaChart, Area, XAxis, YAxis, Tooltip, Label, ResponsiveContainer,
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Label,
+  ResponsiveContainer,
 } from 'recharts';
 import { berkACData } from './berkACData';
 
@@ -47,15 +53,27 @@ class BUSDBlackEnrollment extends Component {
           <AreaChart
             width={750}
             height={400}
-            syncId="anyId"
             data={berkACData}
             margin={{
-              top: 15,
-              right: 15,
-              left: 30,
+              top: 10,
+              right: 30,
+              left: 20,
               bottom: 30,
             }}
           >
+            <defs>
+              <linearGradient
+                id="colorEnrollBerkeley"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="1"
+              >
+                <stop offset="5%" stopColor="#487A9B" stopOpacity={0.9} />
+                <stop offset="95%" stopColor="#487A9B" stopOpacity={0.3} />
+              </linearGradient>
+            </defs>
+
             <XAxis
               dataKey="year"
               angle={0}
@@ -78,18 +96,6 @@ class BUSDBlackEnrollment extends Component {
               )}
             />
             <Tooltip />
-            <defs>
-              <linearGradient
-                id="colorEnrollBerkeley"
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-              >
-                <stop offset="5%" stopColor="#487A9B" stopOpacity={0.9} />
-                <stop offset="95%" stopColor="#487A9B" stopOpacity={0.3} />
-              </linearGradient>
-            </defs>
             <Area
               type="monotone"
               dataKey="Berkeley"
@@ -98,6 +104,7 @@ class BUSDBlackEnrollment extends Component {
             />
           </AreaChart>
         </ResponsiveContainer>
+        <br />
         <div
           style={{
             display: 'flex',
