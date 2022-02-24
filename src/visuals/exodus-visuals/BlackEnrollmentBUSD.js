@@ -45,7 +45,7 @@ class BUSDBlackEnrollment extends Component {
         >
           <h4>
 
-            Enrollment of Black students in BUSD
+            Enrollment of Black students in Berkeley Unified School District
 
           </h4>
         </div>

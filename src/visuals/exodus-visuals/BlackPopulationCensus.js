@@ -81,7 +81,7 @@ class BlackPopulationCensus extends Component {
                   height={0}
                   axisType="yAxis"
                 >
-                  Black population in Berkeley
+                  Count
                 </AlignedAxisLabel>
               )}
             />
@@ -142,7 +142,7 @@ class BlackPopulationCensus extends Component {
                   height={0}
                   axisType="yAxis"
                 >
-                  Black population in Alameda County
+                  Count
                 </AlignedAxisLabel>
               )}
             />
