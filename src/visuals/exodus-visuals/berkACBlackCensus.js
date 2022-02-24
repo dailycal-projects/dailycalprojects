@@ -36,7 +36,7 @@ export const berkACBlackCensus = [
   },
   {
     year: '2020',
-    Berkeley: 9812,
+    Berkeley: 12719,
     'Alameda County': 185059,
   },
 ];
