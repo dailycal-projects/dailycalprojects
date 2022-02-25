@@ -15,6 +15,9 @@ import LunchChart from '../visuals/rent-shelter-visuals/berkeleyAlamedaLunch';
 import RentChart from '../visuals/rent-shelter-visuals/berkeleyAlamedaRent';
 import BerkeleyShelterChart from '../visuals/rent-shelter-visuals/berkeleyShelter';
 import AlamedaShelterChart from '../visuals/rent-shelter-visuals/alamedaShelter';
+import BUSDBlackEnrollment from '../visuals/exodus-visuals/BlackEnrollmentBUSD';
+import DistrictMap from '../visuals/exodus-visuals/district-map-materials/districtMap';
+import BlackPopulationCensus from '../visuals/exodus-visuals/BlackPopulationCensus';
 
 
 /*
@@ -39,15 +42,15 @@ const shortcodes = {
   EconPlot,
   RedlineMap,
   GuideMap,
-
   HateBar,
   HateLine,
-
   LunchChart,
   RentChart,
   BerkeleyShelterChart,
   AlamedaShelterChart,
-
+  BUSDBlackEnrollment,
+  DistrictMap,
+  BlackPopulationCensus,
 };
 
 export default function Layout({ children }) {
