@@ -80,7 +80,7 @@ class BUSDBlackEnrollment extends Component {
               angle={0}
               tick={{ fontSize: 16, transform: 'translate(0, 7)' }}
             >
-              <Label value="School year" offset={-15} position="insideBottom" />
+              <Label value="Academic year" offset={-20} position="insideBottom" />
             </XAxis>
             <YAxis
               tick={{ fontSize: 16 }}
@@ -140,7 +140,7 @@ class BUSDBlackEnrollment extends Component {
               angle={0}
               tick={{ fontSize: 16, transform: 'translate(0, 7)' }}
             >
-              <Label value="School year" offset={-15} position="insideBottom" />
+              <Label value="Academic year" offset={-20} position="insideBottom" />
             </XAxis>
             <YAxis
               tick={{ fontSize: 16 }}
