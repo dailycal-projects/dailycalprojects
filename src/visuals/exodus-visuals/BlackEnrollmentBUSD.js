@@ -70,8 +70,8 @@ class BUSDBlackEnrollment extends Component {
                 x2="0"
                 y2="1"
               >
-                <stop offset="5%" stopColor="#487A9B" stopOpacity={0.9} />
-                <stop offset="95%" stopColor="#487A9B" stopOpacity={0.3} />
+                <stop offset="5%" stopColor="#9d3134" stopOpacity={0.9} />
+                <stop offset="95%" stopColor="#9d3134" stopOpacity={0.3} />
               </linearGradient>
             </defs>
 
@@ -100,7 +100,7 @@ class BUSDBlackEnrollment extends Component {
             <Area
               type="monotone"
               dataKey="Berkeley"
-              stroke="#487A9B"
+              stroke="#9d3134"
               fill="url(#colorEnrollBerkeley)"
             />
           </AreaChart>
@@ -159,14 +159,14 @@ class BUSDBlackEnrollment extends Component {
             <Tooltip />
             <defs>
               <linearGradient id="colorRentAlameda" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#b399bc" stopOpacity={0.9} />
-                <stop offset="95%" stopColor="#b399bc" stopOpacity={0.3} />
+                <stop offset="5%" stopColor="#565c7f" stopOpacity={0.9} />
+                <stop offset="95%" stopColor="#565c7f" stopOpacity={0.3} />
               </linearGradient>
             </defs>
             <Area
               type="monotone"
               dataKey="Alameda County"
-              stroke="#b399bc"
+              stroke="#565c7f"
               fill="url(#colorRentAlameda)"
             />
           </AreaChart>

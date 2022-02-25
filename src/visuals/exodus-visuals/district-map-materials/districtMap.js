@@ -23,7 +23,23 @@ class MyMap extends Component {
 
     return (
       <div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'relative',
+            left: '0px',
+          }}
+        >
+          <h4>
+
+            Change in enrollment of Black students between the 1990-91 and 2020-21 academic years
+
+          </h4>
+        </div>
         {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
+
           <MapContainer
             scrollWheelZoom={false}
             minZoom={7}
@@ -45,11 +61,6 @@ class MyMap extends Component {
                 color={info.color}
                 fillOpacity={0.6}
               >
-                <Tooltip opacity={1}>
-                  <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                    Click me!
-                  </div>
-                </Tooltip>
                 <Popup>
                   <div style={{ fontWeight: 500, fontSize: '16px' }}>
                     {'District: '}

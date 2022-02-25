@@ -88,14 +88,14 @@ class BlackPopulationCensus extends Component {
             <Tooltip />
             <defs>
               <linearGradient id="colorRentAlameda" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#487A9B" stopOpacity={0.9} />
-                <stop offset="95%" stopColor="#487A9B" stopOpacity={0.3} />
+                <stop offset="5%" stopColor="#7580a0" stopOpacity={0.9} />
+                <stop offset="95%" stopColor="#7580a0" stopOpacity={0.3} />
               </linearGradient>
             </defs>
             <Area
               type="monotone"
               dataKey="Berkeley"
-              stroke="#487A9B"
+              stroke="#7580a0"
               fill="url(#colorRentAlameda)"
             />
           </AreaChart>
@@ -149,14 +149,14 @@ class BlackPopulationCensus extends Component {
             <Tooltip />
             <defs>
               <linearGradient id="colorRentBerkeley" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#ec9792" stopOpacity={0.9} />
-                <stop offset="95%" stopColor="#ec9792" stopOpacity={0.3} />
+                <stop offset="5%" stopColor="#f5a57e" stopOpacity={0.9} />
+                <stop offset="95%" stopColor="#f5a57e" stopOpacity={0.3} />
               </linearGradient>
             </defs>
             <Area
               type="monotone"
               dataKey="Alameda County"
-              stroke="#ec9792"
+              stroke="#f5a57e"
               fill="url(#colorRentBerkeley)"
             />
           </AreaChart>
