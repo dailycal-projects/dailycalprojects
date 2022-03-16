@@ -24,8 +24,7 @@ const HateBar = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
-          </XAxis>
+          <XAxis dataKey="name" tick={{ fontSize: 16, transform: 'translate(0, 7)' }} />
           <YAxis yAxisId="left" orientation="left" stroke={yellowOrange} />
           <YAxis yAxisId="right" orientation="right" stroke="#83a6ed" />
           <Tooltip />
@@ -46,8 +45,7 @@ const HateBar = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
-          </XAxis>
+          <XAxis dataKey="name" tick={{ fontSize: 16, transform: 'translate(0, 7)' }} />
           <YAxis yAxisId="left" orientation="left" stroke={orange} />
           <YAxis yAxisId="right" orientation="right" stroke={blue} />
           <Tooltip />
