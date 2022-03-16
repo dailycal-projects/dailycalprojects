@@ -27,10 +27,10 @@ class GymBars extends Component {
         >
           <h4> Bar scores by week and team </h4>
         </div>
-        <ResponsiveContainer height={650}>
+        <ResponsiveContainer height={750} width={1250}>
           <ScatterChart
-            width={850}
-            height={650}
+            width={1250}
+            height={750}
             margin={{
               top: 20,
               right: 20,
