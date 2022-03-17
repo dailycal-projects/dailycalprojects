@@ -30,6 +30,7 @@ class GymTotals extends Component {
         </div>
         <ResponsiveContainer height={600} width="100%">
           <ScatterChart
+            data={totalsData}
             width={900}
             height={600}
             margin={{
