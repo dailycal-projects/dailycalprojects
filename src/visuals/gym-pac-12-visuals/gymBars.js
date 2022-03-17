@@ -27,10 +27,10 @@ class GymBars extends Component {
         >
           <h4> Bar scores by week and team </h4>
         </div>
-        <ResponsiveContainer height={650}>
+        <ResponsiveContainer height={600} width="100%">
           <ScatterChart
-            width={850}
-            height={650}
+            width={900}
+            height={600}
             margin={{
               top: 20,
               right: 20,
@@ -50,7 +50,7 @@ class GymBars extends Component {
               type="number"
               tickCount={8}
               dataKey="y"
-              name="Total score: "
+              name="Bar score: "
               domain={[46.75, 50]}
             />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} separator="" />

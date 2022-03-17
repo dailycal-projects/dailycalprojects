@@ -28,10 +28,10 @@ class GymTotals extends Component {
         >
           <h4> Total scores by week and team </h4>
         </div>
-        <ResponsiveContainer height={650}>
+        <ResponsiveContainer height={600} width="100%">
           <ScatterChart
-            width={850}
-            height={650}
+            width={900}
+            height={600}
             margin={{
               top: 20,
               right: 20,
