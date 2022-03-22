@@ -7,10 +7,12 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
+import ArticleFooter from '../components/articleFooter';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
   const { bylineName, bylineUrl } = frontmatter;
+  const { byLinePosition, byLineEmail } = frontmatter;
   const image = getImage(frontmatter.featuredImage);
   const socialImage = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.resize
@@ -60,6 +62,8 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
             {body}
           </MDXRenderer>
         </div>
+
+        <ArticleFooter about={frontmatter.aboutStory} />
       </Layout>
     </div>
   );
@@ -75,6 +79,7 @@ export const pageQuery = graphql`
         bylineName
         bylineUrl
         subhead
+        aboutStory
         featuredImage {
           childImageSharp {
             resize(width: 1200) {

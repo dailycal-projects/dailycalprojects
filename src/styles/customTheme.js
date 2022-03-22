@@ -116,4 +116,16 @@ export const styles = () => createStyles({
     fontSize: theme.spacing[0],
     textDecoration: 'none',
   },
+  footerContainer: {
+    fontSize: theme.spacing[7],
+    maxWidth: '50%',
+  },
+  footerCard: {
+    backgroundColor: '#e9edf0',
+    padding: '25px 25px 10px 25px',
+    margin: '10px 0px 20px 0px',
+  },
+  footBar: {
+    width: '100%',
+  },
 });
