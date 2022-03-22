@@ -4,11 +4,12 @@ import { styles } from '../styles/customTheme';
 
 const ArticleFooter = ({ classes, about }) => (
   <div className={classes.footerContainer}>
+    <br />
     <div className={classes.footerCard}>
       <h3>
         <b> About this story </b>
       </h3>
-      <p> This project was written and developed by the Projects Department at The Daily Californian. </p>
+      <p> This project was developed by the Projects Department at The Daily Californian. </p>
       <p>
         {about}
       </p>
@@ -19,7 +20,7 @@ const ArticleFooter = ({ classes, about }) => (
         .
       </p>
       <p>
-        Code, data, and text are open-source on
+        Code, data and text are open-source on
         {' '}
         <a href="https://github.com/dailycal-projects/dailycalprojects">GitHub</a>
         .
