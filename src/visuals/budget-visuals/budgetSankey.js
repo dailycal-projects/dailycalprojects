@@ -411,6 +411,7 @@ const BerkeleyStanfordSankey = () => {
   return (
     <div>
       <br />
+      <h4> Year </h4>
       <Slider
         aria-label="Year"
         defaultValue={2020}
@@ -421,6 +422,7 @@ const BerkeleyStanfordSankey = () => {
         max={2020}
         onChange={handleChangeS}
       />
+      <h4> Stanford budget breakdown </h4>
       <Sankey
         width={960}
         height={600}
@@ -432,13 +434,15 @@ const BerkeleyStanfordSankey = () => {
           top: 100,
           bottom: 100,
         }}
-        link={{ stroke: '#70AADA' }}
         node={<SankeyNode containerWidth={960} colors={colors} />}
+        link={{ stroke: '#E87876' }}
+
       >
         <Tooltip label="k" />
       </Sankey>
       <br />
       <br />
+      <h4> Year </h4>
       <Slider
         aria-label="Year"
         defaultValue={2020}
@@ -449,6 +453,7 @@ const BerkeleyStanfordSankey = () => {
         max={2020}
         onChange={handleChangeB}
       />
+      <h4> UC Berkeley budget breakdown </h4>
       <Sankey
         width={960}
         height={600}
@@ -461,7 +466,7 @@ const BerkeleyStanfordSankey = () => {
           top: 100,
           bottom: 100,
         }}
-        link={{ stroke: '#E87876' }}
+        link={{ stroke: '#70AADA' }}
 
       >
         <Tooltip />
