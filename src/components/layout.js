@@ -22,6 +22,7 @@ import GymBars from '../visuals/gym-pac-12-visuals/gymBars';
 import GymBeam from '../visuals/gym-pac-12-visuals/gymBeam';
 import GymFloor from '../visuals/gym-pac-12-visuals/gymFloor';
 import BerkeleyStanfordSankey from '../visuals/budget-visuals/budgetSankey';
+import SunburstAnyChart from '../visuals/budget-visuals/2020BudgetSunburst';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -60,6 +61,7 @@ const shortcodes = {
   GymBeam,
   GymFloor,
   BerkeleyStanfordSankey,
+  SunburstAnyChart,
 };
 
 export default function Layout({ children }) {
