@@ -8,7 +8,7 @@ import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 
 const Timeline1921 = () => (
-  <Timeline position="left">
+  <Timeline>
     <TimelineItem>
       <TimelineOppositeContent color="text.secondary">
         <b> January 2020 </b>

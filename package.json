@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.12.1",
-    "@material-ui/lab": "^5.0.0-alpha.53",
+    "@material-ui/lab": "^4.0.0-alpha.61",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "gatsby": "^3.9.1",
