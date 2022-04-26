@@ -68,7 +68,7 @@ const Timeline1921 = () => (
         <p> The new development was to be built on five University-owned parcels of the six parcels composing a city block just west of campus. The only parcel on the block the UC did not own was 1921 Walnut St. </p>
         <br />
 
-      </TimelineContent>
+      </TimelineContent> 
     </TimelineItem>
 
     <TimelineItem>
