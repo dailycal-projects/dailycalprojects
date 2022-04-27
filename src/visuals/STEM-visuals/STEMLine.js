@@ -52,12 +52,12 @@ const STEMEnrollmentLine = () => (
     </div>
     <ResponsiveContainer height={550}>
       <LineChart
-        width={1400}
+        width={750}
         height={550}
         data={STEMEnrollmentData}
         margin={{
-          top: 15,
-          right: 15,
+          top: 5,
+          right: 30,
           left: 30,
           bottom: 30,
         }}
