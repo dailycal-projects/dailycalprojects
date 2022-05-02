@@ -1,8 +1,7 @@
 import React from 'react';
 import { Tooltip, Sankey } from 'recharts';
 import { Slider } from '@mui/material';
-// import MyCustomNode from './myCustomNode';
-import SankeyNode from './sankeyNode';
+import SankeyNode from './SankeyNode';
 
 const nodes = [
   {
@@ -438,7 +437,7 @@ const BerkeleyStanfordSankey = () => {
         link={{ stroke: '#E87876' }}
 
       >
-        <Tooltip label="k" />
+        <Tooltip separator=": $" formatter={(value) => `${value}k`} />
       </Sankey>
       <br />
       <br />
@@ -469,7 +468,7 @@ const BerkeleyStanfordSankey = () => {
         link={{ stroke: '#70AADA' }}
 
       >
-        <Tooltip />
+        <Tooltip separator=": $" formatter={(value) => `${value}k`} />
       </Sankey>
     </div>
   );

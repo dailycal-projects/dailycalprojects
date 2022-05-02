@@ -39,7 +39,7 @@ export default function SankeyNode({
         stroke="#333"
         strokeOpacity="0.5"
       >
-        {`${payload.value}k`}
+        {`$${payload.value}k`}
       </text>
     </Layer>
   );
