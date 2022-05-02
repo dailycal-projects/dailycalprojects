@@ -81,7 +81,7 @@ const STEMEnrollmentLine = () => (
               height={0}
               axisType="yAxis"
             >
-              Number of undergraduate students enrolled
+              Undergraduate students enrolled
             </AlignedAxisLabel>
             )}
         />
