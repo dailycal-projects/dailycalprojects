@@ -3,33 +3,9 @@ import { Tooltip, Sankey } from 'recharts';
 import { Slider } from '@mui/material';
 import SankeyNode from './SankeyNode';
 
-const nodes = [
-  {
-    name: 'Total Budget',
-  },
-  {
-    name: 'Gifts',
-  },
-  {
-    name: 'Assets',
-  },
-  {
-    name: 'Investments',
-  },
-  {
-    name: 'Commercial Paper',
-  },
-  {
-    name: 'Health Care',
-  },
-  {
-    name: 'Student Fees',
-  },
-];
-
 const sNodes = [
   {
-    name: 'Total Budget',
+    name: 'Total budget',
   },
   {
     name: 'Gifts',
@@ -41,16 +17,16 @@ const sNodes = [
     name: 'Investments',
   },
   {
-    name: 'Health Care',
+    name: 'Health care',
   },
   {
-    name: 'Student Fees',
+    name: 'Student fees',
   },
 ];
 
 const bNodes = [
   {
-    name: 'Total Budget',
+    name: 'Total budget',
   },
   {
     name: 'Gifts',
@@ -62,10 +38,10 @@ const bNodes = [
     name: 'Investments',
   },
   {
-    name: 'Commercial Paper',
+    name: 'Commercial paper',
   },
   {
-    name: 'Student Fees',
+    name: 'Student fees',
   },
 ];
 
@@ -99,6 +75,7 @@ const s20 = {
     },
   ],
 };
+
 const s19 = {
   nodes: sNodes,
   links: [
@@ -261,6 +238,7 @@ const b20 = {
     },
   ],
 };
+
 const b19 = {
   nodes: bNodes,
   links: [
@@ -468,7 +446,7 @@ const BerkeleyStanfordSankey = () => {
         link={{ stroke: '#70AADA' }}
 
       >
-        <Tooltip separator=": $" formatter={(value) => `${value}k`} />
+        <Tooltip separator=": $" formatter={(value) => `${value}M`} />
       </Sankey>
     </div>
   );

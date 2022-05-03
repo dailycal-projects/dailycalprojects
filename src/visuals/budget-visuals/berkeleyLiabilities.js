@@ -10,10 +10,10 @@ const nodes = [
     name: 'Liabilities',
   },
   {
-    name: 'Current Liabilities',
+    name: 'Current liabilities',
   },
   {
-    name: 'Noncurrent Liabilities',
+    name: 'Noncurrent liabilities',
   },
   {
     name: 'Accounts payable',
@@ -22,7 +22,7 @@ const nodes = [
     name: 'Accrued salaries',
   },
   {
-    name: 'Employee Benefits',
+    name: 'Employee benefits',
   },
   {
     name: 'Unearned revenue',
@@ -139,6 +139,7 @@ const b20 = {
     },
   ],
 };
+
 const b19 = {
   nodes,
   links: [
@@ -507,7 +508,7 @@ const BerkeleyLiabilities = () => {
         }}
         link={{ stroke: '#70AADA' }}
       >
-        <Tooltip separator=": $" formatter={(value) => `${value}k`} />
+        <Tooltip separator=": $" formatter={(value) => `${value}M`} />
       </Sankey>
     </div>
   );
