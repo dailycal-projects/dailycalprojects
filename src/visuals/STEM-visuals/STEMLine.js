@@ -190,6 +190,13 @@ const STEMEnrollmentLine = () => (
           stroke="#489BD1"
           fill="#489BD1"
         />
+        <Line
+          type="monotone"
+          dataKey="CHMENG"
+          stroke="#489BD1"
+          fill="#489BD1"
+        />
+
       </LineChart>
     </ResponsiveContainer>
   </div>
