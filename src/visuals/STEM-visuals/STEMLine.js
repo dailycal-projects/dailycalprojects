@@ -126,6 +126,12 @@ const STEMEnrollmentLine = () => (
         />
         <Line
           type="monotone"
+          dataKey="INTEGBI"
+          stroke="#489BD1"
+          fill="#489BD1"
+        />
+        <Line
+          type="monotone"
           dataKey="COGSCI"
           stroke="#489BD1"
           fill="#489BD1"
