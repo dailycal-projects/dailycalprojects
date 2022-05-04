@@ -15,7 +15,7 @@ const Timeline1921 = () => (
         <b> January 2020 </b>
         <br />
         <a href="https://regents.universityofcalifornia.edu/regmeet/jan20/f12.pdf" target="_blank" rel="noreferrer">
-          <em> A memo to the Regents details a donor's offer to finance UC Berkeley's Gateway Project. </em>
+          <em> A memo to the Regents details a donor&apos;s offer to finance UC Berkeley&apos;s Gateway Project. </em>
         </a>
       </TimelineOppositeContent>
       <TimelineSeparator>
@@ -24,7 +24,7 @@ const Timeline1921 = () => (
       </TimelineSeparator>
       <TimelineContent>
         <p>
-          Anonymously deemed as “among the University of California's most generous philanthropic partners,” a donor offers to pay for the design, development and construction of an existing plan for a student housing project.
+          Anonymously deemed as “among the University of California&apos;s most generous philanthropic partners,” a donor offers to pay for the design, development and construction of an existing plan for a student housing project.
         </p>
         <p>
           The Gateway was to be built on five University-owned parcels of the six parcels composing a city block just west of campus.
@@ -50,13 +50,13 @@ const Timeline1921 = () => (
       </TimelineSeparator>
       <TimelineContent>
         <p>
-          About 25 gather to protest the university's plan to purchase 1921 Walnut St.
+          About 25 gather to protest the university&apos;s plan to purchase 1921 Walnut St.
         </p>
         <p>
           A resident since 1989, Davone Riddick, said, “This apartment really means a lot to me because I grew up here, and I have a lot of history here.​​”
         </p>
         <p>
-          Backing up the tenants were members of the Berkeley Tenants Union and the Eviction Defense Center. Representatives from Arreguín's office, as well as the office of Councilmember Kate Harrison, were there.
+          Backing up the tenants were members of the Berkeley Tenants Union and the Eviction Defense Center. Representatives from Arreguín&apos;s office, as well as the office of Councilmember Kate Harrison, were there.
         </p>
         <br />
       </TimelineContent>
@@ -82,7 +82,7 @@ const Timeline1921 = () => (
         <b> Monday August 3, 2020 </b>
         <br />
         <a href="https://www.dailycal.org/2020/08/03/were-not-going-to-stop-1921-walnut-st-tenants-protest-uc-acquisition/" target="_blank" rel="noreferrer">
-          <em> “We're not going to stop until we get UC to listen to us.” </em>
+          <em> “We&apos;re not going to stop until we get UC to listen to us.” </em>
         </a>
       </TimelineOppositeContent>
       <TimelineSeparator>
@@ -136,7 +136,7 @@ const Timeline1921 = () => (
           In an email to all UC Berkeley students, Chancellor Carol Christ details plans for Anchor House, a student housing project aimed at housing and supporting transfer students.
         </p>
         <p>
-          In the email, Christ noted that most transfer students at UC Berkeley, who are more likely to come from low-income families and communities of color, come from California Community Colleges. Transfer students often feel disconnected from the larger campus community, Christ added, a struggle that could be remedied by Anchor House's prioritization of transfer students.
+          In the email, Christ noted that most transfer students at UC Berkeley, who are more likely to come from low-income families and communities of color, come from California Community Colleges. Transfer students often feel disconnected from the larger campus community, Christ added, a struggle that could be remedied by Anchor House&apos;s prioritization of transfer students.
         </p>
         <p>
           Project was to be built upon 1921 Walnut St. and the five other university-owned parcels on the block.
@@ -162,7 +162,7 @@ const Timeline1921 = () => (
       </TimelineSeparator>
       <TimelineContent>
         <p>
-          About 40 community members gather outside 1921 Walnut St. to protest campus's plan to evict tenants to build Anchor House.
+          About 40 community members gather outside 1921 Walnut St. to protest campus&apos;s plan to evict tenants to build Anchor House.
         </p>
         <p>
           On behalf of the City Council, Mayor Jesse Arreguín voices support for the protest, as the cost of rental housing is “skyrocketing” across Berkeley.
@@ -179,7 +179,7 @@ const Timeline1921 = () => (
         <b> Saturday, April 24, 2021 </b>
         <br />
         <a href="https://www.dailycal.org/2021/04/27/strongly-objecting-community-members-march-against-uc-berkeley-development-plans-at-peoples-park-1921-walnut-st/" target="_blank" rel="noreferrer">
-          <em> About 100 protest development plans at 1921 Walnut St., People's Park. </em>
+          <em> About 100 protest development plans for 1921 Walnut St. and People&apos;s Park. </em>
         </a>
       </TimelineOppositeContent>
       <TimelineSeparator>
@@ -188,7 +188,7 @@ const Timeline1921 = () => (
       </TimelineSeparator>
       <TimelineContent>
         <p>
-          Community members march against campus plans to redevelop 1921 Walnut St. and People's Park.
+          Community members march against campus plans to redevelop 1921 Walnut St. and People&apos;s Park.
         </p>
         <p>
           Amid the COVID-19 pandemic, tenants, including Natalie Logusch, expressed concerns about eviction. Logusch claims she and other tenants attempted to hold a community listening session with UC Berkeley multiple times but were met with disinterest from campus.
@@ -205,7 +205,7 @@ const Timeline1921 = () => (
         <b> Wednesday, July 21, 2021 </b>
         <br />
         <a href="https://www.dailycal.org/2021/07/23/here-because-i-am-mad-community-activists-protest-uc-board-of-regents/" target="_blank" rel="noreferrer">
-          <em> “I'm here because I am mad.” </em>
+          <em> “I&apos;m here because I am mad.” </em>
         </a>
       </TimelineOppositeContent>
       <TimelineSeparator>
@@ -242,7 +242,7 @@ const Timeline1921 = () => (
           <a href="https://www.cityofberkeley.info/uploadedFiles/City_Manager/Level_1_-_Miscellaneous/FULLY%20EXECUTED%20SETTLEMENT%20AGREEMENT.pdf" target="_blank" rel="noreferrer">$82.6 million settlement</a>
           {' '}
 
-          includes a $920,000 payment to recognize campus's planned demolition of the eight rent-controlled units at 1921 Walnut St.
+          includes a $920,000 payment to recognize campus&apos;s planned demolition of the eight rent-controlled units at 1921 Walnut St.
         </p>
         <p>
           As part of the agreement, the city cannot legally challenge Anchor House, among other university projects.
@@ -272,7 +272,7 @@ const Timeline1921 = () => (
       <TimelineContent>
         {/* <br /> */}
         <p>
-          While they call the $82.6 million settlement a “win for the city,” they express frustration over campus's intention to evict residents and demolish 1921 Walnut St.
+          While they call the $82.6 million settlement a “win for the city,” they express frustration over campus&apos;s intention to evict residents and demolish 1921 Walnut St.
         </p>
         <br />
       </TimelineContent>
@@ -295,7 +295,7 @@ const Timeline1921 = () => (
           The last of the 1921 Walnut St. tenants agree to vacate their rentals with relocation packages that could reach six figures.
         </p>
         <p>
-          In response to the tenants' decisions, ASUC Senator Kalliope Zervas expresses concern over the relationship between city and campus, increasing houselessness and the preservation of low-income housing.
+          In response to the tenants&apos; decisions, ASUC Senator Kalliope Zervas expresses concern over the relationship between city and campus, increasing houselessness and the preservation of low-income housing.
         </p>
         <br />
       </TimelineContent>
@@ -334,7 +334,7 @@ const Timeline1921 = () => (
       </TimelineSeparator>
       <TimelineContent>
         <p>
-          While the project's construction is fully funded by the Helen Diller Foundation, the revenue from the businesses within the building will help secure scholarships for first-generation and underrepresented students.
+          While the project&apos;s construction is fully funded by the Helen Diller Foundation, the revenue from the businesses within the building will help secure scholarships for first-generation and underrepresented students.
         </p>
         <p>
           While the tenants of 1921 Walnut St. were afforded relocation packages by the university, Logusch claimed some tenants had to leave Berkeley, or even California, altogether.
