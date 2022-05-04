@@ -214,7 +214,7 @@ const Timeline1921 = () => (
       </TimelineSeparator>
       <TimelineContent>
         <p>
-          The Coalition for a Truly Public UC gathered in downtown Oakland at 8 a.m. Wednesday to protest the UC Board of Regents, including campus’s plans to redevelop People’s Park and 1921 Walnut St.
+          The Coalition for a Truly Public UC gathered in downtown Oakland at 8 a.m. to protest the UC Board of Regents, including campus&apos;s plans to redevelop People&apos;s Park and 1921 Walnut St.
         </p>
         <p>
           Among the protestors were then-ASUC senator-elect Amanda Hill and UC Cops Off Campus organizer Katie Latimer.
@@ -315,7 +315,7 @@ const Timeline1921 = () => (
       </TimelineSeparator>
       <TimelineContent>
         <p>
-          The newly cleared land will makes way for the Helen Diller Anchor House.
+          The newly cleared land will make way for the Helen Diller Anchor House.
         </p>
         <br />
       </TimelineContent>
