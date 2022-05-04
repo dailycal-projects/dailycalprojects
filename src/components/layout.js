@@ -21,6 +21,7 @@ import GymVault from '../visuals/gym-pac-12-visuals/gymVault';
 import GymBars from '../visuals/gym-pac-12-visuals/gymBars';
 import GymBeam from '../visuals/gym-pac-12-visuals/gymBeam';
 import GymFloor from '../visuals/gym-pac-12-visuals/gymFloor';
+import STEMEnrollmentLine from '../visuals/STEM-visuals/STEMLine';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -58,6 +59,7 @@ const shortcodes = {
   GymBars,
   GymBeam,
   GymFloor,
+  STEMEnrollmentLine,
 };
 
 export default function Layout({ children }) {
