@@ -21,6 +21,7 @@ import GymVault from '../visuals/gym-pac-12-visuals/gymVault';
 import GymBars from '../visuals/gym-pac-12-visuals/gymBars';
 import GymBeam from '../visuals/gym-pac-12-visuals/gymBeam';
 import GymFloor from '../visuals/gym-pac-12-visuals/gymFloor';
+import Timeline1921 from '../visuals/1921-visuals/1921Timeline';
 import STEMEnrollmentLine from '../visuals/STEM-visuals/STEMLine';
 
 /*
@@ -59,6 +60,7 @@ const shortcodes = {
   GymBars,
   GymBeam,
   GymFloor,
+  Timeline1921,
   STEMEnrollmentLine,
 };
 
