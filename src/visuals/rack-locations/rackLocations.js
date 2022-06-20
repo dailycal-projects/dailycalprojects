@@ -339,9 +339,6 @@ export const rackLocations = {
             },
 
 
-
-
-
             // FIXME
                 // oakland couthouse
 
