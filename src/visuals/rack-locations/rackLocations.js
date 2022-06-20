@@ -172,6 +172,26 @@ export const rackLocations = {
                 "lat": 37.89148,
                 "lon": -122.28004
             },
+            {
+                "Location": "WeWork",
+                "lat": 37.87206867169973,
+                "lon": -122.26747534407345
+            },
+            {
+                "Location": "Monterey Market",
+                "lat": 37.8812563585699,
+                "lon": -122.28221468127501
+            },
+            {
+                "Location": "Safeway Community Market",
+                "lat": 37.878567479025904,
+                "lon": -122.26993306441497
+            },
+            {
+                "Location": "Safeway (Shattuck)",
+                "lat": 37.88093438688394,
+                "lon": -122.27006972290232
+            },
 
 
             // FIXME
@@ -179,11 +199,6 @@ export const rackLocations = {
                 // CESAR CHAVEZ #2
                 // ESHLEMAN
                 // UNIT 2
-                // WEWORK
-                // SAFEWAY COMMUNITY
-                // SAFEWAY
-                // MONTEREY
-
             //  there should be 42 total above this point--there are !
 
 
@@ -282,17 +297,52 @@ export const rackLocations = {
                 "lat": 37.84465,
                 "lon": -122.25153
             },
+            {
+                "Location": "Alcatraz and Adeline",
+                "lat": 37.848761533283785,
+                "lon":-122.2714338884773
+            },
+            {
+                "Location": "Peet's (Telegraph at Dwight)",
+                "lat": 37.86503361446429, 
+                "lon": -122.25832462667893
+            },
+            {
+                "Location": "CREAM",
+                "lat": 37.867022257515096,
+                "lon": -122.25872499903079 
+            },
+            {
+                "Location": "The Graduate",
+                "lat": 37.86794408623126,
+                "lon": -122.25640424034054
+            },
+            {
+                "Location": "Baker & Commons",
+                "lat": 37.85834392622341, 
+                "lon": -122.25333861363461
+            },
+            {
+                "Location": "Baker & Commons",
+                "lat": 37.85834392622341, 
+                "lon": -122.25333861363461
+            },
+            {
+                "Location": "Safeway (College)",
+                "lat": 37.85072217657882, 
+                "lon": -122.25183484073905
+            },
+            {
+                "Location": "Safeway (College)",
+                "lat": 37.85072217657882, 
+                "lon": -122.25183484073905
+            },
+
+
 
 
 
             // FIXME
-                // Alcatraz & Adeline
-                // PEETS tlgrph dwight
-                // CREAM on channing
-                // hotel durant
-                // BAKER AND COMMONS
-                // safeway rockridge
-                // safeway shattuck
                 // oakland couthouse
 
 
