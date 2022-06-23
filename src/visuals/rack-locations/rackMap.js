@@ -7,11 +7,11 @@ import { rackLocations } from './rackLocations';
 
 class RackMap extends Component {
   render() {
-    const centerLat = (districtData.minLat + districtData.maxLat) / 2;
-    const distanceLat = districtData.maxLat - districtData.minLat;
+    const centerLat = (rackLocations.minLat + rackLocations.maxLat) / 2;
+    const distanceLat = rackLocations.maxLat - rackLocations.minLat;
     const bufferLat = distanceLat * 0.05;
-    const centerLong = (districtData.minLong + districtData.maxLong) / 2;
-    const distanceLong = districtData.maxLong - districtData.minLong;
+    const centerLong = (rackLocations.minLong + rackLocations.maxLong) / 2;
+    const distanceLong = rackLocations.maxLong - rackLocations.minLong;
     const bufferLong = distanceLong * 0.05;
 
     const containerStyle = { // omit width for responsive map width
@@ -30,21 +30,21 @@ class RackMap extends Component {
             scrollWheelZoom={false}
             minZoom={7}
             style={containerStyle}
-            zoom={7.5}
-            center={[centerLat, centerLong]}
+            zoom={12.25}
+            center={[37.83787926004715, -122.26650191445306]}
             bounds={[
-              [districtData.minLat - bufferLat, districtData.minLong - bufferLong],
-              [districtData.maxLat + bufferLat, districtData.maxLong + bufferLong],
+              [rackLocations.minLat - bufferLat, rackLocations.minLong - bufferLong],
+              [rackLocations.maxLat + bufferLat, rackLocations.maxLong + bufferLong],
             ]}
           >
             <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
-            {districtData.locations.map((info, k) => (
+            {rackLocations.locations.map((locations, k) => (
               <CircleMarker
                 key={k}
                 center={[locations.center[0], locations.center[1]]}
-                radius={locations.size}
-                color={locations.color}
+                radius={5}
+                color="#94bbe2"
                 fillOpacity={0.6}
               >
                 <Popup>
