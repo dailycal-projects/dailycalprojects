@@ -3,347 +3,363 @@ export const rackLocations = {
     locations: [
 
             {
-              "Location": "UCPD",
-              "lat": 37.86941,
-              "lon": -122.25851
+              location: "UCPD",
+              center: [37.86941, -122.25851]
             },
             {
-              "Location": "Cafe Milano",
-              "lat": 37.86865,
-              "lon": -122.25854
-            },
+              location: "Cafe Milano",
+              center: [37.86865,
+               -122.25854
+            ]},
             {
-                "Location": "YWCA",
-                "lat": 37.86895473518469,
-                "lon": -122.2565902763223
-            },
+                location: "YWCA",
+                center: [37.86895473518469,
+                 -122.2565902763223
+            ]},
             {
-                "Location": "RSF",
-                "lat": 37.86895,
-                "lon": -122.26217
-            },
+                location: "RSF",
+                center: [37.86895,
+                 -122.26217
+            ]},
             {
-                "Location": "Haas Pavilion",
-                "lat": 37.86944,
-                "lon": -122.26207
-            },
+                location: "Haas Pavilion",
+                center: [37.86944,
+                 -122.26207
+            ]},
             {
-                "Location": "Upper Sproul",
-                "lat": 37.86975,
-                "lon": -122.2593
-            },
+                location: "Upper Sproul",
+                center: [37.86975,
+                 -122.2593
+            ]},
             {
-                "Location": "Sather Gate",
-                "lat": 37.8701,
-                "lon": -122.25935
-            },
+                location: "Sather Gate",
+                center: [37.8701,
+                 -122.25935
+            ]},
             {
-                "Location": "Dwinelle Hall",
-                "lat": 37.8708,
-                "lon": -122.26052
-            },
+                location: "Dwinelle Hall",
+                center: [37.8708,
+                 -122.26052
+            ]},
             {
-                "Location": "West Wheeler",
-                "lat": 37.87133,
-                "lon": -122.25955
-            },
+                location: "West Wheeler",
+                center: [37.87133,
+                 -122.25955
+            ]},
             {
-                "Location": "Oxford / Center",
-                "lat": 37.87057,
-                "lon": -122.26574
-            },
+                location: "Oxford / Center",
+                center: [37.87057,
+                 -122.26574
+            ]},
             {
-                "Location": "VLSB",
-                "lat": 37.87118,
-                "lon": -122.26208
-            },
+                location: "VLSB",
+                center: [37.87118,
+                 -122.26208
+            ]},
             {
-                "Location": "Pat Brown's",
-                "lat": 37.87332,
-                "lon": -122.26487
-            },
+                location: "Pat Brown's",
+                center: [37.87332,
+                 -122.26487
+            ]},
             {
-                "Location": "Soda Hall #1",
-                "lat": 37.87554,
-                "lon": -122.25873
-            },
+                location: "Soda Hall #1",
+                center: [37.87554,
+                 -122.25873
+            ]},
             {
-                "Location": "Evans Hall Bus Stop",
-                "lat": 37.8734,
-                "lon": -122.25741
-            },
+                location: "Evans Hall Bus Stop",
+                center: [37.8734,
+                 -122.25741
+            ]},
             {
-                "Location": "Evans Hall West Entrance",
-                "lat": 37.87336682927876,
-                "lon": -122.25800468123705
-            },
+                location: "Evans Hall West Entrance",
+                center: [37.87336682927876,
+                 -122.25800468123705
+            ]},
             {
-                "Location": "Pimentel Hall",
-                "lat": 37.87337,
-                "lon": -122.25608
-            },
+                location: "Pimentel Hall",
+                center: [37.87337,
+                 -122.25608
+            ]},
             {
-                "Location": "Haas Piedmont",
-                "lat": 37.87221,
-                "lon": -122.25343
-            },
+                location: "Haas Piedmont",
+                center: [37.87221,
+                 -122.25343
+            ]},
             {
-                "Location": "Caffe Strada",
-                "lat": 37.86917,
-                "lon": -122.2547
-            },
+                location: "Caffe Strada",
+                center: [37.86917,
+                 -122.2547
+            ]},
             {
-                "Location": "Hearst Gym Bus Stop",
-                "lat": 37.86907,
-                "lon": -122.25691
-            },
+                location: "Hearst Gym Bus Stop",
+                center: [37.86907,
+                 -122.25691
+            ]},
             {
-                "Location": "Norton Hall Unit 3",
-                "lat": 37.86723,
-                "lon": -122.25986
-            },
+                location: "Norton Hall Unit 3",
+                center: [37.86723,
+                 -122.25986
+            ]},
             {
-                "Location": "Unit 1",
-                "lat": 37.86782,
-                "lon": -122.25518
-            },
+                location: "Unit 1",
+                center: [37.86782,
+                 -122.25518
+            ]},
             {
-                "Location": "Telegraph Commons",
-                "lat": 37.86678,
-                "lon": -122.25912
-            },
+                location: "Telegraph Commons",
+                center: [37.86678,
+                 -122.25912
+            ]},
             {
-                "Location": "Walgreens",
-                "lat": 37.86837,
-                "lon": -122.25927
-            },
+                location: "Walgreens",
+                center: [37.86837,
+                 -122.25927
+            ]},
             {
-                "Location": "La Val's",
-                "lat": 37.87546,
-                "lon": -122.2605
-            },
+                location: "La Val's",
+                center: [37.87546,
+                 -122.2605
+            ]},
             {
-                "Location": "Cory Hall Bus Stop",
-                "lat": 37.87529,
-                "lon": -122.25797
-            },
+                location: "Cory Hall Bus Stop",
+                center: [37.87529,
+                 -122.25797
+            ]},
             {
-                "Location": "Foothill Dining Hall",
-                "lat": 37.8754,
-                "lon": -122.25581
-            },
+                location: "Foothill Dining Hall",
+                center: [37.8754,
+                 -122.25581
+            ]},
             {
-                "Location": "North Gate Bus Stop",
-                "lat": 37.87514,
-                "lon": -122.26006
-            },
+                location: "North Gate Bus Stop",
+                center: [37.87514,
+                 -122.26006
+            ]},
             {
-                "Location": "University Hall",
-                "lat": 37.87173,
-                "lon": -122.26669
-            },
+                location: "University Hall",
+                center: [37.87173,
+                 -122.26669
+            ]},
             {
-                "Location": "Shattuck/Vine SW",
-                "lat": 37.88016,
-                "lon": -122.26943
-            },
+                location: "Shattuck/Vine SW",
+                center: [37.88016,
+                 -122.26943
+            ]},
             {
-                "Location": "Fedex Shattuck/Allston",
-                "lat": 37.86931,
-                "lon": -122.26767
-            },
+                location: "Fedex Shattuck/Allston",
+                center: [37.86931,
+                 -122.26767
+            ]},
             {
-                "Location": "Yali's Cafe",
-                "lat": 37.87351,
-                "lon": -122.26641
-            },
+                location: "Yali's Cafe",
+                center: [37.87351,
+                 -122.26641
+            ]},
             {
-                "Location": "Au Coquelet",
-                "lat": 37.87163,
-                "lon": -122.27051
-            },
+                location: "Au Coquelet",
+                center: [37.87163,
+                 -122.27051
+            ]},
             {
-                "Location": "Peet's (Solano)",
-                "lat": 37.89156,
-                "lon": -122.27924
-            },
+                location: "Peet's (Solano)",
+                center: [37.89156,
+                 -122.27924
+            ]},
             {
-                "Location": "Starbucks (Solano)",
-                "lat": 37.89148,
-                "lon": -122.28004
-            },
+                location: "Starbucks (Solano)",
+                center: [37.89148,
+                 -122.28004
+            ]},
             {
-                "Location": "WeWork",
-                "lat": 37.87206867169973,
-                "lon": -122.26747534407345
-            },
+                location: "WeWork",
+                center: [37.87206867169973,
+                 -122.26747534407345
+            ]},
             {
-                "Location": "Monterey Market",
-                "lat": 37.8812563585699,
-                "lon": -122.28221468127501
-            },
+                location: "Monterey Market",
+                center: [37.8812563585699,
+                 -122.28221468127501
+            ]},
             {
-                "Location": "Safeway Community Market",
-                "lat": 37.878567479025904,
-                "lon": -122.26993306441497
-            },
+                location: "Safeway Community Market",
+                center: [37.878567479025904,
+                 -122.26993306441497
+            ]},
             {
-                "Location": "Safeway (Shattuck)",
-                "lat": 37.88093438688394,
-                "lon": -122.27006972290232
-            },
+                location: "Safeway (Shattuck)",
+                center: [37.88093438688394,
+                 -122.27006972290232
+            ]},
+            {
+                location: "Eshleman Hall",
+                center: [37.868688655490594, 
+                 -122.26087800023828
+            ]},
+            {
+                location: "Cesar Chavez Student Center #2",
+                center: [37.86946151549356, 
+                  -122.26010285620207
+            ]},
+            {
+                location: "Golden Bear Cafe",
+                center: [37.86978607581105, 
+                 -122.25964256289024
+            ]},
+
 
 
             // FIXME
-                // CESAR CHAVEZ #1
-                // CESAR CHAVEZ #2
-                // ESHLEMAN
                 // UNIT 2
             //  there should be 42 total above this point--there are !
 
 
             {
-                "Location": "I-House",
-                "lat": 37.86964,
-                "lon": -122.25182
-            },
+                location: "I-House",
+                center: [37.86964,
+                 -122.25182
+            ]},
             {
-                "Location": "Ashby BART",
-                "lat": 37.85289,
-                "lon": -122.26993
-            },
+                location: "Ashby BART",
+                center: [37.85289,
+                 -122.26993
+            ]},
             {
-                "Location": "Rose Garden Inn",
-                "lat": 37.85996,
-                "lon": -122.25956
-            },
+                location: "Rose Garden Inn",
+                center: [37.85996,
+                 -122.25956
+            ]},
             {
-                "Location": "Bing Wong Wash",
-                "lat": 37.86316,
-                "lon": -122.25882
-            },
+                location: "Bing Wong Wash",
+                center: [37.86316,
+                 -122.25882
+            ]},
             {
-                "Location": "The Daily Californian",
-                "lat": 37.87508,
-                "lon": -122.26062
-            },
+                location: "The Daily Californian",
+                center: [37.87508,
+                 -122.26062
+            ]},
             {
-                "Location": "Berkeley City Club",
-                "lat": 37.86748,
-                "lon": -122.26281
-            },
+                location: "Berkeley City Club",
+                center: [37.86748,
+                 -122.26281
+            ]},
             {
-                "Location": "BSC Fenwick",
-                "lat": 37.86497,
-                "lon": -122.26005
-            },
+                location: "BSC Fenwick",
+                center: [37.86497,
+                 -122.26005
+            ]},
             {
-                "Location": "Clark Kerr Campus",
-                "lat": 37.86374,
-                "lon": -122.24812
-            },
+                location: "Clark Kerr Campus",
+                center: [37.86374,
+                 -122.24812
+            ]},
             {
-                "Location": "Cal Suds",
-                "lat": 37.8617,
-                "lon": -122.2533
-            },
+                location: "Cal Suds",
+                center: [37.8617,
+                 -122.2533
+            ]},
             {
-                "Location": "Redwood Gardens",
-                "lat": 37.86331,
-                "lon": -122.24717
-            },
+                location: "Redwood Gardens",
+                center: [37.86331,
+                 -122.24717
+            ]},
             {
-                "Location": "Peet's (Domingo)",
-                "lat": 37.85871,
-                "lon": -122.24414
-            },
+                location: "Peet's (Domingo)",
+                center: [37.85871,
+                 -122.24414
+            ]},
             {
-                "Location": "Star Grocery",
-                "lat": 37.85484,
-                "lon": -122.24834
-            },
+                location: "Star Grocery",
+                center: [37.85484,
+                 -122.24834
+            ]},
             {
-                "Location": "Cafe Roma",
-                "lat": 37.85686,
-                "lon": -122.25326
-            },
+                location: "Cafe Roma",
+                center: [37.85686,
+                 -122.25326
+            ]},
             {
-                "Location": "Campus Shared Services",
-                "lat": 37.87338,
-                "lon": -122.30214
-            },
+                location: "Campus Shared Services",
+                center: [37.87338,
+                 -122.30214
+            ]},
             {
-                "Location": "Peet's (4th Street)",
-                "lat": 37.87025,
-                "lon": -122.30104
-            },
+                location: "Peet's (4th Street)",
+                center: [37.87025,
+                 -122.30104
+            ]},
             {
-                "Location": "Mechanics Bank",
-                "lat": 37.86909,
-                "lon": -122.30004
-            },
+                location: "Mechanics Bank",
+                center: [37.86909,
+                 -122.30004
+            ]},
             {
-                "Location": "Berkeley Amtrak",
-                "lat": 37.86751,
-                "lon": -122.30081
-            },
+                location: "Berkeley Amtrak",
+                center: [37.86751,
+                 -122.30081
+            ]},
             {
-                "Location": "La Quinta Inn",
-                "lat": 37.86814,
-                "lon": -122.29574
-            },
+                location: "La Quinta Inn",
+                center: [37.86814,
+                 -122.29574
+            ]},
             {
-                "Location": "Rockridge BART",
-                "lat": 37.84465,
-                "lon": -122.25153
-            },
+                location: "Rockridge BART",
+                center: [37.84465,
+                 -122.25153
+            ]},
             {
-                "Location": "Alcatraz and Adeline",
-                "lat": 37.848761533283785,
-                "lon":-122.2714338884773
-            },
+                location: "Alcatraz and Adeline",
+                center: [37.848761533283785,
+                -122.2714338884773
+            ]},
             {
-                "Location": "Peet's (Telegraph at Dwight)",
-                "lat": 37.86503361446429, 
-                "lon": -122.25832462667893
-            },
+                location: "Peet's (Telegraph at Dwight)",
+                center: [37.86503361446429, 
+                 -122.25832462667893
+            ]},
             {
-                "Location": "CREAM",
-                "lat": 37.867022257515096,
-                "lon": -122.25872499903079 
-            },
+                location: "CREAM",
+                center: [37.867022257515096,
+                 -122.25872499903079 
+            ]},
             {
-                "Location": "The Graduate",
-                "lat": 37.86794408623126,
-                "lon": -122.25640424034054
-            },
+                location: "The Graduate",
+                center: [37.86794408623126,
+                 -122.25640424034054
+            ]},
             {
-                "Location": "Baker & Commons",
-                "lat": 37.85834392622341, 
-                "lon": -122.25333861363461
-            },
+                location: "Baker & Commons",
+                center: [37.85834392622341, 
+                 -122.25333861363461
+            ]},
             {
-                "Location": "Baker & Commons",
-                "lat": 37.85834392622341, 
-                "lon": -122.25333861363461
-            },
+                location: "Baker & Commons",
+                center: [37.85834392622341, 
+                 -122.25333861363461
+            ]},
             {
-                "Location": "Safeway (College)",
-                "lat": 37.85072217657882, 
-                "lon": -122.25183484073905
-            },
+                location: "Safeway (College)",
+                center: [37.85072217657882, 
+                 -122.25183484073905
+            ]},
             {
-                "Location": "Safeway (College)",
-                "lat": 37.85072217657882, 
-                "lon": -122.25183484073905
-            },
+                location: "Safeway (College)",
+                center: [37.85072217657882, 
+                 -122.25183484073905
+            ]},
+            {
+                location: "Alameda County Superior Courthouse",
+                center: [37.799623627981894,
+                 -122.26305908265923
+            ]}
 
+    ],
 
-            // FIXME
-                // oakland couthouse
-
-
-
-    ]
+    minLat: 37.8503526,
+    maxLat: 37.899434,
+    minLong: -122.3256618,
+    maxLong: -122.2319033,
 
 }
