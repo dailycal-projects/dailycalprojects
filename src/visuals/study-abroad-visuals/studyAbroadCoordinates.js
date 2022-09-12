@@ -195,7 +195,7 @@ const studyAbroadData = {
       radius: 17,
       coordinates: [53.34839392798884, -6.285476213651397],
       semesters: 'Fall, spring, summer and year',
-      provider: 'UCEAP Programs and Berkeley Global Internships',
+      provider: 'UCEAP Programs, Berkeley Global Internships and Berkeley Summer Abroad',
       programs: 'University College Cork; Sport, History, and Cultural Identity in Dublin; Dublin Summer Chemistry; University College Dublin; Trinity College Dublin; Irish Parliament Internship in Dublin; Global Internships in Dublin',
     },
     {
@@ -330,7 +330,7 @@ const studyAbroadData = {
       radius: 15,
       coordinates: [40.414627914934044, -3.7044018270518726],
       semesters: 'Fall, spring, summer and year',
-      provider: 'UCEAP Programs and Berkeley Global Internships',
+      provider: 'UCEAP Programs, Berkeley Global Internships and Berkeley Summer Abroad',
       programs: 'Complutense University of Madrid; Sustainable Food Systems in the Mediterranean in Barcelona; University of Barcelona; Spanish in Madrid; Global Internships in Madrid; Python and Data Science in Madrid; Carlos III University of Madrid; Beyond Barcelona; 21st Century Barcelona',
     },
     {
