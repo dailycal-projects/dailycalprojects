@@ -202,7 +202,7 @@ const studyAbroadData = {
       country: 'Israel',
       number: 6,
       radius: 6,
-      coordinates: [42.91993044075281, 12.440515960906351],
+      coordinates: [32.3149814168729, 34.87527725134588],
       semesters: 'Fall, spring, summer and year',
       provider: 'UCEAP Programs and Berkeley Global Internships',
       programs: 'Hebrew University of Jerusalem; Technion-Institute of Technology in Haifa; Global Internships in Haifa',
@@ -211,7 +211,7 @@ const studyAbroadData = {
       country: 'Italy',
       number: 20,
       radius: 20,
-      coordinates: [32.3149814168729, 34.87527725134588],
+      coordinates: [42.91993044075281, 12.440515960906351],
       semesters: 'Fall, spring, summer and year',
       provider: 'UCEAP Programs',
       programs: 'Art, Food and Society in Rome; Made in Italy in Florence;  Sustainable Food Systems in the Mediterranean in Florence and Sicily; Bocconi University in Milan; Psychology & Cognitive Science in Padua; University of Bologna; Sociology in Rome',
@@ -371,15 +371,6 @@ const studyAbroadData = {
     },
     {
       country: 'England, United Kingdom',
-      number: 6,
-      radius: 6,
-      coordinates: [52.52639642960428, -0.9080894716849233],
-      semesters: 'Fall, spring, summer and year',
-      provider: 'UCEAP Programs',
-      programs: "University of Sussex; Environment and Sustainability, East Anglia in Norwich; Sotheby's Institute of Art in London; Business and Entrepreneurship in London; University of Kent in Canterbury; Global Cities Urban Realities in London; University of London, Queen Mary; London's Calling; Imperial College London; University of London, Royal Holloway; Summer in Cambridge; University College London; Summer in Sussex; University of Manchester; University of Bristol; London School of Economics; Summer in Oxford",
-    },
-    {
-      country: 'England, United Kingdom',
       number: 41,
       radius: 41,
       coordinates: [52.52639642960428, -0.9080894716849233],
@@ -397,10 +388,7 @@ const studyAbroadData = {
       programs: 'University of Edinburgh; University of Glasgow; Summer Research in Glasgow; University of St. Andrews; ',
     },
   ],
-  minLat: 36.031332,
-  maxLat: 24.527135,
-  minLong: -21.702979,
-  maxLong: -35.071274,
+
 };
 
 export default studyAbroadData;

@@ -7,13 +7,6 @@ import studyAbroadData from './studyAbroadCoordinates';
 
 class StudyAbroadMap extends Component {
   render() {
-    const centerLat = (studyAbroadData.minLat + studyAbroadData.maxLat) / 2;
-    const distanceLat = studyAbroadData.maxLat - studyAbroadData.minLat;
-    const bufferLat = distanceLat * 0.05;
-    const centerLong = (studyAbroadData.minLong + studyAbroadData.maxLong) / 2;
-    const distanceLong = studyAbroadData.maxLong - studyAbroadData.minLong;
-    const bufferLong = distanceLong * 0.05;
-
     const containerStyle = { // omit width for responsive map width
       height: '600px',
       margin: '30px 0px 30px 0px',
