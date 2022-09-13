@@ -27,8 +27,9 @@ class TurnoverMap extends Component {
           <MapContainer
             scrollWheelZoom={false}
             style={containerStyle}
-            zoom={13}
-            center={[centerLat - 0.017, centerLong + 0.005]}
+            zoom={15}
+            minZoom={15}
+            center={[centerLat, centerLong]}
             bounds={[
               [turnoverCoordinates.minLat - bufferLat, turnoverCoordinates.minLong - bufferLong],
               [turnoverCoordinates.maxLat + bufferLat, turnoverCoordinates.maxLong + bufferLong],
