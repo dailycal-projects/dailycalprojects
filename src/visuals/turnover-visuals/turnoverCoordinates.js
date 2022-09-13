@@ -3,7 +3,7 @@ const turnoverCoordinates = {
 
     {
       name: 'A&W Restaurant',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'November 2020',
       address: '2996 Telegraph Avenue',
       coordinates: [37.856733277598124, -122.25983728206509],
@@ -12,7 +12,7 @@ const turnoverCoordinates = {
     },
     {
       name: "Bill's Men's Shop",
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'October 2020',
       address: '2386 Telegraph Avenue',
       coordinates: [37.867315695262135, -122.25867562376372],
@@ -21,16 +21,16 @@ const turnoverCoordinates = {
     },
     {
       name: 'Boileroom',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'April 2020',
       address: '2475 Telegraph Avenue',
       coordinates: [37.865601617363396, -122.2582947500843],
-      note: 'Closed in support of California shelter-in-place order. Sizzling Lunch opened at this address in February 2022.',
+      note: 'closed in support of California shelter-in-place order. Sizzling Lunch opened at this address in February 2022.',
       color: '#6e82b7',
     },
     {
       name: 'Buffalo Exchange',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'November 2020',
       address: '2585 Telegraph Avenue',
       coordinates: [37.86393422218963, -122.25803992191081],
@@ -39,7 +39,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'Daiso',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'June 2020',
       address: '2369 Telegraph Avenue',
       coordinates: [37.86755490392055, -122.25848213725511],
@@ -48,16 +48,16 @@ const turnoverCoordinates = {
     },
     {
       name: 'Finfine',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'March 2020',
       address: '2556 Telegraph Avenue',
       coordinates: [37.8641396671781, -122.25894226246976],
-      note: 'Closed for shelter-in-place order and demolition of The Village mall. Business owners are looking to re-open in Berkeley.',
+      note: 'closed for shelter-in-place order and demolition of The Village mall. Business owners are looking to re-open in Berkeley.',
       color: '#e3565f',
     },
     {
       name: 'J-Town Express',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'December 2020',
       address: '2332 Telegraph Avenue',
       coordinates: [37.8683409325918, -122.25872843169734],
@@ -66,7 +66,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'Sojo Ramen',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'February 2022',
       address: '2475 Telegraph Avenue',
       coordinates: [37.865601617363396, -122.2582947500843],
@@ -75,7 +75,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'Tako Sushi',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'May 2022',
       address: '2379 Telegraph Avenue',
       coordinates: [37.867387025406536, -122.25844145259931],
@@ -84,25 +84,25 @@ const turnoverCoordinates = {
     },
     {
       name: 'Enedina Taqueria',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'June 2021',
       address: '3001 Telegraph Avenue',
       coordinates: [37.855895645218915, -122.2593851832884],
-      note: null,
-      color: '#e3565f',
+      note: 'The Line Coffee opened at this address in April 2022.',
+      color: '#6e82b7',
     },
     {
       name: 'So-so Supermarket',
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'December 2021',
       address: '2333 Telegraph Avenue',
       coordinates: [37.86833183653382, -122.25845178143547],
-      note: 'Ran as a three-month-long pop up shop between September 2021 and December 2021',
+      note: 'Ran as a three-month-long pop up shop between September 2021 and December 2021.',
       color: '#e3565f',
     },
     {
       name: "Pappy's",
-      status: 'Closed',
+      status: 'closed',
       approximateDate: 'March 2022',
       address: '2367 Telegraph Avenue',
       coordinates: [37.867525167145544, -122.25874111775073],
@@ -111,7 +111,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'Delhi Diner',
-      status: 'Opened',
+      status: 'opened',
       approximateDate: 'June 2020',
       address: '2400 Telegraph Avenue',
       coordinates: [37.86680686504661, -122.2589128022855],
@@ -120,7 +120,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'Diffusion Studios',
-      status: 'Opened',
+      status: 'opened',
       approximateDate: 'September 2021',
       address: '2315 Telegraph Avenue',
       coordinates: [37.868334749642386, -122.25897193555352],
@@ -129,7 +129,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'Duffl',
-      status: 'Opened',
+      status: 'opened',
       approximateDate: 'September 2021',
       address: '2595 Telegraph Avenue',
       coordinates: [37.8635543401126, -122.25840979908618],
@@ -138,7 +138,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'Kuboba Spot',
-      status: 'Opened',
+      status: 'opened',
       approximateDate: 'July 2022',
       address: '2618 Telegraph Avenue',
       coordinates: [37.86260092975001, -122.25903709983461],
@@ -147,7 +147,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'Sharetea',
-      status: 'Opened',
+      status: 'opened',
       approximateDate: 'October 2021',
       address: '2328 Telegraph Avenue',
       coordinates: [37.86816229873032, -122.25929229972847],
@@ -156,7 +156,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'The Apothecarium',
-      status: 'Opened',
+      status: 'opened',
       approximateDate: 'July 2020',
       address: '2312 Telegraph Avenue',
       coordinates: [37.86828126852266, -122.25934432821737],
@@ -165,7 +165,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'The Ink Stone',
-      status: 'Opened',
+      status: 'opened',
       approximateDate: 'June 2020',
       address: '2424 Telegraph Avenue',
       coordinates: [37.86652586892029, -122.25889479933339],
@@ -174,7 +174,7 @@ const turnoverCoordinates = {
     },
     {
       name: 'The Line Coffee',
-      status: 'Opened',
+      status: 'opened',
       approximateDate: 'April 2022',
       address: '3001 Telegraph Avenue',
       coordinates: [37.855931730318865, -122.2593849709788],
