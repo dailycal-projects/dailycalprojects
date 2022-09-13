@@ -1,6 +1,4 @@
-import { isNonNullChain } from "typescript"
-
-export const turnoverCoordinates = {
+const turnoverCoordinates = {
     info: [
 
         {
@@ -9,7 +7,7 @@ export const turnoverCoordinates = {
             approximateDate: "11/2020",
             address: "2996 Telegraph Avenue",
             coordinates: [37.856733277598124, -122.25983728206509],
-            note: "Aliberto’s Jr. Mexican Food opened at this address in June 2022",
+            note: "Aliberto’s Jr. Mexican Food opened at this address in June 2022.",
             color: "purple"
         },
         {
@@ -18,7 +16,7 @@ export const turnoverCoordinates = {
             approximateDate: "10/2020",
             address: "2386 Telegraph Avenue",
             coordinates: [37.867315695262135, -122.25867562376372],
-            note: "Sold and replaced by Beck's Shoes in 10/2020 due to business owner's retirement.",
+            note: "Sold and replaced by Beck's Shoes in October 2020 due to business owner's retirement.",
             color: "red"
         },
         {
@@ -27,7 +25,7 @@ export const turnoverCoordinates = {
             approximateDate: "4/2020",
             address: "2475 Telegraph Avenue",
             coordinates: [37.865601617363396, -122.2582947500843],
-            note: "Closed in support of California shelter-in-place order. Sizzling Lunch opened at this address in 2/2022.",
+            note: "Closed in support of California shelter-in-place order. Sizzling Lunch opened at this address in February 2022.",
             color: "purple"
         },
         {
@@ -45,7 +43,7 @@ export const turnoverCoordinates = {
             approximateDate: "6/2020",
             address: "2369 Telegraph Avenue",
             coordinates: [37.86755490392055, -122.25848213725511],
-            note: "Mosaic Boulders opened at this address in 9/2022.",
+            note: "Mosaic Boulders opened at this address in September 2022.",
             color: "purple"
         },
         {
@@ -208,4 +206,5 @@ export const turnoverCoordinates = {
     minLong: -122.26692349096834,
     maxLong: -122.24801314287727,
   };
-  
+
+export default turnoverCoordinates;
