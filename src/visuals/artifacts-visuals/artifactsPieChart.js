@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  PieChart, Pie, Tooltip, ResponsiveContainer,
+  PieChart, Pie, Tooltip, ResponsiveContainer, Legend, Cell,
 } from 'recharts';
 
 const innerData = [
@@ -14,8 +14,15 @@ const outerData = [
   { name: 'UC Davis AFO', value: 3449 },
 ];
 
+const colors = ['#e87876', '#f6975f', '#abcd80', '#6bb4ba', '#4d7da3', '#a07fac'];
+
 const ArtifactsPieChart = () => (
-  <div>
+  <div
+    style={{
+      backgroundColor: '#e9edf0',
+      padding: '15px',
+    }}
+  >
     <div
       style={{
         display: 'flex',
@@ -25,7 +32,7 @@ const ArtifactsPieChart = () => (
         left: '20px',
       }}
     >
-      <h4> Minimum number of individuals, MNI, and associated funerary objects, AFO, held by UC Davis and UC Berkeley </h4>
+      <h4> Minimum number of individuals (MNI) and associated funerary objects (AFO) held by UC Davis and UC Berkeley </h4>
     </div>
     <ResponsiveContainer height={650}>
       <PieChart height={650} width={650}>
@@ -33,8 +40,14 @@ const ArtifactsPieChart = () => (
           data={innerData}
           dataKey="value"
           outerRadius={150}
-          fill="#fee28e"
-        />
+        //   fill="#feda6a"
+        >
+          {
+      innerData.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={colors[index]} />
+      ))
+    }
+        </Pie>
         <Pie
           data={outerData}
           dataKey="value"
@@ -42,8 +55,15 @@ const ArtifactsPieChart = () => (
           outerRadius={275}
           fill="#489bd1"
           label
-        />
+        >
+          {
+      outerData.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={colors[index + 2]} />
+      ))
+    }
+        </Pie>
         <Tooltip />
+        <Legend />
       </PieChart>
     </ResponsiveContainer>
   </div>
