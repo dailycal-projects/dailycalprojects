@@ -24,6 +24,8 @@ import GymFloor from '../visuals/gym-pac-12-visuals/gymFloor';
 import Timeline1921 from '../visuals/1921-visuals/1921Timeline';
 import STEMEnrollmentLine from '../visuals/STEM-visuals/STEMLine';
 import StudyAbroadMap from '../visuals/study-abroad-visuals/studyAbroadMap';
+import ArtifactsBarChart from '../visuals/artifacts-visuals/artifactsBarChart';
+import ArtifactsPieChart from '../visuals/artifacts-visuals/artifactsPieChart';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -64,6 +66,8 @@ const shortcodes = {
   Timeline1921,
   STEMEnrollmentLine,
   StudyAbroadMap,
+  ArtifactsBarChart,
+  ArtifactsPieChart,
 };
 
 export default function Layout({ children }) {
