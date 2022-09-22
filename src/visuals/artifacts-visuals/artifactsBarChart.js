@@ -70,7 +70,7 @@ function ArtifactsBarChart() {
           <MenuItem value="UC Berkeley">UC Berkeley</MenuItem>
           <MenuItem value="UCLA">Fowler Museum at UCLA</MenuItem>
           <MenuItem value="UC Davis">UC Davis Department of Anthropology Museum</MenuItem>
-          <MenuItem value="UC Santa Barbara">UC Santa Barbara Department of Anthropology</MenuItem>
+          <MenuItem value="UC Santa Barbara">UC Santa Barbara department of anthropology</MenuItem>
           <MenuItem value="UC Riverside">UC Riverside</MenuItem>
         </Select>
       </FormControl>
