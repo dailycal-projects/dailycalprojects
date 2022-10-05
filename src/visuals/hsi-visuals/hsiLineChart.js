@@ -7,11 +7,12 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from 'recharts';
-import allData from './hsiData';
+import allData from './HSIData';
 
-function HsiLineChart() {
-  return (
+const HsiLineChart = () => (
+  <ResponsiveContainer height={650}>
     <LineChart
       width={700}
       height={400}
@@ -39,7 +40,7 @@ function HsiLineChart() {
       <Line type="monotone" dataKey="California public schools" stroke="#3371FF" />
 
     </LineChart>
-  );
-}
+  </ResponsiveContainer>
+);
 
 export default HsiLineChart;

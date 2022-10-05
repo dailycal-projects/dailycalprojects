@@ -1,4 +1,4 @@
-const data = [
+const allData = [
   {
     name: '1984',
     Undergraduate: 5.4,
