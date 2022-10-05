@@ -306,4 +306,3 @@ const data = [
 ];
 
 export default allData;
-
