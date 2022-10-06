@@ -11,7 +11,7 @@ import {
 } from 'recharts';
 import allData from './HSIData';
 
-const HsiLineChart = () => (
+const HSILineChart = () => (
   <ResponsiveContainer height={650}>
     <LineChart
       width={700}
@@ -43,4 +43,4 @@ const HsiLineChart = () => (
   </ResponsiveContainer>
 );
 
-export default HsiLineChart;
+export default HSILineChart;

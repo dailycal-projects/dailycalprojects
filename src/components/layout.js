@@ -26,7 +26,7 @@ import STEMEnrollmentLine from '../visuals/STEM-visuals/STEMLine';
 import StudyAbroadMap from '../visuals/study-abroad-visuals/studyAbroadMap';
 import ArtifactsBarChart from '../visuals/artifacts-visuals/artifactsBarChart';
 import ArtifactsPieChart from '../visuals/artifacts-visuals/artifactsPieChart';
-import HsiLineChart from '../visuals/hsi-visuals/hsiLineChart';
+import HSILineChart from '../visuals/hsi-visuals/hsiLineChart';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -69,7 +69,7 @@ const shortcodes = {
   StudyAbroadMap,
   ArtifactsBarChart,
   ArtifactsPieChart,
-  HsiLineChart,
+  HSILineChart,
 };
 
 export default function Layout({ children }) {
