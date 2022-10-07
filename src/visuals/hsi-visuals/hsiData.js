@@ -1,4 +1,4 @@
-const allData = [
+export const allData = [
   {
     name: '1984',
     Undergraduate: 5.4,
@@ -304,5 +304,3 @@ const allData = [
     amt: 2500,
   },
 ];
-
-export default allData;
