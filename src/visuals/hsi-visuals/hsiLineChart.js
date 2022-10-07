@@ -12,10 +12,10 @@ import {
 import allData from './HSIData';
 
 const HSILineChart = () => (
-  <ResponsiveContainer height={650}>
+  <ResponsiveContainer height={550}>
     <LineChart
-      width={700}
-      height={400}
+      width={750}
+      height={550}
       data={allData}
       margin={{
         top: 5,
@@ -29,15 +29,15 @@ const HSILineChart = () => (
       <YAxis />
       <Tooltip />
       <Legend />
+      <Line type="monotone" dataKey="California public schools" stroke="#3371FF" />
       <Line
         type="monotone"
         dataKey="Undergraduate"
         stroke="#8884d8"
         activeDot={{ r: 4 }}
       />
-      <Line type="monotone" dataKey="Graduate" stroke="#82ca9d" />
       <Line type="monotone" dataKey="Undergraduate and graduate" stroke="#FF5733" />
-      <Line type="monotone" dataKey="California public schools" stroke="#3371FF" />
+      <Line type="monotone" dataKey="Graduate" stroke="#82ca9d" />
 
     </LineChart>
   </ResponsiveContainer>
