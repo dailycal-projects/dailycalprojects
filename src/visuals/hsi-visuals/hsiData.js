@@ -1,7 +1,7 @@
 export const allData = [
   {
     name: '1984',
-    Undergraduate: 5.4,
+    Undergraduate: 6.2,
     Graduate: 4.7,
     'Undergraduate and graduate': 5.8,
     'California public schools': 27.9,
