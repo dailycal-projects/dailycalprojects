@@ -11,7 +11,6 @@ import {
 } from 'recharts';
 import { allData } from './HSIData';
 
-
 const HSILineChart = () => (
   <div>
     <div
