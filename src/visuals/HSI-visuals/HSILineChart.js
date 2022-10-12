@@ -41,15 +41,15 @@ const HSILineChart = () => (
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="California public schools" stroke="#3371FF" />
+        <Line type="monotone" dataKey="California public schools" stroke="#489BD1" />
         <Line
           type="monotone"
           dataKey="Undergraduate"
-          stroke="#8884d8"
+          stroke="#8F679C"
           activeDot={{ r: 4 }}
         />
-        <Line type="monotone" dataKey="Undergraduate and graduate" stroke="#FF5733" />
-        <Line type="monotone" dataKey="Graduate" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="Undergraduate and graduate" stroke="#E3565F" />
+        <Line type="monotone" dataKey="Graduate" stroke="#95C361" />
 
       </LineChart>
     </ResponsiveContainer>
