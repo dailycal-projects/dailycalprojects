@@ -66,7 +66,7 @@ const HSILineChart = () => (
           />
           <YAxis />
           <Tooltip />
-          <Legend wrapperStyle={{ position: 'relative', marginTop: '-15px' }} />
+          <Legend wrapperStyle={{ marginTop: '-15px' }} />
           <Line type="monotone" dataKey="California K-12 public schools" stroke="#489BD1" />
           <Line
             type="monotone"
