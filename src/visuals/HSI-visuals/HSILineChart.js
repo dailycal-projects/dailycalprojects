@@ -19,7 +19,7 @@ class CustomizedAxisTick extends Component {
 
     return (
       <g transform={`translate(${x},${y})`}>
-        <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-35)">
+        <text x={0} y={10} dy={0} textAnchor="end" fill="#666" transform="rotate(-35)">
           {payload.value}
         </text>
       </g>
@@ -63,10 +63,11 @@ const HSILineChart = () => (
           <XAxis
             dataKey="name"
             tick={<CustomizedAxisTick />}
+            height={45}
           />
           <YAxis />
           <Tooltip />
-          <Legend wrapperStyle={{ marginTop: '-15px' }} />
+          <Legend />
           <Line type="monotone" dataKey="California K-12 public schools" stroke="#489BD1" />
           <Line
             type="monotone"
