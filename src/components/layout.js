@@ -27,6 +27,12 @@ import StudyAbroadMap from '../visuals/study-abroad-visuals/studyAbroadMap';
 import ArtifactsBarChart from '../visuals/artifacts-visuals/artifactsBarChart';
 import ArtifactsPieChart from '../visuals/artifacts-visuals/artifactsPieChart';
 import HSILineChart from '../visuals/HSI-visuals/HSILineChart';
+import SubscriberLineChart from '../visuals/reddit-visuals/subscriberCount';
+import DailyCommentLineChart from '../visuals/reddit-visuals/dailyCommentCount';
+import PostsPerHourBarChart from '../visuals/reddit-visuals/postsPerHourBarChart';
+import PostsPerDayBarChart from '../visuals/reddit-visuals/postsPerDayBarChart';
+import PostsPerFlairBarChart from '../visuals/reddit-visuals/postsPerFlairBarChart';
+import InteractiveLineChart from '../visuals/reddit-visuals/interactiveLineChart';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -70,6 +76,12 @@ const shortcodes = {
   ArtifactsBarChart,
   ArtifactsPieChart,
   HSILineChart,
+  SubscriberLineChart,
+  DailyCommentLineChart,
+  PostsPerHourBarChart,
+  PostsPerDayBarChart,
+  PostsPerFlairBarChart,
+  InteractiveLineChart,
 };
 
 export default function Layout({ children }) {

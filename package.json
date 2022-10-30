@@ -10,6 +10,8 @@
     "@material-ui/styles": "^4.11.5",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "danfojs": "^1.1.2",
+    "danfojs-node": "^1.1.2",
     "gatsby": "^3.9.1",
     "gatsby-image": "^3.7.1",
     "gatsby-plugin-css-modules-typings": "^1.0.1",

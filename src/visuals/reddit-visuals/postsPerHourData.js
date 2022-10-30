@@ -1,0 +1,28 @@
+const data = [
+  { time: '0:00', 'Number of posts': 3759 },
+  { time: '1:00', 'Number of posts': 2259 },
+  { time: '2:00', 'Number of posts': 1408 },
+  { time: '3:00', 'Number of posts': 895 },
+  { time: '4:00', 'Number of posts': 805 },
+  { time: '5:00', 'Number of posts': 693 },
+  { time: '6:00', 'Number of posts': 777 },
+  { time: '7:00', 'Number of posts': 1247 },
+  { time: '8:00', 'Number of posts': 2035 },
+  { time: '9:00', 'Number of posts': 3057 },
+  { time: '10:00', 'Number of posts': 3905 },
+  { time: '11:00', 'Number of posts': 4347 },
+  { time: '12:00', 'Number of posts': 4574 },
+  { time: '13:00', 'Number of posts': 4593 },
+  { time: '14:00', 'Number of posts': 4676 },
+  { time: '15:00', 'Number of posts': 4646 },
+  { time: '16:00', 'Number of posts': 4741 },
+  { time: '17:00', 'Number of posts': 4728 },
+  { time: '18:00', 'Number of posts': 4558 },
+  { time: '19:00', 'Number of posts': 4658 },
+  { time: '20:00', 'Number of posts': 4975 },
+  { time: '21:00', 'Number of posts': 5517 },
+  { time: '22:00', 'Number of posts': 5290 },
+  { time: '23:00', 'Number of posts': 4658 },
+];
+
+export default data;
