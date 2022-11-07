@@ -47,7 +47,7 @@ const GapStackedBarChart = () => (
       }}
     >
       <strong>
-        <p> CA school districts with the largest gaps between Black and white student performance on 2022 Smarter Balanced math tests </p>
+        <p> CA school districts with the largest gaps in Black and white student performance on 2022 Smarter Balanced math tests </p>
       </strong>
     </div>
     <br />
@@ -101,7 +101,7 @@ const GapStackedBarChart = () => (
       }}
     >
       <strong>
-        <p> CA school districts with the largest gaps between Black and white student performance on 2022 Smarter Balanced ELA tests </p>
+        <p> CA school districts with the largest gaps in Black and white student performance on 2022 Smarter Balanced ELA tests </p>
       </strong>
     </div>
     <br />
