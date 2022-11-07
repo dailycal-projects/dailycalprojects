@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   BarChart,
   Bar,
@@ -11,6 +11,22 @@ import {
 } from 'recharts';
 import { gapDataMath } from './gapDataMath';
 import { gapDataELA } from './gapDataELA';
+
+class CustomizedAxisTick extends Component {
+  render() {
+    const {
+      x, y, stroke, payload,
+    } = this.props;
+
+    return (
+      <g transform={`translate(${x},${y})`}>
+        <text x={0} y={10} dy={0} textAnchor="end" fill="#666" transform="rotate(-35)">
+          {payload.value}
+        </text>
+      </g>
+    );
+  }
+}
 
 const GapStackedBarChart = () => (
 
@@ -35,10 +51,10 @@ const GapStackedBarChart = () => (
       </strong>
     </div>
     <br />
-    <ResponsiveContainer height={600}>
+    <ResponsiveContainer height={710}>
       <BarChart
         width={400}
-        height={600}
+        height={710}
         data={gapDataMath}
         margin={{
           top: 5,
@@ -48,14 +64,17 @@ const GapStackedBarChart = () => (
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="District" />
+        <XAxis
+          dataKey="District"
+          tick={<CustomizedAxisTick />}
+          height={110}
+        />
         <YAxis
           tickFormatter={(tick) => `${tick}%`}
         />
         <Tooltip />
-        <Legend />
         <Bar
-          dataKey="Difference between Black and white students"
+          dataKey="Difference in Black and white student performance"
           fill="#f0876a"
         />
         <Bar
@@ -86,10 +105,10 @@ const GapStackedBarChart = () => (
       </strong>
     </div>
     <br />
-    <ResponsiveContainer height={600}>
+    <ResponsiveContainer height={740}>
       <BarChart
         width={400}
-        height={600}
+        height={740}
         data={gapDataELA}
         margin={{
           top: 5,
@@ -99,14 +118,19 @@ const GapStackedBarChart = () => (
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="District" />
+        <XAxis
+          dataKey="District"
+          tick={<CustomizedAxisTick />}
+          height={140}
+        />
+        {' '}
         <YAxis
           tickFormatter={(tick) => `${tick}%`}
         />
         <Tooltip />
         <Legend />
         <Bar
-          dataKey="Difference between Black and white students"
+          dataKey="Difference in Black and white student performance"
           fill="#f0876a"
         />
         <Bar

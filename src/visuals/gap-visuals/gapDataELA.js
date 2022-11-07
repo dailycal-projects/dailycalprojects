@@ -1,32 +1,32 @@
 export const gapDataELA = [
 
   {
-    District: 'Los Angeles County Office of Education',
-    'Difference between Black and white students': 65.88,
+    District: 'L.A. County Office of Education',
+    'Difference in Black and white student performance': 65.88,
     'Percent of white students': 77.78,
     'Percent of Black students': 11.9,
   },
   {
     District: 'San Francisco Unified',
-    'Difference between Black and white students': 57.04,
+    'Difference in Black and white student performance': 57.04,
     'Percent of white students': 75,
     'Percent of Black students': 17.96,
   },
   {
     District: 'Oakland Unified',
-    'Difference between Black and white students': 53.95,
+    'Difference in Black and white student performance': 53.95,
     'Percent of white students': 73.76,
     'Percent of Black students': 19.81,
   },
   {
     District: 'Sequoia Union High',
-    'Difference between Black and white students': 53.86,
+    'Difference in Black and white student performance': 53.86,
     'Percent of white students': 87.20,
     'Percent of Black students': 33.34,
   },
   {
     District: 'Berkeley Unified',
-    'Difference between Black and white students': 53.04,
+    'Difference in Black and white student performance': 53.04,
     'Percent of white students': 83.04,
     'Percent of Black students': 30,
   },
