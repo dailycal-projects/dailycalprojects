@@ -1,4 +1,4 @@
-const gapDataELA = [
+export const gapDataELA = [
   {
     District: 'L.A. County Office of Education',
     'Difference in performance': 65.88,
@@ -30,5 +30,3 @@ const gapDataELA = [
     'Percent of Black students': 30,
   },
 ];
-
-export default gapDataELA;
