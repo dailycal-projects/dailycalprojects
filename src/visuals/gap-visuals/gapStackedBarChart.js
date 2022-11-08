@@ -12,6 +12,7 @@ import {
 import { gapDataMath } from './gapDataMath';
 import { gapDataELA } from './gapDataELA';
 
+
 class CustomizedAxisTick extends Component {
   render() {
     const {
