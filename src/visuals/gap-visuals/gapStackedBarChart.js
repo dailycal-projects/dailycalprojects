@@ -9,13 +9,13 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { gapDataMath } from './gapDataMath';
-import { gapDataELA } from './gapDataELA';
+import gapDataMath from './gapDataMath';
+import gapDataELA from './gapDataELA';
 
 class CustomizedAxisTick extends Component {
   render() {
     const {
-      x, y, stroke, payload,
+      x, y, payload,
     } = this.props;
 
     return (
@@ -47,7 +47,7 @@ const GapStackedBarChart = () => (
       }}
     >
       <strong>
-        <p> CA school districts with the largest gaps in Black and white student performance on 2022 Smarter Balanced math tests </p>
+        <p> California school districts with the largest gaps in Black and white student performance on the 2022 SBA in math </p>
       </strong>
     </div>
     <br />
@@ -58,8 +58,8 @@ const GapStackedBarChart = () => (
         data={gapDataMath}
         margin={{
           top: 5,
-          right: 30,
-          left: 20,
+          right: 10,
+          left: 5,
           bottom: 5,
         }}
       >
@@ -74,7 +74,7 @@ const GapStackedBarChart = () => (
         />
         <Tooltip />
         <Bar
-          dataKey="Difference in Black and white student performance"
+          dataKey="Difference in performance"
           fill="#f0876a"
         />
         <Bar
@@ -101,7 +101,7 @@ const GapStackedBarChart = () => (
       }}
     >
       <strong>
-        <p> CA school districts with the largest gaps in Black and white student performance on 2022 Smarter Balanced ELA tests </p>
+        <p> California school districts with the largest gaps in Black and white student performance on the 2022 SBA in ELA </p>
       </strong>
     </div>
     <br />
@@ -112,8 +112,8 @@ const GapStackedBarChart = () => (
         data={gapDataELA}
         margin={{
           top: 5,
-          right: 30,
-          left: 20,
+          right: 10,
+          left: 5,
           bottom: 5,
         }}
       >
@@ -130,7 +130,7 @@ const GapStackedBarChart = () => (
         <Tooltip />
         <Legend />
         <Bar
-          dataKey="Difference in Black and white student performance"
+          dataKey="Difference in performance"
           fill="#f0876a"
         />
         <Bar
