@@ -1,4 +1,4 @@
-export const gapDataMath = [
+const gapDataMath = [
   {
     District: 'Menlo Park City Elementary',
     'Difference in performance': 60.76,
@@ -30,3 +30,5 @@ export const gapDataMath = [
     'Black students': 9.08,
   },
 ];
+
+export default gapDataMath;

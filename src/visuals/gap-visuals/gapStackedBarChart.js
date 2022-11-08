@@ -9,8 +9,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { gapDataMath } from './gapDataMath';
-import { gapDataELA } from './gapDataELA';
+import gapDataMath from './gapDataMath';
+import gapDataELA from './gapDataELA';
 
 class CustomizedAxisTick extends Component {
   render() {
