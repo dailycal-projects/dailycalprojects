@@ -33,6 +33,7 @@ import PostsPerHourBarChart from '../visuals/reddit-visuals/postsPerHourBarChart
 import PostsPerDayBarChart from '../visuals/reddit-visuals/postsPerDayBarChart';
 import PostsPerFlairBarChart from '../visuals/reddit-visuals/postsPerFlairBarChart';
 import InteractiveLineChart from '../visuals/reddit-visuals/interactiveLineChart';
+import GapStackedBarChart from '../visuals/gap-visuals/gapStackedBarChart';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -82,6 +83,7 @@ const shortcodes = {
   PostsPerDayBarChart,
   PostsPerFlairBarChart,
   InteractiveLineChart,
+  GapStackedBarChart,
 };
 
 export default function Layout({ children }) {
