@@ -22,7 +22,11 @@ function InteractiveLineChart() {
     setInput(event.target.value);
   };
 
-  function wordUsageOverTime(word) {
+  const changeMyData = (x) => {
+    setCsvdata(x);
+  };
+
+  function wordUsageOverTime(inputWord) {
     const allData = [];
     dfd
       .readCSV(
@@ -32,8 +36,8 @@ function InteractiveLineChart() {
         const dfDrop = df.dropNa({ axis: 0 });
         dfDrop.print();
         const condition = dfDrop.title.str
-          .includes(word)
-          .or(dfDrop.text.str.includes(word));
+          .includes(inputWord)
+          .or(dfDrop.text.str.includes(inputWord));
 
         let subDF = dfDrop.loc({ rows: condition });
         subDF = subDF.groupby(['period']).count();
@@ -47,24 +51,20 @@ function InteractiveLineChart() {
             count: seriesY.values[0],
           });
         }
-        console.log('Changed data');
-        console.log(allData);
+        // console.log('Changed data');
+        // console.log(allData);
         changeMyData(allData);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }
 
   const handleClick = (event) => {
     event.preventDefault();
     setWord(input);
-    console.log(typeof input);
+    // console.log(typeof input);
     wordUsageOverTime(input);
-  };
-
-  const changeMyData = (x) => {
-    setCsvdata(x);
   };
 
   return (
@@ -84,7 +84,7 @@ function InteractiveLineChart() {
         onChange={handleChange}
         value={input}
       />
-      <button onClick={handleClick}>Click</button>
+      <button type="button" onClick={handleClick}>Click</button>
       <br />
       <ResponsiveContainer height={600}>
         <BarChart width={400} height={600} data={csvdata}>
