@@ -208,19 +208,19 @@ const data = {
   'Moe to Morrison on Wednesday': [dataNested3, '#abcd80'],
   'Morrison to Moe on Monday': [dataNested4, '#6bb4ba'],
   'Morrison to Moe on Tuesday': [dataNested5, '#4d7da3'],
-  'Morrison to Moe  on Wednesday': [dataNested6, '#a07fac'],
+  'Morrison to Moe on Wednesday': [dataNested6, '#a07fac'],
   'Moe to Mezzo on Monday': [dataNested7, '#e87876'],
   'Moe to Mezzo on Tuesday': [dataNested8, '#f6975f'],
   'Moe to Mezzo on Wednesday': [dataNested9, '#abcd80'],
   'Morrison to Mezzo on Monday': [dataNested10, '#6bb4ba'],
   'Morrison to Mezzo on Tuesday': [dataNested11, '#4d7da3'],
-  'Morrison to Mezzo  on Wednesday': [dataNested12, '#a07fac'],
+  'Morrison to Mezzo on Wednesday': [dataNested12, '#a07fac'],
   'Mezzo to Moe on Monday': [dataNested1, '#e87876'],
   'Mezzo to Moe on Tuesday': [dataNested2, '#f6975f'],
   'Mezzo to Moe on Wednesday': [dataNested3, '#abcd80'],
   'Mezzo to Morrison on Monday': [dataNested4, '#6bb4ba'],
   'Mezzo to Morrison on Tuesday': [dataNested5, '#4d7da3'],
-  'Mezzo to Morrison  on Wednesday': [dataNested6, '#a07fac'],
+  'Mezzo to Morrison on Wednesday': [dataNested6, '#a07fac'],
 
 };
 
