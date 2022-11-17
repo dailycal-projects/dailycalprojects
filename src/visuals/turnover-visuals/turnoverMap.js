@@ -41,7 +41,7 @@ class TurnoverMap extends Component {
               <CircleMarker
                 key={k}
                 center={[info.coordinates[0], info.coordinates[1]]}
-                radius={10}
+                radius={6}
                 color={[info.color]}
                 fillOpacity={0.6}
               >
@@ -58,7 +58,9 @@ class TurnoverMap extends Component {
                     {' around '}
                     {info.approximateDate}
                     <br />
-                    {info.note}
+                    <i>
+                      {info.note}
+                    </i>
                   </div>
                 </Popup>
               </CircleMarker>
