@@ -28,6 +28,7 @@ import ArtifactsBarChart from '../visuals/artifacts-visuals/artifactsBarChart';
 import ArtifactsPieChart from '../visuals/artifacts-visuals/artifactsPieChart';
 import HSILineChart from '../visuals/HSI-visuals/HSILineChart';
 import GapStackedBarChart from '../visuals/gap-visuals/gapStackedBarChart';
+import ProposalsASE from '../visuals/bargaining-visuals/proposalsASE';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -72,6 +73,7 @@ const shortcodes = {
   ArtifactsPieChart,
   HSILineChart,
   GapStackedBarChart,
+  ProposalsASE,
 };
 
 export default function Layout({ children }) {
