@@ -16,7 +16,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import data from './fancyInteractiveData';
+import scores from './alamedaScoreData';
+import schools from './alamedaSchoolsData';
 
 function InteractiveBarChart() {
   const useStyles = makeStyles(() => ({
@@ -28,38 +29,40 @@ function InteractiveBarChart() {
 
   const classes = useStyles();
 
-  const [origin, setOrigin] = React.useState({
-    place: 'Moe',
+  const [district, setDistrict] = React.useState({
+    name: 'Berkeley Unified',
   });
 
-  const handleOriginChange = (event) => {
+  const handleDistrictChange = (event) => {
     const { value } = event.target;
-    setOrigin({
-      place: value,
+    setDistrict({
+      name: value,
+    });
+    setSchool({
+      name: 'All schools',
     });
   };
 
-  const [destination, setDestination] = React.useState({
-    place: 'Mezzo',
+  const [school, setSchool] = React.useState({
+    name: 'All schools',
   });
 
-  const handleDestinationChange = (event) => {
+  const handleSchoolChange = (event) => {
     const { value } = event.target;
-    setDestination({
-      place: value,
-    });
-  };
-
-  const [day, setDay] = React.useState({
-    name: 'Monday',
-  });
-
-  const handleDayChange = (event) => {
-    const { value } = event.target;
-    setDay({
+    setSchool({
       name: value,
     });
   };
+
+  const districts = [
+
+    'All districts',
+    'Berkeley Unified',
+    'Oakland Unified',
+    'Alameda Unified',
+    'Fremont Unified',
+
+  ];
 
   return (
     <div
@@ -83,86 +86,75 @@ function InteractiveBarChart() {
           <p> Choice chart </p>
         </strong>
       </div>
+
       <FormControl className={classes.formControl} sx={{ m: 3 }}>
-        <InputLabel>Origin</InputLabel>
+        <InputLabel>District</InputLabel>
         <Select
-          value={origin.place}
+          value={district.name}
           id="regionSelector"
           name="region"
-          onChange={handleOriginChange}
-          defaultValue="Morrison"
-          label="origin"
+          onChange={handleDistrictChange}
+          defaultValue="All districts"
+          label="district"
         >
-          <MenuItem value="Moe">Moe&apos;s</MenuItem>
-          <MenuItem value="Mezzo">Mezzo</MenuItem>
-          <MenuItem value="Morrison">Morrison&apos;s</MenuItem>
+
+          {districts.map((item) => (
+
+            <MenuItem value={item}>
+              {item}
+            </MenuItem>
+
+          ))}
         </Select>
       </FormControl>
       <FormControl className={classes.formControl} sx={{ m: 3 }}>
-        <InputLabel>Destination</InputLabel>
+        <InputLabel>School</InputLabel>
         <Select
-          value={destination.place}
+          value={school.name}
           id="regionSelector1"
           name="region1"
-          onChange={handleDestinationChange}
-          defaultValue="Morrison"
-          label="destination"
+          onChange={handleSchoolChange}
+          defaultValue={schools[district.name][0]}
+          label="school"
         >
-          <MenuItem value="Moe">Moe&apos;s</MenuItem>
-          <MenuItem value="Mezzo">Mezzo</MenuItem>
-          <MenuItem value="Morrison">Morrison&apos;s</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl className={classes.formControl} sx={{ m: 3 }}>
-        <InputLabel>Day of week</InputLabel>
-        <Select
-          value={day.name}
-          id="regionSelector2"
-          name="region2"
-          onChange={handleDayChange}
-          defaultValue="Monday"
-          label="day"
-        >
-          <MenuItem value="Monday">Monday</MenuItem>
-          <MenuItem value="Tuesday">Tuesday</MenuItem>
-          <MenuItem value="Wednesday">Wednesday</MenuItem>
+          {schools[district.name].map((item) => (
+            <MenuItem value={item}>
+              {item}
+            </MenuItem>
+
+          ))}
+
         </Select>
       </FormControl>
       <br />
       <br />
 
-      {
-
-        (origin.place !== destination.place) ? (
-
-          <ResponsiveContainer height={600}>
-            <BarChart
-              width={400}
-              height={600}
-              data={data[`${origin.place} to ${destination.place} on ${day.name}`][0]}
-              margin={{
-                top: 5,
-                right: 10,
-                left: 0,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar
-                dataKey="grade"
-                fill={data[`${origin.place} to ${destination.place} on ${day.name}`][1]}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-
-        ) : <p> The selected origin and destination are the same. Try a new selection.  </p>
-    }
+      <ResponsiveContainer height={600}>
+        <BarChart
+          width={400}
+          height={600}
+          data={scores[`${district.name}, ${school.name}`]}
+          margin={{
+            top: 5,
+            right: 10,
+            left: 0,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar
+            dataKey="grade"
+            fill="#e87876"
+          />
+        </BarChart>
+      </ResponsiveContainer>
 
     </div>
+
   );
 }
 

@@ -201,27 +201,26 @@ const dataNested12 = [
 
 ];
 
-const data = {
+const scores = {
 
-  'Moe to Morrison on Monday': [dataNested1, '#e87876'],
-  'Moe to Morrison on Tuesday': [dataNested2, '#f6975f'],
-  'Moe to Morrison on Wednesday': [dataNested3, '#abcd80'],
-  'Morrison to Moe on Monday': [dataNested4, '#6bb4ba'],
-  'Morrison to Moe on Tuesday': [dataNested5, '#4d7da3'],
-  'Morrison to Moe on Wednesday': [dataNested6, '#a07fac'],
-  'Moe to Mezzo on Monday': [dataNested7, '#e87876'],
-  'Moe to Mezzo on Tuesday': [dataNested8, '#f6975f'],
-  'Moe to Mezzo on Wednesday': [dataNested9, '#abcd80'],
-  'Morrison to Mezzo on Monday': [dataNested10, '#6bb4ba'],
-  'Morrison to Mezzo on Tuesday': [dataNested11, '#4d7da3'],
-  'Morrison to Mezzo on Wednesday': [dataNested12, '#a07fac'],
-  'Mezzo to Moe on Monday': [dataNested1, '#e87876'],
-  'Mezzo to Moe on Tuesday': [dataNested2, '#f6975f'],
-  'Mezzo to Moe on Wednesday': [dataNested3, '#abcd80'],
-  'Mezzo to Morrison on Monday': [dataNested4, '#6bb4ba'],
-  'Mezzo to Morrison on Tuesday': [dataNested5, '#4d7da3'],
-  'Mezzo to Morrison on Wednesday': [dataNested6, '#a07fac'],
+  'Berkeley Unified, All schools': dataNested9,
+  'Berkeley Unified, Berkeley High': dataNested1,
+  'Berkeley Unified, Willard Middle': dataNested2,
+
+  'Oakland Unified, All schools': dataNested10,
+  'Oakland Unified, Oakland Technical High': dataNested3,
+  'Oakland Unified, Seminary High': dataNested4,
+
+  'Alameda Unified, All schools': dataNested11,
+  'Alameda Unified, Encinal High': dataNested5,
+  'Alameda Unified, Alameda High': dataNested6,
+
+  'Fremont Unified, All schools': dataNested12,
+  'Fremont Unified, Fremont High': dataNested7,
+  'Fremont Unified, Dougherty Valley High': dataNested8,
+
+  'All districts, All schools': dataNested12,
 
 };
 
-export default data;
+export default scores;
