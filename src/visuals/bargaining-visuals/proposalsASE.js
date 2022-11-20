@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 const ProposalsASE = () => (
 
@@ -20,443 +20,43 @@ const ProposalsASE = () => (
       </AccordionSummary>
       <AccordionDetails>
         <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
+          <ButtonGroup orientation="vertical" fullWidth>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
+              Proposal 1, UC to UAW, Nov. 11
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
+              Proposal 2, UAW to UC, Nov. 11
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
+              Proposal 3, UC to UAW, Nov. 11
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
+              Proposal 4, UAW to UC, Nov. 11
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
+              Proposal 5, UC to UAW, Nov. 11
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
 
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
+              Proposal 6, UAW to UC, Nov. 11
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
+              Proposal 7, UC to UAW, Nov. 11
 
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
 
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
+              Proposal 8, UAW to UC, Nov. 11
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
+              Proposal 7, UC to UAW, Nov. 11
 
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
+            </Button>
+            <Button href="https://dailycal.org" target="_blank" variant="outlined">
 
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <Stack direction="row" spacing={2}>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 1
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 2
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 3
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 4
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-
-                Proposal 5
-              </Button>
-            </a>
-            <a href="https://dailycal.org" target="_blank" rel="noreferrer">
-              <Button variant="outlined">
-                Proposal 6
-              </Button>
-            </a>
-          </Stack>
+              Proposal 8, UAW to UC, Nov. 11
+            </Button>
+          </ButtonGroup>
         </Typography>
       </AccordionDetails>
     </Accordion>
