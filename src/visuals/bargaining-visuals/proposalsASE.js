@@ -56,6 +56,10 @@ const ProposalsASE = () => (
 
               Proposal 8, UAW to UC, Nov. 11
             </Button>
+            <Button color="secondary" href="https://dailycal.org" target="_blank" variant="outlined">
+
+              Tentative agreement, Nov. 12
+            </Button>
           </ButtonGroup>
         </Typography>
       </AccordionDetails>
