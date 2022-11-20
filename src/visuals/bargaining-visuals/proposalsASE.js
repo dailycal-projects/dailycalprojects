@@ -6,64 +6,39 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import { articlesASE, infoASE } from './infoASE';
 
 const ProposalsASE = () => (
 
   <div>
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography>Student work</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          <ButtonGroup orientation="vertical" fullWidth>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-              Proposal 1, UC to UAW, Nov. 11
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-              Proposal 2, UAW to UC, Nov. 11
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-              Proposal 3, UC to UAW, Nov. 11
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-              Proposal 4, UAW to UC, Nov. 11
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-              Proposal 5, UC to UAW, Nov. 11
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
+    {
+        articlesASE.map((item) => (
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>{item}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <ButtonGroup orientation="vertical" fullWidth>
+                  {
+                        infoASE[item].map((proposal, index) => (
 
-              Proposal 6, UAW to UC, Nov. 11
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-              Proposal 7, UC to UAW, Nov. 11
+                          <Button href={proposal.link} color={proposal.color} target="_blank" variant="outlined">
+                            {proposal.name}
+                          </Button>
 
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-
-              Proposal 8, UAW to UC, Nov. 11
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-              Proposal 7, UC to UAW, Nov. 11
-
-            </Button>
-            <Button href="https://dailycal.org" target="_blank" variant="outlined">
-
-              Proposal 8, UAW to UC, Nov. 11
-            </Button>
-            <Button color="secondary" href="https://dailycal.org" target="_blank" variant="outlined">
-
-              Tentative agreement, Nov. 12
-            </Button>
-          </ButtonGroup>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
+                        ))
+}
+                </ButtonGroup>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))
+}
   </div>
 
 );
