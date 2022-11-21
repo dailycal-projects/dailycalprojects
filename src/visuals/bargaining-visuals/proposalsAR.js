@@ -6,10 +6,15 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { articlesAR, infoAR } from './infoAR';
+import { lastUpdated, articlesAR, infoAR } from './infoAR';
 
 const ProposalsAR = () => (
   <div>
+    <p>
+      <i>
+        {lastUpdated}
+      </i>
+    </p>
     {
           articlesAR.map((item) => (
             <Accordion>

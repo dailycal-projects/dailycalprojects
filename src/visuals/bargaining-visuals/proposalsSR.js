@@ -6,10 +6,15 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { articlesSR, infoSR } from './infoSR';
+import { lastUpdated, articlesSR, infoSR } from './infoSR';
 
 const ProposalsSR = () => (
   <div>
+    <p>
+      <i>
+        {lastUpdated}
+      </i>
+    </p>
     {
           articlesSR.map((item) => (
             <Accordion>

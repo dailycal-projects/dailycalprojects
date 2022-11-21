@@ -1,3 +1,5 @@
+export const lastUpdated = 'Last updated on Nov. 21, 2022 at 11:52 a.m.';
+
 export const articlesASE = [
 
   'Recognition',

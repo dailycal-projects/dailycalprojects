@@ -6,10 +6,15 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { articlesASE, infoASE } from './infoASE';
+import { lastUpdated, articlesASE, infoASE } from './infoASE';
 
 const ProposalsASE = () => (
   <div>
+    <p>
+      <i>
+        {lastUpdated}
+      </i>
+    </p>
     {
         articlesASE.map((item) => (
           <Accordion>

@@ -6,10 +6,15 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { articlesPostdocs, infoPostdocs } from './infoPostdocs';
+import { lastUpdated, articlesPostdocs, infoPostdocs } from './infoPostdocs';
 
 const ProposalsPostocs = () => (
   <div>
+    <p>
+      <i>
+        {lastUpdated}
+      </i>
+    </p>
     {
           articlesPostdocs.map((item) => (
             <Accordion>
