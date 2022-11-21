@@ -4,7 +4,7 @@ export const articlesASE = [
 
   'Recognition',
   'Appointment notification',
-//   'Appointment security',
+  'Appointment security',
 //   'Childcare',
 //   'Classifications',
 //   'Class sizes',
@@ -129,22 +129,64 @@ const appointmentNotificationProposals = [
 
 ];
 
+const appointmentSecurityProposals = [
+
+  {
+    name: 'Proposal | UC to UAW | April 19, 2022',
+    link: 'https://drive.google.com/file/d/1BATFJXxXBHPTXyJNipF8Vx5w7EVE2rK0/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | April 26, 2022',
+    link: 'https://drive.google.com/file/d/1ZPlNxkkmrLPSnAAL_YI9TzGUSjgbqJih/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | May 10, 2022',
+    link: 'https://drive.google.com/file/d/1oa1JMeCNPnSfHp6GRZ4HiopHfOxp9zyx/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | May 10, 2022',
+    link: 'https://drive.google.com/file/d/1PqQSFM8IzWbbZPkpyUWULKsdXs3C8gH9/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | May 10, 2022',
+    link: 'https://drive.google.com/file/d/1PqQSFM8IzWbbZPkpyUWULKsdXs3C8gH9/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | May 24, 2022',
+    link: 'https://drive.google.com/file/d/1sjZpKYToUcZDUwLP4jzfKv5fSkEhvWqm/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Tentative agreement | June 2, 2022',
+    link: 'https://drive.google.com/file/d/15OysSNi8MgtVzNSw9HFjKCFQimb4cipw/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
 export const infoASE = {
 
   Recognition: {
 
     proposals: recognitionProposals,
-    intro: 'A tentative agreement was reached on Nov. 18, 2022 for the recognition article, which recognizes what job titles are counted as ASEs represented by UAW, Local 2865.',
+    intro: 'Leave out intros until night has copy edited them all.',
 
   },
 
   'Appointment notification': {
 
     proposals: appointmentNotificationProposals,
-    intro: 'Proposals from the appointment notification article set forth rules regarding when the UC should notify prospective ASEs of their employment and what information the UC should provide upon notification.',
+    intro: 'Leave out intros until night has copy edited them all.',
 
-  }
-
-  ,
+  },
+  'Appointment security': {
+    proposals: appointmentSecurityProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
 
 };
