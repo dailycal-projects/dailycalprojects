@@ -3,6 +3,7 @@ export const lastUpdated = 'Last updated on Nov. 21, 2022 at 11:52 a.m.';
 export const articlesSR = [
 
   'Access needs and reasonable accommodations',
+  'Anti-bullying and respectful work environment',
 
 ];
 
@@ -93,6 +94,46 @@ const accessNeedsProposals = [
 
 ];
 
+const respectfulProposals = [
+
+{
+    name: 'Proposal | UAW to UC | April 15, 2022',
+    link: 'https://drive.google.com/file/d/1kXUR7Unzgm8l626WHFeiNn3ItF6SNaRW/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | June 3, 2022',
+    link: 'https://drive.google.com/file/d/1yy2AIYJftEc3ONe0m-2awzozhxmap23K',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | June 22, 2022',
+    link: 'https://drive.google.com/file/d/1uenzLtIlNs9T6M6xCKkFK81YwPONlbMe/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Aug. 26, 2022',
+    link: 'https://drive.google.com/file/d/1LhD9zS5hCJmA05GbxqUxw1TYxTtBt1Tw/view?usp=drivesdk',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Aug. 26, 2022',
+    link: 'https://drive.google.com/file/d/1I2XqIMf-vAkVVpKDwZWMeELPTOhFfe58/view?usp=drivesdk',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Sept. 29, 2022',
+    link: 'https://drive.google.com/file/d/1KWLm8JgdbDodmyJIQCGiKRNLyQFdwVVH/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Tentative agreement | Sept. 29, 2022',
+    link: 'https://drive.google.com/file/d/196P8SFjW5hvrgNowV7KGvALmSs2mAxpv/view?usp=sharing',
+    color: 'success',
+  },
+];
+
+
 export const infoSR = {
 
   'Access needs and reasonable accommodations': {
@@ -101,5 +142,12 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
+  'Anti-bullying and respectful work environment': {
+
+    proposals: respectfulProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+
 
 };
