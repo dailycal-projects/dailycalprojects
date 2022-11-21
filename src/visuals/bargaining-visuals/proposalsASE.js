@@ -9,7 +9,6 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import { articlesASE, infoASE } from './infoASE';
 
 const ProposalsASE = () => (
-
   <div>
     {
         articlesASE.map((item) => (
@@ -19,20 +18,21 @@ const ProposalsASE = () => (
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography>{item}</Typography>
+              <Typography><i>{item}</i></Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
+                {infoASE[item].intro}
+                <br />
+                <br />
                 <ButtonGroup orientation="vertical" fullWidth>
                   {
-                        infoASE[item].map((proposal, index) => (
-
+                        infoASE[item].proposals.map((proposal) => (
                           <Button href={proposal.link} color={proposal.color} target="_blank" variant="outlined">
                             {proposal.name}
                           </Button>
-
                         ))
-}
+                    }
                 </ButtonGroup>
               </Typography>
             </AccordionDetails>
@@ -40,7 +40,6 @@ const ProposalsASE = () => (
         ))
 }
   </div>
-
 );
 
 export default ProposalsASE;
