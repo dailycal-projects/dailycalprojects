@@ -10,6 +10,16 @@ export const articlesSR = [
   'Community safety',
   'Defined contribution and university retirement plan(s)',
   'Dicipline and dismissal',
+  'Duration',
+  'Emergency Layoff',
+  'Employment file and evaluations',
+  'Grievance and arbitration',
+  'Health and Safety',
+  'Health benefits',
+  'Holidays',
+  'Housing',
+  'Interantional scholars and immigrant suppoort',
+  'Labor-management meetings',
 
 ];
 
@@ -168,6 +178,27 @@ const disciplineProposals = [
   },
 ];
 
+const durationProposals = [
+
+  {
+    name: 'Proposal | UC to UAW | Oct. 13, 2022',
+    link: 'https://drive.google.com/file/d/16NX19Bic1MKImLUNQS04SOkj2IZ4R7DI/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 16, 2022',
+    link: 'https://drive.google.com/file/d/11A7HmQutdrGPxDSbQJXRmTQrRTZAGa8Q/view?usp=share_link',
+    color: 'secondary',
+  },
+];
+
+const emergencyLayoffProposals = [
+  {
+    name: 'Tentative agreement | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1UT5FwAvdsJkKNh7dZIRk42zfQs3XaQ-o/view?usp=share_link',
+    color: 'success',
+  },
+];
 
 export const infoSR = {
 
@@ -216,6 +247,18 @@ export const infoSR = {
   'Dicipline and dismissal':{
 
     proposals: disciplineProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Duration':{
+
+    proposals: durationProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Emergency Layoff':{
+
+    proposals: emergencyLayoffProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
