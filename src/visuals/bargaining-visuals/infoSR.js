@@ -20,6 +20,9 @@ export const articlesSR = [
   'Housing',
   'International scholars and immigrant support',
   'Labor-management meetings',
+  'Layoffs',
+  'Leaves',
+
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
@@ -288,6 +291,75 @@ const laborManagementProposals = [
     color: 'success',
   },
 ];
+
+const Layoffsproposal = [
+  {
+    name: 'Package |UAW to UC | Nov. 7, 2022',
+    link: 'https://drive.google.com/file/d/1YDmzgEZ_-MgZieFwhpUFlrf2Ok-ILbVX/view',
+    color: 'secondary',
+  },
+  {
+    name: 'Package |UAW to UC | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1R-L4uadDDIuIBVTMZO-M-msFcZIziG_x/view?usp=share_link',
+    color: 'secondary',
+  },
+];
+
+const leavesProposals = [
+
+  {
+    name: 'Package | UAW to UC | April 15, 2022',
+    link: 'https://drive.google.com/file/d/1FaCDsBoFDxNZz4xoAqqjQcvrG_Pwygp8/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 22, 2022',
+    link: 'https://drive.google.com/file/d/1BaQ8Mk5ETK5CoiWAj1G_eijS7s8WwOpp/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 22, 2022',
+    link: 'https://drive.google.com/file/d/1VqdGUttaTiEdgRNbeTUga9EXX-yP5OCk/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Oct. 13, 2022',
+    link: 'https://drive.google.com/file/d/16NX19Bic1MKImLUNQS04SOkj2IZ4R7DI/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Oct. 13, 2022',
+    link: 'https://drive.google.com/file/d/14p2zpYrxNqN9FqZ72Z7kBntWZKQRtF_J/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Paroposal | UC to UAW| Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1QMdRaTRVYVfnIBhWvfaJ02a3Ca5xcZ6h/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1QMdRaTRVYVfnIBhWvfaJ02a3Ca5xcZ6h/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/12YQS7gukWIYbGuCrB5mTzSotFILgS3D_/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1lSpz_fHJGCZeEDdJksHyxBjZ4NS6QqtG/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 16, 2022',
+    link: 'https://drive.google.com/file/d/11A7HmQutdrGPxDSbQJXRmTQrRTZAGa8Q/view?usp=share_link',
+    color: 'secondary',
+  },
+
+];
+
 export const infoSR = {
 
   'Access needs and reasonable accommodations': {
@@ -398,7 +470,18 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
+  'Layoffs':{
 
+    proposals: Layoffsproposal,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Leaves':{
+
+    proposals: leavesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
 };
 
 
