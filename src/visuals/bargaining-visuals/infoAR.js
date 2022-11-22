@@ -45,11 +45,11 @@ const benefitsRetirementPrograms = [
     link: 'https://drive.google.com/file/d/1EpmcAZUJGrXm-A7zO84SolCLyCktiITV/view?usp=share_link',
     color: 'secondary',
   },
-{
+  {
     name: 'Package | UC to UAW | Nov. 17, 2022',
     link: 'https://drive.google.com/file/d/1-RrNTZc-uyQQ4orlPibGZwNRSMRR5we9/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
@@ -62,8 +62,8 @@ export const infoAR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  
-  "Benefits and retirement programs": {
+
+  'Benefits and retirement programs': {
 
     proposals: benefitsRetirementPrograms,
     intro: 'Leave out intros until night has copy edited them all.',

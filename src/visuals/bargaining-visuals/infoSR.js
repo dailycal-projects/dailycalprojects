@@ -96,7 +96,7 @@ const accessNeedsProposals = [
 
 const respectfulProposals = [
 
-{
+  {
     name: 'Proposal | UAW to UC | April 15, 2022',
     link: 'https://drive.google.com/file/d/1kXUR7Unzgm8l626WHFeiNn3ItF6SNaRW/view?usp=sharing',
     color: 'secondary',
@@ -133,7 +133,6 @@ const respectfulProposals = [
   },
 ];
 
-
 export const infoSR = {
 
   'Access needs and reasonable accommodations': {
@@ -148,6 +147,5 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-
 
 };
