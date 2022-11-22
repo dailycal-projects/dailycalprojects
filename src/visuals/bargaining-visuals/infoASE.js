@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 21, 2022 at 11:52 a.m.';
+export const lastUpdated = 'Nov. 22, 2022 at 2:37 a.m.';
 
 export const articlesASE = [
 
@@ -51,7 +51,7 @@ export const articlesASE = [
   'Appendix YY',
   'Joint labor management committee',
   'Berkeley staffing side setter',
-  'Contract extension',
+  'Current contract extensions',
 ];
 
 const recognitionProposals = [
@@ -1197,7 +1197,7 @@ export const infoASE = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Contract extension': {
+  'Current contract extensions': {
 
     proposals: contractExtensionsProposals,
     intro: 'Leave out intros until night has copy edited them all.',
