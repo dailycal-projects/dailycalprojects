@@ -11,14 +11,14 @@ export const articlesSR = [
   'Defined contribution and university retirement plan(s)',
   'Dicipline and dismissal',
   'Duration',
-  'Emergency Layoff',
+  'Emergency layoff',
   'Employment file and evaluations',
   'Grievance and arbitration',
   'Health and safety',
   'Health benefits',
   'Holidays',
   'Housing',
-  'Interantional scholars and immigrant suppoort',
+  'International scholars and immigrant support',
   'Labor-management meetings',
 ];
 
@@ -398,7 +398,7 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  
+
 };
 
 
