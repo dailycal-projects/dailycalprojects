@@ -82,7 +82,6 @@ const shortcodes = {
   PostsPerHourBarChart,
   PostsPerDayBarChart,
   PostsPerFlairBarChart,
-  InteractiveLineChart,
   GapStackedBarChart,
 };
 
