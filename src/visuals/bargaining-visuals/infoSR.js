@@ -8,7 +8,6 @@ export const articlesSR = [
   'Appointment security',
   'Childcare',
   'Community safety',
-  'Defined contribution and university retirement plan(s)',
 
 ];
 
@@ -75,7 +74,7 @@ const ChildcareProposals = [
   },
 ];
 
-const communitySafetyProposals = [
+const communitysafetyProposals = [
 
   {
     name: 'Proposal | Sept. 21, 2022',
@@ -125,9 +124,9 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Community Safety': {
+  'Community safety': {
 
-    proposals: communitySafetyProposals,
+    proposals: communitysafetyProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
