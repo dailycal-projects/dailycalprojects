@@ -8,14 +8,17 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { lastUpdated, articlesASE, infoASE } from './infoASE';
 import ColorMap from './bargainingColorMap';
+import NumberMap from './bargainingNumberMap';
 
 const accordionColors = new Map();
+let tentativeAgreements = 0;
 
 articlesASE.map((item) => (
 
   infoASE[item].proposals.map((proposal) => (
 
-    accordionColors.set(item, ColorMap.get(proposal.color))
+    accordionColors.set(item, ColorMap.get(proposal.color)),
+    tentativeAgreements += NumberMap.get(proposal.color)
 
   ))));
 
@@ -23,7 +26,18 @@ const ProposalsASE = () => (
   <div>
     <p>
       <i>
+        As of
+        {' '}
         {lastUpdated}
+        ,
+        {' '}
+        <strong>
+          {tentativeAgreements}
+          {' '}
+          tentative agreements
+        </strong>
+        {' '}
+        were met between the UC and the UAW, Local 2865.
       </i>
     </p>
     {

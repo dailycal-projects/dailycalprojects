@@ -7,17 +7,46 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { lastUpdated, articlesPostdocs, infoPostdocs } from './infoPostdocs';
+import ColorMap from './bargainingColorMap';
+import NumberMap from './bargainingNumberMap';
+
+const accordionColors = new Map();
+let tentativeAgreements = 0;
+
+articlesPostdocs.map((item) => (
+
+  infoPostdocs[item].proposals.map((proposal) => (
+
+    accordionColors.set(item, ColorMap.get(proposal.color)),
+    tentativeAgreements += NumberMap.get(proposal.color)
+
+  ))
+));
 
 const ProposalsPostocs = () => (
   <div>
     <p>
       <i>
+        As of
+        {' '}
         {lastUpdated}
+        ,
+        {' '}
+        <strong>
+          {tentativeAgreements}
+          {' '}
+          tentative agreements
+        </strong>
+        {' '}
+        were met between the UC and the UAW, Local 5180 on postdocs&apos; developing contract.
       </i>
     </p>
     {
           articlesPostdocs.map((item) => (
-            <Accordion>
+            <Accordion sx={{
+              backgroundColor: accordionColors.get(item),
+            }}
+            >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
