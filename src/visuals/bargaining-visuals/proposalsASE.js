@@ -7,6 +7,17 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { lastUpdated, articlesASE, infoASE } from './infoASE';
+import ColorMap from './bargainingColorMap';
+
+const accordionColors = new Map();
+
+articlesASE.map((item) => (
+
+  infoASE[item].proposals.map((proposal) => (
+
+    accordionColors.set(item, ColorMap.get(proposal.color))
+
+  ))));
 
 const ProposalsASE = () => (
   <div>
@@ -17,7 +28,11 @@ const ProposalsASE = () => (
     </p>
     {
         articlesASE.map((item) => (
-          <Accordion>
+
+          <Accordion sx={{
+            backgroundColor: accordionColors.get(item),
+          }}
+          >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"

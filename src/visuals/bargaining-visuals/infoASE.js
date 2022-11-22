@@ -30,28 +30,28 @@ export const articlesASE = [
   'Peer-led trainings',
   'Posting',
   'Reasonable accomodations',
-//   'Access needs',
-//   'Relocation benefit',
-//   'Respectful work environment',
-//   'Past practices',
-//   'Severability',
-//   'Summer session',
-//   'Training and orientation',
-//   'Travel',
-//   'Union access and rights',
-//   'Union security',
-//   'Wages',
-//   'Waiver',
-//   'Workload',
-//   'Workspace materials and instructional support',
-//   'Duration',
-//   'Preamble',
-//   'Ground rules',
-//   'Appendix F',
-//   'Appendix YY',
-//   'Joint labor management committee',
-//   'Berkeley staffing side setter',
-//   'Contract extension',
+  'Access needs',
+  'Relocation benefit',
+  'Respectful work environment',
+  'Past practices',
+  'Severability',
+  'Summer session',
+  'Training and orientation',
+  'Travel',
+  'Union access and rights',
+  'Union security',
+  'Wages',
+  'Waiver',
+  'Workload',
+  'Workspace materials and instructional support',
+  'Duration',
+  'Preamble',
+  'Ground rules',
+  'Appendix F',
+  'Appendix YY',
+  'Joint labor management committee',
+  'Berkeley staffing side setter',
+  'Contract extension',
 ];
 
 const recognitionProposals = [
@@ -578,6 +578,332 @@ const reasonableAccommodationsProposals = [
 
 ];
 
+const accessNeedsProposals = [
+
+  {
+    name: 'Package | UC to UAW | Aug. 16, 2022',
+    link: 'https://drive.google.com/file/d/1udulHPspihtwXBpC-SBTnxh1f8RjukFp/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Side letter | UC to UAW | Aug. 23, 2022',
+    link: 'https://drive.google.com/file/d/125R9MPypqYK0xk7t4ehS8JYtyVsSvcBs/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Oct. 17, 2022',
+    link: 'https://drive.google.com/file/d/1ZcIK5iv2k-m-kkzX-oJor8Omko-DbYJ_/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Side letter | UC to UAW | Oct. 17, 2022',
+    link: 'https://drive.google.com/file/d/1r9TcHp_ZMnrXkg3RfH43VCXvIaDOHeN1/view?usp=sharing',
+    color: 'secondary',
+  },
+
+];
+
+const relocationBenefitProposals = [
+
+  {
+    name: 'Proposal | UAW to UC | May 24, 2022',
+    link: 'https://drive.google.com/file/d/18SjvunOkL-2zDKaFwsHDOpnAo7OA9ba7/view?usp=sharing',
+    color: 'secondary',
+
+  },
+
+];
+
+const respectfulProposals = [
+
+  {
+    name: 'Tentative agreement | Sept. 28, 2022',
+    link: 'https://drive.google.com/file/d/1p6qmpqR4OZ3KrHlkEwL7FYMM1ZfpJl0Z/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const pastPracticesProposals = [];
+
+const severabilityProposals = [
+
+  {
+    name: 'Tentative package agreement | March 16, 2022',
+    link: 'https://drive.google.com/file/d/1Wc5Sb2AwFIWkgeXBgD7z1cxGTr-duKPy/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const summerSessionProposals = [
+
+  {
+
+    name: 'Proposal | UC to UAW | July 12, 2022',
+    link: 'https://drive.google.com/file/d/1cKXOX36NlT4MHNNGTbvmjh3E_xlD9BHA/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+
+    name: 'Package | UC to UAW | Aug. 16, 2022',
+    link: 'https://drive.google.com/file/d/1_0LBmJQs48kPW6d0fNv0E0ywEEdImIj0/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+
+    name: 'Package | UC to UAW | Sept. 21, 2022',
+    link: 'https://drive.google.com/file/d/15VKaw8cfNraqokQyFA_1wuwn8hIy8GzQ/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+
+    name: 'Package | UC to UAW | Oct. 17, 2022',
+    link: 'https://drive.google.com/file/d/1bjnlIOdnD623-ri6G5EvcUcDBo3QISkI/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+
+    name: 'Proposal | UAW to UC | Oct. 19, 2022',
+    link: 'https://drive.google.com/file/d/17w1M_k_qS_hQtwK7uaM-V4Ha7FbSZWb5/view?usp=sharing',
+    color: 'secondary',
+
+  },
+
+];
+
+const trainingOrientationProposals = [
+
+  {
+    name: 'Tentative agreement | June 24, 2022',
+    link: 'https://drive.google.com/file/d/1yrwg1SufdU6UJoBDQMH5CRBUIZrNL1-q/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const travelProposals = [
+
+  {
+    name: 'Tentative package agreement | March 16, 2022',
+    link: 'https://drive.google.com/file/d/1Wc5Sb2AwFIWkgeXBgD7z1cxGTr-duKPy/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const unionAccessProposals = [
+
+  {
+    name: 'Tentative agreement | Sept. 21, 2022',
+    link: 'https://drive.google.com/file/d/1blJYtuV9YTSiLO1bb7eUS9iCTO-uewgt/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const unionSecurityProposals = [
+
+  {
+    name: 'Tentative agreement | Sept. 21, 2022',
+    link: 'https://drive.google.com/file/d/1nlBYryF5ter8YR3nlSIfwGNMwOdxKGW7/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const wagesProposals = [
+
+  {
+    name: 'Proposal | UAW to UC | April 7, 2022',
+    link: 'https://drive.google.com/file/d/1I9DURz1VYaUFUAp8XhheEYgxBdqVEpTC/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+    name: 'Package | UC to UAW | June 17, 2022',
+    link: 'https://drive.google.com/file/d/1n572TTGkWppefvjWzN6qhlPHqOy6thrt/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+    name: 'Proposal | UC to UAW | June 17, 2022',
+    link: 'https://drive.google.com/file/d/1k4eOopEJNFP6PL2pc5BfVCg-HnSy6VaO/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 28, 2022',
+    link: 'https://drive.google.com/file/d/1N2zawH0mSzq1tZ3VfB9FapDbv5rVpfJw/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+    name: 'Proposal | UC to UAW | Oct. 12, 2022',
+    link: 'https://drive.google.com/file/d/1rzK2AgYg-UBrNgYPKxtdcBFSkHju0xuI/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+    name: 'Package | UC to UAW | Oct. 12, 2022',
+    link: 'https://drive.google.com/file/d/1WofzmrOi-VV0K7YSbglGyl1LHfUFDAZN/view?usp=sharing',
+    color: 'secondary',
+
+  },
+  {
+    name: 'Package | UAW to UC | Oct. 27, 2022',
+    link: 'https://drive.google.com/file/d/1IFN3DPZXJ6bvh1LJb-F8U3cFR7JIzNwl/view?usp=share_link',
+    color: 'secondary',
+
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 9, 2022',
+    link: 'https://drive.google.com/file/d/1DXQUAyy8AmJBNm0FW9ssNyc9Qre-AjVN/view?usp=share_link',
+    color: 'secondary',
+
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 21, 2022',
+    link: 'https://drive.google.com/file/d/19bF0M5HyZUzCtGPuR8NF6HhOPEcnpK1p/view',
+    color: 'secondary',
+
+  },
+
+];
+
+const waiverProposals = [
+
+  {
+    name: 'Tentative agreement | May 10, 2022',
+    link: 'https://drive.google.com/file/d/1nmguHVsho3BCUp7bUXTvT7HbKFHkEPIy/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const workloadProposals = [
+
+  {
+    name: 'Tentative agreement | Nov. 18, 2022',
+    link: 'https://drive.google.com/file/d/1o6hpHFy70JI0YtH0UHYLXEeWxB4fOFqi/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const workspaceMaterialsProposals = [
+
+  {
+    name: 'Tentative agreement | March 16, 2022',
+    link: 'https://drive.google.com/file/d/1Wc5Sb2AwFIWkgeXBgD7z1cxGTr-duKPy/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const durationProposals = [
+
+  {
+    name: 'Proposal | UC to UAW | June 17, 2022',
+    link: 'https://drive.google.com/file/d/1jfwOLhhBxQt7rC70oUIRpfAdJ3sC51OF/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | June 17, 2022',
+    link: 'https://drive.google.com/file/d/1n572TTGkWppefvjWzN6qhlPHqOy6thrt/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Oct. 12, 2022',
+    link: 'https://drive.google.com/file/d/1WofzmrOi-VV0K7YSbglGyl1LHfUFDAZN/view?usp=sharing',
+    color: 'secondary',
+  },
+
+];
+
+const preambleProposals = [
+
+  {
+    name: 'Proposal | UC to UAW | Aug. 23, 2022',
+    link: 'https://drive.google.com/file/d/1OR1nv7KoOffcJp8v1uGHtzl6LpM9eEe6/view?usp=sharing',
+    color: 'secondary',
+
+  },
+
+];
+
+const groundRulesProposals = [
+
+  {
+    name: 'Tentative agreement | March 22, 2022',
+    link: 'https://drive.google.com/file/d/1e1kOkor0zYLI_mSvDVP-fSvKs8McENh4/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const appendixFProposals = [
+
+  {
+    name: 'Tentative agreement | Oct. 17, 2022',
+    link: 'https://drive.google.com/file/d/1wYlVcHvq1o2NM0VbkYS-2SmwxohxSH05/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const appendixYYProposals = [
+
+  {
+    name: 'Tentative agreement | Sept. 21, 2022',
+    link: 'https://drive.google.com/file/d/1nuL38C_fC6zhDzfZh19MGrhbAcslAMyX/view?usp=sharing',
+    color: 'success',
+  },
+
+];
+
+const jointLaborProposals = [
+
+  {
+    name: 'Proposal | UC to UAW | July 12, 2022',
+    link: 'https://drive.google.com/file/d/1j59w6QBGHEtDLBev3_fV3ABViIspHXuq/view',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Oct. 17, 2022',
+    link: 'https://drive.google.com/file/d/1EC_ZbKhkWHIG6i6IbHXTvvYtq2Lit09g/view',
+    color: 'secondary',
+  },
+];
+
+const berkeleyStaffingProposals = [
+  {
+    name: 'Side letter | UAW to UC | Oct. 27, 2022',
+    link: 'https://drive.google.com/file/d/1tdWCJDoHUAVBslgD2OxjvbUvO2O1sMTf/view?usp=share_link',
+    color: 'secondary',
+  },
+
+];
+
+const contractExtensionsProposals = [
+
+  {
+    name: 'Extension of current contract to Aug. 17, 2022',
+    link: 'https://drive.google.com/file/d/1EuiXYqsF9Zfhhmq0aqWX6cAh4isDa6M-/view',
+    color: 'secondary',
+  },
+  {
+    name: 'Extension of current contract to Oct. 1, 2022',
+    link: 'https://drive.google.com/file/d/1PbCJgcL9rXyR3e3baRTvWSzId9dCV_j2/view',
+    color: 'secondary',
+  },
+
+];
+
 export const infoASE = {
 
   Recognition: {
@@ -742,6 +1068,138 @@ export const infoASE = {
   'Reasonable accomodations': {
 
     proposals: reasonableAccommodationsProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Past practices': {
+
+    proposals: pastPracticesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Access needs': {
+
+    proposals: accessNeedsProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Relocation benefit': {
+
+    proposals: relocationBenefitProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Respectful work environment': {
+
+    proposals: respectfulProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  Severability: {
+
+    proposals: severabilityProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Summer session': {
+
+    proposals: summerSessionProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Training and orientation': {
+
+    proposals: trainingOrientationProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  Travel: {
+
+    proposals: travelProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Union access and rights': {
+
+    proposals: unionAccessProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Union security': {
+
+    proposals: unionSecurityProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  Wages: {
+
+    proposals: wagesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  Waiver: {
+
+    proposals: waiverProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  Workload: {
+
+    proposals: workloadProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Workspace materials and instructional support': {
+
+    proposals: workspaceMaterialsProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  Duration: {
+
+    proposals: durationProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  Preamble: {
+
+    proposals: preambleProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Ground rules': {
+
+    proposals: groundRulesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Appendix F': {
+
+    proposals: appendixFProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Appendix YY': {
+
+    proposals: appendixYYProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Joint labor management committee': {
+
+    proposals: jointLaborProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Berkeley staffing side setter': {
+
+    proposals: berkeleyStaffingProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Contract extension': {
+
+    proposals: contractExtensionsProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
