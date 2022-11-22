@@ -17,14 +17,9 @@ function InteractiveLineChart() {
   const [csvdata, setCsvdata] = useState(data);
   const [input, setInput] = useState('');
   const [word, setWord] = useState(' ');
-  //   const [loading, setLoading] = useState('Done loading');
 
   const handleChange = (event) => {
     setInput(event.target.value);
-  };
-
-  const changeMyData = (x) => {
-    setCsvdata(x);
   };
 
   function wordUsageOverTime(inputWord) {
@@ -32,16 +27,15 @@ function InteractiveLineChart() {
     dfd
       .readCSV(
         'https://raw.githubusercontent.com/shoehair/data/main/11-21-csv%20(1).csv',
+        // 'https://raw.githubusercontent.com/sahilchinoy/ucpd-crime/master/data/addresses.csv',
       )
       .then((df) => {
         const dfDrop = df.dropNa({ axis: 0 });
-        dfDrop.print();
         const condition = dfDrop.title.str
           .includes(inputWord)
           .or(dfDrop.text.str.includes(inputWord));
 
-        let subDF = dfDrop.loc({ rows: condition });
-        subDF = subDF.groupby(['period']).count();
+        const subDF = dfDrop.loc({ rows: condition }).groupby(['period']).count();
         subDF.sortValues('period', { inplace: true });
         subDF.resetIndex({ inplace: true });
         let j = 0;
@@ -63,19 +57,10 @@ function InteractiveLineChart() {
             });
           }
         }
-        // for (let i = 0; i < subDF.shape[0]; i += 1) {
-        //   const seriesX = subDF.loc({ rows: [i] }).period;
-        //   const seriesY = subDF.loc({ rows: [i] }).title_count;
-        //   allData.push({
-        //     data: seriesX.values[0],
-        //     count: seriesY.values[0],
-        //   });
-        // }
-
-        changeMyData(allData);
+        setCsvdata(allData);
       })
       .catch((err) => {
-        // console.log(err);
+      // console.log(err);
       });
   }
 
