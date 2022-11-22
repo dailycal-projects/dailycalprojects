@@ -90,7 +90,7 @@ const appointmentsProposals = [
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | Dec. 9, 2021',
+    name: 'Package | UC to UAW | Dec. 8, 2021',
     link: 'https://drive.google.com/file/d/1vHzuVRMmQ94bn11Zczkuns_j5vHkYzlr/view?usp=sharing',
     color: 'secondary',
   },
@@ -165,7 +165,7 @@ const appointmentsProposals = [
 const benefitsProposals = [
 
   {
-    name: 'Tentative agreement | Nov. 17, 2021',
+    name: 'Tentative agreement | Nov. 17, 2022',
     link: 'https://drive.google.com/file/d/1yEtPW_YapHEc-jn-rJCxDqakjfcT7s7X/view?usp=share_link',
     color: 'success',
   },
