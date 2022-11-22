@@ -8,6 +8,8 @@ export const articlesSR = [
   'Appointment security',
   'Childcare',
   'Community safety',
+  'Defined contribution and university retirement plan(s)',
+  'Dicipline and dismissal',
 
 ];
 
@@ -92,6 +94,81 @@ const DefinedcontributionProposals = [
   },
 ];
 
+const disciplineProposals = [
+
+  {
+    name: 'Proposal | UAW to UC | April 29, 2022',
+    link: 'https://drive.google.com/file/d/1rbVJ9ZUw9ZT813E-sA-IbxFz2z6DxRXr/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | June 15, 2022',
+    link: 'https://drive.google.com/file/d/1v97LYkhpyFrecVGCu1Hf79q-9_mRhegY/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | June 22, 2022',
+    link: 'https://drive.google.com/file/d/1PKWlX2GYYn8jquxCjwN0njkglFSr18SW/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW| June 29, 2022',
+    link: 'https://drive.google.com/file/d/1aqaYfDBqDIx3ks8hP6OIUc7ddt_nB52b/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | June 13, 2022',
+    link: 'https://drive.google.com/file/d/1_rtepzJUnxXxszMSyJa9UYdMn_as3cXp/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW| Sept. 22, 2022',
+    link: 'https://drive.google.com/file/d/1GIiWqmhbBeN1XPQSuMi8fuF0IgbIVt9n/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Oct. 6, 2022',
+    link: 'https://drive.google.com/file/d/1wV6Xahi8wcmJTNUH6kMazvceYzrq_e2J/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC| Nov. 7, 2022',
+    link: 'https://drive.google.com/file/d/15Kat3YzJdAIWqWTZGDd5g9fR3pYOq5zW/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 7, 2022',
+    link: 'https://drive.google.com/file/d/15Kat3YzJdAIWqWTZGDd5g9fR3pYOq5zW/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1Ca8ryV0iJIV-zsKmBCAZwG0eWHewCYo2/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1rJjLVFn1IDnZOdLHPQNiXm6sZqnYyoFJ/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1CzXhuq1JD2vqH5N_xat9nDENth02XxiU/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1u9B4_TEovPIwIHCwecxnWrSBWRaSI3sq/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 14, 2022',
+    link: 'https://drive.google.com/file/d/1pkdxBEW0shilhYO793ZIILjqnLg4XPn7/view?usp=share_link',
+    color: 'secondary',
+  },
+];
+
+
 export const infoSR = {
 
   'Access needs and reasonable accommodations': {
@@ -133,6 +210,12 @@ export const infoSR = {
   'Defined contribution and university retirement plan(s)':{
 
     proposals: DefinedcontributionProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Dicipline and dismissal':{
+
+    proposals: disciplineProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
