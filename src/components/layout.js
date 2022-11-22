@@ -32,6 +32,7 @@ import DailyCommentLineChart from '../visuals/reddit-visuals/dailyCommentCount';
 import PostsPerHourBarChart from '../visuals/reddit-visuals/postsPerHourBarChart';
 import PostsPerDayBarChart from '../visuals/reddit-visuals/postsPerDayBarChart';
 import PostsPerFlairBarChart from '../visuals/reddit-visuals/postsPerFlairBarChart';
+import InteractiveLineChart from '../visuals/reddit-visuals/interactiveLineChart';
 import GapStackedBarChart from '../visuals/gap-visuals/gapStackedBarChart';
 
 /*
@@ -81,6 +82,7 @@ const shortcodes = {
   PostsPerHourBarChart,
   PostsPerDayBarChart,
   PostsPerFlairBarChart,
+  InteractiveLineChart,
   GapStackedBarChart,
 };
 
