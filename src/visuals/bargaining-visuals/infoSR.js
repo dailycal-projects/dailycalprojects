@@ -12,15 +12,6 @@ export const articlesSR = [
   'Dicipline and dismissal',
   'Duration',
   'Emergency Layoff',
-  'Employment file and evaluations',
-  'Grievance and arbitration',
-  'Health and Safety',
-  'Health benefits',
-  'Holidays',
-  'Housing',
-  'Interantional scholars and immigrant suppoort',
-  'Labor-management meetings',
-
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
