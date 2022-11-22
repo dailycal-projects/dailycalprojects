@@ -34,7 +34,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
             {bylineName.map((author, i) => {
               const url = bylineUrl[i];
               return (
-                <a href={url} style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }}>
+                <a href={url} target="_blank" style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }}>
                   {' '}
                   {author}
                   {' '}
