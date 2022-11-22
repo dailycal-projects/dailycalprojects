@@ -12,6 +12,14 @@ export const articlesSR = [
   'Dicipline and dismissal',
   'Duration',
   'Emergency Layoff',
+  'Employment file and evaluations',
+  'Grievance and arbitration',
+  'Health and safety',
+  'Health benefits',
+  'Holidays',
+  'Housing',
+  'Interantional scholars and immigrant suppoort',
+  'Labor-management meetings',
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
@@ -191,6 +199,95 @@ const emergencyLayoffProposals = [
   },
 ];
 
+const employmentfileProposals = [
+  {
+    name: 'Tentative agreement | May 27, 2022',
+    link: 'https://drive.google.com/file/d/1b9MvsKGOfm5yq-d3cAxsX3IAWykDoD7P/view?usp=sharing',
+    color: 'success',
+  },
+];
+
+const grievanceProposals = [
+  {
+    name: 'Tentative agreement | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1OvbpoLiryXuieH8Qa8nLp67PW9ugC-5Z/view?usp=share_link',
+    color: 'success',
+  },
+];
+
+const healthSafetyProposals = [
+  {
+    name: 'Tentative agreement | Oct. 6, 2022',
+    link: 'https://drive.google.com/file/d/11fjyBjQlU-WRrz_LEkTtRZlnDnZLvcZM/view?usp=sharing',
+    color: 'success',
+  },
+];
+
+const healthBenefitsProposals = [
+  {
+    name: 'Proposal | UAW to UC | April 29, 2022',
+    link: 'https://drive.google.com/file/d/11fjyBjQlU-WRrz_LEkTtRZlnDnZLvcZM/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW| Nov. 16, 2022',
+    link: 'https://drive.google.com/file/d/11A7HmQutdrGPxDSbQJXRmTQrRTZAGa8Q/view?usp=share_link',
+    color: 'secondary',
+  },
+];
+
+const holidaysProposals = [
+  {
+    name: 'Tentative agreement | Oct. 6, 2022',
+    link: 'https://drive.google.com/file/d/1cgE7MvZYOak-nXqGIan52AYv80nMZfIs/view?usp=sharing',
+    color: 'success',
+  },
+];
+
+const housingProposals = [
+  {
+    name: 'Proposal | UAW to UC | April 15, 2022',
+    link: 'https://drive.google.com/file/d/1PZzYBFtdHSce2vGLOAhv-SOcTLulne5L/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW| Sept. 29, 2022',
+    link: 'https://drive.google.com/file/d/1cUBeM7uJ5K1LsueuM1MDIOKeLKRNPdAk/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC| Oct. 6, 2022',
+    link: 'https://drive.google.com/file/d/1wTTyL6RC3l5JWeRfJLvaFXxT10oCI20E/view?usp=sharing',
+    color: 'secondary',
+  },
+];
+
+const internationalProposals = [
+  {
+    name: 'Proposal | UAW to UC | April 15, 2022',
+    link: 'https://drive.google.com/file/d/1PZzYBFtdHSce2vGLOAhv-SOcTLulne5L/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW| Sept. 29, 2022',
+    link: 'https://drive.google.com/file/d/1cUBeM7uJ5K1LsueuM1MDIOKeLKRNPdAk/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC| Oct. 6, 2022',
+    link: 'https://drive.google.com/file/d/1cUBeM7uJ5K1LsueuM1MDIOKeLKRNPdAk/view?usp=sharing',
+    color: 'secondary',
+  },
+
+];
+
+const laborManagementProposals = [
+  {
+    name: 'Tentative agreement | May 13, 2022',
+    link: 'https://drive.google.com/file/d/1YDmzgEZ_-MgZieFwhpUFlrf2Ok-ILbVX/view',
+    color: 'success',
+  },
+];
 export const infoSR = {
 
   'Access needs and reasonable accommodations': {
@@ -247,11 +344,61 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Emergency Layoff':{
+  'Emergency layoff':{
 
     proposals: emergencyLayoffProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
+  'Employment file and evaluations':{
+
+    proposals: employmentfileProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Grievance and arbitration':{
+
+    proposals: grievanceProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Health and safety':{
+
+    proposals: healthSafetyProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Health benefits':{
+
+    proposals: healthBenefitsProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Holidays':{
+
+    proposals: holidaysProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Housing':{
+
+    proposals: housingProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'International scholars and immigrant support':{
+
+    proposals: internationalProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Labor-management meetings':{
+
+    proposals: laborManagementProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  
 };
+
 
