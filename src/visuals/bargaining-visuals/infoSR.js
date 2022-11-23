@@ -386,7 +386,7 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Childcare': {
+  Childcare: {
 
     proposals: ChildcareProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -398,90 +398,88 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Defined contribution and university retirement plan(s)':{
+  'Defined contribution and university retirement plan(s)': {
 
     proposals: DefinedcontributionProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Dicipline and dismissal':{
+  'Dicipline and dismissal': {
 
     proposals: disciplineProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Duration':{
+  Duration: {
 
     proposals: durationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Emergency layoff':{
+  'Emergency layoff': {
 
     proposals: emergencyLayoffProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Employment file and evaluations':{
+  'Employment file and evaluations': {
 
     proposals: employmentfileProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Grievance and arbitration':{
+  'Grievance and arbitration': {
 
     proposals: grievanceProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Health and safety':{
+  'Health and safety': {
 
     proposals: healthSafetyProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Health benefits':{
+  'Health benefits': {
 
     proposals: healthBenefitsProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Holidays':{
+  Holidays: {
 
     proposals: holidaysProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Housing':{
+  Housing: {
 
     proposals: housingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'International scholars and immigrant support':{
+  'International scholars and immigrant support': {
 
     proposals: internationalProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Labor-management meetings':{
+  'Labor-management meetings': {
 
     proposals: laborManagementProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Layoffs':{
+  Layoffs: {
 
     proposals: Layoffsproposal,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Leaves':{
+  Leaves: {
 
     proposals: leavesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
 };
-
-

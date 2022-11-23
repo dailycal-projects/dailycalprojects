@@ -14,13 +14,13 @@ export const articlesPostdocs = [
   'Holidays',
   'Immigration',
   'Individual development plans and progress assessments',
-  //   'International scholar and immigrant support',
-  //   'Job abandonment',
-  //   'Labor management meetings',
-  //   'Lawrence Berkeley National Lab article',
-  //   'Layoff',
-  //   'Leaves of absence',
-  // 'Management and academic rights',
+  'International scholar and immigrant support',
+  'Job abandonment',
+  'Labor management meetings',
+  'Lawrence Berkeley National Lab article',
+  'Layoff',
+  'Leaves of absence',
+  'Management and academic rights',
   // 'Medical separation',
   // 'No strikes',
   // 'Nondiscrimination',
@@ -461,6 +461,294 @@ const individualDevelopmentProposals = [
 
 ];
 
+const internationalScholarProposals = [
+
+  {
+    name: 'Proposal | UAW to UC | Sept. 9, 2021',
+    link: 'https://drive.google.com/file/d/18ObJiNqhJi0ZNyTbXbKDaNbbrh3vxsZG/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Oct. 5, 2021',
+    link: 'https://drive.google.com/file/d/1QGEAZzt3vjK59R9r8sGSoXnxjlZG1LTq/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Oct. 5, 2021',
+    link: 'https://drive.google.com/file/d/1KDsTZQs3ISSjYBZKTtbSUps1P7iIFQqB/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Dec. 15, 2021',
+    link: 'https://drive.google.com/file/d/15-Gc2SPyHq6MINEmOnSf1lw2ZGZ8pjg0/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | June 2, 2022',
+    link: 'https://drive.google.com/file/d/1P780SLDTcLI4lRHvqIaFPEtKZz0s-vxx/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | June 23, 2022',
+    link: 'https://drive.google.com/file/d/15zA4XPiNK7_CgTMFUPuPztbeGxqosQN_/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Sept. 14, 2022',
+    link: 'https://drive.google.com/file/d/1UDhWr3pJgzrKxAeximDDN89_jJQxEjJx/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
+    color: 'secondary',
+  },
+
+  {
+    name: 'Package | UAW to UC | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
+    color: 'secondary',
+  },
+
+  {
+    name: 'Package | UAW to UC | Nov. 19, 2022',
+    link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
+    color: 'secondary',
+  },
+
+];
+
+const jobAbandonmentProposals = [];
+
+const laborManagementProposals = [
+
+  {
+    name: 'Tentative agreement | Aug. 1, 2021',
+    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
+    color: 'success',
+  },
+];
+
+const LBNLProposals = [];
+
+const layoffProposals = [
+
+  {
+    name: 'Proposal | UC to UAW | July 30, 2021',
+    link: 'https://drive.google.com/file/d/1Po3cwCLUbqnoDS_6HVnXDBeySXLTgTjv/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 13, 2021',
+    link: 'https://drive.google.com/file/d/1ssIsfygdu7bo0Ct2FekEzrDN9fxJLfJ9/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Sept. 13, 2021',
+    link: 'https://drive.google.com/file/d/14r6Kk9N5l6tyPhEiftTtlCJuxCW4tmmN/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 21, 2021',
+    link: 'https://drive.google.com/file/d/1o9sdp11Q9jEBlqFY8JHYqq4MuWeJXoPL/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Sept. 27, 2021',
+    link: 'https://drive.google.com/file/d/1QvpIk1RqTHXLP2mDopdcl_0HVNnJc-Y1/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Oct. 21, 2021',
+    link: 'https://drive.google.com/file/d/1d6ZkTVYlrNk9NO76DfNjBmWpNwbYPkZr/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Oct. 21, 2021',
+    link: 'https://drive.google.com/file/d/1rMBB4NVzqT_rf4OjE5KAojK-4AKXGsWw/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Dec. 9, 2021',
+    link: 'https://drive.google.com/file/d/1vHzuVRMmQ94bn11Zczkuns_j5vHkYzlr/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 15, 2021',
+    link: 'https://drive.google.com/file/d/15-Gc2SPyHq6MINEmOnSf1lw2ZGZ8pjg0/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | May 4, 2022',
+    link: 'https://drive.google.com/file/d/13HWZeSMHISmnpERhgBdVo9-Si_5FZ0iT/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | June 2, 2022',
+    link: 'https://drive.google.com/file/d/1P780SLDTcLI4lRHvqIaFPEtKZz0s-vxx/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | June 9, 2022',
+    link: 'https://drive.google.com/file/d/13ZhLo8WbB_JH9NG9dAez46i_812s1RvB/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Sept. 14, 2022',
+    link: 'https://drive.google.com/file/d/1UDhWr3pJgzrKxAeximDDN89_jJQxEjJx/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1GeAqFvV0MFUYxxbAWXm8So6c0qr-vmGP/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
+    color: 'secondary',
+  },
+
+];
+
+const leavesProposals = [
+
+  {
+    name: 'Proposal | UAW to UC | Aug. 11, 2021',
+    link: 'https://drive.google.com/file/d/1Uu-WCIWzdjllO00SdVsMPK8-ChwHo-Zn/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Oct. 5, 2021',
+    link: 'https://drive.google.com/file/d/1Zyza1rpjsR0vFx32lLy0nCO4IxQCus3H/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Oct. 5, 2021',
+    link: 'https://drive.google.com/file/d/1QGEAZzt3vjK59R9r8sGSoXnxjlZG1LTq/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Feb. 11, 2022',
+    link: 'https://drive.google.com/file/d/1Mv7-eLpal3u9BgBPlTS6FHVFdR_Xr_yE/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Feb. 18, 2022',
+    link: 'https://drive.google.com/file/d/1VwrmY0e0RCRUicy3oEjvaafULbkuROMQ/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | June 23, 2022',
+    link: 'https://drive.google.com/file/d/18dqG61RmK88L7tHvk8dH-bq_49on6yJ9/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | June 23, 2022',
+    link: 'https://drive.google.com/file/d/15zA4XPiNK7_CgTMFUPuPztbeGxqosQN_/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 14, 2022',
+    link: 'https://drive.google.com/file/d/1FDMEaaesgkPrkWflKx92Lvp4osKZyELR/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Oct. 10, 2022',
+    link: 'https://drive.google.com/file/d/1YgHxrVKsdRqOziBU5K9GwyOlmrXRvQbm/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Oct. 21, 2022',
+    link: 'https://drive.google.com/file/d/1Sr10-HkLwEqGb4_SwyuRLh9AEeCOAPbS/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Oct. 28, 2022',
+    link: 'https://drive.google.com/file/d/1XWgrjBO82ZAIY6XX5FdlU2pzpiCELkPS/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 1, 2022',
+    link: 'https://drive.google.com/file/d/1bAxk1PorsT5i8HGh2XoG-MUsZpNLZk9-/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 1, 2022',
+    link: 'https://drive.google.com/file/d/1rnb6DTqouYLBeZPYwAEF4bZ4vWD_XDyv/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 3, 2022',
+    link: 'https://drive.google.com/file/d/1g1A-ekvTJ6xIe3aBsOG3pP6RHP8cCkuR/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 3, 2022',
+    link: 'https://drive.google.com/file/d/18vzvLwgPie26b4hHCIy8tDlBsCLW6lu6/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1OYvzTIPMdYdwzJ6STN29NHkKoZCJxLbw/view?usp=share_link',
+    color: 'secondary',
+  },
+
+  {
+    name: 'Package | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 19, 2022',
+    link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
+    color: 'secondary',
+  },
+
+];
+
+const managementAcademicProposals = [
+
+  {
+    name: 'Proposal | UC to UAW | July 30, 2021',
+    link: 'https://drive.google.com/file/d/1nYQNrf35iJC91764mp5D8wjxw4sfz_Mc/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Oct. 21, 2021',
+    link: 'https://drive.google.com/file/d/1ixVD38mnPamzoKXY9-lz39xSKOYSCQ-f/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 22, 2021',
+    link: 'https://drive.google.com/file/d/1_SQG6X8VHKdQixlqtcGLVkvcj1LNPpkJ/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Dec. 8, 2021',
+    link: 'https://drive.google.com/file/d/16faJ0XBwFyJ_VAaiJaGTYqlZ7CSNmeHR/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Dec. 8, 2021',
+    link: 'https://drive.google.com/file/d/16faJ0XBwFyJ_VAaiJaGTYqlZ7CSNmeHR/view?usp=sharing',
+    color: 'secondary',
+  },
+
+  // @ sanjana can u finish
+
+];
+
 export const infoPostdocs = {
 
   Recognition: {
@@ -532,6 +820,48 @@ export const infoPostdocs = {
   'Individual development plans and progress assessments': {
 
     proposals: individualDevelopmentProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'International scholar and immigrant support': {
+
+    proposals: internationalScholarProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Job abandonment': {
+
+    proposals: jobAbandonmentProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Labor management meetings': {
+
+    proposals: laborManagementProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Lawrence Berkeley National Lab article': {
+
+    proposals: LBNLProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  Layoff: {
+
+    proposals: layoffProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Leaves of absence': {
+
+    proposals: leavesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Management and academic rights': {
+
+    proposals: managementAcademicProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
