@@ -897,11 +897,6 @@ const berkeleyStaffingProposals = [
 const contractExtensionsProposals = [
 
   {
-    name: 'Extension of current contract to Aug. 17, 2022',
-    link: 'https://drive.google.com/file/d/1EuiXYqsF9Zfhhmq0aqWX6cAh4isDa6M-/view',
-    color: 'secondary',
-  },
-  {
     name: 'Extension of current contract to Oct. 1, 2022',
     link: 'https://drive.google.com/file/d/1PbCJgcL9rXyR3e3baRTvWSzId9dCV_j2/view',
     color: 'secondary',
