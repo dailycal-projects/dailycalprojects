@@ -50,7 +50,7 @@ export const articlesASE = [
   'Appendix F',
   'Appendix YY',
   'Joint labor management committee',
-  'Berkeley staffing side setter',
+  'Berkeley staffing side letter',
   'Current contract extensions',
 ];
 
@@ -591,7 +591,7 @@ const accessNeedsProposals = [
     color: 'secondary',
   },
   {
-    name: 'Side letter | UC to UAW | Aug. 23, 2022',
+    name: 'Proposal | UC to UAW | Aug. 23, 2022',
     link: 'https://drive.google.com/file/d/125R9MPypqYK0xk7t4ehS8JYtyVsSvcBs/view?usp=sharing',
     color: 'secondary',
   },
@@ -601,7 +601,7 @@ const accessNeedsProposals = [
     color: 'secondary',
   },
   {
-    name: 'Side letter | UC to UAW | Oct. 17, 2022',
+    name: 'Proposal | UC to UAW | Oct. 17, 2022',
     link: 'https://drive.google.com/file/d/1r9TcHp_ZMnrXkg3RfH43VCXvIaDOHeN1/view?usp=sharing',
     color: 'secondary',
   },
@@ -887,7 +887,7 @@ const jointLaborProposals = [
 
 const berkeleyStaffingProposals = [
   {
-    name: 'Side letter | UAW to UC | Oct. 27, 2022',
+    name: 'Proposal | UAW to UC | Oct. 27, 2022',
     link: 'https://drive.google.com/file/d/1tdWCJDoHUAVBslgD2OxjvbUvO2O1sMTf/view?usp=share_link',
     color: 'secondary',
   },
@@ -1191,7 +1191,7 @@ export const infoASE = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Berkeley staffing side setter': {
+  'Berkeley staffing side letter': {
 
     proposals: berkeleyStaffingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
