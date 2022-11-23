@@ -25,6 +25,9 @@ export const articlesSR = [
   'Management and academic rights',
   'Non-discrimination in employment',
   'No strikes',
+  'Parking and Transit',
+  'Past practices',
+
 
 ];
 
@@ -437,7 +440,7 @@ const nondiscriminationProposals = [
 
 const noStrikesProposals = [
   {
-    name: 'Proposal | UC to UAW | N, 2022',
+    name: 'Proposal | UC to UAW | Aug. 26, 2022',
     link: 'https://drive.google.com/file/d/1LhD9zS5hCJmA05GbxqUxw1TYxTtBt1Tw/view?usp=drivesdk',
     color: 'secondary',
   },
@@ -450,6 +453,97 @@ const noStrikesProposals = [
     name: 'Proposal | UC to UAW | Nov. 11, 2022',
     link: 'https://drive.google.com/file/d/1WzhZHDBkJVT9f7FnLKCgenBn3uvAdMiM/view?usp=share_link',
     color: 'secondary',
+  },
+];
+
+const parkingTransitProposals = [
+  {
+    name: 'Proposal | UAW to UC | May 13, 2022',
+    link: 'https://drive.google.com/file/d/1kJ8LY2hVBRaRy143K2mVKATY0CYosozX/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | June 15, 2022',
+    link: 'https://drive.google.com/file/d/1EilC0VFu31-BAXCjoGO30xitaetPkPqn/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Aug. 5, 2022',
+    link: 'https://drive.google.com/file/d/1phxD1-NlZm8pDJurSJ8xY8-hW1xHXH7L/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Aug. 26, 2022',
+    link: 'https://drive.google.com/file/d/1LhD9zS5hCJmA05GbxqUxw1TYxTtBt1Tw/view?usp=drivesdk',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Oct. 13, 2022',
+    link: 'https://drive.google.com/file/d/16NX19Bic1MKImLUNQS04SOkj2IZ4R7DI/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Supposal | UC to UAW | Oct. 31, 2022',
+    link: 'https://drive.google.com/file/d/1MOPmhUgNIMUfRK-aygtaUw4cXosQElMW/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 7, 2022',
+    link: 'https://drive.google.com/file/d/1CfJ55HuBwNxR5ETo5WJzE67eh7Guvpba/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1mCtalT4c65-pzAHFx8viszDYaf5aCdKe/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 14, 2022',
+    link: 'https://drive.google.com/file/d/1uaibDb_8YzVQ2CbrftCuGVs1dldjWuBq/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 16, 2022',
+    link: 'https://drive.google.com/file/d/1gHFZaa5Wy_6FJH_Fx49BvHhxFkfwKKsO/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 16, 2022',
+    link: 'https://drive.google.com/file/d/1MrdMP15ePl8x0KX5uxL_RYaPu2WaM03f/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 16, 2022',
+    link: 'https://drive.google.com/file/d/11A7HmQutdrGPxDSbQJXRmTQrRTZAGa8Q/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 16, 2022',
+    link: 'https://drive.google.com/file/d/1HpQuXrfgGnZclaGajq30PAUxpIy0-mzV/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 19, 2022',
+    link: 'https://drive.google.com/file/d/1Y4ZeuT8B-o1Bmwzm05t7YsZLm3sMJWCe/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 21, 2022',
+    link: 'https://drive.google.com/file/d/1nJm9OEiZFW3hin9UyR9aDpmolf8k1rEG/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 22, 2022',
+    link: 'https://drive.google.com/file/d/1sYDctuLU9OpcjUldsS-A5ysMFlqeN9S5/view?usp=sharing',
+    color: 'secondary',
+  },
+];
+
+const pastPracticesProposals = [
+  {
+    name: 'Tentative agreement | July 20,, 2022',
+    link: 'https://drive.google.com/file/d/1Rid-edKmurihOO6kn34wWZ8k5NKcUA-d/view?usp=sharing',
+    color: 'success',
   },
 ];
 
@@ -591,6 +685,18 @@ export const infoSR = {
   'No strikes':{
     proposals: noStrikesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
-  }
+
+  },
+  'Parking and transit':{
+    proposals: parkingTransitProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Past practices':{
+    proposals: pastPracticesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  
 
 };
