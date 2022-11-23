@@ -25,7 +25,7 @@ export const articlesSR = [
   'Management and academic rights',
   'Non-discrimination in employment',
   'No strikes',
-  'Parking and Transit',
+  'Parking and transit',
   'Past practices',
 
 
