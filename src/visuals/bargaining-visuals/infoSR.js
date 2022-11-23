@@ -23,6 +23,8 @@ export const articlesSR = [
   'Layoffs',
   'Leaves',
   'Management and academic rights',
+  'Non-discrimination in employment',
+  'No strikes',
 
 ];
 
@@ -359,7 +361,6 @@ const leavesProposals = [
     color: 'secondary',
   },
 
-
 ];
 
 const ManagementrightsProposal = [
@@ -421,6 +422,33 @@ const ManagementrightsProposal = [
   {
     name: 'Proposal | UAW to UC | Nov. 17, 2022',
     link: 'https://drive.google.com/file/d/1ju26XK-GcDPmvMevFfGD_lRzyctz2zNh/view?usp=share_link',
+    color: 'secondary',
+  },
+];
+
+const nondiscriminationProposals = [
+
+  {
+    name: 'Tentative agreement | Oct. 6, 2022',
+    link: 'https://drive.google.com/file/d/193-iGpd4c5vWPmV_6jFjd-oECnT4NSN_/view?usp=sharing',
+    color: 'success',
+  },
+];
+
+const noStrikesProposals = [
+  {
+    name: 'Proposal | UC to UAW | N, 2022',
+    link: 'https://drive.google.com/file/d/1LhD9zS5hCJmA05GbxqUxw1TYxTtBt1Tw/view?usp=drivesdk',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW| Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1mVkuEjD98-GkshpAfapbNCJrbcqc-Ohl/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1WzhZHDBkJVT9f7FnLKCgenBn3uvAdMiM/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -554,7 +582,18 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
+  'Non-discrimination in employment':{
+
+    proposals: nondiscriminationProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'No strikes':{
+    proposals: noStrikesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  }
 
 };
+
 
 
