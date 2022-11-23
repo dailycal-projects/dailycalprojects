@@ -37,7 +37,6 @@ export const articlesPostdocs = [
   'Respectful work environment',
   'Respect is a part of research training',
   'Severability',
-
   'Sick leave',
   'Successorship',
   'Time and effort commitment',
