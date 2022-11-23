@@ -1237,7 +1237,164 @@ const workAuthProposals = [
   }
 ];
 
-const workInjuryProposals = [];
+const injuriesProposals = [
+  {
+    name: 'Tentative agreement | Sept. 16, 2021',
+    link: 'https://drive.google.com/file/d/1f8dFtmruNHtqNFDTAMOi1r2P9xJVXOuI/view?usp=sharing',
+    color: 'success',
+  }
+];
+
+const workspaceProposals = [
+  {
+    name: 'Tentative agreement | Aug. 1, 2021',
+    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
+    color: 'success',
+  }
+];
+
+const durationProposals = [
+  {
+    name: 'Proposal | UC to UAW | June 23, 2022',
+    link: 'https://drive.google.com/file/d/1wqOX2oF_WfPfnBrOGAsxjpdYMyGuPMnE/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | June 23, 2022',
+    link: 'https://drive.google.com/file/d/15zA4XPiNK7_CgTMFUPuPztbeGxqosQN_/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 3, 2022',
+    link: 'https://drive.google.com/file/d/1WN2vo5yWK5aHfF13bkwFN4ouKwhpKXc4/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
+    color: 'secondary',
+  }
+];
+
+const healthBenefitsProposals = [
+  {
+    name: 'Tentative agreement | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1_IRlQMYTu31_qkuBeSVSPAPiR8sWpkG_/view?usp=share_link',
+    color: 'success',
+  }
+];
+
+const compLetter = [
+  {
+    name: 'Side letter | Sept. 27, 2022',
+    link: 'https://drive.google.com/file/d/1OBSm8SM7ZAE5IGg_fCnWEeRdOCAxl_6L/view?usp=sharing',
+    color: 'success',
+  }
+];
+
+const transitLetter = [
+  {
+    name: 'Side letter | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1BrGkVenip98X4uCMffIyvyBNdkcZMCuL/view?usp=share_link',
+    color: 'success',
+  }
+];
+
+const jlmcLetter = [
+  {
+    name: 'Tentative agreement | Oct. 24, 2022',
+    link: 'https://drive.google.com/file/d/1ay0pC-0pIWt-iIAcf1SpbA6VoAP1Ggyq/view?usp=sharing',
+    color: 'success',
+  }
+];
+
+const appendixAProposals = [
+  {
+    name: 'Proposal | UC to UAW | Aug. 25, 2022',
+    link: '',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | June 9, 2022',
+    link: '',
+    color: 'secondary',
+  }
+];
+
+const appendixBProposals = [
+  {
+    name: 'Proposal | UC to UAW | June 9, 2022',
+    link: '',
+    color: 'secondary',
+  }
+];
+
+const appendixCProposals = [
+  {
+    name: 'Tentative agreement | Oct. 3, 2022',
+    link: '',
+    color: 'success',
+  }
+];
+
+const appendixFProposals = [
+  {
+    name: 'Tentative agreement | July 14, 2022',
+    link: '',
+    color: 'success',
+  }
+];
+
+const appendixGProposals = [
+  {
+    name: 'Proposal | UC to UAW | June 9, 2022',
+    link: '',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | June 9, 2022',
+    link: '',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | June 23, 2022',
+    link: '',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Oct 10, 2022',
+    link: '',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Oct 10, 2022',
+    link: '',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Oct 10, 2022',
+    link: '',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Oct 12, 2022',
+    link: '',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Oct 12, 2022',
+    link: '',
+    color: 'secondary',
+  }
+];
+
+const groundRulesProposals = [
+  {
+    name: 'Package | UAW to UC | Oct 12, 2022',
+    link: '',
+    color: 'secondary',
+  }
+];
 
 export const infoPostdocs = {
 
@@ -1337,7 +1494,7 @@ export const infoPostdocs = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  Layoff: {
+  'Layoff': {
 
     proposals: layoffProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1355,13 +1512,13 @@ export const infoPostdocs = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Medical Separation': {
+  'Medical separation': {
 
     proposals: medicalSeparationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'No Strikes': {
+  'No strikes': {
 
     proposals: noStrikesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1373,22 +1530,22 @@ export const infoPostdocs = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Parking and Transit': {
+  'Parking and transit': {
 
     proposals: parkingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Past Practices': {
+  'Past practices': {
 
     proposals: pastPracticesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Personal Time Off': {
+  'Personal time off': {
 
     proposals: personalTimeOffProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Personnel Files': {
+  'Personnel files': {
 
     proposals: personnelProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1398,37 +1555,37 @@ export const infoPostdocs = {
     proposals: postingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Professional Development and Career Counseling': {
+  'Professional development and career counseling': {
 
     proposals: developmentProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Progress Assessments': {
+  'Progress assessments': {
 
     proposals: progressAssessProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'President\'s Postdoctoral Fellowships': {
+  'President\'s postdoctoral fellowships': {
 
     proposals: postdocFellowProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Reasonable Accomodation': {
+  'Reasonable accomodation': {
 
     proposals: accommodationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Relocation Reimbursement': {
+  'Relocation reimbursement': {
 
     proposals: reimbursementProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Respectful Work Environment': {
+  'Respectful work environment': {
 
     proposals: respectfulProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Respect is a Part of Research Training': {
+  'Respect is a part of research training': {
 
     proposals: respectResearchProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1438,7 +1595,7 @@ export const infoPostdocs = {
     proposals: severabilityProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Sick Leave': {
+  'Sick leave': {
 
     proposals: sickLeaveProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1448,12 +1605,12 @@ export const infoPostdocs = {
     proposals: successorshipProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Time and Effort Commitment': {
+  'Time and effort commitment': {
 
     proposals: timeProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Titles and Classifications': {
+  'Titles and classifications': {
 
     proposals: titlesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1463,27 +1620,27 @@ export const infoPostdocs = {
     proposals: trainingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Travel Reimbursements': {
+  'Travel reimbursements': {
 
     proposals: travelProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Union Access and Rights': {
+  'Union access and rights': {
 
     proposals: unionAccessProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Union Security': {
+  'Union security': {
 
     proposals: unionSecurityProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'University Facilities and Services': {
+  'University facilities and services': {
 
     proposals: facilitiesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Voluntary Resignation': {
+  'Voluntary resignation': {
 
     proposals: voluntaryResignationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1493,7 +1650,7 @@ export const infoPostdocs = {
     proposals: waiverProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Work Authorization': {
+  'Work authorization': {
 
     proposals: workAuthProposals,
     intro: 'Leave out intros until night has copy edited them all.',
