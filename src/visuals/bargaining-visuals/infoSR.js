@@ -27,6 +27,10 @@ export const articlesSR = [
   'No strikes',
   'Parking and transit',
   'Past practices',
+  'Posting',
+  'Recognition',
+
+
 
 
 ];
@@ -547,6 +551,67 @@ const pastPracticesProposals = [
   },
 ];
 
+const postingProposals = [
+
+];
+
+const recognitionProposals = [
+  {
+    name: 'Proposal | UAW to UC | April 5, 2022',
+    link: 'https://drive.google.com/file/d/18mu5dHCXSTT2lZeKj_leFDXYkWJGdP9L/view?usp=drivesdk',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | May 20, 2022',
+    link: 'https://drive.google.com/file/d/1vAIc9XIVTvuMRKFcrcsS2EdBpnXgEBtT/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 15, 2022',
+    link: 'https://drive.google.com/file/d/1eq-o9ApSDRodaiFi_bx7oAfnzlKvlEYe/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 15, 2022',
+    link: 'https://drive.google.com/file/d/1N5eyeLnNg5FDT-qEdTs2AN12FGyv9WUi/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Oct. 6, 2022',
+    link: 'https://drive.google.com/file/d/1wV6Xahi8wcmJTNUH6kMazvceYzrq_e2J/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1eScS_yU1At-5dKAxDo7C6pYbtFc0C-ds/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 11, 2022',
+    link: 'https://drive.google.com/file/d/1vsZljsro30kvlNcOQL7LdtoX88jST5xM/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1rJjLVFn1IDnZOdLHPQNiXm6sZqnYyoFJ/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1CzXhuq1JD2vqH5N_xat9nDENth02XxiU/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1m_sgiMfEN0xWuiyvlxRTcKh01i6tYDAM/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 14, 2022',
+    link: 'https://drive.google.com/file/d/1pkdxBEW0shilhYO793ZIILjqnLg4XPn7/view?usp=share_link',
+    color: 'secondary',
+  },
+];
 
 export const infoSR = {
 
@@ -694,6 +759,16 @@ export const infoSR = {
   },
   'Past practices':{
     proposals: pastPracticesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Posting':{
+    proposals: postingProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Recognition':{
+    proposals: recognitionProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
