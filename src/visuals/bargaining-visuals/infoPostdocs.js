@@ -49,21 +49,20 @@ export const articlesPostdocs = [
   'Voluntary resignation',
   'Waiver',
   'Work authorization',
-  // 'Work-incurred injury and illness',
-  // 'Workspace and materials',
-  // 'Duration',
-  // 'Health benefits',
-  // 'Compensation side letter',
-  // 'Transit side letter',
-  // 'Joint labor management committee workplace accessibility side letter',
-  // 'Appendix A',
-  // 'Appendix B',
-  // 'Appendix C',
-  // 'Appendix F',
-  // 'Appendix G',
-  // 'Ground rules',
-  // 'Current contract extensions',
-
+  'Work-incurred injury and illness',
+  'Workspace and materials',
+  'Duration',
+  'Health benefits',
+  'Compensation side letter',
+  'Transit side letter',
+  'Joint labor management committee workplace accessibility side letter',
+  'Appendix A',
+  'Appendix B',
+  'Appendix C',
+  'Appendix F',
+  'Appendix G',
+  'Ground rules',
+  'Current contract extensions'
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
@@ -821,7 +820,7 @@ const parkingProposals = [
     color: 'secondary',
   },
   {
-    name: 'Proposal | UAW to UC | Apr. 29, 2022',
+    name: 'Proposal | UAW to UC | April 29, 2022',
     link: 'https://drive.google.com/file/d/1lZPIsRkpSTi5mrstiXIOJk7z3duFoBwj/view?usp=sharing',
     color: 'secondary',
   },
@@ -1311,12 +1310,12 @@ const jlmcLetter = [
 const appendixAProposals = [
   {
     name: 'Proposal | UC to UAW | Aug. 25, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/1hkySdue-K3KeRUzRFnp8x-SDJHCJCZ3v/view?usp=sharing',
     color: 'secondary',
   },
   {
     name: 'Proposal | UC to UAW | June 9, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/1wbh0yKrCybVX8AirDzJ3VNrj0FixiSIL/view?usp=sharing',
     color: 'secondary',
   }
 ];
@@ -1324,7 +1323,7 @@ const appendixAProposals = [
 const appendixBProposals = [
   {
     name: 'Proposal | UC to UAW | June 9, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/15FiisOVTloYXet3WpJx57MdPuGqzeiHc/view?usp=sharing',
     color: 'secondary',
   }
 ];
@@ -1332,7 +1331,7 @@ const appendixBProposals = [
 const appendixCProposals = [
   {
     name: 'Tentative agreement | Oct. 3, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/1R24EDevPVnTbSq_-7ZkTmuNN9CpVxrXA/view?usp=sharing',
     color: 'success',
   }
 ];
@@ -1340,7 +1339,7 @@ const appendixCProposals = [
 const appendixFProposals = [
   {
     name: 'Tentative agreement | July 14, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/12ZGAP8-7YguTu41NG0q1-Mod6nIFLPoF/view?usp=sharing',
     color: 'success',
   }
 ];
@@ -1348,50 +1347,113 @@ const appendixFProposals = [
 const appendixGProposals = [
   {
     name: 'Proposal | UC to UAW | June 9, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/1tqCDTKtR-tCLMU0KNW8Ikr6cBXTERBUl/view?usp=sharing',
     color: 'secondary',
   },
   {
     name: 'Package | UC to UAW | June 9, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/13ZhLo8WbB_JH9NG9dAez46i_812s1RvB/view?usp=sharing',
     color: 'secondary',
   },
   {
     name: 'Proposal | UC to UAW | June 23, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/1uPpq3EFm3a-_N7vzb6Q8_dYwdKnJLzZj/view?usp=sharing',
     color: 'secondary',
   },
   {
-    name: 'Proposal | UC to UAW | Oct 10, 2022',
-    link: '',
+    name: 'Proposal | UC to UAW | Oct. 10, 2022',
+    link: 'https://drive.google.com/file/d/1ewwUMH4qY_M0zxzHiXUIS3vYXhy44VOC/view?usp=sharing',
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | Oct 10, 2022',
-    link: '',
+    name: 'Package | UC to UAW | Oct. 10, 2022',
+    link: 'https://drive.google.com/file/d/1-eSPkf56pgun1cGXyEfqOVVtXj4xqhK5/view?usp=sharing',
     color: 'secondary',
   },
   {
-    name: 'Package | UAW to UC | Oct 10, 2022',
-    link: '',
+    name: 'Package | UAW to UC | Oct. 10, 2022',
+    link: 'https://drive.google.com/file/d/1YgHxrVKsdRqOziBU5K9GwyOlmrXRvQbm/view?usp=sharing',
     color: 'secondary',
   },
   {
-    name: 'Proposal | UAW to UC | Oct 12, 2022',
-    link: '',
+    name: 'Proposal | UAW to UC | Oct. 12, 2022',
+    link: 'https://drive.google.com/file/d/1yhAc67picvmdHzD8dhMhfY4k1R2sLIz7/view?usp=sharing',
     color: 'secondary',
   },
   {
-    name: 'Package | UAW to UC | Oct 12, 2022',
-    link: '',
+    name: 'Package | UAW to UC | Oct. 12, 2022',
+    link: 'https://drive.google.com/file/d/1KBS_kRRrmTIsL2bhV8iA4MN43b--h3im/view?usp=sharing',
     color: 'secondary',
   }
 ];
 
 const groundRulesProposals = [
   {
-    name: 'Package | UAW to UC | Oct 12, 2022',
-    link: '',
+    name: 'Tentative agreement | Aug. 11, 2022',
+    link: 'https://drive.google.com/file/d/1Zfg4dj1awQkPHfoN-gsDr_gSBm-jOmBK/view?usp=sharing',
+    color: 'success',
+  }
+];
+
+const extensionProposals = [
+  {
+    name: 'Proposal | UC to UAW | Sept. 27, 2021',
+    link: 'https://drive.google.com/file/d/1vZvTVCovbj43UimxmXP3OKATdvGrLH5l/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Sept. 27, 2021',
+    link: 'https://drive.google.com/file/d/1YCobA8c6l8Nd5-6vpUIZ3prauLGT1Gk0/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | Nov. 15, 2021',
+    link: 'https://drive.google.com/file/d/110VsfLO6ZkUdObCtN1KaCJE1jXGC_Qov/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | Nov. 29, 2021',
+    link: 'https://drive.google.com/file/d/110VsfLO6ZkUdObCtN1KaCJE1jXGC_Qov/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | Dec. 9, 2021',
+    link: 'https://drive.google.com/file/d/1tUCTWWb3W-E71lWHr5QMdu8Y9QrmXway/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | Jan. 21, 2022',
+    link: 'https://drive.google.com/file/d/1MOSRhJ2YG1ZboIk97eRy4oWAlpoyEHK3/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | March 1, 2022',
+    link: 'https://drive.google.com/file/d/1gvXiVN6Lb-AOT0uB-grJGNDice1po60q/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | April 4, 2022',
+    link: 'https://drive.google.com/file/d/19brX4vH-W00LkfWQvvapXVUlH_m0QSAP/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | May 6, 2022',
+    link: 'https://drive.google.com/file/d/1lOASaPv_My1vMSJpVyoDBeTD4htZcP-6/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | June 24, 2022',
+    link: 'https://drive.google.com/file/d/1VDC7KOHlvI2acL5Xg3yOjUNo-VHsex31/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | Sept. 2, 2022',
+    link: 'https://drive.google.com/file/d/1P6NDPKBEHKnNphSbcl5oLl_d_wgdu_Qt/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC/UAW | Sept. 27, 2022',
+    link: 'https://drive.google.com/file/d/1zGA2poRjeQL63syfCMYf-4R_yZztTex4/view?usp=sharing',
     color: 'secondary',
   }
 ];
@@ -1620,7 +1682,7 @@ export const infoPostdocs = {
     proposals: trainingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Travel reimbursements': {
+  'Travel reimbursement': {
 
     proposals: travelProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1655,4 +1717,74 @@ export const infoPostdocs = {
     proposals: workAuthProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
+  'Work-incurred injury and illness': {
+
+    proposals: injuriesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Workspace and materials': {
+
+    proposals: workspaceProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Duration': {
+
+    proposals: durationProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Health benefits': {
+
+    proposals: healthBenefitsProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Compensation side letter': {
+
+    proposals: compLetter,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Transit side letter': {
+
+    proposals: transitLetter,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Joint labor management committee workplace accessibility side letter': {
+
+    proposals: jlmcLetter,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Appendix A': {
+
+    proposals: appendixAProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Appendix B': {
+
+    proposals: appendixBProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Appendix C': {
+
+    proposals: appendixCProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Appendix F': {
+
+    proposals: appendixFProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Appendix G': {
+
+    proposals: appendixGProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Ground rules': {
+
+    proposals: groundRulesProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  },
+  'Current contract extensions': {
+
+    proposals: extensionProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+  }
 };
