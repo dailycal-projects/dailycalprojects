@@ -69,7 +69,7 @@ export const articlesPostdocs = [
 
 const recognitionProposals = [
   {
-    name: 'Tentative agreement | Aug. 2, 2021',
+    name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
     color: 'success',
   },
@@ -122,18 +122,33 @@ const appointmentsProposals = [
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | Oct. 10, 2022',
+    name: 'Proposal | UC to UAW | Oct. 10, 2022',
     link: 'https://drive.google.com/file/d/1XWuJevYrcD-6rnMjXFJIpGM1IaxyYoq-/view?usp=sharing',
     color: 'secondary',
   },
   {
-    name: 'Package | UAW to UC | Oct. 10, 2022',
+    name: 'Package | UC to UAW | Oct. 10, 2022',
+    link: 'https://drive.google.com/file/d/1-eSPkf56pgun1cGXyEfqOVVtXj4xqhK5/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Oct. 10, 2022',
     link: 'https://drive.google.com/file/d/1Mtoar_LrDwNVIAzBLh3pBHGHyezrKROP/view?usp=sharing',
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | Nov. 11 , 2022',
+    name: 'Package | UAW to UC | Oct. 10, 2022',
+    link: 'https://drive.google.com/file/d/1YgHxrVKsdRqOziBU5K9GwyOlmrXRvQbm/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 11 , 2022',
     link: 'https://drive.google.com/file/d/17bdKktjZPvIBcc8WLiRJANFHVlt1g_B2/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 11 , 2022',
+    link: 'https://drive.google.com/file/d/1GeAqFvV0MFUYxxbAWXm8So6c0qr-vmGP/view?usp=share_link',
     color: 'secondary',
   },
   {
@@ -416,7 +431,7 @@ const housingProposals = [
 
 const holidaysProposals = [
   {
-    name: 'Tentative agreement | Aug. 2, 2021',
+    name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1_XzA8dlOLDViETGalmCtyZTBIfhJyGaf/view',
     color: 'success',
   },
@@ -432,7 +447,7 @@ const immigrationProposals = [
 
 const individualDevelopmentProposals = [
   {
-    name: 'Tentative agreement | Feb. 22, 2022',
+    name: 'Tentative agreement | Feb. 21, 2022',
     link: 'https://drive.google.com/file/d/1PMczmCqBqDG_H-czpvoLKRDE8k1ots9K/view?usp=sharing',
     color: 'success',
   },
@@ -895,7 +910,7 @@ const pastPracticesProposals = [];
 
 const personalTimeOffProposals = [
   {
-    name: 'Tentative agreement | Feb. 19, 2022',
+    name: 'Tentative agreement | Jan. 19, 2022',
     link: 'https://drive.google.com/file/d/14WFHoH3l1aojsnHzmmtFW-ReXBPo5Fmk/view?usp=sharing',
     color: 'success',
   },
@@ -1277,7 +1292,7 @@ const durationProposals = [
 
 const healthBenefitsProposals = [
   {
-    name: 'Tentative agreement | Nov. 13, 2022',
+    name: 'Tentative agreement | Nov. 27, 2022',
     link: 'https://drive.google.com/file/d/1_IRlQMYTu31_qkuBeSVSPAPiR8sWpkG_/view?usp=share_link',
     color: 'success',
   },
@@ -1285,17 +1300,27 @@ const healthBenefitsProposals = [
 
 const compLetter = [
   {
-    name: 'Side letter | Sept. 27, 2022',
+    name: 'Proposal | UC to UAW | Sept. 27, 2022',
     link: 'https://drive.google.com/file/d/1OBSm8SM7ZAE5IGg_fCnWEeRdOCAxl_6L/view?usp=sharing',
-    color: 'success',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Sept. 27, 2022',
+    link: 'https://drive.google.com/file/d/1hzxQ_7vNSUVn26kUMYCfLXdsRq-kDMl4/view',
+    color: 'secondary',
   },
 ];
 
 const transitLetter = [
   {
-    name: 'Side letter | Nov. 13, 2022',
-    link: 'https://drive.google.com/file/d/1BrGkVenip98X4uCMffIyvyBNdkcZMCuL/view?usp=share_link',
-    color: 'success',
+    name: 'Side letter | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1BrGkVenip98X4uCMffIyvyBNdkcZMCuL/view',
+    color: 'secondary',
+  },
+  {
+    name: 'Side letter | UC to UAW | Nov. 13, 2022',
+    link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view',
+    color: 'secondary',
   },
 ];
 
@@ -1389,7 +1414,7 @@ const appendixGProposals = [
 
 const groundRulesProposals = [
   {
-    name: 'Tentative agreement | Aug. 11, 2022',
+    name: 'Tentative agreement | Aug. 11, 2021',
     link: 'https://drive.google.com/file/d/1Zfg4dj1awQkPHfoN-gsDr_gSBm-jOmBK/view?usp=sharing',
     color: 'success',
   },
