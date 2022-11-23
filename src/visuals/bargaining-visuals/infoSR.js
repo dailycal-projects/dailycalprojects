@@ -29,7 +29,7 @@ export const articlesSR = [
   'Past practices',
   'Posting',
   'Recognition',
-  'Relocation Benefits',
+  'Relocation benefits',
   'Severability',
   'Training',
 
@@ -820,7 +820,7 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  
+
 
 
 };
