@@ -62,9 +62,10 @@ const ProposalsPostocs = () => (
                   <ButtonGroup orientation="vertical" fullWidth>
                     {
                           infoPostdocs[item].proposals.map((proposal) => (
-                            <Button href={proposal.link} color={proposal.color} target="_blank" variant="outlined">
-                              {proposal.name}
-                            </Button>
+                            console.log(item),
+                              <Button href={proposal.link} color={proposal.color} target="_blank" variant="outlined">
+                                {proposal.name}
+                              </Button>
                           ))
                       }
                   </ButtonGroup>

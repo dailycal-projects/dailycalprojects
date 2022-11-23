@@ -33,9 +33,6 @@ export const articlesSR = [
   'Severability',
   'Training',
 
-
-
-
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
@@ -645,7 +642,6 @@ const TrainingProposals = [
   },
 ];
 
-
 export const infoSR = {
 
   'Access needs and reasonable accommodations': {
@@ -768,59 +764,57 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Management and academic rights':{
+  'Management and academic rights': {
 
     proposals: ManagementrightsProposal,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Non-discrimination in employment':{
+  'Non-discrimination in employment': {
 
     proposals: nondiscriminationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'No strikes':{
+  'No strikes': {
     proposals: noStrikesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Parking and transit':{
+  'Parking and transit': {
     proposals: parkingTransitProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Past practices':{
+  'Past practices': {
     proposals: pastPracticesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Posting':{
+  Posting: {
     proposals: postingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Recognition':{
+  Recognition: {
     proposals: recognitionProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Relocation benefits':{
+  'Relocation benefits': {
     proposals: relocationBenefitProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Severability':{
+  Severability: {
     proposals: severabilityProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Training':{
+  Training: {
     proposals: TrainingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-
-
 
 };

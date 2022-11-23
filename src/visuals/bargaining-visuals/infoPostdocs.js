@@ -37,6 +37,7 @@ export const articlesPostdocs = [
   'Respectful work environment',
   'Respect is a part of research training',
   'Severability',
+
   'Sick leave',
   'Successorship',
   'Time and effort commitment',
@@ -62,7 +63,7 @@ export const articlesPostdocs = [
   'Appendix F',
   'Appendix G',
   'Ground rules',
-  'Current contract extensions'
+  'Current contract extensions',
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
@@ -256,7 +257,7 @@ const childCareProposals = [
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const compensationProposals = [
@@ -344,7 +345,7 @@ const compensationProposals = [
     name: 'Package | UAW to UC | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const disciplineProposals = [
@@ -352,7 +353,7 @@ const disciplineProposals = [
     name: 'Tentative agreement | Sept. 13, 2021',
     link: 'https://drive.google.com/file/d/1WgQ1HCntgUSQSVLRMqO8Djd-d-EdJ6-Q/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const grievanceProposals = [
@@ -360,7 +361,7 @@ const grievanceProposals = [
     name: 'Tentative agreement | Sept. 27, 2022',
     link: 'https://drive.google.com/file/d/1OpsnaJIwKCcvWde_f4jTAzg_kBAW9nuS/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const healthSafetyProposals = [
@@ -368,7 +369,7 @@ const healthSafetyProposals = [
     name: 'Tentative agreement | Oct. 21, 2021',
     link: 'https://drive.google.com/file/d/1agOJCgmuBRmG1I70ZXQhSyFKe0zW5k-A/view?usp=share_link',
     color: 'success',
-  }
+  },
 ];
 
 const housingProposals = [
@@ -411,7 +412,7 @@ const housingProposals = [
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const holidaysProposals = [
@@ -419,7 +420,7 @@ const holidaysProposals = [
     name: 'Tentative agreement | Aug. 2, 2021',
     link: 'https://drive.google.com/file/d/1_XzA8dlOLDViETGalmCtyZTBIfhJyGaf/view',
     color: 'success',
-  }
+  },
 ];
 
 const immigrationProposals = [
@@ -427,7 +428,7 @@ const immigrationProposals = [
     name: 'Tentative agreement | Nov. 18, 2022',
     link: 'https://drive.google.com/file/d/1lidcVZn2i64tH9V5sJNFQmtkb3o-gNoX/view?usp=share_link',
     color: 'success',
-  }
+  },
 ];
 
 const individualDevelopmentProposals = [
@@ -435,7 +436,7 @@ const individualDevelopmentProposals = [
     name: 'Tentative agreement | Feb. 22, 2022',
     link: 'https://drive.google.com/file/d/1PMczmCqBqDG_H-czpvoLKRDE8k1ots9K/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const internationalScholarProposals = [
@@ -490,7 +491,7 @@ const internationalScholarProposals = [
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const jobAbandonmentProposals = [];
@@ -500,7 +501,7 @@ const laborManagementProposals = [
     name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
     color: 'success',
-  }
+  },
 ];
 
 const LBNLProposals = [];
@@ -585,7 +586,7 @@ const layoffProposals = [
     name: 'Package | UAW to UC | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const leavesProposals = [
@@ -684,7 +685,7 @@ const leavesProposals = [
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const managementAcademicProposals = [
@@ -737,7 +738,7 @@ const managementAcademicProposals = [
     name: 'Package | UAW to UC | November 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const medicalSeparationProposals = [];
@@ -772,7 +773,7 @@ const noStrikesProposals = [
     name: 'Package | UC to UAW | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const nondiscriminationProposals = [
@@ -780,7 +781,7 @@ const nondiscriminationProposals = [
     name: 'Tentative agreement | Feb. 8, 2022',
     link: 'https://drive.google.com/file/d/14dj7mleOrWNmk03InY5BW_iOLhq8JLEJ/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const parkingProposals = [
@@ -888,7 +889,7 @@ const parkingProposals = [
     name: 'Proposal | UC to UAW | Nov. 21, 2022',
     link: 'https://drive.google.com/file/d/1cvRHf_RjS1gGDOLzFmfsZsRQHOe8gtsH/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const pastPracticesProposals = [];
@@ -898,7 +899,7 @@ const personalTimeOffProposals = [
     name: 'Tentative agreement | Feb. 19, 2022',
     link: 'https://drive.google.com/file/d/14WFHoH3l1aojsnHzmmtFW-ReXBPo5Fmk/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const personnelProposals = [
@@ -906,15 +907,15 @@ const personnelProposals = [
     name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
     color: 'success',
-  }
+  },
 ];
 
 const postingProposals = [
   {
-    name: 'Tentative agreement | Sept. 13, 2021',
+    name: 'Tentative agreement | Sept. 16, 2021',
     link: 'https://drive.google.com/file/d/1_wBMF50bfWmV6JNuqky5DQgSUIFYcL9_/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const developmentProposals = [
@@ -922,7 +923,7 @@ const developmentProposals = [
     name: 'Tentative agreement | Feb. 21, 2021',
     link: 'https://drive.google.com/file/d/1Dw7vvY-2QW2iEtWSy0EVS2sSjFTMRFCG/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const progressAssessProposals = [
@@ -930,7 +931,7 @@ const progressAssessProposals = [
     name: 'Tentative agreement | Feb. 21, 2021',
     link: 'https://drive.google.com/file/d/14r5h7GCVkC42qPcrlIFW2D17PimiVcVw/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const postdocFellowProposals = [
@@ -973,7 +974,7 @@ const postdocFellowProposals = [
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const accommodationProposals = [
@@ -981,7 +982,7 @@ const accommodationProposals = [
     name: 'Tentative agreement | Oct. 31, 2022',
     link: 'https://drive.google.com/file/d/1vTYUdcIArk6erGKGz4qcoYZk5dOo6aiQ/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const reimbursementProposals = [
@@ -1003,7 +1004,7 @@ const reimbursementProposals = [
   {
     name: 'Package | UC to UAW | June 23, 2022',
     link: 'https://drive.google.com/file/d/15zA4XPiNK7_CgTMFUPuPztbeGxqosQN_/view?usp=sharing',
-    color: 'secondary'
+    color: 'secondary',
   },
   {
     name: 'Package | UAW to UC | Oct 10, 2022',
@@ -1029,7 +1030,7 @@ const reimbursementProposals = [
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const respectfulProposals = [
@@ -1037,7 +1038,7 @@ const respectfulProposals = [
     name: 'Tentative agreement | Sept. 27, 2022',
     link: 'https://drive.google.com/file/d/143IbRBpyHdiBeeuzM1qQjyrDEPmSaRHj/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const respectResearchProposals = [
@@ -1070,7 +1071,7 @@ const respectResearchProposals = [
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const severabilityProposals = [
@@ -1078,7 +1079,7 @@ const severabilityProposals = [
     name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
     color: 'success',
-  }
+  },
 ];
 
 const sickLeaveProposals = [
@@ -1086,7 +1087,7 @@ const sickLeaveProposals = [
     name: 'Tentative agreement | Jan. 19, 2022',
     link: 'https://drive.google.com/file/d/1ZVkTsk2aX-F_kiADsaJQNblL4wweF_Oi/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const successorshipProposals = [
@@ -1094,7 +1095,7 @@ const successorshipProposals = [
     name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
     color: 'success',
-  }
+  },
 ];
 
 const timeProposals = [
@@ -1102,7 +1103,7 @@ const timeProposals = [
     name: 'Tentative agreement | Sept. 16, 2021',
     link: 'https://drive.google.com/file/d/1JNXBaxyxq4BJBTx_57D7nWOidSDgSEEz/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const titlesProposals = [
@@ -1110,7 +1111,7 @@ const titlesProposals = [
     name: 'Tentative agreement | Jan. 19, 2022',
     link: 'https://drive.google.com/file/d/1hZaut74TJ3BmsU7dBu-V-yLNZF8vwPv0/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const trainingProposals = [
@@ -1118,7 +1119,7 @@ const trainingProposals = [
     name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
     color: 'success',
-  }
+  },
 ];
 
 const travelProposals = [
@@ -1126,7 +1127,7 @@ const travelProposals = [
     name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1agOJCgmuBRmG1I70ZXQhSyFKe0zW5k-A/view?usp=share_link',
     color: 'success',
-  }
+  },
 ];
 
 const unionAccessProposals = [
@@ -1134,7 +1135,7 @@ const unionAccessProposals = [
     name: 'Tentative agreement | Feb. 8, 2022',
     link: 'https://drive.google.com/file/d/1r6a1F-qeaeiaWrgOsxZf-mqFW1W1M9su/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const unionSecurityProposals = [
@@ -1142,7 +1143,7 @@ const unionSecurityProposals = [
     name: 'Tentative agreement | Oct. 3, 2022',
     link: 'https://drive.google.com/file/d/1uDfqnhPJks_4bO7NRDZNlnApmk1T8dga/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const facilitiesProposals = [
@@ -1150,7 +1151,7 @@ const facilitiesProposals = [
     name: 'Tentative agreement | Aug. 1, 2022',
     link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
     color: 'success',
-  }
+  },
 ];
 
 const voluntaryResignationProposals = [];
@@ -1160,7 +1161,7 @@ const waiverProposals = [
     name: 'Tentative agreement | Feb. 21, 2022',
     link: 'https://drive.google.com/file/d/1Ja3WA9LR5H2nYRfdkf6uxaLD3Q0b2JPd/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const workAuthProposals = [
@@ -1233,7 +1234,7 @@ const workAuthProposals = [
     name: 'Package | UAW to UC | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const injuriesProposals = [
@@ -1241,7 +1242,7 @@ const injuriesProposals = [
     name: 'Tentative agreement | Sept. 16, 2021',
     link: 'https://drive.google.com/file/d/1f8dFtmruNHtqNFDTAMOi1r2P9xJVXOuI/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const workspaceProposals = [
@@ -1249,7 +1250,7 @@ const workspaceProposals = [
     name: 'Tentative agreement | Aug. 1, 2021',
     link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
     color: 'success',
-  }
+  },
 ];
 
 const durationProposals = [
@@ -1272,7 +1273,7 @@ const durationProposals = [
     name: 'Package | UC to UAW | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
     color: 'secondary',
-  }
+  },
 ];
 
 const healthBenefitsProposals = [
@@ -1280,7 +1281,7 @@ const healthBenefitsProposals = [
     name: 'Tentative agreement | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1_IRlQMYTu31_qkuBeSVSPAPiR8sWpkG_/view?usp=share_link',
     color: 'success',
-  }
+  },
 ];
 
 const compLetter = [
@@ -1288,7 +1289,7 @@ const compLetter = [
     name: 'Side letter | Sept. 27, 2022',
     link: 'https://drive.google.com/file/d/1OBSm8SM7ZAE5IGg_fCnWEeRdOCAxl_6L/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const transitLetter = [
@@ -1296,7 +1297,7 @@ const transitLetter = [
     name: 'Side letter | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1BrGkVenip98X4uCMffIyvyBNdkcZMCuL/view?usp=share_link',
     color: 'success',
-  }
+  },
 ];
 
 const jlmcLetter = [
@@ -1304,7 +1305,7 @@ const jlmcLetter = [
     name: 'Tentative agreement | Oct. 24, 2022',
     link: 'https://drive.google.com/file/d/1ay0pC-0pIWt-iIAcf1SpbA6VoAP1Ggyq/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const appendixAProposals = [
@@ -1317,7 +1318,7 @@ const appendixAProposals = [
     name: 'Proposal | UC to UAW | June 9, 2022',
     link: 'https://drive.google.com/file/d/1wbh0yKrCybVX8AirDzJ3VNrj0FixiSIL/view?usp=sharing',
     color: 'secondary',
-  }
+  },
 ];
 
 const appendixBProposals = [
@@ -1325,7 +1326,7 @@ const appendixBProposals = [
     name: 'Proposal | UC to UAW | June 9, 2022',
     link: 'https://drive.google.com/file/d/15FiisOVTloYXet3WpJx57MdPuGqzeiHc/view?usp=sharing',
     color: 'secondary',
-  }
+  },
 ];
 
 const appendixCProposals = [
@@ -1333,7 +1334,7 @@ const appendixCProposals = [
     name: 'Tentative agreement | Oct. 3, 2022',
     link: 'https://drive.google.com/file/d/1R24EDevPVnTbSq_-7ZkTmuNN9CpVxrXA/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const appendixFProposals = [
@@ -1341,7 +1342,7 @@ const appendixFProposals = [
     name: 'Tentative agreement | July 14, 2022',
     link: 'https://drive.google.com/file/d/12ZGAP8-7YguTu41NG0q1-Mod6nIFLPoF/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const appendixGProposals = [
@@ -1384,7 +1385,7 @@ const appendixGProposals = [
     name: 'Package | UAW to UC | Oct. 12, 2022',
     link: 'https://drive.google.com/file/d/1KBS_kRRrmTIsL2bhV8iA4MN43b--h3im/view?usp=sharing',
     color: 'secondary',
-  }
+  },
 ];
 
 const groundRulesProposals = [
@@ -1392,7 +1393,7 @@ const groundRulesProposals = [
     name: 'Tentative agreement | Aug. 11, 2022',
     link: 'https://drive.google.com/file/d/1Zfg4dj1awQkPHfoN-gsDr_gSBm-jOmBK/view?usp=sharing',
     color: 'success',
-  }
+  },
 ];
 
 const extensionProposals = [
@@ -1455,7 +1456,7 @@ const extensionProposals = [
     name: 'Proposal | UC/UAW | Sept. 27, 2022',
     link: 'https://drive.google.com/file/d/1zGA2poRjeQL63syfCMYf-4R_yZztTex4/view?usp=sharing',
     color: 'secondary',
-  }
+  },
 ];
 
 export const infoPostdocs = {
@@ -1556,7 +1557,7 @@ export const infoPostdocs = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Layoff': {
+  Layoff: {
 
     proposals: layoffProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1586,7 +1587,7 @@ export const infoPostdocs = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
-  'Nondiscrimination': {
+  Nondiscrimination: {
 
     proposals: nondiscriminationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1612,7 +1613,7 @@ export const infoPostdocs = {
     proposals: personnelProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Posting': {
+  Posting: {
 
     proposals: postingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1632,7 +1633,7 @@ export const infoPostdocs = {
     proposals: postdocFellowProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Reasonable accomodation': {
+  'Reasonable accommodation': {
 
     proposals: accommodationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1652,7 +1653,7 @@ export const infoPostdocs = {
     proposals: respectResearchProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Severability': {
+  Severability: {
 
     proposals: severabilityProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1662,7 +1663,7 @@ export const infoPostdocs = {
     proposals: sickLeaveProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Successorship': {
+  Successorship: {
 
     proposals: successorshipProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1677,7 +1678,7 @@ export const infoPostdocs = {
     proposals: titlesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Training': {
+  Training: {
 
     proposals: trainingProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1707,7 +1708,7 @@ export const infoPostdocs = {
     proposals: voluntaryResignationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Waiver': {
+  Waiver: {
 
     proposals: waiverProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1727,7 +1728,7 @@ export const infoPostdocs = {
     proposals: workspaceProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Duration': {
+  Duration: {
 
     proposals: durationProposals,
     intro: 'Leave out intros until night has copy edited them all.',
@@ -1786,5 +1787,5 @@ export const infoPostdocs = {
 
     proposals: extensionProposals,
     intro: 'Leave out intros until night has copy edited them all.',
-  }
+  },
 };
