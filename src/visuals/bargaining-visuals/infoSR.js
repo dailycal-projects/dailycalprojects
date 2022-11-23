@@ -29,6 +29,9 @@ export const articlesSR = [
   'Past practices',
   'Posting',
   'Recognition',
+  'Relocation Benefits',
+  'Severability',
+  'Training',
 
 
 
@@ -613,6 +616,36 @@ const recognitionProposals = [
   },
 ];
 
+const relocationBenefitProposals = [
+  {
+    name: 'Proposal |UAW to UC | May 27, 2022',
+    link: 'https://drive.google.com/file/d/14T20XhK2O2j-ETblZUZ4tgpS-0A7FjoV/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package |UC to UAW | Aug. 26, 2022',
+    link: 'https://drive.google.com/file/d/1LhD9zS5hCJmA05GbxqUxw1TYxTtBt1Tw/view?usp=drivesdk',
+    color: 'secondary',
+  },
+];
+
+const severabilityProposals = [
+  {
+    name: 'Tentative agreement | May 13, 2022',
+    link: 'https://drive.google.com/file/d/1i053UnDwPKqpgJywW4PFKNLKYNOJ8cQJ/view?usp=sharing',
+    color: 'success',
+  },
+];
+
+const TrainingProposals = [
+  {
+    name: 'Tentative agreement | May 13, 2022',
+    link: 'https://drive.google.com/file/d/1i053UnDwPKqpgJywW4PFKNLKYNOJ8cQJ/view?usp=sharing',
+    color: 'success',
+  },
+];
+
+
 export const infoSR = {
 
   'Access needs and reasonable accommodations': {
@@ -772,6 +805,22 @@ export const infoSR = {
     intro: 'Leave out intros until night has copy edited them all.',
 
   },
+  'Relocation benefits':{
+    proposals: relocationBenefitProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Severability':{
+    proposals: severabilityProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
+  'Training':{
+    proposals: TrainingProposals,
+    intro: 'Leave out intros until night has copy edited them all.',
+
+  },
   
+
 
 };
