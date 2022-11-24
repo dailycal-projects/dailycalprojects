@@ -38,7 +38,7 @@ const ProposalsSR = () => (
           tentative agreements
         </strong>
         {' '}
-        were met between the UC and the SRU-UAW.
+        were met between the UC system and the SRU-UAW.
       </i>
     </p>
     {

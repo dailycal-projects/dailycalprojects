@@ -37,7 +37,7 @@ const ProposalsASE = () => (
           tentative agreements
         </strong>
         {' '}
-        were met between the UC and the UAW, Local 2865.
+        were met between the UC system and the UAW, Local 2865.
       </i>
     </p>
     {
