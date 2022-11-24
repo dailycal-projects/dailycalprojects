@@ -132,18 +132,13 @@ const childCareProposals = [
     color: 'secondary',
   },
   {
+    name: 'Proposal | UC to UAW | June 17, 2022',
+    link: 'https://drive.google.com/file/d/11chbKuLDDR5N8GIhWtkKAmik7_Dze4t8/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
     name: 'Package | UC to UAW | June 17, 2022',
     link: 'https://drive.google.com/file/d/1n572TTGkWppefvjWzN6qhlPHqOy6thrt/view?usp=sharing',
-    color: 'secondary',
-  },
-  {
-    name: 'Proposal | UC to UAW | June 17, 2022',
-    link: 'https://drive.google.com/file/d/11chbKuLDDR5N8GIhWtkKAmik7_Dze4t8/view?usp=sharing',
-    color: 'secondary',
-  },
-  {
-    name: 'Proposal | UC to UAW | June 17, 2022',
-    link: 'https://drive.google.com/file/d/11chbKuLDDR5N8GIhWtkKAmik7_Dze4t8/view?usp=sharing',
     color: 'secondary',
   },
   {
@@ -157,13 +152,8 @@ const childCareProposals = [
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | Oct. 12, 2022',
-    link: 'https://drive.google.com/file/d/1WofzmrOi-VV0K7YSbglGyl1LHfUFDAZN/view?usp=sharing',
-    color: 'secondary',
-  },
-  {
     name: 'Proposal | UAW to UC | Oct. 17, 2022',
-    link: 'https://drive.google.com/file/d/1WofzmrOi-VV0K7YSbglGyl1LHfUFDAZN/view?usp=sharing',
+    link: 'https://drive.google.com/file/d/1Zh0Ibmw1OHBeQKhTztTm0zMzRW1nRI-m/view',
     color: 'secondary',
   },
 
@@ -684,7 +674,7 @@ const summerSessionProposals = [
 const trainingOrientationProposals = [
 
   {
-    name: 'Tentative agreement | June 24, 2022',
+    name: 'Tentative agreement | June 28, 2022',
     link: 'https://drive.google.com/file/d/1yrwg1SufdU6UJoBDQMH5CRBUIZrNL1-q/view?usp=sharing',
     color: 'success',
   },
@@ -704,7 +694,7 @@ const travelProposals = [
 const unionAccessProposals = [
 
   {
-    name: 'Tentative agreement | Sept. 21, 2022',
+    name: 'Tentative agreement | Sept. 23, 2022',
     link: 'https://drive.google.com/file/d/1blJYtuV9YTSiLO1bb7eUS9iCTO-uewgt/view?usp=sharing',
     color: 'success',
   },
@@ -844,7 +834,7 @@ const preambleProposals = [
 const groundRulesProposals = [
 
   {
-    name: 'Tentative agreement | March 22, 2022',
+    name: 'Tentative agreement | March 2, 2022',
     link: 'https://drive.google.com/file/d/1e1kOkor0zYLI_mSvDVP-fSvKs8McENh4/view?usp=sharing',
     color: 'success',
   },
@@ -1122,7 +1112,7 @@ export const infoASE = {
   'Union access and rights': {
 
     proposals: unionAccessProposals,
-    intro: 'A Sept. 21, 2022, tentative agreement on union access and rights was signed by representatives from UAW Local 2865 and the UC.',
+    intro: 'A Sept. 23, 2022, tentative agreement on union access and rights was signed by representatives from UAW Local 2865 and the UC.',
 
   },
   'Union security': {
@@ -1146,7 +1136,7 @@ export const infoASE = {
   Workload: {
 
     proposals: workloadProposals,
-    intro: 'The Nov. 17, 2022, tentative agreement on the workload article established hourly workloads for teaching assistants, readers, tutors and instructors of record. The agreement also guides the UC system’s response to ASEs who are about to go over their hourly workload for the day, week or term.',
+    intro: 'The Nov. 18, 2022, tentative agreement on the workload article established hourly workloads for teaching assistants, readers, tutors and instructors of record. The agreement also guides the UC system’s response to ASEs who are about to go over their hourly workload for the day, week or term.',
 
   },
   'Workspace materials and instructional support': {
@@ -1170,7 +1160,7 @@ export const infoASE = {
   'Ground rules': {
 
     proposals: groundRulesProposals,
-    intro: 'On March 22, 2022, the two parties tentatively agreed upon ground rules regarding conduct at bargaining meetings, tentative agreements and more.',
+    intro: 'On March 2, 2022, the two parties tentatively agreed upon ground rules regarding conduct at bargaining meetings, tentative agreements and more.',
 
   },
   'Appendix F': {
