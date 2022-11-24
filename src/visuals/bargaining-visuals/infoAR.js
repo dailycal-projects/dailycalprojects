@@ -120,6 +120,11 @@ const healthBenefitsPlanChangesProposals = [
     link: 'https://drive.google.com/file/d/1HCFX6xJ27lIypT7wp4tDCOdf8KSCxTcP/view?usp=sharing',
     color: 'secondary',
   },
+  {
+    name: 'Package | UC to UAW | Nov. 18, 2022',
+    link: 'https://drive.google.com/file/d/1BkJHUL4s8dFTBoDI_yzAGNRI5cImig54/view',
+    color: 'secondary',
+  },
 ];
 
 const bridgeFundingProposals = [
@@ -159,7 +164,7 @@ const bridgeFundingProposals = [
     color: 'secondary',
   },
   {
-    name: 'Side letter | UC to UAW | Nov. 19, 2022',
+    name: 'Proposal | UC to UAW | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1FB6BgNiFc3v6BOtWhcjq4u3tbMEoqiIf/view',
     color: 'secondary',
   },
@@ -192,18 +197,13 @@ const compensationProposals = [
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | Nov. 17, 2022',
-    link: 'https://drive.google.com/file/d/1-RrNTZc-uyQQ4orlPibGZwNRSMRR5we9/view?usp=share_link',
-    color: 'secondary',
-  },
-  {
     name: 'Proposal | UC to UAW | Nov. 17, 2022',
     link: 'https://drive.google.com/file/d/1ZpEl8wgP9O_JyjsP4w5Z5jZjZxxHqr12/view?usp=share_link',
     color: 'secondary',
   },
   {
-    name: 'Package | UAW to UC | Nov. 17, 2022',
-    link: 'https://drive.google.com/file/d/1HCFX6xJ27lIypT7wp4tDCOdf8KSCxTcP/view?usp=sharing',
+    name: 'Package | UC to UAW | Nov. 17, 2022',
+    link: 'https://drive.google.com/file/d/1-RrNTZc-uyQQ4orlPibGZwNRSMRR5we9/view?usp=share_link',
     color: 'secondary',
   },
   {
@@ -212,13 +212,18 @@ const compensationProposals = [
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | Nov. 19, 2022',
-    link: 'https://drive.google.com/file/d/1NKOjzLQb0OfJQ_ulTW5dcbf9nVEKs0nN/view?usp=share_link',
+    name: 'Package | UAW to UC | Nov. 17, 2022',
+    link: 'https://drive.google.com/file/d/1HCFX6xJ27lIypT7wp4tDCOdf8KSCxTcP/view?usp=sharing',
     color: 'secondary',
   },
   {
     name: 'Proposal | UC to UAW | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1tC3O9ZM8_dvFiiOy8bV85kLp93ase-Ld/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 19, 2022',
+    link: 'https://drive.google.com/file/d/1NKOjzLQb0OfJQ_ulTW5dcbf9nVEKs0nN/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -337,6 +342,11 @@ const leavesOfabsenceProposals = [
   {
     name: 'Proposal | UAW to UC | Aug. 12, 2022',
     link: 'https://drive.google.com/file/d/1-IYF8xGtd-CuWQy6W4_zGLr0z6DdAaLY/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Aug. 26, 2022',
+    link: 'https://drive.google.com/file/d/1OOKGrci3x8wbwiSZ_is2gLvpIqOnK5BT/view?usp=sharing',
     color: 'secondary',
   },
   {
