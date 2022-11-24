@@ -21,7 +21,7 @@ export const articlesASE = [
   'Holidays',
   'Housing',
   'International scholars and immigrant support',
-  'Labor-management meetings',
+  'Labor management meetings',
   'Leaves',
   'Management and academic rights',
   'No strikes',
@@ -29,8 +29,8 @@ export const articlesASE = [
   'Parking and transit',
   'Peer-led trainings',
   'Posting',
-  'Reasonable accomodations',
-  'Access needs',
+  'Reasonable accommodations',
+  'Access needs side letter',
   'Relocation benefit',
   'Respectful work environment',
   'Past practices',
@@ -222,7 +222,7 @@ const retirementProposals = [
 const definitionsProposals = [
 
   {
-    name: 'Tentative package agreement | March 16, 2022',
+    name: 'Tentative agreement | March 16, 2022',
     link: 'https://drive.google.com/file/d/1Wc5Sb2AwFIWkgeXBgD7z1cxGTr-duKPy/view?usp=sharing',
     color: 'success',
   },
@@ -242,7 +242,7 @@ const disciplineProposals = [
 const emergencyLayoffProposals = [
 
   {
-    name: 'Tentative package agreement | March 16, 2022',
+    name: 'Tentative agreement | March 16, 2022',
     link: 'https://drive.google.com/file/d/1Wc5Sb2AwFIWkgeXBgD7z1cxGTr-duKPy/view?usp=sharing',
     color: 'success',
   },
@@ -301,7 +301,7 @@ const feeRemissionProposals = [
 const grievanceProposals = [
 
   {
-    name: 'Tentative agreement | Nov. 9, 2022',
+    name: 'Tentative agreement | Nov. 11, 2022',
     link: 'https://drive.google.com/file/d/17ObnkgdQJSqjlsi3h6d8dSoy1YdS3KC0/view?usp=sharing',
     color: 'success',
   },
@@ -714,7 +714,7 @@ const unionAccessProposals = [
 const unionSecurityProposals = [
 
   {
-    name: 'Tentative agreement | Sept. 21, 2022',
+    name: 'Tentative agreement | Sept. 23, 2022',
     link: 'https://drive.google.com/file/d/1nlBYryF5ter8YR3nlSIfwGNMwOdxKGW7/view?usp=sharing',
     color: 'success',
   },
@@ -909,298 +909,298 @@ export const infoASE = {
   Recognition: {
 
     proposals: recognitionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement was reached Nov. 18, 2022, for the recognition article, which recognizes what job titles are counted as ASEs represented by UAW Local 2865.',
 
   },
   'Appointment notification': {
 
     proposals: appointmentNotificationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Proposals from the appointment notification article set forth rules regarding when the UC system should notify ASEs of their employment and what information the UC system should provide upon notification.',
 
   },
   'Appointment security': {
 
     proposals: appointmentSecurityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On June 2, 2022, the appointment security article reached a tentative agreement, ensuring some protections for ASEs in the event that a position an ASE accepts is no longer available.',
 
   },
   'Child care': {
 
     proposals: childCareProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'UAW Local 2865 and the UC system are negotiating child care reimbursements for ASEs.',
 
   },
   Classifications: {
 
     proposals: classificationsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The classifications article saw a tentative agreement Nov. 17, 2022. The agreement allows UC campuses to appoint ASEs into positions with the titles specified in the recognition article.',
 
   },
   'Class sizes': {
 
     proposals: classSizesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Proposals from UAW Local 2865 for the class sizes article have asked the UC campuses to post projected classes sizes from each academic department on central campus websites.',
 
   },
   'Community safety': {
 
     proposals: communitySafetyProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'This article has one Sept. 21, 2022, proposal from the UAW Local 2865 bargaining team. This proposal asked the UC system to defund UC police departments’ budgets and refrain from calling law enforcement to UC campuses, among other demands.',
 
   },
   'Defined contribution and university retirement plans': {
 
     proposals: retirementProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system and the bargaining unit tentatively agreed on a proposal to this article, setting up a policy for the UC system’s contribution to ASEs’ retirement plans.',
   },
   Definitions: {
 
     proposals: definitionsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On March 16, 2022, a tentative agreement was reached on the definitions article, along with some other articles, as part of a package of proposals that maintained the policy from current contracts.',
 
   },
   'Discipline and dismissal': {
 
     proposals: disciplineProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'UAW Local 2865 and the UC system reached a tentative agreement on discipline and dismissal June 17, 2022.',
 
   },
   'Emergency layoff': {
 
     proposals: emergencyLayoffProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Maintaining the current contract between the UC system and the union for emergency layoffs, a tentative agreement was reached for this article March 16, 2022, as part of a package of proposals.',
 
   },
   'Employment files and evaluations': {
 
     proposals: filesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'This April 19, 2022 tentative agreement defines employment files and evaluations and how ASEs may access them.',
 
   },
   'Fee remission': {
 
     proposals: feeRemissionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Fee remission is offered to graduate student instructors, graduate student readers, readers and tutors to offset fees, including those for tuition, health insurance, student services and more, according to the Berkeley Graduate Division website. Policy for ASEs\' fee remission is in negotiation.',
 
   },
   'Grievance and arbitration': {
 
     proposals: grievanceProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement has been reached for the grievance and arbitration article.',
 
   },
   'Health and safety': {
 
     proposals: healthSafetyProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties arrived at a tentative agreement regarding the health and safety article April 19, 2022.',
 
   },
   'Health benefits': {
 
     proposals: healthBenefitsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Policy for ASEs’ health benefits are in negotiation.',
 
   },
   Holidays: {
 
     proposals: holidaysProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'UAW Local 2865 and the UC system tentatively agreed upon a proposal March 2, 2022, regarding holidays, excusing ASEs from many responsibilities on designated holidays.',
 
   },
   Housing: {
 
     proposals: housingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Policy for the housing article is in negotiation.',
 
   },
   'International scholars and immigrant support': {
 
     proposals: internationalProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Negotiations for this article cover UC-provided supports for international students and more.',
 
   },
-  'Labor-management meetings': {
+  'Labor management meetings': {
 
     proposals: laborManagementProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The parties tentatively agreed on a proposal for labor-management meetings March 16, 2022, as part of a package of proposals that maintained the policy from current contracts.',
 
   },
   Leaves: {
     proposals: leavesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Proposals for the leaves article include guidelines for military, pregnancy and medical leaves, among others. They are in negotiation.',
 
   },
   'Management and academic rights': {
 
     proposals: academicRightsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Policy for the management and academic rights article is in negotiation.',
 
   },
   'No strikes': {
 
     proposals: noStrikesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A proposal from the UC system dated April 19, 2022, demanded that there should be “no strikes, including sympathy strikes, stoppages or interruptions of work.” Negotiation continues for this article.',
   },
   'Nondiscrimination in employment': {
 
     proposals: nondiscriminationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Sept. 28, 2022, a proposal for this article was tentatively agreed upon as part of a package with the article on respectful workplace environments.',
 
   },
   'Parking and transit': {
 
     proposals: parkingTransitProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The article for parking and transit is in negotiation. An Aug. 23, 2022, proposal from UAW Local 2865 demanded that the UC system expand bike pathways, bike cages and bike repair facilities on campuses.',
 
   },
   'Peer-led trainings': {
 
     proposals: peerLedTrainingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Proposals for ASEs\' peer-led trainings are in negotiation.',
 
   },
   Posting: {
 
     proposals: postingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'According to the April 19, 2022, tentative agreement for the posting article, the UC system should post any available ASE positions on a central campus website.',
 
   },
-  'Reasonable accomodations': {
+  'Reasonable accommodations': {
 
     proposals: reasonableAccommodationsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Proposals for the reasonable accommodations article concern the extent and grounds for access accommodations afforded to ASEs with disabilities. The article is in negotiation.',
 
   },
   'Past practices': {
 
     proposals: pastPracticesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As part of a package of proposals dated May 10, 2022, the past practices article was retracted, and both the UC system and UAW Local 2865 tentatively agreed on a proposal for the waiver article.',
 
   },
-  'Access needs': {
+  'Access needs side letter': {
 
     proposals: accessNeedsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The access needs side letter concerns resources and strategies regarding accessibility in ASEs’ workplaces. This side letter is in negotiation.',
 
   },
   'Relocation benefit': {
 
     proposals: relocationBenefitProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The one standing proposal for this article is from UAW Local 2865. It bargains for a $5,000 relocation benefit for doctoral students looking to move close to their location of their work. Negotiation is ongoing.',
 
   },
   'Respectful work environment': {
 
     proposals: respectfulProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Sept. 28, 2022, a proposal for this article was tentatively agreed upon as part of a package with the article on nondiscrimination in employment.',
 
   },
   Severability: {
 
     proposals: severabilityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'UAW Local 2865 and the UC system tentatively agreed on this article March 16 as part of a package of proposals that maintained the language from current contracts.',
 
   },
   'Summer session': {
 
     proposals: summerSessionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The article for summer sessions is in negotiation.',
 
   },
   'Training and orientation': {
 
     proposals: trainingOrientationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement on the training and orientation article was signed by representatives from UAW Local 2865 and the UC system.',
 
   },
   Travel: {
 
     proposals: travelProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The travel article saw a tentative agreement March 16, 2022, as part of a package of proposals that maintained the policy from current contracts.',
 
   },
   'Union access and rights': {
 
     proposals: unionAccessProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A Sept. 21, 2022, tentative agreement on union access and rights was signed by representatives from UAW Local 2865 and the UC.',
 
   },
   'Union security': {
 
     proposals: unionSecurityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'By the Sept. 23, 2022, tentative agreement on union security, the UC system will provide a list of ASEs by name and department to the union. The agreement includes guidelines for fees and the union membership election form for new ASEs – which will be accompanied by Appendix YY.',
 
   },
   Wages: {
 
     proposals: wagesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system and UAW Local 2865 continue to negotiate yearly salary increases and base pay for both graduate and undergraduate ASEs. Some proposals also bargain for expedited arbitration and cash remissions to ASEs who’ve experienced issues with pay.',
 
   },
   Waiver: {
 
     proposals: waiverProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement on the waiver article was reached May 10, 2022.',
 
   },
   Workload: {
 
     proposals: workloadProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The Nov. 17, 2022, tentative agreement on the workload article established hourly workloads for teaching assistants, readers, tutors and instructors of record. The agreement also guides the UC system’s response to ASEs who are about to go over their hourly workload for the day, week or term.',
 
   },
   'Workspace materials and instructional support': {
 
     proposals: workspaceMaterialsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A March 16, 2022, tentative agreement maintains the current contract agreement on workspace materials and instructional support, which was passed as part of a package of proposals.',
 
   },
   Duration: {
 
     proposals: durationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The duration article of the 2018 contract between UAW Local 2865 and the UC system originally stated that it would last until June 30, 2022. The union and the UC system have yet to decide how long the articles of this contract will remain in effect.',
 
   },
   Preamble: {
 
     proposals: preambleProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The proposal history for the preamble consists of one proposal from the UC system.',
 
   },
   'Ground rules': {
 
     proposals: groundRulesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On March 22, 2022, the two parties tentatively agreed upon ground rules regarding conduct at bargaining meetings, tentative agreements and more.',
 
   },
   'Appendix F': {
 
     proposals: appendixFProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The Oct. 17, 2022, tentative agreement on Appendix F specifies ASEs’ participation in the UC system’s Retirement Savings Program.',
 
   },
   'Appendix YY': {
 
     proposals: appendixYYProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Sept. 21, 2022, the union and the UC system tentatively agreed on Appendix YY — which is sent out to new ASEs along with a union membership election form. Appendix YY states that the UC system neither discourages or encourages UAW Local 2865 membership.',
 
   },
   'Joint labor management committee': {
 
     proposals: jointLaborProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'There is one package of proposals associated with the joint labor management committee.',
 
   },
   'Berkeley staffing side letter': {
 
     proposals: berkeleyStaffingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Union proposals for this side letter have aimed to increase staffing for courses within the statistics, data science and electrical engineering and computer sciences departments. It is still in negotiation.',
 
   },
   'Current contract extensions': {
 
     proposals: contractExtensionsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The current contract between the UC system and the UAW Local 2865 was set to expire June 30, 2022. That contract — which barred the union from authorizing strikes — was only extended to Oct. 1, 2022.',
 
   },
 
