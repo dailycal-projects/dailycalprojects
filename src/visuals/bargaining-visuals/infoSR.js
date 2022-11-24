@@ -45,7 +45,7 @@ export const articlesSR = [
   'Workplace safety and diversity',
   'Workspace materials and support',
 
-  'Joint labor management workplace accessibility side letter',
+  'Joint labor management committee side letter',
   'Arbitrator panel',
   'Ground rules',
   'Work-incurred injury or illness side letter',
@@ -906,266 +906,265 @@ export const infoSR = {
   'Access needs and reasonable accommodations': {
 
     proposals: accessNeedsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'SRU-UAW and the UC system arrived at a tentative agreement on access needs Oct. 31, 2022, as part of a package of proposals.',
 
   },
   'Anti-bullying and respectful work environment': {
 
     proposals: respectfulProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The union and the UC system signed a tentative agreement on anti-bullying Sept. 29, 2022. The agreement provides examples of abusive conduct, which should be reported to the UC system and may result in an investigation.',
 
   },
   'Appointment notification': {
 
     proposals: AppointmentnotificationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 20, 2022, a proposal for the appointment notification article was tentatively agreed upon.',
 
   },
   'Appointment security': {
 
     proposals: AppointmentsecurityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 11, 2022, a proposal for the appointment security article was tentatively agreed upon.',
 
   },
   Childcare: {
 
     proposals: ChildcareProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On April 22, 2022, SRU-UAW proposed that the UC system reimburse SRs for child care costs up to $6000 per quarter and $9000 per semester. In response, the UC system offered maximum reimbursements of less than $6000 per year. This article is still in negotiation.',
 
   },
   'Community safety': {
 
     proposals: communitysafetyProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The union and the UC system are negotiating the language of a community safety article.',
 
   },
   'Defined contribution and university retirement plan(s)': {
 
     proposals: DefinedcontributionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'SRU-UAW’s and the UC system’s negotiations on SRs’ retirement plans arrived at a tentative agreement Nov. 11, 2022.',
 
   },
   'Discipline and dismissal': {
 
     proposals: disciplineProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Negotiations are ongoing for the procedures and grounds for disciplining and dismissing SRs.',
 
   },
   Duration: {
 
     proposals: durationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'SRU-UAW and the UC system have yet to agree upon the effective dates of this new contract.',
 
   },
   'Emergency layoff': {
 
     proposals: emergencyLayoffProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The Nov. 11, 2022, tentative agreement does not require the UC system to pay SRs during an emergency layoff.',
 
   },
   'Employment file and evaluations': {
 
     proposals: employmentfileProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Employment files and employment evaluations are defined in a tentative agreement from May 27, 2022. The agreement also details how SRs may access them.',
 
   },
   'Grievance and arbitration': {
 
     proposals: grievanceProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 13, 2022, a proposal for grievances and arbitrations was tentatively agreed upon. This agreement details the processes and guidelines concerning grievances filed against the university.',
 
   },
   'Health and safety': {
 
     proposals: healthSafetyProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Aug 26. 2022, a proposal for health and safety was tentatively agreed upon This agreement details health and safety procedures that Graduate SR’s must abide by.',
 
   },
   'Health benefits': {
 
     proposals: healthBenefitsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'There are currently ongoing negotiations concerning the health benefits to be provided to Graduate SR’s.',
 
   },
   Holidays: {
 
     proposals: holidaysProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On April 22, 2022, a proposal for observed holidays was tentatively agreed upon. This agreement details which days of the year the UC system observes as holidays',
 
   },
   Housing: {
 
     proposals: housingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have yet to arrive at an agreement on this article. Its proposals have pertained to the quality and duration of housing to be offered.',
 
   },
   'International scholars and immigrant support': {
 
     proposals: internationalProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have yet to arrive at a tentative agreement for international scholars and immigrant support.',
 
   },
   'Labor-management meetings': {
 
     proposals: laborManagementProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have reached a tentative agreement on labor-management meetings. This agreement details the policies pertaining to quarterly system-wide meetings between the SRU-UAW and the University.',
 
   },
   Layoffs: {
 
     proposals: Layoffsproposal,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system proposal withdrew its proposal for the layoffs article.',
 
   },
   Leaves: {
 
     proposals: leavesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have yet to arrive at an agreement concerning the leaves article. The most recent proposals detail the grounds for leaves as well as the duration of leave allowed.',
 
   },
   'Management and academic rights': {
 
     proposals: ManagementrightsProposal,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'There are currently ongoing negotiations for the management and academic rights article between the SRU-UAW and the UC system.',
 
   },
   'Nondiscrimination in employment': {
 
     proposals: nondiscriminationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have reached a tentative agreement on the nondiscrimination in employment article Oct. 6, 2022. This agreement lists the forms of discrimination the UC system is prohibited from committing.',
 
   },
   'No strikes': {
     proposals: noStrikesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have yet to reach an agreement on this article.',
 
   },
   'Parking and transit': {
     proposals: parkingTransitProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'There are ongoing negotiations between the SRU-UAW and the UC system concerning parking and transit.',
 
   },
   'Past practices': {
     proposals: pastPracticesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have reached a tentative agreement on past practices as of Aug. 5, 2022.',
 
   },
   Posting: {
     proposals: postingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW withdrew this article Nov. 11, 2022. The union’s April 22, 2022 proposal for the article, however, asked the UC system to post employment opportunities for SRs on campus websites.',
 
   },
   Recognition: {
     proposals: recognitionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'There are ongoing negotiations concerning which groups will be represented by the SRU-UAW.',
 
   },
   'Relocation benefits': {
     proposals: relocationBenefitProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have not yet reached an agreement on relocation benefits.',
 
   },
   Severability: {
     proposals: severabilityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As of May 13, 2022, the SRU-UAW and the UC system reached a tentative agreement on the severability article.',
 
   },
   Training: {
     proposals: TrainingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As of July 20, 2022, the SRU-UAW and the UC system tentatively agreed that required training should be on paid time.',
 
   },
   'Transitional funding': {
     proposals: TransitionalfundingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have yet to reach an agreement ontransitional funding. The union’s July 13, 2022, proposal pertains to the funds provided to SRs to aid in their transitions from “unhealthy or unproductive research situations.“',
 
   },
   Travel: {
     proposals: travelProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As of May 27, 2022, the SRU-UAW and the UC system reached a tentative agreement. The agreement pertains to reimbursements for travel required by SRs’ work-related business.',
 
   },
   'Tuition and fee remission': {
     proposals: TuitionremissionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have yet to reach an agreement on tuition and fee remission.',
 
   },
   'Union access and rights': {
     proposals: unionAccessProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system reached a tentative agreement on this article Nov. 14, 2022.',
 
   },
   'Union security': {
     proposals: unionSecurityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system have reached a tentative agreement on the union security article as of Nov. 14, 2022.',
 
   },
   'Vacation and personal time off': {
     proposals: VacationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'There are ongoing negotiations for vacation and personal time off between the SRU-UAW and the UC system.',
 
   },
   Wages: {
     proposals: wagesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'There are ongoing wage negotiations between the SRU-UAW and the UC system.',
 
   },
   Waiver: {
     proposals: waiverProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As of Aug. 5, 2022, the SRU-UAW and the UC system have reached a tentative agreement on the waiver article.',
 
   },
   'Work-incurred injury or illness': {
     proposals: WorkinjuryProposal,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system reached a tentative agreement on the work-incurred injury or illness article Nov. 18, 2022.',
 
   },
   'Work-incurred injury or illness side letter': {
     proposals: workIncurredSideLetterProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement on this side letter to the work-incurred injury or illness article was met on Nov. 18, 2022.',
   },
-  // FILL IN
 
   'Appendix XX': {
     proposals: appendixXXProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'By the tentative agreement on the union security article, Appendix XX should accompany the membership election form.',
 
   },
   'Union security side letter': {
     proposals: unionSecSideLetterProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'This side letter to the union security article was tentatively agreed upon on Nov. 16, 2022.',
 
   },
 
   'Workload, time and effort': {
     proposals: workloadProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As of Oct. 18, 2022, the SRU-UAW and the UC system reached a tentative agreement on the workload, time and effort article. It pertains to the workload and responsibilities of SRs.',
 
   },
   'Workplace safety and diversity': {
     proposals: workplaceSafetyProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'There are ongoing negotiations pertaining to workplace safety and diversity.',
 
   },
   'Workspace materials and support': {
     proposals: workspaceMaterialsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The SRU-UAW and the UC system reached a tentative agreement on workspace materials and support April 29, 2022.',
 
   },
 
-  'Joint labor management workplace accessibility side letter': {
+  'Joint labor management committee side letter': {
     proposals: jlmProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As of Oct. 13, 2022, the SRU-UAW and the UC system have reached a tentative agreement on this side letter.',
 
   },
   'Arbitrator panel': {
     proposals: arbitratorPanelProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As of Nov. 18, 2022, the SRU-UAW and the UC system tentatively agreed on the panel of arbitrators.',
 
   },
   'Ground rules': {
     proposals: groundRulesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As of April 22, 2022, the SRU-UAW and the UC system have reached a tentative agreement on five “ground rules” for bargaining.',
 
   },
 
