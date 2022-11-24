@@ -62,7 +62,7 @@ export const articlesPostdocs = [
   'Appendix F',
   'Appendix G',
   'Ground rules',
-  'Current contract extensions',
+  'Current contract extension',
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
@@ -1773,7 +1773,7 @@ export const infoPostdocs = {
     proposals: groundRulesProposals,
     intro: 'Leave out intros until night has copy edited them all.',
   },
-  'Current contract extensions': {
+  'Current contract extension': {
 
     proposals: extensionProposals,
     intro: 'Leave out intros until night has copy edited them all.',

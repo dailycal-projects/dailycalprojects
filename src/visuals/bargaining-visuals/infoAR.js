@@ -47,7 +47,7 @@ export const articlesAR = [
   'Appendix H',
   'Appendix YY',
   'Ground rules',
-  'Extension',
+  'Current contract extension',
 
 ];
 
@@ -66,8 +66,8 @@ const recognitionProposals = [
 const appointmentsProposals = [
   {
 
-    name: 'Tentative agreement | June 24, 2022',
-    link: 'https://drive.google.com/file/d/1K8zj1xCsaJ7MQJCnsxOWWX6SH0xRBqpd/view?usp=sharing',
+    name: 'Tentative agreement | Nov. 2, 2022',
+    link: 'https://drive.google.com/file/d/1LLs5iCOnnhlKjyCuKFjEAO66fX0KRwCw/view',
     color: 'success',
 
   },
@@ -316,7 +316,7 @@ const laborManagementMeetingsProposals = [
 const layoffAndReductionInTimeProposals = [
   {
 
-    name: 'Tentative agreement | Nov. 19, 2022',
+    name: 'Tentative agreement | Nov. 18, 2022',
     link: 'https://drive.google.com/file/d/1nEdlUtxWioZGM1OK6uG3cG28zopqZYi4/view?usp=share_link',
     color: 'success',
 
@@ -361,7 +361,7 @@ const managementAcademicProposals = [
   {
 
     name: 'Tentative agreement | Nov. 13, 2022',
-    link: 'https://drive.google.com/file/d/1EoomNBZU86b2xnSFauRSW9JbTjXwk2Mb/view',
+    link: 'https://drive.google.com/file/d/1lVcbYMKyE2LaXz_cXqzZysPm9C-Q_nRw/view',
     color: 'success',
 
   },
@@ -372,7 +372,7 @@ const medicalSeparationProposals = [
 
   {
 
-    name: 'Tentative agreement | Oct. 28, 2022',
+    name: 'Tentative agreement | Nov. 2, 2022',
     link: 'https://drive.google.com/file/d/1LLs5iCOnnhlKjyCuKFjEAO66fX0KRwCw/view',
     color: 'success',
 
@@ -386,7 +386,7 @@ const nondiscriminationProposals = [
   {
 
     name: 'Tentative agreement | Sept. 30, 2022',
-    link: 'https://drive.google.com/file/d/1Gbl6ouJaNjgxm5Wx1WfIEgA83-DckFa6/view?usp=sharing',
+    link: 'https://drive.google.com/file/d/1pYmBVjQtXaks8p9XAD2LIQ6rq8TnpugZ/view',
     color: 'success',
 
   },
@@ -432,7 +432,7 @@ const professionalResearcherProposals = [
 
   {
 
-    name: 'Tentative agreement | Nov. 2022',
+    name: 'Tentative agreement | Nov. 18, 2022',
     link: 'https://drive.google.com/file/d/12Kfl0wUNSkqD1cxLgPeXD4XPMgXZv9N_/view?usp=share_link',
     color: 'success',
 
@@ -443,7 +443,7 @@ const projectScientistProposals = [
 
   {
 
-    name: 'Tentative agreement | Nov. 2022',
+    name: 'Tentative agreement | Nov. 18, 2022',
     link: 'https://drive.google.com/file/d/1k3DDYDXc3I15K7EdbVNN2B7TEM0ZsF7x/view?usp=share_link',
     color: 'success',
 
@@ -499,7 +499,7 @@ const specialistProposals = [
 
   {
 
-    name: 'Tentative agreement | Nov. 2022',
+    name: 'Tentative agreement | Nov. 18, 2022',
     link: 'https://drive.google.com/file/d/16GPxFoABGgyzL0EZspNH1a1MlLF3L7e5/view?usp=share_link',
     color: 'success',
 
@@ -533,8 +533,8 @@ const unionAccessProposals = [
 
   {
 
-    name: 'Tentative agreement | June 24, 2022',
-    link: '',
+    name: 'Tentative agreement | Nov. 2, 2022',
+    link: 'https://drive.google.com/file/d/1LLs5iCOnnhlKjyCuKFjEAO66fX0KRwCw/view',
     color: 'success',
 
   },
@@ -545,7 +545,7 @@ const unionSecurityProposals = [
   {
 
     name: 'Tentative agreement | June 24, 2022',
-    link: '',
+    link: 'https://drive.google.com/file/d/1ZV8nSbsjgJK8XqaL2ZoI8IJNIPAuzQDc/view',
     color: 'success',
 
   },
@@ -625,7 +625,7 @@ const extensionProposals = [
 
     name: 'Current contract extension to Oct. 31, 2022',
     link: 'https://drive.google.com/file/d/1BuhRM8jF4uuFMrdSnwTusIzV8tVqpbjC/view?usp=sharing',
-    color: 'success',
+    color: 'secondary',
 
   },
 
@@ -636,289 +636,289 @@ export const infoAR = {
   Recognition: {
 
     proposals: recognitionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement on recognition was reached June 24, 2022, as part of a package of proposals. The package agreement maintained the language of eight articles from the current contract between the UAW Local 5810 and the UC system.',
 
   },
   Appointments: {
 
     proposals: appointmentsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 2, 2022, a tentative agreement on a package deal maintained the language of their current appointments article.',
 
   },
 
   'Benefits and retirement programs': {
 
     proposals: benefitsRetirementPrograms,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UAW Local 5810’s proposals have included eligibility for enrollment in health and retirement plans and a $10 per month cap on increases to AR contributions for benefit plans.',
 
   },
 
   'Health benefits plan changes for 2023': {
 
     proposals: healthBenefitsPlanChangesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'While negotiations are ongoing, parties have negotiated the extent of coverage of mental health, gender-affirming and IVF treatments. None of these terms are used in the current contract.',
 
   },
 
   'Bridge funding': {
 
     proposals: bridgeFundingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Bridge funding is provided by the UC system to ensure the continuity of AR’s research projects during periods of insufficient external funding. A Nov. 12, 2022 package from UAW Local 5180 set forth guidelines for ARs\' eligibility for bridge funding of up to $100,000.',
 
   },
 
   'Child care': {
 
     proposals: childCareProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'In November 2022, the UAW Local 5810 withdrew its child care proposal asking the UC system to subsidize UC child care programs for ARs. The union’s last contract did not contain a child care article.',
 
   },
 
   Compensation: {
 
     proposals: compensationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Oct. 14, 2022, the UC system proposed a 4% salary increase in 2023 and a 3% salary increase each year from 2024 to 2027. Later, Nov. 12, 2022, the union proposed a 10% salary increase for all ARs with an annual 8% salary increase thereafter.',
 
   },
 
   'Coordinator of public programs series': {
 
     proposals: coordinatoroOfPublicProgramsSeries,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Coordinators of public programs, or CPPs, are ARs that oversee programs that serve the public in education, health and labor. In mid-November, both parties reached a tentative agreement on eligibility criteria, longer terms of appointments and promotion guidelines for CPPs.',
 
   },
 
   'Corrective action and dismissal': {
 
     proposals: correctiveActionAndDismissalsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system and the UAW Local 5810 reached a tentative agreement as part of a package proposal Sept. 30, 2022 on what corrective actions the UC system can take to address ARs’ potential misconduct, subpar performance or violation of UC policy.',
 
   },
   'Grievance and arbitration procedures': {
 
     proposals: grievanceArbitrationProceduresProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 13, 2022, the UAW Local 5810 and the UC system tentatively agreed on procedures for ARs to file grievances with a right to be represented by the UAW.',
 
   },
 
   'Health and safety': {
 
     proposals: healthAndSafetyProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'In August 2022, both parties tentatively agreed that the UC system and the union share the responsibility of maintaining a safe working environment with proper safety equipment.',
 
   },
 
   Holidays: {
 
     proposals: holidaysProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'In June 2022, both parties tentatively agreed on 14 holidays, including Juneteenth. ARs whose projects require working on holidays should receive an alternate day off under the agreement.',
 
   },
 
   'Housing and relocation': {
 
     proposals: housingAndRelocationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 12, 2022, the UAW Local 5180 proposed that the UC system make UC-provided housing available for all ARs with rent that is no more than 30% of their salary. If UC housing is not available, the UC system should pay ARs in subsidies, under the union’s proposal. Both parties are still negotiating.',
 
   },
 
   'International scholar and immigrant support': {
 
     proposals: internationalScholarAndImmmigrantSupportProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 19, 2022, the UAW Local 5810 withdrew their proposal for this new article.',
 
   },
   'Labor management meetings': {
 
     proposals: laborManagementMeetingsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties came to a tentative agreement on labor management meetings in June 2022 as part of a package that maintained the language of eight articles from their current contract.',
 
   },
   'Layoff and reduction in time': {
 
     proposals: layoffAndReductionInTimeProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 18, 2022, UAW Local 5180 came to a tentative agreement on layoffs and reduced work hours.',
 
   },
   'Leaves of absence': {
 
     proposals: leavesOfabsenceProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'UAW Local 5180 and the UC system are still negotiating guidelines for military, pregnancy and medical leaves, among others. Notably, the union has asked for up to eight weeks of paid leave per year for ARs with seriously ill family members.',
 
   },
 
   'Management and academic rights': {
 
     proposals: managementAcademicProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Nov. 13, 2022, both parties reached a tentative agreement on an Aug. 26, 2022 UC proposal that outlines the rights of the UC system’s faculty and academic administrators.',
 
   },
   'Medical separation': {
 
     proposals: medicalSeparationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Medical separation is a separation from employment when an AR is unable to perform the essential assigned functions of their position due to a disability. In a package with four other articles, both parties reached a tentative agreement in early November to maintain current contract language on medical separation.',
 
   },
   'No strikes': {
 
     proposals: noStrikesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'This article is still in negotiation. In multiple proposal packages, the UC system has proposed to maintain the current contract language prohibiting strikes; the union’s only response on June 24, 2022 contained the current contract’s version of this article, written in striked out text.',
 
   },
   'Nondiscrimination in employment': {
 
     proposals: nondiscriminationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Sept. 30, 2022, both parties came to a tentative agreement on a UAW version of the article.',
 
   },
   'Out of unit movement': {
 
     proposals: outOfUnitProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'In a package proposal with 4 other articles, UAW Local 5180 and the UC system reached a tentative agreement Nov. 11, 2022, to maintain current contract language on out of unit movement.',
 
   },
   'Parking and transit': {
 
     proposals: parkingTransitProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Language from recent proposals in November from the UC system are showing the integration of university-provided and low-carbon emission transit options for ARs. Negotiations are ongoing.',
 
   },
   'Past practice not covered by agreement': {
 
     proposals: pastPracticesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'In June 2022, the union and UC reached a tentative agreement to maintain current contract language in a package proposal with eight other articles.',
 
   },
   'Personnel files': {
 
     proposals: personnelProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Along with seven other articles, both parties came to a tentative agreement to maintain current contract language regarding personnel files.',
 
   },
   'Professional research series': {
 
     proposals: professionalResearcherProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Professional researchers are represented by the UAW Local 5180. In mid-November 2022, both parties reached a tentative agreement on eligibility criteria, longer terms of appointments and promotion guidelines for professional researchers.',
 
   },
   'Project scientist series': {
 
     proposals: projectScientistProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Project scientists are represented by the UAW Local 5180. In mid-November 2022, both parties reached a tentative agreement on eligibility criteria, longer terms of appointments and promotion guidelines for project scientists.',
 
   },
   'Reasonable accommodation': {
 
     proposals: reasonableAccommodProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'In late-October, both parties reached a tentative agreement on reasonable accommodation for disabled ARs and need assistance to perform the essential functions of their jobs.',
 
   },
   'Respect is part of research training': {
 
     proposals: respectPartProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The union withdrew their proposal for this new article in November 2022. The union’s original June 10, 2022 proposal moved to offer sexual harrassment prevention and response training jointly with the UC system.',
 
   },
   'Respectful work environment': {
 
     proposals: respectfulWorkProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'UAW Local 5180 and the UC system reached a tentative agreement on a new proposed article by the union that sets guidelines to maintain a respectful work environment for ARs.',
 
   },
   Severability: {
 
     proposals: severabilityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Along with the eight other articles in a June 2022 package proposal, both parties agreed to maintain the current contract language on severability.',
 
   },
   'Sick leave': {
 
     proposals: sickLeaveProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Oct. 19, 2022, UAW Local 5180 and the UC system came to a tentative agreement to maintain current contract language in a package proposal for sick leave and vacation. The current contract allows full-time ARs to accumulate sick leave with one day per month.',
 
   },
   'Specialist series': {
 
     proposals: specialistProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Specialists are represented by the UAW Local 5180. In mid-November 2022, both parties reached a tentative agreement on eligibility criteria, longer terms of appointments and promotion guidelines for specialists.',
 
   },
   'Time and effort commitment': {
 
     proposals: timeEffortProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties tentatively agreed to maintain current contract language for time and effort commitment in late-September in a package proposal with 3 other articles. The current contract language outlines standard work hours and overtime work and compensation rules.',
 
   },
   Training: {
 
     proposals: trainingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'In June 2022, along with eight other articles, UAW Local 5180 and the UC system came to a tentative agreement to maintain current contract language on training. The current contract article rules training as paid time.',
 
   },
   'Travel reimbursement': {
 
     proposals: travelReimbursementProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'UC and the union reached a tentative agreement to maintain current contract language on travel reimbursement.',
 
   },
   'Union access and rights': {
 
     proposals: unionAccessProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Parties tentatively agreed to maintain their current contract’s article on union access and rights Nov. 2, 2022, as part of a package with four other articles. Notably, attendance at union orientations is mandatory and on paid time under the current contract.',
 
   },
   'Union security': {
 
     proposals: unionSecurityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The Nov. 2, 2022, tentative agreement on union security came as a package with four other proposals. It requires that a form, along with Appendix YY, be sent out to allow ARs to allow them to join the union.',
 
   },
   Vacation: {
 
     proposals: vacationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties signed an agreement to continue their current contract’s vacation and sick leave articles Oct. 19, 2022. The current vacation article allows ARs to accrue up to 48 vacation days.',
 
   },
   Waiver: {
 
     proposals: waiverProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The union and the UC system tentatively agreed to the waiver article June 24, 2022, as part of a proposal package that maintains the language of eight articles from their current contract.',
 
   },
   'Work-incurred injury and illness': {
 
     proposals: workIncurredProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UAW Local 5810 and the UC system have tentatively agreed upon their current contract’s policy for injuries and illnesses incurred at ARs’ workplaces. ARs should be afforded sick leave and vacation for “work-incurred injury or illness” under the California Workers’ Compensation Act.',
 
   },
   'Duration of agreement': {
 
     proposals: durationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Neither party has proposed a duration for the contract currently in negotiation.',
 
   },
   'Appendix H': {
 
     proposals: appendixHProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Appendix H’s tentative agreement Nov. 19, 2022, established a list of arbitrators to help settle disputes. The list was required by the Nov. 13, 2022, tentative agreement regarding grievance and arbitration procedures.',
 
   },
   'Appendix YY': {
 
     proposals: appendixYYProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement for Appendix YY’s language was reached Nov. 2, 2022. The appendix will accompany ARs’ union membership election form. Appendix YY states that the UC system neither discourages or encourages UAW Local 2865 membership.',
 
   },
   'Ground rules': {
 
     proposals: groundRulesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On June 28, 2022, the UC system and the union tentatively agreed on ground rules for the location, scheduling and written minutes of bargaining meetings. Under this agreement, bargaining meetings may not have sound or video recordings.',
 
   },
-  Extension: {
+  'Current contract extension': {
 
     proposals: extensionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The current AR contact between the UC system and the UAW Local 5810 was originally slated to be in effect until Sept. 30, 2022. That contract — which barred the union from authorizing strikes — was only extended to Oct. 31, 2022.',
 
   },
 };

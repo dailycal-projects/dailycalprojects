@@ -51,7 +51,7 @@ export const articlesASE = [
   'Appendix YY',
   'Joint labor management committee',
   'Berkeley staffing side letter',
-  'Current contract extensions',
+  'Current contract extension',
 ];
 
 const recognitionProposals = [
@@ -1211,7 +1211,7 @@ export const infoASE = {
     intro: 'The Oct. 27, 2022, union proposal for this side letter aimed to increase staffing for courses within the statistics, data science and electrical engineering and computer sciences departments at UC Berkeley.',
 
   },
-  'Current contract extensions': {
+  'Current contract extension': {
 
     proposals: contractExtensionsProposals,
     intro: 'The current contract between the UC system and the UAW Local 2865 was set to expire June 30, 2022. That contract — which barred the union from authorizing strikes — was only extended to Oct. 1, 2022.',
