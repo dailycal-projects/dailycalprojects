@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 23, 2022 at 10:00 a.m.';
+export const lastUpdated = 'Nov. 24, 2022 at 2:01 p.m.';
 
 export const articlesPostdocs = [
 
@@ -171,6 +171,16 @@ const appointmentsProposals = [
     link: 'https://drive.google.com/file/d/1w13LQoVeYRgw1KjATsGszamL21h1b5GF/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Proposal | UAW to UC | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/11Ri3hjGjwxxhGqnstUkphE4nHbxW1zIw/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const benefitsProposals = [
@@ -277,6 +287,11 @@ const childCareProposals = [
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const compensationProposals = [
@@ -363,6 +378,16 @@ const compensationProposals = [
   {
     name: 'Package | UAW to UC | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1SMPi2wOB5I94SIdD0xgQbQD2_hPZAeiv/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -612,6 +637,11 @@ const layoffProposals = [
     link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const leavesProposals = [
@@ -711,6 +741,16 @@ const leavesProposals = [
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Proposal | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/15lctXwcvCtdYfq8RtdQAZ1S6Ghzq8XBH/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const managementAcademicProposals = [
@@ -764,6 +804,12 @@ const managementAcademicProposals = [
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UC to UAW | November 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
+
 ];
 
 const medicalSeparationProposals = [];
@@ -797,6 +843,11 @@ const noStrikesProposals = [
   {
     name: 'Package | UC to UAW | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | November 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -925,6 +976,12 @@ const parkingProposals = [
     link: 'https://drive.google.com/file/d/1cvRHf_RjS1gGDOLzFmfsZsRQHOe8gtsH/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Proposal | UAW to UC | Nov. 22, 2022',
+    link: 'https://drive.google.com/file/d/1_QJ010WJOyrfVEYwqfslVvd7W8oMEdy6/view?usp=share_link',
+    color: 'secondary',
+  },
+
 ];
 
 const pastPracticesProposals = [];
@@ -1270,6 +1327,17 @@ const workAuthProposals = [
     link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
     color: 'secondary',
   },
+
+  {
+    name: 'Package | UAW to UC | Nov. 19, 2022',
+    link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const injuriesProposals = [
@@ -1309,6 +1377,12 @@ const durationProposals = [
     link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
+
 ];
 
 const healthBenefitsProposals = [

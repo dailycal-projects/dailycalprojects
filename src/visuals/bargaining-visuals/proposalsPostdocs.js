@@ -38,7 +38,7 @@ const ProposalsPostocs = () => (
           tentative agreements
         </strong>
         {' '}
-        were met between the UC system and the UAW, Local 5180 on postdocs&apos; developing contract.
+        were met between the UC system and the UAW Local 5180 on postdocs&apos; developing contract.
       </i>
     </p>
     {

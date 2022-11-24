@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 22, 2022 at 2:55 a.m.';
+export const lastUpdated = 'Nov. 24, 2022 at 1:33 p.m.';
 
 export const articlesASE = [
 
@@ -109,6 +109,16 @@ const appointmentNotificationProposals = [
   {
     name: 'Package | UC to UAW | Nov. 10, 2022',
     link: 'https://drive.google.com/file/d/1EC_ZbKhkWHIG6i6IbHXTvvYtq2Lit09g/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 17, 2022',
+    link: 'https://drive.google.com/file/d/1xxjVDOItF-y4_1ikxbfP8vNXxYXGeoVd/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 21, 2022',
+    link: 'https://drive.google.com/file/d/1lBXmKPOcGDHF_GEm6UJR7VwTzQhjkxsK/view?usp=share_link',
     color: 'secondary',
   },
 
@@ -331,7 +341,7 @@ const healthBenefitsProposals = [
     color: 'secondary',
   },
   {
-    name: 'Proposal | UC to UAW | Oct. 12, 2022',
+    name: 'Package | UC to UAW | Oct. 12, 2022',
     link: 'https://drive.google.com/file/d/1WofzmrOi-VV0K7YSbglGyl1LHfUFDAZN/view?usp=sharing',
     color: 'secondary',
   },
