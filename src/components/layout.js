@@ -37,7 +37,6 @@ import ProposalsSR from '../visuals/bargaining-visuals/proposalsSR';
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.
 To use a component in MDX, simply type <MyComponent />
-
 Note: MDXProvider doesn't like parsing individual HTML elements followed
 by an array of React components, so we must include them in the same array.
 */

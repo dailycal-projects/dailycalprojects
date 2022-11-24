@@ -55,7 +55,7 @@ export const articlesPostdocs = [
   'Health benefits side letter',
   'Compensation side letter',
   'Transit side letter',
-  'Joint labor management committee workplace accessibility side letter',
+  'Joint labor management committee side letter',
   'Appendix A',
   'Appendix B',
   'Appendix C',
@@ -1370,7 +1370,7 @@ const appendixBProposals = [
   {
     name: 'Tentative agreement | Nov. 22, 2022',
     link: 'https://drive.google.com/file/d/1lagV0Vg56XJwrnRuQnm0VPHCfDX6IuA4/view?usp=share_link',
-    color: 'secondary',
+    color: 'success',
   },
 ];
 
@@ -1454,328 +1454,328 @@ export const infoPostdocs = {
   Recognition: {
 
     proposals: recognitionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement on the recognition article was reached in August 2021 as part of a package of proposals. The package agreement maintained the language of eight articles from the current contract between the UAW Local 5810 and the UC system.',
 
   },
   Appointments: {
 
     proposals: appointmentsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Negotiations for the appointments article are ongoing. Proposals have bargained the duration and notices of postdocs’ appointments and reappointments to employment.',
 
   },
   Benefits: {
 
     proposals: benefitsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The Nov. 17, 2021 tentative agreement outlines postdocs’ participation in several benefits programs by the UC. It includes the Postdoctoral Scholar Benefit Plans medical, dental and vision plans, among others.',
 
   },
   'Child care': {
 
     proposals: childCareProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The union and the UC system continue to negotiate the child care article of the contract.',
 
   },
   Compensation: {
 
     proposals: compensationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Negotiation between the union and the UC system is ongoing for this article. The UAW Local 5810’s Nov. 13, 2022 proposal bargains for annual postdoc salaries of at least $70,000, all the way up to about $85,000 for postdocs with five years of experience or more.',
 
   },
   'Discipline and dismissal': {
 
     proposals: disciplineProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement on discipline and dismissal was reached Sept. 16, 2021.',
 
   },
   'Grievance and arbitration procedures': {
 
     proposals: grievanceProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Sept. 27, 2022, parties tentatively agreed on procedures for grievances and arbitrations.',
 
   },
   'Health and safety': {
 
     proposals: healthSafetyProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'UAW Local 5810 and the UC system tentatively agreed to language for this article Oct. 21, 2021. The union and the UC system acknowledge that it is both parties’ responsibility to maintain safe and healthy workplaces — which includes those in laboratory settings.',
 
   },
   Housing: {
 
     proposals: housingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties have attempted to pass language for the housing article of postdocs’ contract by including it in package proposals. The union’s Aug. 25, 2021 housing proposal to the UC system bargained for a housing assistance program, temporary housing for international scholars and a notice of how many UC housing units will be available to postdocs.',
 
   },
   Holidays: {
 
     proposals: holidaysProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement on time off for designated holidays was reached on Aug. 1, 2021.',
 
   },
   Immigration: {
 
     proposals: immigrationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties tentatively agreed to language on the immigration article Nov. 18, 2022, but the language has not yet been provided.',
 
   },
   'Individual development plans and progress assessments': {
 
     proposals: individualDevelopmentProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The union and the UC system reached a tentative agreement on this article on Feb. 22, 2022.',
 
   },
   'International scholar and immigrant support': {
 
     proposals: internationalScholarProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system and the UAW Local 5810 are negotiating supports for international scholars and immigrants. On Oct. 21, 2021, the union proposed that the UC system reimburse postdocs for meal costs, travel expenditures and some fees incurred while applying for or renewing a visa.',
 
   },
   'Job abandonment': {
 
     proposals: jobAbandonmentProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system withdrew its job abandonment proposal Sept. 21, 2021.',
 
   },
   'Labor management meetings': {
 
     proposals: laborManagementProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties came to a tentative agreement on labor management meetings in August 2021 as part of a package that maintained the language of eight articles from their current contract.',
 
   },
   'Lawrence Berkeley National Lab article': {
 
     proposals: LBNLProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The Nov. 22, 2022 tentative agreement on this article details some policies for postdocs working in the Lawrence Berkeley National Lab – including holidays, compensation and personal time off.',
 
   },
   Layoff: {
 
     proposals: layoffProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The union and the UC system are negotiating a policy for postdoc layoffs. More than 15 proposals and package proposals have been set forth regarding this article, dating from July 2021 to November 2022.',
 
   },
   'Leaves of absence': {
 
     proposals: leavesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Bargaining is ongoing for policy regarding postdocs’ leaves of absence. Similar to the layoff article’s negotiations history, proposals for the leaves of absence article date as far back as August 2021, but as recently as November 2022.',
 
   },
   'Management and academic rights': {
 
     proposals: managementAcademicProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The ongoing negotiation for this article aims to establish some of the UC system’s rights. Proposals for this article have included, but are not limited to, the UC system’s ability to assign work locations for, discipline and evaluate the performance of postdocs.',
 
   },
   'Medical separation': {
 
     proposals: medicalSeparationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Medical separation occurs when a postdoc is unable to perform the essential function of their position due to their disability, according to the UC system\'s original Aug. 17, 2021 proposal for the article. The UC system withdrew its proposal for this new article March 3, 2022.',
 
   },
   'No strikes': {
 
     proposals: noStrikesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system’s original July 23, 2021, proposal for this article sought to maintain the current contract’s no strikes article, which prohibited striking. The union’s Aug. 2, 2021 response contained the current contract’s no strikes article, written in completely striked out text. Negotiation is ongoing.',
 
   },
   Nondiscrimination: {
 
     proposals: nondiscriminationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The parties reached a tentative agreement on nondiscrimination in the workplace on Feb. 8, 2022.',
 
   },
   'Parking and transit': {
 
     proposals: parkingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Despite more than 20 packages and proposals, the language for this article is still in negotiation. Recent proposals from both parties include e-bike discounts and subsidies for transit fees.',
   },
   'Past practices': {
 
     proposals: pastPracticesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As part of a Feb. 18, 2022, package of proposals, the union withdrew their proposal for a new past practice article.',
   },
   'Personal time off': {
 
     proposals: personalTimeOffProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties tentatively agreed upon a policy for personal time off Jan. 19, 2022. Now, postdocs should get 24 paid days of personal time off for each year-long appointment, but using them requires approval from the UC system.',
   },
   'Personnel files': {
 
     proposals: personnelProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Personnel files refer to information about postdocs’ appointment with the UC system. On Aug. 1, 2021, the union and the UC system tentatively agreed to maintain their current contract’s article on personnel files.',
   },
   Posting: {
 
     proposals: postingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system and the UAW Local 5810 have reached a tentative agreement maintaining the status quo. Posting policies — regarding job offers and equivalent compensation — will not change from the last contract, but campuses may expand upon them if they so choose.',
   },
   'Professional development and career counseling': {
 
     proposals: developmentProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement was reached after more than 15 proposals and packages. Under the agreement, the UC system should offer career counseling, writing workshops and international scholar workshops for its postdocs.',
   },
   'Progress assessments': {
 
     proposals: progressAssessProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties reached a tentative agreement Feb. 21, 2022.',
   },
   'President\'s postdoctoral fellowships': {
 
     proposals: postdocFellowProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UAW Local 5810 proposed an expansion to the President’s Postdoctoral Fellowship program, asking to double the amount of fellows accepted for every year the contract is in effect. Negotiations are still ongoing, but a Nov. 13, 2022, package proposal from the UAW Local 5810 — if agreed upon — would strike this new article from the developing contract.',
   },
   'Reasonable accommodation': {
 
     proposals: accommodationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Oct. 31, 2022, a tentative agreement regarding disability accommodations and work adjustments was reached. This was achieved after almost 20 back-and-forth proposals and packages.',
   },
   'Relocation reimbursement': {
 
     proposals: reimbursementProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Proposals from the UAW Local 5810 have asked the UC system to reimburse long-term work relocation expenses, such as rent, airfare and visa fees. Negotiation is ongoing, but, according to a Nov. 13, 2022, package proposal, the union may be willing to withdraw the article.',
   },
   'Respectful work environment': {
 
     proposals: respectfulProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement was reached Sept. 27, 2022, defining what is and is not abusive conduct.',
   },
   'Respect is a part of research training': {
 
     proposals: respectResearchProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. A Nov. 19, 2022, package proposal from the UAW Local 5810, provides that it could be withdrawn.',
   },
   Severability: {
 
     proposals: severabilityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Both parties reached a tentative agreement not to change the current contract language for this article — along with seven others — Aug. 1, 2021.',
   },
   'Sick leave': {
 
     proposals: sickLeaveProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Provisions for sick leave to care for family members now include grandparents, grandchildren and siblings, according to the Jan. 18, 2022, tentative agreement.',
   },
   Successorship: {
 
     proposals: successorshipProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'As part of an Aug. 1, 2021, tentative agreement, the UAW Local 5810 and the UC system agreed to maintain the current contract language for this article and seven others.',
   },
   'Time and effort commitment': {
 
     proposals: timeProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'After two proposals, a tentative agreement was reached Sept. 16, 2021. Like their current contract, time spent during meals and commuting to work are not counted as working hours.',
   },
   'Titles and classifications': {
 
     proposals: titlesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Jan. 19, 2022, a tentative agreement was reached between the UC system and UAW Local 5810. The new article removes special classifications for postdocs working at Lawrence Berkeley National Lab, abbreviated as LBL on the contract.',
   },
   Training: {
 
     proposals: trainingProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The tentative agreement reached August 1, 2021, includes training among the articles that will not be changed from current contract language.',
   },
   'Travel reimbursement': {
 
     proposals: travelProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'On Oct, 21, 2021, parties tentatively agreed on a proposal for this article, according to the union’s postdoc bargaining tracking Google Sheet. However, a link to the agreement was not provided.',
   },
   'Union access and rights': {
 
     proposals: unionAccessProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'By a Feb. 8, 2022 tentative agreement, each UC campus should conduct a monthly, campuswide orientation for new postdocs.',
   },
   'Union security': {
 
     proposals: unionSecurityProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system and the UAW Local 5810 tentatively established policies on union security Oct. 3, 2022. Among its many guidelines, it required the UC system to send postdocs a form for union membership along with Appendix YY.',
   },
   'University facilities and services': {
 
     proposals: facilitiesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Under an Aug. 1, 2021 tentative agreement, this article and seven others will not change from current contract language.',
   },
   'Voluntary resignation': {
 
     proposals: voluntaryResignationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'This new article proposed by the UC system would have established the conditions for postdocs’ voluntary resignations. However, it was withdrawn, according to the UAW Local 5810.',
   },
   Waiver: {
 
     proposals: waiverProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A tentative agreement on the waiver article was reached Feb. 21, 2022. It acknowledges that both parties have been free to collectively bargain during these contract negotiations.',
   },
   'Work authorization': {
 
     proposals: workAuthProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Though still in negotiation, the union’s Feb. 15, 2022 proposal would require the UC system to reimburse postdocs for visa-related fees. This is the proposal used in the UAW Local 5810’s June 2, 2022 package proposal.',
   },
   'Work-incurred injury and illness': {
 
     proposals: injuriesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The Sept. 13, 2022 tentative agreement between both parties changed little from the original contract, save for a pronoun update.',
   },
   'Workspace and materials': {
 
     proposals: workspaceProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'This was the final proposal included in the Aug. 1, 2022, tentative agreement package between the UC system and UAW Local 5810. The original contract language is not slated to change.',
   },
   Duration: {
 
     proposals: durationProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A June 23, 2022, proposal by the UC system would extend the end date of the developing contract to Sept. 30, 2027. The UC system has since attempted to pass the proposal through package deals, but the article is still in negotiation.',
   },
   'Health benefits side letter': {
 
     proposals: healthBenefitsProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The Nov. 17, 2022 tentatively agreement requires the UC system to include partial coverage for infertility treatments.',
   },
   'Compensation side letter': {
 
     proposals: compLetter,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The UC system’s Sept. 27, 2022 proposal for this side letter has yet to see a response by the union.',
   },
   'Transit side letter': {
 
     proposals: transitLetter,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'According to this side letter, it will be the UC system’s responsibility to give bargaining postdocs access to a method of paying for public transportation. This was tentatively agreed upon within the Nov. 13 package proposal.',
   },
-  'Joint labor management committee workplace accessibility side letter': {
+  'Joint labor management committee side letter': {
 
     proposals: jlmcLetter,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'This side letter, which details agenda items for a joint labor management committee, was tentatively agreed upon Oct. 28, 2022.',
   },
   'Appendix A': {
 
     proposals: appendixAProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Appendix A concerns health care benefits plans for postdocs. As of press time, there are no conflicting proposals between the UC system and the UAW Local 5810, but no agreements have been reached.',
   },
   'Appendix B': {
 
     proposals: appendixBProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'This Nov. 22, 2022, tentative agreement mirrors the UC system\'s June 9, 2022, proposal for Appendix B.',
   },
   'Appendix C': {
 
     proposals: appendixCProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The membership election form allows postdocs to opt into union membership. The form is sent through Appendix C, which looks like an email template. A tentative agreement for the appendix was reached by both parties Oct. 3, 2022.',
   },
   'Appendix F': {
 
     proposals: appendixFProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'A finalized panel of arbitrators, written out in Appendix F, was tentatively agreed upon July 14, 2022.',
   },
   'Appendix G': {
 
     proposals: appendixGProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'Negotiations are ongoing for Appendix G, which contains required information for a postdoc’s appointment letter. As part of a package proposed by the UAW Local 5810 on Oct. 12, 2022, Appendix G would include information about a mandatory union orientation and access to several types of insurance.',
   },
   'Ground rules': {
 
     proposals: groundRulesProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The ground rules for bargaining negotiations were tentatively agreed upon by both parties Aug. 11, 2021.',
   },
   'Current contract extension': {
 
     proposals: extensionProposals,
-    intro: 'Leave out intros until night has copy edited them all.',
+    intro: 'The current AR contact between the UC system and the UAW Local 5810 was originally slated to be in effect until Sept. 30, 2020. That contract barred the union from authorizing strikes that interfere with the UC system’s operations. It was only extended to Oct. 31, 2022.',
   },
 };
