@@ -688,7 +688,7 @@ const appendixYYProposals = [
   {
 
     name: 'Tentative agreement | Nov. 2, 2022',
-    link: 'https://drive.google.com/file/d/1LLs5iCOnnhlKjyCuKFjEAO66fX0KRwCw/view?usp=share_link',
+    link: 'https://drive.google.com/file/d/1AlnBpaczrxvZIRuUpifxXfV-C8T5ZIDB/view',
     color: 'success',
 
   },
