@@ -992,7 +992,7 @@ export const infoAR = {
   'Appendix YY': {
 
     proposals: appendixYYProposals,
-    intro: 'A tentative agreement for Appendix YY’s language was reached Nov. 2, 2022. The appendix will accompany ARs’ union membership election form. Appendix YY states that the UC system neither discourages or encourages UAW Local 2865 membership.',
+    intro: 'A tentative agreement for Appendix YY’s language was reached Nov. 2, 2022. The appendix will accompany ARs’ union membership election form. Appendix YY states that the UC system neither discourages or encourages UAW Local 5810 membership.',
 
   },
   'Ground rules': {
