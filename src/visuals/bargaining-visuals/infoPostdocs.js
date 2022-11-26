@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 24, 2022 at 2:01 p.m.';
+export const lastUpdated = 'Nov. 26, 2022 at 11:17 a.m.';
 
 export const articlesPostdocs = [
 
@@ -979,6 +979,11 @@ const parkingProposals = [
   {
     name: 'Proposal | UAW to UC | Nov. 22, 2022',
     link: 'https://drive.google.com/file/d/1_QJ010WJOyrfVEYwqfslVvd7W8oMEdy6/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1cvRHf_RjS1gGDOLzFmfsZsRQHOe8gtsH/view?usp=share_link',
     color: 'secondary',
   },
 
