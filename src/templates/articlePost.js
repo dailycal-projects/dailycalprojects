@@ -12,7 +12,6 @@ import ArticleFooter from '../components/articleFooter';
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
   const { bylineName, bylineUrl } = frontmatter;
-  const { byLinePosition, byLineEmail } = frontmatter;
   const image = getImage(frontmatter.featuredImage);
   const socialImage = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.resize
