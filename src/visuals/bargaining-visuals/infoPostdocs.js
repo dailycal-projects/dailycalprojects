@@ -61,6 +61,7 @@ export const articlesPostdocs = [
   'Appendix C',
   'Appendix F',
   'Appendix G',
+  'Appendix H',
   'Ground rules',
   'Current contract extension',
 ];
@@ -179,6 +180,16 @@ const appointmentsProposals = [
   {
     name: 'Package | UAW to UC | Nov. 23, 2022',
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1If__ZH_aB8-kyophZCWSNUQcGD5kMr6M/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -388,6 +399,16 @@ const compensationProposals = [
   {
     name: 'Package | UC to UAW | Nov. 23, 2022',
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 28, 2022',
+    link: 'hhttps://drive.google.com/file/d/1nW-ynqzFITVkE7t__KTfzqIcBXQbFnQ8/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -1512,6 +1533,16 @@ const appendixGProposals = [
   },
 ];
 
+const appendixHProposals = [
+
+  {
+    name: "Package | UAW to UC | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link",
+    color: "secondary"
+  }
+
+];
+
 const groundRulesProposals = [
   {
     name: 'Tentative agreement | Aug. 11, 2021',
@@ -1846,6 +1877,11 @@ export const infoPostdocs = {
 
     proposals: appendixGProposals,
     intro: 'Negotiations are ongoing for Appendix G, which contains required information for a postdoc’s appointment letter. As part of a package proposed by the UAW Local 5810 on Oct. 12, 2022, Appendix G would include information about a mandatory union orientation and access to several types of insurance.',
+  },
+  'Appendix H': {
+
+    proposals: appendixHProposals,
+    intro: 'On Nov. 28, 2022, the union proposed to maintain the current contract language on Appendix H, which concerns parking fees.',
   },
   'Ground rules': {
 
