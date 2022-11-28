@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 27, 2022 at 6:46 p.m.';
+export const lastUpdated = 'Nov. 28, 2022 at 3:17 p.m.';
 
 export const articlesPostdocs = [
 
@@ -303,6 +303,11 @@ const childCareProposals = [
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const compensationProposals = [
@@ -478,6 +483,11 @@ const housingProposals = [
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const holidaysProposals = [
@@ -555,6 +565,11 @@ const internationalScholarProposals = [
   {
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -661,6 +676,11 @@ const layoffProposals = [
   {
     name: 'Package | UC to UAW | Nov. 23, 2022',
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -772,6 +792,11 @@ const leavesProposals = [
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const managementAcademicProposals = [
@@ -830,6 +855,11 @@ const managementAcademicProposals = [
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 
 ];
 
@@ -869,6 +899,11 @@ const noStrikesProposals = [
   {
     name: 'Package | UC to UAW | November 23, 2022',
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -1007,6 +1042,16 @@ const parkingProposals = [
     link: 'https://drive.google.com/file/d/1cvRHf_RjS1gGDOLzFmfsZsRQHOe8gtsH/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Proposal | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1ul3jQLtV6vty133zx9PKEGPZT-IC4wQm/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 
 ];
 
@@ -1093,6 +1138,11 @@ const postdocFellowProposals = [
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const accommodationProposals = [
@@ -1149,6 +1199,11 @@ const reimbursementProposals = [
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const respectfulProposals = [
@@ -1188,6 +1243,11 @@ const respectResearchProposals = [
   {
     name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -1408,6 +1468,11 @@ const durationProposals = [
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 
 ];
 
@@ -1428,6 +1493,11 @@ const compLetter = [
   {
     name: 'Package | UC to UAW | Sept. 27, 2022',
     link: 'https://drive.google.com/file/d/1hzxQ_7vNSUVn26kUMYCfLXdsRq-kDMl4/view',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -1531,15 +1601,20 @@ const appendixGProposals = [
     link: 'https://drive.google.com/file/d/1KBS_kRRrmTIsL2bhV8iA4MN43b--h3im/view?usp=sharing',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const appendixHProposals = [
 
   {
-    name: "Package | UAW to UC | Nov. 28, 2022",
-    link: "https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link",
-    color: "secondary"
-  }
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 
 ];
 
@@ -1612,7 +1687,7 @@ export const infoPostdocs = {
   Housing: {
 
     proposals: housingProposals,
-    intro: 'Both parties have attempted to pass language for the housing article of postdocs’ contract by including it in package proposals. The union’s Aug. 25, 2021 housing proposal to the UC system bargained for a housing assistance program, temporary housing for international scholars and a notice of how many UC housing units will be available to postdocs.',
+    intro: 'Both parties have attempted to pass language for the housing article of postdocs’ contract by including it in package proposals. The union’s Aug. 25, 2021 housing proposal to the UC system bargained for a housing assistance program, temporary housing for international scholars and a notice of how many UC housing units will be available to postdocs. However, on Nov. 28, 2022, the union offered to withdraw this article along with four others.',
 
   },
   Holidays: {
@@ -1636,7 +1711,7 @@ export const infoPostdocs = {
   'International scholar and immigrant support': {
 
     proposals: internationalScholarProposals,
-    intro: 'The UC system and the UAW Local 5810 are negotiating supports for international scholars and immigrants. On Oct. 21, 2021, the union proposed that the UC system reimburse postdocs for meal costs, travel expenditures and some fees incurred while applying for or renewing a visa.',
+    intro: 'The UC system and the UAW Local 5810 are negotiating supports for international scholars and immigrants. On Oct. 21, 2021, UAW Local 5810 proposed that the UC system reimburse postdocs for meal costs, travel expenditures and some fees incurred while applying for or renewing a visa. However, on Nov. 28, 2022, the union offered to withdraw this article along with four others.',
 
   },
   'Job abandonment': {
@@ -1731,7 +1806,7 @@ export const infoPostdocs = {
   'President\'s postdoctoral fellowships': {
 
     proposals: postdocFellowProposals,
-    intro: 'The UAW Local 5810 proposed an expansion to the President’s Postdoctoral Fellowship program, asking to double the amount of fellows accepted for every year the contract is in effect. Negotiations are still ongoing, but a Nov. 13, 2022, package proposal from the UAW Local 5810 — if agreed upon — would strike this new article from the developing contract.',
+    intro: 'The UAW Local 5810 proposed an expansion to the President’s Postdoctoral Fellowship program, asking to double the amount of fellows accepted for every year the contract is in effect. Negotiations are still ongoing, but a Nov. 28, 2022, package proposal from the UAW Local 5810 — if agreed upon — would strike this new article from the developing contract.',
   },
   'Reasonable accommodation': {
 
@@ -1741,7 +1816,7 @@ export const infoPostdocs = {
   'Relocation reimbursement': {
 
     proposals: reimbursementProposals,
-    intro: 'Proposals from the UAW Local 5810 have asked the UC system to reimburse long-term work relocation expenses, such as rent, airfare and visa fees. Negotiation is ongoing, but, according to a Nov. 13, 2022, package proposal, the union may be willing to withdraw the article.',
+    intro: 'Proposals from the UAW Local 5810 have asked the UC system to reimburse long-term work relocation expenses, such as rent, airfare and visa fees. Negotiation is ongoing, but, according to a Nov. 28, 2022, package proposal, the union may be willing to withdraw the article.',
   },
   'Respectful work environment': {
 
@@ -1751,7 +1826,7 @@ export const infoPostdocs = {
   'Respect is a part of research training': {
 
     proposals: respectResearchProposals,
-    intro: 'The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. A Nov. 19, 2022, package proposal from the UAW Local 5810, provides that it could be withdrawn.',
+    intro: 'The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. A Nov. 28, 2022, package proposal from the UAW Local 5810, provides that it could be withdrawn.',
   },
   Severability: {
 
