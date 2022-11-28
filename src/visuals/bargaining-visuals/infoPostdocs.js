@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 28, 2022 at 3:17 p.m.';
+export const lastUpdated = 'Nov. 28, 2022 at 3:54 p.m.';
 
 export const articlesPostdocs = [
 
@@ -836,22 +836,22 @@ const managementAcademicProposals = [
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | November 13, 2022',
+    name: 'Package | UC to UAW | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
     color: 'secondary',
   },
   {
-    name: 'Package | UAW to UC | November 13, 2022',
+    name: 'Package | UAW to UC | Nov. 13, 2022',
     link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
     color: 'secondary',
   },
   {
-    name: 'Package | UAW to UC | November 19, 2022',
+    name: 'Package | UAW to UC | Nov. 19, 2022',
     link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | November 23, 2022',
+    name: 'Package | UC to UAW | Nov. 23, 2022',
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
@@ -897,7 +897,7 @@ const noStrikesProposals = [
     color: 'secondary',
   },
   {
-    name: 'Package | UC to UAW | November 23, 2022',
+    name: 'Package | UC to UAW | Nov. 23, 2022',
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
@@ -1424,6 +1424,11 @@ const workAuthProposals = [
     link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 28, 2022',
+    link: 'https://drive.google.com/file/d/1UM9l6VEOvF-4qIc3FJWOMvHw8KbUTQTm/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const injuriesProposals = [
@@ -1806,7 +1811,7 @@ export const infoPostdocs = {
   'President\'s postdoctoral fellowships': {
 
     proposals: postdocFellowProposals,
-    intro: 'The UAW Local 5810 proposed an expansion to the President’s Postdoctoral Fellowship program, asking to double the amount of fellows accepted for every year the contract is in effect. Negotiations are still ongoing, but a Nov. 28, 2022, package proposal from the UAW Local 5810 — if agreed upon — would strike this new article from the developing contract.',
+    intro: 'The UAW Local 5810 proposed an expansion to the President’s Postdoctoral Fellowship program, asking to double the amount of fellows accepted for every year the contract is in effect. Negotiations are still ongoing, but union package proposals from Nov. 13 and Nov. 28 of this year — if agreed upon — could strike this new article from the developing contract.',
   },
   'Reasonable accommodation': {
 
@@ -1816,7 +1821,7 @@ export const infoPostdocs = {
   'Relocation reimbursement': {
 
     proposals: reimbursementProposals,
-    intro: 'Proposals from the UAW Local 5810 have asked the UC system to reimburse long-term work relocation expenses, such as rent, airfare and visa fees. Negotiation is ongoing, but, according to a Nov. 28, 2022, package proposal, the union may be willing to withdraw the article.',
+    intro: 'Proposals from the UAW Local 5810 have asked the UC system to reimburse long-term work relocation expenses, such as rent, airfare and visa fees. Negotiation is ongoing, but, according to two November 2022 package proposals from UAW Local 5810, the union may be willing to withdraw the article.',
   },
   'Respectful work environment': {
 
@@ -1826,7 +1831,7 @@ export const infoPostdocs = {
   'Respect is a part of research training': {
 
     proposals: respectResearchProposals,
-    intro: 'The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. A Nov. 28, 2022, package proposal from the UAW Local 5810, provides that it could be withdrawn.',
+    intro: 'The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. However, multiple November 2022 package proposals from the UAW Local 5810 have provided that it could be withdrawn.',
   },
   Severability: {
 
@@ -1956,7 +1961,7 @@ export const infoPostdocs = {
   'Appendix H': {
 
     proposals: appendixHProposals,
-    intro: 'On Nov. 28, 2022, the union proposed to maintain the current contract language on Appendix H, which concerns parking fees.',
+    intro: 'On Nov. 28, 2022, the union proposed to maintain the current contract language of Appendix H, which concerns parking fees.',
   },
   'Ground rules': {
 
