@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 26, 2022 at 11:20 a.m.';
+export const lastUpdated = 'Nov. 27, 2022 at 6:44 p.m.';
 
 export const articlesAR = [
 
@@ -671,7 +671,20 @@ const workIncurredProposals = [
   },
 ];
 
-const durationProposals = [];
+const durationProposals = [
+
+  {
+    name: 'Proposal | UC to UAW | Nov. 17, 2022',
+    link: 'https://drive.google.com/file/d/19Su8OtlYZrLgyHv5EtBvyjY6SOpCXUdT/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/10mPWHeuiBcsuMrHcZFsAvBOv-lvUG_oD/view?usp=sharing',
+    color: 'secondary',
+  },
+
+];
 const appendixHProposals = [
 
   {
@@ -980,7 +993,7 @@ export const infoAR = {
   'Duration of agreement': {
 
     proposals: durationProposals,
-    intro: 'Neither party has proposed a duration for the contract currently in negotiation.',
+    intro: 'The UC system has set forth a proposal and a package concerning the duration of the contract currently in negotiation.',
 
   },
   'Appendix H': {
