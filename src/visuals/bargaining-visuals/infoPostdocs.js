@@ -1771,7 +1771,7 @@ export const infoPostdocs = {
   'Respect is a part of research training': {
 
     proposals: respectResearchProposals,
-    intro: 'The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. A Nov. 28, 2022 tentative agreement on a package proposal from the UAW Local 5810 withdrew the article.',
+    intro: 'The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. By a Nov. 28, 2022 tentative agreement on a package proposal, the UAW Local 5810 withdrew the article.',
   },
   Severability: {
 
