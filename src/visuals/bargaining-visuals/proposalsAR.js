@@ -38,7 +38,7 @@ const ProposalsAR = () => (
           tentative agreements
         </strong>
         {' '}
-        were met between the UC system and the UAW Local 5180 on ARs&apos; developing contract. As of Nov. 29, 2022 at 10:39 a.m., this portion of the tool is under construction to reflect new developments between the UC system and the union.
+        were met between the UC system and the UAW Local 5180 on ARs&apos; developing contract.
       </i>
     </p>
     {
