@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 29, 2022 at 12:46 p.m.';
+export const lastUpdated = 'Nov. 29, 2022 at 1:27 p.m.';
 
 export const articlesPostdocs = [
 
@@ -884,7 +884,7 @@ const noStrikesProposals = [
   // },
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1vk3pr44NjJHUbiifwJXtu_aa-l7459hg/view',
+    link: 'https://drive.google.com/file/d/1Mm1WwpPNzxhvskTFIYk63XqeDC_Rta7D/view',
     color: 'success',
   },
 ];
@@ -1680,19 +1680,19 @@ export const infoPostdocs = {
   Layoff: {
 
     proposals: layoffProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.',
+    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on an Oct. 21, 2021 UC system proposal.',
 
   },
   'Leaves of absence': {
 
     proposals: leavesProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.',
+    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on a Nov. 23, 2022 UC system proposal.',
 
   },
   'Management and academic rights': {
 
     proposals: managementAcademicProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.',
+    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on a May 12, 2022 UC system proposal.',
 
   },
   'Medical separation': {
@@ -1836,7 +1836,7 @@ export const infoPostdocs = {
   'Work authorization': {
 
     proposals: workAuthProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.',
+    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on a UC system proposal from Jan. 7, 2022.',
   },
   'Work-incurred injury and illness': {
 
@@ -1851,7 +1851,7 @@ export const infoPostdocs = {
   Duration: {
 
     proposals: durationProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.',
+    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 tentatively agreed that this contract should be in effect until Sept. 30, 2027.',
   },
   'Health benefits side letter': {
 
@@ -1861,7 +1861,7 @@ export const infoPostdocs = {
   'Compensation side letter': {
 
     proposals: compLetter,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this appendix.',
+    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this side letter.',
   },
   'Transit side letter': {
 
@@ -1876,7 +1876,7 @@ export const infoPostdocs = {
   'Appendix A': {
 
     proposals: appendixAProposals,
-    intro: 'The parties will maintain their current contract language for this appendix, according to a Nov. 28, 2022 tentative agreement on a package.',
+    intro: 'With some updates, parties will maintain their current contract language for this appendix, according to a Nov. 28, 2022 tentative agreement on a package.',
   },
   'Appendix B': {
 
@@ -1896,7 +1896,7 @@ export const infoPostdocs = {
   'Appendix G': {
 
     proposals: appendixGProposals,
-    intro: 'The Nov. 28, 2022 tentative agreement on Appendix G contains required information for a postdoc’s appointment letter.',
+    intro: 'By a Nov. 28, 2022 tentative agreement, Appendix G contains required information for a postdoc’s appointment letter. It mirrors an Oct. 12, 2022 proposal from the union.',
   },
   'Appendix H': {
     proposals: appendixHProposals,
