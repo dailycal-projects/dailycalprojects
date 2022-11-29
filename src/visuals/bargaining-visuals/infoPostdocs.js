@@ -1550,7 +1550,7 @@ const appendixGProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2021',
+    name: 'Tentative agreement | Nov. 28, 2022',
     link: 'https://drive.google.com/file/d/1yhAc67picvmdHzD8dhMhfY4k1R2sLIz7/view',
     color: 'success',
   },
@@ -1558,7 +1558,7 @@ const appendixGProposals = [
 ];
 
 const appendixHProposals = [{
-  name: 'Tentative agreement | Nov. 28, 2021',
+  name: 'Tentative agreement | Nov. 28, 2022',
   link: 'https://drive.google.com/file/d/1Mm1WwpPNzxhvskTFIYk63XqeDC_Rta7D/view',
   color: 'success',
 }];
