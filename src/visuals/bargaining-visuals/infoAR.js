@@ -774,7 +774,7 @@ export const infoAR = {
   'Bridge funding': {
 
     proposals: bridgeFundingProposals,
-    intro: 'Bridge funding is provided by the UC system to ensure the continuity of an AR\'s research during periods of insufficient external funding. A Nov. 12, 2022 package from UAW Local 5180 set forth guidelines for ARs\' eligibility for bridge funding of up to $100,000. However, the Nov. 28, 2022 tentative agreement says that the joint labor management committee should convene to discuss bridge funding.',
+    intro: 'Bridge funding is provided by the UC system to ensure the continuity of an AR\'s research during periods of insufficient external funding. A Nov. 12, 2022 package from UAW Local 5180 set forth guidelines for ARs\' eligibility for bridge funding of up to $100,000. However, a Nov. 28, 2022 tentative agreement forwards a Nov. 19, 2022 proposal that states the joint labor management committee should convene to discuss bridge funding.',
 
   },
 
@@ -891,7 +891,7 @@ export const infoAR = {
   'Parking and transit': {
 
     proposals: parkingTransitProposals,
-    intro: 'Language from recent proposals in November from the UC system are showing the integration of university-provided and low-carbon emission transit options for ARs. Negotiations resulted in the Nov. 28, 2022 tentative agreement linked below.',
+    intro: 'Language from recent proposals in November from the UC system are showing the integration of university-provided and low-carbon emission transit options for ARs. Negotiations resulted in a Nov. 28, 2022 tentative package agreement on the Nov. 23, 2022 UC system proposal linked below.',
 
   },
   'Past practice not covered by agreement': {
