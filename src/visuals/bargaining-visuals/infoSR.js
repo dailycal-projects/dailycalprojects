@@ -18,7 +18,7 @@ export const articlesSR = [
   'Health benefits',
   'Holidays',
   'Housing',
-  'International scholars and immigrant support',
+  'Immigration',
   'Labor-management meetings',
   'Layoffs',
   'Leaves',
@@ -299,19 +299,9 @@ const housingProposals = [
 
 const internationalProposals = [
   {
-    name: 'Proposal | UAW to UC | April 15, 2022',
-    link: 'https://drive.google.com/file/d/1PZzYBFtdHSce2vGLOAhv-SOcTLulne5L/view?usp=sharing',
-    color: 'secondary',
-  },
-  {
-    name: 'Proposal | UC to UAW | Sept. 29, 2022',
-    link: 'https://drive.google.com/file/d/1cUBeM7uJ5K1LsueuM1MDIOKeLKRNPdAk/view?usp=sharing',
-    color: 'secondary',
-  },
-  {
-    name: 'Proposal | UAW to UC | Oct. 6, 2022',
-    link: 'https://drive.google.com/file/d/1wTTyL6RC3l5JWeRfJLvaFXxT10oCI20E/view?usp=sharing',
-    color: 'secondary',
+    name: 'Tentative agreement | Nov. 20, 2022',
+    link: 'https://drive.google.com/file/d/1cSOAxOUflHIEOrxC1r2dNq7RwGH2DEMQ/view',
+    color: 'success',
   },
 
 ];
@@ -978,7 +968,7 @@ export const infoSR = {
   'Health and safety': {
 
     proposals: healthSafetyProposals,
-    intro: 'On Aug 26. 2022, a proposal for health and safety was tentatively agreed upon This agreement details health and safety procedures that Graduate SR’s must abide by.',
+    intro: 'On Aug. 26, 2022, a proposal for health and safety was tentatively agreed upon This agreement details health and safety procedures that Graduate SR’s must abide by.',
 
   },
   'Health benefits': {
@@ -999,10 +989,10 @@ export const infoSR = {
     intro: 'The SRU-UAW and the UC system have yet to arrive at an agreement on this article. Its proposals have pertained to the quality and duration of housing to be offered.',
 
   },
-  'International scholars and immigrant support': {
+  Immigration: {
 
     proposals: internationalProposals,
-    intro: 'The SRU-UAW and the UC system have yet to arrive at a tentative agreement for international scholars and immigrant support.',
+    intro: 'The SRU-UAW and the UC system arrived at a tentative agreement on Nov. 20, 2022. The tentative agreement provides that the joint labor management committee should discuss issues arising from this article.',
 
   },
   'Labor-management meetings': {
