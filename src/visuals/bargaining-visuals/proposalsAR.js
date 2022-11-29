@@ -38,7 +38,7 @@ const ProposalsAR = () => (
           tentative agreements
         </strong>
         {' '}
-        were met between the UC system and the UAW Local 5180 on ARs&apos; developing contract.
+        were met between the UC system and the UAW Local 5180 on ARs&apos; upcoming contract. While a tentative agreement on the contract has been reached, it has yet to be ratified by the union's membership.
       </i>
     </p>
     {
