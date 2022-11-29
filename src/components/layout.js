@@ -32,6 +32,7 @@ import ProposalsASE from '../visuals/bargaining-visuals/proposalsASE';
 import ProposalsAR from '../visuals/bargaining-visuals/proposalsAR';
 import ProposalsPostocs from '../visuals/bargaining-visuals/proposalsPostdocs';
 import ProposalsSR from '../visuals/bargaining-visuals/proposalsSR';
+import ButtonMap from '../visuals/button-map-visuals/buttonMap';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -79,6 +80,7 @@ const shortcodes = {
   ProposalsAR,
   ProposalsSR,
   ProposalsPostocs,
+  ButtonMap,
 };
 
 export default function Layout({ children }) {
