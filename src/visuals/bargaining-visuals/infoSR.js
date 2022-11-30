@@ -543,11 +543,16 @@ const parkingTransitProposals = [
     link: 'https://drive.google.com/file/d/1sYDctuLU9OpcjUldsS-A5ysMFlqeN9S5/view?usp=sharing',
     color: 'secondary',
   },
+  {
+    name: 'Proposal | UC to UAW | Nov. 23, 2022',
+    link: 'https://drive.google.com/file/d/1qLJXyVJuM076cSts-3YLymvmSLs4gJHs/view?usp=sharing',
+    color: 'secondary',
+  },
 ];
 
 const pastPracticesProposals = [
   {
-    name: 'Tentative agreement | Aug. , 2022',
+    name: 'Tentative agreement | Aug. 5, 2022',
     link: 'https://drive.google.com/file/d/1Rid-edKmurihOO6kn34wWZ8k5NKcUA-d/view?usp=sharing',
     color: 'success',
   },
