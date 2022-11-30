@@ -1,4 +1,4 @@
-export const lastUpdated = 'Nov. 29, 2022 at 1:27 p.m.';
+export const lastUpdated = 'Nov. 29, 2022 at 7:16 p.m.';
 
 export const articlesPostdocs = [
 
@@ -54,7 +54,7 @@ export const articlesPostdocs = [
   'Duration',
   'Health benefits side letter',
   'Compensation side letter',
-  // 'Transit side letter',
+  'Transit side letter',
   'Joint labor management committee side letter',
   'Appendix A',
   'Appendix B',
@@ -1464,8 +1464,6 @@ const compLetter = [
 ];
 
 const transitLetter = [
-
-  // TODO ADD?
 ];
 
 const jlmcLetter = [
@@ -1866,7 +1864,7 @@ export const infoPostdocs = {
   'Transit side letter': {
 
     proposals: transitLetter,
-    intro: 'According to this side letter, it will be the UC system’s responsibility to give bargaining postdocs access to a method of paying for public transportation. This was tentatively agreed upon within the Nov. 13 package proposal.',
+    intro: 'According to UAW Local 5810, this article was withdrawn.',
   },
   'Joint labor management committee side letter': {
 
