@@ -184,7 +184,7 @@ const appointmentsProposals = [
   // },
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1Uzjl3WUTRkfa_EwEu3KERJmkjkepfkhm/view',
+    link: 'https://drive.google.com/file/d/1YU3Acospv5nA4UKoKlvK0Ofq982Nr0SJ/view?usp=sharing',
     color: 'success',
   },
 ];
@@ -403,7 +403,7 @@ const compensationProposals = [
   },
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/148y8UZvMtEMCOSJzYtuOkY3WDyGQ9YYc/view',
+    link: 'https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=sharing',
     color: 'success',
   },
 ];
@@ -838,7 +838,7 @@ const managementAcademicProposals = [
   // },
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1Fu14eCzBiMFD2cWSkwsejnnpUKYvpIlq/view',
+    link: 'https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=share_link',
     color: 'success',
   },
 
@@ -884,7 +884,7 @@ const noStrikesProposals = [
   // },
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1Mm1WwpPNzxhvskTFIYk63XqeDC_Rta7D/view',
+    link: 'https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=share_link',
     color: 'success',
   },
 ];
@@ -1020,7 +1020,7 @@ const parkingProposals = [
   // },
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/10Y5keEkmWZKBIHuaBxzK817pM_t-wp19/view',
+    link: 'https://drive.google.com/file/d/1mQKtIH8S0nZmXMcQc3uXjf_AI10PLhGB/view?usp=sharing',
     color: 'success',
   },
 
@@ -1382,7 +1382,7 @@ const workAuthProposals = [
   // },
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/13OxGg7s8RgCH_yempMfd6GioisD2CyJY/view',
+    link: 'https://drive.google.com/file/d/1M_N2HWjuWYexxfbXeVGi1Z89qRwz5COr/view?usp=sharing',
     color: 'success',
   },
 ];
@@ -1436,7 +1436,7 @@ const durationProposals = [
   // },
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1wqOX2oF_WfPfnBrOGAsxjpdYMyGuPMnE/view?usp=sharing',
+    link: 'https://drive.google.com/file/d/1YJ2zI4_Kyz0RGRHO0E9pTZKwGNoiL-WA/view?usp=sharing',
     color: 'success',
   },
 
@@ -1477,7 +1477,7 @@ const jlmcLetter = [
 const appendixAProposals = [
   {
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1Mm1WwpPNzxhvskTFIYk63XqeDC_Rta7D/view',
+    link: 'https://drive.google.com/file/d/1OoanhUhz-SrfbZq7-zY4GkTUhXeNmWPF/view?usp=sharing',
     color: 'success',
   },
 ];
@@ -1557,7 +1557,7 @@ const appendixGProposals = [
 
 const appendixHProposals = [{
   name: 'Tentative agreement | Nov. 28, 2022',
-  link: 'https://drive.google.com/file/d/1Mm1WwpPNzxhvskTFIYk63XqeDC_Rta7D/view',
+  link: 'https://drive.google.com/file/d/1B5MfqDnB1ng-OjMRnSbFOnsuS_JatCyF/view?usp=sharing',
   color: 'success',
 }];
 
@@ -1648,7 +1648,7 @@ export const infoPostdocs = {
   'Individual development plans and progress assessments': {
 
     proposals: individualDevelopmentProposals,
-    intro: 'The union and the UC system reached a tentative agreement on this article on Feb. 22, 2022.',
+    intro: 'The union and the UC system reached a tentative agreement on this article on Feb. 21, 2022.',
 
   },
   'International scholar and immigrant support': {
