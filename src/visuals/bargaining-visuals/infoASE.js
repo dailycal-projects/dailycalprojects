@@ -1034,7 +1034,7 @@ export const infoASE = {
   'Appointment notification': {
 
     proposals: appointmentNotificationProposals,
-    intro: 'Proposals from the appointment notification article set forth rules regarding when the UC system should notify ASEs of their employment and what information the UC system should provide upon notification.',
+    intro: 'A tentative agreement was reached Nov. 29, 2022, for this article, which outlines how the UC system should notify an ASE of their appointment and with what information.',
 
   },
   'Appointment security': {
@@ -1223,7 +1223,7 @@ export const infoASE = {
   'Summer session': {
 
     proposals: summerSessionProposals,
-    intro: 'The article for summer sessions is in negotiation.',
+    intro: 'A tentative agreement for this article was reached on Nov. 29, 2022.',
 
   },
   'Training and orientation': {
