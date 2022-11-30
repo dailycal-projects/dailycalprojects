@@ -1034,7 +1034,7 @@ export const infoASE = {
   'Appointment notification': {
 
     proposals: appointmentNotificationProposals,
-    intro: 'A tentative agreement was reached Nov. 29, 2022, for this article, which outlines how the UC system should notify an ASE of their appointment and with what information.',
+    intro: 'A tentative agreement was reached Nov. 29, 2022, which outlines how the UC system should notify an ASE of their appointment and with what information.',
 
   },
   'Appointment security': {
