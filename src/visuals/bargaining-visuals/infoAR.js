@@ -243,7 +243,7 @@ const compensationProposals = [
   {
 
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1wjNND1tpIcT3TjCpcca1ydkSfYIYiFOh/view?usp=sharing',
+    link: 'https://drive.google.com/file/d/1pY83zLYu14-X9lEy9s16Q-VlpUuZ55xv/view?usp=sharing',
     color: 'success',
 
   },
@@ -501,7 +501,7 @@ const parkingTransitProposals = [
   {
 
     name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1cix5eZfcNL3r97Q6nYWr0evC5OK_dQj7/view?usp=sharing',
+    link: 'https://drive.google.com/file/d/1klXNpZ7cgKAYUn4Wu5lfo1y_cHR4DydR/view?usp=sharing',
     color: 'success',
 
   },
@@ -815,7 +815,7 @@ export const infoAR = {
   'Health and safety': {
 
     proposals: healthAndSafetyProposals,
-    intro: 'In August 2022, both parties tentatively agreed that the UC system and the union share the responsibility of maintaining a safe working environment with proper safety equipment.',
+    intro: 'In August 2022, both parties tentatively agreed that the UC system and the union share the responsibility of maintaining a safe working environment with proper equipment.',
 
   },
 
