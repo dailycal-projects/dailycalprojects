@@ -1,4 +1,4 @@
-export const lastUpdated = 'Dec. 1, 2022 at 1:27 p.m.';
+export const lastUpdated = 'Dec. 2, 2022 at 12:56 p.m.';
 
 export const articlesSR = [
 
