@@ -37,9 +37,8 @@ class TurnoverMap extends Component {
           >
             <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
-            {turnoverCoordinates.info.map((info, k) => (
+            {turnoverCoordinates.info.map((info) => (
               <CircleMarker
-                key={k}
                 center={[info.coordinates[0], info.coordinates[1]]}
                 radius={6}
                 color={[info.color]}
