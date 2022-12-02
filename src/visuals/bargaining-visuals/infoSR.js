@@ -489,13 +489,33 @@ const ManagementrightsProposal = [
     color: 'secondary',
   },
   {
+    name: 'Proposal | UAW to UC | Nov. 17, 2022',
+    link: 'https://drive.google.com/file/d/1ju26XK-GcDPmvMevFfGD_lRzyctz2zNh/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
     name: 'Package | UAW to UC | Nov. 17, 2022',
     link: 'https://drive.google.com/file/d/1qKWcHPLwmrnQDAhI_GO3fC5-tuVLQfqn/view?usp=share_link',
     color: 'secondary',
   },
   {
-    name: 'Proposal | UAW to UC | Nov. 17, 2022',
-    link: 'https://drive.google.com/file/d/1ju26XK-GcDPmvMevFfGD_lRzyctz2zNh/view?usp=share_link',
+    name: 'Proposal | UC to UAW | Nov. 29, 2022',
+    link: 'https://drive.google.com/file/d/13JAXa13M2pTuA_0vap8sdNMsIqrxCloQ/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UC to UAW | Nov. 29, 2022',
+    link: 'https://drive.google.com/file/d/1yu2PGkaUpXowaD563LuvSUulHZr-e7D1/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/134-6UrXCeI2nG8aOapya7gvS2on_BKmt/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -523,6 +543,16 @@ const noStrikesProposals = [
   {
     name: 'Proposal | UC to UAW | Nov. 11, 2022',
     link: 'https://drive.google.com/file/d/1WzhZHDBkJVT9f7FnLKCgenBn3uvAdMiM/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/1-sv3S-rUMTVPDpWCE2Okmr5Cez6EoWG1/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -688,6 +718,11 @@ const recognitionProposals = [
     link: 'https://drive.google.com/file/d/1pkdxBEW0shilhYO793ZIILjqnLg4XPn7/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const relocationBenefitProposals = [
@@ -699,6 +734,11 @@ const relocationBenefitProposals = [
   {
     name: 'Package | UC to UAW | Aug. 26, 2022',
     link: 'https://drive.google.com/file/d/1LhD9zS5hCJmA05GbxqUxw1TYxTtBt1Tw/view?usp=drivesdk',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -723,6 +763,11 @@ const TransitionalfundingProposals = [
   {
     name: 'Proposal | UAW to UC | July 13, 2022',
     link: 'https://drive.google.com/file/d/1g6AucdOdwxklyJAK5TdhS9Wo1VO1e6FL/view?usp=sharing',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -754,6 +799,16 @@ const TuitionremissionProposals = [
   {
     name: 'Package | UC to UAW | Nov. 16, 2022',
     link: 'https://drive.google.com/file/d/11A7HmQutdrGPxDSbQJXRmTQrRTZAGa8Q/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/19sQ-RbiQK0Mf4qGRyEWRVKTdhwq8gd9o/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Nov. 30, 2022',
+    link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -1162,7 +1217,7 @@ export const infoSR = {
   },
   'Relocation benefits': {
     proposals: relocationBenefitProposals,
-    intro: 'The SRU-UAW and the UC system have not yet reached an agreement on relocation benefits.',
+    intro: 'The SRU-UAW and the UC system have not yet reached an agreement on relocation benefits. In fact, the union has offered to withdraw the article.',
 
   },
   Severability: {
