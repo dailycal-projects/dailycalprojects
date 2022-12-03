@@ -774,7 +774,7 @@ const pastPracticesProposals = [];
 const severabilityProposals = [
 
   {
-    name: 'Tentative package agreement | March 16, 2022',
+    name: 'Tentative agreement | March 16, 2022',
     link: 'https://drive.google.com/file/d/1Wc5Sb2AwFIWkgeXBgD7z1cxGTr-duKPy/view?usp=sharing',
     color: 'success',
   },
