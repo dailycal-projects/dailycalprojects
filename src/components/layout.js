@@ -23,6 +23,7 @@ import GymBeam from '../visuals/gym-pac-12-visuals/gymBeam';
 import GymFloor from '../visuals/gym-pac-12-visuals/gymFloor';
 import Timeline1921 from '../visuals/1921-visuals/1921Timeline';
 import STEMEnrollmentLine from '../visuals/STEM-visuals/STEMLine';
+import TurnoverMap from '../visuals/turnover-visuals/turnoverMap';
 import StudyAbroadMap from '../visuals/study-abroad-visuals/studyAbroadMap';
 import ArtifactsBarChart from '../visuals/artifacts-visuals/artifactsBarChart';
 import ArtifactsPieChart from '../visuals/artifacts-visuals/artifactsPieChart';
@@ -70,6 +71,7 @@ const shortcodes = {
   GymFloor,
   Timeline1921,
   STEMEnrollmentLine,
+  TurnoverMap,
   StudyAbroadMap,
   ArtifactsBarChart,
   ArtifactsPieChart,
