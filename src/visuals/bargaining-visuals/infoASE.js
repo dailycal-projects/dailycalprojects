@@ -1252,7 +1252,7 @@ export const infoASE = {
   },
   Leaves: {
     proposals: leavesProposals,
-    intro: 'Proposals for the leaves article include guidelines for military, pregnancy and medical leaves, among others. They are in negotiation.',
+    intro: 'Negotiations on military, pregnancy, medical and other leaves resulted in a tentative agreement.',
 
   },
   'Management and academic rights': {
@@ -1329,7 +1329,7 @@ export const infoASE = {
   'Summer session': {
 
     proposals: summerSessionProposals,
-    intro: 'A tentative agreement for this article was reached on Nov. 29, 2022.',
+    intro: 'A tentative agreement for this article was reached Nov. 29, 2022.',
 
   },
   'Training and orientation': {

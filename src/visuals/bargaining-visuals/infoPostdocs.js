@@ -1636,7 +1636,7 @@ export const infoPostdocs = {
   Holidays: {
 
     proposals: holidaysProposals,
-    intro: 'A tentative agreement on time off for designated holidays was reached on Aug. 1, 2021.',
+    intro: 'A tentative agreement on time off for designated holidays was reached Aug. 1, 2021.',
 
   },
   Immigration: {
@@ -1648,13 +1648,13 @@ export const infoPostdocs = {
   'Individual development plans and progress assessments': {
 
     proposals: individualDevelopmentProposals,
-    intro: 'The union and the UC system reached a tentative agreement on this article on Feb. 21, 2022.',
+    intro: 'The union and the UC system reached a tentative agreement on this article Feb. 21, 2022.',
 
   },
   'International scholar and immigrant support': {
 
     proposals: internationalScholarProposals,
-    intro: 'This article was withdrawn as part of a package proposal on Nov. 28, 2022.',
+    intro: 'This article was withdrawn as part of a package proposal Nov. 28, 2022.',
 
   },
   'Job abandonment': {
@@ -1708,13 +1708,13 @@ export const infoPostdocs = {
   Nondiscrimination: {
 
     proposals: nondiscriminationProposals,
-    intro: 'The parties reached a tentative agreement on nondiscrimination in the workplace on Feb. 8, 2022.',
+    intro: 'The parties reached a tentative agreement on nondiscrimination in the workplace Feb. 8, 2022.',
 
   },
   'Parking and transit': {
 
     proposals: parkingProposals,
-    intro: 'After more than 20 packages and proposals, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract on Nov. 28, 2022.',
+    intro: 'After more than 20 packages and proposals, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract Nov. 28, 2022.',
   },
   'Past practices': {
 
@@ -1749,7 +1749,7 @@ export const infoPostdocs = {
   'President\'s postdoctoral fellowships': {
 
     proposals: postdocFellowProposals,
-    intro: 'This article was withdrawn as part of a package deal on Nov. 28, 2022.',
+    intro: 'This article was withdrawn as part of a package deal Nov. 28, 2022.',
   },
   'Reasonable accommodation': {
 

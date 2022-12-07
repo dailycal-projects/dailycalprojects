@@ -767,7 +767,7 @@ export const infoAR = {
   'Health benefits plan changes for 2023': {
 
     proposals: healthBenefitsPlanChangesProposals,
-    intro: 'Parties tentatively agreed to withdraw this article on Nov. 28, 2022. Previously, parties had negotiated the extent of coverage of mental health, gender-affirming and IVF treatments. None of those terms were used in their earlier contract.',
+    intro: 'Parties tentatively agreed to withdraw this article Nov. 28, 2022. Previously, parties had negotiated the extent of coverage of mental health, gender-affirming and IVF treatments. None of those terms were used in their earlier contract.',
 
   },
 
@@ -788,7 +788,7 @@ export const infoAR = {
   Compensation: {
 
     proposals: compensationProposals,
-    intro: 'While a tentative agreement was reached on Nov. 28, 2022, the complete proposal history is attached for this article.',
+    intro: 'While a tentative agreement was reached Nov. 28, 2022, the complete proposal history is attached for this article.',
 
   },
 
@@ -873,7 +873,7 @@ export const infoAR = {
   'No strikes': {
 
     proposals: noStrikesProposals,
-    intro: 'In multiple proposal packages, the UC system has proposed to maintain the current contract language prohibiting strikes; the union’s first response on June 24, 2022 contained the current contract’s version of this article, written in striked out text. However, both parties tentatively agreed on the current contract language for this article on Nov. 28, 2022, barring union strikes.',
+    intro: 'In multiple proposal packages, the UC system has proposed to maintain the current contract language prohibiting strikes; the union’s June 24, 2022 response contained the current contract’s version of this article, written in striked out text. However, both parties tentatively agreed on the current contract language for this article Nov. 28, 2022, barring union strikes.',
 
   },
   'Nondiscrimination in employment': {

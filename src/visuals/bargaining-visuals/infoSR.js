@@ -1,4 +1,4 @@
-export const lastUpdated = 'Dec. 4, 2022 at 7:32 p.m.';
+export const lastUpdated = 'Dec. 6, 2022 at 8:25 p.m.';
 
 export const articlesSR = [
 
@@ -46,6 +46,8 @@ export const articlesSR = [
   'Workspace materials and support',
   'Summer support fund side letter',
   'Joint labor management committee side letter',
+  'Berkeley side letter',
+  'UCSF side letter',
   'Arbitrator panel',
   'Ground rules',
   'Work-incurred injury or illness side letter',
@@ -1126,6 +1128,26 @@ const summerSupportProposals = [
 
 ];
 
+const berkeleySideLetter = [
+
+  {
+    name: 'Proposal | UC to UAW | Dec. 4, 2022',
+    link: 'https://drive.google.com/file/d/1xQ3p8NZ17nZ5RgI5lZ1wPbn5fkoculqH/view',
+    color: 'secondary',
+  },
+
+];
+
+const sideLetterUCSF = [
+
+  {
+    name: 'Proposal | UC to UAW | Dec. 4, 2022',
+    link: 'https://drive.google.com/file/d/1lzC3k6ZMX4HEPaIQkkVBVTprm2WFZ3qX/view?usp=sharing',
+    color: 'secondary',
+  },
+
+];
+
 export const infoSR = {
 
   'Access needs and reasonable accommodations': {
@@ -1227,7 +1249,7 @@ export const infoSR = {
   Immigration: {
 
     proposals: internationalProposals,
-    intro: 'The SRU-UAW and the UC system arrived at a tentative agreement on Nov. 20, 2022. The tentative agreement provides that the joint labor management committee should discuss issues arising from this article.',
+    intro: 'The SRU-UAW and the UC system arrived at a tentative agreement Nov. 20, 2022. The tentative agreement provides that the joint labor management committee should discuss issues arising from this article.',
 
   },
   'Labor-management meetings': {
@@ -1347,7 +1369,7 @@ export const infoSR = {
   },
   'Work-incurred injury or illness side letter': {
     proposals: workIncurredSideLetterProposals,
-    intro: 'A tentative agreement on this side letter to the work-incurred injury or illness article was met on Nov. 18, 2022.',
+    intro: 'A tentative agreement on this side letter to the work-incurred injury or illness article was met Nov. 18, 2022.',
   },
 
   'Appendix XX': {
@@ -1357,7 +1379,7 @@ export const infoSR = {
   },
   'Union security side letter': {
     proposals: unionSecSideLetterProposals,
-    intro: 'This side letter to the union security article was tentatively agreed upon on Nov. 16, 2022.',
+    intro: 'This side letter to the union security article was tentatively agreed upon Nov. 16, 2022.',
 
   },
 
@@ -1394,6 +1416,17 @@ export const infoSR = {
   'Ground rules': {
     proposals: groundRulesProposals,
     intro: 'As of April 22, 2022, the SRU-UAW and the UC system have reached a tentative agreement on five “ground rules” for bargaining.',
+
+  },
+
+  'Berkeley side letter': {
+    proposals: berkeleySideLetter,
+    intro: 'The first proposal for this side letter was introduced by the UC system Dec. 4, 2022.',
+
+  },
+  'UCSF side letter': {
+    proposals: sideLetterUCSF,
+    intro: 'The first proposal for this side letter was introduced by the UC system Dec. 4, 2022.',
 
   },
 
