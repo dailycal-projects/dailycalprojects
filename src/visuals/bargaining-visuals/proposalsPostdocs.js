@@ -38,7 +38,7 @@ const ProposalsPostocs = () => (
           tentative agreements
         </strong>
         {' '}
-        were met between the UC system and the UAW Local 5180 on postdocs&apos; upcoming contract. While a tentative agreement on the contract has been reached, it has yet to be ratified by the union's membership.
+        were met between the UC system and the UAW Local 5180 on postdocs&apos; upcoming contract. While a tentative agreement on the contract has been reached, it has yet to be ratified by the union&apos;s membership.
       </i>
     </p>
     {
@@ -62,10 +62,9 @@ const ProposalsPostocs = () => (
                   <ButtonGroup orientation="vertical" fullWidth>
                     {
                           infoPostdocs[item].proposals.map((proposal) => (
-                            console.log(item),
-                              <Button href={proposal.link} color={proposal.color} target="_blank" variant="outlined">
-                                {proposal.name}
-                              </Button>
+                            <Button href={proposal.link} color={proposal.color} target="_blank" variant="outlined">
+                              {proposal.name}
+                            </Button>
                           ))
                       }
                   </ButtonGroup>
