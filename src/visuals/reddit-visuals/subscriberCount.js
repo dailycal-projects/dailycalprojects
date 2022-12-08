@@ -40,7 +40,7 @@ const SubscriberLineChart = () => (
         <YAxis />
         <Tooltip />
         {/* <Legend /> */}
-        <Line type="monotone" dataKey="Subscriber count" stroke="#2596be" />
+        <Line type="monotone" dataKey="Subscriber count" stroke="#ec6b4e" />
       </LineChart>
     </ResponsiveContainer>
   </div>

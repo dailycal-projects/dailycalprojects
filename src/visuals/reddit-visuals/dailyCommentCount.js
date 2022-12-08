@@ -66,7 +66,7 @@ const DailyCommentLineChart = () => (
         <Line
           type="monotone"
           dataKey="Number of comments"
-          stroke="#ec6b4e"
+          stroke="#6bb4ba"
           activeDot={{ r: 8 }}
         />
         {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
