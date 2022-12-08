@@ -34,8 +34,6 @@ export default function KutcherTimeline() {
           <img
             src={Age4}
             alt="Kira Kutcher at age 4"
-            width="187.5"
-            height="245.475"
           />
           <br />
           Kira Kutcher | Courtesy
@@ -59,8 +57,6 @@ export default function KutcherTimeline() {
           <img
             src={Age6}
             alt="Kira Kutcher at age 6"
-            width="187.5"
-            height="248.75"
           />
           <br />
           Kira Kutcher | Courtesy
@@ -85,8 +81,6 @@ export default function KutcherTimeline() {
           <img
             src={DancePerformance}
             alt="Kira Kutcher at school dance performance"
-            width="187.5"
-            height="247.25"
           />
           <br />
           Kira Kutcher | Courtesy
@@ -110,8 +104,6 @@ export default function KutcherTimeline() {
           <img
             src={FigureSkating}
             alt="Kira Kutcher at figure skating performance"
-            width="187.5"
-            height="250.25"
           />
           <br />
           Kira Kutcher | Courtesy
@@ -135,8 +127,6 @@ export default function KutcherTimeline() {
           <img
             src={Graduation}
             alt="Kira Kutcher at high school graduation ceremony"
-            width="191.3"
-            height="430"
           />
           <br />
           Kira Kutcher | Courtesy
@@ -160,8 +150,6 @@ export default function KutcherTimeline() {
           <img
             src={CollegeClass}
             alt="Kira Kutcher gets ready for class"
-            width="205"
-            height="375"
           />
           <br />
           Kira Kutcher | Courtesy
@@ -184,8 +172,6 @@ export default function KutcherTimeline() {
           <img
             src={BladeRave}
             alt="Kira Kutcher attending Blade Rave"
-            width="187.33"
-            height="250"
           />
           <br />
           Kira Kutcher | Courtesy
