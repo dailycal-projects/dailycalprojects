@@ -6,9 +6,9 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import Age4 from './kutcher-images/Kira Kutcher - Age 4.png';
 import Age6 from './kutcher-images/Kira Kutcher - Age 6.png';
-import Age8 from './kutcher-images/Kira Kutcher - Age 8.png';
 import FigureSkating from './kutcher-images/Kira Kutcher - Age 11 Figure Skating Performance.png';
 import DancePerformance from './kutcher-images/Kira Kutcher - Age 11 School Dance Performance.png';
 import Graduation from './kutcher-images/Kira Kutcher - Age 18 High School Graduation.png';
@@ -31,11 +31,10 @@ export default function KutcherTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <br />
-          <img
-            src={Age4}
+          <GatsbyImage
+            image={Age4}
             alt="Kira Kutcher at age 4"
           />
-          <br />
           Kira Kutcher | Courtesy
           <br />
           <br />
@@ -54,11 +53,10 @@ export default function KutcherTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <br />
-          <img
-            src={Age6}
+          <GatsbyImage
+            image={Age6}
             alt="Kira Kutcher at age 6"
           />
-          <br />
           Kira Kutcher | Courtesy
           <br />
           <br />
@@ -78,11 +76,10 @@ export default function KutcherTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <br />
-          <img
-            src={DancePerformance}
+          <GatsbyImage
+            image={DancePerformance}
             alt="Kira Kutcher at school dance performance"
           />
-          <br />
           Kira Kutcher | Courtesy
           <br />
           <br />
@@ -101,11 +98,10 @@ export default function KutcherTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <br />
-          <img
-            src={FigureSkating}
+          <GatsbyImage
+            image={FigureSkating}
             alt="Kira Kutcher at figure skating performance"
           />
-          <br />
           Kira Kutcher | Courtesy
           <br />
           <br />
@@ -124,11 +120,10 @@ export default function KutcherTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <br />
-          <img
-            src={Graduation}
+          <GatsbyImage
+            image={Graduation}
             alt="Kira Kutcher at high school graduation ceremony"
           />
-          <br />
           Kira Kutcher | Courtesy
           <br />
           <br />
@@ -147,11 +142,10 @@ export default function KutcherTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <br />
-          <img
-            src={CollegeClass}
+          <GatsbyImage
+            image={CollegeClass}
             alt="Kira Kutcher gets ready for class"
           />
-          <br />
           Kira Kutcher | Courtesy
           <br />
           <br />
@@ -169,11 +163,10 @@ export default function KutcherTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <br />
-          <img
-            src={BladeRave}
+          <GatsbyImage
+            image={BladeRave}
             alt="Kira Kutcher attending Blade Rave"
           />
-          <br />
           Kira Kutcher | Courtesy
           <br />
           <br />
