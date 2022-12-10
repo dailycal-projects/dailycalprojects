@@ -28,6 +28,11 @@ import StudyAbroadMap from '../visuals/study-abroad-visuals/studyAbroadMap';
 import ArtifactsBarChart from '../visuals/artifacts-visuals/artifactsBarChart';
 import ArtifactsPieChart from '../visuals/artifacts-visuals/artifactsPieChart';
 import HSILineChart from '../visuals/HSI-visuals/HSILineChart';
+import SubscriberLineChart from '../visuals/reddit-visuals/subscriberCount';
+import DailyCommentLineChart from '../visuals/reddit-visuals/dailyCommentCount';
+import PostsPerHourBarChart from '../visuals/reddit-visuals/postsPerHourBarChart';
+import PostsPerDayBarChart from '../visuals/reddit-visuals/postsPerDayBarChart';
+import PostsPerFlairBarChart from '../visuals/reddit-visuals/postsPerFlairBarChart';
 import GapStackedBarChart from '../visuals/gap-visuals/gapStackedBarChart';
 import ProposalsASE from '../visuals/bargaining-visuals/proposalsASE';
 import ProposalsAR from '../visuals/bargaining-visuals/proposalsAR';
@@ -76,6 +81,11 @@ const shortcodes = {
   ArtifactsBarChart,
   ArtifactsPieChart,
   HSILineChart,
+  SubscriberLineChart,
+  DailyCommentLineChart,
+  PostsPerHourBarChart,
+  PostsPerDayBarChart,
+  PostsPerFlairBarChart,
   GapStackedBarChart,
   ProposalsASE,
   ProposalsAR,
