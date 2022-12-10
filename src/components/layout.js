@@ -38,10 +38,11 @@ import ProposalsASE from '../visuals/bargaining-visuals/proposalsASE';
 import ProposalsAR from '../visuals/bargaining-visuals/proposalsAR';
 import ProposalsPostocs from '../visuals/bargaining-visuals/proposalsPostdocs';
 import ProposalsSR from '../visuals/bargaining-visuals/proposalsSR';
+import KutcherTimeline from '../visuals/kutcher-visuals/kutcherTimeline';
 
 /*
 To avoid using exact paths in MDX files, import your components here
-and add them to the shortcodes list to be globally accessible.
+and add them to the shortcodes list to be globally accessible.ß
 To use a component in MDX, simply type <MyComponent />
 Note: MDXProvider doesn't like parsing individual HTML elements followed
 by an array of React components, so we must include them in the same array.
@@ -91,6 +92,7 @@ const shortcodes = {
   ProposalsAR,
   ProposalsSR,
   ProposalsPostocs,
+  KutcherTimeline,
 };
 
 export default function Layout({ children }) {
