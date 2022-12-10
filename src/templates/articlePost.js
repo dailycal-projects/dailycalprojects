@@ -12,7 +12,6 @@ import ArticleFooter from '../components/articleFooter';
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
   const { bylineName, bylineUrl } = frontmatter;
-  const { byLinePosition, byLineEmail } = frontmatter;
   const image = getImage(frontmatter.featuredImage);
   const socialImage = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.resize
@@ -34,7 +33,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
             {bylineName.map((author, i) => {
               const url = bylineUrl[i];
               return (
-                <a href={url} style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }}>
+                <a href={url} target="_blank" style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }} rel="noreferrer">
                   {' '}
                   {author}
                   {' '}
