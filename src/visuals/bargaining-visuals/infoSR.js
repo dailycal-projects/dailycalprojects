@@ -1,4 +1,4 @@
-export const lastUpdated = 'Dec. 6, 2022 at 8:25 p.m.';
+export const lastUpdated = 'Dec. 9, 2022 at 4:33 p.m.';
 
 export const articlesSR = [
 
@@ -130,6 +130,16 @@ const ChildcareProposals = [
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Proposal | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1oO3MLkQnQ-iSm15HpapUk0NMjKzeHXPc/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const communitysafetyProposals = [
@@ -227,6 +237,11 @@ const disciplineProposals = [
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const durationProposals = [
@@ -264,6 +279,11 @@ const durationProposals = [
   {
     name: 'Package | UC to UAW | Dec. 2, 2022',
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -331,6 +351,16 @@ const healthBenefitsProposals = [
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Proposal | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1eERdAR8bZzCuDcRWQvcrcMUxGUS6oVF7/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const holidaysProposals = [
@@ -365,6 +395,11 @@ const housingProposals = [
   {
     name: 'Package | UAW to UC | Nov. 30, 2022',
     link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -587,6 +622,11 @@ const noStrikesProposals = [
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const parkingTransitProposals = [
@@ -760,6 +800,11 @@ const recognitionProposals = [
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
+    color: 'secondary',
+  },
 ];
 
 const relocationBenefitProposals = [
@@ -776,6 +821,11 @@ const relocationBenefitProposals = [
   {
     name: 'Package | UAW to UC | Nov. 30, 2022',
     link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -805,6 +855,11 @@ const TransitionalfundingProposals = [
   {
     name: 'Package | UAW to UC | Nov. 30, 2022',
     link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -851,6 +906,16 @@ const TuitionremissionProposals = [
   {
     name: 'Package | UC to UAW | Dec. 2, 2022',
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Proposal | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1rr3Meu0T72KG7FBavuDOO6xD_09rtJte/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
     color: 'secondary',
   },
 ];
@@ -1027,6 +1092,16 @@ const wagesProposals = [
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Proposal | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1sohvxuhgruJJq28r-jeP5n589LLQtV53/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
+    color: 'secondary',
+  },
 
 ];
 
@@ -1077,6 +1152,11 @@ const workplaceSafetyProposals = [
     link: 'https://drive.google.com/file/d/13YaXFfsD4GunTQFVPDTgqvDe5j_C4tEJ/view?usp=share_link',
     color: 'secondary',
   },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
+    color: 'secondary',
+  },
 
 ];
 
@@ -1123,6 +1203,11 @@ const summerSupportProposals = [
   {
     name: 'Package | UC to UAW | Dec. 2, 2022',
     link: 'https://drive.google.com/file/d/1-ADrXkZhp8BEhuicapXgyG49zFlodtrq/view?usp=share_link',
+    color: 'secondary',
+  },
+  {
+    name: 'Package | UAW to UC | Dec. 8, 2022',
+    link: 'https://drive.google.com/file/d/1GKTEbFmlkRMd2RBR3khB1bSK0Utb5zxc/view?usp=share_link',
     color: 'secondary',
   },
 
