@@ -1,5 +1,3 @@
-export const lastUpdated = 'Nov. 29, 2022 at 7:16 p.m.';
-
 export const articlesPostdocs = [
 
   'Recognition',

@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { lastUpdated, articlesAR, infoAR } from './infoAR';
+import { articlesAR, infoAR } from './infoAR';
 import ColorMap from './bargainingColorMap';
 import NumberMap from './bargainingNumberMap';
 
@@ -25,22 +25,6 @@ articlesAR.map((item) => (
 
 const ProposalsAR = () => (
   <div>
-    <p>
-      <i>
-        As of
-        {' '}
-        {lastUpdated}
-        ,
-        {' '}
-        <strong>
-          {tentativeAgreements}
-          {' '}
-          tentative agreements
-        </strong>
-        {' '}
-        were met between the UC system and the UAW Local 5180 on ARs&apos; upcoming contract. While a tentative agreement on the contract has been reached, it has yet to be ratified by the union's membership.
-      </i>
-    </p>
     {
           articlesAR.map((item) => (
             <Accordion sx={{

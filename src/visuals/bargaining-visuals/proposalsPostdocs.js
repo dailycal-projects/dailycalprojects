@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { lastUpdated, articlesPostdocs, infoPostdocs } from './infoPostdocs';
+import { articlesPostdocs, infoPostdocs } from './infoPostdocs';
 import ColorMap from './bargainingColorMap';
 import NumberMap from './bargainingNumberMap';
 
@@ -25,22 +25,6 @@ articlesPostdocs.map((item) => (
 
 const ProposalsPostocs = () => (
   <div>
-    <p>
-      <i>
-        As of
-        {' '}
-        {lastUpdated}
-        ,
-        {' '}
-        <strong>
-          {tentativeAgreements}
-          {' '}
-          tentative agreements
-        </strong>
-        {' '}
-        were met between the UC system and the UAW Local 5180 on postdocs&apos; upcoming contract. While a tentative agreement on the contract has been reached, it has yet to be ratified by the union&apos;s membership.
-      </i>
-    </p>
     {
           articlesPostdocs.map((item) => (
             <Accordion sx={{
