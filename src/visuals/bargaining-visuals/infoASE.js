@@ -54,7 +54,7 @@ export const articlesASE = [
   'Berkeley staffing side letter',
   'Summer funding side letter',
   'Off-scale payments side letter',
-  'Current contract extension',
+  'Extension of previous contract',
 ];
 
 const recognitionProposals = [
@@ -1319,7 +1319,7 @@ const offScalePaymentsSideLetter = [
 const contractExtensionsProposals = [
 
   {
-    name: 'Extension of current contract to Oct. 1, 2022',
+    name: 'Extension of previous contract to Oct. 1, 2022',
     link: 'https://drive.google.com/file/d/1PbCJgcL9rXyR3e3baRTvWSzId9dCV_j2/view',
     color: 'secondary',
   },
@@ -1378,7 +1378,7 @@ export const infoASE = {
   Definitions: {
 
     proposals: definitionsProposals,
-    intro: 'On March 16, 2022, a tentative agreement was reached on the definitions article, along with some other articles, as part of a package of proposals that maintained the policy from current contracts.',
+    intro: 'On March 16, 2022, a tentative agreement was reached on the definitions article, along with some other articles, as part of a package of proposals that maintained the policy from previous contracts.',
 
   },
   'Discipline and dismissal': {
@@ -1390,7 +1390,7 @@ export const infoASE = {
   'Emergency layoff': {
 
     proposals: emergencyLayoffProposals,
-    intro: 'Maintaining the current contract between the UC system and the union for emergency layoffs, a tentative agreement was reached for this article March 16, 2022, as part of a package of proposals.',
+    intro: 'Maintaining the previous contract between the UC system and the union for emergency layoffs, a tentative agreement was reached for this article March 16, 2022, as part of a package of proposals.',
 
   },
   'Employment files and evaluations': {
@@ -1444,7 +1444,7 @@ export const infoASE = {
   'Labor management meetings': {
 
     proposals: laborManagementProposals,
-    intro: 'The parties tentatively agreed on a proposal for labor management meetings March 16, 2022, as part of a package of proposals that maintained the policy from current contracts.',
+    intro: 'The parties tentatively agreed on a proposal for labor management meetings March 16, 2022, as part of a package of proposals that maintained the policy from previous contracts.',
 
   },
   Leaves: {
@@ -1520,7 +1520,7 @@ export const infoASE = {
   Severability: {
 
     proposals: severabilityProposals,
-    intro: 'UAW Local 2865 and the UC system tentatively agreed on this article March 16 as part of a package of proposals that maintained the language from current contracts.',
+    intro: 'UAW Local 2865 and the UC system tentatively agreed on this article March 16 as part of a package of proposals that maintained the language from the previous contract.',
 
   },
   'Summer session': {
@@ -1538,7 +1538,7 @@ export const infoASE = {
   Travel: {
 
     proposals: travelProposals,
-    intro: 'The travel article saw a tentative agreement March 16, 2022, as part of a package of proposals that maintained the policy from current contracts.',
+    intro: 'The travel article saw a tentative agreement March 16, 2022, as part of a package of proposals that maintained the policy from the parties\' previous contract.',
 
   },
   'Union access and rights': {
@@ -1574,13 +1574,13 @@ export const infoASE = {
   'Workspace materials and instructional support': {
 
     proposals: workspaceMaterialsProposals,
-    intro: 'A March 16, 2022, tentative agreement maintains the current contract agreement on workspace materials and instructional support, which was passed as part of a package of proposals.',
+    intro: 'A March 16, 2022, tentative agreement maintains the parties\' previous contract agreement on workspace materials and instructional support, which was passed as part of a package of proposals.',
 
   },
   Duration: {
 
     proposals: durationProposals,
-    intro: 'The duration article of the 2018 contract between UAW Local 2865 and the UC system originally stated that it would last until June 30, 2022. The union and the UC system tentatively agreed this new contract should last terminate May 30, 2025.',
+    intro: 'The duration article of the 2018 contract between UAW Local 2865 and the UC system originally stated that it would last until June 30, 2022. The union and the UC system tentatively agreed this new contract should last terminate May 31, 2025.',
 
   },
   Preamble: {
@@ -1619,10 +1619,10 @@ export const infoASE = {
     intro: 'The Oct. 27, 2022, union proposal for this side letter aimed to increase staffing for courses within the statistics, data science and electrical engineering and computer sciences departments at UC Berkeley.',
 
   },
-  'Current contract extension': {
+  'Extension of previous contract': {
 
     proposals: contractExtensionsProposals,
-    intro: 'The current contract between the UC system and the UAW Local 2865 was set to expire June 30, 2022. That contract — which barred the union from authorizing strikes — was only extended to Oct. 1, 2022.',
+    intro: 'The previous contract between the UC system and the UAW Local 2865 was set to expire June 30, 2022. That contract — which barred the union from authorizing strikes — was only extended to Oct. 1, 2022.',
 
   },
   'Summer funding side letter': {

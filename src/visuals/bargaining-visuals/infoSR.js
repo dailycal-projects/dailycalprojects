@@ -1496,7 +1496,7 @@ export const infoSR = {
   },
   Wages: {
     proposals: wagesProposals,
-    intro: 'A tentative agreement on the wages article was reached Dec. 16 after more than 15 back-and-forth proposals and packages from both parties. Despite having reached a tentative agreement, the proposal history is included in this tool.',
+    intro: 'A tentative agreement on the wages article was reached Dec. 16 after more than 15 back-and-forth proposals and packages from both parties. Despite having reached an agreement, the proposal history is included in this tool.',
 
   },
   Waiver: {
