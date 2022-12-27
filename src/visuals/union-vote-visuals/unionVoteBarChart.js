@@ -113,9 +113,12 @@ function UnionVoteBarChart() {
           name="unit"
           onChange={handleUnitChange}
           defaultValue="Academic student employees"
+          autoWidth
         >
-          <MenuItem value="Academic student employees">Academic student employees</MenuItem>
-          <MenuItem value="Student researchers">Student researchers</MenuItem>
+          <MenuItem value="Academic student employees">
+            ASEs
+          </MenuItem>
+          <MenuItem value="Student researchers">SRs</MenuItem>
         </Select>
       </FormControl>
 
