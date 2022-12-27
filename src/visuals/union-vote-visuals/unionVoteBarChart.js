@@ -88,7 +88,7 @@ function UnionVoteBarChart() {
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
-          padding: '30px',
+          padding: '10px',
         }}
       >
         <strong>
@@ -141,7 +141,7 @@ function UnionVoteBarChart() {
           margin={{
             top: 5,
             right: 5,
-            left: 5,
+            left: 0,
             bottom: 5,
           }}
         >
