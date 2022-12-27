@@ -154,8 +154,8 @@ function UnionVoteBarChart() {
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
           <Legend />
-          <Bar dataKey={`${accessDataKey[unit.name]} yes votes`} stackId="a" fill="#e3565f" />
-          <Bar dataKey={`${accessDataKey[unit.name]} no votes`} stackId="a" fill="#176893" />
+          <Bar dataKey={`${accessDataKey[unit.name]} "yes" votes`} stackId="a" fill="#95c361" />
+          <Bar dataKey={`${accessDataKey[unit.name]} "no" votes`} stackId="a" fill="#e3565f" />
         </BarChart>
       </ResponsiveContainer>
     </div>
