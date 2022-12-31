@@ -88,6 +88,11 @@ const percSR = [
     'SR "no" votes': 28.0,
   },
   {
+    campus: 'All campuses',
+    'SR "yes" votes': 68.4,
+    'SR "no" votes': 31.6,
+  },
+  {
     campus: 'UCLA',
     'SR "yes" votes': 67.7,
     'SR "no" votes': 32.3,
@@ -202,6 +207,11 @@ const percASE = [
     campus: 'UC Riverside',
     'ASE "yes" votes': 63.4,
     'ASE "no" votes': 36.6,
+  },
+  {
+    campus: 'All campuses',
+    'ASE "yes" votes': 61.6,
+    'ASE "no" votes': 38.4,
   },
   {
     campus: 'UCSB',
