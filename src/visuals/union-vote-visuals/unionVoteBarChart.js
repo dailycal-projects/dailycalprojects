@@ -154,7 +154,7 @@ function UnionVoteBarChart() {
 
             <YAxis domain={[0, 100]} />
 
-          ) : <YAxis domain={[0, 6000]} />}
+          ) : <YAxis domain={[0, 5000]} />}
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
           <Legend />
