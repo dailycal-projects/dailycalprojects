@@ -70,8 +70,8 @@ function UnionVoteBarChart() {
 
   const accessDataKey = {
 
-    'Academic student employees': 'ASE',
-    'Student researchers': 'SR',
+    'Academic student employees': 'UAW 2865',
+    'Student researchers': 'SRU-UAW',
 
   };
 
@@ -96,12 +96,13 @@ function UnionVoteBarChart() {
             {type.name}
             {' '}
             from
-            {' '}
+            {/* {' '}
             {unit.name.toLowerCase()}
-            , or
+            , or */}
             {' '}
-            {`${accessDataKey[unit.name]}s`}
-            , by campus
+            {`${accessDataKey[unit.name]}`}
+            {' '}
+            by campus
           </p>
         </strong>
       </div>
@@ -116,9 +117,9 @@ function UnionVoteBarChart() {
           autoWidth
         >
           <MenuItem value="Academic student employees">
-            ASEs
+            UAW 2865
           </MenuItem>
-          <MenuItem value="Student researchers">SRs</MenuItem>
+          <MenuItem value="Student researchers">SRU-UAW</MenuItem>
         </Select>
       </FormControl>
 
@@ -153,7 +154,7 @@ function UnionVoteBarChart() {
 
             <YAxis domain={[0, 100]} />
 
-          ) : <YAxis />}
+          ) : <YAxis domain={[0, 6000]} />}
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
           <Legend />
