@@ -149,7 +149,7 @@ function UnionVoteBarChart() {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="campus" tick={<CustomizedAxisTick />} height={85} minTickGap={-10} />
+          <XAxis dataKey="campus" tick={<CustomizedAxisTick />} height={100} minTickGap={-10} />
           {(type.name === 'Percent of votes') ? (
 
             <YAxis domain={[0, 100]} />

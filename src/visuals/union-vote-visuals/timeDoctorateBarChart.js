@@ -63,7 +63,7 @@ const TimeDoctorateBarChart = () => (
           bottom: 5,
         }}
       >
-        <XAxis dataKey="campus" tick={<CustomizedAxisTick />} height={85} minTickGap={-10} />
+        <XAxis dataKey="campus" tick={<CustomizedAxisTick />} height={100} minTickGap={-10} />
         <YAxis domain={[0, 7]} />
         <Tooltip />
         <CartesianGrid strokeDasharray="3 3" />
