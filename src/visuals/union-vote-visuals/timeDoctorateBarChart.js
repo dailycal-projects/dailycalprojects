@@ -46,7 +46,7 @@ const TimeDoctorateBarChart = () => (
     >
       <strong>
         <p>
-          Average number of years to complete doctorate degree by campus
+          Average number of years to complete doctoral degree by campus
         </p>
       </strong>
     </div>
