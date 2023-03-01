@@ -30,6 +30,8 @@ class MyMap extends Component {
             dragging={false}
             style={containerStyle}
             zoom={14.25}
+            maxZoom={14.25}
+            minZoom={14.25}
             center={[centerLat, centerLong]}
             bounds={[
               [data.minLat - bufferLat, data.minLong - bufferLong],
@@ -40,15 +42,18 @@ class MyMap extends Component {
 
             {data.info.map((info, k) => (
 
-              <Polygon positions={info.coordinates} color={[info.color]}>
+              <Polygon opacity={1} positions={info.coordinates} color={[info.color]}>
                 <Tooltip>
-                  Census tract:
-                  {' '}
-                  {info.tract}
-                  {' '}
-                  <br />
-                  Median rent: $
-                  {info.rent}
+                  <font size="+1">
+                    {' '}
+                    Census tract:
+                    {' '}
+                    {info.tract}
+                    {' '}
+                    <br />
+                    Median rent: $
+                    {info.rent}
+                  </font>
                 </Tooltip>
               </Polygon>
             ))}
