@@ -11,7 +11,7 @@ import {
   MenuItem,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { bikeTheftMapData } from './buttonMapData';
+import { bikeTheftMapData } from './bikeTheftnMapData';
 
 function ButtonMap() {
   const minLat = 37.8503526;
