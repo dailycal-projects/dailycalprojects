@@ -23,6 +23,8 @@ class MyMap extends Component {
     };
 
     return (
+        <div>
+
       <div>
         {(typeof window !== 'undefined') ? (
           <MapContainer
@@ -60,8 +62,9 @@ class MyMap extends Component {
             ))}
           </MapContainer>
         ) : <p> Map is loading... </p>}
-        <div id="gradient" />
       </div>
+              <div id="gradient" />
+</div>
     );
   }
 }
