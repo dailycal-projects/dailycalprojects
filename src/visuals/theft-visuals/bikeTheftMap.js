@@ -11,7 +11,7 @@ import {
   MenuItem,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { buttonMapData } from './bikeTheftMapData';
+import { bikeTheftMapData } from './buttonMapData';
 
 function ButtonMap() {
   const minLat = 37.8503526;
@@ -70,16 +70,17 @@ function ButtonMap() {
         </h4>
       </div>
       <FormControl className={classes.formControl}>
-        <InputLabel>Select vehicle type</InputLabel>
+        <InputLabel>Select county</InputLabel>
         <Select
           value={county.name}
           id="regionSelector"
           name="region"
           onChange={handleChange}
-          defaultValue="Bikes"
+          defaultValue="Alameda"
         >
-          <MenuItem value="Bikes">Bikes</MenuItem>
-
+          <MenuItem value="Alameda">Alameda</MenuItem>
+          <MenuItem value="Contra Costa">Contra Costa</MenuItem>
+          <MenuItem value="San Francisco">San Francisco</MenuItem>
         </Select>
       </FormControl>
 
@@ -114,7 +115,18 @@ function ButtonMap() {
               radius={8}
               color="#fab081"
               fillOpacity={0.6}
-            />
+            >
+              <Popup>
+                <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                  {'District: '}
+                  {info.District}
+                  <br />
+                  {'County: '}
+                  {info.County}
+
+                </div>
+              </Popup>
+            </CircleMarker>
           ))}
         </MapContainer>
       ) : <p> Map is loading... </p>}
@@ -122,4 +134,4 @@ function ButtonMap() {
   );
 }
 
-export default ButtonMap;
+export default BikeTheftMap;
