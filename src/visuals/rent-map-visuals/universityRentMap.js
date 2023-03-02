@@ -23,48 +23,48 @@ class MyMap extends Component {
     };
 
     return (
-        <div>
-
       <div>
-        {(typeof window !== 'undefined') ? (
-          <MapContainer
-            scrollWheelZoom={false}
-            zoomControl={false}
-            dragging={false}
-            style={containerStyle}
-            zoom={14}
-            maxZoom={14}
-            minZoom={14}
-            center={[centerLat, centerLong]}
-            bounds={[
-              [data.minLat - bufferLat, data.minLong - bufferLong],
-              [data.maxLat + bufferLat, data.maxLong + bufferLong],
-            ]}
-          >
-            <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" opacity={0.35} />
 
-            {data.info.map((info) => (
+        <div>
+          {(typeof window !== 'undefined') ? (
+            <MapContainer
+              scrollWheelZoom={false}
+              zoomControl={false}
+              dragging={false}
+              style={containerStyle}
+              zoom={14}
+              maxZoom={14}
+              minZoom={14}
+              center={[centerLat, centerLong]}
+              bounds={[
+                [data.minLat - bufferLat, data.minLong - bufferLong],
+                [data.maxLat + bufferLat, data.maxLong + bufferLong],
+              ]}
+            >
+              <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" opacity={0.35} />
 
-              <Polygon opacity={1} positions={info.coordinates} color={[info.color]}>
-                <Tooltip>
-                  <font size="+1">
-                    {' '}
-                    Census tract:
-                    {' '}
-                    {info.tract}
-                    {' '}
-                    <br />
-                    Median rent: $
-                    {info.rent}
-                  </font>
-                </Tooltip>
-              </Polygon>
-            ))}
-          </MapContainer>
-        ) : <p> Map is loading... </p>}
+              {data.info.map((info) => (
+
+                <Polygon opacity={1} positions={info.coordinates} color={[info.color]}>
+                  <Tooltip>
+                    <font size="+1">
+                      {' '}
+                      Census tract:
+                      {' '}
+                      {info.tract}
+                      {' '}
+                      <br />
+                      Median rent: $
+                      {info.rent}
+                    </font>
+                  </Tooltip>
+                </Polygon>
+              ))}
+            </MapContainer>
+          ) : <p> Map is loading... </p>}
+        </div>
+        <div id="gradient" />
       </div>
-              <div id="gradient" />
-</div>
     );
   }
 }
