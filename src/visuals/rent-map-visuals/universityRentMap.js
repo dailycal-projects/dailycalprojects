@@ -3,6 +3,7 @@ import {
   MapContainer, TileLayer, Tooltip, Polygon,
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import './universityRentMapCSS.css';
 import { data } from './universityRentData';
 
 class MyMap extends Component {
@@ -29,9 +30,9 @@ class MyMap extends Component {
             zoomControl={false}
             dragging={false}
             style={containerStyle}
-            zoom={14.25}
-            maxZoom={14.25}
-            minZoom={14.25}
+            zoom={14}
+            maxZoom={14}
+            minZoom={14}
             center={[centerLat, centerLong]}
             bounds={[
               [data.minLat - bufferLat, data.minLong - bufferLong],
@@ -40,7 +41,7 @@ class MyMap extends Component {
           >
             <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" opacity={0.35} />
 
-            {data.info.map((info, k) => (
+            {data.info.map((info) => (
 
               <Polygon opacity={1} positions={info.coordinates} color={[info.color]}>
                 <Tooltip>
@@ -59,6 +60,7 @@ class MyMap extends Component {
             ))}
           </MapContainer>
         ) : <p> Map is loading... </p>}
+        <div id="gradient" />
       </div>
     );
   }

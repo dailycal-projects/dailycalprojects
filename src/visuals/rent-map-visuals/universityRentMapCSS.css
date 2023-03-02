@@ -1,0 +1,5 @@
+#gradient {
+  height: 25px;
+  background-color: #ff3232; /* For browsers that do not support gradients */
+  background-image: linear-gradient(-90deg, #fffafa, #ff3232);
+}
