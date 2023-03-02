@@ -41,6 +41,7 @@ import ProposalsSR from '../visuals/bargaining-visuals/proposalsSR';
 import KutcherTimeline from '../visuals/kutcher-visuals/kutcherTimeline';
 import UnionVoteBarChart from '../visuals/union-vote-visuals/unionVoteBarChart';
 import TimeDoctorateBarChart from '../visuals/union-vote-visuals/timeDoctorateBarChart';
+import UniversityRentMap from '../visuals/rent-map-visuals/universityRentMap';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -97,6 +98,7 @@ const shortcodes = {
   KutcherTimeline,
   UnionVoteBarChart,
   TimeDoctorateBarChart,
+  UniversityRentMap,
 };
 
 export default function Layout({ children }) {
