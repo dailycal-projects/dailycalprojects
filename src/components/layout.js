@@ -23,27 +23,20 @@ import GymBeam from '../visuals/gym-pac-12-visuals/gymBeam';
 import GymFloor from '../visuals/gym-pac-12-visuals/gymFloor';
 import Timeline1921 from '../visuals/1921-visuals/1921Timeline';
 import STEMEnrollmentLine from '../visuals/STEM-visuals/STEMLine';
-import TurnoverMap from '../visuals/turnover-visuals/turnoverMap';
 import StudyAbroadMap from '../visuals/study-abroad-visuals/studyAbroadMap';
 import ArtifactsBarChart from '../visuals/artifacts-visuals/artifactsBarChart';
 import ArtifactsPieChart from '../visuals/artifacts-visuals/artifactsPieChart';
 import HSILineChart from '../visuals/HSI-visuals/HSILineChart';
-import SubscriberLineChart from '../visuals/reddit-visuals/subscriberCount';
-import DailyCommentLineChart from '../visuals/reddit-visuals/dailyCommentCount';
-import PostsPerHourBarChart from '../visuals/reddit-visuals/postsPerHourBarChart';
-import PostsPerDayBarChart from '../visuals/reddit-visuals/postsPerDayBarChart';
-import PostsPerFlairBarChart from '../visuals/reddit-visuals/postsPerFlairBarChart';
 import GapStackedBarChart from '../visuals/gap-visuals/gapStackedBarChart';
 import ProposalsASE from '../visuals/bargaining-visuals/proposalsASE';
 import ProposalsAR from '../visuals/bargaining-visuals/proposalsAR';
 import ProposalsPostocs from '../visuals/bargaining-visuals/proposalsPostdocs';
 import ProposalsSR from '../visuals/bargaining-visuals/proposalsSR';
-import KutcherTimeline from '../visuals/kutcher-visuals/kutcherTimeline';
-import bikeTheftMap from '../visuals/theft-visuals/BikeTheftMap';
+import ButtonMap from '../visuals/button-map-visuals/buttonMap';
 
 /*
 To avoid using exact paths in MDX files, import your components here
-and add them to the shortcodes list to be globally accessible.ß
+and add them to the shortcodes list to be globally accessible.
 To use a component in MDX, simply type <MyComponent />
 Note: MDXProvider doesn't like parsing individual HTML elements followed
 by an array of React components, so we must include them in the same array.
@@ -78,23 +71,16 @@ const shortcodes = {
   GymFloor,
   Timeline1921,
   STEMEnrollmentLine,
-  TurnoverMap,
   StudyAbroadMap,
   ArtifactsBarChart,
   ArtifactsPieChart,
   HSILineChart,
-  SubscriberLineChart,
-  DailyCommentLineChart,
-  PostsPerHourBarChart,
-  PostsPerDayBarChart,
-  PostsPerFlairBarChart,
   GapStackedBarChart,
   ProposalsASE,
   ProposalsAR,
   ProposalsSR,
   ProposalsPostocs,
-  KutcherTimeline,
-  BikeTheftMap,
+  ButtonMap,
 };
 
 export default function Layout({ children }) {
