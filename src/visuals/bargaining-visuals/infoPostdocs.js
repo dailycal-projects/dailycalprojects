@@ -1,5 +1,3 @@
-export const lastUpdated = 'Nov. 29, 2022 at 7:16 p.m.';
-
 export const articlesPostdocs = [
 
   'Recognition',
@@ -63,7 +61,7 @@ export const articlesPostdocs = [
   'Appendix G',
   'Appendix H',
   'Ground rules',
-  'Current contract extension',
+  'Extension of previous contract',
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
@@ -1571,7 +1569,7 @@ const groundRulesProposals = [
 
 const extensionProposals = [
   {
-    name: 'Extension of current contract to Oct. 31, 2022',
+    name: 'Extension of previous contract to Oct. 31, 2022',
     link: 'https://drive.google.com/file/d/1zGA2poRjeQL63syfCMYf-4R_yZztTex4/view?usp=sharing',
     color: 'secondary',
   },
@@ -1582,7 +1580,7 @@ export const infoPostdocs = {
   Recognition: {
 
     proposals: recognitionProposals,
-    intro: 'A tentative agreement on the recognition article was reached in August 2021 as part of a package of proposals. The package agreement maintained the language of eight articles from the current contract between the UAW Local 5810 and the UC system.',
+    intro: 'A tentative agreement on the recognition article was reached in August 2021 as part of a package of proposals. The package agreement maintained the language of eight articles from the previous contract between the UAW Local 5810 and the UC system.',
 
   },
   Appointments: {
@@ -1636,7 +1634,7 @@ export const infoPostdocs = {
   Holidays: {
 
     proposals: holidaysProposals,
-    intro: 'A tentative agreement on time off for designated holidays was reached on Aug. 1, 2021.',
+    intro: 'A tentative agreement on time off for designated holidays was reached Aug. 1, 2021.',
 
   },
   Immigration: {
@@ -1648,13 +1646,13 @@ export const infoPostdocs = {
   'Individual development plans and progress assessments': {
 
     proposals: individualDevelopmentProposals,
-    intro: 'The union and the UC system reached a tentative agreement on this article on Feb. 21, 2022.',
+    intro: 'The union and the UC system reached a tentative agreement on this article Feb. 21, 2022.',
 
   },
   'International scholar and immigrant support': {
 
     proposals: internationalScholarProposals,
-    intro: 'This article was withdrawn as part of a package proposal on Nov. 28, 2022.',
+    intro: 'This article was withdrawn as part of a package proposal Nov. 28, 2022.',
 
   },
   'Job abandonment': {
@@ -1666,7 +1664,7 @@ export const infoPostdocs = {
   'Labor management meetings': {
 
     proposals: laborManagementProposals,
-    intro: 'Both parties came to a tentative agreement on labor management meetings in August 2021 as part of a package that maintained the language of eight articles from their current contract.',
+    intro: 'Both parties came to a tentative agreement on labor management meetings in August 2021 as part of a package that maintained the language of eight articles from their previous contract.',
 
   },
   'Lawrence Berkeley National Lab article': {
@@ -1702,19 +1700,19 @@ export const infoPostdocs = {
   'No strikes': {
 
     proposals: noStrikesProposals,
-    intro: 'The UC system’s original July 23, 2021, proposal for this article sought to maintain the current contract’s no strikes article, which prohibited striking. On Nov. 28, 2022, the parties tentatively agreed on this article\'s current contract language.',
+    intro: 'The UC system’s original July 23, 2021, proposal for this article sought to maintain the previous contract’s no strikes article, which prohibited striking. On Nov. 28, 2022, the parties tentatively agreed on this article\'s previous contract language.',
 
   },
   Nondiscrimination: {
 
     proposals: nondiscriminationProposals,
-    intro: 'The parties reached a tentative agreement on nondiscrimination in the workplace on Feb. 8, 2022.',
+    intro: 'The parties reached a tentative agreement on nondiscrimination in the workplace Feb. 8, 2022.',
 
   },
   'Parking and transit': {
 
     proposals: parkingProposals,
-    intro: 'After more than 20 packages and proposals, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract on Nov. 28, 2022.',
+    intro: 'After more than 20 packages and proposals, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract Nov. 28, 2022.',
   },
   'Past practices': {
 
@@ -1729,7 +1727,7 @@ export const infoPostdocs = {
   'Personnel files': {
 
     proposals: personnelProposals,
-    intro: 'Personnel files refer to information about postdocs’ appointment with the UC system. On Aug. 1, 2021, the union and the UC system tentatively agreed to maintain their current contract’s article on personnel files.',
+    intro: 'Personnel files refer to information about postdocs’ appointment with the UC system. On Aug. 1, 2021, the union and the UC system tentatively agreed to maintain their previous contract’s article on personnel files.',
   },
   Posting: {
 
@@ -1749,7 +1747,7 @@ export const infoPostdocs = {
   'President\'s postdoctoral fellowships': {
 
     proposals: postdocFellowProposals,
-    intro: 'This article was withdrawn as part of a package deal on Nov. 28, 2022.',
+    intro: 'This article was withdrawn as part of a package deal Nov. 28, 2022.',
   },
   'Reasonable accommodation': {
 
@@ -1774,7 +1772,7 @@ export const infoPostdocs = {
   Severability: {
 
     proposals: severabilityProposals,
-    intro: 'Both parties reached a tentative agreement not to change the current contract language for this article — along with seven others — Aug. 1, 2021.',
+    intro: 'Both parties reached a tentative agreement not to change the previous contract language for this article — along with seven others — Aug. 1, 2021.',
   },
   'Sick leave': {
 
@@ -1784,12 +1782,12 @@ export const infoPostdocs = {
   Successorship: {
 
     proposals: successorshipProposals,
-    intro: 'As part of an Aug. 1, 2021, tentative agreement, the UAW Local 5810 and the UC system agreed to maintain the current contract language for this article and seven others.',
+    intro: 'As part of an Aug. 1, 2021, tentative agreement, the UAW Local 5810 and the UC system agreed to maintain the previous contract language for this article and seven others.',
   },
   'Time and effort commitment': {
 
     proposals: timeProposals,
-    intro: 'After two proposals, a tentative agreement was reached Sept. 16, 2021. Like their current contract, time spent during meals and commuting to work are not counted as working hours.',
+    intro: 'After two proposals, a tentative agreement was reached Sept. 16, 2021. Like their previous contract, time spent during meals and commuting to work are not counted as working hours.',
   },
   'Titles and classifications': {
 
@@ -1799,7 +1797,7 @@ export const infoPostdocs = {
   Training: {
 
     proposals: trainingProposals,
-    intro: 'The tentative agreement reached August 1, 2021, includes training among the articles that will not be changed from current contract language.',
+    intro: 'The tentative agreement reached August 1, 2021, includes training among the articles that will not be changed from previous contract language.',
   },
   'Travel reimbursement': {
 
@@ -1819,7 +1817,7 @@ export const infoPostdocs = {
   'University facilities and services': {
 
     proposals: facilitiesProposals,
-    intro: 'Under an Aug. 1, 2021 tentative agreement, this article and seven others will not change from current contract language.',
+    intro: 'Under an Aug. 1, 2021 tentative agreement, this article and seven others will not change from previous contract language.',
   },
   'Voluntary resignation': {
 
@@ -1874,7 +1872,7 @@ export const infoPostdocs = {
   'Appendix A': {
 
     proposals: appendixAProposals,
-    intro: 'With some updates, parties will maintain their current contract language for this appendix, according to a Nov. 28, 2022 tentative agreement on a package.',
+    intro: 'With some updates, parties will maintain their previous contract language for this appendix, according to a Nov. 28, 2022 tentative agreement on a package.',
   },
   'Appendix B': {
 
@@ -1905,9 +1903,9 @@ export const infoPostdocs = {
     proposals: groundRulesProposals,
     intro: 'The ground rules for bargaining negotiations were tentatively agreed upon by both parties Aug. 11, 2021.',
   },
-  'Current contract extension': {
+  'Extension of previous contract': {
 
     proposals: extensionProposals,
-    intro: 'The current AR contact between the UC system and the UAW Local 5810 was originally slated to be in effect until Sept. 30, 2020. That contract barred the union from authorizing strikes that interfere with the UC system’s operations. It was only extended to Oct. 31, 2022.',
+    intro: 'The previous AR contact between the UC system and the UAW Local 5810 was originally slated to be in effect until Sept. 30, 2020. That contract barred the union from authorizing strikes that interfere with the UC system’s operations. It was only extended to Oct. 31, 2022.',
   },
 };
