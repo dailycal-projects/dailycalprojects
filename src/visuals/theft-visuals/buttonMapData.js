@@ -1,128 +1,741 @@
 export const buttonMapData = {
-  Alameda: [
-
-    {
-      District: 'Alameda Unified',
-      County: 'Alameda',
-      center: [37.76333764882534, -122.26587117129979],
-    },
-    {
-      District: 'Albany City Unified',
-      County: 'Alameda',
-      center: [37.889900732600715, -122.29889912850467],
-    },
-    {
-      District: 'Berkeley Unified',
-      County: 'Alameda',
-      center: [37.87245059405187, -122.27471883963752],
-    },
-    {
-      District: 'Castro Valley Unified',
-      County: 'Alameda',
-      center: [37.72481910040385, -122.04417927182296],
-    },
-    {
-      District: 'Emery Unified',
-      County: 'Alameda',
-      center: [37.83791910786704, -122.29068404429601],
-    },
-    {
-      District: 'Fremont Unified',
-      County: 'Alameda',
-      center: [37.52748285247377, -121.98257937692699],
-    },
-    {
-      District: 'Hayward Unified',
-      County: 'Alameda',
-      center: [37.64400556661094, -122.07880499614076],
-    },
-    {
-      District: 'Livermore Valley Joint Unified',
-      center: [37.646401490730206, -121.68484696833109],
-    },
-    {
-      District: 'Mountain House Elementary',
-      County: 'Alameda',
-      center: [37.742076269482276, -121.58460934366315],
-    },
-    {
-      District: 'Newark Unified',
-      County: 'Alameda',
-      center: [37.52009290353794, -122.03065454379521],
-    },
-    {
-      District: 'New Haven Unified',
-      County: 'Alameda',
-      center: [37.598562379362534, -122.04514519458094],
-    },
-    {
-      District: 'Oakland Unified',
-      County: 'Alameda',
-      center: [37.79448404605824, -122.21508887095948],
-    },
-    {
-      District: 'Piedmont City Unified',
-      County: 'Alameda',
-      center: [37.82256738213073, -122.23002431076608],
-    },
-    {
-      District: 'San Leandro Unified',
-      County: 'Alameda',
-      center: [37.71146499660917, -122.16571403994386],
-    },
-    {
-      District: 'San Lorenzo Unified',
-      County: 'Alameda',
-      center: [37.678786129389735, -122.13130185409136],
-    },
-    {
-      District: 'Dublin Unified',
-      County: 'Alameda',
-      center: [37.71644666035747, -121.90051364359171],
-    },
-    {
-      District: 'Pleasanton Unified',
-      County: 'Alameda',
-      center: [37.66216570121163, -121.88747659817844],
-    },
-    {
-      District: 'Sunol Glen Unified',
-      County: 'Alameda',
-      center: [37.55511504137836, -121.82205378224593],
-    },
-    {
-      District: 'Acalanes Union High',
-      County: 'Contra Costa',
-      center: [37.8758667077703, -122.1319483514607],
-    },
-
-    {
-      District: 'Acalanes Union High',
-      County: 'Contra Costa',
-      center: [37.871537, -122.259833],
-    },
-    {
-      District: 'Acalanes Union High',
-      County: 'Contra Costa',
-      center: [37.884695, -122.30509],
-    },
-    {
-      District: 'Acalanes Union High',
-      County: 'Contra Costa',
-      center: [37.884695, -122.30509],
-    },
-    {
-      District: 'Acalanes Union High',
-      County: 'Contra Costa',
-      center: [37.872278, -122.30509],
-    },
-    {
-      District: 'Acalanes Union High',
-      County: 'Contra Costa',
-      center: [37.883984, -122.256187],
-    },
-  ],
-  'Contra Costa': [
+  'E-Scooters': [{
+    Location: 'Memorial Stadium',
+    center: [37.870617001620055, -122.25078246214264],
+    count: 3,
+  },
+  {
+    Location: '2424 Haste St',
+    center: [37.8658295103465, -122.260090722318],
+    count: 1,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: 'Southwest Corner Bicycle Racks',
+    center: [37.86841500052451, -122.2635197137848],
+    count: 1,
+  },
+  {
+    Location: 'Wheeler Hall',
+    center: [37.87128150848279, -122.25914481229805],
+    count: 4,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Wurster Hall',
+    center: [37.87072763645856, -122.25489811874392],
+    count: 1,
+  },
+  {
+    Location: '2650 Durant Av',
+    center: [37.8682724333927, -122.25551967879],
+    count: 3,
+  },
+  {
+    Location: '2601 Warring St',
+    center: [37.8640193426761, -122.250240547617],
+    count: 4,
+  },
+  {
+    Location: '2650 Haste St',
+    center: [37.866532772645, -122.254867813469],
+    count: 1,
+  },
+  {
+    Location: '400 Ohlone Av',
+    center: [37.8847114611282, -122.30464782849],
+    count: 1,
+  },
+  {
+    Location: '685 Libertyship Wy',
+    center: [37.8833142078699, -122.304210501816],
+    count: 1,
+  },
+  {
+    Location: 'Memorial Stadium',
+    center: [37.870617001620055, -122.25078246214264],
+    count: 3,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: '1898 Le Roy Av',
+    center: [37.8754082633501, -122.258378061271],
+    count: 1,
+  },
+  {
+    Location: 'Morrison Hall',
+    center: [37.8708336127304, -122.25649409321238],
+    count: 3,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: '2400 Durant Av',
+    center: [37.867522392068, -122.261187553014],
+    count: 2,
+  },
+  {
+    Location: 'Cesar Chavez Center',
+    center: [37.8695124943776, -122.2603270845338],
+    count: 3,
+  },
+  {
+    Location: 'Doe Library',
+    center: [37.872190365598726, -122.25922927725236],
+    count: 1,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: 'Bauer Wurster Hall',
+    center: [37.8707287617236, -122.25489657421734],
+    count: 2,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Cheit Hall',
+    center: [37.871676613338295, -122.25434021645368],
+    count: 5,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Barker Hall',
+    center: [37.87390008041748, -122.26546669764484],
+    count: 1,
+  },
+  {
+    Location: 'BARKER HALL',
+    center: [37.87390008041748, -122.26546669764484],
+    count: 1,
+  },
+  { Location: '2309 Haste St', center: [37.874039, -122.265395], count: 1 },
+  {
+    Location: 'Physics Building',
+    center: [37.87254110801192, -122.25728538360696],
+    count: 5,
+  },
+  {
+    Location: 'Chou Hall',
+    center: [37.87228573918495, -122.2545375375676],
+    count: 4,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Cheit Hall',
+    center: [37.871676613338295, -122.25434021645368],
+    count: 5,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Lower Sproul Pz',
+    center: [37.8691572610067, -122.2602324336674],
+    count: 1,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Valley Life Science Building',
+    center: [37.87137150357962, -122.26219370047764],
+    count: 5,
+  },
+  {
+    Location: '2415 Bowditch St',
+    center: [37.8669372046896, -122.256491229001],
+    count: 4,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Valley Life Science Building',
+    center: [37.87137150357962, -122.26219370047764],
+    count: 5,
+  },
+  {
+    Location: '2601 Warring St',
+    center: [37.8640193426761, -122.250240547617],
+    count: 4,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: '2220 Piedmont Av',
+    center: [37.8710175418692, -122.252768806712],
+    count: 4,
+  },
+  {
+    Location: '2601 Warring St',
+    center: [37.8640193426761, -122.250240547617],
+    count: 4,
+  },
+  {
+    Location: 'Li Ka Shing Center',
+    center: [37.87260794902394, -122.26527815839798],
+    count: 6,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Li Ka Shing Center',
+    center: [37.87260794902394, -122.26527815839798],
+    count: 6,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Li Ka Shing Center',
+    center: [37.87260794902394, -122.26527815839798],
+    count: 6,
+  },
+  {
+    Location: 'Bechtel Center',
+    center: [37.87418179738599, -122.25818521695552],
+    count: 1,
+  },
+  {
+    Location: '2400 Durant Av',
+    center: [37.867522392068, -122.261187553014],
+    count: 2,
+  },
+  {
+    Location: 'Social Sciences Building',
+    center: [37.87002514626511, -122.25798186886948],
+    count: 1,
+  },
+  {
+    Location: 'Valley Life Science Building',
+    center: [37.87137150357962, -122.26219370047764],
+    count: 5,
+  },
+  {
+    Location: 'Morrison Hall',
+    center: [37.8708336127304, -122.25649409321238],
+    count: 3,
+  },
+  {
+    Location: 'Physics Building',
+    center: [37.87254110801192, -122.25728538360696],
+    count: 5,
+  },
+  {
+    Location: 'Hearst Mining Building',
+    center: [37.87414722713339, -122.25719054170573],
+    count: 1,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: '2220 Piedmont Av',
+    center: [37.8710175418692, -122.252768806712],
+    count: 4,
+  },
+  {
+    Location: 'Campbell Hall',
+    center: [37.87313518446247, -122.25711179311152],
+    count: 1,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Chou Hall',
+    center: [37.87228573918495, -122.2545375375676],
+    count: 4,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Memorial Stadium',
+    center: [37.870617001620055, -122.25078246214264],
+    count: 3,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: 'Li Ka Shing Center',
+    center: [37.87260794902394, -122.26527815839798],
+    count: 6,
+  },
+  {
+    Location: 'Cheit Hall',
+    center: [37.871676613338295, -122.25434021645368],
+    count: 5,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Valley Life Science Building',
+    center: [37.87137150357962, -122.26219370047764],
+    count: 5,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: '2415 Bowditch St',
+    center: [37.8669372046896, -122.256491229001],
+    count: 4,
+  },
+  {
+    Location: 'Haas Pavilion',
+    center: [37.86938146742746, -122.26217950943338],
+    count: 1,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Wheeler Hall',
+    center: [37.87128150848279, -122.25914481229805],
+    count: 4,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: '2601 Warring St',
+    center: [37.8640193426761, -122.250240547617],
+    count: 4,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: 'Cesar Chavez Center',
+    center: [37.8695124943776, -122.2603270845338],
+    count: 3,
+  },
+  {
+    Location: 'Cesar Chavez Center',
+    center: [37.8695124943776, -122.2603270845338],
+    count: 3,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: '2415 Bowditch St',
+    center: [37.8669372046896, -122.256491229001],
+    count: 4,
+  },
+  {
+    Location: 'Golden Bear Cafe',
+    center: [37.86983541696673, -122.25964234513734],
+    count: 2,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Sather Gate',
+    center: [37.87029448899229, -122.25949685918862],
+    count: 1,
+  },
+  {
+    Location: 'Li Ka Shing Center',
+    center: [37.87260794902394, -122.26527815839798],
+    count: 6,
+  },
+  {
+    Location: 'Golden Bear Cafe',
+    center: [37.86983541696673, -122.25964234513734],
+    count: 2,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Lower Sproul Plaza',
+    center: [37.8691572610067, -122.2602324336674],
+    count: 1,
+  },
+  {
+    Location: 'Wheeler Hall',
+    center: [37.87128150848279, -122.25914481229805],
+    count: 4,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: 'Hildebrand Hall',
+    center: [37.87257844322372, -122.2553368960868],
+    count: 2,
+  },
+  {
+    Location: 'Physics Building',
+    center: [37.87254110801192, -122.25728538360696],
+    count: 5,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: 'Chou Hall',
+    center: [37.87228573918495, -122.2545375375676],
+    count: 4,
+  },
+  {
+    Location: 'Chou Hall',
+    center: [37.87228573918495, -122.2545375375676],
+    count: 4,
+  },
+  {
+    Location: 'Cheit Hall',
+    center: [37.871676613338295, -122.25434021645368],
+    count: 5,
+  },
+  {
+    Location: 'Physics Building',
+    center: [37.87254110801192, -122.25728538360696],
+    count: 5,
+  },
+  {
+    Location: '2650 Durant Av',
+    center: [37.8682724333927, -122.25551967879],
+    count: 3,
+  },
+  {
+    Location: '2151 Berkeley Wy',
+    center: [37.8731904212298, -122.267745839512],
+    count: 2,
+  },
+  {
+    Location: '2151 Berkeley Wy',
+    center: [37.8731904212298, -122.267745839512],
+    count: 2,
+  },
+  {
+    Location: '2415 Bowditch St',
+    center: [37.8669372046896, -122.256491229001],
+    count: 4,
+  },
+  {
+    Location: 'Spieker Plaza',
+    center: [37.86994258203889, -122.2618184301734],
+    count: 1,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: '2220 Piedmont Av',
+    center: [37.8710175418692, -122.252768806712],
+    count: 4,
+  },
+  {
+    Location: '2121 Berkeley Wy',
+    center: [37.8731443309602, -122.268099378992],
+    count: 1,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Bauer Wurster Hall',
+    center: [37.8707287617236, -122.25489657421734],
+    count: 2,
+  },
+  {
+    Location: 'Li Ka Shing Center',
+    center: [37.87260794902394, -122.26527815839798],
+    count: 6,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: '2220 Piedmont Av',
+    center: [37.8710175418692, -122.252768806712],
+    count: 4,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: 'Morrison Hall',
+    center: [37.8708336127304, -122.25649409321238],
+    count: 3,
+  },
+  {
+    Location: 'Physics Building',
+    center: [37.87254110801192, -122.25728538360696],
+    count: 5,
+  },
+  {
+    Location: 'Dwinelle Hall',
+    center: [37.87051367774487, -122.26059801745168],
+    count: 13,
+  },
+  {
+    Location: '2521 Hearst Av',
+    center: [37.8752228849141, -122.259308660184],
+    count: 1,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Evans Hall',
+    center: [37.87360544091724, -122.25759555400968],
+    count: 14,
+  },
+  {
+    Location: 'Cheit Hall',
+    center: [37.871676613338295, -122.25434021645368],
+    count: 5,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  },
+  {
+    Location: '2650 Durant Av',
+    center: [37.8682724333927, -122.25551967879],
+    count: 3,
+  },
+  {
+    Location: 'Moffitt Library',
+    center: [37.872519425613646, -122.26083508517507],
+    count: 13,
+  },
+  {
+    Location: 'Wheeler Hall',
+    center: [37.87128150848279, -122.25914481229805],
+    count: 4,
+  },
+  {
+    Location: 'Hildebrand Hall',
+    center: [37.87257844322372, -122.2553368960868],
+    count: 2,
+  },
+  {
+    Location: '1995 University Av',
+    center: [37.8718942985013, -122.270913734012],
+    count: 1,
+  },
+  {
+    Location: 'Valley Life Science Building',
+    center: [37.87137150357962, -122.26219370047764],
+    count: 5,
+  },
+  {
+    Location: '2301 Bancroft Wy',
+    center: [37.8685283057026, -122.260813441417],
+    count: 22,
+  }],
+  Bikes: [
     {
       District: 'Antioch Unified',
       County: 'Contra Costa',
@@ -208,7 +821,7 @@ export const buttonMapData = {
       County: 'Contra Costa',
       center: [37.88740327389466, -122.05389094667487],
     }],
-  'San Francisco': [
+  'E-Bikes': [
     {
       District: 'San Francisco Unified',
       County: 'San Francisco',

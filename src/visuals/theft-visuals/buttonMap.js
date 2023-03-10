@@ -42,7 +42,7 @@ function ButtonMap() {
   const classes = useStyles();
 
   const [county, setCounty] = React.useState({
-    name: 'Alameda',
+    name: 'E-Scooters',
   });
 
   const handleChange = (event) => {
@@ -70,17 +70,17 @@ function ButtonMap() {
         </h4>
       </div>
       <FormControl className={classes.formControl}>
-        <InputLabel>Select county</InputLabel>
+        <InputLabel>Select vehicle</InputLabel>
         <Select
           value={county.name}
           id="regionSelector"
           name="region"
           onChange={handleChange}
-          defaultValue="Alameda"
+          defaultValue="E-Scooters"
         >
-          <MenuItem value="Alameda">Alameda</MenuItem>
-          <MenuItem value="Contra Costa">Contra Costa</MenuItem>
-          <MenuItem value="San Francisco">San Francisco</MenuItem>
+          <MenuItem value="E-Scooters">E-Scooters</MenuItem>
+          <MenuItem value="Bikes">Bikes</MenuItem>
+          <MenuItem value="E-Bikes">E-Bikes</MenuItem>
         </Select>
       </FormControl>
 
@@ -112,17 +112,17 @@ function ButtonMap() {
             <CircleMarker
               key={k}
               center={[info.center[0], info.center[1]]}
-              radius={8}
+              radius={3}
               color="#fab081"
               fillOpacity={0.6}
             >
               <Popup>
                 <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                  {'District: '}
-                  {info.District}
+                  {'Location: '}
+                  {info.Location}
                   <br />
-                  {'County: '}
-                  {info.County}
+                  {'Count: '}
+                  {info.count}
 
                 </div>
               </Popup>
