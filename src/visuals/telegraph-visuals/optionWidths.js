@@ -3,13 +3,35 @@ import * as d3 from 'd3';
 import { optionWidthsData } from './optionWidthsData';
 import './optionWidths.css';
 
-const config = {
-  w: 1000,
-  h: 600,
-  paddingLeft: 100,
-  paddingRight: 300,
-  paddingTop: 100,
-};
+const isMobile = window.innerWidth < 500;
+const config = isMobile
+  ? {
+    // w: 1000,
+    w: window.innerWidth,
+    // h: 600,
+    h: window.innerWidth,
+    // paddingLeft: 100,
+    paddingLeft: window.innerWidth * 0.1,
+    // paddingRight: 300,
+    paddingRight: 75,
+    // paddingRight: window.innerWidth * 0.35,
+    // paddingTop: 100
+    paddingTop: window.innerWidth * 0.075,
+    paddingBot: window.innerWidth * 0.4,
+    fontSize: 12,
+    fontSize2: 10,
+    legend_radius: 3,
+  } : {
+    w: 1000,
+    h: 600,
+    paddingLeft: 100,
+    paddingRight: 300,
+    paddingTop: 100,
+    paddingBot: 150,
+    fontSize: 16,
+    fontSize2: 16,
+    legend_radius: 6,
+  };
 
 const xScale = d3.scaleLinear()
   .domain([0, 60])
@@ -30,12 +52,12 @@ const splitSectionName = (section) => {
 };
 
 const toggleData = (checked) => {
-  const original_data = [...optionWidthsData];
+  const originalData = [...optionWidthsData];
   //   console.log('toggling data', original_data);
-  let data_copy;
+  let dataCopy;
   // if checked return combined + sorted data
   if (checked) {
-    data_copy = original_data.map((o) => {
+    dataCopy = originalData.map((o) => {
       // combine sidewalks
       o.Sidewalk1 += o.Sidewalk2;
       o.Sidewalk2 = 0;
@@ -45,10 +67,10 @@ const toggleData = (checked) => {
       // sort by values???
       return o;
     });
-    // console.log('data after mapping', data_copy);
-    // console.log("updated data", checked, data_copy);
+    // console.log('data after mapping', dataCopy);
+    // console.log("updated data", checked, dataCopy);
   } else {
-    data_copy = [...original_data.map((o) => {
+    dataCopy = [...originalData.map((o) => {
       // split sidewalks
       if ([1, 2, 3, 4].includes(o.Option)) {
         o.Sidewalk1 = 10;
@@ -67,27 +89,27 @@ const toggleData = (checked) => {
       // sort by values???
       return o;
     })];
-    // console.log('original data', data_copy);
-    // console.log("original data", checked, data_copy);
+    // console.log('original data', dataCopy);
+    // console.log("original data", checked, dataCopy);
     // console.log("original OG data", checked, optionWidthsData);
   }
   const keys = Object.keys(optionWidthsData[0]).slice(1, 9);
-  const spread_data = data_copy.map((d) => {
-    const single_object = keys.map((k) => {
+  const spreadData = dataCopy.map((d) => {
+    const singleObject = keys.map((k) => {
       const object = {};
       object.Option = d.Option;
       object.Section = k;
       object.Width = d[k];
       return object;
     });
-    return single_object;
+    return singleObject;
   }).flat();
-  return spread_data;
-  // return data_copy;
+  return spreadData;
+  // return dataCopy;
 };
 
 // road section dict for tooltip and description
-const road_sections = {
+const roadSections = {
   Sidewalk: 'Sidewalk: This is where pedestrians travel.',
   'Curb extension': 'Curb extension: These are extensions of sidewalks into the street. These have many benefits for safety, such as increasing visibility and calming traffic',
   'Bike lane': 'BIke lane: A lane designated for bikes only. These currently exist on Bancroft',
@@ -109,20 +131,20 @@ const OptionWidthBarChart = () => {
   // update data so each section of each option is seperate object, like {Option: 1, Section: Sidwalk, Width: 12}
   const data = optionWidthsData;
   const keys = Object.keys(data[0]).slice(1, 9);
-  const spread_data = data.map((d) => {
-    const single_object = keys.map((k) => {
+  const spreadData = data.map((d) => {
+    const singleObject = keys.map((k) => {
       const object = {};
       object.Option = d.Option;
       object.Section = k;
       object.Width = d[k];
       return object;
     });
-    return single_object;
+    return singleObject;
   }).flat();
-    // console.log('spread data', spread_data);
+    // console.log('spread data', spreadData);
 
   // set inital data using useState
-  const [widthData, setWidthData] = useState(spread_data);
+  const [widthData, setWidthData] = useState(spreadData);
 
   // color scale for viz
   // sidewalk - yellow, curb extension - orange, bike lane - green, shared - purple, bus - blue, parking bay - red
@@ -166,12 +188,12 @@ const OptionWidthBarChart = () => {
       });
     };
     // add tooltip
-    const tooltip_a = d3.select('body')
+    const tooltipA = d3.select('body')
       .append('div')
       .attr('class', 'tooltip')
       .style('opacity', 0);
 
-    const tooltip_b = d3.select('body')
+    const tooltipB = d3.select('body')
       .append('div')
       .attr('class', 'tooltip2')
       .style('opacity', 0);
@@ -187,8 +209,8 @@ const OptionWidthBarChart = () => {
           // offset by previous widths
             .attr('x', (d, i) => {
               // sum of all previous widths
-              const prev_widths = widthData.slice(0, i).map((s) => s.Width);
-              const offset = prev_widths.reduce((sum, width) => sum + width, 0) % 60;
+              const prevWidths = widthData.slice(0, i).map((s) => s.Width);
+              const offset = prevWidths.reduce((sum, width) => sum + width, 0) % 60;
               return xScale(offset);
             })
             .attr('y', (d) => yScale(d.Option))
@@ -198,28 +220,28 @@ const OptionWidthBarChart = () => {
             .style('fill', (d) => colorScale(d.Section))
             .style('stroke', 'black')
             .on('mouseover', function (event, d) {
-              tooltip_a.transition()
+              tooltipA.transition()
                 .duration(200)
                 .style('opacity', 0.9);
-              const tooltip_content = `${splitSectionName(d.Section)}: ${d.Width} feet`;
+              const tooltipContent = `${splitSectionName(d.Section)}: ${d.Width} feet`;
               d3.select(this).moveToFront();
-              tooltip_a.html(tooltip_content)
+              tooltipA.html(tooltipContent)
                 .style('left', `${event.pageX + 10}px`)
                 .style('top', `${event.pageY}px`);
-              tooltip_b.transition()
+              tooltipB.transition()
                 .duration(400)
                 .style('opacity', 0.9);
-              const tooltip_b_content = road_sections[splitSectionName(d.Section)];
+              const tooltipB_content = roadSections[splitSectionName(d.Section)];
               d3.select(this).moveToFront();
-              tooltip_b.html(tooltip_b_content);
+              tooltipB.html(tooltipB_content);
               // .style("left", (event.pageX + 10) + "px")
               // .style("top", (event.pageY) + "px");
             })
             .on('mouseout', (d) => {
-              tooltip_a.transition()
+              tooltipA.transition()
                 .duration(500)
                 .style('opacity', 0);
-              tooltip_b.transition()
+              tooltipB.transition()
                 .duration(500)
                 .style('opacity', 0);
             });
@@ -231,8 +253,8 @@ const OptionWidthBarChart = () => {
           // .delay((d,i)=>i*50)
             .attr('x', (d, i) => {
               // sum of all previous widths
-              const prev_widths = widthData.slice(0, i).map((s) => s.Width);
-              const offset = prev_widths.reduce((sum, width) => sum + width, 0) % 60;
+              const prevWidths = widthData.slice(0, i).map((s) => s.Width);
+              const offset = prevWidths.reduce((sum, width) => sum + width, 0) % 60;
               return xScale(offset);
             })
             .attr('y', (d) => yScale(d.Option))
@@ -264,23 +286,23 @@ const OptionWidthBarChart = () => {
 
     // add legend
     // console.log('legend', customScheme.slice(0, 6));
-    const legend_radius = 6;
+    const legendRadius = 6;
     svg.selectAll('circle')
       .data(customScheme.slice(0, 6))
       .enter()
       .append('circle')
-      .attr('r', legend_radius)
+      .attr('r', legendRadius)
       .attr('cx', config.w - (config.paddingRight * 0.5))
       .attr('cy', (d, i) => config.paddingTop + (i + 1) * 20)
       .attr('fill', (d) => d)
       .attr('stroke', 'black');
 
     svg.selectAll('legend-text')
-      .data(Object.keys(road_sections))
+      .data(Object.keys(roadSections))
       .enter()
       .append('text')
-      .attr('x', config.w - (config.paddingRight * 0.5) + legend_radius * 2)
-      .attr('y', (d, i) => config.paddingTop + (i + 1) * 20 + legend_radius)
+      .attr('x', config.w - (config.paddingRight * 0.5) + legendRadius * 2)
+      .attr('y', (d, i) => config.paddingTop + (i + 1) * 20 + legendRadius)
       .attr('fill', 'black')
       .text((d) => d);
   }, [widthData]);

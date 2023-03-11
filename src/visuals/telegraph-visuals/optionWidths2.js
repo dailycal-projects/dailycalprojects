@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {
+  useState, useRef, useEffect,
+} from 'react';
 import * as d3 from 'd3';
 import { optionWidthsData2 } from './optionWidthsData2.js';
 import './optionWidths.css';
 
-const isMobile = window.innerWidth < 500;
+const isMobile = (typeof window !== 'undefined') ? window.innerWidth < 500 : false;
 const config = isMobile
   ? {
     // w: 1000,
@@ -52,11 +54,11 @@ const splitSectionName = (section) => {
 };
 
 const toggleData = (checked) => {
-  const original_data = [...optionWidthsData2];
+  const originalData = [...optionWidthsData2];
   let data_copy;
   // if checked return combined + sorted data
   if (checked) {
-    data_copy = original_data.map((o) => {
+    data_copy = originalData.map((o) => {
       // combine sidewalks
       o.Sidewalk1 += o.Sidewalk2;
       o.Sidewalk2 = 0;
@@ -70,7 +72,7 @@ const toggleData = (checked) => {
   }
   // else just original data
   else {
-    data_copy = [...original_data.map((o) => {
+    data_copy = [...originalData.map((o) => {
       // split sidewalks
       if (['4d', '4c', '4b', '4a'].includes(o.Option)) {
         o.Sidewalk1 = 19;
