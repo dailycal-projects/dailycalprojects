@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import { optionWidthsData } from './optionWidthsData';
 import './optionWidths.css';
 
-const isMobile = window.innerWidth < 500;
+const isMobile = (typeof window !== 'undefined') ? window.innerWidth < 500 : false;
 const config = isMobile
   ? {
     // w: 1000,
