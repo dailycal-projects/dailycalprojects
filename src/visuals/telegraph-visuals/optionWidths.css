@@ -1,0 +1,40 @@
+.tooltip {
+  position: absolute;
+  text-align: left;
+  font-size: large;
+  padding: 5px;
+  background-color: rgb(233, 233, 233);
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tooltip2 {
+  text-align: left;
+  font-size: large;
+  padding: 5px;
+  /* background-color:rgb(233, 233, 233); */
+  /* border: solid; */
+  border-width: 2px;
+  border-radius: 5px;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* make Option numbers larger */
+.y-axis > .tick > text {
+  font-size: large;
+}
+.x-axis > .tick > text {
+  font-size: medium;
+}
