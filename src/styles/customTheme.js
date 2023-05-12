@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import { createStyles } from '@material-ui/core';
+import { isMobile } from 'react-device-detect';
 import { theme } from './theme';
+import FooterSizing from './footerSizing';
 
 export const styles = () => createStyles({
   main: {
@@ -106,7 +108,7 @@ export const styles = () => createStyles({
     padding: theme.spacing[3],
   },
   articleContent: {
-    fontSize: 18.5,
+    fontSize: 18,
     maxWidth: '100%',
     textAlign: 'justify',
     flexDirection: 'column',
@@ -120,7 +122,7 @@ export const styles = () => createStyles({
   },
   footerContainer: {
     fontSize: theme.spacing[7],
-    maxWidth: '50%',
+    maxWidth: `${FooterSizing(isMobile)}%`,
   },
   footerCard: {
     backgroundColor: '#e9edf0',
