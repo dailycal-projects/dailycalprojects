@@ -1,6 +1,6 @@
 const VisualizationSizing = (isMobile) => {
   if (isMobile) {
-    return 95;
+    return 97.5;
   }
   return 75;
 };

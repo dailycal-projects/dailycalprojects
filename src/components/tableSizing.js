@@ -1,6 +1,6 @@
 const TableSizing = (isMobile) => {
   if (isMobile) {
-    return 95;
+    return 90;
   }
   return 60;
 };

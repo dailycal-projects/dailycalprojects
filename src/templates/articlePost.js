@@ -11,7 +11,8 @@ import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 import ArticleFooter from '../components/articleFooter';
-import StaffDesignations from './staffDesignations';
+import { StaffDesignations } from './staffDesignations';
+import VisualizationSizing from '../components/visualizationSizing';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
@@ -50,8 +51,9 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
           </div>
         ) : null }
         <h5>{frontmatter.date}</h5>
-        <div style={{ margin: 50, fontSize: '18.5px' }}>
+        <div style={{ maxWidth: `${VisualizationSizing(isMobile)}%`, fontSize: '18.5px' }}>
           <GatsbyImage image={image} alt="card illustration" />
+
           <div style={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></div>
           <div><em>{frontmatter.imageCaption2}</em></div>
           <div><em>{frontmatter.imageCaption3}</em></div>

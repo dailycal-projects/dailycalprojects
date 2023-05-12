@@ -1,37 +1,44 @@
-const staffDesignations = {
-  'Cameron Fozi': 'Senior Staff',
-  'Paloma Torres': 'Senior Staff',
-  'Annie Lin': 'Senior Staff',
-  'Veronica Roseborough': 'Senior Staff',
-  'Michelle Li': 'Senior Staff',
-  'Shannon Bonet': 'Senior Staff',
-  'Nibras Suliman': 'Senior Staff',
-  'Isabella Borkovic': 'Senior Staff',
-  'Ananya Rupanagunta': 'Senior Staff',
-  'Aditya Katewa': 'Senior Staff',
-  'Saamya Mungamuru': 'Senior Staff',
-  'Jocelyn Huang': 'Senior Staff',
-  'Mia Wachtel': 'Senior Staff',
-  'Riley Cooke': 'Senior Staff',
-  'Jenny Kwon': 'Staff',
-  'Sanjana Fernando': 'Staff',
-  'Arfa Momin': 'Staff',
-  'Stephen Young': 'Staff',
-  'Erica Jean': 'Staff',
-  'Ekansh Agrawal': 'Senior Staff',
-  'Tyler Wu': 'Staff',
+// Put the name of anyone who has ever been senior staff and has a projects byline
+const seniorStaff = [
+  'Paloma Torres',
+  'Annie Lin',
+  'Veronica Roseborough',
+  'Michelle Li',
+  'Shannon Bonet',
+  'Nibras Suliman',
+  'Isabella Borkovic',
+  'Ekansh Agrawal',
+  'Lydia Sidhom',
+  'Cameron Fozi',
+
+];
+
+export const staffTitles = {
+  titles: [
+    { name: 'Paloma Torres', title: 'the projects editor' },
+    { name: 'Arfa Momin', title: 'a deputy projects editor' },
+    { name: 'Cameron Fozi', title: 'a projects developer and the projects training manager. He was the spring, summer and fall 2022 projects editor' },
+    { name: 'Nibras Suliman', title: 'a projects developer and former deputy projects editor' },
+    { name: 'Isabella Borkovic', title: 'a projects developer and former deputy projects editor' },
+    { name: 'Veronica Roseborough', title: 'a projects developer and former deputy projects editor' },
+    { name: 'Erica Jean', title: 'a projects developer' },
+    { name: 'Tyler Wu', title: 'a projects developer' },
+    { name: 'Lydia Sidhom', title: 'a projects developer' },
+    { name: 'Anishi Patel', title: 'a projects developer' },
+    { name: 'Rayan Taghizadeh', title: 'a projects developer' },
+    { name: 'Anishi Patel', title: 'a projects developer' },
+    { name: 'Annie Lin', title: 'a projects developer' },
+  ],
 };
 
-const StaffDesignations = (bylineNames, author) => {
+export const StaffDesignations = (bylineNames, author) => {
   if (bylineNames.length !== 1) {
     return ' ';
   }
-  const designation = staffDesignations[author];
-  if (designation !== undefined) {
-    return ` | ${staffDesignations[author]}`;
+  const seniorstaff = seniorStaff.includes(author);
+  if (seniorstaff) {
+    return ' | Senior Staff';
   }
 
   return ' | Staff';
 };
-
-export default StaffDesignations;
