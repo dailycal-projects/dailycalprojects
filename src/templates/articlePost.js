@@ -3,11 +3,15 @@ import { graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { isMobile } from 'react-device-detect';
+import { MDXProvider } from '@mdx-js/react';
+import ArticleTags from './articleTags';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 import ArticleFooter from '../components/articleFooter';
+import StaffDesignations from './staffDesignations';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
@@ -16,6 +20,8 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
   const socialImage = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.resize
     : null;
+
+  const component = ArticleTags(isMobile);
 
   return (
     <div className={classes.articleRoot}>
@@ -36,7 +42,8 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
                 <a href={url} target="_blank" style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }} rel="noreferrer">
                   {' '}
                   {author}
-                  {' '}
+                  {StaffDesignations(bylineName, author)}
+
                 </a>
               );
             })}
@@ -54,12 +61,16 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
 
         </div>
 
-        <div className={classes.articleContent}>
-          <MDXRenderer
-            localImages={frontmatter.embeddedImages} // prop that allows <GatsbyImage/> usage possible in MDX
-          >
-            {body}
-          </MDXRenderer>
+        <div
+          className={classes.articleContent}
+        >
+          <MDXProvider components={component}>
+            <MDXRenderer
+              localImages={frontmatter.embeddedImages}
+            >
+              {body}
+            </MDXRenderer>
+          </MDXProvider>
         </div>
 
         <ArticleFooter about={frontmatter.aboutStory} />
