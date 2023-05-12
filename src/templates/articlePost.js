@@ -50,14 +50,14 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
           </div>
         ) : null }
         <h5>{frontmatter.date}</h5>
-        <div style={{ margin: 50 }}>
+        <div style={{ margin: 50, fontSize: '18.5px' }}>
           <GatsbyImage image={image} alt="card illustration" />
           <div style={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></div>
           <div><em>{frontmatter.imageCaption2}</em></div>
           <div><em>{frontmatter.imageCaption3}</em></div>
           <div><em>{frontmatter.imageCaption4}</em></div>
 
-          <h5 style={{ marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
+          <h5 style={{ fontSize: '18.5px', marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
 
         </div>
 

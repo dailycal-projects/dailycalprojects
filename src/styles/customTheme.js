@@ -106,9 +106,11 @@ export const styles = () => createStyles({
     padding: theme.spacing[3],
   },
   articleContent: {
-    fontSize: theme.spacing[1],
-    maxWidth: '75%',
+    fontSize: 18.5,
+    maxWidth: '100%',
     textAlign: 'justify',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   byline: {
     display: 'flex',
