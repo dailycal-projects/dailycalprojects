@@ -23,16 +23,19 @@ const ArtifactsPieChart = () => (
       padding: '15px',
     }}
   >
+
     <div
       style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
-        left: '20px',
+        padding: '30px',
       }}
     >
-      <h4> Minimum number of individuals (MNI) and associated funerary objects (AFO) held by UC Davis and UC Berkeley </h4>
+      <strong>
+        <p> Minimum number of individuals (MNI) and associated funerary objects (AFO) held by UC Davis and UC Berkeley </p>
+      </strong>
     </div>
     <ResponsiveContainer height={650}>
       <PieChart height={650} width={650}>
@@ -44,7 +47,7 @@ const ArtifactsPieChart = () => (
         >
           {
       innerData.map((entry, index) => (
-        <Cell key={`cell-${index}`} fill={colors[index]} />
+        <Cell key={`cell-${entry.name}`} fill={colors[index]} />
       ))
     }
         </Pie>
@@ -58,7 +61,7 @@ const ArtifactsPieChart = () => (
         >
           {
       outerData.map((entry, index) => (
-        <Cell key={`cell-${index}`} fill={colors[index + 2]} />
+        <Cell key={`cell-${entry.name}`} fill={colors[index + 2]} />
       ))
     }
         </Pie>
