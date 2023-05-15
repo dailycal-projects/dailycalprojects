@@ -185,7 +185,7 @@ const OptionWidthViz2 = () => {
       .style('opacity', 0);
 
     // add Option Bars
-    const optionBars = svg.append('g').attr('class', 'rects').selectAll('rect')
+    svg.append('g').attr('class', 'rects').selectAll('rect')
       .data(widthData, (d) => String(d.Option) + d.Section)
       .join(
         (enter) => {
