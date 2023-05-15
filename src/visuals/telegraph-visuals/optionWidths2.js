@@ -2,7 +2,7 @@ import React, {
   useState, useRef, useEffect,
 } from 'react';
 import * as d3 from 'd3';
-import { optionWidthsData2 } from './optionWidthsData2.js';
+import { optionWidthsData2 } from './optionWidthsData2';
 import './optionWidths.css';
 
 const isMobile = (typeof window !== 'undefined') ? window.innerWidth < 500 : false;
@@ -55,50 +55,48 @@ const splitSectionName = (section) => {
 
 const toggleData = (checked) => {
   const originalData = [...optionWidthsData2];
-  let data_copy;
+  let dataCopy;
   // if checked return combined + sorted data
   if (checked) {
-    data_copy = originalData.map((o) => {
+    dataCopy = originalData.map((o) => {
+      const functionO = o;
       // combine sidewalks
-      o.Sidewalk1 += o.Sidewalk2;
-      o.Sidewalk2 = 0;
+      functionO.Sidewalk1 += functionO.Sidewalk2;
+      functionO.Sidewalk2 = 0;
       // combine curb extensions
-      o.CurbExtension1 += o.CurbExtension2;
-      o.CurbExtension2 = 0;
+      functionO.CurbExtension1 += functionO.CurbExtension2;
+      functionO.CurbExtension2 = 0;
       // sort by values???
-      console.log(o);
-      return o;
+      return functionO;
     });
-  }
-  // else just original data
-  else {
-    data_copy = [...originalData.map((o) => {
+  } else {
+    dataCopy = [...originalData.map((o) => {
       // split sidewalks
+      const functionOElse = o;
       if (['4d', '4c', '4b', '4a'].includes(o.Option)) {
-        o.Sidewalk1 = 19;
-        o.Sidewalk2 = 19;
+        functionOElse.Sidewalk1 = 19;
+        functionOElse.Sidewalk2 = 19;
       }
-      return o;
+      return functionOElse;
     })];
-    // console.log('original data2', data_copy);
   }
   const keys = Object.keys(optionWidthsData2[0]).slice(1, 9);
-  const spread_data = data_copy.map((d) => {
-    const single_object = keys.map((k) => {
+  const spreadData = dataCopy.map((d) => {
+    const singleObject = keys.map((k) => {
       const object = {};
       object.Option = d.Option;
       object.Section = k;
       object.Width = d[k];
       return object;
     });
-    return single_object;
+    return singleObject;
   }).flat();
-  return spread_data;
-  // return data_copy;
+  return spreadData;
+  // return dataCopy;
 };
 
 // road section dict for tooltip and description
-const road_sections = {
+const roadSections = {
   Sidewalk: '<b>Sidewalk</b>: This is where pedestrians travel.',
   'Curb extension': '<b>Curb extension</b>: These are extensions of sidewalks into the street. These have many benefits for safety, such as increasing visibility and calming traffic',
   'Bike lane': '<b>Bike lane</b>: A lane designated for bikes only. These currently exist on Bancroft',
@@ -120,20 +118,19 @@ const OptionWidthViz2 = () => {
   // update data so each section of each option is seperate object, like {Option: 1, Section: Sidwalk, Width: 12}
   const data = optionWidthsData2;
   const keys = Object.keys(data[0]).slice(1, 9);
-  const spread_data = data.map((d) => {
-    const single_object = keys.map((k) => {
+  const spreadData = data.map((d) => {
+    const singleObject = keys.map((k) => {
       const object = {};
       object.Option = d.Option;
       object.Section = k;
       object.Width = d[k];
       return object;
     });
-    return single_object;
+    return singleObject;
   }).flat();
-    // console.log('spread data', spread_data);
 
   // set inital data using useState
-  const [widthData, setWidthData] = useState(spread_data);
+  const [widthData, setWidthData] = useState(spreadData);
 
   // color scale for viz
   // sidewalk - yellow, curb extension - orange, bike lane - green, shared - purple, bus - blue, parking bay - red
@@ -171,18 +168,18 @@ const OptionWidthViz2 = () => {
       .call(yAxis);
 
     // move fn
-    d3.selection.prototype.moveToFront = function () {
-      return this.each(function () {
+    d3.selection.prototype.moveToFront = function moveToFront1() {
+      return this.each(function moveToFront2() {
         this.parentNode.appendChild(this);
       });
     };
     // add tooltip
-    const tooltip_a = d3.select('body')
+    const tooltipA = d3.select('body')
       .append('div')
       .attr('class', 'tooltip')
       .style('opacity', 0);
 
-    const tooltip_b = d3.select('body')
+    const tooltipB = d3.select('body')
       .append('div')
       .attr('class', 'tooltip2')
       .style('opacity', 0);
@@ -198,39 +195,39 @@ const OptionWidthViz2 = () => {
           // offset by previous widths
             .attr('x', (d, i) => {
               // sum of all previous widths
-              const prev_widths = widthData.slice(0, i).map((s) => s.Width);
-              const offset = prev_widths.reduce((sum, width) => sum + width, 0) % 60;
+              const prevWidths = widthData.slice(0, i).map((s) => s.Width);
+              const offset = prevWidths.reduce((sum, width) => sum + width, 0) % 60;
               return xScale(offset);
             })
             .attr('y', (d) => yScale(d.Option))
-            .attr('width', (d, i) => xScale(d.Width))
+            .attr('width', (d) => xScale(d.Width))
             .attr('height', yScale.bandwidth)
             .attr('transform', `translate(${config.paddingLeft},0)`)
             .style('fill', (d) => colorScale(d.Section))
             .style('stroke', 'black')
-            .on('mouseover', function (event, d) {
-              tooltip_a.transition()
+            .on('mouseover', function mouseAction(event, d) {
+              tooltipA.transition()
                 .duration(200)
                 .style('opacity', 0.9);
-              const tooltip_content = `${splitSectionName(d.Section)}: ${d.Width} feet`;
+              const tooltipContent = `${splitSectionName(d.Section)}: ${d.Width} feet`;
               d3.select(this).moveToFront();
-              tooltip_a.html(tooltip_content)
+              tooltipA.html(tooltipContent)
                 .style('left', `${event.pageX + 10}px`)
                 .style('top', `${event.pageY}px`);
-              tooltip_b.transition()
+              tooltipB.transition()
                 .duration(400)
                 .style('opacity', 0.9);
-              const tooltip_b_content = road_sections[splitSectionName(d.Section)];
+              const tooltipBContent = roadSections[splitSectionName(d.Section)];
               d3.select(this).moveToFront();
-              tooltip_b.html(tooltip_b_content);
+              tooltipB.html(tooltipBContent);
               // .style("left", (event.pageX + 10) + "px")
               // .style("top", (event.pageY) + "px");
             })
-            .on('mouseout', (d) => {
-              tooltip_a.transition()
+            .on('mouseout', () => {
+              tooltipA.transition()
                 .duration(500)
                 .style('opacity', 0);
-              tooltip_b.transition()
+              tooltipB.transition()
                 .duration(500)
                 .style('opacity', 0);
             });
@@ -242,12 +239,12 @@ const OptionWidthViz2 = () => {
           // .delay((d,i)=>i*50)
             .attr('x', (d, i) => {
               // sum of all previous widths
-              const prev_widths = widthData.slice(0, i).map((s) => s.Width);
-              const offset = prev_widths.reduce((sum, width) => sum + width, 0) % 60;
+              const prevWidths = widthData.slice(0, i).map((s) => s.Width);
+              const offset = prevWidths.reduce((sum, width) => sum + width, 0) % 60;
               return xScale(offset);
             })
             .attr('y', (d) => yScale(d.Option))
-            .attr('width', (d, i) => xScale(d.Width));
+            .attr('width', (d) => xScale(d.Width));
         },
       );
 
@@ -305,7 +302,7 @@ const OptionWidthViz2 = () => {
       .attr('stroke', 'black');
 
     svg.selectAll('legend-text')
-      .data(Object.keys(road_sections).slice(0, 5))
+      .data(Object.keys(roadSections).slice(0, 5))
       .enter()
       .append('text')
       .attr('x', isMobile ? config.paddingLeft + config.legend_radius * 1.5 : config.w - (config.paddingRight * 0.5) + config.legend_radius * 2)
