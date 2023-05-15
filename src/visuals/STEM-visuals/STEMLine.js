@@ -9,7 +9,7 @@ import {
   Label,
   ResponsiveContainer,
 } from 'recharts';
-import { STEMEnrollmentData } from './STEMLineData';
+import STEMEnrollmentData from './STEMLineData';
 
 const AlignedAxisLabel = ({
   axisType,

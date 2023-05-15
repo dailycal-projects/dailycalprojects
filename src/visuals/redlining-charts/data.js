@@ -1,4 +1,4 @@
-export const allData = [
+const allData = [
   {
     zip: 94702,
     lead_risk: 75.36,
@@ -700,3 +700,5 @@ export const allData = [
     pop_char_pctl: 'NA',
   },
 ];
+
+export default allData;

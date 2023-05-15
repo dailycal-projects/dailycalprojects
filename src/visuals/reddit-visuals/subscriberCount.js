@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { data } from './subscriberCountData';
+import data from './subscriberCountData';
 
 const SubscriberLineChart = () => (
   <div>

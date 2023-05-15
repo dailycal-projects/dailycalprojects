@@ -1,4 +1,4 @@
-export const STEMEnrollmentData = [
+const STEMEnrollmentData = [
   {
     year: '2012-13',
     EECS: 1177.5,
@@ -200,3 +200,5 @@ export const STEMEnrollmentData = [
     SOCIOL: null,
   },
 ];
+
+export default STEMEnrollmentData;

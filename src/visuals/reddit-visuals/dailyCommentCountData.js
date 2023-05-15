@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   { date: '01/05/2009', 'Number of comments': 1, amount: 100 },
   { date: '02/16/2009', 'Number of comments': 2, amount: 100 },
   { date: '03/23/2009', 'Number of comments': 1, amount: 100 },
@@ -575,3 +575,5 @@ export const data = [
   { date: '07/11/2022', 'Number of comments': 603, amount: 100 },
   { date: '07/18/2022', 'Number of comments': 82, amount: 100 },
 ];
+
+export default data;

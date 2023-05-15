@@ -100,7 +100,7 @@ const bounds4225 = [
   [37.875044, -122.259917],
 ];
 
-export const data = {
+const data = {
 
   info: [
     {
@@ -175,3 +175,5 @@ export const data = {
   maxLong: -122.2319033,
 
 };
+
+export default data;

@@ -35,8 +35,6 @@ function Seo({
     ? `${metaImage.src}`
     : null;
 
-  console.log(image);
-
   return (
     <Helmet
       htmlAttributes={{

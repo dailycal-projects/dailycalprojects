@@ -9,7 +9,7 @@ import {
   MenuItem,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { accessData } from './unionVoteData';
+import accessData from './unionVoteData';
 
 class CustomizedAxisTick extends Component {
   render() {

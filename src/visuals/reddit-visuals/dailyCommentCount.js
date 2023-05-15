@@ -8,12 +8,12 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { data } from './dailyCommentCountData.js';
+import data from './dailyCommentCountData';
 
 class CustomizedAxisTick extends Component {
   render() {
     const {
-      x, y, stroke, payload,
+      x, y, payload,
     } = this.props;
 
     return (

@@ -1,4 +1,4 @@
-export const districtData = {
+const districtData = {
   info:
 [{
   District: 'Alameda Unified',
@@ -3883,3 +3883,4 @@ export const districtData = {
   minLong: -122.3256618,
   maxLong: -122.2319033,
 };
+export default districtData;

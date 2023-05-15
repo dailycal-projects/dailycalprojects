@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { allData } from '../data';
+import allData from '../data';
 import ScatterPlot from '../scatterPlot';
 import Key from '../dataKey';
 import ButtonList from '../../../components/buttonList';

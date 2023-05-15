@@ -9,12 +9,12 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { allData } from './HSIData';
+import allData from './HSIData';
 
 class CustomizedAxisTick extends Component {
   render() {
     const {
-      x, y, stroke, payload,
+      x, y, payload,
     } = this.props;
 
     return (

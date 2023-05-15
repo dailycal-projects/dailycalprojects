@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import { optionWidthsData } from './optionWidthsData';
+import optionWidthsData from './optionWidthsData';
 import './optionWidths.css';
 
 const isMobile = (typeof window !== 'undefined') ? window.innerWidth < 500 : false;
