@@ -125,6 +125,7 @@ export const styles = () => createStyles({
     maxWidth: `${FooterSizing(isMobile)}%`,
   },
   footerCard: {
+    fontSize: 18,
     backgroundColor: '#e9edf0',
     padding: '25px 25px 10px 25px',
     margin: '10px 0px 20px 0px',

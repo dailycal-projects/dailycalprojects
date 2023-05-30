@@ -46,7 +46,8 @@
     "react-typography": "^0.16.20",
     "recharts": "^2.0.10",
     "typescript": "^4.3.5",
-    "typography": "^0.16.21"
+    "typography": "^0.16.21",
+    "typography-theme-doelger": "^0.16.19"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.1",

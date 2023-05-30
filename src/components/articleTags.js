@@ -1,5 +1,4 @@
 import React from 'react';
-import Sizing from '../components/visualizationSizing';
 
 const ArticleTags = (isMobile) => {
   let component;
@@ -8,7 +7,7 @@ const ArticleTags = (isMobile) => {
     const MobileParagraph = (props) => (
       <p
         style={{
-          width: '75%',
+          width: '80%',
           fontSize: '18px',
           display: 'block',
           verticalAlign: 'middle',
@@ -23,7 +22,7 @@ const ArticleTags = (isMobile) => {
     const MobileHeader1 = (props) => (
       <h1
         style={{
-          width: '75%',
+          width: '80%',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',
@@ -37,7 +36,7 @@ const ArticleTags = (isMobile) => {
     const MobileHeader2 = (props) => (
       <h2
         style={{
-          width: '75%',
+          width: '80%',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',
@@ -51,7 +50,7 @@ const ArticleTags = (isMobile) => {
     const MobileHeader3 = (props) => (
       <h3
         style={{
-          width: '75%',
+          width: '80%',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',
@@ -65,7 +64,7 @@ const ArticleTags = (isMobile) => {
     const MobileHeader4 = (props) => (
       <h4
         style={{
-          width: '75%',
+          width: '80%',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',
@@ -79,7 +78,7 @@ const ArticleTags = (isMobile) => {
     const MobileBody = (props) => (
       <body
         style={{
-          width: '75%',
+          width: '80%',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',
@@ -93,7 +92,7 @@ const ArticleTags = (isMobile) => {
     const MobileOl = (props) => (
       <ol
         style={{
-          width: '47.5%',
+          width: '80%',
           fontSize: '18px',
           display: 'block',
           verticalAlign: 'middle',
@@ -121,7 +120,7 @@ const ArticleTags = (isMobile) => {
       <p
         style={{
           width: '47.5%',
-          fontSize: '18px',
+          fontSize: '19px',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',

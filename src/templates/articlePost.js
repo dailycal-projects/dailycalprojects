@@ -4,8 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { isMobile } from 'react-device-detect';
-import { MDXProvider } from '@mdx-js/react';
-import ArticleTags from './articleTags';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
@@ -21,8 +19,6 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
   const socialImage = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.resize
     : null;
-
-  const component = ArticleTags(isMobile);
 
   return (
     <div className={classes.articleRoot}>
@@ -66,13 +62,11 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
         <div
           className={classes.articleContent}
         >
-          <MDXProvider components={component}>
-            <MDXRenderer
-              localImages={frontmatter.embeddedImages}
-            >
-              {body}
-            </MDXRenderer>
-          </MDXProvider>
+          <MDXRenderer
+            localImages={frontmatter.embeddedImages}
+          >
+            {body}
+          </MDXRenderer>
         </div>
 
         <ArticleFooter about={frontmatter.aboutStory} />

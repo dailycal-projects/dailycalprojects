@@ -3,6 +3,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { isMobile } from 'react-device-detect';
 import { theme } from '../styles/theme';
+import ArticleTags from './articleTags';
 import VisualizationSizing from './visualizationSizing';
 import TableSizing from './tableSizing';
 import WaterPlot from '../visuals/redlining-charts/scatterplots/waterPlot';
@@ -57,11 +58,12 @@ Note: MDXProvider doesn't like parsing individual HTML elements followed
 by an array of React components, so we must include them in the same array.
 */
 
+const component = ArticleTags(isMobile);
+
 const shortcodes = {
   // style MDX files for any html element here!!
   a: (props) => (
     <a {...props} style={{ textDecoration: 'underline', color: theme.palette.black }} />), // styles MDX hyperlinks
-  p: (props) => <p {...props} style={{ color: theme.palette.black }} />,
   img: (props) => <img {...props} style={{ display: 'flex', flexDirection: 'column' }} />,
   // cap: (props) => <cap {...props} style={{ text:  }} />,
   GatsbyImage: (props) => (
@@ -421,7 +423,7 @@ const shortcodes = {
 export default function Layout({ children }) {
   return (
     <MDXProvider
-      components={shortcodes}
+      components={({ ...component, ...shortcodes })}
     >
       {children}
     </MDXProvider>

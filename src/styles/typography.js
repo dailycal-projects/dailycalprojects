@@ -14,6 +14,7 @@ export const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
+
   bodyFontFamily: [
     'Open Sans',
     '-apple-system',

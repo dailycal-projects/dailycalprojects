@@ -16,7 +16,7 @@ const seniorStaff = [
 export const staffTitles = {
   titles: [
     { name: 'Paloma Torres', title: 'the projects editor' },
-    { name: 'Arfa Momin', title: 'a deputy projects editor' },
+    { name: 'Arfa Momin', title: 'the deputy projects editor' },
     { name: 'Cameron Fozi', title: 'a projects developer and the projects training manager. He was the spring, summer and fall 2022 projects editor' },
     { name: 'Nibras Suliman', title: 'a projects developer and former deputy projects editor' },
     { name: 'Isabella Borkovic', title: 'a projects developer and former deputy projects editor' },
