@@ -10,7 +10,6 @@ import {
   ReferenceLine,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   // Legend,
   Label,
@@ -56,7 +55,7 @@ function WarnmeHistogram() {
           left: '20px',
         }}
       >
-        <h4> Time Lag Between When Incident Reported and When WarnMe Sent</h4>
+        <h4> Discrepancy between time of incident report and time of WarnMe email </h4>
       </div>
       <FormControl className={classes.formControl}>
         <InputLabel>Select semester</InputLabel>
@@ -66,6 +65,7 @@ function WarnmeHistogram() {
           name="region"
           onChange={handleChange}
           defaultValue="All semesters"
+          autowidth
         >
           <MenuItem value="All semesters">All semesters</MenuItem>
           <MenuItem value="Fall 2021">Fall 2021</MenuItem>
@@ -88,7 +88,6 @@ function WarnmeHistogram() {
             bottom: 40,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
           <YAxis
             label={{
               value: 'Number of emails sent',
@@ -103,9 +102,7 @@ function WarnmeHistogram() {
                   bin,
                   'Number of emails sent': count,
                 } = payload[0].payload;
-
                 let semesterCount = '98';
-
                 if (Sem.semester !== 'All semesters') {
                   if (Sem.semester === 'Fall 2021') {
                     semesterCount = '32';
