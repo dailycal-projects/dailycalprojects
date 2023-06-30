@@ -44,6 +44,7 @@ import UnionVoteBarChart from '../visuals/union-vote-visuals/unionVoteBarChart';
 import TimeDoctorateBarChart from '../visuals/union-vote-visuals/timeDoctorateBarChart';
 import UniversityRentMap from '../visuals/rent-map-visuals/universityRentMap';
 import OptionWidthViz2 from '../visuals/telegraph-visuals/optionWidths2';
+import WarnmeHistogram from '../visuals/warnme-visuals/warnmeHistogram';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -103,6 +104,7 @@ const shortcodes = {
   TimeDoctorateBarChart,
   UniversityRentMap,
   OptionWidthViz2,
+  WarnmeHistogram,
 };
 
 export default function Layout({ children }) {
