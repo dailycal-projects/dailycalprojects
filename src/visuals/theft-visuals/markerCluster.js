@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  MapContainer, CircleMarker, TileLayer, Popup, // Map is outdated; Leaflet now uses MapContainer
+  MapContainer, Circle, TileLayer, Popup, Marker, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { HeatmapLayer } from 'react-leaflet-heatmap-layer-v3';
@@ -11,9 +11,48 @@ import {
   MenuItem,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import MarkerClusterGroup from 'react-leaflet-markercluster';
+import L from 'leaflet';
 import { buttonMapData } from './buttonMapData';
+import scooterIconPng from '../../images/electric_scooter.png'; // path to your local PNG file
+import bikeIconPng from '../../images/bike.png';
 
-function ButtonMap() {
+const icons = {
+  Bikes: bikeIcon,
+  'E-Scooters': scooterIcon,
+};
+
+const bikeIcon = L.icon({
+  iconUrl: bikeIconPng,
+  iconSize: [30, 30], // set the size of the icon
+});
+
+const scooterIcon = L.icon({
+  iconUrl: scooterIconPng,
+  iconSize: [30, 30], // set the size of the icon
+});
+
+const customClusterIcon = L.divIcon({
+  html: '<div><span></span></div>', // use a span element to display the number
+  className: 'custom-cluster-icon', // set a custom class name for styling
+  iconSize: [40, 40], // set the size of the icon
+});
+
+function createIcon(vehicleType, size) {
+  let icon;
+  if (vehicleType === 'E-Scooters') {
+    icon = scooterIconPng;
+  } else {
+    icon = bikeIconPng;
+  }
+
+  return L.icon({
+    iconUrl: icon,
+    iconSize: [size * 2, size * 2], // set the size of the icon
+  });
+}
+
+function MarkerClusterMap() {
   const minLat = 37.8503526;
   const maxLat = 37.899434;
   const minLong = -122.3256618;
@@ -41,13 +80,13 @@ function ButtonMap() {
 
   const classes = useStyles();
 
-  const [county, setCounty] = React.useState({
-    name: 'E-Scooters',
+  const [vehicleType, setVehicleType] = React.useState({
+    name: 'Bikes',
   });
 
   const handleChange = (event) => {
     const { value } = event.target;
-    setCounty({
+    setVehicleType({
       name: value,
     });
   };
@@ -72,7 +111,7 @@ function ButtonMap() {
       <FormControl className={classes.formControl}>
         <InputLabel>Select vehicle</InputLabel>
         <Select
-          value={county.name}
+          value={vehicleType.name}
           id="regionSelector"
           name="region"
           onChange={handleChange}
@@ -90,7 +129,7 @@ function ButtonMap() {
           scrollWheelZoom={false}
           minZoom={7}
           style={containerStyle}
-          zoom={7.5}
+          zoom={14}
           center={[centerLat, centerLong]}
           bounds={[
             [minLat - bufferLat, minLong - bufferLong],
@@ -99,40 +138,23 @@ function ButtonMap() {
         >
           <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
-          <HeatmapLayer
-            fitBoundsOnLoad
-            fitBoundsOnUpdate
-            points={buttonMapData[county.name]}
-            longitudeExtractor={(m) => m.center[1]}
-            latitudeExtractor={(m) => m.center[0]}
-            intensityExtractor={(m) => 1}
-            useLocalExtrema={false}
-          />
-
-          {buttonMapData2[county.name].map((info, k) => (
-            <CircleMarker
-              key={k}
-              center={[info.center[0], info.center[1]]}
-              radius={3}
-              color="#fab081"
-              fillOpacity={0.6}
-            >
-              <Popup>
-                <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                  {'Location: '}
-                  {info.Location}
-                  <br />
-                  {'Count: '}
-                  {info.count}
-
-                </div>
-              </Popup>
-            </CircleMarker>
-          ))}
+          <MarkerClusterGroup>
+            {buttonMapData[vehicleType.name].map((info, k) => (
+              <Marker
+                position={[info.center[0], info.center[1]]}
+                key={k}
+                icon={createIcon(vehicleType.name, 15)}
+                title={info.Location}
+              >
+                <Popup>{info.Location}</Popup>
+              </Marker>
+            ))}
+          </MarkerClusterGroup>
         </MapContainer>
       ) : <p> Map is loading... </p>}
     </div>
+
   );
 }
 
-export default ButtonMap;
+export default MarkerClusterMap;
