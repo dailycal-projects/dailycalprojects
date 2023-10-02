@@ -33,6 +33,8 @@ import ProposalsAR from '../visuals/bargaining-visuals/proposalsAR';
 import ProposalsPostocs from '../visuals/bargaining-visuals/proposalsPostdocs';
 import ProposalsSR from '../visuals/bargaining-visuals/proposalsSR';
 import ButtonMap from '../visuals/theft-visuals/buttonMap';
+import MarkerClusterMap from '../visuals/theft-visuals/markerCluster';
+import TheftsPerYearBarChart from '../visuals/theft-visuals/theftsPerYearBarChart';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -81,6 +83,8 @@ const shortcodes = {
   ProposalsSR,
   ProposalsPostocs,
   ButtonMap,
+  MarkerClusterMap,
+  TheftsPerYearBarChart,
 };
 
 export default function Layout({ children }) {

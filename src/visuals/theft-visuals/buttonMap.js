@@ -109,7 +109,7 @@ function ButtonMap() {
             useLocalExtrema={false}
           />
 
-          {buttonMapData2[county.name].map((info, k) => (
+          {buttonMapData[county.name].map((info, k) => (
             <CircleMarker
               key={k}
               center={[info.center[0], info.center[1]]}
