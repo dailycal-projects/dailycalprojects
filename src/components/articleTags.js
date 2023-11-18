@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react';
 
 const ArticleTags = (isMobile) => {
@@ -111,7 +113,6 @@ const ArticleTags = (isMobile) => {
       h2: MobileHeader2,
       h3: MobileHeader3,
       h4: MobileHeader4,
-      body: MobileBody,
       ol: MobileOl,
 
     };

@@ -9,7 +9,6 @@ import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 import ArticleFooter from '../components/articleFooter';
-import { StaffDesignations } from './staffDesignations';
 import VisualizationSizing from '../components/visualizationSizing';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
@@ -37,10 +36,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
               const url = bylineUrl[i];
               return (
                 <a href={url} target="_blank" style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }} rel="noreferrer">
-                  {' '}
                   {author}
-                  {StaffDesignations(bylineName, author)}
-
                 </a>
               );
             })}
