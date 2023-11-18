@@ -1466,7 +1466,7 @@ export const infoSR = {
   },
   'Transitional funding': {
     proposals: TransitionalfundingProposals,
-    intro: 'The union’s July 13, 2022, proposal pertained to the funds provided to SRs to aid in their transitions from \"unhealthy or unproductive research situations.\" The UAW withdrew this article by a Dec. 16 tentative agreement.',
+    intro: 'The union’s July 13, 2022, proposal pertained to the funds provided to SRs to aid in their transitions from "unhealthy or unproductive research situations." The UAW withdrew this article by a Dec. 16 tentative agreement.',
 
   },
   Travel: {

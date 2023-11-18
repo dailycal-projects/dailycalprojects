@@ -53,7 +53,7 @@ const Timeline1921 = () => (
           About 25 gather to protest the university&apos;s plan to purchase 1921 Walnut St.
         </p>
         <p>
-          A resident since 1989, Davone Riddick, said, &quot;This apartment really means a lot to me because I grew up here, and I have a lot of history here.​​&quot;
+          A resident since 1989, Davone Riddick, said, “This apartment really means a lot to me because I grew up here, and I have a lot of history here.​​​​&quot;
         </p>
         <p>
           Backing up the tenants were members of the Berkeley Tenants Union and the Eviction Defense Center. Representatives from Arreguín&apos;s office, as well as the office of Councilmember Kate Harrison, were there.

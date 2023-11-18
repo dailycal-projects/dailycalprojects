@@ -1,4 +1,4 @@
-export const berkACBlackCensus = [
+const berkACBlackCensus = [
   {
     year: '1950',
     Berkeley: 13289,
@@ -40,3 +40,5 @@ export const berkACBlackCensus = [
     'Alameda County': 185059,
   },
 ];
+
+export default berkACBlackCensus;

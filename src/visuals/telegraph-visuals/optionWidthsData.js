@@ -1,4 +1,4 @@
-export const optionWidthsData = [
+const optionWidthsData = [
   {
     Option: 1,
     Sidewalk1: 10,
@@ -65,3 +65,5 @@ export const optionWidthsData = [
     Note: 'One Way',
   },
 ];
+
+export default optionWidthsData;

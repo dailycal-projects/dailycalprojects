@@ -230,9 +230,11 @@ const percASE = [
   },
 ];
 
-export const accessData = {
+const accessData = {
   'Student researchers Number of votes': numSR,
   'Student researchers Percent of votes': percSR,
   'Academic student employees Number of votes': numASE,
   'Academic student employees Percent of votes': percASE,
 };
+
+export default accessData;

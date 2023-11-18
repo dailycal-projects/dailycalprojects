@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -49,6 +51,7 @@ import UnionVoteBarChart from '../visuals/union-vote-visuals/unionVoteBarChart';
 import TimeDoctorateBarChart from '../visuals/union-vote-visuals/timeDoctorateBarChart';
 import UniversityRentMap from '../visuals/rent-map-visuals/universityRentMap';
 import OptionWidthViz2 from '../visuals/telegraph-visuals/optionWidths2';
+import WarnmeHistogram from '../visuals/warnme-visuals/warnmeHistogram';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -416,6 +419,14 @@ const shortcodes = {
     }}
     >
       <OptionWidthViz2 />
+    </div>
+  ),
+  WarnmeHistogram: () => (
+    <div style={{
+      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <WarnmeHistogram />
     </div>
   ),
 };

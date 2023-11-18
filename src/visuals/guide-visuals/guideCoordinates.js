@@ -2,7 +2,7 @@
 // Purple = Shopping
 // Pink = Hangout Spots
 
-export const data = {
+const data = {
   info: [
     {
       name: 'Artichoke Basille’s Pizza',
@@ -233,3 +233,5 @@ export const data = {
   minLong: -122.3256618,
   maxLong: -122.2319033,
 };
+
+export default data;
