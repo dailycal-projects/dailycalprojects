@@ -18,11 +18,12 @@ const staffTitles = {
     { name: 'Rayan Taghizadeh', title: 'a projects developer' },
     { name: 'Mark Verzhbinsky', title: 'a projects developer' },
     { name: 'Lauren Lee', title: 'a projects developer' },
+    { name: 'Riya Chopra', title: 'a projects developer' },
     { name: 'Clara Brownstein', title: 'a projects developer' },
+    { name: 'Angela Bi', title: 'a projects developer' },
     { name: 'Emile Shah', title: 'a projects developer' },
     { name: 'Anika Sikka', title: 'a projects developer' },
     { name: 'Anishi Patel', title: 'a projects developer' },
-    { name: 'Riya Chopra', title: 'a projects developer' },
     { name: 'Claire Roach', title: 'a projects developer' },
   ],
 };
