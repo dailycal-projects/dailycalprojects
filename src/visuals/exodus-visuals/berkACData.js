@@ -1,4 +1,4 @@
-export const berkACData = [
+const berkACData = [
   {
     year: '1993-94',
     'Alameda County': 44130,
@@ -140,3 +140,5 @@ export const berkACData = [
     Berkeley: 1193,
   },
 ];
+
+export default berkACData;

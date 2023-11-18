@@ -1,4 +1,4 @@
-export const allData = [
+const allData = [
   {
     name: '1984',
     Undergraduate: 6.1,
@@ -274,3 +274,5 @@ export const allData = [
   },
 
 ];
+
+export default allData;

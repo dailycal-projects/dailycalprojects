@@ -47,16 +47,19 @@ function ArtifactsBarChart() {
         padding: '20px',
       }}
     >
+
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
-          left: '20px',
+          padding: '30px',
         }}
       >
-        <h4> Number of cultural objects and human remains held by five UC campuses separated by origin </h4>
+        <strong>
+          <p> Number of cultural objects and human remains held by five UC campuses separated by origin </p>
+        </strong>
       </div>
       <FormControl className={classes.formControl}>
         <InputLabel>Select campus</InputLabel>

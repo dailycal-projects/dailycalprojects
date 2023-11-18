@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import { optionWidthsData } from './optionWidthsData';
+import optionWidthsData from './optionWidthsData';
 import './optionWidths.css';
 
 const isMobile = (typeof window !== 'undefined') ? window.innerWidth < 500 : false;
@@ -58,36 +58,38 @@ const toggleData = (checked) => {
   // if checked return combined + sorted data
   if (checked) {
     dataCopy = originalData.map((o) => {
+      const functionOIf = o;
       // combine sidewalks
-      o.Sidewalk1 += o.Sidewalk2;
-      o.Sidewalk2 = 0;
+      functionOIf.Sidewalk1 += functionOIf.Sidewalk2;
+      functionOIf.Sidewalk2 = 0;
       // combine curb extensions
-      o.CurbExtension1 += o.CurbExtension2;
-      o.CurbExtension2 = 0;
+      functionOIf.CurbExtension1 += functionOIf.CurbExtension2;
+      functionOIf.CurbExtension2 = 0;
       // sort by values???
-      return o;
+      return functionOIf;
     });
     // console.log('data after mapping', dataCopy);
     // console.log("updated data", checked, dataCopy);
   } else {
     dataCopy = [...originalData.map((o) => {
+      const functionOElse = o;
       // split sidewalks
-      if ([1, 2, 3, 4].includes(o.Option)) {
-        o.Sidewalk1 = 10;
-        if (o.Option === 4) {
-          o.Sidewalk2 = 12;
+      if ([1, 2, 3, 4].includes(functionOElse.Option)) {
+        functionOElse.Sidewalk1 = 10;
+        if (functionOElse.Option === 4) {
+          functionOElse.Sidewalk2 = 12;
         } else {
-          o.Sidewalk2 = 10;
+          functionOElse.Sidewalk2 = 10;
         }
       }
       // }
       // split curb extensions
-      if (o.Option === 2 || o.Option === 3) {
-        o.CurbExtension1 = 6;
-        o.CurbExtension2 = 6;
+      if (functionOElse.Option === 2 || functionOElse.Option === 3) {
+        functionOElse.CurbExtension1 = 6;
+        functionOElse.CurbExtension2 = 6;
       }
       // sort by values???
-      return o;
+      return functionOElse;
     })];
     // console.log('original data', dataCopy);
     // console.log("original data", checked, dataCopy);
@@ -182,8 +184,8 @@ const OptionWidthBarChart = () => {
       .call(yAxis);
 
     // move fn
-    d3.selection.prototype.moveToFront = function () {
-      return this.each(function () {
+    d3.selection.prototype.moveToFront = function moveToFront1() {
+      return this.each(function moveToFront2() {
         this.parentNode.appendChild(this);
       });
     };
@@ -199,7 +201,7 @@ const OptionWidthBarChart = () => {
       .style('opacity', 0);
 
     // add Option Bars
-    const optionBars = svg.selectAll('rect')
+    svg.selectAll('rect')
       .data(widthData, (d) => String(d.Option) + d.Section)
       .join(
         (enter) => {
@@ -214,12 +216,12 @@ const OptionWidthBarChart = () => {
               return xScale(offset);
             })
             .attr('y', (d) => yScale(d.Option))
-            .attr('width', (d, i) => xScale(d.Width))
+            .attr('width', (d) => xScale(d.Width))
             .attr('height', yScale.bandwidth)
             .attr('transform', `translate(${config.paddingLeft},0)`)
             .style('fill', (d) => colorScale(d.Section))
             .style('stroke', 'black')
-            .on('mouseover', function (event, d) {
+            .on('mouseover', function mouseover(event, d) {
               tooltipA.transition()
                 .duration(200)
                 .style('opacity', 0.9);
@@ -231,13 +233,13 @@ const OptionWidthBarChart = () => {
               tooltipB.transition()
                 .duration(400)
                 .style('opacity', 0.9);
-              const tooltipB_content = roadSections[splitSectionName(d.Section)];
+              const tooltipBContent = roadSections[splitSectionName(d.Section)];
               d3.select(this).moveToFront();
-              tooltipB.html(tooltipB_content);
+              tooltipB.html(tooltipBContent);
               // .style("left", (event.pageX + 10) + "px")
               // .style("top", (event.pageY) + "px");
             })
-            .on('mouseout', (d) => {
+            .on('mouseout', () => {
               tooltipA.transition()
                 .duration(500)
                 .style('opacity', 0);
@@ -258,7 +260,7 @@ const OptionWidthBarChart = () => {
               return xScale(offset);
             })
             .attr('y', (d) => yScale(d.Option))
-            .attr('width', (d, i) => xScale(d.Width));
+            .attr('width', (d) => xScale(d.Width));
         },
       );
 

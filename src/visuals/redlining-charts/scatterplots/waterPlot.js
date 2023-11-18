@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ButtonList from '../../../components/buttonList';
 import Key from '../dataKey';
-import { allData } from '../data';
+import allData from '../data';
 import ScatterPlot from '../scatterPlot';
 
 const WaterPlot = () => {

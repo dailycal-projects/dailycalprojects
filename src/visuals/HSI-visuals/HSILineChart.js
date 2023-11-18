@@ -9,12 +9,12 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { allData } from './HSIData';
+import allData from './HSIData';
 
 class CustomizedAxisTick extends Component {
   render() {
     const {
-      x, y, stroke, payload,
+      x, y, payload,
     } = this.props;
 
     return (
@@ -36,16 +36,19 @@ const HSILineChart = () => (
         padding: '20px',
       }}
     >
+
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
-          left: '20px',
+          padding: '30px',
         }}
       >
-        <h4> Percent composition of Latine and Hispanic students across UC Berkeley and California K-12 public schools </h4>
+        <strong>
+          <p> Percent composition of Latine and Hispanic students across UC Berkeley and California K-12 public schools </p>
+        </strong>
       </div>
       <ResponsiveContainer height={550}>
         <LineChart
