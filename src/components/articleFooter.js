@@ -41,7 +41,7 @@ const ArticleFooter = ({ classes, about }) => (
         to support our coverage.
       </p>
     </div>
-    <p style={{ paddingLeft: '5px' }}> Copyright © 2022 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
+    <p style={{ paddingLeft: '5px' }}> Copyright © 2023 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
   </div>
 );
 

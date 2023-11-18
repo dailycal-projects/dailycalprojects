@@ -10,6 +10,7 @@ import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 import ArticleFooter from '../components/articleFooter';
 import VisualizationSizing from '../components/visualizationSizing';
+// import StickyHeader from './stickyHeader';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
@@ -20,7 +21,10 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
     : null;
 
   return (
+  // <div>
+  // <StickyHeader />
     <div className={classes.articleRoot}>
+
       <Layout>
         <SEO
           title={frontmatter.title}
@@ -68,6 +72,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
         <ArticleFooter about={frontmatter.aboutStory} />
       </Layout>
     </div>
+  // </div>
   );
 };
 
