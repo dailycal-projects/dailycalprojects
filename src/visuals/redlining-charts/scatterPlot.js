@@ -64,11 +64,8 @@ const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
   return (
     <ResponsiveContainer width="100%" height={550}>
       <ScatterChart
-        padding={{
-          top: 0, right: 10, bottom: 0, left: 10,
-        }}
         margin={{
-          top: 0, right: 0, bottom: 65, left: 10,
+          top: 0, right: 0, bottom: 65, left: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3" horizontal={false} />
@@ -76,9 +73,8 @@ const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
           dataKey={xDataKey}
           type="category"
           label={{
-            value: 'Zip code area', offset: 30, position: 'bottom', fontWeight: '500',
+            value: 'Zip code area', offset: 40, position: 'bottom', fontWeight: '500',
           }}
-          padding={{ left: 20, right: 20 }}
           allowDuplicatedCategory={false}
           tick={<CustomizedAxisTick />}
         />
@@ -87,7 +83,6 @@ const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
           label={{
             value: 'Percentile', position: 'insideLeft', fontWeight: '500', angle: -90,
           }}
-          padding={{ top: 20, bottom: 20 }}
           name={yDataKey}
         />
         <ZAxis
