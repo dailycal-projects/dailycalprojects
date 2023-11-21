@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import ButtonList from '../../../components/buttonList';
 import Key from '../dataKey';
 import allData from '../data';
@@ -27,6 +28,26 @@ const WaterPlot = () => {
       setWaterKey(label);
     }
   };
+
+  if (isMobile) {
+    return (
+      <div>
+        <Key rows={key} />
+        <ButtonList list={waterLabels} handleClick={buttonToData} />
+        <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={waterKey} />
+        <p style={{
+          marginTop: '15px',
+          textAlign: 'center',
+          fontWeight: '500',
+        }}
+        >
+          Housing burden
+          <br />
+          percentile key
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div>

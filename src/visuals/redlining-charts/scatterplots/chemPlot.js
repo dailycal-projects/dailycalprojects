@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import allData from '../data';
 import ScatterPlot from '../scatterPlot';
 import Key from '../dataKey';
@@ -45,6 +46,27 @@ const ChemPlot = () => {
       setChemKey(label);
     }
   };
+
+  if (isMobile) {
+    return (
+      <div>
+        <Key rows={key} />
+        <ButtonList list={chemicalLabels} handleClick={buttonToData} />
+        <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={chemKey} />
+
+        <p style={{
+          marginTop: '15px',
+          textAlign: 'center',
+          fontWeight: '500',
+        }}
+        >
+          Housing burden
+          <br />
+          percentile key
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div>

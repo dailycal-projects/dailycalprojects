@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import ButtonList from '../../../components/buttonList';
 import Key from '../dataKey';
 import allData from '../data';
@@ -32,7 +33,25 @@ const HealthPlot = () => {
     }
   };
 
-  return (
+  if (isMobile) {
+    return (
+      <div>
+        <Key rows={key} />
+        <ButtonList list={healthLabels} handleClick={buttonToData} />
+        <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={healthKey} />
+        <p style={{
+          marginTop: '15px',
+          textAlign: 'center',
+          fontWeight: '500',
+        }}
+        >
+          Housing burden
+          <br />
+          percentile key
+        </p>
+      </div>
+    );
+  } return (
     <div>
       <Key rows={key} />
       <ButtonList list={healthLabels} handleClick={buttonToData} />
