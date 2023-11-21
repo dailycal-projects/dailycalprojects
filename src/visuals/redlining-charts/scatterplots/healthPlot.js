@@ -7,8 +7,8 @@ import ScatterPlot from '../scatterPlot';
 const HealthPlot = () => {
   const data = allData;
 
-  const [healthKey, setHealthKey] = useState('pollution');
-  const healthLabels = ['cardiovascular disease', 'low birth weight', 'asthma'];
+  const [healthKey, setHealthKey] = useState('Cardiovascular disease');
+  const healthLabels = ['Cardiovascular disease', 'Low birth weight', 'Asthma'];
 
   const createData = (indicator, description) => ({ indicator, description });
   const key = [
@@ -28,7 +28,7 @@ const HealthPlot = () => {
 
   const buttonToData = (label) => {
     if (healthLabels.includes(label)) {
-      setHealthKey(label.replaceAll(' ', '_'));
+      setHealthKey(label);
     }
   };
 
@@ -44,7 +44,7 @@ const HealthPlot = () => {
         <br />
         percentile
       </p>
-      <ScatterPlot data={data} xDataKey="zip" yDataKey={healthKey} />
+      <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={healthKey} />
     </div>
   );
 };

@@ -12,7 +12,6 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
-
 import { theme } from '../../styles/theme';
 
 class CustomizedAxisTick extends PureComponent {
@@ -33,7 +32,7 @@ class CustomizedAxisTick extends PureComponent {
 
 let legendLayout = [];
 if (isMobile) {
-  legendLayout = ['center', 'bottom', 'horizontal', 'relative', '0px'];
+  legendLayout = ['center', 'bottom', 'horizontal', 'relative', '15px'];
 } else {
   legendLayout = ['right', 'top', 'vertical', 'absolute', '0px'];
 }
@@ -62,10 +61,10 @@ const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
   );
 
   return (
-    <ResponsiveContainer width="100%" height={550}>
+    <ResponsiveContainer width="100%" height={600}>
       <ScatterChart
         margin={{
-          top: 0, right: 0, bottom: 65, left: 5,
+          top: 10, right: 0, bottom: 75, left: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3" horizontal={false} />
@@ -89,7 +88,7 @@ const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
           type="number"
           dataKey="housing_burden"
           range={[50, 250]}
-          name="housing_burden"
+          name="Housing burden"
         />
         <Tooltip />
         <Legend

@@ -7,13 +7,13 @@ import ButtonList from '../../../components/buttonList';
 const ChemPlot = () => {
   const data = allData;
 
-  const [chemKey, setChemKey] = useState('pollution');
+  const [chemKey, setChemKey] = useState('Pollution');
   const chemicalLabels = [
-    'pollution',
-    'lead risk',
-    'cleanup sites',
-    'toxic release',
-    'hazardous waste',
+    'Pollution',
+    'Lead risk',
+    'Cleanup sites',
+    'Toxic release',
+    'Hazardous waste',
   ];
 
   const createData = (indicator, description) => ({ indicator, description });
@@ -42,7 +42,7 @@ const ChemPlot = () => {
 
   const buttonToData = (label) => {
     if (chemicalLabels.includes(label)) {
-      setChemKey(label.replaceAll(' ', '_'));
+      setChemKey(label);
     }
   };
 
@@ -58,7 +58,7 @@ const ChemPlot = () => {
         <br />
         percentile
       </p>
-      <ScatterPlot data={data} xDataKey="zip" yDataKey={chemKey} />
+      <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={chemKey} />
     </div>
   );
 };

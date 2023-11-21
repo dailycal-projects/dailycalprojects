@@ -7,13 +7,13 @@ import ScatterPlot from '../scatterPlot';
 const EconPlot = () => {
   const data = allData;
 
-  const [econKey, setEconKey] = useState('pollution');
+  const [econKey, setEconKey] = useState('Poverty');
   const econLabels = [
-    'poverty',
-    'unemployment',
-    'education',
-    'traffic',
-    'linguistic isolation',
+    'Poverty',
+    'Unemployment',
+    'Education',
+    'Traffic',
+    'Linguistic isolation',
   ];
 
   const createData = (indicator, description) => ({ indicator, description });
@@ -42,7 +42,7 @@ const EconPlot = () => {
 
   const buttonToData = (label) => {
     if (econLabels.includes(label)) {
-      setEconKey(label.replaceAll(' ', '_'));
+      setEconKey(label);
     }
   };
 
@@ -58,7 +58,7 @@ const EconPlot = () => {
         <br />
         percentile
       </p>
-      <ScatterPlot data={data} xDataKey="zip" yDataKey={econKey} />
+      <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={econKey} />
     </div>
   );
 };

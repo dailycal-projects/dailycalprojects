@@ -7,8 +7,8 @@ import ScatterPlot from '../scatterPlot';
 const WaterPlot = () => {
   const data = allData;
 
-  const [waterKey, setWaterKey] = useState('groundwater_threats');
-  const waterLabels = ['groundwater threats', 'impaired bodies of water'];
+  const [waterKey, setWaterKey] = useState('Groundwater threats');
+  const waterLabels = ['Groundwater threats', 'Impaired bodies of water'];
 
   const createData = (indicator, description) => ({ indicator, description });
   const key = [
@@ -24,7 +24,7 @@ const WaterPlot = () => {
 
   const buttonToData = (label) => {
     if (waterLabels.includes(label)) {
-      setWaterKey(label.replaceAll(' ', '_'));
+      setWaterKey(label);
     }
   };
 
@@ -40,7 +40,7 @@ const WaterPlot = () => {
         <br />
         percentile
       </p>
-      <ScatterPlot data={data} xDataKey="zip" yDataKey={waterKey} />
+      <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={waterKey} />
     </div>
   );
 };
