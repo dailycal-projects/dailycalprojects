@@ -43,7 +43,7 @@ const RentChart = () => (
     <ResponsiveContainer height={450}>
       <AreaChart
         width={750}
-        height={400}
+        height={450}
         data={rentShelterData}
         syncId="anyI"
         margin={{
@@ -60,9 +60,9 @@ const RentChart = () => (
 
         <XAxis dataKey="year" tick={{ fontSize: 16, transform: 'translate(0, 10)' }}>
           <Label value="Year" offset={-24} position="insideBottom" />
-        </XAxis
-        >
+        </XAxis>
         <YAxis
+          width={50}
           tick={<CustomizedAxisTick />}
         />
         <Tooltip separator=": $" />
@@ -114,6 +114,7 @@ const RentChart = () => (
             <Label value="Year" offset={-24} position="insideBottom" />
           </XAxis>
           <YAxis
+            width={50}
             tick={<CustomizedAxisTick />}
           />
           <Tooltip separator=": $" />
