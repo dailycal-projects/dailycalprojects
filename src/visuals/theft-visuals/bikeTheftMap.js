@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {
-  MapContainer, Circle, TileLayer, Popup, Marker, // Map is outdated; Leaflet now uses MapContainer
+  MapContainer, TileLayer, Popup, Marker, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
-import { HeatmapLayer } from 'react-leaflet-heatmap-layer-v3';
 import {
   InputLabel,
   FormControl,
@@ -15,14 +14,12 @@ import {
 import { makeStyles } from '@material-ui/styles';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import L from 'leaflet';
-import { buttonMapData } from './buttonMapData';
+import { bikeTheftMapData } from './bikeTheftMapData';
+import { bikeTheftMapDataByYear } from './bikeTheftMapDataByYear';
+
 import scooterIconPng from '../../images/electric_scooter.png'; // path to your local PNG file
 import bikeIconPng from '../../images/bike.png';
-
-const icons = {
-  Bikes: bikeIcon,
-  'E-Scooters': scooterIcon,
-};
+// import scooterIconPng from '../../images/bike.png';
 
 const bikeIcon = L.icon({
   iconUrl: bikeIconPng,
@@ -30,20 +27,19 @@ const bikeIcon = L.icon({
 });
 
 const scooterIcon = L.icon({
-  iconUrl: scooterIconPng,
+  iconUrl: bikeIconPng, // change this
   iconSize: [30, 30], // set the size of the icon
 });
 
-const customClusterIcon = L.divIcon({
-  html: '<div><span></span></div>', // use a span element to display the number
-  className: 'custom-cluster-icon', // set a custom class name for styling
-  iconSize: [40, 40], // set the size of the icon
-});
+const icons = {
+  Bikes: bikeIcon,
+  'E-Scooters': scooterIcon,
+};
 
 function createIcon(vehicleType, size) {
   let icon;
   if (vehicleType === 'E-Scooters') {
-    icon = scooterIconPng;
+    icon = bikeIconPng; // change Later
   } else {
     icon = bikeIconPng;
   }
@@ -86,11 +82,23 @@ function MarkerClusterMap() {
     name: 'Bikes',
   });
 
-  const handleChange = (event) => {
+  const [year, setYear] = React.useState({
+    name: 'all',
+  });
+
+  const handleVehicleChange = (event) => {
     const { value } = event.target;
     setVehicleType({
       name: value,
     });
+  };
+
+  const handleYearChange = (event) => {
+    const { value } = event.target;
+    setYear({
+      name: value,
+    });
+    console.log(bikeTheftMapDataByYear[value][vehicleType.name]);
   };
 
   return (
@@ -116,12 +124,30 @@ function MarkerClusterMap() {
           value={vehicleType.name}
           id="regionSelector"
           name="region"
-          onChange={handleChange}
+          onChange={handleVehicleChange}
           defaultValue="E-Scooters"
         >
           <MenuItem value="E-Scooters">E-Scooters</MenuItem>
           <MenuItem value="Bikes">Bikes</MenuItem>
           <MenuItem value="E-Bikes">E-Bikes</MenuItem>
+        </Select>
+      </FormControl>
+
+      <FormControl className={classes.formControl}>
+        <InputLabel>Select year</InputLabel>
+        <Select
+          value={year.name}
+          id="regionSelector"
+          name="region"
+          onChange={handleYearChange}
+          defaultValue="all"
+        >
+          <MenuItem value="2019">2019</MenuItem>
+          <MenuItem value="2020">2020</MenuItem>
+          <MenuItem value="2021">2021</MenuItem>
+          <MenuItem value="2022">2022</MenuItem>
+          <MenuItem value="2023">2023</MenuItem>
+          <MenuItem value="all">all</MenuItem>
         </Select>
       </FormControl>
 
@@ -141,18 +167,31 @@ function MarkerClusterMap() {
           <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
           <MarkerClusterGroup>
-            {buttonMapData[vehicleType.name].map((info, k) => (
+            {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info, k) => info.count !== 1).map((info, k) => (
               <Marker
                 position={[info.center[0], info.center[1]]}
                 key={k}
                 icon={createIcon(vehicleType.name, 15)}
-                title={info.Location}
               >
                 <Popup>{info.Location}</Popup>
               </Marker>
             ))}
           </MarkerClusterGroup>
+
+          <MarkerClusterGroup singleMarkerMode>
+            {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info, k) => info.count === 1).map((info, k) => (
+              <Marker
+                position={[info.center[0], info.center[1]]}
+                key={k}
+                icon={createIcon(vehicleType.name, 15)}
+              >
+                <Popup>{info.Location}</Popup>
+              </Marker>
+            ))}
+          </MarkerClusterGroup>
+
         </MapContainer>
+
       ) : <p> Map is loading... </p>}
     </div>
 

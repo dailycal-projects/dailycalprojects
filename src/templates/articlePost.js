@@ -94,11 +94,6 @@ export const pageQuery = graphql`
         imageCaption2
         imageCaption3
         imageCaption4
-        embeddedImages {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
   }
