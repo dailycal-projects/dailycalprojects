@@ -17,8 +17,9 @@ import L from 'leaflet';
 import { bikeTheftMapData } from './bikeTheftMapData';
 import { bikeTheftMapDataByYear } from './bikeTheftMapDataByYear';
 
-import scooterIconPng from '../../images/electric_scooter.png'; // path to your local PNG file
+import scooterIconPng from '../../images/scooter.png'; // path to your local PNG file
 import bikeIconPng from '../../images/bike.png';
+import ebikeIconPng from '../../images/ebike.png';
 // import scooterIconPng from '../../images/bike.png';
 
 const bikeIcon = L.icon({
@@ -26,22 +27,30 @@ const bikeIcon = L.icon({
   iconSize: [30, 30], // set the size of the icon
 });
 
+const ebikeIcon = L.icon({
+  iconUrl: ebikeIconPng,
+  iconSize: [30, 30], // set the size of the icon
+});
+
 const scooterIcon = L.icon({
-  iconUrl: bikeIconPng, // change this
+  iconUrl: scooterIconPng, // change this
   iconSize: [30, 30], // set the size of the icon
 });
 
 const icons = {
   Bikes: bikeIcon,
   'E-Scooters': scooterIcon,
+  'E-Bikes': ebikeIcon,
 };
 
 function createIcon(vehicleType, size) {
   let icon;
   if (vehicleType === 'E-Scooters') {
-    icon = bikeIconPng; // change Later
-  } else {
+    icon = scooterIconPng;
+  } else if (vehicleType == 'Bikes') {
     icon = bikeIconPng;
+  } else {
+    icon = ebikeIconPng;
   }
 
   return L.icon({
@@ -98,7 +107,7 @@ function MarkerClusterMap() {
     setYear({
       name: value,
     });
-    console.log(bikeTheftMapDataByYear[value][vehicleType.name]);
+    console.log(bikeTheftMapDataByYear[value][vehicleType.name].filter((info) => info.count === 1));
   };
 
   return (
@@ -166,24 +175,25 @@ function MarkerClusterMap() {
         >
           <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
+          // Market Cluster Group filtering out single vehicles, will show individual icons when clicked
           <MarkerClusterGroup>
-            {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info, k) => info.count !== 1).map((info, k) => (
+            {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info) => info.count != 1).map((info, k) => (
               <Marker
                 position={[info.center[0], info.center[1]]}
                 key={k}
-                icon={createIcon(vehicleType.name, 15)}
+                icon={createIcon(vehicleType.name, 20)}
               >
                 <Popup>{info.Location}</Popup>
               </Marker>
             ))}
           </MarkerClusterGroup>
-
+          // Market Cluster Group filtering out vehicle clusters, single vehicles should be in single marker mode and not show icons
           <MarkerClusterGroup singleMarkerMode>
-            {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info, k) => info.count === 1).map((info, k) => (
+            {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info) => info.count == 1).map((info, k) => (
               <Marker
                 position={[info.center[0], info.center[1]]}
                 key={k}
-                icon={createIcon(vehicleType.name, 15)}
+                icon={createIcon(vehicleType.name, 20)}
               >
                 <Popup>{info.Location}</Popup>
               </Marker>

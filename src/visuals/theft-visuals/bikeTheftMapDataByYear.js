@@ -481,7 +481,7 @@ export const bikeTheftMapDataByYear = {
       center: [37.8664947, -122.2543359],
       count: 1,
     }],
-    Scooters: [{
+    'E-Scooters': [{
       Location: 'Dwinelle Hall',
       center: [37.87053179999999, -122.2606042],
       count: 1,
@@ -745,7 +745,7 @@ export const bikeTheftMapDataByYear = {
       center: [37.8833256, -122.3040229],
       count: 1,
     }],
-    Scooters: [{
+    'E-Scooters': [{
       Location: 'Southwest Corner Bicycle Racks',
       center: [37.8715226, -122.273042],
       count: 1,
@@ -1310,7 +1310,7 @@ export const bikeTheftMapDataByYear = {
       center: [37.8739287, -122.2654702],
       count: 1,
     }],
-    Scooters: [{
+    'E-Scooters': [{
       Location: 'Barker Hall',
       center: [37.8739287, -122.2654702],
       count: 1,
@@ -2663,7 +2663,7 @@ export const bikeTheftMapDataByYear = {
       center: [37.8856183, -122.3021811],
       count: 1,
     }],
-    Scooters: [{
+    'E-Scooters': [{
       Location: '',
       center: [37.8715226, -122.273042],
       count: 2,
@@ -4487,7 +4487,7 @@ export const bikeTheftMapDataByYear = {
       center: [37.8809238, -122.3030285],
       count: 1,
     }],
-    Scooters: [{
+    'E-Scooters': [{
       Location: 'PPHCD',
       center: [37.8715226, -122.273042],
       count: 1,
@@ -9081,7 +9081,7 @@ export const bikeTheftMapDataByYear = {
       center: [37.8809238, -122.3030285],
       count: 1,
     }],
-    Scooters: [{
+    'E-Scooters': [{
       Location: '',
       center: [37.8715226, -122.273042],
       count: 2,
