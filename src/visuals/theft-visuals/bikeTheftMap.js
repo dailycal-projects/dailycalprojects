@@ -121,11 +121,7 @@ function MarkerClusterMap() {
           left: '0px',
         }}
       >
-        <h4>
-
-          Change in enrollment of Black students between the 1990-91 and 2020-21 academic years
-
-        </h4>
+        <h4> Locations of Bike, E-Bike, and E-Scooter Thefts reported to UCPD since 2019 </h4>
       </div>
       <FormControl className={classes.formControl}>
         <InputLabel>Select vehicle</InputLabel>

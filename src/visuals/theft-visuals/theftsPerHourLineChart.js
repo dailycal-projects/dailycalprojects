@@ -6,37 +6,61 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
+  // Legend,
   Label,
+  ResponsiveContainer,
 } from 'recharts';
 
 import theftsPerHourData from './theftsPerHourData';
 
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div style={{ backgroundColor: '#fff', border: '1px solid #ccc', padding: '10px' }}>
+        <p>{`Hour: ${label}`}</p>
+        <p>{`Thefts: ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
 const TheftsPerHourLineChart = () => (
   <div>
-    <h4>
-      Thefts Per Hour of Day
-    </h4>
-    <LineChart
-      width={750}
-      height={550}
-      data={theftsPerHourData}
-      margin={{
-        top: 20,
-        right: 30,
-        left: 20,
-        bottom: 5,
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        left: '20px',
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="hour">
-        <Label value="Hour of Day" offset={-10} position="insideBottom" />
-      </XAxis>
-      <YAxis label={{ value: 'Number of Thefts', angle: -90, position: 'insideLeft' }} />
-      <Tooltip />
-      <Legend wrapperStyle={{ bottom: -10 }} />
-      <Line type="monotone" dataKey="thefts" stackId="a" fill="#65bf9c" />
-    </LineChart>
+      <h4> Thefts Per Hour of Day </h4>
+    </div>
+    <ResponsiveContainer height={550}>
+      <LineChart
+        width={750}
+        height={550}
+        data={theftsPerHourData}
+        margin={{
+          top: 20,
+          right: 30,
+          left: 20,
+          bottom: 20,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="hour">
+          <Label value="Hour of Day" offset={-10} position="insideBottom" />
+        </XAxis>
+        <YAxis label={{ value: 'Number of Thefts', angle: -90, position: 'insideLeft' }} />
+        <Tooltip content={<CustomTooltip />} />
+        {/* <Legend wrapperStyle={{ bottom: -10 }} /> */}
+        <Line type="monotone" dataKey="thefts" stackId="a" fill="#65bf9c" />
+      </LineChart>
+    </ResponsiveContainer>
   </div>
 );
 

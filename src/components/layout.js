@@ -36,6 +36,7 @@ import MarkerClusterMap from '../visuals/theft-visuals/bikeTheftMap';
 import TheftsPerYearBarChart from '../visuals/theft-visuals/theftsPerYearBarChart';
 import PopularTheftLocationsBarChart from '../visuals/theft-visuals/popularTheftLocationsBarChart';
 import TheftsPerHourLineChart from '../visuals/theft-visuals/theftsPerHourLineChart';
+import BikeTheftTips from '../visuals/theft-visuals/bikeTheftTips';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -87,6 +88,7 @@ const shortcodes = {
   TheftsPerYearBarChart,
   PopularTheftLocationsBarChart,
   TheftsPerHourLineChart,
+  BikeTheftTips,
 
 };
 
