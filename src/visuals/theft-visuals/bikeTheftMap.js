@@ -154,18 +154,7 @@ function MarkerClusterMap() {
 
           // Market Cluster Group filtering out single vehicles, will show individual icons when clicked
           <MarkerClusterGroup>
-            {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info) => info.count != 1).map((info, k) => (
-              <Marker
-                position={[info.center[0], info.center[1]]}
-                key={k}
-                icon={createIcon(vehicleType.name, 20)}
-              >
-                <Popup>{info.Location}</Popup>
-              </Marker>
-            ))}
-          </MarkerClusterGroup>
-          <MarkerClusterGroup singleMarkerMode>
-            {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info) => info.count == 1).map((info, k) => (
+            {bikeTheftMapDataByYear[year.name][vehicleType.name].map((info, k) => (
               <Marker
                 position={[info.center[0], info.center[1]]}
                 key={k}
