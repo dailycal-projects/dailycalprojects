@@ -20,43 +20,24 @@ import { bikeTheftMapDataByYear } from './bikeTheftMapDataByYear';
 import scooterIconPng from '../../images/scooter.png'; // path to your local PNG file
 import bikeIconPng from '../../images/bike.png';
 import ebikeIconPng from '../../images/ebike.png';
-// import scooterIconPng from '../../images/bike.png';
-
-const bikeIcon = L.icon({
-  iconUrl: bikeIconPng,
-  iconSize: [30, 30], // set the size of the icon
-});
-
-const ebikeIcon = L.icon({
-  iconUrl: ebikeIconPng,
-  iconSize: [30, 30], // set the size of the icon
-});
-
-const scooterIcon = L.icon({
-  iconUrl: scooterIconPng, // change this
-  iconSize: [30, 30], // set the size of the icon
-});
-
-const icons = {
-  Bikes: bikeIcon,
-  'E-Scooters': scooterIcon,
-  'E-Bikes': ebikeIcon,
-};
 
 function createIcon(vehicleType, size) {
-  let icon;
-  if (vehicleType === 'E-Scooters') {
-    icon = scooterIconPng;
-  } else if (vehicleType == 'Bikes') {
-    icon = bikeIconPng;
-  } else {
-    icon = ebikeIconPng;
+  if (typeof window !== 'undefined') {
+    let icon;
+    if (vehicleType === 'E-Scooters') {
+      icon = scooterIconPng;
+    } else if (vehicleType == 'Bikes') {
+      icon = bikeIconPng;
+    } else {
+      icon = ebikeIconPng;
+    }
+    return L.icon({
+      iconUrl: icon,
+      iconSize: [size * 2, size * 2], // set the size of the icon
+    });
   }
 
-  return L.icon({
-    iconUrl: icon,
-    iconSize: [size * 2, size * 2], // set the size of the icon
-  });
+  return null;
 }
 
 function MarkerClusterMap() {
@@ -183,7 +164,6 @@ function MarkerClusterMap() {
               </Marker>
             ))}
           </MarkerClusterGroup>
-          // Market Cluster Group filtering out vehicle clusters, single vehicles should be in single marker mode and not show icons
           <MarkerClusterGroup singleMarkerMode>
             {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info) => info.count == 1).map((info, k) => (
               <Marker
