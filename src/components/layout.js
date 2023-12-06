@@ -47,6 +47,11 @@ import TimeDoctorateBarChart from '../visuals/union-vote-visuals/timeDoctorateBa
 import UniversityRentMap from '../visuals/rent-map-visuals/universityRentMap';
 import OptionWidthViz2 from '../visuals/telegraph-visuals/optionWidths2';
 import WarnmeHistogram from '../visuals/warnme-visuals/warnmeHistogram';
+import MarkerClusterMap from '../visuals/theft-visuals/bikeTheftMap';
+import TheftsPerYearBarChart from '../visuals/theft-visuals/theftsPerYearBarChart';
+import PopularTheftLocationsBarChart from '../visuals/theft-visuals/popularTheftLocationsBarChart';
+import TheftsPerHourLineChart from '../visuals/theft-visuals/theftsPerHourLineChart';
+import BikeTheftTips from '../visuals/theft-visuals/bikeTheftTips';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -107,6 +112,11 @@ const shortcodes = {
   UniversityRentMap,
   OptionWidthViz2,
   WarnmeHistogram,
+  MarkerClusterMap,
+  TheftsPerYearBarChart,
+  PopularTheftLocationsBarChart,
+  TheftsPerHourLineChart,
+  BikeTheftTips,
 };
 
 export default function Layout({ children }) {
