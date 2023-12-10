@@ -24,7 +24,7 @@ const TheftsPerYearBarChart = () => (
         left: '20px',
       }}
     >
-      <h4> Thefts Per Year </h4>
+      <h4> Thefts per year </h4>
     </div>
     <ResponsiveContainer height={550}>
       <BarChart
@@ -43,14 +43,14 @@ const TheftsPerYearBarChart = () => (
           <Label value="Year" offset={-10} position="insideBottom" />
         </XAxis>
         <YAxis label={{
-          value: 'Number of Thefts', angle: -90, position: 'insideLeft', offset: 10,
+          value: 'Number of thefts', angle: -90, position: 'insideLeft', offset: 10,
         }}
         />
         <Tooltip />
         <Legend wrapperStyle={{ bottom: -10, left: 25 }} />
         <Bar dataKey="Bike" stackId="a" fill="#70aada" />
-        <Bar dataKey="E-Scooter" stackId="a" fill="#abcd80" />
-        <Bar dataKey="E-Bike" stackId="a" fill="#feda6a" />
+        <Bar dataKey="E-scooter" stackId="a" fill="#aacd80" />
+        <Bar dataKey="E-bike" stackId="a" fill="#feda6a" />
       </BarChart>
     </ResponsiveContainer>
   </div>

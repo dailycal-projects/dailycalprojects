@@ -146,7 +146,7 @@ function MarkerClusterMap() {
           left: '0px',
         }}
       >
-        <h4> Locations of Bike, E-Bike, and E-Scooter Thefts reported to UCPD since 2019 </h4>
+        <h4> Locations of bike, e-bike and e-scooter thefts reported to UCPD since 2019 </h4>
       </div>
       <FormControl className={classes.formControl}>
         <InputLabel>Select vehicle</InputLabel>
@@ -157,9 +157,9 @@ function MarkerClusterMap() {
           onChange={handleVehicleChange}
           defaultValue="E-Scooters"
         >
-          <MenuItem value="E-Scooters">E-Scooters</MenuItem>
+          <MenuItem value="E-Scooters">E-scooters</MenuItem>
           <MenuItem value="Bikes">Bikes</MenuItem>
-          <MenuItem value="E-Bikes">E-Bikes</MenuItem>
+          <MenuItem value="E-Bikes">E-bikes</MenuItem>
         </Select>
       </FormControl>
 
@@ -177,7 +177,7 @@ function MarkerClusterMap() {
           <MenuItem value="2021">2021</MenuItem>
           <MenuItem value="2022">2022</MenuItem>
           <MenuItem value="2023">2023</MenuItem>
-          <MenuItem value="all">all</MenuItem>
+          <MenuItem value="all">All years</MenuItem>
         </Select>
       </FormControl>
 

@@ -37,7 +37,7 @@ const TheftsPerHourLineChart = () => (
         left: '20px',
       }}
     >
-      <h4> Thefts Per Hour of Day </h4>
+      <h4> Thefts per hour of day </h4>
     </div>
     <ResponsiveContainer height={550}>
       <LineChart
@@ -53,12 +53,12 @@ const TheftsPerHourLineChart = () => (
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="hour">
-          <Label value="Hour of Day" offset={-10} position="insideBottom" />
+          <Label value="Hour of day" offset={-10} position="insideBottom" />
         </XAxis>
-        <YAxis label={{ value: 'Number of Thefts', angle: -90, position: 'insideLeft' }} />
+        <YAxis label={{ value: 'Number of thefts', angle: -90, position: 'insideLeft' }} />
         <Tooltip content={<CustomTooltip />} />
         {/* <Legend wrapperStyle={{ bottom: -10 }} /> */}
-        <Line type="monotone" dataKey="thefts" stackId="a" fill="#65bf9c" />
+        <Line type="monotone" dataKey="thefts" stackId="a" fill="#FFFFFF" stroke="#70aada" />
       </LineChart>
     </ResponsiveContainer>
   </div>
