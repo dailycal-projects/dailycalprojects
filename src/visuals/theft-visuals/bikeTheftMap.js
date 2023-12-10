@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   MapContainer, TileLayer, Popup, Marker, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
+import './BikeTheftMap.css';
 // import 'leaflet/dist/leaflet.css';
 // import 'leaflet.markercluster/dist/MarkerCluster.css';
 // import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
@@ -20,6 +21,28 @@ import { bikeTheftMapDataByYear } from './bikeTheftMapDataByYear';
 import scooterIconPng from '../../images/scooter.png'; // path to your local PNG file
 import bikeIconPng from '../../images/bike.png';
 import ebikeIconPng from '../../images/ebike.png';
+// import scooterIconPng from '../../images/bike.png';
+
+const bikeIcon = L.icon({
+  iconUrl: bikeIconPng,
+  iconSize: [30, 30], // set the size of the icon
+});
+
+const ebikeIcon = L.icon({
+  iconUrl: ebikeIconPng,
+  iconSize: [30, 30], // set the size of the icon
+});
+
+const scooterIcon = L.icon({
+  iconUrl: scooterIconPng, // change this
+  iconSize: [30, 30], // set the size of the icon
+});
+
+const icons = {
+  Bikes: bikeIcon,
+  'E-Scooters': scooterIcon,
+  'E-Bikes': ebikeIcon,
+};
 
 function createIcon(vehicleType, size) {
   if (typeof window !== 'undefined') {
@@ -88,8 +111,29 @@ function MarkerClusterMap() {
     setYear({
       name: value,
     });
-    console.log(bikeTheftMapDataByYear[value][vehicleType.name].filter((info) => info.count === 1));
+    for (const key in bikeTheftMapDataByYear) {
+      console.log(key);
+      console.log(typeof key);
+    }
+    // console.log(bikeTheftMapDataByYear[value][vehicleType.name].filter((info) => info.count === 1));
   };
+
+  // var cities = L.layerGroup([littleton, denver, aurora, golden]);
+  // var bikeTheftMapLayers = {};
+  // for (let i = 0; i < [2019]; i++){
+  //   for (let j = 0; j < bikeTheftMapData[0].keys().length; j++) {
+  //     bikeTheftMapLayers[bikeTheftMapData[]]
+  //   }
+  // }
+  // {bikeTheftMapDataByYear[year.name][vehicleType.name].filter((info) => info.count != 1).map((info, k) => (
+  //   <Marker
+  //     position={[info.center[0], info.center[1]]}
+  //     key={k}
+  //     icon={createIcon(vehicleType.name, 20)}
+  //   >
+  //     <Popup>{info.Location}</Popup>
+  //   </Marker>
+  // ))}
 
   return (
     <div>
@@ -152,18 +196,635 @@ function MarkerClusterMap() {
         >
           <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
-          // Market Cluster Group filtering out single vehicles, will show individual icons when clicked
-          <MarkerClusterGroup>
-            {bikeTheftMapDataByYear[year.name][vehicleType.name].map((info, k) => (
-              <Marker
-                position={[info.center[0], info.center[1]]}
-                key={k}
-                icon={createIcon(vehicleType.name, 20)}
-              >
-                <Popup>{info.Location}</Popup>
-              </Marker>
-            ))}
-          </MarkerClusterGroup>
+          {year.name == '2019' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2019'].Bikes.filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2019'].Bikes.filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2019']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2019']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2019']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2019']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2019'].Bikes.filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2019'].Bikes.filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2019']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2019']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2019']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2019' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2019']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2020' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2020'].Bikes.filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2020' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2020'].Bikes.filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2020' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2020']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2020' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2020']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2020' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2019']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2020' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2019']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2021' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2021'].Bikes.filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2021' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2021'].Bikes.filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2021' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2021']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2021' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2021']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2021' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2021']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2021' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2021']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2022' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2022'].Bikes.filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2022' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2022'].Bikes.filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2022' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2022']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2022' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2022']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2022' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2022']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2022' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2022']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2023' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2023'].Bikes.filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2023' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2023'].Bikes.filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2023' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2023']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2023' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2023']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2023' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear['2023']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == '2023' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear['2023']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == 'all' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear.all.Bikes.filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == 'all' && vehicleType.name == 'Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear.all.Bikes.filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == 'all' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear.all['E-Scooters'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == 'all' && vehicleType.name == 'E-Scooters' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear.all['E-Scooters'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == 'all' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup>
+              {bikeTheftMapDataByYear.all['E-Bikes'].filter((info) => info.count != 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
+
+          {year.name == 'all' && vehicleType.name == 'E-Bikes' ? (
+            <MarkerClusterGroup singleMarkerMode>
+              {bikeTheftMapDataByYear.all['E-Bikes'].filter((info) => info.count == 1).map((info) => (
+                <Marker
+                  position={[info.center[0], info.center[1]]}
+                  key={info.key}
+                  icon={createIcon(vehicleType.name, 20)}
+                >
+                  <Popup>{info.Location}</Popup>
+                </Marker>
+              ))}
+            </MarkerClusterGroup>
+          )
+            : null}
 
         </MapContainer>
 
