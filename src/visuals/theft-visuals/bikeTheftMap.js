@@ -15,7 +15,6 @@ import {
 import { makeStyles } from '@material-ui/styles';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import L from 'leaflet';
-import { bikeTheftMapData } from './bikeTheftMapData';
 import { bikeTheftMapDataByYear } from './bikeTheftMapDataByYear';
 
 import scooterIconPng from '../../images/scooter.png'; // path to your local PNG file
@@ -23,26 +22,26 @@ import bikeIconPng from '../../images/bike.png';
 import ebikeIconPng from '../../images/ebike.png';
 // import scooterIconPng from '../../images/bike.png';
 
-const bikeIcon = L.icon({
-  iconUrl: bikeIconPng,
-  iconSize: [30, 30], // set the size of the icon
-});
+// const bikeIcon = L.icon({
+//   iconUrl: bikeIconPng,
+//   iconSize: [30, 30], // set the size of the icon
+// });
 
-const ebikeIcon = L.icon({
-  iconUrl: ebikeIconPng,
-  iconSize: [30, 30], // set the size of the icon
-});
+// const ebikeIcon = L.icon({
+//   iconUrl: ebikeIconPng,
+//   iconSize: [30, 30], // set the size of the icon
+// });
 
-const scooterIcon = L.icon({
-  iconUrl: scooterIconPng, // change this
-  iconSize: [30, 30], // set the size of the icon
-});
+// const scooterIcon = L.icon({
+//   iconUrl: scooterIconPng, // change this
+//   iconSize: [30, 30], // set the size of the icon
+// });
 
-const icons = {
-  Bikes: bikeIcon,
-  'E-Scooters': scooterIcon,
-  'E-Bikes': ebikeIcon,
-};
+// const icons = {
+//   Bikes: bikeIcon,
+//   'E-Scooters': scooterIcon,
+//   'E-Bikes': ebikeIcon,
+// };
 
 function createIcon(vehicleType, size) {
   if (typeof window !== 'undefined') {
@@ -146,7 +145,7 @@ function MarkerClusterMap() {
           left: '0px',
         }}
       >
-        <h4> Locations of Bike, E-Bike, and E-Scooter Thefts reported to UCPD since 2019 </h4>
+        <h4> Locations of bike, e-bike and e-scooter thefts reported to UCPD since 2019 </h4>
       </div>
       <FormControl className={classes.formControl}>
         <InputLabel>Select vehicle</InputLabel>
@@ -157,9 +156,9 @@ function MarkerClusterMap() {
           onChange={handleVehicleChange}
           defaultValue="E-Scooters"
         >
-          <MenuItem value="E-Scooters">E-Scooters</MenuItem>
+          <MenuItem value="E-Scooters">E-scooters</MenuItem>
           <MenuItem value="Bikes">Bikes</MenuItem>
-          <MenuItem value="E-Bikes">E-Bikes</MenuItem>
+          <MenuItem value="E-Bikes">E-bikes</MenuItem>
         </Select>
       </FormControl>
 
@@ -177,7 +176,7 @@ function MarkerClusterMap() {
           <MenuItem value="2021">2021</MenuItem>
           <MenuItem value="2022">2022</MenuItem>
           <MenuItem value="2023">2023</MenuItem>
-          <MenuItem value="all">all</MenuItem>
+          <MenuItem value="all">All years</MenuItem>
         </Select>
       </FormControl>
 
