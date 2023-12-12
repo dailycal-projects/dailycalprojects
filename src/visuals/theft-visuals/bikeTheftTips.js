@@ -2,7 +2,7 @@ import React from 'react';
 
 const BikeTheftTips = () => (
   <div style={{
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#e9edf0',
     padding: '40px 40px 15px 40px',
     borderRadius: '5px',
     // marginLeft: '10px',

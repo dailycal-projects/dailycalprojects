@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const TheftsPerHourLineChart = () => (
-  <div>
+  <div style={{ backgroundColor: '#e9edf0', padding: '20px' }}>
     <div
       style={{
         display: 'flex',

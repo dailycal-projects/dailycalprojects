@@ -116,7 +116,6 @@ function MarkerClusterMap() {
     }
   };
 
-
   return (
     <div>
       <div

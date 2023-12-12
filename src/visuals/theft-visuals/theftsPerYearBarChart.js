@@ -14,7 +14,7 @@ import {
 import theftsPerYearData from './theftsPerYearData';
 
 const TheftsPerYearBarChart = () => (
-  <div>
+  <div style={{ backgroundColor: '#e9edf0', padding: '20px' }}>
     <div
       style={{
         display: 'flex',
