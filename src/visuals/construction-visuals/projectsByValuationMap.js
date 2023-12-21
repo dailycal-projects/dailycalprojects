@@ -256,29 +256,29 @@ export default function ProjectsByValuation() {
 
                               {/* point hover popup */}
                               <Popup>
-                <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                                    <p>
-                                        {'Address: '}
-                                        <a href={`https://www.google.com/maps/place/${info.Address}`} target="_blank" rel="noreferrer">{info.Address}</a>
-                                      </p>
-                                    <p>
-                                        {'Type: '}
-                                        <span style={{ color: valuation_color_dict[info['Building Type']][100000] }}>{info['Building Type']}</span>
-                                      </p>
-                                    <p>
-                                        {'Permit Issued: '}
-                                        {info['Date Issued']}
-                                      </p>
-                                    <p>
-                                        {'Valuation: '}
-                                        {valuation_format(info.Valuation)}
-                                      </p>
-                                    <p className="popup-description">
-                                        {'Description: '}
-                                        {info['Work Description']}
-                                      </p>
-                                  </div>
-              </Popup>
+                                <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                                  <p>
+                                    {'Address: '}
+                                    <a href={`https://www.google.com/maps/place/${info.Address}`} target="_blank" rel="noreferrer">{info.Address}</a>
+                                  </p>
+                                  <p>
+                                    {'Type: '}
+                                    <span style={{ color: valuation_color_dict[info['Building Type']][100000] }}>{info['Building Type']}</span>
+                                  </p>
+                                  <p>
+                                    {'Permit Issued: '}
+                                    {info['Date Issued']}
+                                  </p>
+                                  <p>
+                                    {'Valuation: '}
+                                    {valuation_format(info.Valuation)}
+                                  </p>
+                                  <p className="popup-description">
+                                    {'Description: '}
+                                    {info['Work Description']}
+                                  </p>
+                                </div>
+                              </Popup>
                             </CircleMarker>
                           </g>
                         ))}

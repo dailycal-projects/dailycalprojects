@@ -48,8 +48,8 @@ import UniversityRentMap from '../visuals/rent-map-visuals/universityRentMap';
 import OptionWidthViz2 from '../visuals/telegraph-visuals/optionWidths2';
 import WarnmeHistogram from '../visuals/warnme-visuals/warnmeHistogram';
 import RHNABarChart from '../visuals/construction-visuals/RHNABarChart';
-import ProjectsByValuation from '../visuals/construction-visuals/projectsByValuationMap';
-import ProjectsByFundRe from '../visuals/construction-visuals/projectsByFundingBar';
+import ProjectsByFundRe from '../visuals/construction-visuals/projectsByFundingBar.js';
+import ProjectsByValuation from '../visuals/construction-visuals/projectsByValuationMap.js';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -111,8 +111,8 @@ const shortcodes = {
   OptionWidthViz2,
   WarnmeHistogram,
   RHNABarChart,
-  ProjectsByValuation,
   ProjectsByFundRe,
+  ProjectsByValuation,
 };
 
 export default function Layout({ children }) {
