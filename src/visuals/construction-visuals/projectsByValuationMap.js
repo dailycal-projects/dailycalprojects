@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   MapContainer,
   CircleMarker,
   TileLayer,
-  Tooltip,
   Popup,
 } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+// import 'leaflet/dist/leaflet.css'; faulty import
 // import rawValuationData from './data/permit_data.json'
 import valuationData from './data/permit_data.json';
 
