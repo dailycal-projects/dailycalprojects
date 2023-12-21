@@ -1,0 +1,151 @@
+/* mobile-display styles */
+
+/* LEGEND */
+.vm-legend-svg {
+  height: 160px;
+  overflow: visible;
+}
+
+.legend-title {
+  font-weight: 500;
+}
+
+.vm-legend-div {
+  /* width: 200px; */
+  height: fit-content;
+  overflow: visible;
+}
+
+#reset-button {
+  text-align: left;
+}
+
+/* TITLE + NOTES */
+.vm-title-div {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: large;
+}
+
+.data-note-div,
+.vm-note-div {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  font-size: smaller;
+  text-align: left;
+}
+
+.data-note-div {
+  color: rgb(145, 145, 145);
+}
+
+/* POPUPS */
+.popup-image {
+  max-width: 200px;
+  height: auto;
+  max-height: 200px;
+}
+
+.popup-description {
+  max-height: 10em;
+  /* Adjust the line height and the number of lines as needed */
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* .vm-legend-note-div, */
+.vm-legend-div,
+.legend-item,
+.svg-circle,
+.svg-text {
+  z-index: 2 !important;
+}
+
+.leaflet-container {
+  z-index: 0 !important;
+}
+
+/* interactive stuff */
+.legend-item:hover,
+.svg-text:hover {
+  cursor: pointer;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+/* desktop-size displays */
+@media only screen and (min-width: 1024px) {
+  .valuation-map-div {
+    display: grid;
+    grid-template-rows: 1fr 7fr 3fr 1fr;
+    /* Two rows, the first one will adjust to content, the second one will have 2 columns */
+    grid-template-columns: 1fr 4fr;
+    /* left column: legend and description, right column: map*/
+  }
+
+  /* 
+    .data-note-div {
+        color: rgb(145, 145, 145);
+    } */
+
+  .vm-legend-svg {
+    height: 280px;
+  }
+
+  .vm-title-div {
+    grid-row: 1;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    position: "relative";
+    left: "0px";
+  }
+  .vm-title-div > h4 {
+    margin-bottom: 0;
+  }
+
+  .vm-legend-div,
+  .vm-note-div,
+  .data-note-div {
+    padding-left: 4rem;
+  }
+
+  .vm-legend-div {
+    position: inherit;
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .vm-note-div {
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding-right: 0;
+  }
+
+  .data-note-div {
+    grid-row: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .vm-map-div {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}

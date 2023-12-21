@@ -1,0 +1,16 @@
+[
+  {
+    "time period": "2015-2023",
+    "above moderate": 1401,
+    "moderate": 584,
+    "low": 442,
+    "very low": 532
+  },
+  {
+    "time period": "2023-2031",
+    "above moderate": 3664,
+    "moderate": 1416,
+    "low": 1408,
+    "very low": 2446
+  }
+]
