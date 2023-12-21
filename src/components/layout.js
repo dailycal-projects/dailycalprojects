@@ -50,6 +50,11 @@ import WarnmeHistogram from '../visuals/warnme-visuals/warnmeHistogram';
 import RHNABarChart from '../visuals/construction-visuals/RHNABarChart';
 import ProjectsByFundRe from '../visuals/construction-visuals/projectsByFundingBar.js';
 import ProjectsByValuation from '../visuals/construction-visuals/projectsByValuationMap.js';
+import MarkerClusterMap from '../visuals/theft-visuals/bikeTheftMap';
+import TheftsPerYearBarChart from '../visuals/theft-visuals/theftsPerYearBarChart';
+import PopularTheftLocationsBarChart from '../visuals/theft-visuals/popularTheftLocationsBarChart';
+import TheftsPerHourLineChart from '../visuals/theft-visuals/theftsPerHourLineChart';
+import BikeTheftTips from '../visuals/theft-visuals/bikeTheftTips';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -113,6 +118,11 @@ const shortcodes = {
   RHNABarChart,
   ProjectsByFundRe,
   ProjectsByValuation,
+  MarkerClusterMap,
+  TheftsPerYearBarChart,
+  PopularTheftLocationsBarChart,
+  TheftsPerHourLineChart,
+  BikeTheftTips,
 };
 
 export default function Layout({ children }) {
