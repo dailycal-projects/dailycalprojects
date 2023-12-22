@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
@@ -6,36 +6,51 @@ import RHNA from './data/RHNA_data.json';
 
 import './RHNABarChart.css';
 
-const isMobile = window.innerWidth < 1024;
-
-const config = {
-  width: isMobile ? window.innerWidth : (window.innerHeight * 5) / 8,
-  height: isMobile ? window.innerWidth : (window.innerHeight * 5) / 8,
-  margin: {
-    top: 20,
-    right: 20,
-    left: 20,
-    bottom: 50,
-  },
-};
-
-const reverseTooltipContent = (o) => {
-  const { payload } = o;
-
-  return (
-    <div className="customized-tooltip-content">
-      <ul className="list">
-        {payload.reverse().map((entry, index) => (
-          <li key={`item-${index}`} style={{ color: entry.color }}>
-            {`${entry.name}: ${entry.value}`}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
 export default function RHNABarChart() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateIsMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    // Update isMobile state on window resize
+    window.addEventListener('resize', updateIsMobile);
+
+    // Initial check on component mount
+    updateIsMobile();
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener('resize', updateIsMobile);
+  }, []);
+
+  const config = {
+    width: isMobile ? window.innerWidth : (window.innerHeight * 5) / 8,
+    height: isMobile ? window.innerWidth : (window.innerHeight * 5) / 8,
+    margin: {
+      top: 20,
+      right: 20,
+      left: 20,
+      bottom: 50,
+    },
+  };
+
+  const reverseTooltipContent = (o) => {
+    const { payload } = o;
+
+    return (
+      <div className="customized-tooltip-content">
+        <ul className="list">
+          {payload.reverse().map((entry, index) => (
+            <li key={`item-${index}`} style={{ color: entry.color }}>
+              {`${entry.name}: ${entry.value}`}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
   return (
     <div>
       <div className="rhna-title-div">
