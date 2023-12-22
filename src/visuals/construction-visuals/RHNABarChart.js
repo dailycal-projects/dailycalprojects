@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import RHNA from './data/RHNA_data.json';
 
@@ -9,8 +9,8 @@ import './RHNABarChart.css';
 const isMobile = window.innerWidth < 1024;
 
 const config = {
-  width: isMobile ? window.innerWidth : window.innerHeight * 5 / 8,
-  height: isMobile ? window.innerWidth : window.innerHeight * 5 / 8,
+  width: isMobile ? window.innerWidth : (window.innerHeight * 5) / 8,
+  height: isMobile ? window.innerWidth : (window.innerHeight * 5) / 8,
   margin: {
     top: 20,
     right: 20,
@@ -19,16 +19,8 @@ const config = {
   },
 };
 
-const toPercent = (decimal, fixed = 0) => `${(decimal * 100).toFixed(fixed)}%`;
-
-const getPercent = (value, total) => {
-  const ratio = total > 0 ? value / total : 0;
-
-  return toPercent(ratio, 2);
-};
-
 const reverseTooltipContent = (o) => {
-  const { payload, label } = o;
+  const { payload } = o;
 
   return (
     <div className="customized-tooltip-content">
@@ -43,26 +35,6 @@ const reverseTooltipContent = (o) => {
   );
 };
 
-const renderTooltipContent = (o) => {
-  const { payload, label } = o;
-  const total = payload.reduce((result, entry) => result + entry.value, 0); // calculate total
-
-  return (
-    <div className="customized-tooltip-content">
-
-      <ul className="list">
-        {payload.reverse().map((entry, index) => (
-          <li key={`item-${index}`} style={{ color: entry.color }}>
-            {`${entry.name}: ${entry.value} (${getPercent(entry.value, total)})`}
-          </li>
-        ))}
-        <li className="total">{`${label} (Total: ${total})`}</li>
-      </ul>
-
-    </div>
-  );
-};
-
 export default function RHNABarChart() {
   return (
     <div>
@@ -73,7 +45,7 @@ export default function RHNABarChart() {
         <p>Affordable housing quotas for the 2015-2023 and 2023-2031 periods</p>
       </div>
       <BarChart
-        label={<p>"Regional Housing Needs Allocation (RHNA) Units"</p>}
+        label={<p>Regional Housing Needs Allocation (RHNA) Units</p>}
         width={config.width}
         height={config.height}
         data={RHNA}
