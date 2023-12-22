@@ -1,0 +1,48 @@
+/* mobile */
+#measure-explainer-container-div {
+  position: relative;
+  width: 100%;
+}
+
+#measure-explainer-div {
+  position: absolute;
+  top: 0vh;
+  left: 40vw;
+  width: 50vw;
+  font-size: large;
+  z-index: 2;
+}
+
+.fund-desc-div,
+.fund-title-div {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.fund-title-div {
+  font-size: large;
+  text-align: center;
+}
+
+.fund-desc-div {
+  font-size: smaller;
+  text-align: center;
+}
+
+.fund-data-note-div {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  color: rgb(145, 145, 145);
+}
+/* desktop */
+
+/* desktop-size displays */
+@media only screen and (min-width: 1024px) {
+  #measure-explainer-div {
+    top: 20vh;
+    left: 40vw;
+    max-width: 30vw;
+    font-size: medium;
+    z-index: 2;
+  }
+}
