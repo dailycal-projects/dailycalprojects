@@ -47,7 +47,7 @@ import TimeDoctorateBarChart from '../visuals/union-vote-visuals/timeDoctorateBa
 import UniversityRentMap from '../visuals/rent-map-visuals/universityRentMap';
 import OptionWidthViz2 from '../visuals/telegraph-visuals/optionWidths2';
 import WarnmeHistogram from '../visuals/warnme-visuals/warnmeHistogram';
-// import RHNABarChart from '../visuals/construction-visuals/RHNABarChart';
+import RHNABarChart from '../visuals/construction-visuals/RHNABarChart';
 // import ProjectsByFundRe from '../visuals/construction-visuals/projectsByFundingBar';
 // import ProjectsByValuation from '../visuals/construction-visuals/projectsByValuationMap';
 import MarkerClusterMap from '../visuals/theft-visuals/bikeTheftMap';
@@ -115,7 +115,7 @@ const shortcodes = {
   UniversityRentMap,
   OptionWidthViz2,
   WarnmeHistogram,
-  // RHNABarChart,
+  RHNABarChart,
   // ProjectsByFundRe,
   // ProjectsByValuation,
   MarkerClusterMap,
