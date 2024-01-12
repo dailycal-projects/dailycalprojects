@@ -13,8 +13,8 @@
   z-index: 2;
 }
 
-.fund-desc-div,
-.fund-title-div {
+.fund-title-div,
+.fund-desc-div {
   padding-left: 2vw;
   padding-right: 2vw;
 }
@@ -34,10 +34,15 @@
   padding-right: 5vw;
   color: rgb(145, 145, 145);
 }
+
 /* desktop */
 
 /* desktop-size displays */
 @media only screen and (min-width: 1024px) {
+  .fund-desc-div {
+    margin-bottom: -60px;
+  }
+
   #measure-explainer-div {
     top: 20vh;
     left: 40vw;
