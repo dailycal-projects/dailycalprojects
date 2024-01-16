@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip as RechartsTooltip,
 } from 'recharts';
@@ -864,7 +864,3 @@ export const averageData = [
     averagePrice: 4.34,
   },
 ];
-
-const sortedData = coffeeData.info.sort(
-  (a, b) => b.averagePrice - a.averagePrice,
-);
