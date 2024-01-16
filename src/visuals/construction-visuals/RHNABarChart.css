@@ -22,3 +22,19 @@
 .rhna-title-div > p {
   font-size: smaller;
 }
+
+.rhna-chart-div {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.legend-text-color {
+  color: black;
+}
+
+@media only screen and (min-width: 1024px) {
+  .rhna-chart-div {
+    width: 50%;
+  }
+}

@@ -11,7 +11,8 @@
 
 /* LEGEND */
 .vm-legend-svg {
-  height: 160px;
+  /* height: 160px; */
+  height: 80vw;
   overflow: visible;
 }
 

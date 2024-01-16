@@ -51,32 +51,34 @@ const renderTooltipContent = (o) => {
 };
 
 export default function RHNABarChart() {
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        setIsMobile(window.innerWidth < 1024);
-      }
-    };
-    // Initial check on mount
-    handleResize();
+  // let window = undefined;
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (typeof window !== 'undefined') {
+  //       setIsMobile(window.innerWidth < 1024);
+  //     }
+  //   };
+  //   // Initial check on mount
+  //   handleResize();
 
-    // Event listener for window resize
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize);
-    }
+  //   // Event listener for window resize
+  //   if (typeof window !== 'undefined') {
+  //     window.addEventListener('resize', handleResize);
+  //   }
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleResize);
-      }
-    };
-  }, []);
+  //   // Cleanup the event listener on component unmount
+  //   return () => {
+  //     if (typeof window !== 'undefined') {
+  //       window.removeEventListener('resize', handleResize);
+  //     }
+  //   };
+  // }, []);
 
   const containerStyle = {
-    height: isMobile ? 400 : 500,
+    // height: isMobile ? 400 : 500,
+    height: 500,
     margin: {
       top: 20,
       right: 20,
@@ -109,10 +111,10 @@ export default function RHNABarChart() {
             <p>Affordable housing quotas for the 2015-2023 and 2023-2031 periods</p>
           </div>
           <div
+            className="rhna-chart-div"
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
           >
             <ResponsiveContainer
-              width={isMobile ? '90%' : '50%'}
               height={containerStyle.height}
             >
               <BarChart
@@ -124,11 +126,17 @@ export default function RHNABarChart() {
                 <XAxis dataKey="time period" />
                 <YAxis label={CustomizedLabelY} />
                 <Tooltip content={reverseTooltipContent} />
-                <Legend />
-                <Bar dataKey="very low" stackId="a" fill="#DC5B3F" />
+                <Legend
+                  formatter={(value, entry, index) => <span className="legend-text-color">{value}</span>}
+                />
+                {/* <Bar dataKey="very low" stackId="a" fill="#DC5B3F" />
                 <Bar dataKey="low" stackId="a" fill="#DC8D40" />
                 <Bar dataKey="moderate" stackId="a" fill="#DCA640" />
-                <Bar dataKey="above moderate" stackId="a" fill="#DBBF40" />
+                <Bar dataKey="above moderate" stackId="a" fill="#DBBF40" /> */}
+                <Bar dataKey="very low" stackId="a" fill="#E3555F" />
+                <Bar dataKey="low" stackId="a" fill="#F3803F" />
+                <Bar dataKey="moderate" stackId="a" fill="#FBA83D" />
+                <Bar dataKey="above moderate" stackId="a" fill="#FED23B" />
               </BarChart>
             </ResponsiveContainer>
           </div>

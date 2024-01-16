@@ -103,30 +103,31 @@ const valuation_format = (valuation) => formatter.format(valuation);
 export default function ProjectsByValuation() {
   const [filterSelected, setFilterSelected] = useState(false);
   const [currentSelectedCategory, setCurrentSelectedCategory] = useState('');
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
+  // let window = undefined;
   // updates window width on page load/resize
-  useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        setIsMobile(window.innerWidth < 1024);
-      }
-    };
-    // Initial check on mount
-    handleResize();
+  // useEffect(() => {
+  //     const handleResize = () => {
+  //         if (typeof window !== 'undefined') {
+  //             setIsMobile(window.innerWidth < 1024);
+  //         }
+  //     };
+  //     // Initial check on mount
+  //     handleResize();
 
-    // Event listener for window resize
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize);
-    }
+  //     // Event listener for window resize
+  //     if (typeof window !== 'undefined') {
+  //         window.addEventListener('resize', handleResize);
+  //     }
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleResize);
-      }
-    };
-  }, []);
+  //     // Cleanup the event listener on component unmount
+  //     return () => {
+  //         if (typeof window !== 'undefined') {
+  //             window.removeEventListener('resize', handleResize);
+  //         }
+  //     };
+  // }, []);
 
   let centerLat; let distanceLat; let bufferLat; let centerLong; let distanceLong; let
     bufferLong;
@@ -266,29 +267,29 @@ export default function ProjectsByValuation() {
 
                               {/* point hover popup */}
                               <Popup>
-                <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                                    <p>
-                                        {'Address: '}
-                                        <a href={`https://www.google.com/maps/place/${info.Address}`} target="_blank" rel="noreferrer">{info.Address}</a>
-                                      </p>
-                                    <p>
-                                        {'Type: '}
-                                        <span style={{ color: valuation_color_dict[info['Building Type']][100000] }}>{info['Building Type']}</span>
-                                      </p>
-                                    <p>
-                                        {'Permit Issued: '}
-                                        {info['Date Issued']}
-                                      </p>
-                                    <p>
-                                        {'Valuation: '}
-                                        {valuation_format(info.Valuation)}
-                                      </p>
-                                    <p className="popup-description">
-                                        {'Description: '}
-                                        {info['Work Description']}
-                                      </p>
-                                  </div>
-              </Popup>
+                                <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                                  <p>
+                                    {'Address: '}
+                                    <a href={`https://www.google.com/maps/place/${info.Address}`} target="_blank" rel="noreferrer">{info.Address}</a>
+                                  </p>
+                                  <p>
+                                    {'Type: '}
+                                    <span style={{ color: valuation_color_dict[info['Building Type']][100000] }}>{info['Building Type']}</span>
+                                  </p>
+                                  <p>
+                                    {'Permit Issued: '}
+                                    {info['Date Issued']}
+                                  </p>
+                                  <p>
+                                    {'Valuation: '}
+                                    {valuation_format(info.Valuation)}
+                                  </p>
+                                  <p className="popup-description">
+                                    {'Description: '}
+                                    {info['Work Description']}
+                                  </p>
+                                </div>
+                              </Popup>
                             </CircleMarker>
                           </g>
                         ))}
@@ -299,8 +300,8 @@ export default function ProjectsByValuation() {
                     <svg className="vm-legend-svg">
                       <text
                         className="svg-text legend-title"
-                        x={isMobile ? '5vw' : '0vw'}
-                        y={isMobile ? '0vh' : '15vh'}
+                                // x={isMobile ? '5vw' : '0vw'}
+                        x="0vw"
                       >
                         Building Type
                       </text>
@@ -322,13 +323,15 @@ export default function ProjectsByValuation() {
                                         fill={valuation_color_dict[k][100000]}
                                         fillOpacity={1}
                                         cx="5vw"
-                                        cy={isMobile ? `${2.5 * (i + 1)}vh` : `${15 + 2.5 * (i + 1)}vh`}
+                                                // cy={isMobile ? `${2.5 * (i + 1)}vh` : `${15 + 2.5 * (i + 1)}vh`}
+                                        cy={`${2.5 * (i + 1)}vh`}
                                         r={6}
                                       />
                                       <text
                                         className="svg-text"
                                         x="8vw"
-                                        y={isMobile ? `${2.5 * (i + 1) + 0.5}vh` : `${15 + 2.5 * (i + 1) + 0.5}vh`}
+                                                // y={isMobile ? `${2.5 * (i + 1) + 0.5}vh` : `${15 + 2.5 * (i + 1) + 0.5}vh`}
+                                        y={`${2.5 * (i + 1) + 0.5}vh`}
                                         style={{ fontWeight: currentSelectedCategory == k ? 400 : 300 }}
                                       >
                                         {Object.keys(valuation_color_dict)[i]}
@@ -338,8 +341,10 @@ export default function ProjectsByValuation() {
                             }
                       <text
                         className="svg-text legend-title"
-                        x={isMobile ? '50vw' : '0vw'} // right on mobile
-                        y={isMobile ? '0vh' : '30vh'}
+                                // x={isMobile ? '50vw' : '0vw'} // right on mobile
+                        x="0vw" // right on mobile
+                                // y={isMobile ? '0vh' : '30vh'} // below on desktop
+                        y="15vh"
                       >
                         Valuation in Dollars
                       </text>
@@ -361,14 +366,18 @@ export default function ProjectsByValuation() {
                                         fill={valuation_color_dict.Residential[k]}
                                         fillOpacity={valuation_opacity_dict[k]}
                                         strokeOpacity={valuation_opacity_dict[k]}
-                                        cx={isMobile ? '50vw' : '5vw'}
-                                        cy={isMobile ? `${2.5 * (i + 1)}vh` : `${30 + 2.5 * (i + 1)}vh`}
+                                                // cx={isMobile ? '50vw' : '5vw'}
+                                        cx="5vw"
+                                                // cy={isMobile ? `${2.5 * (i + 1)}vh` : `${30 + 2.5 * (i + 1)}vh`}
+                                        cy={`${15 + 2.5 * (i + 1)}vh`}
                                         r={6}
                                       />
                                       <text
                                         className="svg-text"
-                                        x={isMobile ? '53vw' : '8vw'}
-                                        y={isMobile ? `${2.5 * (i + 1) + 0.5}vh` : `${30 + 2.5 * (i + 1) + 0.5}vh`}
+                                                // x={isMobile ? '53vw' : '8vw'}
+                                        x="8vw"
+                                                // y={isMobile ? `${2.5 * (i + 1) + 0.5}vh` : `${30 + 2.5 * (i + 1) + 0.5}vh`}
+                                        y={`${15 + 2.5 * (i + 1) + 0.5}vh`}
                                         style={{ fontWeight: currentSelectedCategory == k ? 400 : 300 }}
                                       >
                                         {valuation_ranges_list[i]}

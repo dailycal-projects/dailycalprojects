@@ -23,12 +23,13 @@ const measureDescriptions = {
     .
                               </p>,
 
-  'Measure O': <p style={{ color: '#8EC583' }}>
+  // "Measure O": <p style={{ color: '#8EC583' }}>Measure O provides $135 million of funding from bond revenue to pay for <b>affordable housing</b> projects.</p>,
+  'Measure O': <p style={{ color: '#215775' }}>
     Measure O provides $135 million of funding from bond revenue to pay for
     <b>affordable housing</b>
     {' '}
     projects.
-  </p>,
+               </p>,
   'Measure M': <p>
     Measure M provided $30 million of funding from bond revenue to improve Berkeley’s streets and install
     <b>green infrastructure</b>
@@ -70,42 +71,46 @@ const measureDescriptions = {
 
 export default function ProjectsByFundRe() {
   const [currentMeasure, setCurrentMeasure] = useState('Measure O');
-  const [fundDataDynamic, setFundDataDynamic] = useState(fund_data);
-  const [isMobile, setIsMobile] = useState(false);
+  const [fundDataDynamic, setFundDataDynamic] = useState(fund_data.slice(0, 13));
+  // const [isMobile, setIsMobile] = useState(false);
 
+  // let window = undefined;
   // truncate bars to first 10 for mobile
-  useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        setIsMobile(window.innerWidth < 1024);
-        if (window.innerWidth < 1024) {
-          setFundDataDynamic(fund_data.slice(0, 13));
-        }
-      }
-    };
-    // Initial check on mount
-    handleResize();
+  // useEffect(() => {
+  //     const handleResize = () => {
+  //         if (typeof window !== 'undefined') {
+  //             setIsMobile(window.innerWidth < 1024);
+  //             if (window.innerWidth < 1024) {
+  //                 setFundDataDynamic(fund_data.slice(0, 13));
+  //             }
+  //         }
+  //     };
+  //     // Initial check on mount
+  //     handleResize();
 
-    // Event listener for window resize
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize);
-    }
+  //     // Event listener for window resize
+  //     if (typeof window !== 'undefined') {
+  //         window.addEventListener('resize', handleResize);
+  //     }
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleResize);
-      }
-    };
-  }, []);
+  //     // Cleanup the event listener on component unmount
+  //     return () => {
+  //         if (typeof window !== 'undefined') {
+  //             window.removeEventListener('resize', handleResize);
+  //         }
+  //     };
+  // }, []);
 
   const containerStyle = {
-    height: isMobile ? 500 : 800,
+    // height: isMobile ? 500 : 800,
+    height: 600,
     margin: {
       top: 20,
-      right: isMobile ? 20 : 120,
+      // right: isMobile ? 20 : 120,
+      right: 20,
       left: 20,
-      bottom: isMobile ? 130 : 120,
+      // bottom: isMobile ? 130 : 120
+      bottom: 130,
     },
   };
 
@@ -117,7 +122,7 @@ export default function ProjectsByFundRe() {
       textAnchor="middle"
       angle={-90}
     >
-      # of Projects Funded by Source
+      Number of projects
     </Text>
   );
 
@@ -127,8 +132,10 @@ export default function ProjectsByFundRe() {
       x={containerStyle.width / 2}
       y={containerStyle.height - containerStyle.margin.top}
       textAnchor="middle"
-      dx={isMobile ? 0 : containerStyle.width / 2 - containerStyle.margin.right / 2}
-      dy={isMobile ? 0 : -containerStyle.margin.bottom}
+                // dx={isMobile ? 0 : containerStyle.width / 2 - containerStyle.margin.right / 2}
+      dx={containerStyle.width / 2 - containerStyle.margin.right / 2}
+                // dy={isMobile ? 0 : -containerStyle.margin.bottom}
+      dy={-containerStyle.margin.bottom}
     >
       Funding Source
     </Text>
@@ -155,7 +162,7 @@ export default function ProjectsByFundRe() {
     <div>
       <div className="fund-title-div">
         <h4>
-          Berkeley Capital Projects by Funding Source
+          Funding sources for Berkeley Capital Projects
         </h4>
       </div>
       <div className="fund-desc-div">
@@ -165,18 +172,19 @@ export default function ProjectsByFundRe() {
       <div id="measure-explainer-container-div">
         <div id="measure-explainer-div">
           <b
-            style={{ color: currentMeasure === 'Measure O' ? '#8EC583' : '#888' }}
+            style={{ color: currentMeasure === 'Measure O' ? '#215775' : '#888' }}
           >
             {currentMeasure}
           </b>
-          <p style={{ color: currentMeasure === 'Measure O' ? '#8EC583' : '#888' }}>{measureDescriptions[currentMeasure]}</p>
+          <p style={{ color: currentMeasure === 'Measure O' ? '#215775' : '#888' }}>{measureDescriptions[currentMeasure]}</p>
         </div>
       </div>
       <div
+        className="fund-chart-div"
         style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       >
         <ResponsiveContainer
-          width={isMobile ? '95%' : '80%'}
+                    // width={isMobile ? "95%" : "80%"}
           height={containerStyle.height}
         >
           <BarChart
@@ -187,8 +195,21 @@ export default function ProjectsByFundRe() {
           >
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
             {/* <XAxis dataKey="Funding Source" label={CustomizedLabelX} tick={CustomizedAxisTick} /> */}
-            <XAxis dataKey="Funding Source" label={CustomizedLabelX} angle={isMobile ? -40 : -30} interval={0} tick={{ fontSize: isMobile ? 12 : 10, fill: '#000' }} textAnchor="end" />
-            <YAxis label={CustomizedLabelY} />
+            <XAxis
+              dataKey="Funding Source"
+              label={CustomizedLabelX}
+                            // angle={isMobile ? -40 : -30}
+              angle={-40}
+              interval={0}
+                            // tick={{ fontSize: isMobile ? 12 : 10, fill: '#000' }}
+              tick={{ fontSize: 10, fill: '#000' }}
+              textAnchor="end"
+            />
+            <YAxis
+              label={CustomizedLabelY}
+              domain={[0, 53]}
+              ticks={[0, 10, 20, 30, 40, 50]}
+            />
             <Tooltip cursor={false} />
             {/* <Legend /> */}
             <Bar dataKey="count" fill="#BABABA">
@@ -197,7 +218,7 @@ export default function ProjectsByFundRe() {
                 (
                   <Cell
                     cursor="pointer"
-                    fill={entry['Funding Source'] === 'Measure O' ? '#8EC583' : '#BABABA'}
+                    fill={entry['Funding Source'] === 'Measure O' ? '#215775' : '#BABABA'}
                     key={`cell-${index}`}
                     onClick={() => {
                       if (Object.keys(measureDescriptions).includes(entry['Funding Source'])) {

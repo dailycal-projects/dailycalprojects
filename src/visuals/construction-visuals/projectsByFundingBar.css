@@ -35,16 +35,26 @@
   color: rgb(145, 145, 145);
 }
 
-/* desktop */
+.fund-chart-div,
+.fund-data-note-div {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* desktop-size displays */
 @media only screen and (min-width: 1024px) {
+  .fund-chart-div,
+  .fund-data-note-div {
+    width: 50%;
+  }
+
   .fund-desc-div {
     margin-bottom: -60px;
   }
 
   #measure-explainer-div {
-    top: 20vh;
+    top: 10vh;
     left: 40vw;
     max-width: 30vw;
     font-size: medium;
