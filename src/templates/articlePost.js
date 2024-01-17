@@ -11,7 +11,9 @@ import ArticleFooter from '../components/articleFooter';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
-  const { bylineName, bylineUrl } = frontmatter;
+  const {
+    bylineName, bylineUrl,
+  } = frontmatter;
   const image = getImage(frontmatter.featuredImage);
   const socialImage = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.resize
@@ -28,6 +30,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
         />
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.subhead}</h3>
+
         {(bylineName && bylineUrl) ? (
           <div className={classes.byline}>
             {bylineName.map((author, i) => {
@@ -42,6 +45,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
             })}
           </div>
         ) : null }
+
         <h5>{frontmatter.date}</h5>
         <div style={{ margin: 50 }}>
           <GatsbyImage image={image} alt="card illustration" />
