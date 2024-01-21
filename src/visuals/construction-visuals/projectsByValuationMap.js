@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   MapContainer,
   CircleMarker,
   TileLayer,
-  Tooltip,
+  // Tooltip,
   Popup,
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -12,7 +12,7 @@ import valuationData from './data/permit_data.json';
 import './projectsByValuationMap.css';
 
 // add color (based on valuation) to map
-const valuation_color_dict = {
+const valuationColorDict = {
   Residential: {
     100: '#EAEEF0',
     1000: '#CEDFE6',
@@ -51,7 +51,7 @@ const valuation_color_dict = {
   },
 };
 
-const valuation_opacity_dict = {
+const valuationOpacityDict = {
   100: 0.1,
   1000: 0.2,
   10000: 0.3,
@@ -61,7 +61,7 @@ const valuation_opacity_dict = {
   999999999999: 0.7,
 };
 
-const valuation_ranges_list = [
+const valuationRangesList = [
   '0-100',
   '100-1,000',
   '1,000-10,000',
@@ -71,27 +71,33 @@ const valuation_ranges_list = [
   '10,000,000+',
 ];
 
-const valuation_to_color = (valuation, type) => {
-  const color_dict_by_type = valuation_color_dict[type];
+const valuationToColor = (valuation, type) => {
+  const color_dict_by_type = valuationColorDict[type];
+  let color;
   for (const value_threshold in color_dict_by_type) {
     if (valuation <= value_threshold) {
-      return color_dict_by_type[value_threshold];
+      color = color_dict_by_type[value_threshold];
+      break;
     }
   }
+  return color;
 };
 
-const valuation_to_opacity = (valuation) => {
-  for (const value_threshold in valuation_opacity_dict) {
+const valuationToOpacity = (valuation) => {
+  let opacity;
+  for (const value_threshold in valuationOpacityDict) {
     if (valuation <= value_threshold) {
-      return valuation_opacity_dict[value_threshold];
+      opacity = valuationOpacityDict[value_threshold];
+      break;
     }
   }
+  return opacity;
 };
 
-const valuation_to_size = (valuation) => {
-  const size = Math.min(Math.max(5, Math.pow(valuation, 0.15)), 25);
-  return size;
-};
+// const valuation_to_size = (valuation) => {
+//   const size = Math.min(Math.max(5, Math.pow(valuation, 0.15)), 25);
+//   return size;
+// };
 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -129,21 +135,21 @@ export default function ProjectsByValuation() {
   //     };
   // }, []);
 
-  let centerLat; let distanceLat; let bufferLat; let centerLong; let distanceLong; let
-    bufferLong;
+  // let centerLat; let distanceLat; let bufferLat; let centerLong; let distanceLong; let
+  //   bufferLong;
 
   // longitude/latitude info
-  centerLat = (valuationData.minLat + valuationData.maxLat) / 2;
-  distanceLat = valuationData.maxLat - valuationData.minLat;
-  bufferLat = distanceLat * 0.05;
-  centerLong = (valuationData.minLong + valuationData.maxLong) / 2;
-  distanceLong = valuationData.maxLong - valuationData.minLong;
-  bufferLong = distanceLong * 0.05;
+  const centerLat = (valuationData.minLat + valuationData.maxLat) / 2;
+  const distanceLat = valuationData.maxLat - valuationData.minLat;
+  const bufferLat = distanceLat * 0.05;
+  const centerLong = (valuationData.minLong + valuationData.maxLong) / 2;
+  const distanceLong = valuationData.maxLong - valuationData.minLong;
+  const bufferLong = distanceLong * 0.05;
 
   // deriving color & opacity info
   valuationData.info = valuationData.info.map((d) => {
-    d.color = valuation_to_color(d.Valuation, d['Building Type']);
-    d.opacity = valuation_to_opacity(d.Valuation);
+    d.color = valuationToColor(d.Valuation, d['Building Type']);
+    d.opacity = valuationToOpacity(d.Valuation);
     // d.size = valuation_to_size(d.Valuation);
     return d;
   });
@@ -158,15 +164,15 @@ export default function ProjectsByValuation() {
     setCurrentSelectedCategory('');
   };
 
-  // lengend-item: on-click --> toggle visibility of corresponding points on map
+  // legend-item: on-click --> toggle visibility of corresponding points on map
   const toggleLegendItem = (category) => {
-    const project_types = Object.keys(valuation_color_dict);
+    const project_types = Object.keys(valuationColorDict);
     let matchedHues; let
       otherHues; // set based on clicked legend item
 
     // if clicking same item, (second consecutive click) reset map
     // also make reset button visible via filterSelected state
-    if (currentSelectedCategory == category) {
+    if (currentSelectedCategory === category) {
       // console.log('reset map');
       resetItems();
     }
@@ -178,14 +184,14 @@ export default function ProjectsByValuation() {
       // if category type is project type, match all fills in that project type
       if (project_types.includes(category)) {
         // console.log('TYPE');
-        otherHues = Object.values(valuation_color_dict[category]);
+        otherHues = Object.values(valuationColorDict[category]);
       }
       // if category type is valuation, match fills for valuation within each project type
       else {
         // console.log('VALUATION');
-        otherHues = Object.keys(valuation_color_dict).map((c) => valuation_color_dict[c][category]);
+        otherHues = Object.keys(valuationColorDict).map((c) => valuationColorDict[c][category]);
       }
-      matchedHues = Object.values(valuation_color_dict).map((innerObj) => Object.values(innerObj)).flat().filter((item) => !otherHues.includes(item));
+      matchedHues = Object.values(valuationColorDict).map((innerObj) => Object.values(innerObj)).flat().filter((item) => !otherHues.includes(item));
       const selector = `.leaflet-interactive[fill="${matchedHues.join('"], .leaflet-interactive[fill="')}"]`;
       const matchingPaths = document.querySelectorAll(selector);
       matchingPaths.forEach((path) => {
@@ -247,11 +253,11 @@ export default function ProjectsByValuation() {
                           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png"
                         />
 
-                        {/* scatterplot points */}
+                        {/* scatter plot points */}
                         {valuationData.info.map((info, k) => (
                           <g className={`${k}-circle`}>
                             <CircleMarker
-                              key={k}
+                              // key={k}
                               center={[info.Coordinates[0], info.Coordinates[1]]}
                                             // radius={info.size}
                               radius={6}
@@ -274,7 +280,7 @@ export default function ProjectsByValuation() {
                                   </p>
                                   <p>
                                     {'Type: '}
-                                    <span style={{ color: valuation_color_dict[info['Building Type']][100000] }}>{info['Building Type']}</span>
+                                    <span style={{ color: valuationColorDict[info['Building Type']][100000] }}>{info['Building Type']}</span>
                                   </p>
                                   <p>
                                     {'Permit Issued: '}
@@ -306,7 +312,7 @@ export default function ProjectsByValuation() {
                         Building Type
                       </text>
                       {
-                                Object.keys(valuation_color_dict).map((k, i) =>
+                                Object.keys(valuationColorDict).map((k, i) =>
                                 // console.log(i, k);
                                   (
                                     <g
@@ -320,7 +326,7 @@ export default function ProjectsByValuation() {
                                       <circle
                                         className="svg-circle"
                                         stroke="#000"
-                                        fill={valuation_color_dict[k][100000]}
+                                        fill={valuationColorDict[k][100000]}
                                         fillOpacity={1}
                                         cx="5vw"
                                                 // cy={isMobile ? `${2.5 * (i + 1)}vh` : `${15 + 2.5 * (i + 1)}vh`}
@@ -332,9 +338,9 @@ export default function ProjectsByValuation() {
                                         x="8vw"
                                                 // y={isMobile ? `${2.5 * (i + 1) + 0.5}vh` : `${15 + 2.5 * (i + 1) + 0.5}vh`}
                                         y={`${2.5 * (i + 1) + 0.5}vh`}
-                                        style={{ fontWeight: currentSelectedCategory == k ? 400 : 300 }}
+                                        style={{ fontWeight: currentSelectedCategory === k ? 400 : 300 }}
                                       >
-                                        {Object.keys(valuation_color_dict)[i]}
+                                        {Object.keys(valuationColorDict)[i]}
                                       </text>
                                     </g>
                                   ))
@@ -349,7 +355,7 @@ export default function ProjectsByValuation() {
                         Valuation in Dollars
                       </text>
                       {
-                                Object.keys(valuation_color_dict.Residential).map((k, i) =>
+                                Object.keys(valuationColorDict.Residential).map((k, i) =>
                                 // console.log(i, k);
                                   (
                                     <g
@@ -363,9 +369,9 @@ export default function ProjectsByValuation() {
                                       <circle
                                         className="svg-circle"
                                         stroke="#000"
-                                        fill={valuation_color_dict.Residential[k]}
-                                        fillOpacity={valuation_opacity_dict[k]}
-                                        strokeOpacity={valuation_opacity_dict[k]}
+                                        fill={valuationColorDict.Residential[k]}
+                                        fillOpacity={valuationOpacityDict[k]}
+                                        strokeOpacity={valuationOpacityDict[k]}
                                                 // cx={isMobile ? '50vw' : '5vw'}
                                         cx="5vw"
                                                 // cy={isMobile ? `${2.5 * (i + 1)}vh` : `${30 + 2.5 * (i + 1)}vh`}
@@ -378,9 +384,9 @@ export default function ProjectsByValuation() {
                                         x="8vw"
                                                 // y={isMobile ? `${2.5 * (i + 1) + 0.5}vh` : `${30 + 2.5 * (i + 1) + 0.5}vh`}
                                         y={`${15 + 2.5 * (i + 1) + 0.5}vh`}
-                                        style={{ fontWeight: currentSelectedCategory == k ? 400 : 300 }}
+                                        style={{ fontWeight: currentSelectedCategory === k ? 400 : 300 }}
                                       >
-                                        {valuation_ranges_list[i]}
+                                        {valuationRangesList[i]}
                                       </text>
                                     </g>
                                   ))

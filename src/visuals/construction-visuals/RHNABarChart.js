@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Text, ResponsiveContainer,
 } from 'recharts';
 import RHNA from './data/RHNA_data.json';
 
 import './RHNABarChart.css';
-
+npm
 const toPercent = (decimal, fixed = 0) => `${(decimal * 100).toFixed(fixed)}%`;
 
 const getPercent = (value, total) => {
@@ -15,13 +15,15 @@ const getPercent = (value, total) => {
 };
 
 const reverseTooltipContent = (o) => {
-  const { payload, label } = o;
+  const { payload } = o;
 
   return (
     <div className="customized-tooltip-content">
       <ul className="list">
         {payload.reverse().map((entry, index) => (
-          <li key={`item-${index}`} style={{ color: entry.color }}>
+          <li
+            // key={`item-${index}`} 
+            style={{ color: entry.color }}>
             {`${entry.name}: ${entry.value}`}
           </li>
         ))}
@@ -30,25 +32,25 @@ const reverseTooltipContent = (o) => {
   );
 };
 
-const renderTooltipContent = (o) => {
-  const { payload, label } = o;
-  const total = payload.reduce((result, entry) => result + entry.value, 0); // calculate total
+// const renderTooltipContent = (o) => {
+//   const { payload, label } = o;
+//   const total = payload.reduce((result, entry) => result + entry.value, 0); // calculate total
 
-  return (
-    <div className="customized-tooltip-content">
+//   return (
+//     <div className="customized-tooltip-content">
 
-      <ul className="list">
-        {payload.reverse().map((entry, index) => (
-          <li key={`item-${index}`} style={{ color: entry.color }}>
-            {`${entry.name}: ${entry.value} (${getPercent(entry.value, total)})`}
-          </li>
-        ))}
-        <li className="total">{`${label} (Total: ${total})`}</li>
-      </ul>
+//       <ul className="list">
+//         {payload.reverse().map((entry, index) => (
+//           <li key={`item-${index}`} style={{ color: entry.color }}>
+//             {`${entry.name}: ${entry.value} (${getPercent(entry.value, total)})`}
+//           </li>
+//         ))}
+//         <li className="total">{`${label} (Total: ${total})`}</li>
+//       </ul>
 
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
 export default function RHNABarChart() {
   // const [isMobile, setIsMobile] = useState(false);
@@ -91,7 +93,7 @@ export default function RHNABarChart() {
   const CustomizedLabelY = () => (
     <Text
       x={containerStyle.margin.left}
-      y={containerStyle.height * 2 / 5}
+      y={(containerStyle.height * 2) / 5}
       textAnchor="middle"
       angle={-90}
     >
@@ -103,44 +105,44 @@ export default function RHNABarChart() {
     <div>
       {RHNA
         && (
-        <div>
-          <div className="rhna-title-div">
-            <h4>
-              Berkeley Regional Housing Needs Allocation (RHNA) by Income Level
-            </h4>
-            <p>Affordable housing quotas for the 2015-2023 and 2023-2031 periods</p>
-          </div>
-          <div
-            className="rhna-chart-div"
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-          >
-            <ResponsiveContainer
-              height={containerStyle.height}
+          <div>
+            <div className="rhna-title-div">
+              <h4>
+                Berkeley Regional Housing Needs Allocation (RHNA) by Income Level
+              </h4>
+              <p>Affordable housing quotas for the 2015-2023 and 2023-2031 periods</p>
+            </div>
+            <div
+              className="rhna-chart-div"
+              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
-              <BarChart
-                label={<p>"Regional Housing Needs Allocation (RHNA) Units"</p>}
-                data={RHNA}
-                margin={containerStyle.margin}
+              <ResponsiveContainer
+                height={containerStyle.height}
               >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="time period" />
-                <YAxis label={CustomizedLabelY} />
-                <Tooltip content={reverseTooltipContent} />
-                <Legend
-                  formatter={(value, entry, index) => <span className="legend-text-color">{value}</span>}
-                />
-                {/* <Bar dataKey="very low" stackId="a" fill="#DC5B3F" />
+                <BarChart
+                  label={<p>&quot; Regional Housing Needs Allocation (RHNA) Units &quot;</p>}
+                  data={RHNA}
+                  margin={containerStyle.margin}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="time period" />
+                  <YAxis label={CustomizedLabelY} />
+                  <Tooltip content={reverseTooltipContent} />
+                  <Legend
+                    formatter={(value) => <span className="legend-text-color">{value}</span>}
+                  />
+                  {/* <Bar dataKey="very low" stackId="a" fill="#DC5B3F" />
                 <Bar dataKey="low" stackId="a" fill="#DC8D40" />
                 <Bar dataKey="moderate" stackId="a" fill="#DCA640" />
                 <Bar dataKey="above moderate" stackId="a" fill="#DBBF40" /> */}
-                <Bar dataKey="very low" stackId="a" fill="#E3555F" />
-                <Bar dataKey="low" stackId="a" fill="#F3803F" />
-                <Bar dataKey="moderate" stackId="a" fill="#FBA83D" />
-                <Bar dataKey="above moderate" stackId="a" fill="#FED23B" />
-              </BarChart>
-            </ResponsiveContainer>
+                  <Bar dataKey="very low" stackId="a" fill="#E3555F" />
+                  <Bar dataKey="low" stackId="a" fill="#F3803F" />
+                  <Bar dataKey="moderate" stackId="a" fill="#FBA83D" />
+                  <Bar dataKey="above moderate" stackId="a" fill="#FED23B" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
-        </div>
         )}
     </div>
   );

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   BarChart, Bar, Cell, XAxis, YAxis, Tooltip, Text, ResponsiveContainer,
 } from 'recharts';
-import fund_data from './data/berk_construction_by_fund.json';
+import fundData from './data/berk_construction_by_fund.json';
 
 import './projectsByFundingBar.css';
 
@@ -11,17 +11,17 @@ const measureDescriptions = {
     Measure T1 provides $100 million of funding from bond revenue to pay for improvements to
     <b>City infrastructure and facilities</b>
     .
-                </p>,
+  </p>,
   'Capital Improvement Fund': <p>
     The Capital Improvement Fund provides funding for annual street rehabilitations, and most recently, the
     <b>Southside Complete Streets project</b>
     .
-                              </p>,
+  </p>,
   'State Transportation Tax': <p>
     A county-level tax applied to shipping within the county's jurisdiction; also used to fund
     <b>annual street rehabilitations</b>
     .
-                              </p>,
+  </p>,
 
   // "Measure O": <p style={{ color: '#8EC583' }}>Measure O provides $135 million of funding from bond revenue to pay for <b>affordable housing</b> projects.</p>,
   'Measure O': <p style={{ color: '#215775' }}>
@@ -29,13 +29,13 @@ const measureDescriptions = {
     <b>affordable housing</b>
     {' '}
     projects.
-               </p>,
+  </p>,
   'Measure M': <p>
     Measure M provided $30 million of funding from bond revenue to improve Berkeley’s streets and install
     <b>green infrastructure</b>
     {' '}
     to protect water quality in the Bay.
-               </p>,
+  </p>,
   'Measure F': <p>
     Starting in FY 2015, Measure F provided an additional 17% of annual funding to the Parks Tax, a parcel tax that pays for
     <b>park maintenance.</b>
@@ -44,34 +44,35 @@ const measureDescriptions = {
     Measure B was approved in 2000, and Measure BB in 2014 to provide sales tax funding for
     <b>transportation projects</b>
     .
-                    </p>,
+  </p>,
   'Sanitary Sewer Fund': <p>
     The Sanitary Sewer Fund provides funds for rehabilitating
     <b>sewage systems</b>
     .
-                         </p>,
+  </p>,
   'Marina Fund': <p>
     The Marina Fund provides $15 million of funding for repairing docks and dredging in
     <b>Berkeley's Marina</b>
     .
-                 </p>,
+  </p>,
   'Vehicle Registration Fee (VRF)': <p>
     {' '}
     A 0.65% fee applied to the purchase price/value of vehicle; also used to fund
     <b>annual street rehabilitations</b>
     .
-                                    </p>,
+  </p>,
   'Senate Bill 1': <p>
     Also known as the Road Repair and Accountability Act, this invests $5.4 billion annually to fix
     <b>roads, freeways and bridges</b>
     {' '}
     in communities across California.
-                   </p>,
+  </p>,
 };
 
 export default function ProjectsByFundRe() {
   const [currentMeasure, setCurrentMeasure] = useState('Measure O');
-  const [fundDataDynamic, setFundDataDynamic] = useState(fund_data.slice(0, 13));
+  const fundDataDynamic = fundData.slice(0, 13);
+  // const [fundDataDynamic, setFundDataDynamic] = useState(fundData.slice(0, 13));
   // const [isMobile, setIsMobile] = useState(false);
 
   // let window = undefined;
@@ -81,7 +82,7 @@ export default function ProjectsByFundRe() {
   //         if (typeof window !== 'undefined') {
   //             setIsMobile(window.innerWidth < 1024);
   //             if (window.innerWidth < 1024) {
-  //                 setFundDataDynamic(fund_data.slice(0, 13));
+  //                 setFundDataDynamic(fundData.slice(0, 13));
   //             }
   //         }
   //     };
@@ -132,31 +133,14 @@ export default function ProjectsByFundRe() {
       x={containerStyle.width / 2}
       y={containerStyle.height - containerStyle.margin.top}
       textAnchor="middle"
-                // dx={isMobile ? 0 : containerStyle.width / 2 - containerStyle.margin.right / 2}
+      // dx={isMobile ? 0 : containerStyle.width / 2 - containerStyle.margin.right / 2}
       dx={containerStyle.width / 2 - containerStyle.margin.right / 2}
-                // dy={isMobile ? 0 : -containerStyle.margin.bottom}
+      // dy={isMobile ? 0 : -containerStyle.margin.bottom}
       dy={-containerStyle.margin.bottom}
     >
       Funding Source
     </Text>
   );
-
-  // rotated tick label
-  const CustomizedAxisTick = () =>
-  // console.log('this tick',this);
-    (
-    // <g transform={`translate(${x},${y})`}>
-      <Text
-        x={0}
-        y={0}
-        textAnchor="end"
-        fill="#666"
-        transform="rotate(-35)"
-      >
-        test
-      </Text>
-    // </g>
-    );
 
   return (
     <div>
@@ -184,12 +168,12 @@ export default function ProjectsByFundRe() {
         style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       >
         <ResponsiveContainer
-                    // width={isMobile ? "95%" : "80%"}
+          // width={isMobile ? "95%" : "80%"}
           height={containerStyle.height}
         >
           <BarChart
-                        // width={containerStyle.width}
-                        // height={containerStyle.height}
+            // width={containerStyle.width}
+            // height={containerStyle.height}
             data={fundDataDynamic}
             margin={containerStyle.margin}
           >
@@ -198,10 +182,10 @@ export default function ProjectsByFundRe() {
             <XAxis
               dataKey="Funding Source"
               label={CustomizedLabelX}
-                            // angle={isMobile ? -40 : -30}
+              // angle={isMobile ? -40 : -30}
               angle={-40}
               interval={0}
-                            // tick={{ fontSize: isMobile ? 12 : 10, fill: '#000' }}
+              // tick={{ fontSize: isMobile ? 12 : 10, fill: '#000' }}
               tick={{ fontSize: 10, fill: '#000' }}
               textAnchor="end"
             />
@@ -213,22 +197,22 @@ export default function ProjectsByFundRe() {
             <Tooltip cursor={false} />
             {/* <Legend /> */}
             <Bar dataKey="count" fill="#BABABA">
-              {fund_data.map((entry, index) =>
-                // console.log(index, entry);
-                (
-                  <Cell
-                    cursor="pointer"
-                    fill={entry['Funding Source'] === 'Measure O' ? '#215775' : '#BABABA'}
-                    key={`cell-${index}`}
-                    onClick={() => {
-                      if (Object.keys(measureDescriptions).includes(entry['Funding Source'])) {
-                        setCurrentMeasure(entry['Funding Source']);
-                      } else {
-                        setCurrentMeasure('');
-                      }
-                    }}
-                  />
-                ))}
+              {fundData.map((entry, index) =>
+              // console.log(index, entry);
+              (
+                <Cell
+                  cursor="pointer"
+                  fill={entry['Funding Source'] === 'Measure O' ? '#215775' : '#BABABA'}
+                  // key={`cell-${index}`}
+                  onClick={() => {
+                    if (Object.keys(measureDescriptions).includes(entry['Funding Source'])) {
+                      setCurrentMeasure(entry['Funding Source']);
+                    } else {
+                      setCurrentMeasure('');
+                    }
+                  }}
+                />
+              ))}
             </Bar>
             {/* <Brush dataKey="count" height={30} stroke="#BABABA" /> */}
           </BarChart>
