@@ -199,20 +199,20 @@ export default function ProjectsByFundRe() {
             <Bar dataKey="count" fill="#BABABA">
               {fundData.map((entry, index) =>
               // console.log(index, entry);
-              (
-                <Cell
-                  cursor="pointer"
-                  fill={entry['Funding Source'] === 'Measure O' ? '#215775' : '#BABABA'}
+                (
+                  <Cell
+                    cursor="pointer"
+                    fill={entry['Funding Source'] === 'Measure O' ? '#215775' : '#BABABA'}
                   // key={`cell-${index}`}
-                  onClick={() => {
-                    if (Object.keys(measureDescriptions).includes(entry['Funding Source'])) {
-                      setCurrentMeasure(entry['Funding Source']);
-                    } else {
-                      setCurrentMeasure('');
-                    }
-                  }}
-                />
-              ))}
+                    onClick={() => {
+                      if (Object.keys(measureDescriptions).includes(entry['Funding Source'])) {
+                        setCurrentMeasure(entry['Funding Source']);
+                      } else {
+                        setCurrentMeasure('');
+                      }
+                    }}
+                  />
+                ))}
             </Bar>
             {/* <Brush dataKey="count" height={30} stroke="#BABABA" /> */}
           </BarChart>

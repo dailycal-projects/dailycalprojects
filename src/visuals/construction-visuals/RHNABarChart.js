@@ -5,7 +5,7 @@ import {
 import RHNA from './data/RHNA_data.json';
 
 import './RHNABarChart.css';
-npm
+
 const toPercent = (decimal, fixed = 0) => `${(decimal * 100).toFixed(fixed)}%`;
 
 const getPercent = (value, total) => {
@@ -22,8 +22,9 @@ const reverseTooltipContent = (o) => {
       <ul className="list">
         {payload.reverse().map((entry, index) => (
           <li
-            // key={`item-${index}`} 
-            style={{ color: entry.color }}>
+            // key={`item-${index}`}
+            style={{ color: entry.color }}
+          >
             {`${entry.name}: ${entry.value}`}
           </li>
         ))}
