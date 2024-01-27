@@ -71,26 +71,52 @@ const valuationRangesList = [
   '10,000,000+',
 ];
 
+// const valuationToColor = (valuation, type) => {
+//   const colorDictByType = valuationColorDict[type];
+//   let color;
+//   for (const valueThreshold in colorDictByType) {
+
+//     if (valuation <= valueThreshold) {
+//       color = colorDictByType[valueThreshold];
+//       break;
+//     }
+//   }
+//   return color;
+// };
+
 const valuationToColor = (valuation, type) => {
-  const color_dict_by_type = valuationColorDict[type];
+  const colorDictByType = valuationColorDict[type];
   let color;
-  for (const value_threshold in color_dict_by_type) {
-    if (valuation <= value_threshold) {
-      color = color_dict_by_type[value_threshold];
-      break;
+
+  Object.keys(colorDictByType).forEach((valueThreshold) => {
+    if (valuation <= valueThreshold) {
+      color = colorDictByType[valueThreshold];
     }
-  }
+  });
+
   return color;
 };
 
+// const valuationToOpacity = (valuation) => {
+//   let opacity;
+//   for (const valueThreshold in valuationOpacityDict) {
+//     if (valuation <= valueThreshold) {
+//       opacity = valuationOpacityDict[valueThreshold];
+//       break;
+//     }
+//   }
+//   return opacity;
+// };
+
 const valuationToOpacity = (valuation) => {
   let opacity;
-  for (const value_threshold in valuationOpacityDict) {
-    if (valuation <= value_threshold) {
-      opacity = valuationOpacityDict[value_threshold];
-      break;
+
+  Object.keys(valuationOpacityDict).forEach((valueThreshold) => {
+    if (valuation <= valueThreshold) {
+      opacity = valuationOpacityDict[valueThreshold];
     }
-  }
+  });
+
   return opacity;
 };
 
@@ -104,7 +130,7 @@ const formatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
 });
 
-const valuation_format = (valuation) => formatter.format(valuation);
+const valuationFormat = (valuation) => formatter.format(valuation);
 
 export default function ProjectsByValuation() {
   const [filterSelected, setFilterSelected] = useState(false);
@@ -146,13 +172,20 @@ export default function ProjectsByValuation() {
   const distanceLong = valuationData.maxLong - valuationData.minLong;
   const bufferLong = distanceLong * 0.05;
 
-  // deriving color & opacity info
-  valuationData.info = valuationData.info.map((d) => {
-    d.color = valuationToColor(d.Valuation, d['Building Type']);
-    d.opacity = valuationToOpacity(d.Valuation);
-    // d.size = valuation_to_size(d.Valuation);
-    return d;
-  });
+  // // deriving color & opacity info
+  // valuationData.info = valuationData.info.map((d) => {
+  //   d.color = valuationToColor(d.Valuation, d['Building Type']);
+  //   d.opacity = valuationToOpacity(d.Valuation);
+  //   // d.size = valuation_to_size(d.Valuation);
+  //   return d;
+  // });
+
+  valuationData.info = valuationData.info.map((d) => ({
+    ...d,
+    color: valuationToColor(d.Valuation, d['Building Type']),
+    opacity: valuationToOpacity(d.Valuation),
+    // size: valuation_to_size(d.Valuation),
+  }));
 
   // reset legend items to all
   const resetItems = () => {
@@ -166,7 +199,7 @@ export default function ProjectsByValuation() {
 
   // legend-item: on-click --> toggle visibility of corresponding points on map
   const toggleLegendItem = (category) => {
-    const project_types = Object.keys(valuationColorDict);
+    const projectTypes = Object.keys(valuationColorDict);
     let matchedHues; let
       otherHues; // set based on clicked legend item
 
@@ -182,7 +215,7 @@ export default function ProjectsByValuation() {
       // first reset any previous classes
       resetItems();
       // if category type is project type, match all fills in that project type
-      if (project_types.includes(category)) {
+      if (projectTypes.includes(category)) {
         // console.log('TYPE');
         otherHues = Object.values(valuationColorDict[category]);
       }
@@ -288,7 +321,7 @@ export default function ProjectsByValuation() {
                                   </p>
                                   <p>
                                     {'Valuation: '}
-                                    {valuation_format(info.Valuation)}
+                                    {valuationFormat(info.Valuation)}
                                   </p>
                                   <p className="popup-description">
                                     {'Description: '}
