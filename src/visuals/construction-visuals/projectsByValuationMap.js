@@ -208,19 +208,17 @@ export default function ProjectsByValuation() {
     if (currentSelectedCategory === category) {
       // console.log('reset map');
       resetItems();
-    }
-    // initial click or click after reset --> filter for category
+    } else {
+      // initial click or click after reset --> filter for category
     // else if(currentSelectedCategory == "") {
-    else {
       // first reset any previous classes
       resetItems();
       // if category type is project type, match all fills in that project type
       if (projectTypes.includes(category)) {
         // console.log('TYPE');
         otherHues = Object.values(valuationColorDict[category]);
-      }
-      // if category type is valuation, match fills for valuation within each project type
-      else {
+      } else {
+        // if category type is valuation, match fills for valuation within each project type
         // console.log('VALUATION');
         otherHues = Object.keys(valuationColorDict).map((c) => valuationColorDict[c][category]);
       }
@@ -345,38 +343,36 @@ export default function ProjectsByValuation() {
                         Building Type
                       </text>
                       {
-                                Object.keys(valuationColorDict).map((k, i) =>
-                                // console.log(i, k);
-                                  (
-                                    <g
-                                      className="legend-item"
-                                      id={`${k}-legend-item`}
-                                      onClick={() => {
-                                        toggleLegendItem(k);
-                                      }}
-                                      style={{ pointerEvents: 'bounding-box' }}
-                                    >
-                                      <circle
-                                        className="svg-circle"
-                                        stroke="#000"
-                                        fill={valuationColorDict[k][100000]}
-                                        fillOpacity={1}
-                                        cx="5vw"
+                                Object.keys(valuationColorDict).map((k, i) => (
+                                  <g
+                                    className="legend-item"
+                                    id={`${k}-legend-item`}
+                                    onClick={() => {
+                                      toggleLegendItem(k);
+                                    }}
+                                    style={{ pointerEvents: 'bounding-box' }}
+                                  >
+                                    <circle
+                                      className="svg-circle"
+                                      stroke="#000"
+                                      fill={valuationColorDict[k][100000]}
+                                      fillOpacity={1}
+                                      cx="5vw"
                                                 // cy={isMobile ? `${2.5 * (i + 1)}vh` : `${15 + 2.5 * (i + 1)}vh`}
-                                        cy={`${2.5 * (i + 1)}vh`}
-                                        r={6}
-                                      />
-                                      <text
-                                        className="svg-text"
-                                        x="8vw"
+                                      cy={`${2.5 * (i + 1)}vh`}
+                                      r={6}
+                                    />
+                                    <text
+                                      className="svg-text"
+                                      x="8vw"
                                                 // y={isMobile ? `${2.5 * (i + 1) + 0.5}vh` : `${15 + 2.5 * (i + 1) + 0.5}vh`}
-                                        y={`${2.5 * (i + 1) + 0.5}vh`}
-                                        style={{ fontWeight: currentSelectedCategory === k ? 400 : 300 }}
-                                      >
-                                        {Object.keys(valuationColorDict)[i]}
-                                      </text>
-                                    </g>
-                                  ))
+                                      y={`${2.5 * (i + 1) + 0.5}vh`}
+                                      style={{ fontWeight: currentSelectedCategory === k ? 400 : 300 }}
+                                    >
+                                      {Object.keys(valuationColorDict)[i]}
+                                    </text>
+                                  </g>
+                                ))
                             }
                       <text
                         className="svg-text legend-title"
@@ -388,41 +384,39 @@ export default function ProjectsByValuation() {
                         Valuation in Dollars
                       </text>
                       {
-                                Object.keys(valuationColorDict.Residential).map((k, i) =>
-                                // console.log(i, k);
-                                  (
-                                    <g
-                                      className="legend-item"
-                                      id={`${k}-legend-item`}
-                                      onClick={() => {
-                                        toggleLegendItem(k);
-                                      }}
-                                      style={{ pointerEvents: 'bounding-box' }}
-                                    >
-                                      <circle
-                                        className="svg-circle"
-                                        stroke="#000"
-                                        fill={valuationColorDict.Residential[k]}
-                                        fillOpacity={valuationOpacityDict[k]}
-                                        strokeOpacity={valuationOpacityDict[k]}
+                                Object.keys(valuationColorDict.Residential).map((k, i) => (
+                                  <g
+                                    className="legend-item"
+                                    id={`${k}-legend-item`}
+                                    onClick={() => {
+                                      toggleLegendItem(k);
+                                    }}
+                                    style={{ pointerEvents: 'bounding-box' }}
+                                  >
+                                    <circle
+                                      className="svg-circle"
+                                      stroke="#000"
+                                      fill={valuationColorDict.Residential[k]}
+                                      fillOpacity={valuationOpacityDict[k]}
+                                      strokeOpacity={valuationOpacityDict[k]}
                                                 // cx={isMobile ? '50vw' : '5vw'}
-                                        cx="5vw"
+                                      cx="5vw"
                                                 // cy={isMobile ? `${2.5 * (i + 1)}vh` : `${30 + 2.5 * (i + 1)}vh`}
-                                        cy={`${15 + 2.5 * (i + 1)}vh`}
-                                        r={6}
-                                      />
-                                      <text
-                                        className="svg-text"
+                                      cy={`${15 + 2.5 * (i + 1)}vh`}
+                                      r={6}
+                                    />
+                                    <text
+                                      className="svg-text"
                                                 // x={isMobile ? '53vw' : '8vw'}
-                                        x="8vw"
+                                      x="8vw"
                                                 // y={isMobile ? `${2.5 * (i + 1) + 0.5}vh` : `${30 + 2.5 * (i + 1) + 0.5}vh`}
-                                        y={`${15 + 2.5 * (i + 1) + 0.5}vh`}
-                                        style={{ fontWeight: currentSelectedCategory === k ? 400 : 300 }}
-                                      >
-                                        {valuationRangesList[i]}
-                                      </text>
-                                    </g>
-                                  ))
+                                      y={`${15 + 2.5 * (i + 1) + 0.5}vh`}
+                                      style={{ fontWeight: currentSelectedCategory === k ? 400 : 300 }}
+                                    >
+                                      {valuationRangesList[i]}
+                                    </text>
+                                  </g>
+                                ))
                             }
                     </svg>
                     <input
