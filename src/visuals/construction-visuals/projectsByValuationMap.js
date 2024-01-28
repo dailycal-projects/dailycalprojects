@@ -241,7 +241,7 @@ export default function ProjectsByValuation() {
                   {/* TITLE [ROW1, COL1 & COL2] */}
                   <div className="vm-title-div">
                     <h4>
-                      Berkeley Construction Projects by Valuation
+                      Berkeley construction projects by valuation
                     </h4>
                   </div>
                   {/* LEGEND + DESCRIPTION [R2, C1] */}

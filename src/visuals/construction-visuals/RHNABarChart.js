@@ -109,7 +109,7 @@ export default function RHNABarChart() {
           <div>
             <div className="rhna-title-div">
               <h4>
-                Berkeley Regional Housing Needs Allocation (RHNA) by Income Level
+                Berkeley Regional Housing Needs Allocation (RHNA) by income level
               </h4>
               <p>Affordable housing quotas for the 2015-2023 and 2023-2031 periods</p>
             </div>
