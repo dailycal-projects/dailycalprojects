@@ -132,7 +132,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 const valuationFormat = (valuation) => formatter.format(valuation);
 
-export default function ProjectsByValuation() {
+function ProjectsByValuation() {
   const [filterSelected, setFilterSelected] = useState(false);
   const [currentSelectedCategory, setCurrentSelectedCategory] = useState('');
   // const [isMobile, setIsMobile] = useState(false);
@@ -440,3 +440,6 @@ export default function ProjectsByValuation() {
     </div>
   );
 }
+
+
+export default ProjectsByValuation;
