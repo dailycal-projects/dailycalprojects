@@ -89,7 +89,7 @@ const measureDescriptions = {
   ),
 };
 
-export default function ProjectsByFundRe() {
+function ProjectsByFundingBar() {
   const [currentMeasure, setCurrentMeasure] = useState('Measure O');
   const fundDataDynamic = fundData.slice(0, 13);
   // const [fundDataDynamic, setFundDataDynamic] = useState(fundData.slice(0, 13));
@@ -246,3 +246,6 @@ export default function ProjectsByFundRe() {
     </div>
   );
 }
+
+
+export default ProjectsByFundingBar;
