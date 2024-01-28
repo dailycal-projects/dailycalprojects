@@ -53,7 +53,7 @@ const reverseTooltipContent = (o) => {
 //   );
 // };
 
-export default function RHNABarChart() {
+function RHNABarChart() {
   // const [isMobile, setIsMobile] = useState(false);
 
   // let window = undefined;
@@ -148,3 +148,5 @@ export default function RHNABarChart() {
     </div>
   );
 }
+
+export default RHNABarChart;
