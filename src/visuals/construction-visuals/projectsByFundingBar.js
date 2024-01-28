@@ -247,5 +247,4 @@ function ProjectsByFundingBar() {
   );
 }
 
-
 export default ProjectsByFundingBar;
