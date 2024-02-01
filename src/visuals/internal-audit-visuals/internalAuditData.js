@@ -338,7 +338,7 @@ const accessData = {
   Age: age,
   Year: year,
   'Transfer rate': transfer,
-  'International student rate': age,
+  'International student rate': international,
   Gender: gender,
   'LQBTQ+ rate': lgbtq,
   Sexuality: sexuality,
