@@ -1,0 +1,79 @@
+import React, { Component } from 'react';
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+} from 'recharts';
+import department from './departmentBarChartData';
+
+class CustomizedAxisTick extends Component {
+  render() {
+    const {
+      x, y, payload,
+    } = this.props;
+
+    return (
+      <g transform={`translate(${x},${y})`}>
+        <text
+          x={0}
+          y={10}
+          dy={0}
+          textAnchor="center"
+          fill="#666"
+          transform="rotate(0)"
+        >
+          {payload.value}
+        </text>
+      </g>
+    );
+  }
+}
+
+const departmentBarChart = () => (
+
+  <div
+    style={{
+      backgroundColor: '#e9edf0',
+      padding: '20px',
+    }}
+  >
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        padding: '10px',
+      }}
+    >
+      <strong>
+        <p>
+          Department
+        </p>
+      </strong>
+    </div>
+
+    <ResponsiveContainer height={600}>
+      <BarChart
+        layout="vertical"
+        width={400}
+        height={600}
+        data={department}
+        margin={{
+          top: 5,
+          right: 5,
+          left: 0,
+          bottom: 5,
+        }}
+      >
+        <XAxis dataKey="campus" tick={<CustomizedAxisTick />} height={100} minTickGap={-10} />
+        <YAxis domain={[0, 7]} />
+        <Tooltip />
+        <CartesianGrid strokeDasharray="3 3" />
+        <Legend />
+        <Bar dataKey="" fill="#a07fac" label="none" />
+      </BarChart>
+    </ResponsiveContainer>
+  </div>
+
+);
+
+export default departmentBarChart;

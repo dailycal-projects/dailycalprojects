@@ -100,7 +100,6 @@ function InternalAuditBarChart() {
           <MenuItem value="Race and ethnicity">Race and ethnicity</MenuItem>
           <MenuItem value="Disability rate">Disability rate</MenuItem>
           <MenuItem value="Semesters">Semesters on staff</MenuItem>
-          <MenuItem value="Departments">Departments</MenuItem>
         </Select>
       </FormControl>
 

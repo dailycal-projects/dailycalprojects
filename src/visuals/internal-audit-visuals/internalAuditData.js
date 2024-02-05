@@ -368,7 +368,6 @@ const accessData = {
   'Race and ethnicity': race,
   'Disability rate': disability,
   Semesters: semesters,
-  Departments: department,
 };
 
 export default accessData;
