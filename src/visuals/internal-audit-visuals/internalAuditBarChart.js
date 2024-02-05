@@ -20,6 +20,7 @@ class CustomizedAxisTick extends Component {
     return (
       <g transform={`translate(${x},${y})`}>
         <text
+
           x={0}
           y={10}
           dy={0}
@@ -126,7 +127,7 @@ function InternalAuditBarChart() {
           <Tooltip separator=": " />
           <CartesianGrid strokeDasharray="3 3" />
           <Legend />
-          <Bar dataKey="Percent" angle={0} fill="#95c361" legendType="none" />
+          <Bar dataKey="Percent" angle={0} fill={accessData[question.name][0].color} legendType="none" />
         </BarChart>
       </ResponsiveContainer>
     </div>
