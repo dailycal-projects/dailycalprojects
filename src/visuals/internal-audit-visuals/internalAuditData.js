@@ -11,39 +11,39 @@ const editorship = [
 
 const age = [
   {
-    name: '17 years old',
+    name: '17',
     Percent: 1.0,
   },
   {
-    name: '18 years old',
+    name: '18',
     Percent: 18.3,
   },
   {
-    name: '19 years old',
+    name: '19',
     Percent: 28.7,
   },
   {
-    name: '20 years old',
+    name: '20',
     Percent: 23.3,
   },
   {
-    name: '21 years old',
+    name: '21',
     Percent: 16.3,
   },
   {
-    name: '22 years old',
+    name: '22',
     Percent: 6.9,
   },
   {
-    name: '23 years old',
+    name: '23',
     Percent: 2.5,
   },
   {
-    name: 'Other',
+    name: 'O',
     Percent: '0.9',
   },
   {
-    name: 'Prefer not to disclose',
+    name: 'PND',
     Percent: 1.5,
   },
 ];
@@ -107,52 +107,28 @@ const international = [
 
 const gender = [
   {
-    name: 'Cisgender woman',
-    Percent: 63.1,
-  },
-  {
     name: 'Cisgender man',
-    Percent: 27.9,
+    Percent: 27.47,
   },
   {
-    name: 'Nonbinary or gender non-conforming, Transgender man',
-    Percent: 0.5,
-  },
-  {
-    name: 'Prefer not to disclose',
-    Percent: 0.9,
-  },
-  {
-    name: 'Nonbinary or gender non-conforming, Unsure',
-    Percent: 0.5,
-  },
-  {
-    name: 'Nonbinary or gender non-conforming',
-    Percent: 1.8,
-  },
-  {
-    name: 'Cisgender woman, Nonbinary or gender non-conforming, Unsure',
-    Percent: 0.9,
-  },
-  {
-    name: 'Unsure',
-    Percent: 0.9,
+    name: 'Cisgender woman',
+    Percent: 64.41,
   },
   {
     name: 'Genderqueer',
-    Percent: 1.8,
+    Percent: 1.80,
   },
   {
-    name: 'Cisgender woman, Nonbinary or gender non-conforming',
-    Percent: 0.9,
+    name: 'Nonbinary or gender non-conforming',
+    Percent: 4.5,
   },
   {
-    name: 'Nonbinary or gender non-conforming, Agender',
-    Percent: 0.5,
+    name: 'Unsure',
+    Percent: 2.25,
   },
   {
-    name: 'Genderfluid',
-    Percent: 0.5,
+    name: 'Other',
+    Percent: 1.80,
   },
 ];
 
@@ -178,63 +154,35 @@ const lgbtq = [
 const sexuality = [
   {
     name: 'Heterosexual',
-    Percent: 58.1,
+    Percent: 56.2,
   },
   {
-    name: 'Prefer not to disclose',
-    Percent: 5,
+    name: 'PND',
+    Percent: 4.7,
   },
   {
     name: 'Queer',
-    Percent: 5.9,
+    Percent: 8.2,
   },
   {
     name: 'Bisexual',
-    Percent: 12.6,
+    Percent: 15.5,
   },
   {
     name: 'Lesbian',
-    Percent: 2.7,
+    Percent: 2.6,
   },
   {
-    name: 'Bisexual, Queer',
-    Percent: 2.3,
+    name: 'Questioning',
+    Percent: 2.6,
   },
   {
     name: 'Asexual',
-    Percent: 1.4,
-  },
-  {
-    name: 'Unsure / Questioning',
-    Percent: 1.8,
-  },
-  {
-    name: 'Gay / Bisexual',
-    Percent: 0.5,
-  },
-  {
-    name: 'Bisexual, Sexually fluid',
-    Percent: 0.9,
-  },
-  {
-    name: 'Pansexual',
-    Percent: 1.4,
-  },
-  {
-    name: 'Heterosexual, Unsure / Questioning',
-    Percent: 0.9,
+    Percent: 1.3,
   },
   {
     name: 'Gay',
-    Percent: 5.9,
-  },
-  {
-    name: 'Gay, Queer',
-    Percent: 0.5,
-  },
-  {
-    name: 'Sexually fluid',
-    Percent: 0.5,
+    Percent: 6.4,
   },
 ];
 
@@ -305,11 +253,11 @@ const semesters = [
   },
   {
     name: '4',
-    Percent: 14.4,
+    Percent: 12.6,
   },
   {
     name: '5',
-    Percent: 82.0,
+    Percent: 9.9,
   },
   {
     name: '6',
@@ -317,19 +265,94 @@ const semesters = [
   },
   {
     name: '7',
-    Percent: 14.4,
+    Percent: 3.2,
   },
   {
     name: '8',
-    Percent: 82.0,
+    Percent: 4.5,
   },
   {
     name: '9',
-    Percent: 3.6,
+    Percent: 0.5,
   },
   {
     name: '10',
+    Percent: 1.8,
+  },
+];
+
+const department = [
+  {
+    name: 'Arts and Entertainment',
+    Percent: 8.1,
+  },
+  {
+    name: 'Blog',
+    Percent: 5.9,
+  },
+  {
+    name: 'Design',
+    Percent: 13.5,
+  },
+  {
+    name: 'Multimedia',
+    Percent: 7.7,
+  },
+  {
+    name: 'News',
+    Percent: 20.3,
+  },
+  {
+    name: 'Night',
+    Percent: 7.2,
+  },
+  {
+    name: 'Opinion',
     Percent: 3.6,
+  },
+  {
+    name: 'Sports',
+    Percent: 8.1,
+  },
+  {
+    name: 'Photo',
+    Percent: 8.6,
+  },
+  {
+    name: 'Projects',
+    Percent: 5,
+  },
+  {
+    name: 'Social Media',
+    Percent: 7.2,
+  },
+  {
+    name: 'The Weekender',
+    Percent: 6.8,
+  },
+  {
+    name: 'Business Operations',
+    Percent: 0.9,
+  },
+  {
+    name: 'Marketing',
+    Percent: 1.8,
+  },
+  {
+    name: 'Development',
+    Percent: 1.4,
+  },
+  {
+    name: 'Online / tech',
+    Percent: 0.5,
+  },
+  {
+    name: 'Upper Management / DEI Chair',
+    Percent: 0.5,
+  },
+  {
+    name: 'Special Issues',
+    Percent: 0.5,
   },
 ];
 
@@ -345,6 +368,7 @@ const accessData = {
   'Race and ethnicity': race,
   'Disability rate': disability,
   Semesters: semesters,
+  Departments: department,
 };
 
 export default accessData;

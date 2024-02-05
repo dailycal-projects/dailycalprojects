@@ -23,9 +23,9 @@ class CustomizedAxisTick extends Component {
           x={0}
           y={10}
           dy={0}
-          textAnchor="end"
+          textAnchor="middle"
           fill="#666"
-          transform="rotate(-35)"
+          transform="rotate(0)"
         >
           {payload.value}
         </text>
@@ -89,7 +89,7 @@ function InternalAuditBarChart() {
           defaultValue="Academic student employees"
           autoWidth
         >
-          <MenuItem value="Editor">Editor rate</MenuItem>
+          <MenuItem value="Editor">Head editor rate</MenuItem>
           <MenuItem value="Age">Age</MenuItem>
           <MenuItem value="Year">Year</MenuItem>
           <MenuItem value="Transfer rate">Transfer rate</MenuItem>
@@ -99,7 +99,8 @@ function InternalAuditBarChart() {
           <MenuItem value="Sexuality">Sexuality</MenuItem>
           <MenuItem value="Race and ethnicity">Race and ethnicity</MenuItem>
           <MenuItem value="Disability rate">Disability rate</MenuItem>
-          <MenuItem value="Semesters">Semesters at the Daily Cal</MenuItem>
+          <MenuItem value="Semesters">Semesters on staff</MenuItem>
+          <MenuItem value="Departments">Departments</MenuItem>
         </Select>
       </FormControl>
 
@@ -109,18 +110,24 @@ function InternalAuditBarChart() {
           height={600}
           data={accessData[question.name]}
           margin={{
-            top: 5,
+            top: -10,
             right: 5,
-            left: 0,
-            bottom: 5,
+            left: 10,
+            bottom: -10,
           }}
         >
           <XAxis dataKey="name" tick={<CustomizedAxisTick />} height={100} minTickGap={-10} />
-          <YAxis unit="%" />
+          <YAxis
+            label={{
+              value: 'Percent',
+              angle: -90,
+              position: 'insideLeft',
+            }}
+          />
           <Tooltip separator=": " />
           <CartesianGrid strokeDasharray="3 3" />
           <Legend />
-          <Bar dataKey="Percent" stackId="a" fill="#95c361" />
+          <Bar dataKey="Percent" angle={0} fill="#95c361" legendType="none" />
         </BarChart>
       </ResponsiveContainer>
     </div>
