@@ -16,17 +16,18 @@ class CustomizedAxisTick extends Component {
     const {
       x, y, payload,
     } = this.props;
-
     return (
       <g transform={`translate(${x},${y})`}>
         <text
-
           x={0}
-          y={10}
-          dy={0}
-          textAnchor="middle"
+          y={0}
+          dy={16}
+          // textAnchor="end"
           fill="#666"
           transform="rotate(0)"
+          width={75}
+          textAnchor="middle"
+          verticalAnchor="start"
         >
           {payload.value}
         </text>
@@ -61,6 +62,7 @@ function InternalAuditBarChart() {
       style={{
         backgroundColor: '#e9edf0',
         padding: '20px',
+
       }}
     >
       <div

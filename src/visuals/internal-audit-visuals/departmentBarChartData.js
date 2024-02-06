@@ -1,6 +1,6 @@
 const department = [
   {
-    name: 'Arts and Entertainment',
+    name: 'A & E',
     Percent: 8.1,
   },
   {
@@ -64,7 +64,7 @@ const department = [
     Percent: 0.5,
   },
   {
-    name: 'Upper Management / DEI Chair',
+    name: 'Upper Management',
     Percent: 0.5,
   },
   {

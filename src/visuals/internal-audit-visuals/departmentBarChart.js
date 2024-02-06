@@ -1,34 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  BarChart, Bar, YAxis, XAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
 import department from './departmentBarChartData';
 
-class CustomizedAxisTick extends Component {
-  render() {
-    const {
-      x, y, payload,
-    } = this.props;
+const CustomizedAxisTick = (props) => {
+  const {
+    x, y, payload,
+  } = props;
 
-    return (
-      <g transform={`translate(${x},${y})`}>
-        <text
-          x={0}
-          y={10}
-          dy={0}
-          textAnchor="center"
-          fill="#666"
-          transform="rotate(0)"
-        >
-          {payload.value}
-        </text>
-      </g>
-    );
-  }
-}
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text
+        x={0}
+        y={-10}
+        dy={16}
+        textAnchor="end"
+        fill="#666"
+        transform="rotate(0)"
+      >
+        {payload.value}
+      </text>
+    </g>
+  );
+};
 
-const departmentBarChart = () => (
-
+const DepartmentBarChart = () => (
   <div
     style={{
       backgroundColor: '#e9edf0',
@@ -46,34 +43,31 @@ const departmentBarChart = () => (
     >
       <strong>
         <p>
-          Department
+          Departments at the Daily Cal
         </p>
       </strong>
     </div>
 
     <ResponsiveContainer height={600}>
       <BarChart
-        layout="vertical"
-        width={400}
-        height={600}
         data={department}
+        layout="vertical"
         margin={{
           top: 5,
           right: 5,
-          left: 0,
-          bottom: 5,
+          left: 75,
+          bottom: 50,
         }}
       >
-        <XAxis dataKey="campus" tick={<CustomizedAxisTick />} height={100} minTickGap={-10} />
-        <YAxis domain={[0, 7]} />
-        <Tooltip />
+        <XAxis type="number" />
+        <YAxis dataKey="name" type="category" tick={<CustomizedAxisTick />} width={100} />
         <CartesianGrid strokeDasharray="3 3" />
+        <Tooltip separator=": " />
         <Legend />
-        <Bar dataKey="" fill="#a07fac" label="none" />
+        <Bar dataKey="Percent" fill="#8884d8" barSize={20} legendType="none" />
       </BarChart>
     </ResponsiveContainer>
   </div>
-
 );
 
-export default departmentBarChart;
+export default DepartmentBarChart;
