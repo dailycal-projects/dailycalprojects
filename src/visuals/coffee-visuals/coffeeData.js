@@ -1,4 +1,4 @@
-export const coffeeData = {
+const coffeeData = {
   info: [
     {
       shopName: 'Cafe Milano',
