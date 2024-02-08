@@ -52,7 +52,7 @@ import TheftsPerYearBarChart from '../visuals/theft-visuals/theftsPerYearBarChar
 import PopularTheftLocationsBarChart from '../visuals/theft-visuals/popularTheftLocationsBarChart';
 import TheftsPerHourLineChart from '../visuals/theft-visuals/theftsPerHourLineChart';
 import BikeTheftTips from '../visuals/theft-visuals/bikeTheftTips';
-import MyMap from '../visuals/coffee-visuals/App';
+import CoffeeMap from '../visuals/coffee-visuals/coffeeMap';
 import CoffeePricesBarChart from '../visuals/coffee-visuals/coffeePricesBarChart';
 
 /*
@@ -119,7 +119,7 @@ const shortcodes = {
   PopularTheftLocationsBarChart,
   TheftsPerHourLineChart,
   BikeTheftTips,
-  MyMap,
+  CoffeeMap,
   CoffeePricesBarChart,
 };
 

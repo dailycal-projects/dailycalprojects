@@ -40,7 +40,7 @@ li {
   overflow-y: auto;
   border-right: 1px solid #ccc;
   padding: 20px;
-  background-color: #fff7e6;
+  background-color: #cbd4e3;
 }
 
 .reset-button {
@@ -59,14 +59,14 @@ li {
 .coffee-shop {
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   border-radius: 5px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .coffee-shop:hover {
-  color: #794006;
+  color: #7e453a;
 }
 
 .shopName {

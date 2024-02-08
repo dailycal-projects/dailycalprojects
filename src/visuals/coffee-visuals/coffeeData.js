@@ -1,207 +1,3 @@
-import './App.css';
-import React, { useEffect, useState } from 'react';
-import {
-  BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip as RechartsTooltip,
-} from 'recharts';
-import {
-  MapContainer, TileLayer, useMap, CircleMarker, Tooltip as LeafletTooltip,
-} from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as solidStar, faStarHalf as solidStarHalf } from '@fortawesome/free-solid-svg-icons';
-import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
-
-function StarRating({ rating }) {
-  const stars = [];
-
-  for (let i = 1; i <= 5; i++) {
-    if (rating >= i) {
-      stars.push(<FontAwesomeIcon icon={solidStar} key={i} />);
-    } else if (rating >= i - 0.5) {
-      stars.push(<div className="star-icon" key={i}>
-        <FontAwesomeIcon icon={regularStar} />
-        <FontAwesomeIcon icon={solidStarHalf} className="half-star" />
-                 </div>);
-    } else {
-      stars.push(<FontAwesomeIcon icon={regularStar} key={i} />);
-    }
-  }
-
-  return (
-    <div>{stars}</div>
-  );
-}
-
-function GradientBar() {
-  return (
-    <div style={{
-      borderRadius: '20px', height: '20px', background: 'linear-gradient(to right, rgba(121, 64, 6, 0.25), rgba(121, 64, 6, 0.9))', margin: '10px 0',
-    }}
-    />
-  );
-}
-
-function GradientLegend() {
-  return (
-    <div style={{ padding: '10px', backgroundColor: 'white', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
-      <p className="pLevels" style={{ margin: 0 }}>Price Level:</p>
-      <GradientBar />
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <p className="pLevels" style={{ margin: 0 }}>Less expensive</p>
-        <p className="pLevels" style={{ margin: 0 }}>More expensive</p>
-      </div>
-    </div>
-  );
-}
-
-const ResetZoomButton = () => {
-  const map = useMap();
-
-  const resetZoom = () => {
-    map.setView([averageLatitude, averageLongitude], 16);
-  };
-
-  return (
-    <button onClick={resetZoom} className="reset-button">
-      Reset Map
-    </button>
-  );
-};
-
-const MapController = ({ selectedShop }) => {
-  const map = useMap();
-  const flyToDuration = 1.5;
-
-  useEffect(() => {
-    if (selectedShop && map) {
-      const location = [selectedShop.center[0], selectedShop.center[1]];
-      map.flyTo(location, 18, {
-        animate: true,
-        duration: flyToDuration,
-      });
-    }
-  }, [selectedShop, map]);
-
-  return null;
-};
-
-function MyMap() {
-  const [selectedShop, setSelectedShop] = useState(null);
-
-  const sortedShops = [...coffeeData.info].sort((a, b) => b.stars - a.stars);
-
-  return (
-    <div>
-      <div style={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        justifyContent: 'space-between',
-      }}
-      >
-        <div className="sidebar">
-          <GradientLegend />
-          {sortedShops.map((shop, index) => (
-            <div key={index} className="coffee-shop" onClick={() => setSelectedShop(shop)}>
-              <p className="shopNamez">{shop.shopName}</p>
-              <StarRating rating={shop.stars} />
-              <p className="coffee-address">{shop.address}</p>
-            </div>
-          ))}
-        </div>
-        <div className="map-container">
-          <MapContainer className="map" center={[37.8686181, -122.2611693]} zoom={15}>
-            <MapController selectedShop={selectedShop} />
-            <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
-            {coffeeData.info.map((shop, index) => {
-              const minOpacity = 0.15;
-              const maxOpacity = 0.9;
-              const t = (shop.avgPrice - minPrice) / (maxPrice - minPrice);
-              const opacity = minOpacity + t * (maxOpacity - minOpacity);
-
-              return (
-                <CircleMarker
-                  key={index}
-                  center={[shop.center[0], shop.center[1]]}
-                  eventHandlers={{ click: () => { setSelectedShop(shop); } }}
-                  pathOptions={{
-                    color: '#794006',
-                    fillColor: '#794006',
-                    fillOpacity: opacity,
-                  }}
-                >
-                  <LeafletTooltip className="customTooltip">{shop.shopName}</LeafletTooltip>
-                  {selectedShop === shop && (
-                  <LeafletTooltip className="customTooltip" permanent>
-                    <h className="shopName">{shop.shopName}</h>
-                      {shop.dripPrice !== null && (
-                      <li>
-                        Drip: $
-                        {shop.dripPrice.toFixed(2)}
-                      </li>
-                      )}
-                      {shop.mochaPrice !== null && (
-                      <li>
-                        Mocha: $
-                        {shop.mochaPrice.toFixed(2)}
-                      </li>
-                      )}
-                      {shop.lattePrice !== null && (
-                      <li>
-                        Latte: $
-                        {shop.lattePrice.toFixed(2)}
-                      </li>
-                      )}
-                      {shop.espressoPrice !== null && (
-                      <li>
-                        Espresso: $
-                        {shop.espressoPrice.toFixed(2)}
-                      </li>
-                      )}
-                      {shop.americanPrice !== null && (
-                      <li>
-                        Americano: $
-                        {shop.americanPrice.toFixed(2)}
-                      </li>
-                      )}
-                      {shop.capPrice !== null && (
-                      <li>
-                        Cappuccino: $
-                        {shop.capPrice.toFixed(2)}
-                      </li>
-                      )}
-                  </LeafletTooltip>
-                  )}
-                </CircleMarker>
-              );
-            })}
-            <ResetZoomButton />
-          </MapContainer>
-        </div>
-      </div>
-
-      <div style={{
-        display: 'block',
-        marginTop: 'auto',
-        left: '20px',
-      }}
-      />
-    </div>
-  );
-}
-
-export default MyMap;
-
-function calculateAveragePrice(shop) {
-  const prices = [shop.dripPrice, shop.mochaPrice, shop.lattePrice, shop.maccPrice, shop.espressoPrice, shop.americanPrice, shop.capPrice];
-  const validPrices = prices.filter((price) => price !== null);
-  const sum = validPrices.reduce((a, b) => a + b, 0);
-  const avg = sum / validPrices.length;
-  return avg;
-}
-
-let minPrice = Infinity;
-let maxPrice = -Infinity;
-
 export const coffeeData = {
   info: [
     {
@@ -218,21 +14,6 @@ export const coffeeData = {
       capPrice: 4.75,
       averagePrice: 4.62,
       center: [37.86886795840184, -122.25861586074959],
-    },
-    {
-      shopName: "Peet's Coffee",
-      stars: 4.2,
-      address: '2255 Shattuck Ave.',
-      region: 'Downtown',
-      dripPrice: 3.30,
-      mochaPrice: 5.55,
-      lattePrice: 5.10,
-      maccPrice: 5.80,
-      espressoPrice: 3.60,
-      americanPrice: 4.60,
-      capPrice: 4.95,
-      averagePrice: 4.70,
-      center: [37.86849913735447, -122.26747120341723],
     },
     {
       shopName: 'Victory Point Cafe',
@@ -262,12 +43,12 @@ export const coffeeData = {
       americanPrice: 2.95,
       capPrice: 4.00,
       averagePrice: 3.39,
-      center: [37.873904820217525, -122.26881980307725],
+      center: [37.8737312, -122.2714001],
 
     },
     {
       shopName: 'MY Coffee Roastery',
-      stars: 4.5,
+      stars: 4.8,
       address: '2080 Martin Luther King Jr Way',
       region: 'Downtown',
       dripPrice: null,
@@ -283,13 +64,13 @@ export const coffeeData = {
     {
       shopName: "Yali's Cafe",
       stars: 4.2,
-      address: '1920 Oxford Street',
+      address: '1920 Oxford St.',
       region: 'Northside',
       dripPrice: 2.85,
       mochaPrice: 4.75,
       lattePrice: 4.0,
-      maccPrice: 3.85,
-      espressoPrice: 3.25,
+      maccPrice: 3.25,
+      espressoPrice: 2.50,
       americanPrice: 3.15,
       capPrice: 3.35,
       averagePrice: 3.41,
@@ -298,7 +79,7 @@ export const coffeeData = {
     {
       shopName: 'MIND Coffee',
       stars: 4.8,
-      address: '1816 Euclid Ave',
+      address: '1816 Euclid Ave.',
       region: 'Northside',
       dripPrice: 3.75,
       mochaPrice: 5.75,
@@ -327,7 +108,7 @@ export const coffeeData = {
     },
     {
       shopName: "K's Coffee House",
-      stars: 4.5,
+      stars: 4.4,
       address: '2002 Center St.',
       region: 'Downtown',
       dripPrice: 3,
@@ -343,7 +124,7 @@ export const coffeeData = {
     {
       shopName: 'Coffee Hut',
       stars: 5.0,
-      address: '2170 Shattuck Ave',
+      address: '2170 Shattuck Ave.',
       region: 'Downtown',
       dripPrice: 2.75,
       mochaPrice: 5.25,
@@ -369,6 +150,21 @@ export const coffeeData = {
       capPrice: 4.75,
       averagePrice: 4.96,
       center: [37.86997751315889, -122.26639781656942],
+    },
+    {
+      shopName: "Peet's Coffee",
+      stars: 4.2,
+      address: '2255 Shattuck Ave.',
+      region: 'Downtown',
+      dripPrice: 3.30,
+      mochaPrice: 5.55,
+      lattePrice: 5.10,
+      maccPrice: 5.80,
+      espressoPrice: 3.60,
+      americanPrice: 4.60,
+      capPrice: 4.95,
+      averagePrice: 4.70,
+      center: [37.86849913735447, -122.26747120341723],
     },
     {
       shopName: 'Sasha Coffee',
@@ -403,7 +199,7 @@ export const coffeeData = {
     {
       shopName: 'V&A Cafe',
       stars: 3.4,
-      address: '2521 Hearst Ave',
+      address: '2521 Hearst Ave.',
       region: 'Northside',
       dripPrice: 3.5,
       mochaPrice: 4.25,
@@ -418,7 +214,7 @@ export const coffeeData = {
     {
       shopName: "Yali's Qualcomm Cafe",
       stars: 4.3,
-      address: '2594 Hearst Ave',
+      address: '2594 Hearst Ave.',
       region: 'Campus',
       dripPrice: 2.85,
       mochaPrice: 4.75,
@@ -448,7 +244,7 @@ export const coffeeData = {
     {
       shopName: 'Cabañas Cafe',
       stars: 3.8,
-      address: '1878 Euclid Ave',
+      address: '1878 Euclid Ave.',
       region: 'Northside',
       dripPrice: 3.25,
       mochaPrice: 4.99,
@@ -459,21 +255,6 @@ export const coffeeData = {
       capPrice: 3.99,
       averagePrice: 3.75,
       center: [37.87537234786859, -122.26031073191321],
-    },
-    {
-      shopName: "The Golden Bear Cafe (Peet's Coffee)",
-      stars: 3.7,
-      address: '2 Sather Rd.',
-      region: 'Campus',
-      dripPrice: 3.45,
-      mochaPrice: 5.70,
-      lattePrice: 5.25,
-      maccPrice: 5.95,
-      espressoPrice: 3.75,
-      americanPrice: 4.75,
-      capPrice: 5.10,
-      averagePrice: 4.85,
-      center: [37.87002989899368, -122.25965583141792],
     },
     {
       shopName: "Brown's",
@@ -507,7 +288,7 @@ export const coffeeData = {
     },
     {
       shopName: "Goldie's Coffee",
-      stars: 4.7,
+      stars: 4.5,
       address: '2495 Bancroft Way, 2nd Floor',
       region: 'Campus',
       dripPrice: 2.70,
@@ -524,7 +305,7 @@ export const coffeeData = {
       shopName: 'Sodoi Coffee Tasting House',
       stars: 4.6,
       address: '2438 Durant Ave.',
-      region: 'Northside',
+      region: 'Southside',
       dripPrice: 4.70,
       mochaPrice: 5.20,
       lattePrice: 4.70,
@@ -543,17 +324,17 @@ export const coffeeData = {
       dripPrice: 3.00,
       mochaPrice: 5.75,
       lattePrice: 5.25,
-      maccPrice: 4.50,
+      maccPrice: 4.75,
       espressoPrice: 3.75,
       americanPrice: 4.00,
       capPrice: 5.00,
-      averagePrice: 4.46,
+      averagePrice: 4.50,
       center: [37.866838076854464, -122.25992495889744],
     },
     {
       shopName: "Romeo's Coffee",
       stars: 4.1,
-      address: '2499 Telegraph Ave',
+      address: '2499 Telegraph Ave.',
       region: 'Southside',
       dripPrice: null,
       mochaPrice: null,
@@ -583,7 +364,7 @@ export const coffeeData = {
     {
       shopName: 'Cafe Think',
       stars: 4.2,
-      address: '2220 Piedmont Ave',
+      address: '2220 Piedmont Ave.',
       region: 'Campus',
       dripPrice: 2.75,
       mochaPrice: 4.20,
@@ -594,81 +375,6 @@ export const coffeeData = {
       capPrice: 4.20,
       averagePrice: 3.56,
       center: [37.872484685372015, -122.25419200307732],
-    },
-    {
-      shopName: 'Starbucks',
-      stars: 4.0,
-      address: '2224 Shattuck Ave',
-      region: 'Downtown',
-      dripPrice: 3.25,
-      mochaPrice: 5.45,
-      lattePrice: 4.75,
-      maccPrice: 5.45,
-      espressoPrice: 4.45,
-      americanPrice: 3.95,
-      capPrice: 4.75,
-      averagePrice: 4.58,
-      center: [37.8688014, -122.2682487],
-    },
-    {
-      shopName: 'Starbucks',
-      stars: 3.7,
-      address: '1444 Shattuck Place',
-      region: 'Northside',
-      dripPrice: 3.45,
-      mochaPrice: 5.65,
-      lattePrice: 4.95,
-      maccPrice: 5.65,
-      espressoPrice: 4.65,
-      americanPrice: 4.15,
-      capPrice: 4.95,
-      averagePrice: 4.78,
-      center: [37.880779, -122.270055],
-    },
-    {
-      shopName: 'Golden Bear Cafe',
-      stars: 3.7,
-      address: '2 Sather Rd',
-      region: 'Campus',
-      dripPrice: 3.45,
-      mochaPrice: 5.70,
-      lattePrice: 5.25,
-      maccPrice: 5.95,
-      espressoPrice: 3.75,
-      americanPrice: 4.75,
-      capPrice: 5.10,
-      averagePrice: 4.85,
-      center: [37.8698436, -122.2596451],
-    },
-    {
-      shopName: "Peet's Coffee",
-      stars: 4.3,
-      address: '2501 Telegraph Ave',
-      region: 'Southside',
-      dripPrice: 3.35,
-      mochaPrice: 5.60,
-      lattePrice: 5.15,
-      maccPrice: 5.85,
-      espressoPrice: 3.65,
-      americanPrice: 4.65,
-      capPrice: 5.00,
-      averagePrice: 4.75,
-      center: [37.865053, -122.258319],
-    },
-    {
-      shopName: 'Caffe Strada',
-      stars: 4.3,
-      address: '2300 College Ave',
-      region: 'Southside',
-      dripPrice: null,
-      mochaPrice: 4.95,
-      lattePrice: 4.75,
-      maccPrice: null,
-      espressoPrice: 2.95,
-      americanPrice: 3.45,
-      capPrice: 3.75,
-      averagePrice: 3.97,
-      center: [37.869146, -122.254859],
     },
     {
       shopName: 'Starbucks',
@@ -688,8 +394,8 @@ export const coffeeData = {
     {
       shopName: 'Starbucks',
       stars: 3.7,
-      address: '1444 Shattuck Pl.',
-      region: 'Downtown',
+      address: '1444 Shattuck Place',
+      region: 'Northside',
       dripPrice: 3.45,
       mochaPrice: 5.65,
       lattePrice: 4.95,
@@ -701,7 +407,22 @@ export const coffeeData = {
       center: [37.8809398669007, -122.27009791792625],
     },
     {
-      shopName: "Peet's Cofee",
+      shopName: "Peet's Coffee at GBC",
+      stars: 3.7,
+      address: '2 Sather Rd.',
+      region: 'Campus',
+      dripPrice: 3.45,
+      mochaPrice: 5.70,
+      lattePrice: 5.25,
+      maccPrice: 5.95,
+      espressoPrice: 3.75,
+      americanPrice: 4.75,
+      capPrice: 5.10,
+      averagePrice: 4.85,
+      center: [37.87002989899368, -122.25965583141792],
+    },
+    {
+      shopName: "Peet's Coffee at The Den",
       stars: 3.5,
       address: '2415 Bowditch St.',
       region: 'Southside',
@@ -716,7 +437,7 @@ export const coffeeData = {
       center: [37.867044587974696, -122.25617800258192],
     },
     {
-      shopName: "Peet's Cofee",
+      shopName: "Peet's Coffee",
       stars: 4.3,
       address: '2501 Telegraph Ave.',
       region: 'Southside',
@@ -746,10 +467,10 @@ export const coffeeData = {
       center: [37.869289953345515, -122.25481608723673],
     },
     {
-      shopName: 'Edmonds Cafe',
+      shopName: 'edmonds cafe',
       stars: 4.0,
-      address: '2299 Piedmont Ave',
-      region: 'Northside',
+      address: '2299 Piedmont Ave.',
+      region: 'Southside',
       dripPrice: 2.50,
       mochaPrice: 4.75,
       lattePrice: 4.50,
@@ -759,6 +480,21 @@ export const coffeeData = {
       capPrice: 3.75,
       averagePrice: 3.79,
       center: [37.86982595229813, -122.25200867424137],
+    },
+    {
+      shopName: 'Guerilla Cafe',
+      stars: 4.5,
+      address: '1620 Shattuck Ave.',
+      region: 'Northside',
+      dripPrice: 3.00,
+      mochaPrice: 6.00,
+      lattePrice: 5.50,
+      maccPrice: 4.25,
+      espressoPrice: 3.75,
+      americanPrice: 4.00,
+      capPrice: 4.95,
+      averagePrice: 4.49,
+      center: [37.87798489385365, -122.2691856300609],
     },
     {
       shopName: 'Kiklo Cafe',
@@ -837,7 +573,7 @@ export const coffeeData = {
     },
     {
       shopName: 'Delah Coffee',
-      stars: 4.8,
+      stars: 4.3,
       address: '1807 Euclid Ave.',
       region: 'Northside',
       dripPrice: 4.45,
@@ -912,7 +648,7 @@ export const coffeeData = {
     },
     {
       shopName: 'Souvenir Coffee Co.',
-      stars: 3.8,
+      stars: 3.7,
       address: '2701 College Ave.',
       region: 'Southside',
       dripPrice: 3.75,
@@ -944,7 +680,7 @@ export const coffeeData = {
       shopName: 'Café Zeb',
       stars: 4.1,
       address: '2745 Bancroft Way',
-      region: 'Southside',
+      region: 'Campus',
       dripPrice: 2.70,
       mochaPrice: 4.20,
       lattePrice: 4.20,
@@ -955,101 +691,5 @@ export const coffeeData = {
       averagePrice: 3.57,
       center: [37.86973360523841, -122.25315418909034],
     },
-    {
-      shopName: 'Guerilla Cafe',
-      stars: 4.5,
-      address: '1620 Shattuck Ave',
-      region: 'Northside',
-      dripPrice: 3.00,
-      mochaPrice: 6.00,
-      lattePrice: 5.50,
-      maccPrice: 4.25,
-      espressoPrice: 3.75,
-      americanPrice: 4.00,
-      capPrice: 4.95,
-      averagePrice: 4.49,
-      center: [37.87798489385365, -122.2691856300609],
-    },
-  ].map((shop) => {
-    const avgPrice = calculateAveragePrice(shop);
-    minPrice = Math.min(minPrice, avgPrice);
-    maxPrice = Math.max(maxPrice, avgPrice);
-    return { ...shop, avgPrice };
-  }),
+  ],
 };
-
-const latitudes = coffeeData.info.map((shop) => shop.center[0]);
-const longitudes = coffeeData.info.map((shop) => shop.center[1]);
-const averageLatitude = latitudes.reduce((sum, lat) => sum + lat, 0) / latitudes.length;
-const averageLongitude = longitudes.reduce((sum, lon) => sum + lon, 0) / longitudes.length;
-
-export const averageData = [
-  {
-    coffeeName: 'drip',
-    averagePrice: 3.12,
-  },
-  {
-    coffeeName: 'mocha',
-    averagePrice: 5.24,
-  },
-  {
-    coffeeName: 'latte',
-    averagePrice: 4.73,
-  },
-  {
-    coffeeName: 'macchiato',
-    averagePrice: 4.0,
-  },
-  {
-    coffeeName: 'espresso',
-    averagePrice: 3.33,
-  },
-  {
-    coffeeName: 'americano',
-    averagePrice: 3.6,
-  },
-  {
-    coffeeName: 'cappuccino',
-    averagePrice: 4.34,
-  },
-];
-
-const sortedData = coffeeData.info.sort(
-  (a, b) => b.averagePrice - a.averagePrice,
-);
-
-const CoffeePricesBarChart = () => (
-  <div style={{ backgroundColor: '#e9edf0', padding: '20px' }}>
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
-      }}
-    >
-      <h4> Average Coffee Price </h4>
-    </div>
-    <ResponsiveContainer height={1000}>
-      <BarChart
-        width={500}
-        height={1000}
-        data={sortedData}
-        layout="vertical"
-        margin={{
-          top: 5,
-          right: 30,
-          left: 50,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis type="number" />
-        <YAxis dataKey="shopName" type="category" tick={{ fontSize: 8 }} />
-        <RechartsTooltip />
-        <Bar dataKey="averagePrice" name="Average Price" fill="#8884d8" />
-      </BarChart>
-    </ResponsiveContainer>
-  </div>
-);
