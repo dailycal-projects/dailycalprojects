@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { coffeeData } from './coffeeData';
 import {
   MapContainer, TileLayer, useMap, CircleMarker, Tooltip,
 } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+// import 'leaflet/dist/leaflet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar, faStarHalf as solidStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
+import { coffeeData } from './coffeeData';
 
 function StarRating({ rating }) {
   const stars = [];
