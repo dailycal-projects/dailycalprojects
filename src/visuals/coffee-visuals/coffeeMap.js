@@ -89,13 +89,16 @@ const longitudes = coffeeData.info.map((shop) => shop.center[1]);
 const averageLatitude = latitudes.reduce((sum, lat) => sum + lat, 0) / latitudes.length;
 const averageLongitude = longitudes.reduce((sum, lon) => sum + lon, 0) / longitudes.length;
 
-const minPrice = Infinity;
-const maxPrice = -Infinity;
+// const minPrice = Infinity;
+// const maxPrice = -Infinity;
 
 function CoffeeMap() {
   const [selectedShop, setSelectedShop] = useState(null);
 
   const sortedShops = [...coffeeData.info].sort((a, b) => b.stars - a.stars);
+
+  const minPrice = Math.min(...sortedShops.map((shop) => shop.avgPrice));
+  const maxPrice = Math.max(...sortedShops.map((shop) => shop.avgPrice));
 
   return (
     <div>
