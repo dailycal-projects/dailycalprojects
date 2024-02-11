@@ -7,7 +7,7 @@ import Seo from '../components/seo';
 
 const staffTitles = {
   titles: [
-    { name: 'Arfa Momin', title: 'the projects editor' },
+    { name: 'Arfa Momin', title: 'the projects editor. She was a summer and fall 2023 deputy projects editor' },
     { name: 'Tyler Wu', title: 'a deputy projects editor' },
     { name: 'Anika Sikka', title: 'a deputy projects editor' },
     { name: 'Cameron Fozi', title: 'a projects developer and the projects training manager. He was the spring, summer and fall 2022 projects editor' },
