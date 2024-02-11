@@ -52,10 +52,12 @@ function WarnmeHistogram() {
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
-          left: '20px',
+          padding: '30px',
         }}
       >
-        <h4> Discrepancy between time of incident report and time of WarnMe email </h4>
+        <strong>
+          <p> Discrepancy between time of incident report and time of WarnMe email </p>
+        </strong>
       </div>
       <FormControl className={classes.formControl}>
         <InputLabel>Select semester</InputLabel>
