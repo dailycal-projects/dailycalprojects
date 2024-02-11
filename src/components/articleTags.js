@@ -121,7 +121,7 @@ const ArticleTags = (isMobile) => {
       <p
         style={{
           width: '47.5%',
-          fontSize: '19px',
+          fontSize: '21px',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',
@@ -192,8 +192,7 @@ const ArticleTags = (isMobile) => {
       <body
         style={{
           width: '47.5%',
-          fontSize: '18px',
-
+          fontSize: '21px',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',
@@ -209,7 +208,7 @@ const ArticleTags = (isMobile) => {
       <ol
         style={{
           width: '47.5%',
-          fontSize: '18px',
+          fontSize: '21px',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',

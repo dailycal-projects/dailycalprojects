@@ -7,13 +7,15 @@ import Seo from '../components/seo';
 
 const staffTitles = {
   titles: [
-    { name: 'Paloma Torres', title: 'the projects editor' },
-    { name: 'Arfa Momin', title: 'the deputy projects editor' },
-    { name: 'Lydia Sidhom', title: 'the deputy projects editor' },
+    { name: 'Arfa Momin', title: 'the projects editor' },
+    { name: 'Tyler Wu', title: 'a deputy projects editor' },
+    { name: 'Anika Sikka', title: 'a deputy projects editor' },
     { name: 'Cameron Fozi', title: 'a projects developer and the projects training manager. He was the spring, summer and fall 2022 projects editor' },
+    { name: 'Paloma Torres', title: 'a projects developer. She was the spring, fall and summer 2023 projects editor' },
+    { name: 'Veronica Roseborough', title: 'a projects developer and a staff representative. She was the spring 2022 deputy projects editor' },
     { name: 'Nibras Suliman', title: 'a projects developer. She was a spring 2023 deputy projects editor' },
     { name: 'Isabella Borkovic', title: 'a projects developer. She was a spring 2023 deputy projects editor' },
-    { name: 'Tyler Wu', title: 'a projects developer' },
+    { name: 'Lydia Sidhom', title: 'a projects developer. She was a fall 2023 deputy projects editor' },
     { name: 'Anishi Patel', title: 'a projects developer' },
     { name: 'Rayan Taghizadeh', title: 'a projects developer' },
     { name: 'Mark Verzhbinsky', title: 'a projects developer' },
@@ -22,9 +24,12 @@ const staffTitles = {
     { name: 'Clara Brownstein', title: 'a projects developer' },
     { name: 'Angela Bi', title: 'a projects developer' },
     { name: 'Emile Shah', title: 'a projects developer' },
-    { name: 'Anika Sikka', title: 'a projects developer' },
     { name: 'Anishi Patel', title: 'a projects developer' },
     { name: 'Claire Roach', title: 'a projects developer' },
+    { name: 'Sam Wang', title: 'a projects developer' },
+    { name: 'Andy Chen', title: 'a projects developer' },
+    { name: 'Nikki Iyer', title: 'a projects developer' },
+    { name: 'John Bragado', title: 'a projects developer' },
   ],
 };
 
@@ -75,7 +80,7 @@ const About = ({ classes }) => (
             to support our coverage.
           </p>
         </div>
-        <p style={{ paddingLeft: '5px' }}> Copyright © 2022 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
+        <p style={{ paddingLeft: '5px' }}> Copyright © 2024 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
       </div>
     </div>
   </div>

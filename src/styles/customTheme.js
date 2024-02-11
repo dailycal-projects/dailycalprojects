@@ -3,6 +3,7 @@ import { createStyles } from '@material-ui/core';
 import { isMobile } from 'react-device-detect';
 import { theme } from './theme';
 import FooterSizing from './footerSizing';
+import FontSizing from './fontSizing';
 
 export const styles = () => createStyles({
   main: {
@@ -108,7 +109,7 @@ export const styles = () => createStyles({
     padding: theme.spacing[3],
   },
   articleContent: {
-    fontSize: 18,
+    // fontSize: theme.spacing[2],
     maxWidth: '100%',
     textAlign: 'justify',
     flexDirection: 'column',
@@ -121,11 +122,11 @@ export const styles = () => createStyles({
     textDecoration: 'none',
   },
   footerContainer: {
-    fontSize: theme.spacing[7],
+    fontSize: FontSizing(isMobile),
     maxWidth: `${FooterSizing(isMobile)}%`,
   },
   footerCard: {
-    fontSize: 18,
+    fontSize: FontSizing(isMobile),
     backgroundColor: '#e9edf0',
     padding: '25px 25px 10px 25px',
     margin: '10px 0px 20px 0px',
