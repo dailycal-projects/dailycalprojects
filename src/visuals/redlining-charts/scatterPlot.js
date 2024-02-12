@@ -61,7 +61,7 @@ const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
   );
 
   return (
-    <ResponsiveContainer width="100%" height={600}>
+    <ResponsiveContainer height={600}>
       <ScatterChart
         margin={{
           top: 10, right: 0, bottom: 75, left: 5,
