@@ -52,7 +52,6 @@ const HSILineChart = () => (
       </div>
       <ResponsiveContainer height={550}>
         <LineChart
-          width={750}
           height={550}
           data={allData}
           margin={{
