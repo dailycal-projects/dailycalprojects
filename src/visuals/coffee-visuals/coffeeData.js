@@ -1,4 +1,4 @@
-export const coffeeData = {
+const coffeeData = {
   info: [
     {
       shopName: 'Cafe Milano',
@@ -693,3 +693,5 @@ export const coffeeData = {
     },
   ],
 };
+
+export default coffeeData;

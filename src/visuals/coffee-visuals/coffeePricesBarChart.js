@@ -3,7 +3,7 @@ import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip,
 } from 'recharts';
-import { coffeeData } from './coffeeData';
+import coffeeData from './coffeeData';
 
 const sortedData = coffeeData.info.sort(
   (a, b) => b.averagePrice - a.averagePrice,
