@@ -8,6 +8,19 @@ import { faStar as solidStar, faStarHalf as solidStarHalf } from '@fortawesome/f
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import coffeeData from './coffeeData';
 
+const latitudes = coffeeData.info.map((shop) => shop.center[0]);
+const longitudes = coffeeData.info.map((shop) => shop.center[1]);
+const averageLatitude = latitudes.reduce((sum, lat) => sum + lat, 0) / latitudes.length;
+const averageLongitude = longitudes.reduce((sum, lon) => sum + lon, 0) / longitudes.length;
+
+const minPrice = Infinity;
+const maxPrice = -Infinity;
+
+// // const sortedShops = [...coffeeData.info].sort((a, b) => b.stars - a.stars);
+
+// const minPrice = Math.min(...sortedShops.map((shop) => shop.avgPrice));
+// const maxPrice = Math.max(...sortedShops.map((shop) => shop.avgPrice));
+
 function StarRating({ rating }) {
   const stars = [];
 
@@ -15,10 +28,12 @@ function StarRating({ rating }) {
     if (rating >= i) {
       stars.push(<FontAwesomeIcon icon={solidStar} key={i} />);
     } else if (rating >= i - 0.5) {
-      stars.push(<div className="star-icon" key={i}>
-        <FontAwesomeIcon icon={regularStar} />
-        <FontAwesomeIcon icon={solidStarHalf} className="half-star" />
-      </div>);
+      stars.push(
+        <div className="star-icon" key={i}>
+          <FontAwesomeIcon icon={regularStar} />
+          <FontAwesomeIcon icon={solidStarHalf} className="half-star" />
+        </div>,
+      );
     } else {
       stars.push(<FontAwesomeIcon icon={regularStar} key={i} />);
     }
@@ -61,7 +76,7 @@ const ResetZoomButton = () => {
   };
 
   return (
-    <button onClick={resetZoom} className="reset-button">
+    <button type="button" onClick={resetZoom} className="reset-button">
       Reset Map
     </button>
   );
@@ -84,16 +99,18 @@ const MapController = ({ selectedShop }) => {
   return null;
 };
 
-const latitudes = coffeeData.info.map((shop) => shop.center[0]);
-const longitudes = coffeeData.info.map((shop) => shop.center[1]);
-const averageLatitude = latitudes.reduce((sum, lat) => sum + lat, 0) / latitudes.length;
-const averageLongitude = longitudes.reduce((sum, lon) => sum + lon, 0) / longitudes.length;
+// const latitudes = coffeeData.info.map((shop) => shop.center[0]);
+// const longitudes = coffeeData.info.map((shop) => shop.center[1]);
+// const averageLatitude = latitudes.reduce((sum, lat) => sum + lat, 0) / latitudes.length;
+// const averageLongitude = longitudes.reduce((sum, lon) => sum + lon, 0) / longitudes.length;
 
-// const minPrice = Infinity;
-// const maxPrice = -Infinity;
+// // const minPrice = Infinity;
+// // const maxPrice = -Infinity;
 
-const minPrice = Math.min(...sortedShops.map((shop) => shop.avgPrice));
-const maxPrice = Math.max(...sortedShops.map((shop) => shop.avgPrice));
+// const sortedShops = [...coffeeData.info].sort((a, b) => b.stars - a.stars);
+
+// const minPrice = Math.min(...sortedShops.map((shop) => shop.avgPrice));
+// const maxPrice = Math.max(...sortedShops.map((shop) => shop.avgPrice));
 
 function CoffeeMap() {
   const [selectedShop, setSelectedShop] = useState(null);
@@ -119,11 +136,29 @@ function CoffeeMap() {
         <div className="sidebar">
           <GradientLegend />
           {sortedShops.map((shop, index) => (
+            // <div
+            //   key={index}
+            //   className="coffee-shop"
+            //   onClick={() => {
+            //     setSelectedShop(shop);
+            //   }}
+            // >
+            //   <p className="shopNamez">{shop.shopName}</p>
+            //   <StarRating rating={shop.stars} />
+            //   <p className="coffee-address">{shop.address}</p>
+            // </div>
             <div
               key={index}
               className="coffee-shop"
+              role="button" // Add role attribute
+              tabIndex={0} // Add tabIndex attribute to make the element focusable
               onClick={() => {
                 setSelectedShop(shop);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') { // Handle Enter and Space key presses
+                  setSelectedShop(shop);
+                }
               }}
             >
               <p className="shopNamez">{shop.shopName}</p>
@@ -161,7 +196,7 @@ function CoffeeMap() {
                   {selectedShop === shop && (
                   <Tooltip className="customTooltip" permanent>
                     <h3 className="shopName">{shop.shopName}</h3>
-                      {console.log(`selected shop: ${selectedShop.shopName}`)}
+                      {/* {console.log(`selected shop: ${selectedShop.shopName}`)} */}
                       {shop.dripPrice !== null && (
                       <li>
                         Drip: $
