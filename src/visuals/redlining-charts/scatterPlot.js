@@ -64,9 +64,9 @@ const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
     <ResponsiveContainer height={600}>
       <ScatterChart
         margin={{
-          top: 10, right: 0, bottom: 75, left: 5,
+          top: 10, right: 0, bottom: 75, left: 0,
         }}
-        width={750}
+        width="100%"
         height={600}
       >
         <CartesianGrid strokeDasharray="3" horizontal={false} />
