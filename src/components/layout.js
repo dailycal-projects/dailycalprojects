@@ -8,6 +8,7 @@ import { theme } from '../styles/theme';
 import ArticleTags from './articleTags';
 import VisualizationSizing from './visualizationSizing';
 import TableSizing from './tableSizing';
+import FontSizing from './fontSizing';
 import WaterPlot from '../visuals/redlining-charts/scatterplots/waterPlot';
 import ChemPlot from '../visuals/redlining-charts/scatterplots/chemPlot';
 import HealthPlot from '../visuals/redlining-charts/scatterplots/healthPlot';
@@ -62,6 +63,9 @@ by an array of React components, so we must include them in the same array.
 */
 
 const component = ArticleTags(isMobile);
+const visualizationSizing = VisualizationSizing(isMobile);
+const tableSizing = TableSizing(isMobile);
+const fontSizing = FontSizing(isMobile);
 
 const shortcodes = {
   // style MDX files for any html element here!!
@@ -71,7 +75,7 @@ const shortcodes = {
   // cap: (props) => <cap {...props} style={{ text:  }} />,
   GatsbyImage: (props) => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '25px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '25px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <GatsbyImage {... props} />
@@ -79,7 +83,7 @@ const shortcodes = {
   ),
   WaterPlot: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <WaterPlot />
@@ -87,7 +91,7 @@ const shortcodes = {
   ),
   ChemPlot: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <ChemPlot />
@@ -95,7 +99,7 @@ const shortcodes = {
   ),
   HealthPlot: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <HealthPlot />
@@ -103,7 +107,7 @@ const shortcodes = {
   ),
   EconPlot: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <EconPlot />
@@ -111,7 +115,7 @@ const shortcodes = {
   ),
   RedlineMap: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <RedlineMap />
@@ -119,7 +123,7 @@ const shortcodes = {
   ),
   GuideMap: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <GuideMap />
@@ -127,7 +131,7 @@ const shortcodes = {
   ),
   HateBar: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <HateBar />
@@ -135,7 +139,7 @@ const shortcodes = {
   ),
   HateLine: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <HateLine />
@@ -143,7 +147,7 @@ const shortcodes = {
   ),
   LunchChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <LunchChart />
@@ -151,7 +155,7 @@ const shortcodes = {
   ),
   RentChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <RentChart />
@@ -159,7 +163,7 @@ const shortcodes = {
   ),
   BerkeleyShelterChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <BerkeleyShelterChart />
@@ -167,7 +171,7 @@ const shortcodes = {
   ),
   AlamedaShelterChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <AlamedaShelterChart />
@@ -175,7 +179,7 @@ const shortcodes = {
   ),
   BUSDBlackEnrollment: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <BUSDBlackEnrollment />
@@ -183,7 +187,7 @@ const shortcodes = {
   ),
   DistrictMap: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <DistrictMap />
@@ -191,7 +195,7 @@ const shortcodes = {
   ),
   BlackPopulationCensus: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <BlackPopulationCensus />
@@ -199,7 +203,7 @@ const shortcodes = {
   ),
   GymTotals: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <GymTotals />
@@ -207,7 +211,7 @@ const shortcodes = {
   ),
   GymVault: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <GymVault />
@@ -215,7 +219,7 @@ const shortcodes = {
   ),
   GymBars: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <GymBars />
@@ -223,7 +227,7 @@ const shortcodes = {
   ),
   GymBeam: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <GymBeam />
@@ -231,7 +235,7 @@ const shortcodes = {
   ),
   GymFloor: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <GymFloor />
@@ -239,7 +243,7 @@ const shortcodes = {
   ),
   Timeline1921: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <Timeline1921 />
@@ -247,7 +251,7 @@ const shortcodes = {
   ),
   STEMEnrollmentLine: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <STEMEnrollmentLine />
@@ -255,7 +259,7 @@ const shortcodes = {
   ),
   TurnoverMap: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <TurnoverMap />
@@ -263,7 +267,7 @@ const shortcodes = {
   ),
   StudyAbroadMap: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <StudyAbroadMap />
@@ -271,7 +275,7 @@ const shortcodes = {
   ),
   ArtifactsBarChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <ArtifactsBarChart />
@@ -279,7 +283,7 @@ const shortcodes = {
   ),
   ArtifactsPieChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <ArtifactsPieChart />
@@ -287,7 +291,7 @@ const shortcodes = {
   ),
   HSILineChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <HSILineChart />
@@ -295,7 +299,7 @@ const shortcodes = {
   ),
   SubscriberLineChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <SubscriberLineChart />
@@ -303,7 +307,7 @@ const shortcodes = {
   ),
   DailyCommentLineChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <DailyCommentLineChart />
@@ -311,7 +315,7 @@ const shortcodes = {
   ),
   PostsPerHourBarChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <PostsPerHourBarChart />
@@ -319,7 +323,7 @@ const shortcodes = {
   ),
   PostsPerDayBarChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <PostsPerDayBarChart />
@@ -327,7 +331,7 @@ const shortcodes = {
   ),
   PostsPerFlairBarChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <PostsPerFlairBarChart />
@@ -335,7 +339,7 @@ const shortcodes = {
   ),
   GapStackedBarChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <GapStackedBarChart />
@@ -343,7 +347,7 @@ const shortcodes = {
   ),
   ProposalsASE: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${TableSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <ProposalsASE />
@@ -351,7 +355,7 @@ const shortcodes = {
   ),
   ProposalsAR: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${TableSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <ProposalsAR />
@@ -359,7 +363,7 @@ const shortcodes = {
   ),
   ProposalsSR: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${TableSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <ProposalsSR />
@@ -367,7 +371,7 @@ const shortcodes = {
   ),
   ProposalsPostocs: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${TableSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <ProposalsPostocs />
@@ -375,7 +379,7 @@ const shortcodes = {
   ),
   OptionWidthBarChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <OptionWidthBarChart />
@@ -383,7 +387,7 @@ const shortcodes = {
   ),
   KutcherTimeline: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <KutcherTimeline />
@@ -391,7 +395,7 @@ const shortcodes = {
   ),
   UnionVoteBarChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <UnionVoteBarChart />
@@ -399,7 +403,7 @@ const shortcodes = {
   ),
   TimeDoctorateBarChart: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <TimeDoctorateBarChart />
@@ -407,7 +411,7 @@ const shortcodes = {
   ),
   UniversityRentMap: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <UniversityRentMap />
@@ -415,7 +419,7 @@ const shortcodes = {
   ),
   OptionWidthViz2: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <OptionWidthViz2 />
@@ -423,7 +427,7 @@ const shortcodes = {
   ),
   WarnmeHistogram: () => (
     <div style={{
-      fontSize: 18, maxWidth: `${VisualizationSizing(isMobile)}%`, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
     }}
     >
       <WarnmeHistogram />

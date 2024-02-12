@@ -81,6 +81,7 @@ const ArticleTags = (isMobile) => {
       <body
         style={{
           width: '80%',
+          fontSize: '18px',
           display: 'block',
           verticalAlign: 'middle',
           marginTop: '1em',
