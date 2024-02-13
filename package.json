@@ -68,7 +68,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "export NODE_OPTIONS=--max_old_space_size=8192; gatsby build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider; gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
