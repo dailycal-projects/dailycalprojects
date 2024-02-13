@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
@@ -11,30 +11,21 @@ import {
 import { makeStyles } from '@material-ui/styles';
 import accessData from './internalAuditData';
 
-class CustomizedAxisTick extends Component {
-  render() {
-    const {
-      x, y, payload,
-    } = this.props;
-    return (
-      <g transform={`translate(${x},${y})`}>
-        <text
-          x={0}
-          y={0}
-          dy={16}
-          // textAnchor="end"
-          fill="#666"
-          transform="rotate(0)"
-          width={75}
-          textAnchor="middle"
-          verticalAnchor="start"
-        >
-          {payload.value}
-        </text>
-      </g>
-    );
-  }
-}
+const CustomizedAxisTick = ({ x, y, payload }) => (
+  <g transform={`translate(${x},${y})`}>
+    <text
+      x={0}
+      y={0}
+      dy={16}
+      fill="#666"
+      transform="rotate(0)"
+      width={75}
+      textAnchor="middle"
+    >
+      {payload.value}
+    </text>
+  </g>
+);
 
 function InternalAuditBarChart() {
   const useStyles = makeStyles(() => ({
