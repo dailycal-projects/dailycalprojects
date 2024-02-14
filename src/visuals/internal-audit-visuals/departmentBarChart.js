@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BarChart, Bar, YAxis, XAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
-import department from './departmentBarChartData';
+import department from './internalAuditData';
 
 const CustomizedAxisTick = (props) => {
   const {
