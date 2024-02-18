@@ -1,4 +1,4 @@
-export const bikeTheftMapDataByYear = {
+const bikeTheftMapDataByYear = {
   2019: {
     Bikes: [{
       Location: 'Boalt Hall',
@@ -15120,3 +15120,5 @@ export const bikeTheftMapDataByYear = {
     }],
   },
 };
+
+export default bikeTheftMapDataByYear;

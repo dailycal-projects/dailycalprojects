@@ -1,4 +1,4 @@
-export const bikeTheftMapData = {
+const bikeTheftMapData = {
   'E-Scooters': [{
     Location: 'Memorial Stadium',
     center: [37.8706571, -122.2507783],
@@ -5295,3 +5295,5 @@ export const bikeTheftMapData = {
     count: 4,
   }],
 };
+
+export default bikeTheftMapData;

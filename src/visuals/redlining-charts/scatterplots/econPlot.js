@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import ButtonList from '../../../components/buttonList';
 import Key from '../dataKey';
 import allData from '../data';
@@ -7,13 +8,13 @@ import ScatterPlot from '../scatterPlot';
 const EconPlot = () => {
   const data = allData;
 
-  const [econKey, setEconKey] = useState('pollution');
+  const [econKey, setEconKey] = useState('Poverty');
   const econLabels = [
-    'poverty',
-    'unemployment',
-    'education',
-    'traffic',
-    'linguistic isolation',
+    'Poverty',
+    'Unemployment',
+    'Education',
+    'Traffic',
+    'Linguistic isolation',
   ];
 
   const createData = (indicator, description) => ({ indicator, description });
@@ -42,10 +43,29 @@ const EconPlot = () => {
 
   const buttonToData = (label) => {
     if (econLabels.includes(label)) {
-      setEconKey(label.replaceAll(' ', '_'));
+      setEconKey(label);
     }
   };
 
+  if (isMobile) {
+    return (
+      <div>
+        <Key rows={key} />
+        <ButtonList list={econLabels} handleClick={buttonToData} />
+        <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={econKey} />
+        <p style={{
+          marginTop: '15px',
+          textAlign: 'center',
+          fontWeight: '500',
+        }}
+        >
+          Housing burden
+          <br />
+          percentile key
+        </p>
+      </div>
+    );
+  }
   return (
     <div>
       <Key rows={key} />
@@ -58,7 +78,7 @@ const EconPlot = () => {
         <br />
         percentile
       </p>
-      <ScatterPlot data={data} xDataKey="zip" yDataKey={econKey} />
+      <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={econKey} />
     </div>
   );
 };

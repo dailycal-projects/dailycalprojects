@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Daily Cal Projects',
-    description: 'Site for Daily Cal Projects',
+    description: 'Data and graphics reporting at The Daily Californian',
     author: '@shannonbonet',
     siteUrl: 'https://dailycal-projects.netlify.app/',
   },

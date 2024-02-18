@@ -5,8 +5,6 @@ const BikeTheftTips = () => (
     backgroundColor: '#e9edf0',
     padding: '40px 40px 15px 40px',
     borderRadius: '5px',
-    // marginLeft: '10px',
-    // marginRight: '10px',
   }}
   >
     <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>How sources say to protect your scooter or bike</h3>

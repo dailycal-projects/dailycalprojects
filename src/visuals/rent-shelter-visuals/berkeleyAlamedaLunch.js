@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import {
   LineChart,
   Line,
@@ -12,6 +12,24 @@ import {
 } from 'recharts';
 import { lunchData } from './rentShelterData';
 
+class CustomizedAxisTick extends PureComponent {
+  render() {
+    const {
+      x, y, payload, beginUnit, endUnit, y1 = 0,
+    } = this.props;
+
+    return (
+      <g transform={`translate(${x},${y})`}>
+        <text x={0} y={y1} dy={0} textAnchor="end" fill="#666" transform="rotate(-45)">
+          {beginUnit}
+          {payload.value}
+          {endUnit}
+        </text>
+      </g>
+    );
+  }
+}
+
 const LunchChart = () => (
   <div>
     <div style={{
@@ -19,30 +37,35 @@ const LunchChart = () => (
       justifyContent: 'center',
       alignItems: 'center',
       position: 'relative',
-      left: '20px',
+      // left: '20px',
+      // right: '20px',
+      top: '20px',
     }}
     >
       <h4> Percent of students in free and reduced-price meals program </h4>
     </div>
-    <ResponsiveContainer height={550}>
+    <ResponsiveContainer height={620}>
       <LineChart
         width={750}
-        height={550}
+        height={620}
         data={lunchData}
         margin={{
-          top: 5,
-          right: 30,
-          left: 30,
-          bottom: 15,
+          top: 20,
+          bottom: 70,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="School year" angle={0} tick={{ fontSize: 16 }}>
-          <Label value="School year" offset={-50} position="insideBottom" />
+        <XAxis dataKey="School year" tick={<CustomizedAxisTick y1={10} />}>
+          <Label value="School year" offset={-60} position="insideBottom" />
         </XAxis>
-        <YAxis tick={{ fontSize: 16 }} />
+        <YAxis width={45} tick={<CustomizedAxisTick endUnit="%" />} />
         <Tooltip />
-        <Legend />
+        <Legend
+          align="center"
+          verticalAlign="bottom"
+          layout="horizontal"
+          wrapperStyle={{ position: 'relative', marginTop: '30px' }}
+        />
         <Line
           type="monotone"
           dataKey="County-wide percent of students"

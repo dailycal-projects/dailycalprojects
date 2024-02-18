@@ -34,7 +34,6 @@ const TheftsPerHourLineChart = () => (
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
-        left: '20px',
       }}
     >
       <h4> Thefts per hour of day </h4>

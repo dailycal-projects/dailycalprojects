@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import ButtonList from '../../../components/buttonList';
 import Key from '../dataKey';
 import allData from '../data';
@@ -7,8 +8,8 @@ import ScatterPlot from '../scatterPlot';
 const WaterPlot = () => {
   const data = allData;
 
-  const [waterKey, setWaterKey] = useState('groundwater_threats');
-  const waterLabels = ['groundwater threats', 'impaired bodies of water'];
+  const [waterKey, setWaterKey] = useState('Groundwater threats');
+  const waterLabels = ['Groundwater threats', 'Impaired bodies of water'];
 
   const createData = (indicator, description) => ({ indicator, description });
   const key = [
@@ -24,9 +25,29 @@ const WaterPlot = () => {
 
   const buttonToData = (label) => {
     if (waterLabels.includes(label)) {
-      setWaterKey(label.replaceAll(' ', '_'));
+      setWaterKey(label);
     }
   };
+
+  if (isMobile) {
+    return (
+      <div>
+        <Key rows={key} />
+        <ButtonList list={waterLabels} handleClick={buttonToData} />
+        <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={waterKey} />
+        <p style={{
+          marginTop: '15px',
+          textAlign: 'center',
+          fontWeight: '500',
+        }}
+        >
+          Housing burden
+          <br />
+          percentile key
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -40,7 +61,7 @@ const WaterPlot = () => {
         <br />
         percentile
       </p>
-      <ScatterPlot data={data} xDataKey="zip" yDataKey={waterKey} />
+      <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={waterKey} />
     </div>
   );
 };

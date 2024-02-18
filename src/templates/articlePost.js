@@ -3,11 +3,13 @@ import { graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { isMobile } from 'react-device-detect';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 import ArticleFooter from '../components/articleFooter';
+import VisualizationSizing from '../components/visualizationSizing';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
@@ -19,6 +21,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
 
   return (
     <div className={classes.articleRoot}>
+
       <Layout>
         <SEO
           title={frontmatter.title}
@@ -34,29 +37,30 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
               const url = bylineUrl[i];
               return (
                 <a href={url} target="_blank" style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }} rel="noreferrer">
-                  {' '}
                   {author}
-                  {' '}
                 </a>
               );
             })}
           </div>
         ) : null }
         <h5>{frontmatter.date}</h5>
-        <div style={{ margin: 50 }}>
+        <div style={{ maxWidth: `${VisualizationSizing(isMobile)}%` }}>
           <GatsbyImage image={image} alt="card illustration" />
+
           <div style={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></div>
           <div><em>{frontmatter.imageCaption2}</em></div>
           <div><em>{frontmatter.imageCaption3}</em></div>
           <div><em>{frontmatter.imageCaption4}</em></div>
 
-          <h5 style={{ marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
+          <h5 style={{ fontSize: '18px', marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
 
         </div>
 
-        <div className={classes.articleContent}>
+        <div
+          className={classes.articleContent}
+        >
           <MDXRenderer
-            localImages={frontmatter.embeddedImages} // prop that allows <GatsbyImage/> usage possible in MDX
+            localImages={frontmatter.embeddedImages}
           >
             {body}
           </MDXRenderer>

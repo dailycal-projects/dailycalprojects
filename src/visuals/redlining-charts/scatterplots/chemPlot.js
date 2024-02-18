@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import allData from '../data';
 import ScatterPlot from '../scatterPlot';
 import Key from '../dataKey';
@@ -7,13 +8,13 @@ import ButtonList from '../../../components/buttonList';
 const ChemPlot = () => {
   const data = allData;
 
-  const [chemKey, setChemKey] = useState('pollution');
+  const [chemKey, setChemKey] = useState('Pollution');
   const chemicalLabels = [
-    'pollution',
-    'lead risk',
-    'cleanup sites',
-    'toxic release',
-    'hazardous waste',
+    'Pollution',
+    'Lead risk',
+    'Cleanup sites',
+    'Toxic release',
+    'Hazardous waste',
   ];
 
   const createData = (indicator, description) => ({ indicator, description });
@@ -42,9 +43,30 @@ const ChemPlot = () => {
 
   const buttonToData = (label) => {
     if (chemicalLabels.includes(label)) {
-      setChemKey(label.replaceAll(' ', '_'));
+      setChemKey(label);
     }
   };
+
+  if (isMobile) {
+    return (
+      <div>
+        <Key rows={key} />
+        <ButtonList list={chemicalLabels} handleClick={buttonToData} />
+        <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={chemKey} />
+
+        <p style={{
+          marginTop: '15px',
+          textAlign: 'center',
+          fontWeight: '500',
+        }}
+        >
+          Housing burden
+          <br />
+          percentile key
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -58,7 +80,7 @@ const ChemPlot = () => {
         <br />
         percentile
       </p>
-      <ScatterPlot data={data} xDataKey="zip" yDataKey={chemKey} />
+      <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={chemKey} />
     </div>
   );
 };

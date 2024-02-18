@@ -1,8 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
-
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { isMobile } from 'react-device-detect';
 import { theme } from '../styles/theme';
+import ArticleTags from './articleTags';
+import VisualizationSizing from './visualizationSizing';
+import TableSizing from './tableSizing';
+import FontSizing from './fontSizing';
 import WaterPlot from '../visuals/redlining-charts/scatterplots/waterPlot';
 import ChemPlot from '../visuals/redlining-charts/scatterplots/chemPlot';
 import HealthPlot from '../visuals/redlining-charts/scatterplots/healthPlot';
@@ -61,68 +66,424 @@ Note: MDXProvider doesn't like parsing individual HTML elements followed
 by an array of React components, so we must include them in the same array.
 */
 
+const component = ArticleTags(isMobile);
+const visualizationSizing = VisualizationSizing(isMobile);
+const tableSizing = TableSizing(isMobile);
+const fontSizing = FontSizing(isMobile);
+
 const shortcodes = {
   // style MDX files for any html element here!!
   a: (props) => (
     <a {...props} style={{ textDecoration: 'underline', color: theme.palette.black }} />), // styles MDX hyperlinks
-  p: (props) => <p {...props} style={{ color: theme.palette.black }} />,
   img: (props) => <img {...props} style={{ display: 'flex', flexDirection: 'column' }} />,
   // cap: (props) => <cap {...props} style={{ text:  }} />,
-  WaterPlot,
-  ChemPlot,
-  HealthPlot,
-  EconPlot,
-  RedlineMap,
-  GuideMap,
-  HateBar,
-  HateLine,
-  LunchChart,
-  RentChart,
-  BerkeleyShelterChart,
-  AlamedaShelterChart,
-  BUSDBlackEnrollment,
-  DistrictMap,
-  BlackPopulationCensus,
-  GymTotals,
-  GymVault,
-  GymBars,
-  GymBeam,
-  GymFloor,
-  Timeline1921,
-  STEMEnrollmentLine,
-  TurnoverMap,
-  StudyAbroadMap,
-  ArtifactsBarChart,
-  ArtifactsPieChart,
-  HSILineChart,
-  SubscriberLineChart,
-  DailyCommentLineChart,
-  PostsPerHourBarChart,
-  PostsPerDayBarChart,
-  PostsPerFlairBarChart,
-  GapStackedBarChart,
-  ProposalsASE,
-  ProposalsAR,
-  ProposalsSR,
-  ProposalsPostocs,
-  OptionWidthBarChart,
-  KutcherTimeline,
-  UnionVoteBarChart,
-  TimeDoctorateBarChart,
-  UniversityRentMap,
-  OptionWidthViz2,
-  WarnmeHistogram,
-  MarkerClusterMap,
-  TheftsPerYearBarChart,
-  PopularTheftLocationsBarChart,
-  TheftsPerHourLineChart,
-  BikeTheftTips,
+  GatsbyImage: (props) => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '25px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <GatsbyImage {... props} />
+    </div>
+  ),
+  WaterPlot: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <WaterPlot />
+    </div>
+  ),
+  ChemPlot: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <ChemPlot />
+    </div>
+  ),
+  HealthPlot: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <HealthPlot />
+    </div>
+  ),
+  EconPlot: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <EconPlot />
+    </div>
+  ),
+  RedlineMap: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <RedlineMap />
+    </div>
+  ),
+  GuideMap: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <GuideMap />
+    </div>
+  ),
+  HateBar: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <HateBar />
+    </div>
+  ),
+  HateLine: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <HateLine />
+    </div>
+  ),
+  LunchChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <LunchChart />
+    </div>
+  ),
+  RentChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <RentChart />
+    </div>
+  ),
+  BerkeleyShelterChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <BerkeleyShelterChart />
+    </div>
+  ),
+  AlamedaShelterChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <AlamedaShelterChart />
+    </div>
+  ),
+  BUSDBlackEnrollment: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <BUSDBlackEnrollment />
+    </div>
+  ),
+  DistrictMap: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <DistrictMap />
+    </div>
+  ),
+  BlackPopulationCensus: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <BlackPopulationCensus />
+    </div>
+  ),
+  GymTotals: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <GymTotals />
+    </div>
+  ),
+  GymVault: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <GymVault />
+    </div>
+  ),
+  GymBars: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <GymBars />
+    </div>
+  ),
+  GymBeam: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <GymBeam />
+    </div>
+  ),
+  GymFloor: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <GymFloor />
+    </div>
+  ),
+  Timeline1921: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <Timeline1921 />
+    </div>
+  ),
+  STEMEnrollmentLine: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <STEMEnrollmentLine />
+    </div>
+  ),
+  TurnoverMap: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <TurnoverMap />
+    </div>
+  ),
+  StudyAbroadMap: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <StudyAbroadMap />
+    </div>
+  ),
+  ArtifactsBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <ArtifactsBarChart />
+    </div>
+  ),
+  ArtifactsPieChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <ArtifactsPieChart />
+    </div>
+  ),
+  HSILineChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <HSILineChart />
+    </div>
+  ),
+  SubscriberLineChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <SubscriberLineChart />
+    </div>
+  ),
+  DailyCommentLineChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <DailyCommentLineChart />
+    </div>
+  ),
+  PostsPerHourBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <PostsPerHourBarChart />
+    </div>
+  ),
+  PostsPerDayBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <PostsPerDayBarChart />
+    </div>
+  ),
+  PostsPerFlairBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <PostsPerFlairBarChart />
+    </div>
+  ),
+  GapStackedBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <GapStackedBarChart />
+    </div>
+  ),
+  ProposalsASE: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <ProposalsASE />
+    </div>
+  ),
+  ProposalsAR: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <ProposalsAR />
+    </div>
+  ),
+  ProposalsSR: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <ProposalsSR />
+    </div>
+  ),
+  ProposalsPostocs: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <ProposalsPostocs />
+    </div>
+  ),
+  OptionWidthBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <OptionWidthBarChart />
+    </div>
+  ),
+  KutcherTimeline: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <KutcherTimeline />
+    </div>
+  ),
+  UnionVoteBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <UnionVoteBarChart />
+    </div>
+  ),
+  TimeDoctorateBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <TimeDoctorateBarChart />
+    </div>
+  ),
+  UniversityRentMap: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <UniversityRentMap />
+    </div>
+  ),
+  OptionWidthViz2: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <OptionWidthViz2 />
+    </div>
+  ),
+  WarnmeHistogram: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <WarnmeHistogram />
+    </div>
+  ),
+  MarkerClusterMap: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <MarkerClusterMap />
+    </div>
+  ),
+  TheftsPerYearBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <TheftsPerYearBarChart />
+    </div>
+  ),
+  PopularTheftLocationsBarChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <PopularTheftLocationsBarChart />
+    </div>
+  ),
+  TheftsPerHourLineChart: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: visualizationSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <TheftsPerHourLineChart />
+    </div>
+  ),
+  BikeTheftTips: () => (
+    <div style={{
+      fontSize: fontSizing, maxWidth: tableSizing, marginLeft: 'auto', marginTop: '15px', marginBottom: '15px', marginRight: 'auto',
+    }}
+    >
+      <BikeTheftTips />
+    </div>
+  ),
+
 };
 
 export default function Layout({ children }) {
   return (
     <MDXProvider
-      components={shortcodes}
+      components={({ ...component, ...shortcodes })}
     >
       {children}
     </MDXProvider>

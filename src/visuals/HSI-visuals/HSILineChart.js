@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   LineChart,
   Line,
@@ -11,7 +11,7 @@ import {
 } from 'recharts';
 import allData from './HSIData';
 
-class CustomizedAxisTick extends Component {
+class CustomizedAxisTick extends PureComponent {
   render() {
     const {
       x, y, payload,
@@ -19,7 +19,7 @@ class CustomizedAxisTick extends Component {
 
     return (
       <g transform={`translate(${x},${y})`}>
-        <text x={0} y={10} dy={0} textAnchor="end" fill="#666" transform="rotate(-35)">
+        <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-35)">
           {payload.value}
         </text>
       </g>
@@ -52,7 +52,6 @@ const HSILineChart = () => (
       </div>
       <ResponsiveContainer height={550}>
         <LineChart
-          width={750}
           height={550}
           data={allData}
           margin={{

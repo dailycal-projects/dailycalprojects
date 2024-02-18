@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import ButtonList from '../../../components/buttonList';
 import Key from '../dataKey';
 import allData from '../data';
@@ -7,8 +8,8 @@ import ScatterPlot from '../scatterPlot';
 const HealthPlot = () => {
   const data = allData;
 
-  const [healthKey, setHealthKey] = useState('pollution');
-  const healthLabels = ['cardiovascular disease', 'low birth weight', 'asthma'];
+  const [healthKey, setHealthKey] = useState('Cardiovascular disease');
+  const healthLabels = ['Cardiovascular disease', 'Low birth weight', 'Asthma'];
 
   const createData = (indicator, description) => ({ indicator, description });
   const key = [
@@ -28,11 +29,29 @@ const HealthPlot = () => {
 
   const buttonToData = (label) => {
     if (healthLabels.includes(label)) {
-      setHealthKey(label.replaceAll(' ', '_'));
+      setHealthKey(label);
     }
   };
 
-  return (
+  if (isMobile) {
+    return (
+      <div>
+        <Key rows={key} />
+        <ButtonList list={healthLabels} handleClick={buttonToData} />
+        <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={healthKey} />
+        <p style={{
+          marginTop: '15px',
+          textAlign: 'center',
+          fontWeight: '500',
+        }}
+        >
+          Housing burden
+          <br />
+          percentile key
+        </p>
+      </div>
+    );
+  } return (
     <div>
       <Key rows={key} />
       <ButtonList list={healthLabels} handleClick={buttonToData} />
@@ -44,7 +63,7 @@ const HealthPlot = () => {
         <br />
         percentile
       </p>
-      <ScatterPlot data={data} xDataKey="zip" yDataKey={healthKey} />
+      <ScatterPlot data={data} xDataKey="ZIP code" yDataKey={healthKey} />
     </div>
   );
 };
