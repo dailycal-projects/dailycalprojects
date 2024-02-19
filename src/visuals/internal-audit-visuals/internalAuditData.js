@@ -48,7 +48,7 @@ const age = [
     color: '#fcba64',
   },
   {
-    name: 'O',
+    name: 'Other',
     Percent: '0.9',
     color: '#fcba64',
   },
@@ -147,7 +147,7 @@ const gender = [
     color: '#e87876',
   },
   {
-    name: 'Nonbinary or gender non-conforming',
+    name: 'Nonbinary',
     Percent: 4.5,
     color: '#e87876',
   },
@@ -180,7 +180,7 @@ const lgbtq = [
     color: '#fcba64',
   },
   {
-    name: 'Unsure / questioning',
+    name: 'Unsure',
     Percent: 3.6,
     color: '#fcba64',
   },
@@ -237,18 +237,18 @@ const race = [
   },
 
   {
-    name: 'Asian / Asian American',
+    name: 'Asian',
     Percent: 53.6,
     color: '#70aada',
   },
 
   {
-    name: 'Latine / Hispanic / Chicanx',
+    name: 'Latine/Hispanic',
     Percent: 14.9,
     color: '#70aada',
   },
   {
-    name: 'Indigenous / Native American / Alaska Native',
+    name: 'Indigenous',
     Percent: 0.9,
     color: '#70aada',
   },
@@ -263,12 +263,12 @@ const race = [
     color: '#70aada',
   },
   {
-    name: 'Prefer not to disclose',
+    name: 'PND',
     Percent: 1.4,
     color: '#70aada',
   },
   {
-    name: 'Black / African American',
+    name: 'Black',
     Percent: 0.9,
     color: '#70aada',
   },

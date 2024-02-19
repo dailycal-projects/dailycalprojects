@@ -52,8 +52,8 @@ import TheftsPerYearBarChart from '../visuals/theft-visuals/theftsPerYearBarChar
 import PopularTheftLocationsBarChart from '../visuals/theft-visuals/popularTheftLocationsBarChart';
 import TheftsPerHourLineChart from '../visuals/theft-visuals/theftsPerHourLineChart';
 import BikeTheftTips from '../visuals/theft-visuals/bikeTheftTips';
-import InternalAuditBarChart from '../visuals/internal-audit-two-visuals/internalAuditBarChart';
-import DepartmentBarChart from '../visuals/internal-audit-two-visuals/departmentBarChart';
+import InternalAuditBarChart from '../visuals/internal-audit-visuals/internalAuditBarChart';
+import DepartmentBarChart from '../visuals/internal-audit-visuals/departmentBarChart';
 
 /*
 To avoid using exact paths in MDX files, import your components here
