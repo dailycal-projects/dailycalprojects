@@ -1,0 +1,40 @@
+.recharts-wrapper {
+  margin: 0 auto;
+}
+
+.recharts-tooltip-wrapper,
+.customized-tooltip-content {
+  outline: none;
+  /* border: none; */
+  border-radius: 5px;
+  background-color: white;
+  padding-right: 1rem;
+  text-align: left;
+}
+
+.rhna-title-div {
+  text-align: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  /* margin: 0 auto; */
+}
+
+.rhna-title-div > p {
+  font-size: smaller;
+}
+
+.rhna-chart-div {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.legend-text-color {
+  color: black;
+}
+
+@media only screen and (min-width: 1024px) {
+  .rhna-chart-div {
+    width: 50%;
+  }
+}

@@ -1,0 +1,161 @@
+/* mobile-display styles */
+
+/* MAP */
+.leaflet-container {
+  height: 100vw;
+  width: 100vw;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+  z-index: 0 !important;
+}
+
+/* LEGEND */
+.vm-legend-svg {
+  /* height: 160px; */
+  height: 80vw;
+  overflow: visible;
+}
+
+.legend-title {
+  font-weight: 500;
+}
+
+.vm-legend-div {
+  /* width: 200px; */
+  height: fit-content;
+  overflow: visible;
+}
+
+#reset-button {
+  text-align: left;
+}
+
+/* TITLE + NOTES */
+.vm-title-div {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: large;
+}
+
+.data-note-div,
+.vm-note-div {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  font-size: smaller;
+  text-align: left;
+}
+
+.data-note-div {
+  color: rgb(145, 145, 145);
+}
+
+/* POPUPS */
+.popup-image {
+  max-width: 200px;
+  height: auto;
+  max-height: 200px;
+}
+
+.popup-description {
+  max-height: 10em;
+  /* Adjust the line height and the number of lines as needed */
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* .vm-legend-note-div, */
+.vm-legend-div,
+.legend-item,
+.svg-circle,
+.svg-text {
+  z-index: 2 !important;
+}
+
+/* .leaflet-container {
+  z-index: 0 !important;
+} */
+
+/* interactive stuff */
+.legend-item:hover,
+.svg-text:hover {
+  cursor: pointer;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+/* desktop-size displays */
+@media only screen and (min-width: 1024px) {
+  /* MAP */
+  .leaflet-container {
+    height: 60vh;
+    width: 60vw;
+    margin: 30 auto;
+  }
+
+  .valuation-map-div {
+    display: grid;
+    grid-template-rows: 1fr 7fr 3fr 1fr;
+    /* Two rows, the first one will adjust to content, the second one will have 2 columns */
+    grid-template-columns: 1fr 4fr;
+    /* left column: legend and description, right column: map*/
+  }
+
+  .vm-legend-svg {
+    height: 280px;
+  }
+
+  .vm-title-div {
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+  }
+
+  .vm-title-div > h4 {
+    margin-bottom: 0;
+  }
+
+  .vm-legend-div,
+  .vm-note-div,
+  .data-note-div {
+    padding-left: 4rem;
+  }
+
+  .vm-legend-div {
+    position: inherit;
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .vm-note-div {
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding-right: 0;
+    padding-top: 15px;
+  }
+
+  .data-note-div {
+    grid-row: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .vm-map-div {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}

@@ -54,6 +54,7 @@ import TheftsPerHourLineChart from '../visuals/theft-visuals/theftsPerHourLineCh
 import BikeTheftTips from '../visuals/theft-visuals/bikeTheftTips';
 import InternalAuditBarChart from '../visuals/internal-audit-visuals/internalAuditBarChart';
 import DepartmentBarChart from '../visuals/internal-audit-visuals/departmentBarChart';
+import ProjectsByValuation from '../visuals/construction-visuals/projectsByValuationMap';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -66,8 +67,10 @@ by an array of React components, so we must include them in the same array.
 const shortcodes = {
   // style MDX files for any html element here!!
   a: (props) => (
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
     <a {...props} style={{ textDecoration: 'underline', color: theme.palette.black }} />), // styles MDX hyperlinks
   p: (props) => <p {...props} style={{ color: theme.palette.black }} />,
+  // eslint-disable-next-line jsx-a11y/alt-text
   img: (props) => <img {...props} style={{ display: 'flex', flexDirection: 'column' }} />,
   // cap: (props) => <cap {...props} style={{ text:  }} />,
   WaterPlot,
@@ -121,6 +124,7 @@ const shortcodes = {
   BikeTheftTips,
   InternalAuditBarChart,
   DepartmentBarChart,
+  ProjectsByValuation,
 };
 
 export default function Layout({ children }) {
