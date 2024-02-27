@@ -427,7 +427,7 @@ const accessData = {
   'Transfer rate': transfer,
   'International student rate': international,
   Gender: gender,
-  'LQBTQ+ rate': lgbtq,
+  'LGBTQ+ rate': lgbtq,
   Sexuality: sexuality,
   'Race and ethnicity': race,
   'Disability rate': disability,
