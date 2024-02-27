@@ -89,7 +89,7 @@ function InternalAuditBarChart() {
           <MenuItem value="Transfer rate">Transfer rate</MenuItem>
           <MenuItem value="International student rate">International student rate</MenuItem>
           <MenuItem value="Gender">Gender</MenuItem>
-          <MenuItem value="LQBTQ+ rate">LQBTQ+ rate</MenuItem>
+          <MenuItem value="LGBTQ+ rate">LGBTQ+ rate</MenuItem>
           <MenuItem value="Sexuality">Sexuality</MenuItem>
           <MenuItem value="Race and ethnicity">Race and ethnicity</MenuItem>
           <MenuItem value="Disability rate">Disability rate</MenuItem>
