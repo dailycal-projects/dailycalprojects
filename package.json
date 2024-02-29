@@ -68,10 +68,10 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider; gatsby build",
+    "start": "set SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "set SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
@@ -82,5 +82,17 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
