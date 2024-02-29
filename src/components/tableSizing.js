@@ -6,3 +6,4 @@ const TableSizing = (isMobile) => {
 };
 
 export default TableSizing;
+
