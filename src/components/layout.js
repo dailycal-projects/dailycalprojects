@@ -54,6 +54,8 @@ import TheftsPerHourLineChart from '../visuals/theft-visuals/theftsPerHourLineCh
 import BikeTheftTips from '../visuals/theft-visuals/bikeTheftTips';
 import InternalAuditBarChart from '../visuals/internal-audit-visuals/internalAuditBarChart';
 import DepartmentBarChart from '../visuals/internal-audit-visuals/departmentBarChart';
+import Map from '../visuals/athletes-visuals/studyAbroadMap';
+import InOutOfStateBarChart from '../visuals/athletes-visuals/inOutOfStateBarChart';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -121,6 +123,8 @@ const shortcodes = {
   BikeTheftTips,
   InternalAuditBarChart,
   DepartmentBarChart,
+  Map,
+  InOutOfStateBarChart,
 };
 
 export default function Layout({ children }) {
