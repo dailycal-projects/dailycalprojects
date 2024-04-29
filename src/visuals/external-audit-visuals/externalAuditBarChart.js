@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BarChart,
   Bar,
@@ -8,6 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
   Rectangle,
+  CartesianGrid,
 } from 'recharts';
 import {
   InputLabel, FormControl, Select, MenuItem,
@@ -15,21 +16,26 @@ import {
 import { makeStyles } from '@material-ui/styles';
 import accessData from './externalAuditData';
 
-const CustomizedAxisTick = ({ x, y, payload }) => (
-  <g transform={`translate(${x},${y})`}>
-    <text
-      x={0}
-      y={0}
-      dy={16}
-      fill="#666"
-      transform="rotate(0)"
-      width={75}
-      textAnchor="middle"
-    >
-      {payload.value}
-    </text>
-  </g>
-);
+const CustomizedAxisTick = ({ x, y, payload }) => {
+  const textLines = payload.value.split(' ');
+  return (
+    <g transform={`translate(${x},${y})`}>
+      {textLines.map((line, index) => (
+        <text
+          x={0}
+          y={0}
+          dy={16}
+          fill="#666"
+          transform="rotate(0)"
+          width={75}
+          textAnchor="middle"
+        >
+          <tspan x={0} dy={index ? '1.2em' : 0}>{line}</tspan>
+        </text>
+      ))}
+    </g>
+  );
+};
 
 function ExternalAuditBarChart() {
   const useStyles = makeStyles(() => ({
@@ -41,9 +47,20 @@ function ExternalAuditBarChart() {
 
   const classes = useStyles();
 
-  const [question, setQuestion] = React.useState({
+  const [question, setQuestion] = useState({
     name: 'Age',
   });
+
+  const [chartLayout, setChartLayout] = useState('vertical');
+
+  useEffect(() => {
+    const selectedQuestionData = accessData[question.name];
+    if (selectedQuestionData.length > 7) {
+      setChartLayout('horizontal');
+    } else {
+      setChartLayout('vertical');
+    }
+  }, [question]);
 
   const handleUnitChange = (event) => {
     const { value } = event.target;
@@ -91,43 +108,74 @@ function ExternalAuditBarChart() {
       </FormControl>
 
       <ResponsiveContainer height={600}>
-        <BarChart
-          width={400}
-          height={600}
-          data={accessData[question.name]}
-          margin={{
-            top: -10,
-            right: 5,
-            left: 10,
-            bottom: -10,
-          }}
-        >
-          <XAxis
-            dataKey="name"
-            tick={<CustomizedAxisTick />}
-            height={100}
-            minTickGap={-10}
-          />
-          <YAxis
-            label={{
-              value: 'Percent',
-              angle: -90,
-              position: 'insideLeft',
+        {chartLayout === 'vertical' ? (
+          <BarChart
+            width={400}
+            height={600}
+            data={accessData[question.name]}
+            margin={{
+              top: -10,
+              right: 5,
+              left: 50,
+              bottom: -10,
             }}
-          />
-          <Tooltip separator=": " />
-          <Legend />
-          <Bar
-            dataKey="PercentFa"
-            fill={accessData[question.name][0].color}
-            activeBar={<Rectangle stroke="black" />}
-          />
-          <Bar
-            dataKey="PercentSp"
-            fill={accessData[question.name][0].colorLight}
-            activeBar={<Rectangle stroke="black" />}
-          />
-        </BarChart>
+          >
+            <XAxis
+              dataKey="name"
+              height={100}
+              minTickGap={-10}
+            />
+            <YAxis
+              label={{
+                value: 'Percent',
+                angle: -90,
+                position: 'insideLeft',
+              }}
+            />
+            <Tooltip separator=": " />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Legend />
+            <Bar
+              dataKey="Percent in Fall 2022"
+              fill={accessData[question.name][0].color}
+              activeBar={<Rectangle stroke="black" />}
+            />
+            <Bar
+              dataKey="Percent in Spring 2023"
+              fill={accessData[question.name][0].colorLight}
+              activeBar={<Rectangle stroke="black" />}
+            />
+          </BarChart>
+        ) : (
+          <BarChart
+            layout="vertical"
+            width={600}
+            height={400}
+            data={accessData[question.name]}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 100,
+              bottom: 5,
+            }}
+          >
+            <XAxis type="number" />
+            <YAxis dataKey="name" type="category" />
+            <Tooltip separator=": " />
+            <Legend />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Bar
+              dataKey="Percent in Fall 2022"
+              fill={accessData[question.name][0].color}
+              activeBar={<Rectangle stroke="black" />}
+            />
+            <Bar
+              dataKey="Percent in Spring 2023"
+              fill={accessData[question.name][0].colorLight}
+              activeBar={<Rectangle stroke="black" />}
+            />
+          </BarChart>
+        )}
       </ResponsiveContainer>
     </div>
   );

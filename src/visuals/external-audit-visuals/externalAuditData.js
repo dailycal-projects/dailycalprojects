@@ -1,209 +1,244 @@
 const age = [
   {
     name: '<18',
-    PercentFa: 1.1,
-    PercentSp: 1.1,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 1.1,
     color: '#fba93d',
     colorLight: '#fedaaa',
   },
   {
     name: '18-25',
-    PercentFa: 21.1,
-    PercentSp: 18.9,
+    'Percent in Fall 2022': 21.1,
+    'Percent in Spring 2023': 18.9,
   },
   {
     name: '25-50',
-    PercentFa: 40,
-    PercentSp: 51.8,
+    'Percent in Fall 2022': 40,
+    'Percent in Spring 2023': 51.8,
   },
   {
     name: '50-65',
-    PercentFa: 21.1,
-    PercentSp: 8.2,
+    'Percent in Fall 2022': 21.1,
+    'Percent in Spring 2023': 8.2,
 
   },
   {
     name: '65+',
-    PercentFa: 10.5,
-    PercentSp: 18.2,
+    'Percent in Fall 2022': 10.5,
+    'Percent in Spring 2023': 18.2,
   },
   {
     name: 'PND',
-    PercentFa: 6.3,
-    PercentSp: 11.4,
+    'Percent in Fall 2022': 6.3,
+    'Percent in Spring 2023': 11.4,
   },
 ];
 
 const storyCategory = [
   {
     name: 'Campus',
-    PercentFa: 47.4,
-    PercentSp: 47.4,
+    'Percent in Fall 2022': 47.4,
+    'Percent in Spring 2023': 47.4,
     color: '#95C361',
     colorLight: '#D2E2BB',
   },
   {
     name: 'City',
-    PercentFa: 27.4,
-    PercentSp: 27.4,
+    'Percent in Fall 2022': 27.4,
+    'Percent in Spring 2023': 27.4,
   },
   {
     name: 'Arts',
-    PercentFa: 1.1,
-    PercentSp: 1.1,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 1.1,
   },
   {
     name: 'Sports',
-    PercentFa: 1.1,
-    PercentSp: 1.1,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 1.1,
   },
   {
     name: 'Blog',
-    PercentFa: 1.1,
-    PercentSp: 1.1,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 1.1,
   },
   {
     name: 'Multimedia',
-    PercentFa: 1.1,
-    PercentSp: 1.1,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 1.1,
   },
   {
     name: 'Obituary',
-    PercentFa: 3.2,
-    PercentSp: 3.2,
+    'Percent in Fall 2022': 3.2,
+    'Percent in Spring 2023': 3.2,
   },
   {
     name: 'Weekender',
-    PercentFa: 2.1,
-    PercentSp: 2.1,
+    'Percent in Fall 2022': 2.1,
+    'Percent in Spring 2023': 2.1,
   },
   {
     name: 'Law and justice',
-    PercentFa: 1.1,
-    PercentSp: 1.1,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 1.1,
   },
 ];
 
 const primaryRole = [
   {
     name: 'Goverment official',
-    PercentFa: 11.6,
-    PercentSp: 11.6,
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
     color: '#489BD1',
     colorLight: '#B5CFEA',
   },
   {
     name: 'Subject matter expert',
-    PercentFa: 32.6,
-    PercentSp: 32.6,
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
   },
   {
     name: 'First-person account',
-    PercentFa: 11.6,
-    PercentSp: 11.6,
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
   },
   {
-    name: 'Activist',
-    PercentFa: 13.7,
-    PercentSp: 13.7,
+    name: 'Activist or advocate',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
   },
   {
     name: 'Campus authority',
-    PercentFa: 17.9,
-    PercentSp: 17.9,
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
   },
   {
-    name: 'Worker at a Business',
-    PercentFa: 3.2,
-    PercentSp: 3.2,
+    name: 'Worker at a business',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
+  },
+  {
+    name: 'Cultural figure',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
+  },
+  {
+    name: 'Campus authority',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
+  },
+  {
+    name: 'Colleague or student to person in obituary',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
+  },
+  {
+    name: 'Formerly in media',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
+  },
+  {
+    name: 'Professor, lecturer, researcher',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
+  },
+  {
+    name: 'UCPD or BPD',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
+  },
+  {
+    name: 'Student Athlete',
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0,
   },
 ];
 
 const pronouns = [
   {
     name: 'She/her',
-    PercentFa: 36.8,
-    PercentSp: 37.9,
+    'Percent in Fall 2022': 36.8,
+    'Percent in Spring 2023': 37.9,
     color: '#61699A',
     colorLight: '#B4B4CE',
 
   },
   {
     name: 'He/him',
-    PercentFa: 55.8,
-    PercentSp: 53.6,
+    'Percent in Fall 2022': 55.8,
+    'Percent in Spring 2023': 53.6,
   },
   {
     name: 'They/them',
-    PercentFa: 5.3,
-    PercentSp: 1.8,
+    'Percent in Fall 2022': 5.3,
+    'Percent in Spring 2023': 1.8,
   },
   {
     name: 'They/she',
-    PercentFa: 1.1,
-    PercentSp: 2.5,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 2.5,
   },
   {
     name: 'They/he',
-    PercentFa: 0,
-    PercentSp: 1.1,
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 1.1,
   },
   {
     name: 'Multiple identities',
-    PercentFa: 0,
-    PercentSp: 0.4,
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 0.4,
   },
   {
     name: 'PND',
-    PercentFa: 1.1,
-    PercentSp: 2.9,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 2.9,
   },
 ];
 
 const race = [
   {
     name: 'White',
-    PercentFa: 43.2,
-    PercentSp: 38.9,
+    'Percent in Fall 2022': 43.2,
+    'Percent in Spring 2023': 38.9,
     color: '#BA5F7E',
     colorLight: '#DEB6BF',
   },
 
   {
     name: 'Asian',
-    PercentFa: 13.8,
-    PercentSp: 14.3,
+    'Percent in Fall 2022': 13.8,
+    'Percent in Spring 2023': 14.3,
   },
 
   {
     name: 'Latine/Hispanic',
-    PercentFa: 16.8,
-    PercentSp: 12.1,
+    'Percent in Fall 2022': 16.8,
+    'Percent in Spring 2023': 12.1,
   },
   {
     name: 'Indigenous',
-    PercentFa: 0,
-    PercentSp: 1.1,
+    'Percent in Fall 2022': 0,
+    'Percent in Spring 2023': 1.1,
   },
   {
     name: 'Middle Eastern',
-    PercentFa: 1.1,
-    PercentSp: 2.5,
+    'Percent in Fall 2022': 1.1,
+    'Percent in Spring 2023': 2.5,
   },
   {
     name: 'Black',
-    PercentFa: 0.9,
-    PercentSp: 13.6,
+    'Percent in Fall 2022': 0.9,
+    'Percent in Spring 2023': 13.6,
   },
   {
     name: 'Mixed',
-    PercentFa: 9.5,
-    PercentSp: 2.1,
+    'Percent in Fall 2022': 9.5,
+    'Percent in Spring 2023': 2.1,
   },
   {
     name: 'Unknown',
-    PercentFa: 6.3,
-    PercentSp: 17.9,
+    'Percent in Fall 2022': 6.3,
+    'Percent in Spring 2023': 17.9,
   },
 ];
 
