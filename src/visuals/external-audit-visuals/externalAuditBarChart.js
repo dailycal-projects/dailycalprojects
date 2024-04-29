@@ -86,7 +86,7 @@ function ExternalAuditBarChart() {
         }}
       >
         <strong>
-          <p>{`${question.name}`}</p>
+          <p>{`${question.name} of source`}</p>
         </strong>
       </div>
       <FormControl className={classes.formControl}>
@@ -122,6 +122,7 @@ function ExternalAuditBarChart() {
           >
             <XAxis
               dataKey="name"
+              tick={<CustomizedAxisTick />}
               height={100}
               minTickGap={-10}
             />
