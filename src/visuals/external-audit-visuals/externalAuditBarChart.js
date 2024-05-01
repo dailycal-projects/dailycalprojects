@@ -92,10 +92,10 @@ function ExternalAuditBarChart() {
           <BarChart
             data={accessData[question.name]}
             margin={{
-              top: -10,
-              right: 5,
-              left: 50,
-              bottom: -10,
+              top: -5,
+              right: 20,
+              left: 20,
+              bottom: 0,
             }}
           >
             <XAxis
@@ -112,14 +112,14 @@ function ExternalAuditBarChart() {
             />
             <Tooltip separator=": " />
             <CartesianGrid strokeDasharray="3 3" />
-            <Legend verticalAlign="top" height={36} />
+            <Legend verticalAlign="top" />
             <Bar
-              dataKey="Percent in Fall 2022"
+              dataKey="Percent in fall 2022"
               fill={accessData[question.name][0].color}
               activeBar={<Rectangle stroke="black" />}
             />
             <Bar
-              dataKey="Percent in Spring 2023"
+              dataKey="Percent in spring 2023"
               fill={accessData[question.name][0].colorLight}
               activeBar={<Rectangle stroke="black" />}
             />
@@ -129,10 +129,10 @@ function ExternalAuditBarChart() {
             layout="vertical"
             data={accessData[question.name]}
             margin={{
-              top: 5,
+              top: -5,
               right: 30,
               left: 50,
-              bottom: 40,
+              bottom: 30,
             }}
           >
             <XAxis
@@ -158,15 +158,15 @@ function ExternalAuditBarChart() {
               }}
             />
             <Tooltip separator=": " />
-            <Legend verticalAlign="top" height={36} />
+            <Legend verticalAlign="top" />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar
-              dataKey="Percent in Fall 2022"
+              dataKey="Percent in fall 2022"
               fill={accessData[question.name][0].color}
               activeBar={<Rectangle stroke="black" />}
             />
             <Bar
-              dataKey="Percent in Spring 2023"
+              dataKey="Percent in spring 2023"
               fill={accessData[question.name][0].colorLight}
               activeBar={<Rectangle stroke="black" />}
             />
