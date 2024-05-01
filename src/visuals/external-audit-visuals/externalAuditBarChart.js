@@ -16,31 +16,11 @@ import {
 import { makeStyles } from '@material-ui/styles';
 import accessData from './externalAuditData';
 
-const CustomizedAxisTick = ({ x, y, payload }) => {
-  const textLines = payload.value.split(' ');
-  return (
-    <g transform={`translate(${x},${y})`}>
-      {textLines.map((line, index) => (
-        <text
-          x={0}
-          y={0}
-          dy={16}
-          fill="#666"
-          transform="rotate(0)"
-          width={75}
-          textAnchor="middle"
-        >
-          <tspan x={0} dy={index ? '1.2em' : 0}>{line}</tspan>
-        </text>
-      ))}
-    </g>
-  );
-};
-
 function ExternalAuditBarChart() {
   const useStyles = makeStyles(() => ({
     formControl: {
-      margin: '1%',
+      marginTop: -20,
+      marginLeft: 10,
       minWidth: 150,
     },
   }));
@@ -89,14 +69,14 @@ function ExternalAuditBarChart() {
           <p>{`${question.name} of source`}</p>
         </strong>
       </div>
-      <FormControl className={classes.formControl}>
+      <FormControl className={classes.formControl} style={{ paddingBottom: '-100px' }}>
         <InputLabel>Select question</InputLabel>
         <Select
           value={question.name}
           id="unitSelection"
           name="question"
           onChange={handleUnitChange}
-          defaultValue="Age"
+          defaultValue="Primary role"
           autoWidth
         >
           <MenuItem value="Age">Age</MenuItem>
@@ -107,11 +87,9 @@ function ExternalAuditBarChart() {
         </Select>
       </FormControl>
 
-      <ResponsiveContainer height={600}>
+      <ResponsiveContainer height={500}>
         {chartLayout === 'vertical' ? (
           <BarChart
-            width={400}
-            height={600}
             data={accessData[question.name]}
             margin={{
               top: -10,
@@ -122,7 +100,6 @@ function ExternalAuditBarChart() {
           >
             <XAxis
               dataKey="name"
-              tick={<CustomizedAxisTick />}
               height={100}
               minTickGap={-10}
             />
@@ -135,7 +112,7 @@ function ExternalAuditBarChart() {
             />
             <Tooltip separator=": " />
             <CartesianGrid strokeDasharray="3 3" />
-            <Legend />
+            <Legend verticalAlign="top" height={36} />
             <Bar
               dataKey="Percent in Fall 2022"
               fill={accessData[question.name][0].color}
@@ -150,20 +127,38 @@ function ExternalAuditBarChart() {
         ) : (
           <BarChart
             layout="vertical"
-            width={600}
-            height={400}
             data={accessData[question.name]}
             margin={{
               top: 5,
               right: 30,
-              left: 100,
-              bottom: 5,
+              left: 50,
+              bottom: 40,
             }}
           >
-            <XAxis type="number" />
-            <YAxis dataKey="name" type="category" />
+            <XAxis
+              type="number"
+              label={{
+                value: 'Percent',
+                angle: 0,
+                position: 'bottom',
+                minWidth: 100,
+              }}
+
+            />
+            <YAxis
+              dataKey="name"
+              type="category"
+              tick={{
+                style: {
+                  fontSize: accessData[question.name].length > 9 ? '10px' : undefined,
+                  textOverflow: 'ellipsis',
+                  overflow: 'hidden',
+                  whiteSpace: 'nowrap',
+                },
+              }}
+            />
             <Tooltip separator=": " />
-            <Legend />
+            <Legend verticalAlign="top" height={36} />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar
               dataKey="Percent in Fall 2022"
