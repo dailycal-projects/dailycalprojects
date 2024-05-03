@@ -49,6 +49,8 @@ function ExternalAuditBarChart() {
     });
   };
 
+  const renderBlackLegendText = (value) => <span style={{ color: '#666666' }}>{value}</span>;
+
   return (
     <div
       style={{
@@ -93,9 +95,9 @@ function ExternalAuditBarChart() {
             data={accessData[question.name]}
             margin={{
               top: -5,
-              right: 20,
-              left: 20,
-              bottom: 0,
+              right: 30,
+              left: 30,
+              bottom: -30,
             }}
           >
             <XAxis
@@ -112,7 +114,7 @@ function ExternalAuditBarChart() {
             />
             <Tooltip separator=": " />
             <CartesianGrid strokeDasharray="3 3" />
-            <Legend verticalAlign="top" />
+            <Legend formatter={renderBlackLegendText} verticalAlign="top" />
             <Bar
               dataKey="Percent in fall 2022"
               fill={accessData[question.name][0].color}
@@ -131,7 +133,7 @@ function ExternalAuditBarChart() {
             margin={{
               top: -5,
               right: 30,
-              left: 50,
+              left: 30,
               bottom: 30,
             }}
           >
@@ -150,7 +152,7 @@ function ExternalAuditBarChart() {
               type="category"
               tick={{
                 style: {
-                  fontSize: accessData[question.name].length > 9 ? '10px' : undefined,
+                  fontSize: accessData[question.name].length > 9 ? '10px' : '16px',
                   textOverflow: 'ellipsis',
                   overflow: 'hidden',
                   whiteSpace: 'nowrap',
@@ -158,7 +160,7 @@ function ExternalAuditBarChart() {
               }}
             />
             <Tooltip separator=": " />
-            <Legend verticalAlign="top" />
+            <Legend formatter={renderBlackLegendText} verticalAlign="top" />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar
               dataKey="Percent in fall 2022"
