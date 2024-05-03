@@ -94,7 +94,7 @@ function ExternalAuditBarChart() {
           <BarChart
             data={accessData[question.name]}
             margin={{
-              top: -5,
+              top: 0,
               right: 30,
               left: 30,
               bottom: -30,
@@ -131,7 +131,7 @@ function ExternalAuditBarChart() {
             layout="vertical"
             data={accessData[question.name]}
             margin={{
-              top: -5,
+              top: 0,
               right: 30,
               left: 30,
               bottom: 30,
