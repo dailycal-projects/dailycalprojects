@@ -57,6 +57,7 @@ import DepartmentBarChart from '../visuals/internal-audit-visuals/departmentBarC
 import ExternalAuditBarChart from '../visuals/external-audit-visuals/externalAuditBarChart';
 import AgeBarChart from '../visuals/opioids-visuals/AgeBarChart';
 import TestStripMap from '../visuals/opioids-visuals/TestStripMap';
+import RatesMap from '../visuals/opioids-visuals/RatesMap/Choropleth';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -127,6 +128,7 @@ const shortcodes = {
   ExternalAuditBarChart,
   AgeBarChart,
   TestStripMap,
+  RatesMap,
 };
 
 export default function Layout({ children }) {
