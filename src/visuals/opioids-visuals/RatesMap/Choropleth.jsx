@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
-import { useLeaflet } from 'react-leaflet';
+import React, { useEffect } from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import 'leaflet-choropleth';
 import L from 'leaflet';
-import 'leaflet-choropleth'; // Make sure this is installed and imported correctly
-import data from './data.json';
+
+import data from './alameda_data.json';
 
 const style = {
   fillColor: '#F28F3B',
@@ -13,35 +14,44 @@ const style = {
   fillOpacity: 0.5,
 };
 
-export default function Choropleth() {
-  const { map } = useLeaflet();
-
+const Choropleth = () => {
   useEffect(() => {
-    // Assuming data.json is structured as expected
     const geojsonData = data;
 
+    const map = L.map('map').setView([37.65, -121.9], 9.5); // Alameda County
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+    }).addTo(map);
+
     L.choropleth(geojsonData, {
-      valueProperty: 'incidents', // Property in the features to use
-      scale: ['white', 'red'], // Chroma.js scale
-      steps: 5, // Number of breaks or steps in range
-      mode: 'q', // Quantile mode
+      valueProperty: 'RATE',
+      scale: ['white', 'red'],
+      steps: 5,
+      mode: 'q',
       style,
       onEachFeature(feature, layer) {
-        layer.bindPopup(
-          `District ${
-            feature.properties.dist_num
-          }<br>${
-            feature.properties.incidents.toLocaleString()
-          } incidents`,
-        );
+        layer.bindPopup(`<b>Zip code:</b> ${feature.properties.ZIP}<br/><b>Age-adjusted rate:</b> ${feature.properties.RATE}`);
       },
     }).addTo(map);
 
     return () => {
-      // Clean up
-      map.removeLayer(geojsonData);
+      map.remove();
     };
-  }, [map]);
+  }, []);
 
-  return null; // Since this is a Leaflet integration component
-}
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <h4>
+
+        Fentanyl death rates in Alameda County by zip code
+
+      </h4>
+      {' '}
+      <div id="map" style={{ width: '100%', height: '450px' }} />
+      {' '}
+    </div>
+  );
+};
+
+export default Choropleth;
