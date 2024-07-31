@@ -255,14 +255,20 @@ const Map = () => {
   };
 
   return (
-    <div style={{ width: '100%', overflow: 'hidden' }}>
-      <div style={{ width: '500px', float: 'left' }}>
-        <h3>The modern Pac-12 before dissolution</h3>
-        <svg ref={beforeMapRef} />
+    <div style={{ display: 'flex', width: '100%', overflow: 'hidden' }}>
+      <div style={{
+        flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+      }}
+      >
+        <h4>The modern Pac-12 before dissolution</h4>
+        <svg ref={beforeMapRef} style={{ width: '100%', height: 'auto', marginTop: '38px' }} />
       </div>
-      <div style={{ marginLeft: '600px' }}>
-        <h3>Where Pac-12 universities are now headed to</h3>
-        <div className="school-select" style={{ width: '200px' }}>
+      <div style={{
+        flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', paddingLeft: '2%',
+      }}
+      >
+        <h4>Where Pac-12 universities are now headed to</h4>
+        <div className="school-select" style={{ width: '200px', marginTop: '20px' }}>
           <select onChange={handleOptionChange} value={selectedOption}>
             <option value="pac2">Pac-2</option>
             <option value="acc">ACC</option>
@@ -270,7 +276,7 @@ const Map = () => {
             <option value="big12">Big 12</option>
           </select>
         </div>
-        <svg ref={afterMapRef} />
+        <svg ref={afterMapRef} style={{ width: '100%', height: 'auto' }} />
       </div>
     </div>
   );

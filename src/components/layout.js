@@ -58,6 +58,12 @@ import ExternalAuditBarChart from '../visuals/external-audit-visuals/externalAud
 import AgeBarChart from '../visuals/opioids-visuals/AgeBarChart';
 import TestStripMap from '../visuals/opioids-visuals/TestStripMap';
 import RatesMap from '../visuals/opioids-visuals/RatesMap/Choropleth';
+import App from '../visuals/pac-12-finances-visuals/App';
+import ConferenceMap from '../visuals/pac-12-finances-visuals/visuals/Map';
+import ConferenceBarChart from '../visuals/pac-12-finances-visuals/visuals/ConferenceBarChart';
+import DebtBarChart from '../visuals/pac-12-finances-visuals/visuals/DebtBarChart';
+import AreaCharts from '../visuals/pac-12-finances-visuals/visuals/AreaCharts';
+import DropdownBudgetOverTime from '../visuals/pac-12-finances-visuals/visuals/DropdownBudgetOverTime';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -129,6 +135,13 @@ const shortcodes = {
   AgeBarChart,
   TestStripMap,
   RatesMap,
+  App,
+  ConferenceMap,
+  ConferenceBarChart,
+  DebtBarChart,
+  AreaCharts,
+  DropdownBudgetOverTime,
+
 };
 
 export default function Layout({ children }) {
