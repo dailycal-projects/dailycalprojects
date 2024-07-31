@@ -1,0 +1,51 @@
+import '../App.css';
+import React, { useState } from 'react';
+import {
+  BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip,
+} from 'recharts';
+import { data } from '../data/conferences';
+
+const options = ['Media Rights', 'NCAA\/Conference Distributions'];
+
+function ConferenceBarChart() {
+  const [selectedOption, setSelectedOption] = useState('Media Rights');
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const filteredData = data.filter((item) => item.Category === selectedOption);
+
+  return (
+    <div>
+      <label htmlFor="category">Select Category: </label>
+      <select id="category" value={selectedOption} onChange={handleChange}>
+        {options.map((option) => (
+          <option key={option} value={option}>{option}</option>
+        ))}
+      </select>
+      <ResponsiveContainer width="100%" height={500}>
+        <BarChart
+          data={filteredData}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 50,
+            bottom: 25,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="Year" label={{ value: 'Year', position: 'insideBottom', offset: -10 }} />
+          <YAxis label={{
+            value: 'Amount ($M in 2024)', angle: -90, position: 'insideLeft', textAlign: 'center', dy: 80,
+          }}
+          />
+          <Tooltip formatter={(value) => `$${value.toFixed(2)}M`} />
+          <Bar dataKey="Amount ($M in 2024)" fill="#72577a" fillOpacity={0.7} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}
+
+export default ConferenceBarChart;
