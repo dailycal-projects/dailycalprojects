@@ -18,8 +18,11 @@ function AreaCharts() {
       left: '20px',
     }}
     >
-      <div>
-        <h2>Revenue over time, adjusted for inflation</h2>
+      <div style={{
+        flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', paddingLeft: '2%',
+      }}
+      >
+        <h3>Revenue over time, adjusted for inflation</h3>
         <ResponsiveContainer height={500}>
           <AreaChart
             width={500}
@@ -73,8 +76,11 @@ function AreaCharts() {
         </ResponsiveContainer>
       </div>
 
-      <div>
-        <h2>Expenses over time, adjusted for inflation</h2>
+      <div style={{
+        flex: '1', alignItems: 'center', textAlign: 'center', marginTop: '30px',
+      }}
+      >
+        <h3>Expenses over time, adjusted for inflation</h3>
         <ResponsiveContainer height={500}>
           <AreaChart
             width={500}

@@ -18,32 +18,35 @@ function ConferenceBarChart() {
 
   return (
     <div>
-      <label htmlFor="category">Select Category: </label>
-      <select id="category" value={selectedOption} onChange={handleChange}>
-        {options.map((option) => (
-          <option key={option} value={option}>{option}</option>
-        ))}
-      </select>
-      <ResponsiveContainer width="100%" height={500}>
-        <BarChart
-          data={filteredData}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 50,
-            bottom: 25,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="Year" label={{ value: 'Year', position: 'insideBottom', offset: -10 }} />
-          <YAxis label={{
-            value: 'Amount ($M in 2024)', angle: -90, position: 'insideLeft', textAlign: 'center', dy: 80,
-          }}
-          />
-          <Tooltip formatter={(value) => `$${value.toFixed(2)}M`} />
-          <Bar dataKey="Amount ($M in 2024)" fill="#72577a" fillOpacity={0.7} />
-        </BarChart>
-      </ResponsiveContainer>
+      <h3 style={{ textAlign: 'center' }}>Reported revenue for Cal Athletics from the Pac-12 and NCAA over time</h3>
+      <div>
+        <label htmlFor="category" style={{ marginBottom: '100px' }}>Select a category:</label>
+        <select id="category" value={selectedOption} onChange={handleChange}>
+          {options.map((option) => (
+            <option key={option} value={option}>{option}</option>
+          ))}
+        </select>
+        <ResponsiveContainer width="100%" height={500}>
+          <BarChart
+            data={filteredData}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 50,
+              bottom: 25,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="Year" label={{ value: 'Year', position: 'insideBottom', offset: -10 }} />
+            <YAxis label={{
+              value: 'Amount ($M in 2024)', angle: -90, position: 'insideLeft', textAlign: 'center', dy: 80,
+            }}
+            />
+            <Tooltip formatter={(value) => `$${value.toFixed(2)}M`} />
+            <Bar dataKey="Amount ($M in 2024)" fill="#72577a" fillOpacity={0.7} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
