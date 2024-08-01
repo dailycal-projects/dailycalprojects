@@ -3,7 +3,7 @@ import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip,
 } from 'recharts';
-import { data } from '../data/debt_by_sport';
+import data from '../data/debt_by_sport';
 
 function DebtBarChart() {
   return (

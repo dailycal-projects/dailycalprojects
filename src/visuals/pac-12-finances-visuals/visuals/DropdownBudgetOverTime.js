@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
-import { data } from '../data/net_budget';
+import data from '../data/net_budget';
 
-const sports = ['Football', "Men's Basketball", "Women's Basketball", "Other Men's Sports", "Other Women's Sports", 'Non-Program Specific', 'Total'];
+const sports = ['Football', "Men's basketball", "Women's basketball", "Other men's sports", "Other women's sports", 'Non-program specific', 'Total'];
 
 function DropdownBudgetOverTime() {
   const [selectedSport, setSelectedSport] = useState('Football');
