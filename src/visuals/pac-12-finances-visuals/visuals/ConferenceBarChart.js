@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip,
 } from 'recharts';
-import { data } from '../data/conferences';
+import data from '../data/conferences';
 
-const options = ['Media Rights', 'NCAA/Conference Distributions'];
+const options = ['Media rights', 'NCAA/Conference distributions'];
 
 function ConferenceBarChart() {
-  const [selectedOption, setSelectedOption] = useState('Media Rights');
+  const [selectedOption, setSelectedOption] = useState('Media rights');
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
@@ -28,7 +28,7 @@ function ConferenceBarChart() {
             ))}
           </select>
         </label>
-        <ResponsiveContainer width="100%" height={500}>
+        <ResponsiveContainer width="100%" height={450}>
           <BarChart
             data={filteredData}
             margin={{
