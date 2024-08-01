@@ -17,14 +17,15 @@ import oregonStateSmallImage from '../images/oregonstate_small.png';
 import wazzuSmallImage from '../images/wazzu_small.png';
 
 const pac12Universities = [
+  // Note: added some jitter (in lat and long) for Standford, Cal, UCLA, USC so images so not appear completely on top of each other
   {
-    name: 'University of California, Berkeley', conf: 'acc', lat: 37.870151, long: -122.2620409, image: calSmallImage,
+    name: 'Stanford University', conf: 'acc', lat: 37.02766, long: -122.6726403, image: stanfordSmall, color: '#222222',
   },
   {
-    name: 'University of California, Los Angeles', conf: 'bigTen', lat: 34.0699182, long: -118.4464298, image: uclaSmallImage,
+    name: 'University of California, Berkeley', conf: 'acc', lat: 38.070151, long: -122.020409, image: calSmallImage,
   },
   {
-    name: 'Stanford University', conf: 'acc', lat: 37.42766, long: -122.1726403, image: stanfordSmall, color: '#222222',
+    name: 'University of California, Los Angeles', conf: 'bigTen', lat: 34.0699182, long: -117.4464298, image: uclaSmallImage,
   },
   {
     name: 'University of Southern California', conf: 'bigTen', lat: 34.0223519, long: -118.2876973, image: uscSmallImage,
@@ -166,8 +167,8 @@ const Map = () => {
       .data(unis)
       .enter()
       .append('image')
-      .attr('width', 20)
-      .attr('height', 20)
+      .attr('width', 27)
+      .attr('height', 27)
       .attr('href', (d) => d.image)
       .attr('transform', (d) => {
         const p = projection([d.long, d.lat]);

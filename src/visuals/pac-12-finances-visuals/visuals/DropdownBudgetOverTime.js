@@ -20,12 +20,14 @@ function DropdownBudgetOverTime() {
     <div>
       <h3 style={{ textAlign: 'center' }}>Net revenue by sport over time</h3>
       <div>
-        <label htmlFor="sport">Select a sport: </label>
-        <select id="sport" value={selectedSport} onChange={handleChange}>
-          {sports.map((sport) => (
-            <option key={sport} value={sport}>{sport}</option>
-          ))}
-        </select>
+        <label htmlFor="sport">
+          Select a sport:&nbsp;
+          <select id="sport" value={selectedSport} onChange={handleChange}>
+            {sports.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
+        </label>
 
         <ResponsiveContainer width="100%" height={400}>
           <BarChart

@@ -10,7 +10,7 @@ import ConferenceBarChart from './visuals/ConferenceBarChart';
 function financeVisuals() {
   return (
     <div>
-      <h1>Visuals for Cal's finances as part of the Pac-12</h1>
+      <h1>Visuals for Cal&apos;s finances as part of the Pac-12</h1>
 
       <div>
         <h2>The dissolution of the Pac-12 conference</h2>

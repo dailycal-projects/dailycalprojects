@@ -20,12 +20,14 @@ function ConferenceBarChart() {
     <div>
       <h3 style={{ textAlign: 'center' }}>Reported revenue for Cal Athletics from the Pac-12 and NCAA over time</h3>
       <div>
-        <label htmlFor="category" style={{ marginBottom: '100px' }}>Select a category: </label>
-        <select id="category" value={selectedOption} onChange={handleChange}>
-          {options.map((option) => (
-            <option key={option} value={option}>{option}</option>
-          ))}
-        </select>
+        <label htmlFor="category">
+          Select a category:&nbsp;
+          <select id="category" value={selectedOption} onChange={handleChange}>
+            {options.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
+        </label>
         <ResponsiveContainer width="100%" height={500}>
           <BarChart
             data={filteredData}
