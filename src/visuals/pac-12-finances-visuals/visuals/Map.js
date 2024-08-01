@@ -3,7 +3,6 @@ import 'leaflet/dist/leaflet.css';
 import * as d3 from 'd3';
 import { feature } from 'topojson-client';
 import data from '../data/us-10m.json';
-
 import calSmallImage from '../images/cal_small.png';
 import uclaSmallImage from '../images/ucla_small.png';
 import stanfordSmall from '../images/stanford_small.png';
@@ -19,89 +18,40 @@ import wazzuSmallImage from '../images/wazzu_small.png';
 
 const pac12Universities = [
   {
-    name: 'University of California, Berkeley',
-    conf: 'acc',
-    lat: 37.870151,
-    long: -122.2620409,
-    image: calSmallImage,
+    name: 'University of California, Berkeley', conf: 'acc', lat: 37.870151, long: -122.2620409, image: calSmallImage,
   },
   {
-    name: 'University of California, Los Angeles',
-    conf: 'bigTen',
-    lat: 34.0699182,
-    long: -118.4464298,
-    image: uclaSmallImage,
+    name: 'University of California, Los Angeles', conf: 'bigTen', lat: 34.0699182, long: -118.4464298, image: uclaSmallImage,
   },
   {
-    name: 'Stanford University',
-    conf: 'acc',
-    lat: 37.42766,
-    long: -122.1726403,
-    image: stanfordSmall,
-    color: '#222222',
+    name: 'Stanford University', conf: 'acc', lat: 37.42766, long: -122.1726403, image: stanfordSmall, color: '#222222',
   },
   {
-    name: 'University of Southern California',
-    conf: 'bigTen',
-    lat: 34.0223519,
-    long: -118.2876973,
-    image: uscSmallImage,
+    name: 'University of Southern California', conf: 'bigTen', lat: 34.0223519, long: -118.2876973, image: uscSmallImage,
   },
   {
-    name: 'University of Washington',
-    conf: 'bigTen',
-    lat: 47.6543747,
-    long: -122.3134321,
-    image: uwSmallImage,
+    name: 'University of Washington', conf: 'bigTen', lat: 47.6543747, long: -122.3134321, image: uwSmallImage,
   },
   {
-    name: 'University of Oregon',
-    conf: 'bigTen',
-    lat: 44.0448302,
-    long: -123.0751858,
-    image: oregonSmallImage,
+    name: 'University of Oregon', conf: 'bigTen', lat: 44.0448302, long: -123.0751858, image: oregonSmallImage,
   },
   {
-    name: 'University of Arizona',
-    conf: 'big12',
-    lat: 32.2319166,
-    long: -110.9554976,
-    image: uofaSmallImage,
+    name: 'University of Arizona', conf: 'big12', lat: 32.2319166, long: -110.9554976, image: uofaSmallImage,
   },
   {
-    name: 'Arizona State University',
-    conf: 'big12',
-    lat: 33.4229974,
-    long: -111.9326962,
-    image: asuSmallImage,
+    name: 'Arizona State University', conf: 'big12', lat: 33.4229974, long: -111.9326962, image: asuSmallImage,
   },
   {
-    name: 'University of Colorado, Boulder',
-    conf: 'big12',
-    lat: 40.0073499,
-    long: -105.2685674,
-    image: coloradoSmallImage,
+    name: 'University of Colorado, Boulder', conf: 'big12', lat: 40.0073499, long: -105.2685674, image: coloradoSmallImage,
   },
   {
-    name: 'University of Utah',
-    conf: 'big12',
-    lat: 39.4696848,
-    long: -114.1931986,
-    image: utahSmallImage,
+    name: 'University of Utah', conf: 'big12', lat: 39.4696848, long: -114.1931986, image: utahSmallImage,
   },
   {
-    name: 'Oregon State University',
-    conf: 'pac2',
-    lat: 44.5618097,
-    long: -123.2848474,
-    image: oregonStateSmallImage,
+    name: 'Oregon State University', conf: 'pac2', lat: 44.5618097, long: -123.2848474, image: oregonStateSmallImage,
   },
   {
-    name: 'Washington State University',
-    conf: 'pac2',
-    lat: 46.7328316,
-    long: -117.1526069,
-    image: wazzuSmallImage,
+    name: 'Washington State University', conf: 'pac2', lat: 46.7328316, long: -117.1526069, image: wazzuSmallImage,
   },
 ];
 
@@ -172,19 +122,15 @@ const Map = () => {
   const beforeMapRef = useRef();
   const afterMapRef = useRef();
   const [selectedOption, setSelectedOption] = useState('pac2');
-  const [selectedStates, setSelectedStates] = useState([]);
-
-  useEffect(() => {
-    generateBeforeMap();
-  }, []);
-
-  useEffect(() => {
-    generateAfterMap();
-  }, [selectedOption]);
+  const [, setSelectedStates] = useState([]);
 
   const generateMap = (ref, mapData, unis) => {
-    const svg = d3.select(ref.current).attr('width', 600).attr('height', 400).attr('viewBox', '0 0 600 400')
+    const svg = d3.select(ref.current)
+      .attr('width', '100%')
+      .attr('height', 'auto')
+      .attr('viewBox', '0 0 600 375')
       .attr('preserveAspectRatio', 'xMidYMid meet');
+
     const projection = d3.geoAlbersUsa().scale(600).translate([300, 200]);
     const path = d3.geoPath().projection(projection);
     const states = feature(data, data.objects.states).features;
@@ -199,10 +145,10 @@ const Map = () => {
       .attr('fill', (d) => (mapData.includes(stateNames[d.id]) ? '#176893' : '#cbd4e3'))
       .attr('stroke', '#fff')
       .attr('stroke-width', 1.5)
-      .on('mouseover', function (event, d) {
+      .on('mouseover', function handleMouseOver() {
         d3.select(this).attr('fill', '#fed23b');
       })
-      .on('mouseout', function (event, d) {
+      .on('mouseout', function handleMouseOut(_event, d) {
         d3.select(this).attr('fill', mapData.includes(stateNames[d.id]) ? '#176893' : '#cbd4e3');
       });
 
@@ -227,14 +173,14 @@ const Map = () => {
         const p = projection([d.long, d.lat]);
         return `translate(${p[0] - 10}, ${p[1] - 10})`;
       })
-      .on('mouseover', (event, d) => {
+      .on('mouseover', (_event, d) => {
         tooltip.style('visibility', 'visible').text(d.name);
       })
-      .on('mousemove', (event, d) => {
+      .on('mousemove', (event) => {
         tooltip.style('top', `${event.pageY - 10}px`)
           .style('left', `${event.pageX + 10}px`);
       })
-      .on('mouseout', (event, d) => {
+      .on('mouseout', () => {
         tooltip.style('visibility', 'hidden');
       });
   };
@@ -254,27 +200,61 @@ const Map = () => {
     setSelectedStates(conferences[selected]);
   };
 
+  useEffect(() => {
+    generateBeforeMap();
+  }, []);
+
+  useEffect(() => {
+    generateAfterMap();
+  }, [selectedOption]);
+
   return (
     <div style={{
-      flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', paddingLeft: '2%',
+      flex: '1',
+      minWidth: '0',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: 0,
+      margin: 0,
     }}
     >
       <h2>The dissolution of the Pac-12 conference</h2>
 
       <div style={{ display: 'flex', width: '100%', overflow: 'hidden' }}>
         <div style={{
-          flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+          flex: '1',
+          minWidth: '0',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          padding: 0,
+          margin: 0,
         }}
         >
-          <h4>The modern Pac-12 before dissolution</h4>
-          <svg ref={beforeMapRef} style={{ width: '100%', height: 'auto', marginTop: '38px' }} />
+          <h4 style={{ marginBottom: '0px' }}>The modern Pac-12 before dissolution</h4>
+          <svg
+            ref={beforeMapRef}
+            style={{
+              width: '100%', height: 'auto', marginTop: 33, padding: 0,
+            }}
+          />
         </div>
         <div style={{
-          flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', paddingLeft: '2%',
+          flex: '1',
+          minWidth: '0',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          padding: 0,
+          margin: 0,
         }}
         >
-          <h4>Where Pac-12 universities are now headed to</h4>
-          <div className="school-select" style={{ width: '200px', marginTop: '20px' }}>
+          <h4 style={{ marginBottom: '0px' }}>Which Pac-12 universities are now headed to</h4>
+          <div style={{ marginTop: '10px' }}>
             <select onChange={handleOptionChange} value={selectedOption}>
               <option value="pac2">Pac-2</option>
               <option value="acc">ACC</option>
@@ -282,7 +262,12 @@ const Map = () => {
               <option value="big12">Big 12</option>
             </select>
           </div>
-          <svg ref={afterMapRef} style={{ width: '100%', height: 'auto' }} />
+          <svg
+            ref={afterMapRef}
+            style={{
+              width: '100%', height: 'auto', margin: 0, padding: 0,
+            }}
+          />
         </div>
       </div>
     </div>

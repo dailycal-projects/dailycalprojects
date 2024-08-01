@@ -31,9 +31,9 @@ function DropdownBudgetOverTime() {
           <BarChart
             data={filteredData}
             margin={{
-              top: 5,
-              right: 30,
-              left: 50,
+              top: 20,
+              right: 0,
+              left: 0,
               bottom: 25,
             }}
           >

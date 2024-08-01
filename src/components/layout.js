@@ -141,7 +141,6 @@ const shortcodes = {
   DebtBarChart,
   AreaCharts,
   DropdownBudgetOverTime,
-
 };
 
 export default function Layout({ children }) {

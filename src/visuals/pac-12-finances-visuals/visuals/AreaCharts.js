@@ -19,7 +19,7 @@ function AreaCharts() {
     }}
     >
       <div style={{
-        flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', paddingLeft: '2%',
+        flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
       }}
       >
         <h3>Revenue over time, adjusted for inflation</h3>
@@ -29,7 +29,7 @@ function AreaCharts() {
             height={250}
             data={revenue}
             margin={{
-              top: 10, right: 30, left: 0, bottom: 0,
+              top: 10, right: 0, left: 0, bottom: 0,
             }}
           >
             <defs>
@@ -87,7 +87,7 @@ function AreaCharts() {
             height={250}
             data={expenses}
             margin={{
-              top: 10, right: 30, left: 0, bottom: 0,
+              top: 10, right: 0, left: 0, bottom: 0,
             }}
           >
             <defs>

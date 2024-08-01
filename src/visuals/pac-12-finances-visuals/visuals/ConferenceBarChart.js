@@ -5,7 +5,7 @@ import {
 } from 'recharts';
 import { data } from '../data/conferences';
 
-const options = ['Media Rights', 'NCAA\/Conference Distributions'];
+const options = ['Media Rights', 'NCAA/Conference Distributions'];
 
 function ConferenceBarChart() {
   const [selectedOption, setSelectedOption] = useState('Media Rights');
@@ -20,7 +20,7 @@ function ConferenceBarChart() {
     <div>
       <h3 style={{ textAlign: 'center' }}>Reported revenue for Cal Athletics from the Pac-12 and NCAA over time</h3>
       <div>
-        <label htmlFor="category" style={{ marginBottom: '100px' }}>Select a category:</label>
+        <label htmlFor="category" style={{ marginBottom: '100px' }}>Select a category: </label>
         <select id="category" value={selectedOption} onChange={handleChange}>
           {options.map((option) => (
             <option key={option} value={option}>{option}</option>
@@ -30,9 +30,9 @@ function ConferenceBarChart() {
           <BarChart
             data={filteredData}
             margin={{
-              top: 5,
-              right: 30,
-              left: 50,
+              top: 20,
+              right: 5,
+              left: 5,
               bottom: 25,
             }}
           >

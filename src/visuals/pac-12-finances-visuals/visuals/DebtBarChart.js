@@ -12,7 +12,6 @@ function DebtBarChart() {
       <div style={{
         display: 'block',
         marginTop: 'auto',
-        left: '20px',
       }}
       >
         <ResponsiveContainer height={500}>
@@ -22,8 +21,8 @@ function DebtBarChart() {
             data={data}
             margin={{
               top: 5,
-              right: 30,
-              left: 50,
+              right: 0,
+              left: 30,
               bottom: 25,
             }}
           >
