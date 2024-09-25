@@ -4,10 +4,11 @@ import { graphql, Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 import ArticleCard from '../components/articleCard';
-import Header from '../components/header';
+// import Header from '../components/header';
 import Layout from '../components/layout';
-import NavBar from '../components/navBar';
+// import NavBar from '../components/navBar';
 import Seo from '../components/seo';
+import logo from '../images/dclogo.png';
 
 const IndexPage = ({ classes, data }) => {
   const articles = data.allMdx.edges;
@@ -15,11 +16,19 @@ const IndexPage = ({ classes, data }) => {
   return (
     <Layout>
       <div className={classes.main}>
-        <NavBar />
+        <div className={classes.sideBar}>
+          <div className={classes.headingContainer}>
+            <img src={logo} alt="The Daily Californian" width="320" style={{ marginBottom: '0.5rem' }} />
+            <div className={classes.teamTitle}>
+              Data Desk
+            </div>
+          </div>
+          {/* <img src="assets/st-logo.png" class="logo" alt="Seattle Times logo"> */}
+        </div>
+        {/* <NavBar /> */}
         <Seo title="Daily Cal Projects" />
-        <Header />
+        {/* <Header /> */}
         <div className={classes.index}>
-
           {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
             const { frontmatter, slug } = node;
             const image = getImage(frontmatter.featuredImage);
@@ -31,6 +40,7 @@ const IndexPage = ({ classes, data }) => {
                     title={frontmatter.title}
                     date={frontmatter.date}
                     image={image}
+                    byline={frontmatter.byline}
                   />
                 </Link>
               );
@@ -41,6 +51,7 @@ const IndexPage = ({ classes, data }) => {
                   title={frontmatter.title}
                   date={frontmatter.date}
                   image={image}
+                  byline={frontmatter.byline}
                 />
               </a>
             );
