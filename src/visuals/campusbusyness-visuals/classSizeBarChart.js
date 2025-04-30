@@ -9,7 +9,7 @@ import class_sizes from './class_sizes';
 function classSizeBarChart() {
   return (
     <div>
-      <h3 style={{ textAlign: 'center' }}>Average Class Size by Department</h3>
+      <h3 style={{ textAlign: 'center' }}>Mean Class Size by Department</h3>
       <div style={{ display: 'block', marginTop: 'auto' }}>
         <ResponsiveContainer height={400} width="100%">
           <BarChart
@@ -22,7 +22,7 @@ function classSizeBarChart() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
               type="number"
-              label={{ value: 'Enrolled Students', position: 'insideBottom', offset: -10 }}
+              label={{ value: 'Mean Class Size', position: 'insideBottom', offset: -10 }}
             />
             <YAxis
               dataKey="Department"
