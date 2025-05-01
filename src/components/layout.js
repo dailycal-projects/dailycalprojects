@@ -65,8 +65,8 @@ import DebtBarChart from '../visuals/pac-12-finances-visuals/visuals/DebtBarChar
 import AreaCharts from '../visuals/pac-12-finances-visuals/visuals/AreaCharts';
 import DropdownBudgetOverTime from '../visuals/pac-12-finances-visuals/visuals/DropdownBudgetOverTime';
 import ClassDayMap from '../visuals/campusbusyness-visuals/visuals/ClassDayMap';
-import ClassEnrollmentLineChart from '../visuals/campusbusyness-visuals/visuals/classEnrollmentLineChart';
-import ClassSizeBarChart from '../visuals/campusbusyness-visuals/visuals/classSizeBarChart';
+import ClassEnrollmentLineChart from '../visuals/campusbusyness-visuals/visuals/ClassEnrollmentLineChart';
+import ClassSizeBarChart from '../visuals/campusbusyness-visuals/visuals/ClassSizeBarChart';
 
 /*
 To avoid using exact paths in MDX files, import your components here
