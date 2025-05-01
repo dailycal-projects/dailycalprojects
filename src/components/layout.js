@@ -64,9 +64,6 @@ import ConferenceBarChart from '../visuals/pac-12-finances-visuals/visuals/Confe
 import DebtBarChart from '../visuals/pac-12-finances-visuals/visuals/DebtBarChart';
 import AreaCharts from '../visuals/pac-12-finances-visuals/visuals/AreaCharts';
 import DropdownBudgetOverTime from '../visuals/pac-12-finances-visuals/visuals/DropdownBudgetOverTime';
-import ClassEnrollmentLineChart from '../visuals/campusbusyness-visuals/ClassEnrollmentLineChart';
-import classMapViz from '../visuals/campusbusyness-visuals/classMapViz';
-import DayCapacityMap from '../visuals/campusbusyness-visuals/DayCapacityMap';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -144,9 +141,6 @@ const shortcodes = {
   DebtBarChart,
   AreaCharts,
   DropdownBudgetOverTime,
-  ClassEnrollmentLineChart,
-  classMapViz,
-  DayCapacityMap,
 };
 
 export default function Layout({ children }) {
