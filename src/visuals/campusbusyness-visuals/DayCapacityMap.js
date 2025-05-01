@@ -59,7 +59,11 @@ function DayCapacityMap() {
         {day}
 &nbsp;at&nbsp;
         {hour} */}
-        Enrollment in halls by day and hour
+        Enrollment
+        {' '}
+        in
+        {' '}
+        halls by day and hour
       </h3>
 
       <div

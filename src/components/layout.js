@@ -65,7 +65,6 @@ import DebtBarChart from '../visuals/pac-12-finances-visuals/visuals/DebtBarChar
 import AreaCharts from '../visuals/pac-12-finances-visuals/visuals/AreaCharts';
 import DropdownBudgetOverTime from '../visuals/pac-12-finances-visuals/visuals/DropdownBudgetOverTime';
 import ClassEnrollmentLineChart from '../visuals/campusbusyness-visuals/ClassEnrollmentLineChart';
-import classSizeBarChart from '../visuals/campusbusyness-visuals/classSizeBarChart';
 import classMapViz from '../visuals/campusbusyness-visuals/classMapViz';
 import DayCapacityMap from '../visuals/campusbusyness-visuals/DayCapacityMap';
 
@@ -146,7 +145,6 @@ const shortcodes = {
   AreaCharts,
   DropdownBudgetOverTime,
   ClassEnrollmentLineChart,
-  classSizeBarChart,
   classMapViz,
   DayCapacityMap,
 };
