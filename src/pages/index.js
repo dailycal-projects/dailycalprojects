@@ -68,8 +68,8 @@ export const query = graphql`
             oldLink
             featuredImage {
               childImageSharp {
-                gatsbyImageData(width: 450, height: 250)
-              }
+                gatsbyImageData(width: 450 height: 250)
+              } 
             }
           } 
         }
@@ -79,9 +79,3 @@ export const query = graphql`
 `;
 
 export default withStyles(styles)(IndexPage);
-
-//  {
-//   childImageSharp {
-//     gatsbyImageData(width: 450 height: 250)
-//   }
-// }

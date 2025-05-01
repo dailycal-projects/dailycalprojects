@@ -8,15 +8,6 @@
 
 const path = require('path');
 
-// Meant to rid of the "MaxListenersExceededWarning" warnings
-const { EventEmitter } = require('events');
-
-EventEmitter.defaultMaxListeners = 20;
-
-exports.createSchemaCustomization = ({ actions }) => {
-  /* …your existing code… */
-};
-
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -87,24 +78,3 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     });
   }
 };
-
-// exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions;
-//   createTypes(`
-//     type MdxFrontmatter {
-//       date: String
-//       title: String
-//       byline: String
-//       bylineName: [String]
-//       subhead: String
-//       featuredImage: String
-//       bylineUrl: [String]
-//       imageAttribution: String
-//       imageCaption1: String
-//       imageCaption2: String
-//       imageCaption3: String
-//       imageCaption4: String
-//       embeddedImages: [String]
-//     }
-//   `);
-// };
