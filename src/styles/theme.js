@@ -18,6 +18,8 @@ export const theme = {
     darkBlueViolet: '#606A97',
     violet: '#8E689B',
     redViolet: '#B8607E',
+    dcBlue: '#94bbe2',
+    grey: '#949494',
   },
   cardShadow: '0px 2px 0px 0.5px rgba(14, 20, 27, 0.15)',
   iconShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
