@@ -139,7 +139,7 @@ function ClassDayMap() {
                   <br />
                   {loc.TimeBlock}
                   <br />
-                  Enrolled:
+                  Enrolled DELETE:
                   {' '}
                   {loc.Enrolled}
                   <br />
