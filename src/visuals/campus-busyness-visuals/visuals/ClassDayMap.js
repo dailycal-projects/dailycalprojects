@@ -113,45 +113,47 @@ function ClassDayMap() {
         </label>
       </div>
 
-      {/* Always render map with static zoom and center; show markers if any */}
-      <MapContainer
-        center={globalCenter}
-        zoom={defaultZoom}
-        style={{ height: '400px', width: '100%', margin: '0 auto' }}
-        scrollWheelZoom
-      >
-        <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
+      {/* SSR Protection: Only render map in browser environment */}
+      {typeof window !== 'undefined' && (
+        <MapContainer
+          center={globalCenter}
+          zoom={defaultZoom}
+          style={{ height: '400px', width: '100%', margin: '0 auto' }}
+          scrollWheelZoom
+        >
+          <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
 
-        {filtered.map((loc) => {
-          const radius = 5 + (20 * loc.Enrolled) / maxEnrolled;
-          const color = '#5A82CC';
-          return (
-            <CircleMarker
-              key={loc.Location} // Use a unique property like 'Location' as the key
-              center={[loc.lat, loc.lon]}
-              radius={radius}
-              pathOptions={{ color, fillOpacity: 0.6 }}
-              stroke={false}
-            >
-              <Tooltip direction="top" offset={[0, -radius]} opacity={1}>
-                <div style={{ fontSize: '14px' }}>
-                  <strong>{loc.Location}</strong>
-                  <br />
-                  {loc.TimeBlock}
-                  <br />
-                  Enrolled:
-                  {' '}
-                  {loc.Enrolled}
-                  <br />
-                  Capacity:
-                  {' '}
-                  {loc.Capacity}
-                </div>
-              </Tooltip>
-            </CircleMarker>
-          );
-        })}
-      </MapContainer>
+          {filtered.map((loc) => {
+            const radius = 5 + (20 * loc.Enrolled) / maxEnrolled;
+            const color = '#5A82CC';
+            return (
+              <CircleMarker
+                key={loc.Location} // Use a unique property like 'Location' as the key
+                center={[loc.lat, loc.lon]}
+                radius={radius}
+                pathOptions={{ color, fillOpacity: 0.6 }}
+                stroke={false}
+              >
+                <Tooltip direction="top" offset={[0, -radius]} opacity={1}>
+                  <div style={{ fontSize: '14px' }}>
+                    <strong>{loc.Location}</strong>
+                    <br />
+                    {loc.TimeBlock}
+                    <br />
+                    Enrolled:
+                    {' '}
+                    {loc.Enrolled}
+                    <br />
+                    Capacity:
+                    {' '}
+                    {loc.Capacity}
+                  </div>
+                </Tooltip>
+              </CircleMarker>
+            );
+          })}
+        </MapContainer>
+      )}
     </div>
   );
 }
