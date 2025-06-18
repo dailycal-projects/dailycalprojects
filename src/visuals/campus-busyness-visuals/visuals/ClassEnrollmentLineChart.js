@@ -24,7 +24,7 @@ function ClassEnrollmentLineChart() {
   return (
     <div>
       <h3 style={{ textAlign: 'center' }}>
-        Class Enrollment & Capacity:
+        Class enrollment and capacity for
         {' '}
         {DATASETS.find((d) => d.key === selected).label}
       </h3>

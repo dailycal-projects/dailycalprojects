@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip, BarChart, Bar,
+  XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip, BarChart, Bar,
 } from 'recharts';
 import classSizes from '../data/classSizes';
 
@@ -9,7 +9,7 @@ import classSizes from '../data/classSizes';
 function ClassSizeBarChart() {
   return (
     <div>
-      <h3 style={{ textAlign: 'center' }}>Mean Class Size by Department</h3>
+      <h3 style={{ textAlign: 'center' }}>Mean class size by department</h3>
       <div style={{ display: 'block', marginTop: 'auto' }}>
         <ResponsiveContainer height={400} width="100%">
           <BarChart
