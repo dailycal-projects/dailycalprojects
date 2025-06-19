@@ -28,7 +28,8 @@ function ClassEnrollmentLineChart() {
         {' '}
         {DATASETS.find((d) => d.key === selected).label}
       </h3>
-      <label style={{ marginRight: 8 }}>
+      <label htmlFor="classSelect" style={{ marginRight: 8 }}>
+        {' '}
         Select Class:
         <select
           value={selected}
