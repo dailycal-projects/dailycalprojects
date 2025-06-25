@@ -123,17 +123,22 @@ export const styles = () => createStyles({
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing[3],
+    paddingTop: 85,
   },
   articleContent: {
     fontSize: theme.spacing[1],
-    maxWidth: '75%',
-    textAlign: 'justify',
+    fontFamily: "'Georgia', sans-serif", // UPDATE FONT
+    maxWidth: '640px',
+    // textAlign: 'justify',
   },
   byline: {
-    display: 'flex',
-    flexDirection: 'row',
+    // display: 'flex',
+    // flexDirection: 'row',
     fontSize: theme.spacing[0],
+    fontFamily: ' sans-serif', // UPDATE FONT
     textDecoration: 'none',
+    marginBottom: '25px',
+    textAlign: 'left',
   },
   footerContainer: {
     fontSize: theme.spacing[7],
@@ -185,5 +190,49 @@ export const styles = () => createStyles({
     fontSize: '1vw',
     // paddingBottom: '1vw',
     paddingTop: '2vw',
+  },
+
+  // Styling for article page
+
+  topBar: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '50px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.palette.background,
+    zIndex: 9999,
+    borderBottom: '1px solid #D3D3D3', // ← Add this line
+
+  },
+
+  headerContainer: {
+    maxWidth: '640px', // see what happens if change to width
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+
+  },
+
+  title: {
+    fontWeight: 600,
+    fontSize: theme.spacing[4],
+    fontFamily: "'Georgia', sans-serif", // UPDATE FONT
+    lineHeight: 'normal',
+  },
+
+  subhead: {
+    fontWeight: 300,
+    fontSize: theme.spacing[2],
+    lineHeight: 'normal',
+  },
+
+  imageContainer: {
+    maxWidth: '750 px',
   },
 });

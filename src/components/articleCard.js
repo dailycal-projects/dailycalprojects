@@ -5,8 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 
 function formatDate(dateStr) {
-  // Use a regular expression to remove leading zeros from the day part
-  return dateStr.replace(/\b0(?=\d)/, '');
+  return dateStr.replace(/\b0(?=\d)/, ''); // remove leading zeros
 }
 const ArticleCard = ({
   classes, title, date, image,
@@ -14,6 +13,7 @@ const ArticleCard = ({
   <div>
     <Card className={classes.card}>
       <div className={classes.date}>
+        {/* TO FO: need add categories */}
         <b>CAMPUS </b>
         {' '}
         |
@@ -21,21 +21,12 @@ const ArticleCard = ({
         {formatDate(date)}
       </div>
       <div className={classes.cardImage}>
-        <GatsbyImage image={image} alt="pride illustration" />
+        <GatsbyImage image={image} />
       </div>
       <div className="cardContent">
         <div className={classes.articleTitle}>
           {title}
         </div>
-        {/* <div className={classes.cardByline}>
-          {byline && byline.toUpperCase()}
-        </div> */}
-        {/* <h3 style={{ paddingBottom: 'none', fontFamily: "'Georgia', serif",  }}>
-          {title}
-        </h3> */}
-        {/* <div className="cardHidden">
-          <p>{date}</p>
-        </div> */}
       </div>
     </Card>
   </div>

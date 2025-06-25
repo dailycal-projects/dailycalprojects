@@ -8,6 +8,7 @@ import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 import ArticleFooter from '../components/articleFooter';
+import logo from '../images/dclogoblack.png';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
@@ -21,6 +22,9 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
 
   return (
     <div className={classes.articleRoot}>
+      <div className={classes.topBar}>
+        <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
+      </div>
       <Layout>
         <SEO
           title={frontmatter.title}
@@ -28,37 +32,47 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
           image={socialImage}
           pathname={location.pathname}
         />
-        <h1>{frontmatter.title}</h1>
-        <h3>{frontmatter.subhead}</h3>
-
-        {(bylineName && bylineUrl) ? (
-          <div className={classes.byline}>
-            {bylineName.map((author, i) => {
-              const url = bylineUrl[i];
-              return (
-                <a href={url} target="_blank" style={{ textDecoration: 'underline', color: theme.palette.black, padding: '10px' }} rel="noreferrer">
-                  {' '}
-                  {author}
-                  {' '}
-                </a>
-              );
-            })}
-          </div>
-        ) : null }
-
+        <div className={classes.headerContainer}>
+          <h1 className={classes.title}>{frontmatter.title}</h1>
+          <h3 className={classes.subhead}>{frontmatter.subhead}</h3>
+        </div>
         <h5>{frontmatter.date}</h5>
-        <div style={{ margin: 50 }}>
-          <GatsbyImage image={image} alt="card illustration" />
+
+        <div className={classes.imageContainer}>
+          <GatsbyImage image={image} />
           <div style={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></div>
-          <div><em>{frontmatter.imageCaption2}</em></div>
-          <div><em>{frontmatter.imageCaption3}</em></div>
-          <div><em>{frontmatter.imageCaption4}</em></div>
 
           <h5 style={{ marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
 
         </div>
 
         <div className={classes.articleContent}>
+
+          {(bylineName && bylineUrl) ? (
+            <div className={classes.byline}>
+              By
+              {' '}
+              {bylineName.map((author, i) => {
+                const url = bylineUrl[i];
+                const isLast = i === bylineName.length - 1;
+                const isSecondToLast = i === bylineName.length - 2;
+                return (
+                  <React.Fragment key={i}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      style={{ textDecoration: 'underline', color: theme.palette.darkBlue }}
+                      rel="noreferrer"
+                    >
+                      {author}
+                    </a>
+                    {bylineName.length > 2 && !isLast && !isSecondToLast && ', '}
+                    {isSecondToLast ? ' and ' : ''}
+                  </React.Fragment>
+                );
+              })}
+            </div>
+          ) : null}
           <MDXRenderer
             localImages={frontmatter.embeddedImages} // prop that allows <GatsbyImage/> usage possible in MDX
           >
@@ -90,14 +104,12 @@ export const pageQuery = graphql`
               height
               width
             }
-            gatsbyImageData(width: 1000)
+            gatsbyImageData(width: 750)
           } 
         }
         imageAttribution
         imageCaption1
-        imageCaption2
-        imageCaption3
-        imageCaption4
+        
         embeddedImages {
           childImageSharp {
             gatsbyImageData

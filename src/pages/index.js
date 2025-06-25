@@ -23,10 +23,9 @@ const IndexPage = ({ classes, data }) => {
               Data Desk
             </div>
           </div>
-          {/* <img src="assets/st-logo.png" class="logo" alt="Seattle Times logo"> */}
         </div>
         {/* <NavBar /> */}
-        <Seo title="Daily Cal Projects" />
+        <Seo title="Daily Cal Data" />
         {/* <Header /> */}
         <div className={classes.index}>
           {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
