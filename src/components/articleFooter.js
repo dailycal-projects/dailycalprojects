@@ -36,12 +36,12 @@ const ArticleFooter = ({ classes, about }) => (
       <p>
         We are a nonprofit, student-run newsroom. Please consider
         {' '}
-        <a href="https://donate.dailycal.org">donating</a>
+        <a href="https://givebutter.com/w68cQv">donating</a>
         {' '}
         to support our coverage.
       </p>
     </div>
-    <p style={{ paddingLeft: '5px' }}> Copyright © 2022 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
+    <p style={{ paddingLeft: '5px' }}> Copyright © 2025 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
   </div>
 );
 

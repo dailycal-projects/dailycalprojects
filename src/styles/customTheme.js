@@ -5,9 +5,27 @@ import { theme } from './theme';
 export const styles = () => createStyles({
   main: {
     display: 'flex',
-    flexDirection: 'column',
+    width: '100%',
+    flexDirection: 'row',
     backgroundColor: theme.palette.background,
     overflow: 'hidden',
+  },
+  sideBar: {
+    display: 'flex',
+    position: 'sticky',
+    top: '0',
+    flexDirection: 'column',
+    backgroundColor: theme.palette.dcBlue,
+    overflow: 'hidden',
+    minWidth: '25%',
+    alignItems: 'center',
+  },
+  headingContainer: {
+    paddingTop: '5rem',
+    width: '85%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   header: {
     display: 'flex',
@@ -57,40 +75,43 @@ export const styles = () => createStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    width: '350px',
+    width: '400px',
     height: '350px',
     margin: '20px',
     boxShadow: 'none',
-    borderRadius: '15px',
+    // borderRadius: '15px',
     backgroundColor: theme.palette.background,
     fontSize: theme.spacing[0],
     transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-    '&:hover': {
-      boxShadow: theme.cardShadow,
-      transform: 'translate(0px, -7px)',
-      transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
+    '&:hover $articleTitle': {
+      textDecoration: 'underline',
     },
-    '& .cardContent': {
-      padding: '1rem 1rem 0rem 1rem',
-      transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-      overflow: 'hidden',
-    },
-    '& .cardHidden': {
-      transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-      visibility: 'hidden',
-      height: 0,
-      overflow: 'hidden',
-    },
-    '&:hover .cardContent': {
-      transform: 'translate(0px, -1px)',
-      transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-    },
-    '&:hover .cardHidden': {
-      transform: 'translate(0px, -1px)',
-      transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-      visibility: 'visible',
-      height: 'auto',
-    },
+    // '&:hover': {
+    //   boxShadow: theme.cardShadow,
+    //   transform: 'translate(0px, -7px)',
+    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
+    // },
+    // '& .cardContent': {
+    //   padding: '0rem 1rem 0rem 1rem',
+    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
+    //   overflow: 'hidden',
+    // },
+    // '& .cardHidden': {
+    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
+    //   visibility: 'hidden',
+    //   height: 0,
+    //   overflow: 'hidden',
+    // },
+    // '&:hover .cardContent': {
+    //   transform: 'translate(0px, -1px)',
+    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
+    // },
+    // '&:hover .cardHidden': {
+    //   transform: 'translate(0px, -1px)',
+    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
+    //   visibility: 'visible',
+    //   height: 'auto',
+    // },
   },
   cardImage: {
     width: '100%',
@@ -104,21 +125,26 @@ export const styles = () => createStyles({
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing[3],
+    paddingTop: 85,
   },
   articleContent: {
     fontSize: theme.spacing[1],
-    maxWidth: '75%',
-    textAlign: 'justify',
+    fontFamily: "'Georgia', sans-serif", // UPDATE FONT
+    maxWidth: '640px',
+    // textAlign: 'justify',
   },
   byline: {
-    display: 'flex',
-    flexDirection: 'row',
+    // display: 'flex',
+    // flexDirection: 'row',
     fontSize: theme.spacing[0],
+    fontFamily: ' sans-serif', // UPDATE FONT
     textDecoration: 'none',
+    marginBottom: '25px',
+    textAlign: 'left',
   },
   footerContainer: {
     fontSize: theme.spacing[7],
-    maxWidth: '50%',
+    maxWidth: '80%',
   },
   footerCard: {
     backgroundColor: '#e9edf0',
@@ -127,5 +153,88 @@ export const styles = () => createStyles({
   },
   footBar: {
     width: '100%',
+  },
+  teamTitle: {
+    fontWeight: 800,
+    fontFamily: "'Georgia', serif", // change to Tiempo as used in main DC site
+    lineHeight: 'normal',
+    color: theme.palette.background,
+    fontSize: '4vw',
+  },
+
+  articleTitle: {
+    fontWeight: 400,
+    fontFamily: "'Georgia', serif", // change to Tiempo as used in main DC site
+    lineHeight: 'normal',
+    color: theme.palette.black,
+    fontSize: '1.9vw',
+    textDecoration: 'none',
+    // transition: 'all 0.3s ease-out',
+  },
+
+  date: {
+    color: theme.palette.grey,
+    borderTop: '1px solid',
+    borderColor: theme.palette.grey,
+    fontWeight: 400,
+    fontFamily: "'Georgia', sans-serif", // change to Tiempo as used in main DC site
+    lineHeight: 'normal',
+    fontSize: '1vw',
+    paddingBottom: '1vw',
+    paddingTop: '1vw',
+  },
+
+  cardByline: {
+    color: theme.palette.grey,
+    fontWeight: 800,
+    fontFamily: "'Helvetica', sans-serif", // change to Tiempo as used in main DC site
+    lineHeight: 'normal',
+    fontSize: '1vw',
+    // paddingBottom: '1vw',
+    paddingTop: '2vw',
+  },
+
+  // Styling for article page
+
+  topBar: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '50px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.palette.background,
+    zIndex: 9999,
+    borderBottom: '1px solid #D3D3D3', // ← Add this line
+
+  },
+
+  headerContainer: {
+    maxWidth: '640px', // see what happens if change to width
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+
+  },
+
+  title: {
+    fontWeight: 600,
+    fontSize: theme.spacing[4],
+    fontFamily: "'Georgia', sans-serif", // UPDATE FONT
+    lineHeight: 'normal',
+  },
+
+  subhead: {
+    fontWeight: 300,
+    fontSize: theme.spacing[2],
+    lineHeight: 'normal',
+  },
+
+  imageContainer: {
+    maxWidth: '750 px',
   },
 });
