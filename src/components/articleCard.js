@@ -13,10 +13,10 @@ const ArticleCard = ({
   <div>
     <Card className={classes.card}>
       <div className={classes.date}>
-        {/* TO FO: need add categories */}
-        <b>CAMPUS </b>
+        {/* TO DO: need add categories */}
+        {/* <b>CAMPUS </b> */}
         {' '}
-        |
+        {/* | */}
         {' '}
         {formatDate(date)}
       </div>

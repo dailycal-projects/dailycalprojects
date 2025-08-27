@@ -12,6 +12,8 @@ export const styles = () => createStyles({
   },
   sideBar: {
     display: 'flex',
+    position: 'sticky',
+    top: '0',
     flexDirection: 'column',
     backgroundColor: theme.palette.dcBlue,
     overflow: 'hidden',
@@ -142,7 +144,7 @@ export const styles = () => createStyles({
   },
   footerContainer: {
     fontSize: theme.spacing[7],
-    maxWidth: '50%',
+    maxWidth: '80%',
   },
   footerCard: {
     backgroundColor: '#e9edf0',
