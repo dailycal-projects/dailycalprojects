@@ -20,7 +20,7 @@ const IndexPage = ({ classes, data }) => {
           <div className={classes.headingContainer}>
             <img src={logo} alt="The Daily Californian" width="320" style={{ marginBottom: '0.5rem' }} />
             <div className={classes.teamTitle}>
-              Data Desk
+              Data
             </div>
           </div>
         </div>
