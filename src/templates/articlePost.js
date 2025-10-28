@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -22,9 +22,11 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
 
   return (
     <div className={classes.articleRoot}>
-      <div className={classes.topBar}>
-        <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
-      </div>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <div className={classes.topBar}>
+          <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
+        </div>
+      </Link>
       <Layout>
         <SEO
           title={frontmatter.title}
