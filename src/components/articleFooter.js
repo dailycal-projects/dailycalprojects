@@ -17,10 +17,7 @@ const ArticleFooter = ({ classes, about }) => (
         Questions, comments or corrections? Email
         {' '}
         <a href="mailto: projects@dailycal.org.">projects@dailycal.org</a>
-        .
-      </p>
-      <p>
-        Code, data and text are open-source on
+        . Code, data and text are open-source on
         {' '}
         <a href="https://github.com/dailycal-projects/dailycalprojects">GitHub</a>
         .
@@ -41,7 +38,7 @@ const ArticleFooter = ({ classes, about }) => (
         to support our coverage.
       </p>
     </div>
-    <p style={{ paddingLeft: '5px' }}> Copyright © 2025 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
+    <p style={{ fontSize: '14px' }}> Copyright © 2025 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
   </div>
 );
 

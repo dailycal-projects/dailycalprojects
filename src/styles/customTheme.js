@@ -144,12 +144,15 @@ export const styles = () => createStyles({
   },
   footerContainer: {
     fontSize: theme.spacing[7],
-    maxWidth: '80%',
+    maxWidth: '640px',
   },
   footerCard: {
-    backgroundColor: '#e9edf0',
-    padding: '25px 25px 10px 25px',
+    padding: '20px 20px 0px 20px',
     margin: '10px 0px 20px 0px',
+    border: '1px solid',
+    borderColor: '#dbdbdbff',
+    borderRadius: '10px',
+
   },
   footBar: {
     width: '100%',
@@ -208,7 +211,7 @@ export const styles = () => createStyles({
     justifyContent: 'center',
     backgroundColor: theme.palette.background,
     zIndex: 9999,
-    borderBottom: '1px solid #D3D3D3', // ← Add this line
+    borderBottom: '1px solid #D3D3D3',
 
   },
 
@@ -224,7 +227,7 @@ export const styles = () => createStyles({
   title: {
     fontWeight: 600,
     fontSize: theme.spacing[4],
-    fontFamily: "'Georgia', sans-serif", // UPDATE FONT
+    fontFamily: "'Georgia', sans-serif",
     lineHeight: 'normal',
   },
 
@@ -235,6 +238,6 @@ export const styles = () => createStyles({
   },
 
   imageContainer: {
-    maxWidth: '750 px',
+    maxWidth: '640px',
   },
 });
