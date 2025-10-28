@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>berkeley crash map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
+      #controls-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        z-index: 3;
+        padding: 1%;
+        width: 100%;      
+        height: auto;    
+        gap: 2%;
+      }
+
+      #toggle-controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2%;         
+        width: 30%;      
+        justify-content: space-evenly;
+      }
+
+      .year-selector {
+        display: flex;
+        padding-right: 2%;
+        flex-direction: row;
+        align-items: center;
+        gap: 1%;         
+        width: 40%;     
+        justify-content: space-between;
+      }
+
+      #toggle-controls button,
+      .year-selector button {
+        flex: 1 1 auto;
+        padding: 1%;                
+        border: none;
+        font-size: 90%;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 6px;
+      }
+
+      #toggle-controls button {
+        background: #e6f4ea;
+        color: #356b2a;
+        border-radius: 6px;
+      }
+
+      #toggle-controls button.active {
+        background: #749254;
+        color: #fff;
+      }
+
+      .year-selector button.active {
+        color: #fff;
+        border: 2% solid #222;
+      }
+
+
+      .year-selector button[data-year="2019"] { background: #fad9d4; }
+      .year-selector button[data-year="2020"] { background: #f3b8b0; }
+      .year-selector button[data-year="2021"] { background: #f3a287; }
+      .year-selector button[data-year="2022"] { background: #f0876a; }
+      .year-selector button[data-year="2023"] { background: #ec6b4e; }
+      .year-selector button[data-year="2024"] { background: #ab4b4f; }
+      .year-selector button[data-year="2025"] { background: #7b3f41; }
+
+      .year-selector button:hover {
+        filter: brightness(90%);
+      }
+      
+      #info-stack {
+        position: absolute;
+        left: 2%;
+        bottom: 2%;
+        width: 20%;                 
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        gap: 5px;
+      }
+
+      #stats-box,
+      #legend {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: rgba(255,255,255,0.95);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        padding: 6% 5%;
+        font-size: 90%;
+        line-height: 1.3;
+      }
+
+      #legend .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6%;
+        font-weight: 500;
+      }
+
+      #legend .legend-key {
+        flex: 0 0 14px;
+        height: 14px;
+        border-radius: 3px;
+      }
+
+      #legend .legend-key.circle {
+        border-radius: 50%;
+      }
+
+      #legend .legend-key.outlined {
+        background: white;
+        border: 2px solid currentColor;
+      }
+
+      #legend .legend-note {
+        margin-top: 6px;
+        font-size: 80%;
+        color: #3a363a;
+        line-height: 1.2;
+      }
+
+      #stats-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8%;
+      }
+
+      #stats-box h4 {
+        margin: 0 0 2%;
+        text-align: left;
+        font-weight: 700;
+        font-size: 100%;
+      }
+
+      #stats-box canvas {
+        width: 100%;
+        height: 40%;           
+      }
+
+      #legend {
+        line-height: 1.2;
+        font-size: 90%;
+        gap: 6px;
+      }
+
+      .mapboxgl-popup.custom-popup {
+        width: auto;
+        height: 10%;
+        font-family: Arial, sans-serif;
+        font-size: 100%;
+        background: white;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+
+      .mapboxgl-popup.custom-popup p {
+        margin: 0;
+        color: #333;
+        font-size: 90%;
+      }
+
+      .mapboxgl-popup.custom-popup h3 {
+        font-size: 100%;
+        color: #aa3a45;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="controls-container">
+      <div id="toggle-controls">
+        <button id="toggle-bicycle" class="active">Show Bicycle Crashes</button>
+        <button id="toggle-pedestrian" class="active">Show Pedestrian Crashes</button>
+      </div>
+
+      <div class="year-selector" id="year-selector">
+        <button data-year="2019">2019</button>
+        <button data-year="2020">2020</button>
+        <button data-year="2021">2021</button>
+        <button data-year="2022">2022</button>
+        <button data-year="2023">2023</button>
+        <button data-year="2024">2024</button>
+        <button data-year="2025">2025</button>
+      </div>
+    </div>
+
+    <div id="info-stack">
+      <div id="stats-box">
+        <h4>Crash Statistics</h4>
+        <canvas id="crashChart"></canvas>
+      </div>
+
+      <div id="legend"></div>
+    </div>
+
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZXNoYWJhbnNpeWEiLCJhIjoiY21kZ2s3cDQ5MHI2eTJxb2U0N3M2YmF6eCJ9.lECv9CCR7GA1SCyPAP3gXw';
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/eshabansiya/cmdy2jbbo00cr01re9vc5adw2',
+        center: [-122.2730, 37.8715],
+        zoom: 13
+      });
+
+      map.on('load', () => { 
+        
+        const layers = ['Biking Crash', 'Pedestrian Crash', 'Fatality', 'Road Improvements'];
+        const colors = ['#749254', '#215675', '#72577a', '#ec6b4e'];
+
+        const legend = document.getElementById('legend');
+        legend.innerHTML = '';
+
+        layers.forEach((layer, i) => {
+          const item = document.createElement('div');
+          item.className = 'legend-item';
+
+          const key = document.createElement('span');
+          key.className = 'legend-key';
+
+          if (layer === 'Fatality') {
+            key.classList.add('circle', 'outlined');
+            key.style.color = colors[i];
+          } else if (layer === 'Road Improvements') {
+            key.style.backgroundColor = colors[i];
+            key.style.height = '6px';
+          } else {
+            key.classList.add('circle');
+            key.style.backgroundColor = colors[i];
+          }
+
+          const value = document.createElement('span');
+          value.textContent = layer;
+
+          item.appendChild(key);
+          item.appendChild(value);
+          legend.appendChild(item);
+        });
+
+        const note = document.createElement('p');
+        note.className = 'legend-note';
+        note.innerText = "Road improvements are colored by the year they were added.";
+        legend.appendChild(note);
+
+        const yearButtons = document.querySelectorAll('#year-selector button');
+        let selectedYear = 2019;
+
+        map.setFilter('allcrashes4-0r3i1i', ['==', 'ACCIDENT_YEAR', selectedYear]);
+        map.setFilter('map-2-1wq16q', ['<=', 'Year', selectedYear]);
+        document.querySelector(`#year-selector button[data-year="${selectedYear}"]`).classList.add('active');
+
+        let isBicycleVisible = true;
+        let isPedestrianVisible = true;
+
+        const bicycleButton = document.getElementById('toggle-bicycle');
+        const pedestrianButton = document.getElementById('toggle-pedestrian');
+
+        function updateLayerVisibility() {
+          map.setFilter('allcrashes4-0r3i1i', [
+            "all",
+            ...(isBicycleVisible ? [] : [["!=", "BICYCLE_ACCIDENT", "Y"]]),
+            ...(isPedestrianVisible ? [] : [["!=", "PEDESTRIAN_ACCIDENT", "Y"]]),
+            ["==", "ACCIDENT_YEAR", selectedYear]
+          ]);
+        }
+
+        bicycleButton.addEventListener('click', () => {
+          isBicycleVisible = !isBicycleVisible;
+          bicycleButton.classList.toggle('active', isBicycleVisible);
+          updateLayerVisibility();
+          map.once('idle', updateCrashStats); 
+        });
+
+        pedestrianButton.addEventListener('click', () => {
+          isPedestrianVisible = !isPedestrianVisible;
+          pedestrianButton.classList.toggle('active', isPedestrianVisible);
+          updateLayerVisibility();
+          map.once('idle', updateCrashStats); 
+        });
+
+        updateLayerVisibility();
+      
+        let crashChart;
+
+        function updateCrashStats() {
+          const raw = map.queryRenderedFeatures({ layers: ['allcrashes4-0r3i1i'] });
+
+          const byId = {};
+          for (const f of raw) {
+            const id = f.properties.CASE_ID;        
+            if (id != null) byId[id] = f;
+          }
+          const features = Object.values(byId);
+
+          let pedestrianCount = 0;
+          let bicycleCount = 0;
+          let fatalCount = 0;
+
+          for (const f of features) {
+            if ((f.properties.PEDESTRIAN_ACCIDENT || '').trim().toUpperCase() === 'Y') pedestrianCount++;
+            if ((f.properties.BICYCLE_ACCIDENT || '').trim().toUpperCase() === 'Y') bicycleCount++;
+            const sev = (f.properties.COLLISION_SEVERITY || '').trim();
+            if (sev === 'Fatal' || sev === 'Severe Injury') fatalCount++;
+          }
+
+          const data = [pedestrianCount, bicycleCount, fatalCount];
+          if (crashChart) {
+            crashChart.data.datasets[0].data = data;
+            crashChart.update();
+          } else {
+            const ctx = document.getElementById('crashChart').getContext('2d');
+            crashChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: ['Pedestrian', 'Bicycle', 'Fatal or Severe'],
+                datasets: [{ label: 'Crashes', data, backgroundColor: ['#749254', '#215675', '#72577a'] }]
+              },
+              options: { plugins: { legend: { display: false } }, scales: { y: { ticks: { stepSize: 10 } } } }
+            });
+          }
+        }
+        yearButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            yearButtons.forEach(b => b.classList.remove('active'));
+            button.classList.add('active');
+            selectedYear = parseInt(button.getAttribute('data-year'));
+            
+            map.setFilter('allcrashes4-0r3i1i', ['==', 'ACCIDENT_YEAR', selectedYear]);
+            map.setFilter('map-2-1wq16q', ['<=', 'Year', selectedYear]);
+            updateLayerVisibility();
+          
+            map.once('idle', updateCrashStats); 
+          });
+        });
+
+        map.once('idle', updateCrashStats); 
+
+      });
+
+      map.on('click', 'map-2-1wq16q', (event) => {
+        const roadFeature = event.features[0];
+        new mapboxgl.Popup({ offset: [0, -15], className: 'custom-popup' })
+          .setLngLat(event.lngLat)
+          .setHTML(`
+            <h3>Project: ${roadFeature.properties.Project}</h3>
+            <p>Year: ${roadFeature.properties.Year}</p>
+            <p>Vision Zero: ${roadFeature.properties["Vision Zero"] || 'No'}</p>
+            <p>Work Done: ${roadFeature.properties.Notes}</p>
+          `)
+          .addTo(map);
+      });
+
+      map.on('click', 'allcrashes4-0r3i1i', (event) => {
+        const pcfViolations = {
+          "00": "Unknown",
+          "01": "Driving or Bicycling Under the Influence of Alcohol or Drug",
+          "03": "Unsafe Speed",
+          "04": "Following Too Closely",
+          "05": "Wrong Side of Road",
+          "06": "Improper Passing",
+          "07": "Unsafe Lane Change",
+          "08": "Improper Turning",
+          "09": "Automobile Right of Way",
+          "10": "Pedestrian Right of Way",
+          "11": "Pedestrian Violation",
+          "12": "Traffic Signals and Signs",
+          "14": "Lights",
+          "17": "Other Hazardous Violation",
+          "18": "Other Than Driver (or Pedestrian)",
+          "21": "Unsafe Starting or Backing",
+          "22": "Other Improper Driving"
+        };
+
+        const feature = event.features[0];
+        const bikeCrash = feature.properties.BICYCLE_ACCIDENT ? `<p>Bicycle Crash: ${feature.properties.BICYCLE_ACCIDENT}</p>` : '';
+        const pedestrianCrash = feature.properties.PEDESTRIAN_ACCIDENT ? `<p>Pedestrian Crash: ${feature.properties.PEDESTRIAN_ACCIDENT}</p>` : '';
+        const pcfCode = feature.properties.PCF_VIOL_CATEGORY;
+        const pcfDescription = pcfViolations[pcfCode] || "Unknown";
+
+        new mapboxgl.Popup({ offset: [0, -15], className: 'custom-popup'})
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML(`<h3>Case ID: ${feature.properties.CASE_ID}</h3>
+            <p>Crash Date: ${feature.properties.COLLISION_DATE}</p>
+            <p>Crash Severity: ${feature.properties.COLLISION_SEVERITY}</p>
+            <p>PCF Violation: ${pcfDescription}</p>
+            ${bikeCrash}${pedestrianCrash}`)
+          .addTo(map);
+      });
+    </script>
+  </body>
+</html>
