@@ -1,0 +1,177 @@
+import React from 'react';
+import {
+  BarChart,
+  Bar,
+  Brush,
+  ReferenceLine,
+  XAxis,
+  YAxis,
+  Tooltip,
+  // Legend,
+  Label,
+  ResponsiveContainer,
+} from 'recharts';
+
+import {
+  InputLabel, FormControl, Select, MenuItem,
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
+import data from './data';
+import human_names from './human_names';
+
+function TopEditsPerSchool() {
+  const [selectedSchool, setSelectedSchool] = React.useState(Object.keys(data)[0]);
+  const [selectedMetric, setSelectedMetric] = React.useState('net');
+
+  const handleSchoolChange = (event) => {
+    setSelectedSchool(event.target.value);
+  };
+  const handleMetricChange = (event) => {
+    setSelectedMetric(event.target.value);
+  };
+
+  // Options for metrics: "net", "total", "net_asc", "unique", "edits"
+  // Display labels for dropdown and table
+  const metricOptions = [
+    { value: 'net', label: 'Most growth (Characters)' },
+    { value: 'net_asc', label: 'Most deletions (Characters)' },
+    { value: 'total', label: 'Most change (Characters)' },
+    { value: 'unique', label: 'Most editors (IPs)' },
+    { value: 'edits', label: 'Most changes (Edits)' },
+  ];
+
+  // Table column label
+  let columnLabel = '';
+  switch (selectedMetric) {
+    case 'net':
+      columnLabel = 'Net Characters Changed';
+      break;
+    case 'total':
+      columnLabel = 'Total Characters Changed';
+      break;
+    case 'net_asc':
+      columnLabel = 'Net Characters Changed';
+      break;
+    case 'unique':
+      columnLabel = 'Unique Editors (IPs)';
+      break;
+    case 'edits':
+      columnLabel = 'Edit Count';
+      break;
+    default:
+      columnLabel = 'Metric';
+  }
+
+  // Compute which data to show based on the metric (default: keep previous behaviors)
+  const rows = data[selectedSchool][selectedMetric];
+
+  return (
+    <div>
+      <FormControl variant="outlined" style={{ minWidth: 240, marginBottom: 20, marginRight: 10 }}>
+        <InputLabel id="school-select-label">Select Campus</InputLabel>
+        <Select
+          labelId="school-select-label"
+          id="school-select"
+          value={selectedSchool}
+          onChange={handleSchoolChange}
+          label="Select School"
+        >
+          {Object.keys(data).map((school) => (
+            <MenuItem value={school} key={school}>
+              {human_names[school]}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <FormControl variant="outlined" style={{ minWidth: 240, marginBottom: 20 }}>
+        <InputLabel id="metric-select-label">Select Metric</InputLabel>
+        <Select
+          labelId="metric-select-label"
+          id="metric-select"
+          value={selectedMetric}
+          onChange={handleMetricChange}
+          label="Select Metric"
+        >
+          {metricOptions.map((opt) => (
+            <MenuItem value={opt.value} key={opt.value}>{opt.label}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <div style={{ width: '100%', overflowX: 'auto' }}>
+        <table style={{
+          borderCollapse: 'collapse',
+          minWidth: 500,
+          width: '100%',
+          background: 'white',
+          boxShadow: '0px 2px 4px rgba(0,0,0,0.1)',
+        }}
+        >
+          <thead>
+            <tr style={{ background: '#f5f5f5' }}>
+              <th style={{
+                border: '1px solid #e0e0e0',
+                padding: '12px',
+                textAlign: 'left',
+                fontWeight: 600,
+              }}
+              >
+                Article Title
+              </th>
+              <th style={{
+                border: '1px solid #e0e0e0',
+                padding: '12px',
+                textAlign: 'right',
+                fontWeight: 600,
+              }}
+              >
+                {columnLabel}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, idx) => (
+              <tr
+                key={row.title + selectedMetric}
+                style={{
+                  background: idx % 2 === 0 ? '#fafbfc' : 'white',
+                  transition: 'background 0.2s',
+                }}
+              >
+                <td style={{
+                  border: '1px solid #e0e0e0',
+                  padding: '10px',
+                  textAlign: 'left',
+                  maxWidth: 320,
+                  overflow: 'hidden',
+                  textOverflow: 'wrap',
+                }}
+                >
+                  {row.title}
+                </td>
+                <td style={{
+                  border: '1px solid #e0e0e0',
+                  padding: '10px',
+                  textAlign: 'right',
+                  fontVariantNumeric: 'tabular-nums',
+                }}
+                >
+                  {selectedMetric === 'net' || selectedMetric === 'net_asc'
+                    ? (row.net ?? 0).toLocaleString()
+                    : selectedMetric === 'total'
+                      ? (row.total ?? 0).toLocaleString()
+                      : selectedMetric === 'unique'
+                        ? (row.unique_editors ?? 0).toLocaleString()
+                        : selectedMetric === 'edits'
+                          ? (row.edits ?? 0).toLocaleString()
+                          : ''}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+export default TopEditsPerSchool;
