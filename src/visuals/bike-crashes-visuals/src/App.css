@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+iframe {
+  pointer-events: auto;
+}
+
+iframe::-webkit-scrollbar,
+iframe [class*="mapboxgl-ctrl"],
+iframe [href*="mapbox.com"],
+iframe [title*="Mapbox"] {
+  display: none !important;
+  visibility: hidden !important;
+}
