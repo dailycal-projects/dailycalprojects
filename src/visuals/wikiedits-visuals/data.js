@@ -7360,5 +7360,53 @@ const time_data = [
     },
   },
 ];
+
+const per_school = {
+  UCB: {
+    count: 41724,
+    size: 819494538,
+  },
+  UCD: {
+    count: 22249,
+    size: 414888930,
+  },
+  UCI: {
+    count: 25355,
+    size: 574256826,
+  },
+  UCLA: {
+    count: 54059,
+    size: 1319042684,
+  },
+  UCM: {
+    count: 2139,
+    size: 71044954,
+  },
+  UCOP: {
+    count: 477,
+    size: 8975612,
+  },
+  UCR: {
+    count: 9145,
+    size: 174454159,
+  },
+  UCSB: {
+    count: 26541,
+    size: 594231726,
+  },
+  UCSC: {
+    count: 20533,
+    size: 434389826,
+  },
+  UCSD: {
+    count: 31989,
+    size: 689603573,
+  },
+  UCSF: {
+    count: 7672,
+    size: 161952452,
+  },
+};
 export default data;
+export { per_school };
 export { time_data };

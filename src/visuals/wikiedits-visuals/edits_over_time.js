@@ -54,20 +54,20 @@ function EditsOverTime() {
       <ResponsiveContainer width="100%" height={400}>
         <AreaChart
           data={time_data}
-          margin={{ top: 30, right: 50, left: 20, bottom: 20 }}
+          margin={{
+            top: 30, right: 50, left: 20, bottom: 20,
+          }}
         >
           <CartesianGrid strokeDasharray="24 4" />
           <XAxis dataKey="year">
             <Label value="Year" position="insideBottom" offset={-5} />
           </XAxis>
           <YAxis
-            tickFormatter={(val) =>
-              metric === "edit_volume" ?
-                // ? (val / 1_000_000 >= 1
-                // : val.toLocaleString())
-                val.toLocaleString()
-                 : `${(val / 1_000_000).toFixed(1).replace(/\.0$/, '')}`
-            }
+            tickFormatter={(val) => (metric === 'edit_volume'
+            // ? (val / 1_000_000 >= 1
+            // : val.toLocaleString())
+              ? val.toLocaleString()
+              : `${(val / 1_000_000).toFixed(1).replace(/\.0$/, '')}`)}
           >
             {/* <Label
               value={metric === "edit_volume" ? "Edit Count" : "Edit Volume (Characters)"}
@@ -78,8 +78,8 @@ function EditsOverTime() {
             /> */}
           </YAxis>
           <Tooltip
-            formatter={(value) => (metric === "edit_count" ? value.toLocaleString() + " characters" : value.toLocaleString() + " edits")}
-            labelFormatter={label => `Year: ${label}`}
+            formatter={(value) => (metric === 'edit_count' ? `${value.toLocaleString()} characters` : `${value.toLocaleString()} edits`)}
+            labelFormatter={(label) => `Year: ${label}`}
             opacity={0.5}
             itemSorter={(item) => -item.value}
           />
@@ -88,7 +88,7 @@ function EditsOverTime() {
             <Area
               key={key}
               type="monotone"
-              dataKey={d => d[key]?.[metric] ?? 0}
+              dataKey={(d) => d[key]?.[metric] ?? 0}
               name={human_names[key]}
               stroke={COLORS[idx % COLORS.length]}
               fill={COLORS[idx % COLORS.length]}
@@ -98,7 +98,7 @@ function EditsOverTime() {
             />
           ))}
         </AreaChart>
-        
+
       </ResponsiveContainer>
     </div>
   );
