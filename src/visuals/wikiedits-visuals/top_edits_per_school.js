@@ -53,7 +53,7 @@ function TopEditsPerSchool() {
       columnLabel = 'Net Characters Changed';
       break;
     case 'unique':
-      columnLabel = 'Unique Editors (IPs)';
+      columnLabel = 'Unique IP Addresses';
       break;
     case 'edits':
       columnLabel = 'Edit Count';
