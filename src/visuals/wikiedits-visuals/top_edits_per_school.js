@@ -146,7 +146,21 @@ function TopEditsPerSchool() {
                   textOverflow: 'wrap',
                 }}
                 >
-                  {row.title}
+                  {row.urls ? (
+                    <a
+                      href={row.urls}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: 'inherit',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      {row.title}
+                    </a>
+                  ) : (
+                    row.title
+                  )}
                 </td>
                 <td style={{
                   border: '1px solid #e0e0e0',

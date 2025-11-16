@@ -7,6 +7,7 @@ const data = {
         total: 183596,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Pornographic_film_actor',
       },
       {
         title: 'Creole Renaissance',
@@ -14,6 +15,7 @@ const data = {
         total: 96575,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Creole_Renaissance',
       },
       {
         title: 'Gerald Rudolff Ford',
@@ -21,6 +23,7 @@ const data = {
         total: 95290,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Gerald_Rudolff_Ford',
       },
       {
         title: 'User:Deciwill',
@@ -28,6 +31,7 @@ const data = {
         total: 115653,
         unique_editors: 1,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/User:Deciwill',
       },
       {
         title: 'Diabetes',
@@ -35,6 +39,7 @@ const data = {
         total: 87352,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Diabetes',
       },
       {
         title: 'My Little Pony',
@@ -42,6 +47,7 @@ const data = {
         total: 84551,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/My_Little_Pony',
       },
       {
         title: 'Mahmoud Ahmadinejad',
@@ -49,6 +55,7 @@ const data = {
         total: 72905,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Mahmoud_Ahmadinejad',
       },
       {
         title: 'Sex position',
@@ -56,6 +63,7 @@ const data = {
         total: 68273,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Sex_position',
       },
       {
         title: 'Greece',
@@ -63,6 +71,7 @@ const data = {
         total: 62242,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Greece',
       },
       {
         title: 'Makkah',
@@ -70,6 +79,7 @@ const data = {
         total: 48796,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Mecca',
       },
       {
         title: 'Extinction',
@@ -77,6 +87,7 @@ const data = {
         total: 48472,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Extinction',
       },
       {
         title: 'Campania',
@@ -84,6 +95,7 @@ const data = {
         total: 46525,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Campania',
       },
       {
         title: 'Hylidae',
@@ -91,6 +103,7 @@ const data = {
         total: 35724,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Hylidae',
       },
       {
         title: 'Talk:Internment of Japanese Americans',
@@ -98,6 +111,7 @@ const data = {
         total: 28423,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Internment_of_Japanese_Americans',
       },
       {
         title: 'Khatri',
@@ -105,6 +119,7 @@ const data = {
         total: 27382,
         unique_editors: 3,
         edits: 48,
+        urls: 'https://en.wikipedia.org/wiki/Khatri',
       },
     ],
     total: [
@@ -114,6 +129,7 @@ const data = {
         total: 294244,
         unique_editors: 4,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/Spirogyra',
       },
       {
         title: 'John Kerry',
@@ -121,6 +137,7 @@ const data = {
         total: 228620,
         unique_editors: 3,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/John_Kerry',
       },
       {
         title: 'Pornographic film actor',
@@ -128,6 +145,7 @@ const data = {
         total: 183596,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Pornographic_film_actor',
       },
       {
         title: 'Franz Liszt',
@@ -135,6 +153,7 @@ const data = {
         total: 181811,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Franz_Liszt',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -142,6 +161,7 @@ const data = {
         total: 155259,
         unique_editors: 36,
         edits: 153,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'University of California, Berkeley',
@@ -149,6 +169,7 @@ const data = {
         total: 122935,
         unique_editors: 135,
         edits: 191,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Berkeley',
       },
       {
         title: 'Stanford University',
@@ -156,6 +177,7 @@ const data = {
         total: 119580,
         unique_editors: 40,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Stanford_University',
       },
       {
         title: 'User:Deciwill',
@@ -163,6 +185,7 @@ const data = {
         total: 115653,
         unique_editors: 1,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/User:Deciwill',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -170,6 +193,7 @@ const data = {
         total: 112701,
         unique_editors: 30,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
       {
         title: 'Punjabi Khatri',
@@ -177,6 +201,7 @@ const data = {
         total: 109988,
         unique_editors: 3,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Khatri',
       },
       {
         title: 'Creole Renaissance',
@@ -184,6 +209,7 @@ const data = {
         total: 96575,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Creole_Renaissance',
       },
       {
         title: 'Gerald Rudolff Ford',
@@ -191,6 +217,7 @@ const data = {
         total: 95290,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Gerald_Rudolff_Ford',
       },
       {
         title: 'Monopoly (game)',
@@ -198,6 +225,7 @@ const data = {
         total: 93982,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Monopoly_(game)',
       },
       {
         title: 'Talk:Australian rules football/Archive 1',
@@ -205,6 +233,7 @@ const data = {
         total: 89393,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Australian_rules_football/Archive_1',
       },
       {
         title: 'Diabetes',
@@ -212,6 +241,7 @@ const data = {
         total: 87352,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Diabetes',
       },
     ],
     unique: [
@@ -221,6 +251,7 @@ const data = {
         total: 122935,
         unique_editors: 135,
         edits: 191,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Berkeley',
       },
       {
         title: 'Bowles Hall',
@@ -228,6 +259,7 @@ const data = {
         total: 8171,
         unique_editors: 41,
         edits: 60,
+        urls: 'https://en.wikipedia.org/wiki/Bowles_Hall',
       },
       {
         title: 'Stanford University',
@@ -235,6 +267,7 @@ const data = {
         total: 119580,
         unique_editors: 40,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Stanford_University',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -242,6 +275,7 @@ const data = {
         total: 155259,
         unique_editors: 36,
         edits: 153,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -249,6 +283,7 @@ const data = {
         total: 112701,
         unique_editors: 30,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
       {
         title: 'Marvin Heemeyer',
@@ -256,6 +291,7 @@ const data = {
         total: 7781,
         unique_editors: 24,
         edits: 50,
+        urls: 'https://en.wikipedia.org/wiki/Marvin_Heemeyer',
       },
       {
         title: 'Wikipedia:Introduction (historical)',
@@ -263,6 +299,7 @@ const data = {
         total: 2099,
         unique_editors: 23,
         edits: 30,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Introduction_(historical)',
       },
       {
         title: 'List of University of California, Berkeley alumni',
@@ -270,6 +307,7 @@ const data = {
         total: 1613,
         unique_editors: 20,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_Berkeley_alumni',
       },
       {
         title: 'Big Game (American football)',
@@ -277,6 +315,7 @@ const data = {
         total: 2099,
         unique_editors: 18,
         edits: 23,
+        urls: 'https://en.wikipedia.org/wiki/Big_Game_(American_football)',
       },
       {
         title: 'University of California, Berkeley student housing',
@@ -284,6 +323,7 @@ const data = {
         total: 6042,
         unique_editors: 17,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Berkeley_student_housing',
       },
       {
         title: 'Nicholas Dirks',
@@ -291,6 +331,7 @@ const data = {
         total: 3954,
         unique_editors: 17,
         edits: 26,
+        urls: 'https://en.wikipedia.org/wiki/Nicholas_Dirks',
       },
       {
         title: 'Associated Students of the University of California',
@@ -298,6 +339,7 @@ const data = {
         total: 5577,
         unique_editors: 17,
         edits: 32,
+        urls: 'https://en.wikipedia.org/wiki/Associated_Students_of_the_University_of_California',
       },
       {
         title: 'UC Berkeley School of Law',
@@ -305,6 +347,7 @@ const data = {
         total: 2190,
         unique_editors: 16,
         edits: 28,
+        urls: 'https://en.wikipedia.org/wiki/UC_Berkeley_School_of_Law',
       },
       {
         title: 'Lynbrook High School',
@@ -312,6 +355,7 @@ const data = {
         total: 22674,
         unique_editors: 15,
         edits: 25,
+        urls: 'https://en.wikipedia.org/wiki/Lynbrook_High_School',
       },
       {
         title: 'Experimental literature',
@@ -319,6 +363,7 @@ const data = {
         total: 1294,
         unique_editors: 15,
         edits: 37,
+        urls: 'https://en.wikipedia.org/wiki/Experimental_literature',
       },
     ],
     edits: [
@@ -328,6 +373,7 @@ const data = {
         total: 122935,
         unique_editors: 135,
         edits: 191,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Berkeley',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -335,6 +381,7 @@ const data = {
         total: 155259,
         unique_editors: 36,
         edits: 153,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'General semantics',
@@ -342,6 +389,7 @@ const data = {
         total: 14278,
         unique_editors: 1,
         edits: 100,
+        urls: 'https://en.wikipedia.org/wiki/General_semantics',
       },
       {
         title: 'User:Lensovet/cs162',
@@ -349,6 +397,7 @@ const data = {
         total: 12483,
         unique_editors: 4,
         edits: 97,
+        urls: 'https://en.wikipedia.org/wiki/User:Lensovet/cs162',
       },
       {
         title: 'Archaeal Richmond Mine acidophilic nanoorganisms',
@@ -356,6 +405,7 @@ const data = {
         total: 9168,
         unique_editors: 3,
         edits: 85,
+        urls: 'https://en.wikipedia.org/wiki/Archaeal_Richmond_Mine_acidophilic_nanoorganisms',
       },
       {
         title: 'Stanford University',
@@ -363,6 +413,7 @@ const data = {
         total: 119580,
         unique_editors: 40,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Stanford_University',
       },
       {
         title: 'List of people associated with the London School of Economics',
@@ -370,6 +421,7 @@ const data = {
         total: 5028,
         unique_editors: 12,
         edits: 72,
+        urls: 'https://en.wikipedia.org/wiki/List_of_people_associated_with_the_London_School_of_Economics',
       },
       {
         title: 'Helen Tracy Lowe-Porter',
@@ -377,6 +429,7 @@ const data = {
         total: 6754,
         unique_editors: 11,
         edits: 71,
+        urls: 'https://en.wikipedia.org/wiki/Helen_Tracy_Lowe-Porter',
       },
       {
         title: 'Huo Yuanjia',
@@ -384,6 +437,7 @@ const data = {
         total: 3755,
         unique_editors: 4,
         edits: 70,
+        urls: 'https://en.wikipedia.org/wiki/Huo_Yuanjia',
       },
       {
         title: 'Talk:Nagual',
@@ -391,6 +445,7 @@ const data = {
         total: 3492,
         unique_editors: 4,
         edits: 68,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Nagual',
       },
       {
         title: 'Dilana',
@@ -398,6 +453,7 @@ const data = {
         total: 5005,
         unique_editors: 1,
         edits: 67,
+        urls: 'https://en.wikipedia.org/wiki/Dilana',
       },
       {
         title: 'Bowles Hall',
@@ -405,6 +461,7 @@ const data = {
         total: 8171,
         unique_editors: 41,
         edits: 60,
+        urls: 'https://en.wikipedia.org/wiki/Bowles_Hall',
       },
       {
         title: 'Ski touring',
@@ -412,6 +469,7 @@ const data = {
         total: 4812,
         unique_editors: 1,
         edits: 55,
+        urls: 'https://en.wikipedia.org/wiki/Ski_touring',
       },
       {
         title: 'Late Pleistocene extinctions',
@@ -419,6 +477,7 @@ const data = {
         total: 1977,
         unique_editors: 3,
         edits: 55,
+        urls: 'https://en.wikipedia.org/wiki/Late_Pleistocene_extinctions',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -426,6 +485,7 @@ const data = {
         total: 112701,
         unique_editors: 30,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
     ],
     net_asc: [
@@ -435,6 +495,7 @@ const data = {
         total: 294244,
         unique_editors: 4,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/Spirogyra',
       },
       {
         title: 'John Kerry',
@@ -442,6 +503,7 @@ const data = {
         total: 228620,
         unique_editors: 3,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/John_Kerry',
       },
       {
         title: 'Franz Liszt',
@@ -449,6 +511,7 @@ const data = {
         total: 181811,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Franz_Liszt',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -456,6 +519,7 @@ const data = {
         total: 155259,
         unique_editors: 36,
         edits: 153,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Stanford University',
@@ -463,6 +527,7 @@ const data = {
         total: 119580,
         unique_editors: 40,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Stanford_University',
       },
       {
         title: 'University of California, Berkeley',
@@ -470,6 +535,7 @@ const data = {
         total: 122935,
         unique_editors: 135,
         edits: 191,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Berkeley',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -477,6 +543,7 @@ const data = {
         total: 112701,
         unique_editors: 30,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
       {
         title: 'Punjabi Khatri',
@@ -484,6 +551,7 @@ const data = {
         total: 109988,
         unique_editors: 3,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Khatri',
       },
       {
         title: 'Monopoly (game)',
@@ -491,6 +559,7 @@ const data = {
         total: 93982,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Monopoly_(game)',
       },
       {
         title: 'Talk:Australian rules football/Archive 1',
@@ -498,6 +567,7 @@ const data = {
         total: 89393,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Australian_rules_football/Archive_1',
       },
       {
         title: 'Edward Said',
@@ -505,6 +575,7 @@ const data = {
         total: 79736,
         unique_editors: 2,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/Edward_Said',
       },
       {
         title: 'Brad Pitt',
@@ -512,6 +583,7 @@ const data = {
         total: 74542,
         unique_editors: 5,
         edits: 12,
+        urls: 'https://en.wikipedia.org/wiki/Brad_Pitt',
       },
       {
         title: 'Quakers',
@@ -519,6 +591,7 @@ const data = {
         total: 64548,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Quakers',
       },
       {
         title: 'Christianity',
@@ -526,6 +599,7 @@ const data = {
         total: 62637,
         unique_editors: 3,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Christianity',
       },
       {
         title: 'Iranian Jews',
@@ -533,6 +607,7 @@ const data = {
         total: 60751,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Iranian_Jews',
       },
     ],
   },
@@ -544,6 +619,7 @@ const data = {
         total: 2118638,
         unique_editors: 29,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'List of people who have lived in airports',
@@ -551,6 +627,7 @@ const data = {
         total: 111058,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/List_of_people_who_have_lived_in_airports',
       },
       {
         title: 'Biswanath Mukherjee',
@@ -558,6 +635,7 @@ const data = {
         total: 77572,
         unique_editors: 2,
         edits: 21,
+        urls: 'https://en.wikipedia.org/wiki/Biswanath_Mukherjee',
       },
       {
         title: 'Venus',
@@ -565,6 +643,7 @@ const data = {
         total: 70029,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Venus',
       },
       {
         title: 'User:Tyomitch',
@@ -572,6 +651,7 @@ const data = {
         total: 53600,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/User:Tyomitch',
       },
       {
         title: 'User:InShaneee',
@@ -579,6 +659,7 @@ const data = {
         total: 53023,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:InShaneee',
       },
       {
         title: 'Adidas',
@@ -586,6 +667,7 @@ const data = {
         total: 50186,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Adidas',
       },
       {
         title: 'Waldensians',
@@ -593,6 +675,7 @@ const data = {
         total: 33250,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Waldensians',
       },
       {
         title: '2017 Sacramento Republic FC season',
@@ -600,6 +683,7 @@ const data = {
         total: 29243,
         unique_editors: 1,
         edits: 230,
+        urls: 'https://en.wikipedia.org/wiki/2017_Sacramento_Republic_FC_season',
       },
       {
         title: 'Stanley Williams',
@@ -607,6 +691,7 @@ const data = {
         total: 21566,
         unique_editors: 4,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Stanley_Williams',
       },
       {
         title: 'Adi Da',
@@ -614,6 +699,7 @@ const data = {
         total: 42450,
         unique_editors: 6,
         edits: 22,
+        urls: 'https://en.wikipedia.org/wiki/Adi_Da',
       },
       {
         title: 'Miracle Train: Ōedo-sen e Yōkoso',
@@ -621,6 +707,7 @@ const data = {
         total: 19585,
         unique_editors: 4,
         edits: 49,
+        urls: 'https://en.wikipedia.org/wiki/Miracle_Train:_%C5%8Cedo-sen_e_Y%C5%8Dkoso',
       },
       {
         title: 'Richard Shelby',
@@ -628,6 +715,7 @@ const data = {
         total: 16263,
         unique_editors: 1,
         edits: 27,
+        urls: 'https://en.wikipedia.org/wiki/Richard_Shelby',
       },
       {
         title: 'Northern California Band Association',
@@ -635,6 +723,7 @@ const data = {
         total: 15967,
         unique_editors: 1,
         edits: 23,
+        urls: 'https://en.wikipedia.org/wiki/Northern_California_Band_Association',
       },
       {
         title: 'Hillary Scott (actress)',
@@ -642,6 +731,7 @@ const data = {
         total: 13863,
         unique_editors: 1,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Hillary_Scott_(actress)',
       },
     ],
     total: [
@@ -651,6 +741,7 @@ const data = {
         total: 2118638,
         unique_editors: 29,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Resident Evil 4',
@@ -658,6 +749,7 @@ const data = {
         total: 1305232,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Resident_Evil_4',
       },
       {
         title: 'Bushism',
@@ -665,6 +757,7 @@ const data = {
         total: 187518,
         unique_editors: 1,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/Bushism',
       },
       {
         title: 'List of people who have lived in airports',
@@ -672,6 +765,7 @@ const data = {
         total: 111058,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/List_of_people_who_have_lived_in_airports',
       },
       {
         title: 'American Broadcasting Company',
@@ -679,6 +773,7 @@ const data = {
         total: 84080,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/American_Broadcasting_Company',
       },
       {
         title: 'Biswanath Mukherjee',
@@ -686,6 +781,7 @@ const data = {
         total: 77572,
         unique_editors: 2,
         edits: 21,
+        urls: 'https://en.wikipedia.org/wiki/Biswanath_Mukherjee',
       },
       {
         title: 'Venus',
@@ -693,6 +789,7 @@ const data = {
         total: 70029,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Venus',
       },
       {
         title: 'JavaScript',
@@ -700,6 +797,7 @@ const data = {
         total: 58451,
         unique_editors: 2,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/JavaScript',
       },
       {
         title: 'Taiwan (island)',
@@ -707,6 +805,7 @@ const data = {
         total: 57236,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Geography_of_Taiwan',
       },
       {
         title: 'User talk:Kuban kazak',
@@ -714,6 +813,7 @@ const data = {
         total: 56416,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:Kuban_kazak',
       },
       {
         title: 'Volcano',
@@ -721,6 +821,7 @@ const data = {
         total: 55240,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Volcano',
       },
       {
         title: 'Aristotle',
@@ -728,6 +829,7 @@ const data = {
         total: 54857,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Aristotle',
       },
       {
         title: 'User:Tyomitch',
@@ -735,6 +837,7 @@ const data = {
         total: 53600,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/User:Tyomitch',
       },
       {
         title: 'User:InShaneee',
@@ -742,6 +845,7 @@ const data = {
         total: 53023,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:InShaneee',
       },
       {
         title: 'Adidas',
@@ -749,6 +853,7 @@ const data = {
         total: 50186,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Adidas',
       },
     ],
     unique: [
@@ -758,6 +863,7 @@ const data = {
         total: 23066,
         unique_editors: 98,
         edits: 175,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Davis',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -765,6 +871,7 @@ const data = {
         total: 2118638,
         unique_editors: 29,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'UC Davis School of Law',
@@ -772,6 +879,7 @@ const data = {
         total: 4986,
         unique_editors: 24,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/UC_Davis_School_of_Law',
       },
       {
         title: 'Davis, California',
@@ -779,6 +887,7 @@ const data = {
         total: 3775,
         unique_editors: 22,
         edits: 26,
+        urls: 'https://en.wikipedia.org/wiki/Davis,_California',
       },
       {
         title: 'List of University of California, Davis alumni',
@@ -786,6 +895,7 @@ const data = {
         total: 2344,
         unique_editors: 15,
         edits: 30,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_Davis_alumni',
       },
       {
         title: 'User:TCS 191/Know it All: Can Wikipedia conquer expertise?',
@@ -793,6 +903,7 @@ const data = {
         total: 10980,
         unique_editors: 14,
         edits: 46,
+        urls: 'https://en.wikipedia.org/wiki/User:TCS_191/Know_it_All:_Can_Wikipedia_conquer_expertise%3F',
       },
       {
         title: 'Wikipedia:Introduction (historical)',
@@ -800,6 +911,7 @@ const data = {
         total: 35712,
         unique_editors: 13,
         edits: 17,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Introduction_(historical)',
       },
       {
         title: 'UC Davis School of Medicine',
@@ -807,6 +919,7 @@ const data = {
         total: 414,
         unique_editors: 13,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/UC_Davis_School_of_Medicine',
       },
       {
         title: 'Picnic Day (UC Davis)',
@@ -814,6 +927,7 @@ const data = {
         total: 8140,
         unique_editors: 12,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/Picnic_Day_(UC_Davis)',
       },
       {
         title: 'The California Aggie',
@@ -821,6 +935,7 @@ const data = {
         total: 683,
         unique_editors: 11,
         edits: 18,
+        urls: 'https://en.wikipedia.org/wiki/The_California_Aggie',
       },
       {
         title: 'Silvetia',
@@ -828,6 +943,7 @@ const data = {
         total: 6666,
         unique_editors: 11,
         edits: 26,
+        urls: 'https://en.wikipedia.org/wiki/Silvetia',
       },
       {
         title: 'Archer (Fate/stay night)',
@@ -835,6 +951,7 @@ const data = {
         total: 5091,
         unique_editors: 11,
         edits: 67,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Fate/stay_night_characters',
       },
       {
         title: 'UC Davis College of Engineering',
@@ -842,6 +959,7 @@ const data = {
         total: 468,
         unique_editors: 10,
         edits: 14,
+        urls: 'https://en.wikipedia.org/wiki/UC_Davis_College_of_Engineering',
       },
       {
         title: 'UC Davis Medical Center',
@@ -849,6 +967,7 @@ const data = {
         total: 19770,
         unique_editors: 9,
         edits: 63,
+        urls: 'https://en.wikipedia.org/wiki/UC_Davis_Medical_Center',
       },
       {
         title: 'Sacramento, California',
@@ -856,6 +975,7 @@ const data = {
         total: 403,
         unique_editors: 9,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/Sacramento,_California',
       },
     ],
     edits: [
@@ -865,6 +985,7 @@ const data = {
         total: 19318,
         unique_editors: 6,
         edits: 238,
+        urls: 'https://en.wikipedia.org/wiki/Pokhara',
       },
       {
         title: '2017 Sacramento Republic FC season',
@@ -872,6 +993,7 @@ const data = {
         total: 29243,
         unique_editors: 1,
         edits: 230,
+        urls: 'https://en.wikipedia.org/wiki/2017_Sacramento_Republic_FC_season',
       },
       {
         title: 'University of California, Davis',
@@ -879,6 +1001,7 @@ const data = {
         total: 23066,
         unique_editors: 98,
         edits: 175,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Davis',
       },
       {
         title: 'Prithvi Narayan Campus',
@@ -886,6 +1009,7 @@ const data = {
         total: 12381,
         unique_editors: 4,
         edits: 148,
+        urls: 'https://en.wikipedia.org/wiki/Prithvi_Narayan_Campus',
       },
       {
         title: '2016 Sacramento Republic FC season',
@@ -893,6 +1017,7 @@ const data = {
         total: 9417,
         unique_editors: 1,
         edits: 134,
+        urls: 'https://en.wikipedia.org/wiki/2016_Sacramento_Republic_FC_season',
       },
       {
         title: '2014–15 Middlesbrough F.C. season',
@@ -900,6 +1025,7 @@ const data = {
         total: 14500,
         unique_editors: 1,
         edits: 108,
+        urls: 'https://en.wikipedia.org/wiki/2014%E2%80%9315_Middlesbrough_F.C._season',
       },
       {
         title: 'Archer (Fate/stay night)',
@@ -907,6 +1033,7 @@ const data = {
         total: 5091,
         unique_editors: 11,
         edits: 67,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Fate/stay_night_characters',
       },
       {
         title: 'Homeland for the Jewish people',
@@ -914,6 +1041,7 @@ const data = {
         total: 10702,
         unique_editors: 1,
         edits: 64,
+        urls: 'https://en.wikipedia.org/wiki/Homeland_for_the_Jewish_people',
       },
       {
         title: 'UC Davis Medical Center',
@@ -921,6 +1049,7 @@ const data = {
         total: 19770,
         unique_editors: 9,
         edits: 63,
+        urls: 'https://en.wikipedia.org/wiki/UC_Davis_Medical_Center',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -928,6 +1057,7 @@ const data = {
         total: 2118638,
         unique_editors: 29,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Abraham Lincoln High School (San Francisco)',
@@ -935,6 +1065,7 @@ const data = {
         total: 10265,
         unique_editors: 7,
         edits: 54,
+        urls: 'https://en.wikipedia.org/wiki/Abraham_Lincoln_High_School_(San_Francisco)',
       },
       {
         title: 'UC Davis School of Law',
@@ -942,6 +1073,7 @@ const data = {
         total: 4986,
         unique_editors: 24,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/UC_Davis_School_of_Law',
       },
       {
         title: '24 season 5',
@@ -949,6 +1081,7 @@ const data = {
         total: 2444,
         unique_editors: 2,
         edits: 50,
+        urls: 'https://en.wikipedia.org/wiki/24_season_5',
       },
       {
         title: 'Miracle Train: Ōedo-sen e Yōkoso',
@@ -956,6 +1089,7 @@ const data = {
         total: 19585,
         unique_editors: 4,
         edits: 49,
+        urls: 'https://en.wikipedia.org/wiki/Miracle_Train:_%C5%8Cedo-sen_e_Y%C5%8Dkoso',
       },
       {
         title: 'Fate/stay night',
@@ -963,6 +1097,7 @@ const data = {
         total: 4033,
         unique_editors: 6,
         edits: 49,
+        urls: 'https://en.wikipedia.org/wiki/Fate/stay_night',
       },
     ],
     net_asc: [
@@ -972,6 +1107,7 @@ const data = {
         total: 1305232,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Resident_Evil_4',
       },
       {
         title: 'American Broadcasting Company',
@@ -979,6 +1115,7 @@ const data = {
         total: 84080,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/American_Broadcasting_Company',
       },
       {
         title: 'JavaScript',
@@ -986,6 +1123,7 @@ const data = {
         total: 58451,
         unique_editors: 2,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/JavaScript',
       },
       {
         title: 'Taiwan (island)',
@@ -993,6 +1131,7 @@ const data = {
         total: 57236,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Geography_of_Taiwan',
       },
       {
         title: 'User talk:Kuban kazak',
@@ -1000,6 +1139,7 @@ const data = {
         total: 56416,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:Kuban_kazak',
       },
       {
         title: 'Volcano',
@@ -1007,6 +1147,7 @@ const data = {
         total: 55240,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Volcano',
       },
       {
         title: 'Aristotle',
@@ -1014,6 +1155,7 @@ const data = {
         total: 54857,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Aristotle',
       },
       {
         title: 'Yolo County, California',
@@ -1021,6 +1163,7 @@ const data = {
         total: 48230,
         unique_editors: 3,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Yolo_County,_California',
       },
       {
         title: 'Sniper',
@@ -1028,6 +1171,7 @@ const data = {
         total: 41139,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Sniper',
       },
       {
         title: 'San Francisco Giants',
@@ -1035,6 +1179,7 @@ const data = {
         total: 46795,
         unique_editors: 3,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/San_Francisco_Giants',
       },
       {
         title: 'Bob Jones University',
@@ -1042,6 +1187,7 @@ const data = {
         total: 33433,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Bob_Jones_University',
       },
       {
         title: 'Nigger',
@@ -1049,6 +1195,7 @@ const data = {
         total: 30185,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Nigger',
       },
       {
         title: 'Seven deadly sins',
@@ -1056,6 +1203,7 @@ const data = {
         total: 29758,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Seven_deadly_sins',
       },
       {
         title: 'Association football',
@@ -1063,6 +1211,7 @@ const data = {
         total: 27408,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Association_football',
       },
       {
         title: 'Battle of Berlin',
@@ -1070,6 +1219,7 @@ const data = {
         total: 25730,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Battle_of_Berlin',
       },
     ],
   },
@@ -1081,6 +1231,7 @@ const data = {
         total: 218699,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/The_Hobbit',
       },
       {
         title: 'Reem Al Numery',
@@ -1088,6 +1239,7 @@ const data = {
         total: 194401,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Reem_Al_Numery',
       },
       {
         title: 'Iraqi-American War',
@@ -1095,6 +1247,7 @@ const data = {
         total: 78020,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Iraq_War_(disambiguation)',
       },
       {
         title: 'Toyota',
@@ -1102,6 +1255,7 @@ const data = {
         total: 61680,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Toyota',
       },
       {
         title: 'Death of Anna Nicole Smith',
@@ -1109,6 +1263,7 @@ const data = {
         total: 55330,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Anna_Nicole_Smith',
       },
       {
         title: 'Negotiation',
@@ -1116,6 +1271,7 @@ const data = {
         total: 53816,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Negotiation',
       },
       {
         title: 'Republic',
@@ -1123,6 +1279,7 @@ const data = {
         total: 42315,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Republic',
       },
       {
         title: 'NFE2L1',
@@ -1130,6 +1287,7 @@ const data = {
         total: 29103,
         unique_editors: 1,
         edits: 17,
+        urls: 'https://en.wikipedia.org/wiki/NFE2L1',
       },
       {
         title: 'Mahavatar Babaji',
@@ -1137,6 +1295,7 @@ const data = {
         total: 25955,
         unique_editors: 2,
         edits: 16,
+        urls: 'https://en.wikipedia.org/wiki/Mahavatar_Babaji',
       },
       {
         title: 'Palestine (disambiguation)',
@@ -1144,6 +1303,7 @@ const data = {
         total: 23373,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Palestine_(disambiguation)',
       },
       {
         title: 'Kriya Yoga school',
@@ -1151,6 +1311,7 @@ const data = {
         total: 23166,
         unique_editors: 2,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/Kriya_Yoga_school',
       },
       {
         title: 'Petlyakov Pe-2',
@@ -1158,6 +1319,7 @@ const data = {
         total: 21793,
         unique_editors: 1,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/Petlyakov_Pe-2',
       },
       {
         title: 'Leopard',
@@ -1165,6 +1327,7 @@ const data = {
         total: 21410,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Leopard',
       },
       {
         title: 'The Wild',
@@ -1172,6 +1335,7 @@ const data = {
         total: 20345,
         unique_editors: 1,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/The_Wild',
       },
       {
         title: 'List of computer science conferences',
@@ -1179,6 +1343,7 @@ const data = {
         total: 48661,
         unique_editors: 25,
         edits: 146,
+        urls: 'https://en.wikipedia.org/wiki/List_of_computer_science_conferences',
       },
     ],
     total: [
@@ -1188,6 +1353,7 @@ const data = {
         total: 837635,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Saxophone',
       },
       {
         title: 'Stephen Hawking',
@@ -1195,6 +1361,7 @@ const data = {
         total: 295722,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Stephen_Hawking',
       },
       {
         title: 'The Hobbit',
@@ -1202,6 +1369,7 @@ const data = {
         total: 218699,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/The_Hobbit',
       },
       {
         title: 'Reem Al Numery',
@@ -1209,6 +1377,7 @@ const data = {
         total: 194401,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Reem_Al_Numery',
       },
       {
         title: 'Harvard University',
@@ -1216,6 +1385,7 @@ const data = {
         total: 141028,
         unique_editors: 4,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Harvard_University',
       },
       {
         title: 'Armenian genocide denial',
@@ -1223,6 +1393,7 @@ const data = {
         total: 97505,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Armenian_genocide_denial',
       },
       {
         title: 'Iraqi-American War',
@@ -1230,6 +1401,7 @@ const data = {
         total: 78020,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Iraq_War_(disambiguation)',
       },
       {
         title: '2003 invasion of Iraq',
@@ -1237,6 +1409,7 @@ const data = {
         total: 77890,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/2003_invasion_of_Iraq',
       },
       {
         title: 'Etel Solingen',
@@ -1244,6 +1417,7 @@ const data = {
         total: 70835,
         unique_editors: 6,
         edits: 70,
+        urls: 'https://en.wikipedia.org/wiki/Etel_Solingen',
       },
       {
         title: 'NASA',
@@ -1251,6 +1425,7 @@ const data = {
         total: 61687,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/NASA',
       },
       {
         title: 'Toyota',
@@ -1258,6 +1433,7 @@ const data = {
         total: 61680,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Toyota',
       },
       {
         title: "Hundred Years' War",
@@ -1265,6 +1441,7 @@ const data = {
         total: 58611,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Hundred_Years%27_War',
       },
       {
         title: 'Chinese civilization',
@@ -1272,6 +1449,7 @@ const data = {
         total: 55793,
         unique_editors: 3,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Chinese_civilization',
       },
       {
         title: 'Death of Anna Nicole Smith',
@@ -1279,6 +1457,7 @@ const data = {
         total: 55330,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Anna_Nicole_Smith',
       },
       {
         title: 'Negotiation',
@@ -1286,6 +1465,7 @@ const data = {
         total: 53816,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Negotiation',
       },
     ],
     unique: [
@@ -1295,6 +1475,7 @@ const data = {
         total: 53640,
         unique_editors: 198,
         edits: 316,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Irvine',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -1302,6 +1483,7 @@ const data = {
         total: 34116,
         unique_editors: 29,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'List of computer science conferences',
@@ -1309,6 +1491,7 @@ const data = {
         total: 48661,
         unique_editors: 25,
         edits: 146,
+        urls: 'https://en.wikipedia.org/wiki/List_of_computer_science_conferences',
       },
       {
         title: 'Wikipedia:Introduction (historical)',
@@ -1316,6 +1499,7 @@ const data = {
         total: 17285,
         unique_editors: 17,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Introduction_(historical)',
       },
       {
         title: 'Bryan Reynolds (scholar)',
@@ -1323,6 +1507,7 @@ const data = {
         total: 2837,
         unique_editors: 17,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/Bryan_Reynolds_(scholar)',
       },
       {
         title: 'Paul Merage School of Business',
@@ -1330,6 +1515,7 @@ const data = {
         total: 3340,
         unique_editors: 15,
         edits: 28,
+        urls: 'https://en.wikipedia.org/wiki/Paul_Merage_School_of_Business',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -1337,6 +1523,7 @@ const data = {
         total: 39754,
         unique_editors: 14,
         edits: 18,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
       {
         title: 'Orange County, California',
@@ -1344,6 +1531,7 @@ const data = {
         total: 2591,
         unique_editors: 14,
         edits: 42,
+        urls: 'https://en.wikipedia.org/wiki/Orange_County,_California',
       },
       {
         title: 'Estradiol (medication)',
@@ -1351,6 +1539,7 @@ const data = {
         total: 7692,
         unique_editors: 12,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/Estradiol_(medication)',
       },
       {
         title: 'Bren Events Center',
@@ -1358,6 +1547,7 @@ const data = {
         total: 1988,
         unique_editors: 12,
         edits: 16,
+        urls: 'https://en.wikipedia.org/wiki/Bren_Events_Center',
       },
       {
         title: 'List of University of California, Irvine people',
@@ -1365,6 +1555,7 @@ const data = {
         total: 917,
         unique_editors: 11,
         edits: 19,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_Irvine_people',
       },
       {
         title: 'Estradiol undecylate',
@@ -1372,6 +1563,7 @@ const data = {
         total: 3612,
         unique_editors: 11,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Estradiol_undecylate',
       },
       {
         title: 'Wikipedia:Tutorial (historical)/Editing/sandbox',
@@ -1379,6 +1571,7 @@ const data = {
         total: 14598,
         unique_editors: 10,
         edits: 19,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Irvine, California',
@@ -1386,6 +1579,7 @@ const data = {
         total: 2069,
         unique_editors: 10,
         edits: 19,
+        urls: 'https://en.wikipedia.org/wiki/Irvine,_California',
       },
       {
         title: 'Sustainable fashion',
@@ -1393,6 +1587,7 @@ const data = {
         total: 2511,
         unique_editors: 9,
         edits: 12,
+        urls: 'https://en.wikipedia.org/wiki/Sustainable_fashion',
       },
     ],
     edits: [
@@ -1402,6 +1597,7 @@ const data = {
         total: 53640,
         unique_editors: 198,
         edits: 316,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Irvine',
       },
       {
         title: 'List of computer science conferences',
@@ -1409,6 +1605,7 @@ const data = {
         total: 48661,
         unique_editors: 25,
         edits: 146,
+        urls: 'https://en.wikipedia.org/wiki/List_of_computer_science_conferences',
       },
       {
         title: 'Cerritos, California',
@@ -1416,6 +1613,7 @@ const data = {
         total: 16645,
         unique_editors: 6,
         edits: 76,
+        urls: 'https://en.wikipedia.org/wiki/Cerritos,_California',
       },
       {
         title: 'Silver Surfer (TV series)',
@@ -1423,6 +1621,7 @@ const data = {
         total: 9202,
         unique_editors: 2,
         edits: 70,
+        urls: 'https://en.wikipedia.org/wiki/Silver_Surfer_(TV_series)',
       },
       {
         title: 'Etel Solingen',
@@ -1430,6 +1629,7 @@ const data = {
         total: 70835,
         unique_editors: 6,
         edits: 70,
+        urls: 'https://en.wikipedia.org/wiki/Etel_Solingen',
       },
       {
         title: 'Skip Beat! (Taiwanese TV series)',
@@ -1437,6 +1637,7 @@ const data = {
         total: 4679,
         unique_editors: 3,
         edits: 65,
+        urls: 'https://en.wikipedia.org/wiki/Skip_Beat!_(Taiwanese_TV_series)',
       },
       {
         title: 'Glenn Cannon (bassist)',
@@ -1444,6 +1645,7 @@ const data = {
         total: 4882,
         unique_editors: 6,
         edits: 60,
+        urls: 'https://en.wikipedia.org/wiki/Hellion_(band)',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -1451,6 +1653,7 @@ const data = {
         total: 34116,
         unique_editors: 29,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Super Junior',
@@ -1458,6 +1661,7 @@ const data = {
         total: 8685,
         unique_editors: 5,
         edits: 50,
+        urls: 'https://en.wikipedia.org/wiki/Super_Junior',
       },
       {
         title: 'Jawbreaker (band)',
@@ -1465,6 +1669,7 @@ const data = {
         total: 2306,
         unique_editors: 4,
         edits: 50,
+        urls: 'https://en.wikipedia.org/wiki/Jawbreaker_(band)',
       },
       {
         title: 'Das Kapital',
@@ -1472,6 +1677,7 @@ const data = {
         total: 3134,
         unique_editors: 4,
         edits: 43,
+        urls: 'https://en.wikipedia.org/wiki/Das_Kapital',
       },
       {
         title: 'Rosy Business',
@@ -1479,6 +1685,7 @@ const data = {
         total: 5005,
         unique_editors: 5,
         edits: 42,
+        urls: 'https://en.wikipedia.org/wiki/Rosy_Business',
       },
       {
         title: 'Orange County, California',
@@ -1486,6 +1693,7 @@ const data = {
         total: 2591,
         unique_editors: 14,
         edits: 42,
+        urls: 'https://en.wikipedia.org/wiki/Orange_County,_California',
       },
       {
         title: 'Top Combine',
@@ -1493,6 +1701,7 @@ const data = {
         total: 2910,
         unique_editors: 2,
         edits: 41,
+        urls: 'https://en.wikipedia.org/wiki/Top_Combine',
       },
       {
         title: 'Shammar',
@@ -1500,6 +1709,7 @@ const data = {
         total: 11966,
         unique_editors: 7,
         edits: 37,
+        urls: 'https://en.wikipedia.org/wiki/Shammar',
       },
     ],
     net_asc: [
@@ -1509,6 +1719,7 @@ const data = {
         total: 837635,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Saxophone',
       },
       {
         title: 'Stephen Hawking',
@@ -1516,6 +1727,7 @@ const data = {
         total: 295722,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Stephen_Hawking',
       },
       {
         title: 'Harvard University',
@@ -1523,6 +1735,7 @@ const data = {
         total: 141028,
         unique_editors: 4,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Harvard_University',
       },
       {
         title: 'Armenian genocide denial',
@@ -1530,6 +1743,7 @@ const data = {
         total: 97505,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Armenian_genocide_denial',
       },
       {
         title: '2003 invasion of Iraq',
@@ -1537,6 +1751,7 @@ const data = {
         total: 77890,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/2003_invasion_of_Iraq',
       },
       {
         title: 'NASA',
@@ -1544,6 +1759,7 @@ const data = {
         total: 61687,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/NASA',
       },
       {
         title: "Hundred Years' War",
@@ -1551,6 +1767,7 @@ const data = {
         total: 58611,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Hundred_Years%27_War',
       },
       {
         title: 'Facebook',
@@ -1558,6 +1775,7 @@ const data = {
         total: 52889,
         unique_editors: 3,
         edits: 13,
+        urls: 'https://en.wikipedia.org/wiki/Facebook',
       },
       {
         title: "Shaquille O'Neal",
@@ -1565,6 +1783,7 @@ const data = {
         total: 48557,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Shaquille_O%27Neal',
       },
       {
         title: 'Mel Gibson',
@@ -1572,6 +1791,7 @@ const data = {
         total: 47923,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Mel_Gibson',
       },
       {
         title: 'Ambiguity',
@@ -1579,6 +1799,7 @@ const data = {
         total: 47770,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Ambiguity',
       },
       {
         title: 'Barry Bonds',
@@ -1586,6 +1807,7 @@ const data = {
         total: 45136,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Barry_Bonds',
       },
       {
         title: 'Rent (musical)',
@@ -1593,6 +1815,7 @@ const data = {
         total: 40831,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Rent_(musical)',
       },
       {
         title: 'Sodomy law',
@@ -1600,6 +1823,7 @@ const data = {
         total: 40669,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Sodomy_law',
       },
       {
         title: 'Common Core',
@@ -1607,6 +1831,7 @@ const data = {
         total: 37123,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Common_Core',
       },
     ],
   },
@@ -1618,6 +1843,7 @@ const data = {
         total: 2756944,
         unique_editors: 3,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Leonardo_DiCaprio',
       },
       {
         title: 'Wikipedia:Sandbox/Archive2',
@@ -1625,6 +1851,7 @@ const data = {
         total: 1349415,
         unique_editors: 4,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive2',
       },
       {
         title: 'Queen Adreena',
@@ -1632,6 +1859,7 @@ const data = {
         total: 795873,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Queenadreena',
       },
       {
         title: 'Wikipedia:Counter-Vandalism Unit',
@@ -1639,6 +1867,7 @@ const data = {
         total: 794813,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Counter-Vandalism_Unit',
       },
       {
         title: 'User:Beardo',
@@ -1646,6 +1875,7 @@ const data = {
         total: 797958,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Beardo',
       },
       {
         title: 'History of Estonia',
@@ -1653,6 +1883,7 @@ const data = {
         total: 475291,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/History_of_Estonia',
       },
       {
         title: '1996 California Proposition 218',
@@ -1660,6 +1891,7 @@ const data = {
         total: 166107,
         unique_editors: 10,
         edits: 42,
+        urls: 'https://en.wikipedia.org/wiki/1996_California_Proposition_218',
       },
       {
         title: 'Bellarmine College Preparatory',
@@ -1667,6 +1899,7 @@ const data = {
         total: 104796,
         unique_editors: 6,
         edits: 18,
+        urls: 'https://en.wikipedia.org/wiki/Bellarmine_College_Preparatory',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (F)',
@@ -1674,6 +1907,7 @@ const data = {
         total: 175508,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(F)',
       },
       {
         title: 'Greeks',
@@ -1681,6 +1915,7 @@ const data = {
         total: 88698,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Greeks',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (E)',
@@ -1688,6 +1923,7 @@ const data = {
         total: 169795,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(E)',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (B)',
@@ -1695,6 +1931,7 @@ const data = {
         total: 159027,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(B)',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (D)',
@@ -1702,6 +1939,7 @@ const data = {
         total: 166264,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(D)',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (C)',
@@ -1709,6 +1947,7 @@ const data = {
         total: 246407,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(C)',
       },
       {
         title: 'User:Mathbot/Page10',
@@ -1716,6 +1955,7 @@ const data = {
         total: 58986,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/Page10',
       },
     ],
     total: [
@@ -1725,6 +1965,7 @@ const data = {
         total: 2756944,
         unique_editors: 3,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Leonardo_DiCaprio',
       },
       {
         title: 'Wikipedia:Sandbox/Archive2',
@@ -1732,6 +1973,7 @@ const data = {
         total: 1349415,
         unique_editors: 4,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive2',
       },
       {
         title: 'User:Beardo',
@@ -1739,6 +1981,7 @@ const data = {
         total: 797958,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Beardo',
       },
       {
         title: 'Queen Adreena',
@@ -1746,6 +1989,7 @@ const data = {
         total: 795873,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Queenadreena',
       },
       {
         title: 'Wikipedia:Counter-Vandalism Unit',
@@ -1753,6 +1997,7 @@ const data = {
         total: 794813,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Counter-Vandalism_Unit',
       },
       {
         title: 'History of Estonia',
@@ -1760,6 +2005,7 @@ const data = {
         total: 475291,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/History_of_Estonia',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (A)',
@@ -1767,6 +2013,7 @@ const data = {
         total: 408372,
         unique_editors: 1,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(A)',
       },
       {
         title: 'FIFA World Cup qualifiers',
@@ -1774,6 +2021,7 @@ const data = {
         total: 345873,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/FIFA_World_Cup_qualifiers',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (C)',
@@ -1781,6 +2029,7 @@ const data = {
         total: 246407,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(C)',
       },
       {
         title: 'Talk:Bronze Soldier of Tallinn',
@@ -1788,6 +2037,7 @@ const data = {
         total: 239761,
         unique_editors: 1,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Bronze_Soldier_of_Tallinn',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (F)',
@@ -1795,6 +2045,7 @@ const data = {
         total: 175508,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(F)',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (E)',
@@ -1802,6 +2053,7 @@ const data = {
         total: 169795,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(E)',
       },
       {
         title: 'Wikipedia:Version 1.0 Editorial Team/French military history articles by quality log',
@@ -1809,6 +2061,7 @@ const data = {
         total: 166794,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Version_1.0_Editorial_Team/French_military_history_articles_by_quality_log',
       },
       {
         title: 'User:Mathbot/List of mathematical redlinks (D)',
@@ -1816,6 +2069,7 @@ const data = {
         total: 166264,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/List_of_mathematical_redlinks_(D)',
       },
       {
         title: '1996 California Proposition 218',
@@ -1823,6 +2077,7 @@ const data = {
         total: 166107,
         unique_editors: 10,
         edits: 42,
+        urls: 'https://en.wikipedia.org/wiki/1996_California_Proposition_218',
       },
     ],
     unique: [
@@ -1832,6 +2087,7 @@ const data = {
         total: 106764,
         unique_editors: 218,
         edits: 377,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Los_Angeles',
       },
       {
         title: 'List of University of California, Los Angeles people',
@@ -1839,6 +2095,7 @@ const data = {
         total: 5557,
         unique_editors: 56,
         edits: 93,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_Los_Angeles_people',
       },
       {
         title: 'Wikipedia:Reference desk/Computing',
@@ -1846,6 +2103,7 @@ const data = {
         total: 21133,
         unique_editors: 48,
         edits: 71,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Reference_desk/Computing',
       },
       {
         title: 'University of Southern California',
@@ -1853,6 +2111,7 @@ const data = {
         total: 101685,
         unique_editors: 44,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/University_of_Southern_California',
       },
       {
         title: 'Sukhoi Su-57',
@@ -1860,6 +2119,7 @@ const data = {
         total: 5680,
         unique_editors: 42,
         edits: 103,
+        urls: 'https://en.wikipedia.org/wiki/Sukhoi_Su-57',
       },
       {
         title: 'Lockheed Martin F-22 Raptor',
@@ -1867,6 +2127,7 @@ const data = {
         total: 16378,
         unique_editors: 39,
         edits: 87,
+        urls: 'https://en.wikipedia.org/wiki/Lockheed_Martin_F-22_Raptor',
       },
       {
         title: 'UCLA Spring Sing',
@@ -1874,6 +2135,7 @@ const data = {
         total: 4677,
         unique_editors: 38,
         edits: 66,
+        urls: 'https://en.wikipedia.org/wiki/UCLA_Spring_Sing',
       },
       {
         title: 'Gene Block',
@@ -1881,6 +2143,7 @@ const data = {
         total: 1887,
         unique_editors: 38,
         edits: 54,
+        urls: 'https://en.wikipedia.org/wiki/Gene_Block',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -1888,6 +2151,7 @@ const data = {
         total: 35085,
         unique_editors: 37,
         edits: 72,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Wikipedia:Introduction (historical)',
@@ -1895,6 +2159,7 @@ const data = {
         total: 2264,
         unique_editors: 33,
         edits: 40,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Introduction_(historical)',
       },
       {
         title: 'List of fictional felines',
@@ -1902,6 +2167,7 @@ const data = {
         total: 5442,
         unique_editors: 32,
         edits: 69,
+        urls: 'https://en.wikipedia.org/wiki/List_of_fictional_felines',
       },
       {
         title: 'Modesto, California',
@@ -1909,6 +2175,7 @@ const data = {
         total: 3305,
         unique_editors: 31,
         edits: 98,
+        urls: 'https://en.wikipedia.org/wiki/Modesto,_California',
       },
       {
         title: 'Soccer in the United States',
@@ -1916,6 +2183,7 @@ const data = {
         total: 5864,
         unique_editors: 30,
         edits: 78,
+        urls: 'https://en.wikipedia.org/wiki/Soccer_in_the_United_States',
       },
       {
         title: 'List of future stadiums',
@@ -1923,6 +2191,7 @@ const data = {
         total: 9790,
         unique_editors: 30,
         edits: 84,
+        urls: 'https://en.wikipedia.org/wiki/List_of_future_stadiums',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -1930,6 +2199,7 @@ const data = {
         total: 37186,
         unique_editors: 28,
         edits: 44,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
     ],
     edits: [
@@ -1939,6 +2209,7 @@ const data = {
         total: 106764,
         unique_editors: 218,
         edits: 377,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Los_Angeles',
       },
       {
         title: 'User:N-true/ASJP',
@@ -1946,6 +2217,7 @@ const data = {
         total: 53577,
         unique_editors: 1,
         edits: 193,
+        urls: 'https://en.wikipedia.org/wiki/User:N-true/ASJP',
       },
       {
         title: 'UCLA Bruin Marching Band',
@@ -1953,6 +2225,7 @@ const data = {
         total: 13042,
         unique_editors: 23,
         edits: 146,
+        urls: 'https://en.wikipedia.org/wiki/UCLA_Bruin_Marching_Band',
       },
       {
         title: 'Jack Sperling',
@@ -1960,6 +2233,7 @@ const data = {
         total: 6623,
         unique_editors: 9,
         edits: 123,
+        urls: 'https://en.wikipedia.org/wiki/Jack_Sperling',
       },
       {
         title: 'Chail Military School',
@@ -1967,6 +2241,7 @@ const data = {
         total: 15568,
         unique_editors: 6,
         edits: 113,
+        urls: 'https://en.wikipedia.org/wiki/Chail_Military_School',
       },
       {
         title: 'Sukhoi Su-57',
@@ -1974,6 +2249,7 @@ const data = {
         total: 5680,
         unique_editors: 42,
         edits: 103,
+        urls: 'https://en.wikipedia.org/wiki/Sukhoi_Su-57',
       },
       {
         title: 'Template:Los Angeles Dodgers roster',
@@ -1981,6 +2257,7 @@ const data = {
         total: 1147,
         unique_editors: 18,
         edits: 98,
+        urls: 'https://en.wikipedia.org/wiki/Template:Los_Angeles_Dodgers_roster',
       },
       {
         title: 'Modesto, California',
@@ -1988,6 +2265,7 @@ const data = {
         total: 3305,
         unique_editors: 31,
         edits: 98,
+        urls: 'https://en.wikipedia.org/wiki/Modesto,_California',
       },
       {
         title: 'List of University of California, Los Angeles people',
@@ -1995,6 +2273,7 @@ const data = {
         total: 5557,
         unique_editors: 56,
         edits: 93,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_Los_Angeles_people',
       },
       {
         title: 'Template:Los Angeles Rams roster',
@@ -2002,6 +2281,7 @@ const data = {
         total: 2098,
         unique_editors: 23,
         edits: 92,
+        urls: 'https://en.wikipedia.org/wiki/Template:Los_Angeles_Rams_roster',
       },
       {
         title: 'Mochi (magazine)',
@@ -2009,6 +2289,7 @@ const data = {
         total: 7476,
         unique_editors: 12,
         edits: 90,
+        urls: 'https://en.wikipedia.org/wiki/Mochi_(magazine)',
       },
       {
         title: 'Lockheed Martin F-22 Raptor',
@@ -2016,6 +2297,7 @@ const data = {
         total: 16378,
         unique_editors: 39,
         edits: 87,
+        urls: 'https://en.wikipedia.org/wiki/Lockheed_Martin_F-22_Raptor',
       },
       {
         title: 'American University',
@@ -2023,6 +2305,7 @@ const data = {
         total: 18239,
         unique_editors: 16,
         edits: 87,
+        urls: 'https://en.wikipedia.org/wiki/American_University',
       },
       {
         title: 'List of future stadiums',
@@ -2030,6 +2313,7 @@ const data = {
         total: 9790,
         unique_editors: 30,
         edits: 84,
+        urls: 'https://en.wikipedia.org/wiki/List_of_future_stadiums',
       },
       {
         title: "United States men's national soccer team",
@@ -2037,6 +2321,7 @@ const data = {
         total: 7232,
         unique_editors: 23,
         edits: 82,
+        urls: 'https://en.wikipedia.org/wiki/United_States_men%27s_national_soccer_team',
       },
     ],
     net_asc: [
@@ -2046,6 +2331,7 @@ const data = {
         total: 345873,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/FIFA_World_Cup_qualifiers',
       },
       {
         title: 'Talk:Bronze Soldier of Tallinn',
@@ -2053,6 +2339,7 @@ const data = {
         total: 239761,
         unique_editors: 1,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Bronze_Soldier_of_Tallinn',
       },
       {
         title: 'Wikipedia:Version 1.0 Editorial Team/French military history articles by quality log',
@@ -2060,6 +2347,7 @@ const data = {
         total: 166794,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Version_1.0_Editorial_Team/French_military_history_articles_by_quality_log',
       },
       {
         title: 'Trey Ellis',
@@ -2067,6 +2355,7 @@ const data = {
         total: 165532,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Trey_Ellis',
       },
       {
         title: 'Borat',
@@ -2074,6 +2363,7 @@ const data = {
         total: 117933,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Borat',
       },
       {
         title: 'Tajiks',
@@ -2081,6 +2371,7 @@ const data = {
         total: 110858,
         unique_editors: 4,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Tajiks',
       },
       {
         title: '2022–23 ECHL season',
@@ -2088,6 +2379,7 @@ const data = {
         total: 108702,
         unique_editors: 3,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/2022%E2%80%9323_ECHL_season',
       },
       {
         title: 'Moon landing conspiracy theories',
@@ -2095,6 +2387,7 @@ const data = {
         total: 107213,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories',
       },
       {
         title: 'Talk:Karyn Kupcinet/Archive 1',
@@ -2102,6 +2395,7 @@ const data = {
         total: 107003,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Karyn_Kupcinet/Archive_1',
       },
       {
         title: 'User:Mathbot/Most recent admin candidate',
@@ -2109,6 +2403,7 @@ const data = {
         total: 106801,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/User:Mathbot/Most_recent_admin_candidate',
       },
       {
         title: 'University of Southern California',
@@ -2116,6 +2411,7 @@ const data = {
         total: 101685,
         unique_editors: 44,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/University_of_Southern_California',
       },
       {
         title: 'Talk:Estonia',
@@ -2123,6 +2419,7 @@ const data = {
         total: 112778,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Estonia',
       },
       {
         title: 'Ricky Williams',
@@ -2130,6 +2427,7 @@ const data = {
         total: 84259,
         unique_editors: 4,
         edits: 14,
+        urls: 'https://en.wikipedia.org/wiki/Ricky_Williams',
       },
       {
         title: 'Bahrain',
@@ -2137,6 +2435,7 @@ const data = {
         total: 73073,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Bahrain',
       },
       {
         title: 'Sleep',
@@ -2144,6 +2443,7 @@ const data = {
         total: 72483,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Sleep',
       },
     ],
   },
@@ -2155,6 +2455,7 @@ const data = {
         total: 40712,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Parthia',
       },
       {
         title: 'List of Black Clover characters',
@@ -2162,6 +2463,7 @@ const data = {
         total: 13399,
         unique_editors: 2,
         edits: 143,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Black_Clover_characters',
       },
       {
         title: 'University of California, Merced',
@@ -2169,6 +2471,7 @@ const data = {
         total: 18013,
         unique_editors: 114,
         edits: 195,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Merced',
       },
       {
         title: 'Calibishie',
@@ -2176,6 +2479,7 @@ const data = {
         total: 3892,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Calibishie',
       },
       {
         title: 'FAFSA',
@@ -2183,6 +2487,7 @@ const data = {
         total: 3608,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/FAFSA',
       },
       {
         title: 'Cognitive dissonance',
@@ -2190,6 +2495,7 @@ const data = {
         total: 2742,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Cognitive_dissonance',
       },
       {
         title: 'Talk:Merced Assembly Center',
@@ -2197,6 +2503,7 @@ const data = {
         total: 2690,
         unique_editors: 2,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Merced_Assembly_Center',
       },
       {
         title: 'Europa Universalis III',
@@ -2204,6 +2511,7 @@ const data = {
         total: 2568,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Europa_Universalis_III',
       },
       {
         title: 'Verne Winchell',
@@ -2211,6 +2519,7 @@ const data = {
         total: 2290,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Verne_Winchell',
       },
       {
         title: 'Something Awful',
@@ -2218,6 +2527,7 @@ const data = {
         total: 2235,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Something_Awful',
       },
       {
         title: 'User talk:Ocatecir',
@@ -2225,6 +2535,7 @@ const data = {
         total: 2208,
         unique_editors: 4,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:Ocatecir',
       },
       {
         title: 'Jean Piaget',
@@ -2232,6 +2543,7 @@ const data = {
         total: 2029,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Jean_Piaget',
       },
       {
         title: 'Nuance Communications',
@@ -2239,6 +2551,7 @@ const data = {
         total: 1895,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Nuance_Communications',
       },
       {
         title: 'David Hilbert',
@@ -2246,6 +2559,7 @@ const data = {
         total: 1705,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/David_Hilbert',
       },
       {
         title: 'Jutsu (Naruto)',
@@ -2253,6 +2567,7 @@ const data = {
         total: 1768,
         unique_editors: 2,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/Naruto',
       },
     ],
     total: [
@@ -2262,6 +2577,7 @@ const data = {
         total: 50108,
         unique_editors: 9,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Merced',
       },
       {
         title: 'Parthia',
@@ -2269,6 +2585,7 @@ const data = {
         total: 40712,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Parthia',
       },
       {
         title: 'University of California, Merced',
@@ -2276,6 +2593,7 @@ const data = {
         total: 18013,
         unique_editors: 114,
         edits: 195,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Merced',
       },
       {
         title: 'List of Black Clover characters',
@@ -2283,6 +2601,7 @@ const data = {
         total: 13399,
         unique_editors: 2,
         edits: 143,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Black_Clover_characters',
       },
       {
         title: 'Snob',
@@ -2290,6 +2609,7 @@ const data = {
         total: 6212,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Snob',
       },
       {
         title: 'Sugar Ray',
@@ -2297,6 +2617,7 @@ const data = {
         total: 6114,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Sugar_Ray',
       },
       {
         title: 'Walter Bradford Cannon',
@@ -2304,6 +2625,7 @@ const data = {
         total: 5989,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Walter_Bradford_Cannon',
       },
       {
         title: 'George Stephanopoulos',
@@ -2311,6 +2633,7 @@ const data = {
         total: 5640,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/George_Stephanopoulos',
       },
       {
         title: 'Society for Computation in Psychology',
@@ -2318,6 +2641,7 @@ const data = {
         total: 4911,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Society_for_Computation_in_Psychology',
       },
       {
         title: 'The Maid (2005 film)',
@@ -2325,6 +2649,7 @@ const data = {
         total: 4263,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/The_Maid_(2005_film)',
       },
       {
         title: 'Calibishie',
@@ -2332,6 +2657,7 @@ const data = {
         total: 3892,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Calibishie',
       },
       {
         title: 'Persephone',
@@ -2339,6 +2665,7 @@ const data = {
         total: 3813,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Persephone',
       },
       {
         title: 'FAFSA',
@@ -2346,6 +2673,7 @@ const data = {
         total: 3608,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/FAFSA',
       },
       {
         title: 'Yale University',
@@ -2353,6 +2681,7 @@ const data = {
         total: 2998,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Yale_University',
       },
       {
         title: 'Cognitive dissonance',
@@ -2360,6 +2689,7 @@ const data = {
         total: 2742,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Cognitive_dissonance',
       },
     ],
     unique: [
@@ -2369,6 +2699,7 @@ const data = {
         total: 18013,
         unique_editors: 114,
         edits: 195,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Merced',
       },
       {
         title: 'Merced, California',
@@ -2376,6 +2707,7 @@ const data = {
         total: 1244,
         unique_editors: 13,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Merced,_California',
       },
       {
         title: 'Talk:University of California, Merced',
@@ -2383,6 +2715,7 @@ const data = {
         total: 50108,
         unique_editors: 9,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Merced',
       },
       {
         title: 'University of California',
@@ -2390,6 +2723,7 @@ const data = {
         total: 15,
         unique_editors: 5,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California',
       },
       {
         title: 'User talk:Ocatecir',
@@ -2397,6 +2731,7 @@ const data = {
         total: 2208,
         unique_editors: 4,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:Ocatecir',
       },
       {
         title: 'Sigma Delta Alpha',
@@ -2404,6 +2739,7 @@ const data = {
         total: 225,
         unique_editors: 4,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/Sigma_Delta_Alpha',
       },
       {
         title: 'Alan Dawa Dolma',
@@ -2411,6 +2747,7 @@ const data = {
         total: 94,
         unique_editors: 4,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Alan_Dawa_Dolma',
       },
       {
         title: 'Scripps Ranch High School',
@@ -2418,6 +2755,7 @@ const data = {
         total: 314,
         unique_editors: 3,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Scripps_Ranch_High_School',
       },
       {
         title: 'List of Sigma Alpha Epsilon chapters',
@@ -2425,6 +2763,7 @@ const data = {
         total: 91,
         unique_editors: 3,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Sigma_Alpha_Epsilon_chapters',
       },
       {
         title: 'Delta Epsilon Mu',
@@ -2432,6 +2771,7 @@ const data = {
         total: 224,
         unique_editors: 3,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/Delta_Epsilon_Mu',
       },
       {
         title: 'Asuna Kagurazaka',
@@ -2439,6 +2779,7 @@ const data = {
         total: 1667,
         unique_editors: 3,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Negima!_Magister_Negi_Magi_characters',
       },
       {
         title: 'Aruba',
@@ -2446,6 +2787,7 @@ const data = {
         total: 348,
         unique_editors: 3,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Aruba',
       },
       {
         title: 'Ziad Rahbani',
@@ -2453,6 +2795,7 @@ const data = {
         total: 201,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Ziad_Rahbani',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -2460,6 +2803,7 @@ const data = {
         total: 546,
         unique_editors: 2,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
       {
         title: 'Westmoor High School',
@@ -2467,6 +2811,7 @@ const data = {
         total: 695,
         unique_editors: 2,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Westmoor_High_School',
       },
     ],
     edits: [
@@ -2476,6 +2821,7 @@ const data = {
         total: 18013,
         unique_editors: 114,
         edits: 195,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Merced',
       },
       {
         title: 'List of Black Clover characters',
@@ -2483,6 +2829,7 @@ const data = {
         total: 13399,
         unique_editors: 2,
         edits: 143,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Black_Clover_characters',
       },
       {
         title: 'Jutsu (Naruto)',
@@ -2490,6 +2837,7 @@ const data = {
         total: 1768,
         unique_editors: 2,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/Naruto',
       },
       {
         title: 'Merced, California',
@@ -2497,6 +2845,7 @@ const data = {
         total: 1244,
         unique_editors: 13,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Merced,_California',
       },
       {
         title: 'Alejandro Saab',
@@ -2504,6 +2853,7 @@ const data = {
         total: 1166,
         unique_editors: 1,
         edits: 18,
+        urls: 'https://en.wikipedia.org/wiki/Alejandro_Saab',
       },
       {
         title: 'Raymond Chiao',
@@ -2511,6 +2861,7 @@ const data = {
         total: 1233,
         unique_editors: 1,
         edits: 15,
+        urls: 'https://en.wikipedia.org/wiki/Raymond_Chiao',
       },
       {
         title: 'Talk:Merced Assembly Center',
@@ -2518,6 +2869,7 @@ const data = {
         total: 2690,
         unique_editors: 2,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Merced_Assembly_Center',
       },
       {
         title: 'Talk:University of California, Merced',
@@ -2525,6 +2877,7 @@ const data = {
         total: 50108,
         unique_editors: 9,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Merced',
       },
       {
         title: 'List of Sigma Alpha Epsilon chapters',
@@ -2532,6 +2885,7 @@ const data = {
         total: 91,
         unique_editors: 3,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Sigma_Alpha_Epsilon_chapters',
       },
       {
         title: 'Westmoor High School',
@@ -2539,6 +2893,7 @@ const data = {
         total: 695,
         unique_editors: 2,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Westmoor_High_School',
       },
       {
         title: 'Lifted Research Group',
@@ -2546,6 +2901,7 @@ const data = {
         total: 2079,
         unique_editors: 1,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Lifted_Research_Group',
       },
       {
         title: 'Soft matter',
@@ -2553,6 +2909,7 @@ const data = {
         total: 239,
         unique_editors: 1,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Soft_matter',
       },
       {
         title: 'Alan Dawa Dolma',
@@ -2560,6 +2917,7 @@ const data = {
         total: 94,
         unique_editors: 4,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Alan_Dawa_Dolma',
       },
       {
         title: 'University of California',
@@ -2567,6 +2925,7 @@ const data = {
         total: 15,
         unique_editors: 5,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California',
       },
       {
         title: 'Sigma Delta Alpha',
@@ -2574,6 +2933,7 @@ const data = {
         total: 225,
         unique_editors: 4,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/Sigma_Delta_Alpha',
       },
     ],
     net_asc: [
@@ -2583,6 +2943,7 @@ const data = {
         total: 50108,
         unique_editors: 9,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Merced',
       },
       {
         title: 'Sugar Ray',
@@ -2590,6 +2951,7 @@ const data = {
         total: 6114,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Sugar_Ray',
       },
       {
         title: 'Walter Bradford Cannon',
@@ -2597,6 +2959,7 @@ const data = {
         total: 5989,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Walter_Bradford_Cannon',
       },
       {
         title: 'Snob',
@@ -2604,6 +2967,7 @@ const data = {
         total: 6212,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Snob',
       },
       {
         title: 'George Stephanopoulos',
@@ -2611,6 +2975,7 @@ const data = {
         total: 5640,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/George_Stephanopoulos',
       },
       {
         title: 'Society for Computation in Psychology',
@@ -2618,6 +2983,7 @@ const data = {
         total: 4911,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Society_for_Computation_in_Psychology',
       },
       {
         title: 'The Maid (2005 film)',
@@ -2625,6 +2991,7 @@ const data = {
         total: 4263,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/The_Maid_(2005_film)',
       },
       {
         title: 'Persephone',
@@ -2632,6 +2999,7 @@ const data = {
         total: 3813,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Persephone',
       },
       {
         title: 'Yale University',
@@ -2639,6 +3007,7 @@ const data = {
         total: 2998,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Yale_University',
       },
       {
         title: 'Macquarie University',
@@ -2646,6 +3015,7 @@ const data = {
         total: 2157,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Macquarie_University',
       },
       {
         title: 'University of Oregon',
@@ -2653,6 +3023,7 @@ const data = {
         total: 1769,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/University_of_Oregon',
       },
       {
         title: 'List of Ig Nobel Prize winners',
@@ -2660,6 +3031,7 @@ const data = {
         total: 1744,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners',
       },
       {
         title: 'San Diego State University',
@@ -2667,6 +3039,7 @@ const data = {
         total: 1671,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/San_Diego_State_University',
       },
       {
         title: 'Asuna Kagurazaka',
@@ -2674,6 +3047,7 @@ const data = {
         total: 1667,
         unique_editors: 3,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Negima!_Magister_Negi_Magi_characters',
       },
       {
         title: 'Problematization',
@@ -2681,6 +3055,7 @@ const data = {
         total: 1655,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Problematization',
       },
     ],
   },
@@ -2692,6 +3067,7 @@ const data = {
         total: 2226,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Rancho_Marino_Reserve',
       },
       {
         title: 'Template talk:Protected areas of California',
@@ -2699,6 +3075,7 @@ const data = {
         total: 1938,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Template_talk:Protected_areas_of_California',
       },
       {
         title: 'Washington University in St. Louis',
@@ -2706,6 +3083,7 @@ const data = {
         total: 1674,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Washington_University_in_St._Louis',
       },
       {
         title: 'The EndUp',
@@ -2713,6 +3091,7 @@ const data = {
         total: 1510,
         unique_editors: 1,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/The_EndUp',
       },
       {
         title: 'Talk:HTTP cookie',
@@ -2720,6 +3099,7 @@ const data = {
         total: 1096,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:HTTP_cookie',
       },
       {
         title: 'Talk:Tag (metadata)',
@@ -2727,6 +3107,7 @@ const data = {
         total: 977,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Tag_(metadata)',
       },
       {
         title: 'LaGuardia Airport',
@@ -2734,6 +3115,7 @@ const data = {
         total: 916,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/LaGuardia_Airport',
       },
       {
         title: 'Burns Piñon Ridge Reserve',
@@ -2741,6 +3123,7 @@ const data = {
         total: 750,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Burns_Pi%C3%B1on_Ridge_Reserve',
       },
       {
         title: 'Film Quarterly',
@@ -2748,6 +3131,7 @@ const data = {
         total: 716,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Film_Quarterly',
       },
       {
         title: 'Wayne Williams',
@@ -2755,6 +3139,7 @@ const data = {
         total: 655,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wayne_Williams',
       },
       {
         title: 'Martinez, California',
@@ -2762,6 +3147,7 @@ const data = {
         total: 559,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Martinez,_California',
       },
       {
         title: 'List of protests and demonstrations in the United States by size',
@@ -2769,6 +3155,7 @@ const data = {
         total: 604,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/List_of_protests_and_demonstrations_in_the_United_States_by_size',
       },
       {
         title: 'Talk:Snoring',
@@ -2776,6 +3163,7 @@ const data = {
         total: 474,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Snoring',
       },
       {
         title: 'University of California Natural Reserve System',
@@ -2783,6 +3171,7 @@ const data = {
         total: 642,
         unique_editors: 4,
         edits: 13,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California_Natural_Reserve_System',
       },
       {
         title: 'King Lear',
@@ -2790,6 +3179,7 @@ const data = {
         total: 440,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/King_Lear',
       },
     ],
     total: [
@@ -2799,6 +3189,7 @@ const data = {
         total: 7294,
         unique_editors: 2,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Mark_Yudof',
       },
       {
         title: 'Rancho Marino Reserve',
@@ -2806,6 +3197,7 @@ const data = {
         total: 2226,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Rancho_Marino_Reserve',
       },
       {
         title: 'Template talk:Protected areas of California',
@@ -2813,6 +3205,7 @@ const data = {
         total: 1938,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Template_talk:Protected_areas_of_California',
       },
       {
         title: 'Washington University in St. Louis',
@@ -2820,6 +3213,7 @@ const data = {
         total: 1674,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Washington_University_in_St._Louis',
       },
       {
         title: 'The EndUp',
@@ -2827,6 +3221,7 @@ const data = {
         total: 1510,
         unique_editors: 1,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/The_EndUp',
       },
       {
         title: 'Starship Entertainment',
@@ -2834,6 +3229,7 @@ const data = {
         total: 1161,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Starship_Entertainment',
       },
       {
         title: 'Talk:HTTP cookie',
@@ -2841,6 +3237,7 @@ const data = {
         total: 1096,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:HTTP_cookie',
       },
       {
         title: 'Talk:Tag (metadata)',
@@ -2848,6 +3245,7 @@ const data = {
         total: 977,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Tag_(metadata)',
       },
       {
         title: 'Ishtar',
@@ -2855,6 +3253,7 @@ const data = {
         total: 945,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Inanna',
       },
       {
         title: 'LaGuardia Airport',
@@ -2862,6 +3261,7 @@ const data = {
         total: 916,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/LaGuardia_Airport',
       },
       {
         title: 'Martin Gore',
@@ -2869,6 +3269,7 @@ const data = {
         total: 827,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Martin_Gore',
       },
       {
         title: 'Burns Piñon Ridge Reserve',
@@ -2876,6 +3277,7 @@ const data = {
         total: 750,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Burns_Pi%C3%B1on_Ridge_Reserve',
       },
       {
         title: 'Film Quarterly',
@@ -2883,6 +3285,7 @@ const data = {
         total: 716,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Film_Quarterly',
       },
       {
         title: 'Aquatic Park (Berkeley)',
@@ -2890,6 +3293,7 @@ const data = {
         total: 674,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Aquatic_Park_(Berkeley)',
       },
       {
         title: 'Wayne Williams',
@@ -2897,6 +3301,7 @@ const data = {
         total: 655,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wayne_Williams',
       },
     ],
     unique: [
@@ -2906,6 +3311,7 @@ const data = {
         total: 642,
         unique_editors: 4,
         edits: 13,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California_Natural_Reserve_System',
       },
       {
         title: 'Lucena',
@@ -2913,6 +3319,7 @@ const data = {
         total: 284,
         unique_editors: 3,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Lucena',
       },
       {
         title: 'Vallejo, California',
@@ -2920,6 +3327,7 @@ const data = {
         total: 104,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Vallejo,_California',
       },
       {
         title: 'The Book of Matt',
@@ -2927,6 +3335,7 @@ const data = {
         total: 62,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/The_Book_of_Matt',
       },
       {
         title: 'Santa Cruz Island',
@@ -2934,6 +3343,7 @@ const data = {
         total: 387,
         unique_editors: 2,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Santa_Cruz_Island',
       },
       {
         title: 'Mark Yudof',
@@ -2941,6 +3351,7 @@ const data = {
         total: 7294,
         unique_editors: 2,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Mark_Yudof',
       },
       {
         title: 'List of people associated with the London School of Economics',
@@ -2948,6 +3359,7 @@ const data = {
         total: 234,
         unique_editors: 2,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/List_of_people_associated_with_the_London_School_of_Economics',
       },
       {
         title: 'California Digital Library',
@@ -2955,6 +3367,7 @@ const data = {
         total: 201,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/California_Digital_Library',
       },
       {
         title: 'CICS',
@@ -2962,6 +3375,7 @@ const data = {
         total: 19,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/CICS',
       },
       {
         title: 'Zabriskie Point',
@@ -2969,6 +3383,7 @@ const data = {
         total: 0,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Zabriskie_Point',
       },
       {
         title: 'Yenda Thalaiyila Yenna Vekkala',
@@ -2976,6 +3391,7 @@ const data = {
         total: 0,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Yenda_Thalaiyila_Yenna_Vekkala',
       },
       {
         title: 'Yayati',
@@ -2983,6 +3399,7 @@ const data = {
         total: 434,
         unique_editors: 1,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/Yayati',
       },
       {
         title: 'XTF',
@@ -2990,6 +3407,7 @@ const data = {
         total: 16,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/XTF',
       },
       {
         title: 'WordPerfect',
@@ -2997,6 +3415,7 @@ const data = {
         total: 8,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/WordPerfect',
       },
       {
         title: 'Winfield, Kansas',
@@ -3004,6 +3423,7 @@ const data = {
         total: 8,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Winfield,_Kansas',
       },
     ],
     edits: [
@@ -3013,6 +3433,7 @@ const data = {
         total: 523,
         unique_editors: 1,
         edits: 15,
+        urls: 'https://en.wikipedia.org/wiki/Frank_McCourt',
       },
       {
         title: 'University of California Natural Reserve System',
@@ -3020,6 +3441,7 @@ const data = {
         total: 642,
         unique_editors: 4,
         edits: 13,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California_Natural_Reserve_System',
       },
       {
         title: 'Wikipedia:Tutorial (historical)/Editing/sandbox',
@@ -3027,6 +3449,7 @@ const data = {
         total: 287,
         unique_editors: 1,
         edits: 12,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Yayati',
@@ -3034,6 +3457,7 @@ const data = {
         total: 434,
         unique_editors: 1,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/Yayati',
       },
       {
         title: 'The EndUp',
@@ -3041,6 +3465,7 @@ const data = {
         total: 1510,
         unique_editors: 1,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/The_EndUp',
       },
       {
         title: 'List of people associated with the London School of Economics',
@@ -3048,6 +3473,7 @@ const data = {
         total: 234,
         unique_editors: 2,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/List_of_people_associated_with_the_London_School_of_Economics',
       },
       {
         title: 'Mark Yudof',
@@ -3055,6 +3481,7 @@ const data = {
         total: 7294,
         unique_editors: 2,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Mark_Yudof',
       },
       {
         title: 'Lucena',
@@ -3062,6 +3489,7 @@ const data = {
         total: 284,
         unique_editors: 3,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Lucena',
       },
       {
         title: 'Conguillío National Park',
@@ -3069,6 +3497,7 @@ const data = {
         total: 44,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Conguill%C3%ADo_National_Park',
       },
       {
         title: 'Washington University in St. Louis',
@@ -3076,6 +3505,7 @@ const data = {
         total: 1674,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Washington_University_in_St._Louis',
       },
       {
         title: 'Rancho Marino Reserve',
@@ -3083,6 +3513,7 @@ const data = {
         total: 2226,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Rancho_Marino_Reserve',
       },
       {
         title: 'Min Jin Lee',
@@ -3090,6 +3521,7 @@ const data = {
         total: 51,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Min_Jin_Lee',
       },
       {
         title: 'List of protests and demonstrations in the United States by size',
@@ -3097,6 +3529,7 @@ const data = {
         total: 604,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/List_of_protests_and_demonstrations_in_the_United_States_by_size',
       },
       {
         title: 'King Lear',
@@ -3104,6 +3537,7 @@ const data = {
         total: 440,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/King_Lear',
       },
       {
         title: 'Guy de La Brosse',
@@ -3111,6 +3545,7 @@ const data = {
         total: 203,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Guy_de_La_Brosse',
       },
     ],
     net_asc: [
@@ -3120,6 +3555,7 @@ const data = {
         total: 7294,
         unique_editors: 2,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Mark_Yudof',
       },
       {
         title: 'Starship Entertainment',
@@ -3127,6 +3563,7 @@ const data = {
         total: 1161,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Starship_Entertainment',
       },
       {
         title: 'Ishtar',
@@ -3134,6 +3571,7 @@ const data = {
         total: 945,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Inanna',
       },
       {
         title: 'Martin Gore',
@@ -3141,6 +3579,7 @@ const data = {
         total: 827,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Martin_Gore',
       },
       {
         title: 'MVS',
@@ -3148,6 +3587,7 @@ const data = {
         total: 304,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/MVS',
       },
       {
         title: 'Andrea Kelly',
@@ -3155,6 +3595,7 @@ const data = {
         total: 264,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Andrea_Kelly',
       },
       {
         title: 'Paris Is Burning (film)',
@@ -3162,6 +3603,7 @@ const data = {
         total: 209,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Paris_Is_Burning_(film)',
       },
       {
         title: 'University of California',
@@ -3169,6 +3611,7 @@ const data = {
         total: 202,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California',
       },
       {
         title: 'Happy Meal',
@@ -3176,6 +3619,7 @@ const data = {
         total: 193,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Happy_Meal',
       },
       {
         title: 'Stewardship',
@@ -3183,6 +3627,7 @@ const data = {
         total: 190,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Stewardship',
       },
       {
         title: 'Time Sharing Option',
@@ -3190,6 +3635,7 @@ const data = {
         total: 184,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Time_Sharing_Option',
       },
       {
         title: 'List of programming languages by type',
@@ -3197,6 +3643,7 @@ const data = {
         total: 172,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/List_of_programming_languages_by_type',
       },
       {
         title: 'Angelo Garcia',
@@ -3204,6 +3651,7 @@ const data = {
         total: 166,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Angelo_Garcia',
       },
       {
         title: 'Battlecruiser',
@@ -3211,6 +3659,7 @@ const data = {
         total: 163,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Battlecruiser',
       },
       {
         title: 'New Model Army',
@@ -3218,6 +3667,7 @@ const data = {
         total: 161,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/New_Model_Army',
       },
     ],
   },
@@ -3229,6 +3679,7 @@ const data = {
         total: 32658,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Mighty_Morphin_Power_Rangers',
       },
       {
         title: 'Metz',
@@ -3236,6 +3687,7 @@ const data = {
         total: 30969,
         unique_editors: 6,
         edits: 80,
+        urls: 'https://en.wikipedia.org/wiki/Metz',
       },
       {
         title: 'File system',
@@ -3243,6 +3695,7 @@ const data = {
         total: 19807,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/File_system',
       },
       {
         title: 'Talk:Tori Amos',
@@ -3250,6 +3703,7 @@ const data = {
         total: 16267,
         unique_editors: 4,
         edits: 18,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Tori_Amos',
       },
       {
         title: 'Santiago Canyon Fire',
@@ -3257,6 +3711,7 @@ const data = {
         total: 13026,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Santiago_Canyon_Fire',
       },
       {
         title: 'Mooretown Rancheria of Maidu Indians',
@@ -3264,6 +3719,7 @@ const data = {
         total: 12752,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Mooretown_Rancheria_of_Maidu_Indians',
       },
       {
         title: '2006 in film',
@@ -3271,6 +3727,7 @@ const data = {
         total: 11807,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/2006_in_film',
       },
       {
         title: 'List of NFL Coach of the Year awards',
@@ -3278,6 +3735,7 @@ const data = {
         total: 16167,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/List_of_NFL_Coach_of_the_Year_awards',
       },
       {
         title: 'Talk:University of California, Riverside',
@@ -3285,6 +3743,7 @@ const data = {
         total: 14908,
         unique_editors: 7,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Riverside',
       },
       {
         title: 'Mega Man Zero',
@@ -3292,6 +3751,7 @@ const data = {
         total: 11288,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Mega_Man_Zero',
       },
       {
         title: 'Lambda Phi Epsilon',
@@ -3299,6 +3759,7 @@ const data = {
         total: 11584,
         unique_editors: 4,
         edits: 15,
+        urls: 'https://en.wikipedia.org/wiki/Lambda_Phi_Epsilon',
       },
       {
         title: 'Talk:Apologize (song)',
@@ -3306,6 +3767,7 @@ const data = {
         total: 9191,
         unique_editors: 4,
         edits: 14,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Apologize_(song)',
       },
       {
         title: 'Sandstone',
@@ -3313,6 +3775,7 @@ const data = {
         total: 9140,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Sandstone',
       },
       {
         title: 'Primetime Emmy Award for Outstanding Lead Actor in a Comedy Series',
@@ -3320,6 +3783,7 @@ const data = {
         total: 8582,
         unique_editors: 1,
         edits: 14,
+        urls: 'https://en.wikipedia.org/wiki/Primetime_Emmy_Award_for_Outstanding_Lead_Actor_in_a_Comedy_Series',
       },
       {
         title: 'Wikipedia:WikiProject Articles requested for more than a year',
@@ -3327,6 +3791,7 @@ const data = {
         total: 6762,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Articles_requested_for_more_than_a_year',
       },
     ],
     total: [
@@ -3336,6 +3801,7 @@ const data = {
         total: 63270,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/David_Hume',
       },
       {
         title: '613 commandments',
@@ -3343,6 +3809,7 @@ const data = {
         total: 61529,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/613_commandments',
       },
       {
         title: 'Superman',
@@ -3350,6 +3817,7 @@ const data = {
         total: 49690,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Superman',
       },
       {
         title: 'Albert Einstein',
@@ -3357,6 +3825,7 @@ const data = {
         total: 45684,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Albert_Einstein',
       },
       {
         title: 'Same-sex marriage',
@@ -3364,6 +3833,7 @@ const data = {
         total: 44848,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Same-sex_marriage',
       },
       {
         title: 'John McCain',
@@ -3371,6 +3841,7 @@ const data = {
         total: 44398,
         unique_editors: 2,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/John_McCain',
       },
       {
         title: 'George W. Bush',
@@ -3378,6 +3849,7 @@ const data = {
         total: 43999,
         unique_editors: 3,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/George_W._Bush',
       },
       {
         title: 'One Missed Call (2003 film)',
@@ -3385,6 +3857,7 @@ const data = {
         total: 42133,
         unique_editors: 3,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/One_Missed_Call_(2003_film)',
       },
       {
         title: 'Möbius transformation',
@@ -3392,6 +3865,7 @@ const data = {
         total: 37112,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/M%C3%B6bius_transformation',
       },
       {
         title: 'Mighty Morphin Power Rangers',
@@ -3399,6 +3873,7 @@ const data = {
         total: 32658,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Mighty_Morphin_Power_Rangers',
       },
       {
         title: '59th Primetime Emmy Awards',
@@ -3406,6 +3881,7 @@ const data = {
         total: 31506,
         unique_editors: 4,
         edits: 34,
+        urls: 'https://en.wikipedia.org/wiki/59th_Primetime_Emmy_Awards',
       },
       {
         title: 'Utah',
@@ -3413,6 +3889,7 @@ const data = {
         total: 30993,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Utah',
       },
       {
         title: 'Metz',
@@ -3420,6 +3897,7 @@ const data = {
         total: 30969,
         unique_editors: 6,
         edits: 80,
+        urls: 'https://en.wikipedia.org/wiki/Metz',
       },
       {
         title: 'Final Destination (film)',
@@ -3427,6 +3905,7 @@ const data = {
         total: 23338,
         unique_editors: 3,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Final_Destination_(film)',
       },
       {
         title: 'List of Kyle XY episodes',
@@ -3434,6 +3913,7 @@ const data = {
         total: 23039,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Kyle_XY_episodes',
       },
     ],
     unique: [
@@ -3443,6 +3923,7 @@ const data = {
         total: 18745,
         unique_editors: 59,
         edits: 149,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Riverside',
       },
       {
         title: 'List of oldest living people',
@@ -3450,6 +3931,7 @@ const data = {
         total: 1563,
         unique_editors: 11,
         edits: 14,
+        urls: 'https://en.wikipedia.org/wiki/List_of_oldest_living_people',
       },
       {
         title: 'Wikipedia:Meetup/Riverside/WLL/2013',
@@ -3457,6 +3939,7 @@ const data = {
         total: 831,
         unique_editors: 9,
         edits: 29,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Meetup/Riverside/WLL/2013',
       },
       {
         title: 'Charles Evered',
@@ -3464,6 +3947,7 @@ const data = {
         total: 978,
         unique_editors: 9,
         edits: 21,
+        urls: 'https://en.wikipedia.org/wiki/Charles_Evered',
       },
       {
         title: 'Theodore Garland Jr.',
@@ -3471,6 +3955,7 @@ const data = {
         total: 5616,
         unique_editors: 8,
         edits: 38,
+        urls: 'https://en.wikipedia.org/wiki/Theodore_Garland_Jr.',
       },
       {
         title: 'Talk:University of California, Riverside',
@@ -3478,6 +3963,7 @@ const data = {
         total: 14908,
         unique_editors: 7,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Riverside',
       },
       {
         title: 'Volleyball variations',
@@ -3485,6 +3971,7 @@ const data = {
         total: 1966,
         unique_editors: 6,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Volleyball_variations',
       },
       {
         title: 'Riverside, California',
@@ -3492,6 +3979,7 @@ const data = {
         total: 646,
         unique_editors: 6,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Riverside,_California',
       },
       {
         title: 'Metz',
@@ -3499,6 +3987,7 @@ const data = {
         total: 30969,
         unique_editors: 6,
         edits: 80,
+        urls: 'https://en.wikipedia.org/wiki/Metz',
       },
       {
         title: 'Jess Nevins',
@@ -3506,6 +3995,7 @@ const data = {
         total: 733,
         unique_editors: 6,
         edits: 17,
+        urls: 'https://en.wikipedia.org/wiki/Jess_Nevins',
       },
       {
         title: 'Garrison Keillor',
@@ -3513,6 +4003,7 @@ const data = {
         total: 1490,
         unique_editors: 6,
         edits: 28,
+        urls: 'https://en.wikipedia.org/wiki/Garrison_Keillor',
       },
       {
         title: 'Evolutionary physiology',
@@ -3520,6 +4011,7 @@ const data = {
         total: 3721,
         unique_editors: 6,
         edits: 42,
+        urls: 'https://en.wikipedia.org/wiki/Evolutionary_physiology',
       },
       {
         title: 'Apologize (song)',
@@ -3527,6 +4019,7 @@ const data = {
         total: 1363,
         unique_editors: 6,
         edits: 13,
+        urls: 'https://en.wikipedia.org/wiki/Apologize_(song)',
       },
       {
         title: 'Wikipedia:Introduction (historical)',
@@ -3534,6 +4027,7 @@ const data = {
         total: 203,
         unique_editors: 5,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Introduction_(historical)',
       },
       {
         title: 'Silent Hill (film)',
@@ -3541,6 +4035,7 @@ const data = {
         total: 5400,
         unique_editors: 5,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Silent_Hill_(film)',
       },
     ],
     edits: [
@@ -3550,6 +4045,7 @@ const data = {
         total: 18745,
         unique_editors: 59,
         edits: 149,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Riverside',
       },
       {
         title: 'Metz',
@@ -3557,6 +4053,7 @@ const data = {
         total: 30969,
         unique_editors: 6,
         edits: 80,
+        urls: 'https://en.wikipedia.org/wiki/Metz',
       },
       {
         title: '2007 in film',
@@ -3564,6 +4061,7 @@ const data = {
         total: 2789,
         unique_editors: 4,
         edits: 47,
+        urls: 'https://en.wikipedia.org/wiki/2007_in_film',
       },
       {
         title: 'Evolutionary physiology',
@@ -3571,6 +4069,7 @@ const data = {
         total: 3721,
         unique_editors: 6,
         edits: 42,
+        urls: 'https://en.wikipedia.org/wiki/Evolutionary_physiology',
       },
       {
         title: '80th Academy Awards',
@@ -3578,6 +4077,7 @@ const data = {
         total: 20727,
         unique_editors: 2,
         edits: 41,
+        urls: 'https://en.wikipedia.org/wiki/80th_Academy_Awards',
       },
       {
         title: 'Theodore Garland Jr.',
@@ -3585,6 +4085,7 @@ const data = {
         total: 5616,
         unique_editors: 8,
         edits: 38,
+        urls: 'https://en.wikipedia.org/wiki/Theodore_Garland_Jr.',
       },
       {
         title: '59th Primetime Emmy Awards',
@@ -3592,6 +4093,7 @@ const data = {
         total: 31506,
         unique_editors: 4,
         edits: 34,
+        urls: 'https://en.wikipedia.org/wiki/59th_Primetime_Emmy_Awards',
       },
       {
         title: 'Got Milk?',
@@ -3599,6 +4101,7 @@ const data = {
         total: 3066,
         unique_editors: 2,
         edits: 32,
+        urls: 'https://en.wikipedia.org/wiki/Got_Milk%3F',
       },
       {
         title: 'Efforts to impeach George W. Bush',
@@ -3606,6 +4109,7 @@ const data = {
         total: 7809,
         unique_editors: 3,
         edits: 32,
+        urls: 'https://en.wikipedia.org/wiki/Efforts_to_impeach_George_W._Bush',
       },
       {
         title: 'Talk:University of California, Riverside',
@@ -3613,6 +4117,7 @@ const data = {
         total: 14908,
         unique_editors: 7,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Riverside',
       },
       {
         title: 'List of Primetime Emmy Awards ceremonies',
@@ -3620,6 +4125,7 @@ const data = {
         total: 6371,
         unique_editors: 2,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Primetime_Emmy_Awards_ceremonies',
       },
       {
         title: '2008 in film',
@@ -3627,6 +4133,7 @@ const data = {
         total: 7185,
         unique_editors: 2,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/2008_in_film',
       },
       {
         title: 'Wikipedia:Meetup/Riverside/WLL/2013',
@@ -3634,6 +4141,7 @@ const data = {
         total: 831,
         unique_editors: 9,
         edits: 29,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Meetup/Riverside/WLL/2013',
       },
       {
         title: 'Garrison Keillor',
@@ -3641,6 +4149,7 @@ const data = {
         total: 1490,
         unique_editors: 6,
         edits: 28,
+        urls: 'https://en.wikipedia.org/wiki/Garrison_Keillor',
       },
       {
         title: 'List of PBS logos',
@@ -3648,6 +4157,7 @@ const data = {
         total: 1167,
         unique_editors: 3,
         edits: 26,
+        urls: 'https://en.wikipedia.org/wiki/PBS',
       },
     ],
     net_asc: [
@@ -3657,6 +4167,7 @@ const data = {
         total: 63270,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/David_Hume',
       },
       {
         title: '613 commandments',
@@ -3664,6 +4175,7 @@ const data = {
         total: 61529,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/613_commandments',
       },
       {
         title: 'Superman',
@@ -3671,6 +4183,7 @@ const data = {
         total: 49690,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Superman',
       },
       {
         title: 'Albert Einstein',
@@ -3678,6 +4191,7 @@ const data = {
         total: 45684,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Albert_Einstein',
       },
       {
         title: 'Same-sex marriage',
@@ -3685,6 +4199,7 @@ const data = {
         total: 44848,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Same-sex_marriage',
       },
       {
         title: 'John McCain',
@@ -3692,6 +4207,7 @@ const data = {
         total: 44398,
         unique_editors: 2,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/John_McCain',
       },
       {
         title: 'George W. Bush',
@@ -3699,6 +4215,7 @@ const data = {
         total: 43999,
         unique_editors: 3,
         edits: 10,
+        urls: 'https://en.wikipedia.org/wiki/George_W._Bush',
       },
       {
         title: 'Möbius transformation',
@@ -3706,6 +4223,7 @@ const data = {
         total: 37112,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/M%C3%B6bius_transformation',
       },
       {
         title: 'One Missed Call (2003 film)',
@@ -3713,6 +4231,7 @@ const data = {
         total: 42133,
         unique_editors: 3,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/One_Missed_Call_(2003_film)',
       },
       {
         title: 'Utah',
@@ -3720,6 +4239,7 @@ const data = {
         total: 30993,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Utah',
       },
       {
         title: 'Final Destination (film)',
@@ -3727,6 +4247,7 @@ const data = {
         total: 23338,
         unique_editors: 3,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Final_Destination_(film)',
       },
       {
         title: 'List of Kyle XY episodes',
@@ -3734,6 +4255,7 @@ const data = {
         total: 23039,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Kyle_XY_episodes',
       },
       {
         title: 'Flavor Flav',
@@ -3741,6 +4263,7 @@ const data = {
         total: 19036,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Flavor_Flav',
       },
       {
         title: 'Grand Theft Auto V',
@@ -3748,6 +4271,7 @@ const data = {
         total: 17473,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Grand_Theft_Auto_V',
       },
       {
         title: 'Massey Ferguson',
@@ -3755,6 +4279,7 @@ const data = {
         total: 17146,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Massey_Ferguson',
       },
     ],
   },
@@ -3766,6 +4291,7 @@ const data = {
         total: 788778,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:Infrogmation',
       },
       {
         title: 'Talk:Antifeminism',
@@ -3773,6 +4299,7 @@ const data = {
         total: 61202,
         unique_editors: 11,
         edits: 134,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Antifeminism',
       },
       {
         title: 'Talk:Control of cities during the Syrian civil war',
@@ -3780,6 +4307,7 @@ const data = {
         total: 46821,
         unique_editors: 49,
         edits: 133,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Control_of_cities_during_the_Syrian_civil_war',
       },
       {
         title: 'Talk:Misandry',
@@ -3787,6 +4315,7 @@ const data = {
         total: 40347,
         unique_editors: 10,
         edits: 39,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Misandry',
       },
       {
         title: 'Patriotic Spring',
@@ -3794,6 +4323,7 @@ const data = {
         total: 39464,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Neo-nationalism',
       },
       {
         title: 'Talk:Incest',
@@ -3801,6 +4331,7 @@ const data = {
         total: 38851,
         unique_editors: 7,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Incest',
       },
       {
         title: 'Talk:An Exceptionally Simple Theory of Everything',
@@ -3808,6 +4339,7 @@ const data = {
         total: 35822,
         unique_editors: 2,
         edits: 22,
+        urls: 'https://en.wikipedia.org/wiki/Talk:An_Exceptionally_Simple_Theory_of_Everything',
       },
       {
         title: 'Outlast',
@@ -3815,6 +4347,7 @@ const data = {
         total: 33707,
         unique_editors: 11,
         edits: 24,
+        urls: 'https://en.wikipedia.org/wiki/Outlast',
       },
       {
         title: 'Survivor (American TV series)',
@@ -3822,6 +4355,7 @@ const data = {
         total: 28287,
         unique_editors: 16,
         edits: 25,
+        urls: 'https://en.wikipedia.org/wiki/Survivor_(American_TV_series)',
       },
       {
         title: 'Ben Carson 2016 presidential campaign',
@@ -3829,6 +4363,7 @@ const data = {
         total: 45058,
         unique_editors: 19,
         edits: 50,
+        urls: 'https://en.wikipedia.org/wiki/Ben_Carson_2016_presidential_campaign',
       },
       {
         title: '2016 Republican Party presidential primaries',
@@ -3836,6 +4371,7 @@ const data = {
         total: 42735,
         unique_editors: 28,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/2016_Republican_Party_presidential_primaries',
       },
       {
         title: 'Harry Potter and the Chamber of Secrets (film)',
@@ -3843,6 +4379,7 @@ const data = {
         total: 23759,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Harry_Potter_and_the_Chamber_of_Secrets_(film)',
       },
       {
         title: 'Wikipedia talk:WikiProject Gender studies',
@@ -3850,6 +4387,7 @@ const data = {
         total: 24236,
         unique_editors: 4,
         edits: 65,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia_talk:WikiProject_Gender_studies',
       },
       {
         title: 'List of The Walking Dead (TV series) characters',
@@ -3857,6 +4395,7 @@ const data = {
         total: 22383,
         unique_editors: 17,
         edits: 33,
+        urls: 'https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters',
       },
       {
         title: 'Talk:Excommunication',
@@ -3864,6 +4403,7 @@ const data = {
         total: 20922,
         unique_editors: 6,
         edits: 14,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Excommunication',
       },
     ],
     total: [
@@ -3873,6 +4413,7 @@ const data = {
         total: 788778,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:Infrogmation',
       },
       {
         title: 'Bertrand Russell',
@@ -3880,6 +4421,7 @@ const data = {
         total: 101483,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Bertrand_Russell',
       },
       {
         title: 'Republican Party (United States)',
@@ -3887,6 +4429,7 @@ const data = {
         total: 78958,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Republican_Party_(United_States)',
       },
       {
         title: 'Incest',
@@ -3894,6 +4437,7 @@ const data = {
         total: 72471,
         unique_editors: 8,
         edits: 120,
+        urls: 'https://en.wikipedia.org/wiki/Incest',
       },
       {
         title: 'University of California, Santa Barbara',
@@ -3901,6 +4445,7 @@ const data = {
         total: 64318,
         unique_editors: 166,
         edits: 324,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Santa_Barbara',
       },
       {
         title: 'Uranium',
@@ -3908,6 +4453,7 @@ const data = {
         total: 64170,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Uranium',
       },
       {
         title: 'Talk:Antifeminism',
@@ -3915,6 +4461,7 @@ const data = {
         total: 61202,
         unique_editors: 11,
         edits: 134,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Antifeminism',
       },
       {
         title: 'Muqtada al-Sadr',
@@ -3922,6 +4469,7 @@ const data = {
         total: 58009,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Muqtada_al-Sadr',
       },
       {
         title: 'Y',
@@ -3929,6 +4477,7 @@ const data = {
         total: 54656,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Y',
       },
       {
         title: 'Cain and Abel',
@@ -3936,6 +4485,7 @@ const data = {
         total: 47273,
         unique_editors: 2,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Cain_and_Abel',
       },
       {
         title: 'Suleiman the Magnificent',
@@ -3943,6 +4493,7 @@ const data = {
         total: 46910,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Suleiman_the_Magnificent',
       },
       {
         title: 'Talk:Control of cities during the Syrian civil war',
@@ -3950,6 +4501,7 @@ const data = {
         total: 46821,
         unique_editors: 49,
         edits: 133,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Control_of_cities_during_the_Syrian_civil_war',
       },
       {
         title: 'Ben Carson 2016 presidential campaign',
@@ -3957,6 +4509,7 @@ const data = {
         total: 45058,
         unique_editors: 19,
         edits: 50,
+        urls: 'https://en.wikipedia.org/wiki/Ben_Carson_2016_presidential_campaign',
       },
       {
         title: 'Guatemala',
@@ -3964,6 +4517,7 @@ const data = {
         total: 43233,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Guatemala',
       },
       {
         title: '2016 Republican Party presidential primaries',
@@ -3971,6 +4525,7 @@ const data = {
         total: 42735,
         unique_editors: 28,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/2016_Republican_Party_presidential_primaries',
       },
     ],
     unique: [
@@ -3980,6 +4535,7 @@ const data = {
         total: 64318,
         unique_editors: 166,
         edits: 324,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Santa_Barbara',
       },
       {
         title: 'Extravaganza (music festival)',
@@ -3987,6 +4543,7 @@ const data = {
         total: 6456,
         unique_editors: 64,
         edits: 154,
+        urls: 'https://en.wikipedia.org/wiki/Extravaganza_(music_festival)',
       },
       {
         title: 'Talk:Control of cities during the Syrian civil war',
@@ -3994,6 +4551,7 @@ const data = {
         total: 46821,
         unique_editors: 49,
         edits: 133,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Control_of_cities_during_the_Syrian_civil_war',
       },
       {
         title: 'Wikipedia:Tutorial (historical)/Editing/sandbox',
@@ -4001,6 +4559,7 @@ const data = {
         total: 7188,
         unique_editors: 36,
         edits: 77,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'User:Tibouchina',
@@ -4008,6 +4567,7 @@ const data = {
         total: 4284,
         unique_editors: 31,
         edits: 66,
+        urls: 'https://en.wikipedia.org/wiki/User:Tibouchina',
       },
       {
         title: 'Isla Vista, California',
@@ -4015,6 +4575,7 @@ const data = {
         total: 12376,
         unique_editors: 29,
         edits: 43,
+        urls: 'https://en.wikipedia.org/wiki/Isla_Vista,_California',
       },
       {
         title: '2016 Republican Party presidential primaries',
@@ -4022,6 +4583,7 @@ const data = {
         total: 42735,
         unique_editors: 28,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/2016_Republican_Party_presidential_primaries',
       },
       {
         title: 'Santa Catalina Dorms',
@@ -4029,6 +4591,7 @@ const data = {
         total: 5557,
         unique_editors: 26,
         edits: 43,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Santa_Barbara',
       },
       {
         title: '2014 United States Senate elections',
@@ -4036,6 +4599,7 @@ const data = {
         total: 5618,
         unique_editors: 26,
         edits: 38,
+        urls: 'https://en.wikipedia.org/wiki/2014_United_States_Senate_elections',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -4043,6 +4607,7 @@ const data = {
         total: 4993,
         unique_editors: 24,
         edits: 32,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Survivor: Cagayan',
@@ -4050,6 +4615,7 @@ const data = {
         total: 10745,
         unique_editors: 22,
         edits: 28,
+        urls: 'https://en.wikipedia.org/wiki/Survivor:_Cagayan',
       },
       {
         title: 'Andy Vidak',
@@ -4057,6 +4623,7 @@ const data = {
         total: 6899,
         unique_editors: 22,
         edits: 32,
+        urls: 'https://en.wikipedia.org/wiki/Andy_Vidak',
       },
       {
         title: 'Ben Carson',
@@ -4064,6 +4631,7 @@ const data = {
         total: 11994,
         unique_editors: 20,
         edits: 30,
+        urls: 'https://en.wikipedia.org/wiki/Ben_Carson',
       },
       {
         title: 'David Valadao',
@@ -4071,6 +4639,7 @@ const data = {
         total: 6174,
         unique_editors: 19,
         edits: 29,
+        urls: 'https://en.wikipedia.org/wiki/David_Valadao',
       },
       {
         title: 'Ben Carson 2016 presidential campaign',
@@ -4078,6 +4647,7 @@ const data = {
         total: 45058,
         unique_editors: 19,
         edits: 50,
+        urls: 'https://en.wikipedia.org/wiki/Ben_Carson_2016_presidential_campaign',
       },
     ],
     edits: [
@@ -4087,6 +4657,7 @@ const data = {
         total: 64318,
         unique_editors: 166,
         edits: 324,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Santa_Barbara',
       },
       {
         title: 'Extravaganza (music festival)',
@@ -4094,6 +4665,7 @@ const data = {
         total: 6456,
         unique_editors: 64,
         edits: 154,
+        urls: 'https://en.wikipedia.org/wiki/Extravaganza_(music_festival)',
       },
       {
         title: 'List of Danzan-ryū techniques',
@@ -4101,6 +4673,7 @@ const data = {
         total: 24471,
         unique_editors: 2,
         edits: 138,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Danzan-ry%C5%AB_techniques',
       },
       {
         title: 'Excommunication',
@@ -4108,6 +4681,7 @@ const data = {
         total: 11936,
         unique_editors: 5,
         edits: 135,
+        urls: 'https://en.wikipedia.org/wiki/Excommunication',
       },
       {
         title: 'Talk:Antifeminism',
@@ -4115,6 +4689,7 @@ const data = {
         total: 61202,
         unique_editors: 11,
         edits: 134,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Antifeminism',
       },
       {
         title: 'Talk:Control of cities during the Syrian civil war',
@@ -4122,6 +4697,7 @@ const data = {
         total: 46821,
         unique_editors: 49,
         edits: 133,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Control_of_cities_during_the_Syrian_civil_war',
       },
       {
         title: 'User:Chrono1200sphere/sandbox/Acoustic camera',
@@ -4129,6 +4705,7 @@ const data = {
         total: 31330,
         unique_editors: 9,
         edits: 127,
+        urls: 'https://en.wikipedia.org/wiki/User:Chrono1200sphere/sandbox/Acoustic_camera',
       },
       {
         title: 'Incest',
@@ -4136,6 +4713,7 @@ const data = {
         total: 72471,
         unique_editors: 8,
         edits: 120,
+        urls: 'https://en.wikipedia.org/wiki/Incest',
       },
       {
         title: 'User:Wasabifire/Body Kit',
@@ -4143,6 +4721,7 @@ const data = {
         total: 9871,
         unique_editors: 5,
         edits: 102,
+        urls: 'https://en.wikipedia.org/wiki/User:Wasabifire/Body_Kit',
       },
       {
         title: 'John Warwick Montgomery',
@@ -4150,6 +4729,7 @@ const data = {
         total: 17789,
         unique_editors: 18,
         edits: 99,
+        urls: 'https://en.wikipedia.org/wiki/John_Warwick_Montgomery',
       },
       {
         title: 'Shunning',
@@ -4157,6 +4737,7 @@ const data = {
         total: 9500,
         unique_editors: 10,
         edits: 91,
+        urls: 'https://en.wikipedia.org/wiki/Shunning',
       },
       {
         title: 'Rape',
@@ -4164,6 +4745,7 @@ const data = {
         total: 11336,
         unique_editors: 13,
         edits: 86,
+        urls: 'https://en.wikipedia.org/wiki/Rape',
       },
       {
         title: 'Wikipedia:Tutorial (historical)/Editing/sandbox',
@@ -4171,6 +4753,7 @@ const data = {
         total: 7188,
         unique_editors: 36,
         edits: 77,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'List of University of California, Santa Barbara alumni',
@@ -4178,6 +4761,7 @@ const data = {
         total: 3728,
         unique_editors: 16,
         edits: 75,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_Santa_Barbara_alumni',
       },
       {
         title: 'Child sexual abuse',
@@ -4185,6 +4769,7 @@ const data = {
         total: 7769,
         unique_editors: 3,
         edits: 71,
+        urls: 'https://en.wikipedia.org/wiki/Child_sexual_abuse',
       },
     ],
     net_asc: [
@@ -4194,6 +4779,7 @@ const data = {
         total: 101483,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Bertrand_Russell',
       },
       {
         title: 'Republican Party (United States)',
@@ -4201,6 +4787,7 @@ const data = {
         total: 78958,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Republican_Party_(United_States)',
       },
       {
         title: 'Uranium',
@@ -4208,6 +4795,7 @@ const data = {
         total: 64170,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Uranium',
       },
       {
         title: 'Y',
@@ -4215,6 +4803,7 @@ const data = {
         total: 54656,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Y',
       },
       {
         title: 'Cain and Abel',
@@ -4222,6 +4811,7 @@ const data = {
         total: 47273,
         unique_editors: 2,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Cain_and_Abel',
       },
       {
         title: 'Suleiman the Magnificent',
@@ -4229,6 +4819,7 @@ const data = {
         total: 46910,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Suleiman_the_Magnificent',
       },
       {
         title: 'Guatemala',
@@ -4236,6 +4827,7 @@ const data = {
         total: 43233,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Guatemala',
       },
       {
         title: 'Cucumber',
@@ -4243,6 +4835,7 @@ const data = {
         total: 42544,
         unique_editors: 2,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Cucumber',
       },
       {
         title: 'Marshall Plan',
@@ -4250,6 +4843,7 @@ const data = {
         total: 41980,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Marshall_Plan',
       },
       {
         title: 'Russia',
@@ -4257,6 +4851,7 @@ const data = {
         total: 38222,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Russia',
       },
       {
         title: 'Mexico',
@@ -4264,6 +4859,7 @@ const data = {
         total: 37726,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Mexico',
       },
       {
         title: 'Salt',
@@ -4271,6 +4867,7 @@ const data = {
         total: 38701,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Salt',
       },
       {
         title: 'Organic chemistry',
@@ -4278,6 +4875,7 @@ const data = {
         total: 32685,
         unique_editors: 2,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Organic_chemistry',
       },
       {
         title: 'Parminder Nagra',
@@ -4285,6 +4883,7 @@ const data = {
         total: 31074,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Parminder_Nagra',
       },
       {
         title: 'Pien tze huang',
@@ -4292,6 +4891,7 @@ const data = {
         total: 28163,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Pien_tze_huang',
       },
     ],
   },
@@ -4303,6 +4903,7 @@ const data = {
         total: 202278,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:169.233.9.97',
       },
       {
         title: 'List of Naruto characters',
@@ -4310,6 +4911,7 @@ const data = {
         total: 96221,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Naruto_characters',
       },
       {
         title: 'Benjamin H. Freedman',
@@ -4317,6 +4919,7 @@ const data = {
         total: 77138,
         unique_editors: 3,
         edits: 27,
+        urls: 'https://en.wikipedia.org/wiki/Benjamin_H._Freedman',
       },
       {
         title: 'Douglas Reed',
@@ -4324,6 +4927,7 @@ const data = {
         total: 77481,
         unique_editors: 6,
         edits: 18,
+        urls: 'https://en.wikipedia.org/wiki/Douglas_Reed',
       },
       {
         title: 'Talk:Jewish Bolshevism',
@@ -4331,6 +4935,7 @@ const data = {
         total: 67976,
         unique_editors: 7,
         edits: 15,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Jewish_Bolshevism',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -4338,6 +4943,7 @@ const data = {
         total: 39697,
         unique_editors: 38,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Pavel Cherenkov',
@@ -4345,6 +4951,7 @@ const data = {
         total: 71406,
         unique_editors: 3,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Pavel_Cherenkov',
       },
       {
         title: 'Sigmund Freud',
@@ -4352,6 +4959,7 @@ const data = {
         total: 32139,
         unique_editors: 4,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Sigmund_Freud',
       },
       {
         title: 'Nancy Grace',
@@ -4359,6 +4967,7 @@ const data = {
         total: 31642,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Nancy_Grace',
       },
       {
         title: 'Two-Face',
@@ -4366,6 +4975,7 @@ const data = {
         total: 29906,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Two-Face',
       },
       {
         title: 'Chip Berlet',
@@ -4373,6 +4983,7 @@ const data = {
         total: 26057,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Chip_Berlet',
       },
       {
         title: 'List of Scientologists',
@@ -4380,6 +4991,7 @@ const data = {
         total: 23036,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Scientologists',
       },
       {
         title: 'Barry Zito',
@@ -4387,6 +4999,7 @@ const data = {
         total: 19749,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Barry_Zito',
       },
       {
         title: 'Talk:Conspiracy theory',
@@ -4394,6 +5007,7 @@ const data = {
         total: 19252,
         unique_editors: 2,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Conspiracy_theory',
       },
       {
         title: 'Richard Lynn',
@@ -4401,6 +5015,7 @@ const data = {
         total: 19194,
         unique_editors: 1,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/Richard_Lynn',
       },
     ],
     total: [
@@ -4410,6 +5025,7 @@ const data = {
         total: 328276,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:DragonflySixtyseven',
       },
       {
         title: "Wikipedia:Administrators' noticeboard/Incidents",
@@ -4417,6 +5033,7 @@ const data = {
         total: 308522,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Administrators%27_noticeboard/Incidents',
       },
       {
         title: 'Yu-Gi-Oh! Trading Card Game',
@@ -4424,6 +5041,7 @@ const data = {
         total: 266691,
         unique_editors: 3,
         edits: 12,
+        urls: 'https://en.wikipedia.org/wiki/Yu-Gi-Oh!_Trading_Card_Game',
       },
       {
         title: 'User talk:169.233.9.97',
@@ -4431,6 +5049,7 @@ const data = {
         total: 202278,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:169.233.9.97',
       },
       {
         title: 'Violet (color)',
@@ -4438,6 +5057,7 @@ const data = {
         total: 142507,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Violet_(color)',
       },
       {
         title: 'Oakland, California',
@@ -4445,6 +5065,7 @@ const data = {
         total: 102972,
         unique_editors: 5,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Oakland,_California',
       },
       {
         title: 'List of Naruto characters',
@@ -4452,6 +5073,7 @@ const data = {
         total: 96221,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Naruto_characters',
       },
       {
         title: 'Ireland',
@@ -4459,6 +5081,7 @@ const data = {
         total: 91189,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Ireland',
       },
       {
         title: 'J. Robert Oppenheimer',
@@ -4466,6 +5089,7 @@ const data = {
         total: 84884,
         unique_editors: 3,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/J._Robert_Oppenheimer',
       },
       {
         title: 'User talk:169.233.115.203',
@@ -4473,6 +5097,7 @@ const data = {
         total: 84425,
         unique_editors: 1,
         edits: 12,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:169.233.115.203',
       },
       {
         title: 'Douglas Reed',
@@ -4480,6 +5105,7 @@ const data = {
         total: 77481,
         unique_editors: 6,
         edits: 18,
+        urls: 'https://en.wikipedia.org/wiki/Douglas_Reed',
       },
       {
         title: 'Benjamin H. Freedman',
@@ -4487,6 +5113,7 @@ const data = {
         total: 77138,
         unique_editors: 3,
         edits: 27,
+        urls: 'https://en.wikipedia.org/wiki/Benjamin_H._Freedman',
       },
       {
         title: 'Pavel Cherenkov',
@@ -4494,6 +5121,7 @@ const data = {
         total: 71406,
         unique_editors: 3,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Pavel_Cherenkov',
       },
       {
         title: 'Talk:Jewish Bolshevism',
@@ -4501,6 +5129,7 @@ const data = {
         total: 67976,
         unique_editors: 7,
         edits: 15,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Jewish_Bolshevism',
       },
       {
         title: 'NBC',
@@ -4508,6 +5137,7 @@ const data = {
         total: 65233,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/NBC',
       },
     ],
     unique: [
@@ -4517,6 +5147,7 @@ const data = {
         total: 14281,
         unique_editors: 112,
         edits: 168,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Santa_Cruz',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -4524,6 +5155,7 @@ const data = {
         total: 39697,
         unique_editors: 38,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Fish Rap Live!',
@@ -4531,6 +5163,7 @@ const data = {
         total: 4701,
         unique_editors: 30,
         edits: 59,
+        urls: 'https://en.wikipedia.org/wiki/Fish_Rap_Live!',
       },
       {
         title: 'Santa Cruz, California',
@@ -4538,6 +5171,7 @@ const data = {
         total: 1636,
         unique_editors: 21,
         edits: 25,
+        urls: 'https://en.wikipedia.org/wiki/Santa_Cruz,_California',
       },
       {
         title: 'Cowell College',
@@ -4545,6 +5179,7 @@ const data = {
         total: 7161,
         unique_editors: 21,
         edits: 29,
+        urls: 'https://en.wikipedia.org/wiki/Cowell_College',
       },
       {
         title: 'California State Route 85',
@@ -4552,6 +5187,7 @@ const data = {
         total: 3520,
         unique_editors: 21,
         edits: 41,
+        urls: 'https://en.wikipedia.org/wiki/California_State_Route_85',
       },
       {
         title: 'Steve Whittaker',
@@ -4559,6 +5195,7 @@ const data = {
         total: 1077,
         unique_editors: 20,
         edits: 36,
+        urls: 'https://en.wikipedia.org/wiki/Steve_Whittaker',
       },
       {
         title: 'Theta Chi',
@@ -4566,6 +5203,7 @@ const data = {
         total: 857,
         unique_editors: 18,
         edits: 34,
+        urls: 'https://en.wikipedia.org/wiki/Theta_Chi',
       },
       {
         title: 'List of University of California, Santa Cruz people',
@@ -4573,6 +5211,7 @@ const data = {
         total: 2228,
         unique_editors: 17,
         edits: 32,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_Santa_Cruz_people',
       },
       {
         title: 'GMA Life TV',
@@ -4580,6 +5219,7 @@ const data = {
         total: 2574,
         unique_editors: 16,
         edits: 29,
+        urls: 'https://en.wikipedia.org/wiki/GMA_Life_TV',
       },
       {
         title: 'Darrell Long',
@@ -4587,6 +5227,7 @@ const data = {
         total: 1730,
         unique_editors: 15,
         edits: 26,
+        urls: 'https://en.wikipedia.org/wiki/Darrell_Long',
       },
       {
         title: 'City on a Hill Press',
@@ -4594,6 +5235,7 @@ const data = {
         total: 2597,
         unique_editors: 14,
         edits: 23,
+        urls: 'https://en.wikipedia.org/wiki/City_on_a_Hill_Press',
       },
       {
         title: 'Merrill College',
@@ -4601,6 +5243,7 @@ const data = {
         total: 873,
         unique_editors: 13,
         edits: 17,
+        urls: 'https://en.wikipedia.org/wiki/Merrill_College',
       },
       {
         title: 'Kresge College',
@@ -4608,6 +5251,7 @@ const data = {
         total: 2091,
         unique_editors: 13,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Kresge_College',
       },
       {
         title: 'Crown College, University of California, Santa Cruz',
@@ -4615,6 +5259,7 @@ const data = {
         total: 1463,
         unique_editors: 13,
         edits: 19,
+        urls: 'https://en.wikipedia.org/wiki/Crown_College,_University_of_California,_Santa_Cruz',
       },
     ],
     edits: [
@@ -4624,6 +5269,7 @@ const data = {
         total: 14281,
         unique_editors: 112,
         edits: 168,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Santa_Cruz',
       },
       {
         title: 'Monterey Motorsports Reunion',
@@ -4631,6 +5277,7 @@ const data = {
         total: 12202,
         unique_editors: 10,
         edits: 123,
+        urls: 'https://en.wikipedia.org/wiki/Monterey_Motorsports_Reunion',
       },
       {
         title: 'GT World Challenge America',
@@ -4638,6 +5285,7 @@ const data = {
         total: 8229,
         unique_editors: 5,
         edits: 86,
+        urls: 'https://en.wikipedia.org/wiki/GT_World_Challenge_America',
       },
       {
         title: 'Wikipedia:Tutorial (historical)/Formatting/sandbox',
@@ -4645,6 +5293,7 @@ const data = {
         total: 27012,
         unique_editors: 6,
         edits: 84,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Tutorial_(historical)/Formatting/sandbox',
       },
       {
         title: 'Music Choice',
@@ -4652,6 +5301,7 @@ const data = {
         total: 7715,
         unique_editors: 3,
         edits: 75,
+        urls: 'https://en.wikipedia.org/wiki/Music_Choice',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -4659,6 +5309,7 @@ const data = {
         total: 39697,
         unique_editors: 38,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Heruli',
@@ -4666,6 +5317,7 @@ const data = {
         total: 56446,
         unique_editors: 5,
         edits: 62,
+        urls: 'https://en.wikipedia.org/wiki/Heruli',
       },
       {
         title: 'Fish Rap Live!',
@@ -4673,6 +5325,7 @@ const data = {
         total: 4701,
         unique_editors: 30,
         edits: 59,
+        urls: 'https://en.wikipedia.org/wiki/Fish_Rap_Live!',
       },
       {
         title: 'Eustace Mullins',
@@ -4680,6 +5333,7 @@ const data = {
         total: 22134,
         unique_editors: 9,
         edits: 57,
+        urls: 'https://en.wikipedia.org/wiki/Eustace_Mullins',
       },
       {
         title: 'List of deleted state highways in California',
@@ -4687,6 +5341,7 @@ const data = {
         total: 9393,
         unique_editors: 10,
         edits: 44,
+        urls: 'https://en.wikipedia.org/wiki/List_of_deleted_state_highways_in_California',
       },
       {
         title: 'California State Route 85',
@@ -4694,6 +5349,7 @@ const data = {
         total: 3520,
         unique_editors: 21,
         edits: 41,
+        urls: 'https://en.wikipedia.org/wiki/California_State_Route_85',
       },
       {
         title: 'Cantonese opera',
@@ -4701,6 +5357,7 @@ const data = {
         total: 1459,
         unique_editors: 1,
         edits: 38,
+        urls: 'https://en.wikipedia.org/wiki/Cantonese_opera',
       },
       {
         title: 'Trans-Am Series',
@@ -4708,6 +5365,7 @@ const data = {
         total: 2897,
         unique_editors: 3,
         edits: 36,
+        urls: 'https://en.wikipedia.org/wiki/Trans-Am_Series',
       },
       {
         title: 'Steve Whittaker',
@@ -4715,6 +5373,7 @@ const data = {
         total: 1077,
         unique_editors: 20,
         edits: 36,
+        urls: 'https://en.wikipedia.org/wiki/Steve_Whittaker',
       },
       {
         title: 'Homestar Runner',
@@ -4722,6 +5381,7 @@ const data = {
         total: 4738,
         unique_editors: 4,
         edits: 36,
+        urls: 'https://en.wikipedia.org/wiki/Homestar_Runner',
       },
     ],
     net_asc: [
@@ -4731,6 +5391,7 @@ const data = {
         total: 328276,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:DragonflySixtyseven',
       },
       {
         title: "Wikipedia:Administrators' noticeboard/Incidents",
@@ -4738,6 +5399,7 @@ const data = {
         total: 308522,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Administrators%27_noticeboard/Incidents',
       },
       {
         title: 'Violet (color)',
@@ -4745,6 +5407,7 @@ const data = {
         total: 142507,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Violet_(color)',
       },
       {
         title: 'Oakland, California',
@@ -4752,6 +5415,7 @@ const data = {
         total: 102972,
         unique_editors: 5,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Oakland,_California',
       },
       {
         title: 'Ireland',
@@ -4759,6 +5423,7 @@ const data = {
         total: 91189,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Ireland',
       },
       {
         title: 'J. Robert Oppenheimer',
@@ -4766,6 +5431,7 @@ const data = {
         total: 84884,
         unique_editors: 3,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/J._Robert_Oppenheimer',
       },
       {
         title: 'NBC',
@@ -4773,6 +5439,7 @@ const data = {
         total: 65233,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/NBC',
       },
       {
         title: 'Scooby-Doo',
@@ -4780,6 +5447,7 @@ const data = {
         total: 55876,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Scooby-Doo',
       },
       {
         title: 'Yu-Gi-Oh! Trading Card Game',
@@ -4787,6 +5455,7 @@ const data = {
         total: 266691,
         unique_editors: 3,
         edits: 12,
+        urls: 'https://en.wikipedia.org/wiki/Yu-Gi-Oh!_Trading_Card_Game',
       },
       {
         title: 'Boshin War',
@@ -4794,6 +5463,7 @@ const data = {
         total: 49394,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Boshin_War',
       },
       {
         title: 'User talk:Sciurinæ',
@@ -4801,6 +5471,7 @@ const data = {
         total: 48235,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:Sciurin%C3%A6',
       },
       {
         title: 'Soviet women in World War II',
@@ -4808,6 +5479,7 @@ const data = {
         total: 47790,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Soviet_women_in_World_War_II',
       },
       {
         title: 'Hookah',
@@ -4815,6 +5487,7 @@ const data = {
         total: 40816,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Hookah',
       },
       {
         title: 'Heavy metal music',
@@ -4822,6 +5495,7 @@ const data = {
         total: 40553,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Heavy_metal_music',
       },
       {
         title: 'Margaret Sanger',
@@ -4829,6 +5503,7 @@ const data = {
         total: 33204,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Margaret_Sanger',
       },
     ],
   },
@@ -4840,6 +5515,7 @@ const data = {
         total: 720264,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/User:AntiVandalBot',
       },
       {
         title: 'Biological classification',
@@ -4847,6 +5523,7 @@ const data = {
         total: 707129,
         unique_editors: 2,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Taxonomy_(biology)',
       },
       {
         title: 'Short-beaked echidna',
@@ -4854,6 +5531,7 @@ const data = {
         total: 537410,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Short-beaked_echidna',
       },
       {
         title: 'Ferydoon Zandi',
@@ -4861,6 +5539,7 @@ const data = {
         total: 123347,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Ferydoon_Zandi',
       },
       {
         title: 'Help:Menu',
@@ -4868,6 +5547,7 @@ const data = {
         total: 117608,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Help:Menu',
       },
       {
         title: 'Wikipedia:Article size',
@@ -4875,6 +5555,7 @@ const data = {
         total: 116922,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Article_size',
       },
       {
         title: 'Hocking College',
@@ -4882,6 +5563,7 @@ const data = {
         total: 97102,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Hocking_College',
       },
       {
         title: 'Portal:Current events/September 2005',
@@ -4889,6 +5571,7 @@ const data = {
         total: 90184,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Portal:Current_events/September_2005',
       },
       {
         title: 'Talk:Imjin War',
@@ -4896,6 +5579,7 @@ const data = {
         total: 86523,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Imjin_War',
       },
       {
         title: 'Arnold Schwarzenegger',
@@ -4903,6 +5587,7 @@ const data = {
         total: 54547,
         unique_editors: 2,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/Arnold_Schwarzenegger',
       },
       {
         title: 'User talk:Gilliam',
@@ -4910,6 +5595,7 @@ const data = {
         total: 44191,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User_talk:Gilliam',
       },
       {
         title: 'Furvert',
@@ -4917,6 +5603,7 @@ const data = {
         total: 37866,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Furry_fandom',
       },
       {
         title: 'Krav Maga',
@@ -4924,6 +5611,7 @@ const data = {
         total: 38805,
         unique_editors: 2,
         edits: 53,
+        urls: 'https://en.wikipedia.org/wiki/Krav_Maga',
       },
       {
         title: 'Black August (film)',
@@ -4931,6 +5619,7 @@ const data = {
         total: 37572,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Black_August_(film)',
       },
       {
         title: 'Martin Luther King Jr.',
@@ -4938,6 +5627,7 @@ const data = {
         total: 35915,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.',
       },
     ],
     total: [
@@ -4947,6 +5637,7 @@ const data = {
         total: 720264,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/User:AntiVandalBot',
       },
       {
         title: 'Biological classification',
@@ -4954,6 +5645,7 @@ const data = {
         total: 707129,
         unique_editors: 2,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Taxonomy_(biology)',
       },
       {
         title: 'Short-beaked echidna',
@@ -4961,6 +5653,7 @@ const data = {
         total: 537410,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Short-beaked_echidna',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -4968,6 +5661,7 @@ const data = {
         total: 198422,
         unique_editors: 28,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Talk:Hippie',
@@ -4975,6 +5669,7 @@ const data = {
         total: 186462,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Hippie',
       },
       {
         title: 'Benjamin Franklin',
@@ -4982,6 +5677,7 @@ const data = {
         total: 145336,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Benjamin_Franklin',
       },
       {
         title: 'Shia–Sunni relations',
@@ -4989,6 +5685,7 @@ const data = {
         total: 126614,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Shia%E2%80%93Sunni_relations',
       },
       {
         title: 'Ferydoon Zandi',
@@ -4996,6 +5693,7 @@ const data = {
         total: 123347,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Ferydoon_Zandi',
       },
       {
         title: 'Help:Menu',
@@ -5003,6 +5701,7 @@ const data = {
         total: 117608,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Help:Menu',
       },
       {
         title: 'Wikipedia:Article size',
@@ -5010,6 +5709,7 @@ const data = {
         total: 116922,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Article_size',
       },
       {
         title: 'Oakland, California',
@@ -5017,6 +5717,7 @@ const data = {
         total: 114493,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Oakland,_California',
       },
       {
         title: 'Hocking College',
@@ -5024,6 +5725,7 @@ const data = {
         total: 97102,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Hocking_College',
       },
       {
         title: 'Wikipedia',
@@ -5031,6 +5733,7 @@ const data = {
         total: 93856,
         unique_editors: 6,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia',
       },
       {
         title: 'Portal:Current events/September 2005',
@@ -5038,6 +5741,7 @@ const data = {
         total: 90184,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Portal:Current_events/September_2005',
       },
       {
         title: 'Talk:Imjin War',
@@ -5045,6 +5749,7 @@ const data = {
         total: 86523,
         unique_editors: 1,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Imjin_War',
       },
     ],
     unique: [
@@ -5054,6 +5759,7 @@ const data = {
         total: 34350,
         unique_editors: 151,
         edits: 244,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_San_Diego',
       },
       {
         title: 'Sun God Festival',
@@ -5061,6 +5767,7 @@ const data = {
         total: 6407,
         unique_editors: 62,
         edits: 106,
+        urls: 'https://en.wikipedia.org/wiki/Sun_God_Festival',
       },
       {
         title: 'Earl Warren College',
@@ -5068,6 +5775,7 @@ const data = {
         total: 10302,
         unique_editors: 41,
         edits: 85,
+        urls: 'https://en.wikipedia.org/wiki/Earl_Warren_College',
       },
       {
         title: 'List of University of California, San Diego people',
@@ -5075,6 +5783,7 @@ const data = {
         total: 18593,
         unique_editors: 36,
         edits: 67,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_San_Diego_people',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -5082,6 +5791,7 @@ const data = {
         total: 198422,
         unique_editors: 28,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -5089,6 +5799,7 @@ const data = {
         total: 43171,
         unique_editors: 26,
         edits: 68,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
       {
         title: 'Alaska Airlines',
@@ -5096,6 +5807,7 @@ const data = {
         total: 4887,
         unique_editors: 26,
         edits: 80,
+        urls: 'https://en.wikipedia.org/wiki/Alaska_Airlines',
       },
       {
         title: 'United Airlines fleet',
@@ -5103,6 +5815,7 @@ const data = {
         total: 1593,
         unique_editors: 25,
         edits: 35,
+        urls: 'https://en.wikipedia.org/wiki/United_Airlines_fleet',
       },
       {
         title: 'Sixth College',
@@ -5110,6 +5823,7 @@ const data = {
         total: 15479,
         unique_editors: 25,
         edits: 62,
+        urls: 'https://en.wikipedia.org/wiki/Sixth_College',
       },
       {
         title: 'Preuss School',
@@ -5117,6 +5831,7 @@ const data = {
         total: 28243,
         unique_editors: 25,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Preuss_School',
       },
       {
         title: 'Wikipedia:Reference desk/Science',
@@ -5124,6 +5839,7 @@ const data = {
         total: 13668,
         unique_editors: 23,
         edits: 36,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Reference_desk/Science',
       },
       {
         title: 'Charles Zuker',
@@ -5131,6 +5847,7 @@ const data = {
         total: 3597,
         unique_editors: 23,
         edits: 39,
+        urls: 'https://en.wikipedia.org/wiki/Charles_Zuker',
       },
       {
         title: 'Wikipedia:Reference desk/Miscellaneous',
@@ -5138,6 +5855,7 @@ const data = {
         total: 9615,
         unique_editors: 21,
         edits: 28,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Reference_desk/Miscellaneous',
       },
       {
         title: 'Joseph Wang',
@@ -5145,6 +5863,7 @@ const data = {
         total: 5120,
         unique_editors: 20,
         edits: 128,
+        urls: 'https://en.wikipedia.org/wiki/Joseph_Wang',
       },
       {
         title: 'Eleanor Roosevelt College',
@@ -5152,6 +5871,7 @@ const data = {
         total: 1247,
         unique_editors: 19,
         edits: 22,
+        urls: 'https://en.wikipedia.org/wiki/Eleanor_Roosevelt_College',
       },
     ],
     edits: [
@@ -5161,6 +5881,7 @@ const data = {
         total: 34350,
         unique_editors: 151,
         edits: 244,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_San_Diego',
       },
       {
         title: 'Joseph Wang',
@@ -5168,6 +5889,7 @@ const data = {
         total: 5120,
         unique_editors: 20,
         edits: 128,
+        urls: 'https://en.wikipedia.org/wiki/Joseph_Wang',
       },
       {
         title: 'Sun God Festival',
@@ -5175,6 +5897,7 @@ const data = {
         total: 6407,
         unique_editors: 62,
         edits: 106,
+        urls: 'https://en.wikipedia.org/wiki/Sun_God_Festival',
       },
       {
         title: 'Carlsbad, California',
@@ -5182,6 +5905,7 @@ const data = {
         total: 12521,
         unique_editors: 2,
         edits: 94,
+        urls: 'https://en.wikipedia.org/wiki/Carlsbad,_California',
       },
       {
         title: 'Earl Warren College',
@@ -5189,6 +5913,7 @@ const data = {
         total: 10302,
         unique_editors: 41,
         edits: 85,
+        urls: 'https://en.wikipedia.org/wiki/Earl_Warren_College',
       },
       {
         title: 'CyberPatriot',
@@ -5196,6 +5921,7 @@ const data = {
         total: 34449,
         unique_editors: 19,
         edits: 84,
+        urls: 'https://en.wikipedia.org/wiki/CyberPatriot',
       },
       {
         title: 'Alaska Airlines',
@@ -5203,6 +5929,7 @@ const data = {
         total: 4887,
         unique_editors: 26,
         edits: 80,
+        urls: 'https://en.wikipedia.org/wiki/Alaska_Airlines',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -5210,6 +5937,7 @@ const data = {
         total: 43171,
         unique_editors: 26,
         edits: 68,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
       {
         title: 'List of University of California, San Diego people',
@@ -5217,6 +5945,7 @@ const data = {
         total: 18593,
         unique_editors: 36,
         edits: 67,
+        urls: 'https://en.wikipedia.org/wiki/List_of_University_of_California,_San_Diego_people',
       },
       {
         title: 'Sixth College',
@@ -5224,6 +5953,7 @@ const data = {
         total: 15479,
         unique_editors: 25,
         edits: 62,
+        urls: 'https://en.wikipedia.org/wiki/Sixth_College',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -5231,6 +5961,7 @@ const data = {
         total: 198422,
         unique_editors: 28,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Preuss School',
@@ -5238,6 +5969,7 @@ const data = {
         total: 28243,
         unique_editors: 25,
         edits: 56,
+        urls: 'https://en.wikipedia.org/wiki/Preuss_School',
       },
       {
         title: 'California High-Speed Rail',
@@ -5245,6 +5977,7 @@ const data = {
         total: 16165,
         unique_editors: 4,
         edits: 55,
+        urls: 'https://en.wikipedia.org/wiki/California_High-Speed_Rail',
       },
       {
         title: 'Krav Maga',
@@ -5252,6 +5985,7 @@ const data = {
         total: 38805,
         unique_editors: 2,
         edits: 53,
+        urls: 'https://en.wikipedia.org/wiki/Krav_Maga',
       },
       {
         title: 'Diels–Alder reaction',
@@ -5259,6 +5993,7 @@ const data = {
         total: 7587,
         unique_editors: 2,
         edits: 52,
+        urls: 'https://en.wikipedia.org/wiki/Diels%E2%80%93Alder_reaction',
       },
     ],
     net_asc: [
@@ -5268,6 +6003,7 @@ const data = {
         total: 186462,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Hippie',
       },
       {
         title: 'Benjamin Franklin',
@@ -5275,6 +6011,7 @@ const data = {
         total: 145336,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Benjamin_Franklin',
       },
       {
         title: 'Shia–Sunni relations',
@@ -5282,6 +6019,7 @@ const data = {
         total: 126614,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Shia%E2%80%93Sunni_relations',
       },
       {
         title: 'Oakland, California',
@@ -5289,6 +6027,7 @@ const data = {
         total: 114493,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Oakland,_California',
       },
       {
         title: 'Wikipedia',
@@ -5296,6 +6035,7 @@ const data = {
         total: 93856,
         unique_editors: 6,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia',
       },
       {
         title: 'Greco-Persian Wars',
@@ -5303,6 +6043,7 @@ const data = {
         total: 81857,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Greco-Persian_Wars',
       },
       {
         title: 'Conservatism',
@@ -5310,6 +6051,7 @@ const data = {
         total: 74309,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Conservatism',
       },
       {
         title: 'Hacker',
@@ -5317,6 +6059,7 @@ const data = {
         total: 71521,
         unique_editors: 1,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Hacker',
       },
       {
         title: 'Cheetah',
@@ -5324,6 +6067,7 @@ const data = {
         total: 70097,
         unique_editors: 2,
         edits: 4,
+        urls: 'https://en.wikipedia.org/wiki/Cheetah',
       },
       {
         title: 'Rush (band)',
@@ -5331,6 +6075,7 @@ const data = {
         total: 63570,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Rush_(band)',
       },
       {
         title: 'San Antonio Spurs',
@@ -5338,6 +6083,7 @@ const data = {
         total: 54114,
         unique_editors: 2,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/San_Antonio_Spurs',
       },
       {
         title: 'Banu Qurayza',
@@ -5345,6 +6091,7 @@ const data = {
         total: 51610,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Banu_Qurayza',
       },
       {
         title: 'Republic',
@@ -5352,6 +6099,7 @@ const data = {
         total: 51322,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Republic',
       },
       {
         title: 'Lobster',
@@ -5359,6 +6107,7 @@ const data = {
         total: 50664,
         unique_editors: 4,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Lobster',
       },
       {
         title: 'Magic: The Gathering',
@@ -5366,6 +6115,7 @@ const data = {
         total: 50383,
         unique_editors: 5,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/Magic:_The_Gathering',
       },
     ],
   },
@@ -5377,6 +6127,7 @@ const data = {
         total: 50459,
         unique_editors: 1,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Transgender_Day_of_Remembrance',
       },
       {
         title: 'Nordic race',
@@ -5384,6 +6135,7 @@ const data = {
         total: 63627,
         unique_editors: 2,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Nordic_race',
       },
       {
         title: 'User:KristinaHanspers/Test2',
@@ -5391,6 +6143,7 @@ const data = {
         total: 22732,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:KristinaHanspers/Test2',
       },
       {
         title: 'List of The Boat Race results',
@@ -5398,6 +6151,7 @@ const data = {
         total: 32443,
         unique_editors: 1,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/List_of_The_Boat_Race_results',
       },
       {
         title: 'Musket',
@@ -5405,6 +6159,7 @@ const data = {
         total: 20111,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Musket',
       },
       {
         title: 'Wikipedia:Reference desk/Science',
@@ -5412,6 +6167,7 @@ const data = {
         total: 18953,
         unique_editors: 2,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Reference_desk/Science',
       },
       {
         title: 'User:3shalim26/sandbox',
@@ -5419,6 +6175,7 @@ const data = {
         total: 18364,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:3shalim26/sandbox',
       },
       {
         title: 'User:VTONGUCSF/sandbox',
@@ -5426,6 +6183,7 @@ const data = {
         total: 16763,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/User:VTONGUCSF/sandbox',
       },
       {
         title: 'Talk:Encyclopedia',
@@ -5433,6 +6191,7 @@ const data = {
         total: 12748,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Encyclopedia',
       },
       {
         title: 'Talk:Nuclear weapon',
@@ -5440,6 +6199,7 @@ const data = {
         total: 12419,
         unique_editors: 2,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Nuclear_weapon',
       },
       {
         title: 'Talk:Ethology',
@@ -5447,6 +6207,7 @@ const data = {
         total: 10708,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Ethology',
       },
       {
         title: 'Steven A. Schroeder',
@@ -5454,6 +6215,7 @@ const data = {
         total: 11960,
         unique_editors: 6,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/Steven_A._Schroeder',
       },
       {
         title: 'Management of depression',
@@ -5461,6 +6223,7 @@ const data = {
         total: 10219,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Management_of_depression',
       },
       {
         title: 'Talk:University of California, Berkeley',
@@ -5468,6 +6231,7 @@ const data = {
         total: 10406,
         unique_editors: 1,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Berkeley',
       },
       {
         title: 'Inflammation',
@@ -5475,6 +6239,7 @@ const data = {
         total: 9443,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Inflammation',
       },
     ],
     total: [
@@ -5484,6 +6249,7 @@ const data = {
         total: 76837,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Lung_cancer',
       },
       {
         title: 'Nordic race',
@@ -5491,6 +6257,7 @@ const data = {
         total: 63627,
         unique_editors: 2,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Nordic_race',
       },
       {
         title: 'Transgender Day of Remembrance',
@@ -5498,6 +6265,7 @@ const data = {
         total: 50459,
         unique_editors: 1,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Transgender_Day_of_Remembrance',
       },
       {
         title: 'La Excelencia',
@@ -5505,6 +6273,7 @@ const data = {
         total: 46120,
         unique_editors: 2,
         edits: 17,
+        urls: 'https://en.wikipedia.org/wiki/La_Excelencia',
       },
       {
         title: 'List of The Boat Race results',
@@ -5512,6 +6281,7 @@ const data = {
         total: 32443,
         unique_editors: 1,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/List_of_The_Boat_Race_results',
       },
       {
         title: 'User:AlexanderPico/Test1',
@@ -5519,6 +6289,7 @@ const data = {
         total: 25226,
         unique_editors: 1,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/User:AlexanderPico/Test1',
       },
       {
         title: 'User:KristinaHanspers/Test2',
@@ -5526,6 +6297,7 @@ const data = {
         total: 22732,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:KristinaHanspers/Test2',
       },
       {
         title: 'List of Battlestar Galactica (2004 TV series) episodes',
@@ -5533,6 +6305,7 @@ const data = {
         total: 21038,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Battlestar_Galactica_(2004_TV_series)_episodes',
       },
       {
         title: 'Musket',
@@ -5540,6 +6313,7 @@ const data = {
         total: 20111,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Musket',
       },
       {
         title: 'Banishment Act 1697',
@@ -5547,6 +6321,7 @@ const data = {
         total: 19452,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Banishment_Act_1697',
       },
       {
         title: 'Wikipedia:Reference desk/Science',
@@ -5554,6 +6329,7 @@ const data = {
         total: 18953,
         unique_editors: 2,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Reference_desk/Science',
       },
       {
         title: 'User:3shalim26/sandbox',
@@ -5561,6 +6337,7 @@ const data = {
         total: 18364,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/User:3shalim26/sandbox',
       },
       {
         title: 'User:VTONGUCSF/sandbox',
@@ -5568,6 +6345,7 @@ const data = {
         total: 16763,
         unique_editors: 1,
         edits: 3,
+        urls: 'https://en.wikipedia.org/wiki/User:VTONGUCSF/sandbox',
       },
       {
         title: 'Talk:Encyclopedia',
@@ -5575,6 +6353,7 @@ const data = {
         total: 12748,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Encyclopedia',
       },
       {
         title: 'Talk:Nuclear weapon',
@@ -5582,6 +6361,7 @@ const data = {
         total: 12419,
         unique_editors: 2,
         edits: 9,
+        urls: 'https://en.wikipedia.org/wiki/Talk:Nuclear_weapon',
       },
     ],
     unique: [
@@ -5591,6 +6371,7 @@ const data = {
         total: 9732,
         unique_editors: 35,
         edits: 65,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_San_Francisco',
       },
       {
         title: 'Matrilineality in Judaism',
@@ -5598,6 +6379,7 @@ const data = {
         total: 11084,
         unique_editors: 7,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Matrilineality_in_Judaism',
       },
       {
         title: 'Victor Wong (actor, born 1927)',
@@ -5605,6 +6387,7 @@ const data = {
         total: 1475,
         unique_editors: 6,
         edits: 16,
+        urls: 'https://en.wikipedia.org/wiki/Victor_Wong_(actor,_born_1927)',
       },
       {
         title: 'Steven A. Schroeder',
@@ -5612,6 +6395,7 @@ const data = {
         total: 11960,
         unique_editors: 6,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/Steven_A._Schroeder',
       },
       {
         title: 'Monica Gandhi',
@@ -5619,6 +6403,7 @@ const data = {
         total: 8373,
         unique_editors: 6,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/Monica_Gandhi',
       },
       {
         title: 'Mission Bay, San Francisco',
@@ -5626,6 +6411,7 @@ const data = {
         total: 2890,
         unique_editors: 6,
         edits: 26,
+        urls: 'https://en.wikipedia.org/wiki/Mission_Bay,_San_Francisco',
       },
       {
         title: 'Wikipedia:Sandbox/Archive',
@@ -5633,6 +6419,7 @@ const data = {
         total: 286,
         unique_editors: 5,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox/Archive',
       },
       {
         title: 'Wikipedia:Sandbox',
@@ -5640,6 +6427,7 @@ const data = {
         total: 4866,
         unique_editors: 5,
         edits: 16,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Sandbox',
       },
       {
         title: 'Wendy Berry Mendes',
@@ -5647,6 +6435,7 @@ const data = {
         total: 586,
         unique_editors: 5,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/Wendy_Berry_Mendes',
       },
       {
         title: 'University of California, Riverside',
@@ -5654,6 +6443,7 @@ const data = {
         total: 2495,
         unique_editors: 5,
         edits: 16,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_Riverside',
       },
       {
         title: 'UBiome',
@@ -5661,6 +6451,7 @@ const data = {
         total: 1687,
         unique_editors: 5,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/UBiome',
       },
       {
         title: 'Peter Walter',
@@ -5668,6 +6459,7 @@ const data = {
         total: 299,
         unique_editors: 5,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/Peter_Walter',
       },
       {
         title: 'Jack Turban',
@@ -5675,6 +6467,7 @@ const data = {
         total: 7698,
         unique_editors: 5,
         edits: 7,
+        urls: 'https://en.wikipedia.org/wiki/Jack_Turban',
       },
       {
         title: 'Clubes de Ciencia',
@@ -5682,6 +6475,7 @@ const data = {
         total: 817,
         unique_editors: 5,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/Clubes_de_Ciencia',
       },
       {
         title: 'Caddyshack',
@@ -5689,6 +6483,7 @@ const data = {
         total: 2838,
         unique_editors: 5,
         edits: 19,
+        urls: 'https://en.wikipedia.org/wiki/Caddyshack',
       },
     ],
     edits: [
@@ -5698,6 +6493,7 @@ const data = {
         total: 11084,
         unique_editors: 7,
         edits: 74,
+        urls: 'https://en.wikipedia.org/wiki/Matrilineality_in_Judaism',
       },
       {
         title: 'University of California, San Francisco',
@@ -5705,6 +6501,7 @@ const data = {
         total: 9732,
         unique_editors: 35,
         edits: 65,
+        urls: 'https://en.wikipedia.org/wiki/University_of_California,_San_Francisco',
       },
       {
         title: 'Wikipedia:Reference desk/Science',
@@ -5712,6 +6509,7 @@ const data = {
         total: 18953,
         unique_editors: 2,
         edits: 51,
+        urls: 'https://en.wikipedia.org/wiki/Wikipedia:Reference_desk/Science',
       },
       {
         title: 'Jo Stone-Fewings',
@@ -5719,6 +6517,7 @@ const data = {
         total: 1631,
         unique_editors: 4,
         edits: 34,
+        urls: 'https://en.wikipedia.org/wiki/Jo_Stone-Fewings',
       },
       {
         title: 'Jonathan Weissman',
@@ -5726,6 +6525,7 @@ const data = {
         total: 1943,
         unique_editors: 1,
         edits: 33,
+        urls: 'https://en.wikipedia.org/wiki/Jonathan_Weissman',
       },
       {
         title: 'Steven A. Schroeder',
@@ -5733,6 +6533,7 @@ const data = {
         total: 11960,
         unique_editors: 6,
         edits: 31,
+        urls: 'https://en.wikipedia.org/wiki/Steven_A._Schroeder',
       },
       {
         title: 'Mission Bay, San Francisco',
@@ -5740,6 +6541,7 @@ const data = {
         total: 2890,
         unique_editors: 6,
         edits: 26,
+        urls: 'https://en.wikipedia.org/wiki/Mission_Bay,_San_Francisco',
       },
       {
         title: 'Bush v. Gore',
@@ -5747,6 +6549,7 @@ const data = {
         total: 6326,
         unique_editors: 1,
         edits: 26,
+        urls: 'https://en.wikipedia.org/wiki/Bush_v._Gore',
       },
       {
         title: 'Newspaper endorsements in the 2008 United States presidential primaries',
@@ -5754,6 +6557,7 @@ const data = {
         total: 2080,
         unique_editors: 1,
         edits: 23,
+        urls: 'https://en.wikipedia.org/wiki/Newspaper_endorsements_in_the_2008_United_States_presidential_primaries',
       },
       {
         title: 'Water resources management in Argentina',
@@ -5761,6 +6565,7 @@ const data = {
         total: 3645,
         unique_editors: 3,
         edits: 21,
+        urls: 'https://en.wikipedia.org/wiki/Water_resources_management_in_Argentina',
       },
       {
         title: 'DuPont (1802–2017)',
@@ -5768,6 +6573,7 @@ const data = {
         total: 6490,
         unique_editors: 1,
         edits: 21,
+        urls: 'https://en.wikipedia.org/wiki/DuPont',
       },
       {
         title: 'Vinay Prasad',
@@ -5775,6 +6581,7 @@ const data = {
         total: 2325,
         unique_editors: 1,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Vinay_Prasad',
       },
       {
         title: 'Talk:University of California, Berkeley',
@@ -5782,6 +6589,7 @@ const data = {
         total: 10406,
         unique_editors: 1,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Talk:University_of_California,_Berkeley',
       },
       {
         title: 'Emergency psychiatry',
@@ -5789,6 +6597,7 @@ const data = {
         total: 3038,
         unique_editors: 1,
         edits: 20,
+        urls: 'https://en.wikipedia.org/wiki/Emergency_psychiatry',
       },
       {
         title: 'Caddyshack',
@@ -5796,6 +6605,7 @@ const data = {
         total: 2838,
         unique_editors: 5,
         edits: 19,
+        urls: 'https://en.wikipedia.org/wiki/Caddyshack',
       },
     ],
     net_asc: [
@@ -5805,6 +6615,7 @@ const data = {
         total: 76837,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Lung_cancer',
       },
       {
         title: 'La Excelencia',
@@ -5812,6 +6623,7 @@ const data = {
         total: 46120,
         unique_editors: 2,
         edits: 17,
+        urls: 'https://en.wikipedia.org/wiki/La_Excelencia',
       },
       {
         title: 'List of Battlestar Galactica (2004 TV series) episodes',
@@ -5819,6 +6631,7 @@ const data = {
         total: 21038,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/List_of_Battlestar_Galactica_(2004_TV_series)_episodes',
       },
       {
         title: 'Banishment Act 1697',
@@ -5826,6 +6639,7 @@ const data = {
         total: 19452,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Banishment_Act_1697',
       },
       {
         title: 'Antidepressant',
@@ -5833,6 +6647,7 @@ const data = {
         total: 11484,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Antidepressant',
       },
       {
         title: 'Fluoxetine',
@@ -5840,6 +6655,7 @@ const data = {
         total: 11226,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Fluoxetine',
       },
       {
         title: 'Ethology',
@@ -5847,6 +6663,7 @@ const data = {
         total: 10307,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Ethology',
       },
       {
         title: 'Dan Littman',
@@ -5854,6 +6671,7 @@ const data = {
         total: 9472,
         unique_editors: 4,
         edits: 5,
+        urls: 'https://en.wikipedia.org/wiki/Dan_Littman',
       },
       {
         title: 'List of timelines of World War II',
@@ -5861,6 +6679,7 @@ const data = {
         total: 9017,
         unique_editors: 1,
         edits: 8,
+        urls: 'https://en.wikipedia.org/wiki/List_of_timelines_of_World_War_II',
       },
       {
         title: 'Monica Gandhi',
@@ -5868,6 +6687,7 @@ const data = {
         total: 8373,
         unique_editors: 6,
         edits: 11,
+        urls: 'https://en.wikipedia.org/wiki/Monica_Gandhi',
       },
       {
         title: 'Google Toolbar',
@@ -5875,6 +6695,7 @@ const data = {
         total: 7533,
         unique_editors: 1,
         edits: 6,
+        urls: 'https://en.wikipedia.org/wiki/Google_Toolbar',
       },
       {
         title: 'Perfect Strangers (TV series)',
@@ -5882,6 +6703,7 @@ const data = {
         total: 5243,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Perfect_Strangers_(TV_series)',
       },
       {
         title: 'Science studies',
@@ -5889,6 +6711,7 @@ const data = {
         total: 4997,
         unique_editors: 1,
         edits: 1,
+        urls: 'https://en.wikipedia.org/wiki/Science_studies',
       },
       {
         title: 'Rocky Mountain Laboratories',
@@ -5896,6 +6719,7 @@ const data = {
         total: 4474,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Rocky_Mountain_Laboratories',
       },
       {
         title: 'Fibonacci',
@@ -5903,6 +6727,7 @@ const data = {
         total: 4002,
         unique_editors: 1,
         edits: 2,
+        urls: 'https://en.wikipedia.org/wiki/Fibonacci',
       },
     ],
   },
