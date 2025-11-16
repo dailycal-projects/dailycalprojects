@@ -7360,5 +7360,75 @@ const time_data = [
     },
   },
 ];
+
+const per_school = {
+  UCB: {
+    count: 41776,
+    total_deletion: -5467643,
+    total_addition: 5425514,
+    net: -42129,
+  },
+  UCD: {
+    count: 22271,
+    total_deletion: -3938505,
+    total_addition: 4585473,
+    net: 646968,
+  },
+  UCI: {
+    count: 25412,
+    total_deletion: -4082182,
+    total_addition: 3882500,
+    net: -199682,
+  },
+  UCLA: {
+    count: 54111,
+    total_deletion: -7380722,
+    total_addition: 14927441,
+    net: 7546719,
+  },
+  UCM: {
+    count: 2148,
+    total_deletion: -154743,
+    total_addition: 185167,
+    net: 30424,
+  },
+  UCOP: {
+    count: 477,
+    total_deletion: -14781,
+    total_addition: 33130,
+    net: 18349,
+  },
+  UCR: {
+    count: 9145,
+    total_deletion: -1223301,
+    total_addition: 963174,
+    net: -260127,
+  },
+  UCSB: {
+    count: 26560,
+    total_deletion: -2418994,
+    total_addition: 4862259,
+    net: 2443265,
+  },
+  UCSC: {
+    count: 20541,
+    total_deletion: -3250567,
+    total_addition: 2590266,
+    net: -660301,
+  },
+  UCSD: {
+    count: 32311,
+    total_deletion: -4646963,
+    total_addition: 6347159,
+    net: 1700196,
+  },
+  UCSF: {
+    count: 7675,
+    total_deletion: -490254,
+    total_addition: 1263330,
+    net: 773076,
+  },
+};
 export default data;
+export { per_school };
 export { time_data };

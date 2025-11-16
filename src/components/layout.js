@@ -70,6 +70,7 @@ import ClassSizeBarChart from '../visuals/campus-busyness-visuals/visuals/ClassS
 import TopEditsPerSchool from '../visuals/wikiedits-visuals/top_edits_per_school';
 import EditsOverTime from '../visuals/wikiedits-visuals/edits_over_time';
 import Wikidiff from '../visuals/wikiedits-visuals/wikidiff';
+import EditsPerSchool from '../visuals/wikiedits-visuals/edits_per_school';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -153,6 +154,7 @@ const shortcodes = {
   TopEditsPerSchool,
   EditsOverTime,
   Wikidiff,
+  EditsPerSchool,
 };
 
 export default function Layout({ children }) {
