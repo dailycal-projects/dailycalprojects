@@ -7,6 +7,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ReferenceLine,
+  Cell,
 } from 'recharts';
 import {
   InputLabel,
@@ -22,9 +24,13 @@ const VOLUME_DIVISOR = 1_000_000;
 const chartData = Object.entries(perSchoolTotals).map(([campus, metrics]) => ({
   campus,
   label: humanNames[campus] ?? campus,
-  totalEdits: metrics.count,
-  volumeMillions: metrics.size / VOLUME_DIVISOR,
-  rawVolume: metrics.size,
+  count: metrics.count,
+  totalDeletion: Math.abs(metrics.total_deletion) / VOLUME_DIVISOR,
+  totalAddition: metrics.total_addition / VOLUME_DIVISOR,
+  net: metrics.net / VOLUME_DIVISOR,
+  rawDeletion: metrics.total_deletion,
+  rawAddition: metrics.total_addition,
+  rawNet: metrics.net,
 }));
 
 const formatNumber = (value) => value.toLocaleString();
@@ -32,16 +38,28 @@ const formatNumber = (value) => value.toLocaleString();
 function EditsPerSchool() {
   const metricOptions = [
     {
-      value: 'totalEdits',
-      label: 'Total edits',
-      axisLabel: 'Total edits',
+      value: 'count',
+      label: 'Total changes (Edits)',
+      axisLabel: 'Total changes (Edits)',
       formatter: (val) => formatNumber(val),
     },
     {
-      value: 'volumeMillions',
-      label: 'Edit volume (Millions of Characters)',
-      axisLabel: 'Volume (Millions of Characters)',
-      formatter: (val, payload) => `${formatNumber(payload.rawVolume)} characters`,
+      value: 'totalDeletion',
+      label: 'Total deletions (Millions of Characters)',
+      axisLabel: 'Deletions (Millions of Characters)',
+      formatter: (val, payload) => `${formatNumber(payload.rawDeletion)} characters`,
+    },
+    {
+      value: 'totalAddition',
+      label: 'Total growth (Millions of Characters)',
+      axisLabel: 'Growth (Millions of Characters)',
+      formatter: (val, payload) => `${formatNumber(payload.rawAddition)} characters`,
+    },
+    {
+      value: 'net',
+      label: 'Net change (Millions of Characters)',
+      axisLabel: 'Net change (Millions of Characters)',
+      formatter: (val, payload) => `${formatNumber(payload.rawNet)} characters`,
     },
   ];
 
@@ -50,7 +68,17 @@ function EditsPerSchool() {
   const selectedConfig = metricOptions.find((opt) => opt.value === selectedMetric) ?? metricOptions[0];
 
   const orderedData = React.useMemo(
-    () => [...chartData].sort((a, b) => b[selectedMetric] - a[selectedMetric]),
+    () => {
+      const sorted = [...chartData].sort((a, b) => {
+        // For net, sort by absolute value to show largest changes first
+        if (selectedMetric === 'net') {
+          return Math.abs(b.net) - Math.abs(a.net);
+        }
+        // For other metrics, sort descending
+        return b[selectedMetric] - a[selectedMetric];
+      });
+      return sorted;
+    },
     [selectedMetric],
   );
 
@@ -98,6 +126,7 @@ function EditsPerSchool() {
             }}
           />
           <YAxis type="category" dataKey="label" width={110} />
+          {selectedMetric === 'net' && <ReferenceLine x={0} stroke="#666" strokeDasharray="3 3" />}
           <Tooltip
             formatter={(value, name, { payload }) => selectedConfig.formatter(value, payload)}
           />
@@ -105,7 +134,16 @@ function EditsPerSchool() {
             dataKey={selectedMetric}
             name={selectedConfig.label}
             fill="#8694c3"
-          />
+          >
+            {orderedData.map((entry, index) => {
+              // Check if the displayed value is negative
+              const value = entry[selectedMetric];
+              const isNegative = value < 0;
+              return (
+                <Cell key={`cell-${index}`} fill={isNegative ? '#f4b400' : '#8694c3'} />
+              );
+            })}
+          </Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>
