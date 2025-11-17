@@ -34,6 +34,24 @@ if(a === 10) {
 }
 `,
   },
+
+  "bread_dildo": {
+
+  },
+
+  "fuck_estonia": {
+    "old": `==Pre-history==
+Human settlement in what is now [[Estonia]] became possible when … (in Estonia from the beginning of the 9th millennium to the 5th millennium BC). 
+[[Estonian language|Estonian]] is a [[Finno-Ugric languages|Finno-Ugric language]] and … branch of the larger [[Finno-Ugric languages|Finno-Ugric language]] family.`,
+    "new": `fuck estonia in the ass 
+The fucking nazis
+They will burn in fucking hell
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
+3.1415926535...`,
+    "name": "History of Estonia",
+    "article": "https://en.wikipedia.org/w/index.php?title=History_of_Estonia&diff=prev&oldid=128149041",
+    "time": "May 3rd, 2007"
+  }
 };
 
 export default diffs;
