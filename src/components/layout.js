@@ -71,6 +71,7 @@ import TopEditsPerSchool from '../visuals/wikiedits-visuals/top_edits_per_school
 import EditsOverTime from '../visuals/wikiedits-visuals/edits_over_time';
 import Wikidiff from '../visuals/wikiedits-visuals/wikidiff';
 import EditsPerSchool from '../visuals/wikiedits-visuals/edits_per_school';
+import SemanticMap from '../visuals/wikiedits-visuals/semantic_map';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -155,6 +156,7 @@ const shortcodes = {
   EditsOverTime,
   Wikidiff,
   EditsPerSchool,
+  SemanticMap,
 };
 
 export default function Layout({ children }) {

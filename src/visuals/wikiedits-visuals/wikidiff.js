@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDiffViewer, {DiffMethod} from 'react-diff-viewer-continued';
+import ReactDiffViewer, { DiffMethod } from 'react-diff-viewer-continued';
 import diffs from './diffdata';
 
 function Wikidiff({ diff_id }) {
@@ -40,22 +40,32 @@ function Wikidiff({ diff_id }) {
 
   return (
     <div style={{
-        boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)",
-        padding: "10px 20px"
-    }}>
-        <span style={{color: "grey", fontSize: "12px", fontFamily: "sans-serif"}}><b>{diffs[diff_id].name}</b> on Wikipedia - Edit on {diffs[diff_id].time} - <a href={diffs[diff_id].article} target="_blank" rel="noreferrer">Full Diff</a></span>
-        <div style={{boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)"}}>
-            <ReactDiffViewer
-            oldValue={diffs[diff_id].old}
-            newValue={diffs[diff_id].new}
-            splitView={!diffs[diff_id].intro}
-            hideLineNumbers
-            hideMarkers
-            styles={newStyles}
-            compareMethod={DiffMethod.LINES}
-            // leftTitle={diffs[diff_id].article}
-            />
-        </div>
+      boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+      padding: '10px 20px',
+    }}
+    >
+      <span style={{ color: 'grey', fontSize: '12px', fontFamily: 'sans-serif' }}>
+        <b>{diffs[diff_id].name}</b>
+        {' '}
+        on Wikipedia - Edit on
+        {' '}
+        {diffs[diff_id].time}
+        {' '}
+        -
+        {' '}
+        <a href={diffs[diff_id].article} target="_blank" rel="noreferrer">Full Diff</a>
+      </span>
+      <div style={{ boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)' }}>
+        <ReactDiffViewer
+          oldValue={diffs[diff_id].old}
+          newValue={diffs[diff_id].new}
+          splitView={!diffs[diff_id].intro}
+          hideLineNumbers
+          hideMarkers
+          styles={newStyles}
+          compareMethod={DiffMethod.LINES}
+        />
+      </div>
     </div>
   );
 }
