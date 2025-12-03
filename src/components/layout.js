@@ -67,6 +67,7 @@ import DropdownBudgetOverTime from '../visuals/pac-12-finances-visuals/visuals/D
 import ClassDayMap from '../visuals/campus-busyness-visuals/visuals/ClassDayMap';
 import ClassEnrollmentLineChart from '../visuals/campus-busyness-visuals/visuals/ClassEnrollmentLineChart';
 import ClassSizeBarChart from '../visuals/campus-busyness-visuals/visuals/ClassSizeBarChart';
+import DatawrapperChart from './dataWrapper';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -147,6 +148,7 @@ const shortcodes = {
   ClassDayMap,
   ClassEnrollmentLineChart,
   ClassSizeBarChart,
+  DatawrapperChart,
 };
 
 export default function Layout({ children }) {
