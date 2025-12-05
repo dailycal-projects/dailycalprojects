@@ -1,0 +1,83 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+.legend-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  max-width: 800px;
+  padding: 0px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: px solid;
+}
+
+.label {
+  font-size: 14px;
+  color: #5c5a5a;
+}
+
+.academic {
+  background-color: #e3565f;
+  border-color: #ab4b4f;
+}
+
+.art {
+  background-color: #f3803f;
+  border-color: #b5663b;
+}
+
+.business {
+  background-color: #fed23b;
+  border-color: #b89a40;
+}
+
+.community {
+  background-color: #95c361;
+  border-color: #749254;
+}
+
+.hobby {
+  background-color: #25b288;
+  border-color: #348a6d;
+}
+
+.medical {
+  background-color: #489bd1;
+  border-color: #487a9b;
+}
+
+.frat {
+  background-color: #176893;
+  border-color: #215675;
+}
+
+.speaking {
+  background-color: #61699a;
+  border-color: #525777;
+}
+
+.publication {
+  background-color: #8f679c;
+  border-color: #72577a;
+}
+
+.sports {
+  background-color: #ba5f7e;
+  border-color: #8f5166;
+}

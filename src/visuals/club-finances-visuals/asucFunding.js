@@ -1,16 +1,19 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import asucData from './data';
+import cursorIcon from './cursor.png';
+import './styles.css';
 
 const ASUCFunding = ({ data = asucData }) => {
   const chartRef = useRef(null);
   const tooltipRef = useRef(null);
+  const [rScale, setRScale] = useState(null);
 
   useEffect(() => {
     if (!data || !data.length) return;
 
     const width = 720;
-    const height = 720;
+    const height = 650;
     const centerX = width / 2;
     const centerY = height / 2;
     const centerCircleRadius = 100;
@@ -73,6 +76,7 @@ const ASUCFunding = ({ data = asucData }) => {
       .filter((d) => !isNaN(d.funding) && !isNaN(d.years_of_sponsorship) && d.funding > 0);
 
     const categories = Array.from(new Set(validData.map((d) => d.category)));
+    // const categories = Array.from(new Set(validData.map((d) => d.category))).sort();
 
     const maxFunding = d3.max(validData, (d) => d.funding);
     const minFunding = d3.min(validData, (d) => d.funding);
@@ -80,6 +84,9 @@ const ASUCFunding = ({ data = asucData }) => {
     const radiusScale = d3.scaleSqrt()
       .domain([minFunding, maxFunding])
       .range([4, 45]);
+
+    // Store the scale function in state
+    setRScale(() => radiusScale);
 
     // Draw rings with light stroke
     for (let i = 0; i < 5; i++) {
@@ -242,9 +249,35 @@ const ASUCFunding = ({ data = asucData }) => {
     }}
     >
       <div className="container">
+        {/* <img alt="" loading="lazy" width="16" height="22.9" decoding="async" data-nimg="1" src="cursor.png" />
         <p style={{ textAlign: 'center', color: '#666', fontSize: '14px' }}>
           Hover over circles to see details
-        </p>
+        </p> */}
+
+        <div style={{
+          display: 'flex',
+          // alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+        }}
+        >
+          <img
+            alt=""
+            width="16"
+            height="22.9"
+            src={cursorIcon}
+          />
+
+          <p style={{
+            margin: 0,
+            color: '#666',
+            fontSize: '14px',
+            textAlign: 'center',
+          }}
+          >
+            Hover over circles to see details
+          </p>
+        </div>
 
         <div style={{
           display: 'flex', gap: 30, alignItems: 'flex-start', justifyContent: 'center',
@@ -274,6 +307,118 @@ const ASUCFunding = ({ data = asucData }) => {
             maxWidth: 250,
           }}
         />
+      </div>
+
+      <div style={{
+        marginTop: '40px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px',
+      }}
+      >
+
+        <div className="legend-container">
+          <div className="legend-item">
+            <div className="circle academic" />
+            <span className="label">Academic</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle medical" />
+            <span className="label">Medical and service</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle art" />
+            <span className="label">Art and performance</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle frat" />
+            <span className="label">Professional frat</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle business" />
+            <span className="label">Business and tech</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle speaking" />
+            <span className="label">Public speaking and debate</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle community" />
+            <span className="label">Community and culture</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle publication" />
+            <span className="label">Publication</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle hobby" />
+            <span className="label">Hobby</span>
+          </div>
+
+          <div className="legend-item">
+            <div className="circle sports" />
+            <span className="label">Sports, spirit and ROTC</span>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{
+            fontSize: '14px', fontWeight: '600', marginBottom: '0px', color: '#333',
+          }}
+          >
+            Funding Amount
+          </div>
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '10px' }}>
+            <div style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
+            }}
+            >
+              <div style={{
+                width: rScale ? `${rScale(1000) * 2}px` : '8px',
+                height: rScale ? `${rScale(1000) * 2}px` : '8px',
+                borderRadius: '50%',
+                border: '1px solid #666',
+                background: 'transparent',
+              }}
+              />
+              <span style={{ fontSize: '12px', color: '#666' }}>$1,000</span>
+            </div>
+            <div style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
+            }}
+            >
+              <div style={{
+                width: rScale ? `${rScale(50000) * 2}px` : '24px',
+                height: rScale ? `${rScale(50000) * 2}px` : '24px',
+                borderRadius: '50%',
+                border: '1px solid #666',
+                background: 'transparent',
+              }}
+              />
+              <span style={{ fontSize: '12px', color: '#666' }}>$50,000</span>
+            </div>
+            <div style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
+            }}
+            >
+              <div style={{
+                width: rScale ? `${rScale(150000) * 2}px` : '48px',
+                height: rScale ? `${rScale(150000) * 2}px` : '48px',
+                borderRadius: '50%',
+                border: '1px solid #666',
+                background: 'transparent',
+              }}
+              />
+              <span style={{ fontSize: '12px', color: '#666' }}>$150,000</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
