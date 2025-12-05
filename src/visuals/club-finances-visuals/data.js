@@ -29,6 +29,13 @@ const asucData = [
     asuc_category: 'Student Activity Group (SAG)',
   },
   {
+    category: 'Professional frat',
+    name: 'Sigma Alpha Nu',
+    years_of_sponsorship: 15,
+    funding: '3,050.00',
+    asuc_category: 'Student Activity Group (SAG)',
+  },
+  {
     category: 'Public speaking and debate',
     name: 'California Mock Trial (Pre-waived travel)',
     years_of_sponsorship: 25,
@@ -558,13 +565,6 @@ const asucData = [
     name: 'Main Stacks Dance Team',
     years_of_sponsorship: 4,
     funding: '3,070.00',
-    asuc_category: 'Student Activity Group (SAG)',
-  },
-  {
-    category: 'Professional frat',
-    name: 'Sigma Alpha Nu',
-    years_of_sponsorship: 15,
-    funding: '3,050.00',
     asuc_category: 'Student Activity Group (SAG)',
   },
   {
