@@ -9,12 +9,12 @@ const ASUCFunding = ({ data = asucData }) => {
   useEffect(() => {
     if (!data || !data.length) return;
 
-    const width = 800;
-    const height = 800;
+    const width = 720;
+    const height = 720;
     const centerX = width / 2;
     const centerY = height / 2;
-    const centerCircleRadius = 110;
-    let rotationSpeed = 0.003;
+    const centerCircleRadius = 100;
+    let rotationSpeed = 0.002;
     const minDistanceFromCenter = centerCircleRadius + 70;
     let currentRotation = 0;
 
@@ -194,7 +194,7 @@ const ASUCFunding = ({ data = asucData }) => {
           .style('top', `${event.pageY - 15}px`);
       })
       .on('mouseout', () => {
-        rotationSpeed = 0.003;
+        rotationSpeed = 0.002;
         tooltip.style('opacity', 0);
       });
 
@@ -237,7 +237,7 @@ const ASUCFunding = ({ data = asucData }) => {
     <div style={{
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif',
       margin: 0,
-      padding: 20,
+      padding: 0,
       background: 'transparent',
     }}
     >
@@ -261,8 +261,9 @@ const ASUCFunding = ({ data = asucData }) => {
           style={{
             position: 'absolute',
             padding: 12,
-            background: 'rgba(0,0,0,0.9)',
-            color: 'white',
+            background: 'rgba(255, 255, 255, 0.9)',
+            border: '1px solid #333',
+            color: 'black',
             borderRadius: 6,
             pointerEvents: 'none',
             fontSize: 13,
