@@ -418,8 +418,27 @@ const ASUCFunding = ({ data = asucData }) => {
             </div>
           </div>
         </div>
-
       </div>
+      <p style={{
+        margin: 0,
+        color: '#666',
+        fontSize: '12px',
+        paddingTop: '15px',
+      }}
+      >
+        Rings represent years of continuous ASUC sponsorship.
+      </p>
+      <p style={{
+        margin: 0,
+        color: '#000000ff',
+        fontSize: '12px',
+        paddingTop: '1px',
+        textAlign: 'left',
+
+      }}
+      >
+        Smrithi Senthilnathan/The Daily Californian
+      </p>
     </div>
   );
 };
