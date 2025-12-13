@@ -52,6 +52,84 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
     article: 'https://en.wikipedia.org/w/index.php?title=History_of_Estonia&diff=prev&oldid=128149041',
     time: 'May 3rd, 2007',
   },
+
+  yudof_palpatine: {
+    // intro: true, // only for the first one
+    refs_hidden: true,
+    "old": `On 26 August, 2009 employment unions of the UC called a vote of [[no confidence]] in President Yudof. If the vote passes, it would have no tangible effect, but would serve as a recommendation that Yudof be fired from his position.
+
+==References==`,
+    "new": `On 26 August, 2009 employment unions of the UC called a vote of [[no confidence]] in President Yudof. If the vote passes, it would have no tangible effect, but would serve as a recommendation that Yudof be fired from his position.
+
+In addition, it would appear that Mark Yudof is the son of the Devil and Emperor Palpatine. 
+
+==References==`,
+    "name": "Mark Yudof",
+    "article": "https://en.wikipedia.org/w/index.php?title=Mark_Yudof&diff=prev&oldid=316075494",
+    "time": "September 24th, 2009"
+},
+
+yudof_ode: {
+  raw: true,
+ "new": `Ode to Mark yudof<br />
+<br />
+Who desecrates the sacrament of Knowledge!<br />
+Who seeks to rape the Academy!<br />
+Who lusts after shiny rocks and paper!<br />
+You have transgressed<br />
+With temporal schemes<br />
+That endanger us all<br />
+<br />
+The University is in peril<br />
+You tear it to the foundation<br />
+And erect an Education Factory<br />
+What is it's its product?<br />
+<br />
+Meek minds<br />
+Children of Industry<br />
+Lost and loveless in logic<br />
+Paying any fee<br />
+Tithing to your vanity<br />
+Worshiping your arrogance<br />
+<br />
+The foundation will not hold<br />
+Know this! Any house you build<br />
+Will transform into labyrinth<br />
+And swallow you whole!<br />
+<br />
+Because you censor Criticism:<br />
+You have transgressed<br />
+You have transgressed the Hacker's Ethic<br />
+<br />
+Information wants to be free<br />
+Never forget this<br />
+<br />
+Hence forth you loose this privilege<br />
+I smash your digital fortress<br />
+I erase your epitaph<br />
+I piss on your fresco<br />
+I shit on the idea of your head<br />
+Breaking asunder this false construct<br />
+Here there shall be no knowledge!<br />
+<br />
+Listen, oh listen<br />
+Listen to the trees<br />
+Listen to the people<br />
+We hate the fees!<br />
+<br />
+Remember Yudof, dear seeker,<br />
+Embrace Compassion<br />
+Shun Hubris<br />
+You too shall pass<br />
+To nothing.<br />
+<br />
+- /|nt|\/1ru$ -`,
+  "name": "Mark_Yudof",
+  "article": "https://en.wikipedia.org/w/index.php?title=Mark_Yudof&diff=next&oldid=316707479",
+  "time": "September 28th, 2009"
+}
+
+
 };
 
 export default diffs;

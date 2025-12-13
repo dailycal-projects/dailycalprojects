@@ -54,17 +54,37 @@ function Wikidiff({ diff_id }) {
         -
         {' '}
         <a href={diffs[diff_id].article} target="_blank" rel="noreferrer">Full Diff</a>
+        {diffs[diff_id].refs_hidden && <i style={{ color: 'grey', fontSize: '12px', fontFamily: 'sans-serif' }}> - References hidden</i>}
       </span>
       <div style={{ boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)' }}>
-        <ReactDiffViewer
-          oldValue={diffs[diff_id].old}
-          newValue={diffs[diff_id].new}
-          splitView={!diffs[diff_id].intro}
-          hideLineNumbers
-          hideMarkers
-          styles={newStyles}
-          compareMethod={DiffMethod.LINES}
-        />
+        {diffs[diff_id].raw ? (
+          <div
+            style={{
+              fontFamily: 'monospace, monospace',
+              fontSize: '16px',
+              background: '#f5f5f5',
+              padding: '20px',
+              borderRadius: '6px',
+              whiteSpace: 'pre-wrap',
+              wordBreak: 'break-word',
+              marginTop: "1rem",
+              maxHeight: "50vh",
+              overflow: "scroll"
+            }}
+          >
+            {(diffs[diff_id].new || '').replace(/<br\s*\/?>/g, '')}
+          </div>
+        ) : (
+          <ReactDiffViewer
+            oldValue={diffs[diff_id].old}
+            newValue={diffs[diff_id].new}
+            splitView={!diffs[diff_id].intro}
+            hideLineNumbers
+            hideMarkers
+            styles={newStyles}
+            compareMethod={DiffMethod.LINES}
+          />
+        )}
       </div>
     </div>
   );
