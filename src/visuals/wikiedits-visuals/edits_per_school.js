@@ -83,7 +83,7 @@ function EditsPerSchool() {
   );
 
   return (
-    <div style={{ width: '100%', height: 520 }}>
+    <div style={{ width: '100%', height: 520, marginBottom: '5rem' }}>
       {/* <h3 style={{ textAlign: 'center', marginBottom: 12 }}>Wikipedia edits by UC campus</h3> */}
       <FormControl
         variant="outlined"
