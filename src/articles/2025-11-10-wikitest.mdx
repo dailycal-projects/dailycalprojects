@@ -10,8 +10,14 @@ bylineUrl:
 subhead: "We analyzed hundreds of thousands of Wikipedia edits made by UC staff, students and guests to see which articles were edited and how."
 featuredImage: "../images/wikiedits.jpg"
 imageAttribution: "Noelle Chang | Staff"
-aboutStory: "Data from this project came from Berkeley Academic Guide."
+aboutStory: "Data from this project came from Wikipedia, scraped using Wikimedia REST API."
+embeddedImages:
+  - "../images/wikiedits_list.png"
+  - "../images/kliner_edits.png"
+  - "../images/wikiedits_unethical.png"
 ---
+
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
 Despite never-ending debates about its viewpoint bias and reliability, Wikipedia is still read by billions of people each month who largely trust what's written in it.
 
@@ -105,8 +111,17 @@ Two months earlier, an account with the username “**Kliner916**” had removed
 
 We found a Brandon Kline online that, according to their LinkedIn profile, previously worked for the UCOP as a “Special Assistant to the President” from 2006 to 2012\. The edits from the **Brandonkline** account coincided with edits from an anonymous user with an IP address associated with the UCOP (indicated in orange below). Kline received a Masters from Cal State University Sacramento, for which the city’s main area code is 916\. He did not respond to a request for comment.
 
-<img src="../images/wikiedits_list.png" />
-<img src="../images/kliner_edits.png" />
+<body>
+  <GatsbyImage image={getImage(props.localImages[0])} />
+</body>
+
+<br />
+
+<body>
+  <GatsbyImage image={getImage(props.localImages[1])} />
+</body>
+
+<br />
 
 The anonymous UCOP IP address who edited the same article less than four hours after the user **Brandonkline** also removed references to Yudof’s pension.
 
@@ -114,7 +129,11 @@ The anonymous UCOP IP address who edited the same article less than four hours a
 
 The text added by **Brandonkline** and **Kliner916** was eventually removed by other contributors who were skeptical of potential bias. An anonymous Wikipedia user claimed that **Kliner916**’s edits were unethical. Another user continued, saying that the resulting article with the removals by **Kliner916** “may as well have been written by Yudof or the UC system”.
 
-<img src="../images/wikiedits_unethical.png" />
+<body>
+  <GatsbyImage image={getImage(props.localImages[2])} />
+</body>
+
+<br />
 
 Some edits from within the Office of the President deal with non-UC related content. A fan of the show Buffy the Vampire Slayer edited the season four episode 13 article from a UCOP IP address to include in-depth analysis of the characters' interactions foreshadowing a romance.
 
