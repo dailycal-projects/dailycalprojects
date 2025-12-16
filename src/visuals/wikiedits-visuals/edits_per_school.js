@@ -89,7 +89,7 @@ function EditsPerSchool() {
         variant="outlined"
         style={{
           minWidth: 200,
-          marginBottom: 20,
+          marginBottom: 30,
         }}
       >
         <InputLabel id="metric-select-label">Select Metric</InputLabel>
@@ -122,7 +122,7 @@ function EditsPerSchool() {
             label={{
               value: selectedConfig.axisLabel,
               position: 'insideBottom',
-              offset: 0,
+              offset: -15,
             }}
           />
           <YAxis type="category" dataKey="label" width={110} />

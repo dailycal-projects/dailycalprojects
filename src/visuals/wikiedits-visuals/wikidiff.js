@@ -45,6 +45,21 @@ function Wikidiff({ diff_id }) {
         marginBottom: '1rem',
       }}
     >
+      <style>
+        {`
+          /* Adjust line content padding in react-diff-viewer (inner wrapper)*/
+          .react-diff-pa3tg-content-text {
+            padding: 10px 10px;
+          }
+
+          /*Override and set to 0 for consistency (outer wrapper) */
+          .react-diff-vl0irh-content,
+          .react-diff-vl0irh-content.react-diff-1fqrsd-diff-added,
+          .react-diff-vl0irh-content.react-diff-26ieb0-diff-removed {
+            padding: 0px 0px;
+          }
+        `}
+      </style>
       <span
         style={{ color: 'grey', fontSize: '12px', fontFamily: 'sans-serif' }}
       >
@@ -83,6 +98,7 @@ function Wikidiff({ diff_id }) {
               style={{
                 display: 'inline-block',
                 background: '#ffcccc',
+                // background: '#ffeef0', // actual color of deletions is #ffeef0
                 color: '#900',
                 borderRadius: '4px',
                 padding: '2px 8px',
@@ -101,7 +117,8 @@ function Wikidiff({ diff_id }) {
             <span
               style={{
                 display: 'inline-block',
-                background: '#cfc',
+                background: '#ccffcc',
+                // background: '#e6ffed', // actual color of additions is #e6ffed
                 color: '#135c17',
                 borderRadius: '4px',
                 padding: '2px 8px',
@@ -123,7 +140,7 @@ function Wikidiff({ diff_id }) {
               fontFamily: 'monospace, monospace',
               fontSize: '16px',
               background: '#f5f5f5',
-              padding: '20px',
+              padding: '10px',
               borderRadius: '6px',
               whiteSpace: 'pre-wrap',
               wordBreak: 'break-word',

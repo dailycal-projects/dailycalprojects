@@ -41,28 +41,33 @@ function EditsOverTime({ metric = 'edit_volume' }) {
           margin={{
             top: 30,
             right: 50,
-            left: 20,
-            bottom: 20,
+            left: 30,
+            bottom: 30,
           }}
+          padding={{ left: 10 }}
         >
           <CartesianGrid strokeDasharray="24 4" />
           <XAxis dataKey="year">
-            <Label value="Year" position="insideBottom" offset={-5} />
+            <Label value="Year" position="insideBottom" offset={-15} />
           </XAxis>
           <YAxis
             tickFormatter={(val) => (metric === 'edit_volume'
-              ? // ? (val / 1_000_000 >= 1
-              // : val.toLocaleString())
-              val.toLocaleString()
+              ? val.toLocaleString()
               : `${(val / 1_000_000).toFixed(1).replace(/\.0$/, '')}`)}
           >
-            {/* <Label
-              value={metric === "edit_volume" ? "Edit Count" : "Edit Volume (Characters)"}
+            <Label
+              value={
+                metric === 'edit_volume'
+                  ? 'Edit Counts'
+                  : metric === 'edit_count'
+                    ? 'Edit Volume (Millions of Characters)'
+                    : ''
+              }
               angle={-90}
               position="insideLeft"
-              offset={-5}
-              style={{ textAnchor: 'middle' }}
-            /> */}
+              offset={-20}
+              style={{ textAnchor: 'middle', whiteSpace: 'pre-line' }}
+            />
           </YAxis>
           <Tooltip
             formatter={(value) => (metric === 'edit_count'

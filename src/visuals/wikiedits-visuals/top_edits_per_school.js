@@ -19,6 +19,9 @@ import { makeStyles } from '@material-ui/styles';
 import data from './data';
 import human_names from './human_names';
 
+const ROW_FONT_SIZE = '17px';
+const ROW_PADDING = '7.5px';
+
 function TopEditsPerSchool() {
   const [selectedSchool, setSelectedSchool] = React.useState(Object.keys(data)[0]);
   const [selectedMetric, setSelectedMetric] = React.useState('net');
@@ -110,18 +113,20 @@ function TopEditsPerSchool() {
             <tr style={{ background: '#f5f5f5' }}>
               <th style={{
                 border: '1px solid #e0e0e0',
-                padding: '12px',
+                padding: ROW_PADDING,
                 textAlign: 'left',
                 fontWeight: 600,
+                fontSize: ROW_FONT_SIZE,
               }}
               >
                 Article Title
               </th>
               <th style={{
                 border: '1px solid #e0e0e0',
-                padding: '12px',
+                padding: ROW_PADDING,
                 textAlign: 'right',
                 fontWeight: 600,
+                fontSize: ROW_FONT_SIZE,
               }}
               >
                 {columnLabel}
@@ -135,15 +140,18 @@ function TopEditsPerSchool() {
                 style={{
                   background: idx % 2 === 0 ? '#fafbfc' : 'white',
                   transition: 'background 0.2s',
+                  border: '1px solid #e0e0e0',
                 }}
               >
                 <td style={{
                   border: '1px solid #e0e0e0',
-                  padding: '10px',
+                  padding: ROW_PADDING,
                   textAlign: 'left',
                   maxWidth: 320,
                   overflow: 'hidden',
                   textOverflow: 'wrap',
+                  fontSize: ROW_FONT_SIZE,
+                  // color: 'black',
                 }}
                 >
                   {row.urls ? (
@@ -152,8 +160,9 @@ function TopEditsPerSchool() {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
-                        color: 'inherit',
+                        color: 'black',
                         textDecoration: 'none',
+                        fontSize: ROW_FONT_SIZE,
                       }}
                     >
                       {row.title}
@@ -164,9 +173,11 @@ function TopEditsPerSchool() {
                 </td>
                 <td style={{
                   border: '1px solid #e0e0e0',
-                  padding: '10px',
+                  padding: ROW_PADDING,
                   textAlign: 'right',
                   fontVariantNumeric: 'tabular-nums',
+                  fontSize: ROW_FONT_SIZE,
+                  // color: 'black',
                 }}
                 >
                   {selectedMetric === 'net' || selectedMetric === 'net_asc'

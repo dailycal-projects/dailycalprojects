@@ -62,12 +62,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
     legend_add: true,
     intro: true,
     old: `On 26 August, 2009 employment unions of the UC called a vote of [[no confidence]] in President Yudof. If the vote passes, it would have no tangible effect, but would serve as a recommendation that Yudof be fired from his position.
-
 ==References==`,
     new: `On 26 August, 2009 employment unions of the UC called a vote of [[no confidence]] in President Yudof. If the vote passes, it would have no tangible effect, but would serve as a recommendation that Yudof be fired from his position.
-
 In addition, it would appear that Mark Yudof is the son of the Devil and Emperor Palpatine. 
-
 ==References==`,
     name: 'Mark Yudof',
     article: 'https://en.wikipedia.org/w/index.php?title=Mark_Yudof&diff=prev&oldid=316075494',
