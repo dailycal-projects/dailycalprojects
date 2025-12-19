@@ -21,6 +21,20 @@ import { per_school as perSchoolTotals } from './data';
 
 const VOLUME_DIVISOR = 1_000_000;
 
+const COLORS = [
+  '#4E79A7',
+  '#F28E2B',
+  '#E15759',
+  '#76B7B2',
+  '#59A14F',
+  '#EDC948',
+  '#B07AA1',
+  '#FF9DA7',
+  '#9C755F',
+  '#BAB0AB',
+  '#5C5CA3',
+];
+
 const chartData = Object.entries(perSchoolTotals).map(([campus, metrics]) => ({
   campus,
   label: humanNames[campus] ?? campus,
@@ -39,26 +53,34 @@ function EditsPerSchool() {
   const metricOptions = [
     {
       value: 'count',
-      label: 'Total changes (Edits)',
-      axisLabel: 'Total changes (Edits)',
+      dropDownLabel: 'Total changes (edits)',
+      label: 'Total changes',
+      title: 'Edits made by campus',
+      axisLabel: 'Number of changes (edits)',
       formatter: (val) => formatNumber(val),
     },
     {
       value: 'totalDeletion',
-      label: 'Total deletions (Millions of Characters)',
-      axisLabel: 'Deletions (Millions of Characters)',
+      dropDownLabel: 'Total deletions (millions of characters)',
+      label: 'Total deletions',
+      title: 'Number of characters deleted by campus',
+      axisLabel: 'Total deletions (millions of characters)',
       formatter: (val, payload) => `${formatNumber(payload.rawDeletion)} characters`,
     },
     {
       value: 'totalAddition',
-      label: 'Total growth (Millions of Characters)',
-      axisLabel: 'Growth (Millions of Characters)',
+      dropDownLabel: 'Total growth (millions of characters)',
+      label: 'Total growth',
+      title: 'Number of characters added by campus',
+      axisLabel: 'Total growth (millions of characters)',
       formatter: (val, payload) => `${formatNumber(payload.rawAddition)} characters`,
     },
     {
       value: 'net',
-      label: 'Net change (Millions of Characters)',
-      axisLabel: 'Net change (Millions of Characters)',
+      dropDownLabel: 'Net change (millions of characters)',
+      label: 'Net change',
+      title: 'Net change made by campus',
+      axisLabel: 'Net change (millions of characters)',
       formatter: (val, payload) => `${formatNumber(payload.rawNet)} characters`,
     },
   ];
@@ -92,16 +114,16 @@ function EditsPerSchool() {
           marginBottom: 30,
         }}
       >
-        <InputLabel id="metric-select-label">Select Metric</InputLabel>
+        <InputLabel id="metric-select-label">Select metric</InputLabel>
         <Select
           labelId="metric-select-label"
           id="metric-select"
           value={selectedMetric}
           onChange={(event) => setSelectedMetric(event.target.value)}
-          label="Select Metric"
+          label="Select metric"
         >
           {metricOptions.map((option) => (
-            <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>
+            <MenuItem key={option.value} value={option.value}>{option.dropDownLabel}</MenuItem>
           ))}
         </Select>
       </FormControl>
@@ -118,6 +140,7 @@ function EditsPerSchool() {
         >
           <CartesianGrid strokeDasharray="24 4" />
           <XAxis
+            tickFormatter={(val) => (val.toLocaleString())}
             type="number"
             label={{
               value: selectedConfig.axisLabel,

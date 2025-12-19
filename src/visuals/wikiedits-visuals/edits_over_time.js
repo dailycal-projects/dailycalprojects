@@ -33,13 +33,25 @@ function EditsOverTime({ metric = 'edit_volume' }) {
     '#5C5CA3',
   ];
 
+  const chartTitle = metric === 'edit_volume'
+    ? 'Total number of Wikipedia edits over time by campus'
+    : metric === 'edit_count'
+      ? 'Net characters changed on Wikipedia over time by campus'
+      : 'Wikipedia edits over time';
+
   return (
     <div>
+      <h3 style={{
+        textAlign: 'center', marginBottom: '20px', fontFamily: 'Georgia', fontSize: '17px',
+      }}
+      >
+        {chartTitle}
+      </h3>
       <ResponsiveContainer width="100%" height={400}>
         <AreaChart
           data={time_data}
           margin={{
-            top: 30,
+            top: 0,
             right: 50,
             left: 30,
             bottom: 30,
@@ -58,9 +70,9 @@ function EditsOverTime({ metric = 'edit_volume' }) {
             <Label
               value={
                 metric === 'edit_volume'
-                  ? 'Edit Counts'
+                  ? 'Edit counts'
                   : metric === 'edit_count'
-                    ? 'Edit Volume (Millions of Characters)'
+                    ? 'Edit volume (millions of characters)'
                     : ''
               }
               angle={-90}

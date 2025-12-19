@@ -44,7 +44,7 @@ if(a === 10) {
     legend_add: true,
     legend_delete: true,
     old: `==Pre-history==
-Human settlement in what is now [[Estonia]] became possible when … (in Estonia from the beginning of the 9th millennium to the 5th millennium BC). 
+Human settlement in what is now [[Estonia]] became possible when … (in Estonia from the beginning of the 9th millennium to the 5th millennium BC).
 [[Estonian language|Estonian]] is a [[Finno-Ugric languages|Finno-Ugric language]] and … branch of the larger [[Finno-Ugric languages|Finno-Ugric language]] family.`,
     new: `fuck estonia in the ass 
 The fucking nazis

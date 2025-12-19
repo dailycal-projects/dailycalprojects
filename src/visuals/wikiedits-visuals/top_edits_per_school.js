@@ -20,7 +20,7 @@ import data from './data';
 import human_names from './human_names';
 
 const ROW_FONT_SIZE = '17px';
-const ROW_PADDING = '7.5px';
+const ROW_PADDING = '5px 15px';
 
 function TopEditsPerSchool() {
   const [selectedSchool, setSelectedSchool] = React.useState(Object.keys(data)[0]);
@@ -36,30 +36,30 @@ function TopEditsPerSchool() {
   // Options for metrics: "net", "total", "net_asc", "unique", "edits"
   // Display labels for dropdown and table
   const metricOptions = [
-    { value: 'net', label: 'Most growth (Characters)' },
-    { value: 'net_asc', label: 'Most deletions (Characters)' },
-    { value: 'total', label: 'Most change (Characters)' },
-    { value: 'unique', label: 'Most editors (IPs)' },
-    { value: 'edits', label: 'Most changes (Edits)' },
+    { value: 'net', label: 'Most growth (characters)' },
+    { value: 'net_asc', label: 'Most deletions (characters)' },
+    { value: 'total', label: 'Most change (characters)' },
+    { value: 'unique', label: 'Most editors (unique IPs)' },
+    { value: 'edits', label: 'Most changes (edits)' },
   ];
 
   // Table column label
   let columnLabel = '';
   switch (selectedMetric) {
     case 'net':
-      columnLabel = 'Net Characters Changed';
+      columnLabel = 'Net characters changed';
       break;
     case 'total':
-      columnLabel = 'Total Characters Changed';
+      columnLabel = 'Total characters changed';
       break;
     case 'net_asc':
-      columnLabel = 'Net Characters Changed';
+      columnLabel = 'Net characters changed';
       break;
     case 'unique':
-      columnLabel = 'Unique IP Addresses';
+      columnLabel = 'Unique IP addresses';
       break;
     case 'edits':
-      columnLabel = 'Edit Count';
+      columnLabel = 'Edit count';
       break;
     default:
       columnLabel = 'Metric';
@@ -71,7 +71,7 @@ function TopEditsPerSchool() {
   return (
     <div>
       <FormControl variant="outlined" style={{ minWidth: 240, marginBottom: 20, marginRight: 10 }}>
-        <InputLabel id="school-select-label">Select Campus</InputLabel>
+        <InputLabel id="school-select-label">Select campus</InputLabel>
         <Select
           labelId="school-select-label"
           id="school-select"
@@ -87,7 +87,7 @@ function TopEditsPerSchool() {
         </Select>
       </FormControl>
       <FormControl variant="outlined" style={{ minWidth: 240, marginBottom: 20 }}>
-        <InputLabel id="metric-select-label">Select Metric</InputLabel>
+        <InputLabel id="metric-select-label">Select metric</InputLabel>
         <Select
           labelId="metric-select-label"
           id="metric-select"
@@ -113,17 +113,17 @@ function TopEditsPerSchool() {
             <tr style={{ background: '#f5f5f5' }}>
               <th style={{
                 border: '1px solid #e0e0e0',
-                padding: ROW_PADDING,
+                padding: '5px 15px',
                 textAlign: 'left',
                 fontWeight: 600,
                 fontSize: ROW_FONT_SIZE,
               }}
               >
-                Article Title
+                Article title
               </th>
               <th style={{
                 border: '1px solid #e0e0e0',
-                padding: ROW_PADDING,
+                padding: '5px 15px',
                 textAlign: 'right',
                 fontWeight: 600,
                 fontSize: ROW_FONT_SIZE,
