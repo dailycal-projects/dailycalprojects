@@ -69,6 +69,20 @@ Counting only IP address users that we have data for, the UC as a whole has cont
 We visualized this by using a semantic vector approximation algorithm to graph articles in 3D space, roughly clustered together based on their similarity in topic.
 
 <SemanticMap />
+<div
+  style={{
+    color: "#545454",
+    fontFamily: "Georgia",
+    fontSize: "15px",
+    padding: "0px 15px",
+  }}
+>
+  <em>
+    Click, drag, and scroll to navigate the 3D map and hover over a point to see
+    the Article's name. Articles from different campuses can be toggled by
+    clicking on their name in the legend. (edited)
+  </em>
+</div>
 
 <br />
 
@@ -124,12 +138,60 @@ We found a Brandon Kline online that, according to their LinkedIn profile, previ
 
 <body>
   <GatsbyImage image={getImage(props.localImages[0])} />
+  <div
+    style={{
+      color: "#545454",
+      fontFamily: "Georgia",
+      fontSize: "15px",
+      padding: "10px 15px",
+    }}
+  >
+    <em>
+      Edits made by Brandonkline and an anonymous user with an IP address
+      connected to the UCOP. Prior to these included edits were 50 more
+      consecutive edits by Brandonkline.
+    </em>
+    <br />
+    <b>Source:</b>{" "}
+    <a
+      href="https://en.wikipedia.org/w/index.php?title=Mark_Yudof&action=history"
+      style={{ color: "#545454", fontFamily: "Georgia", fontSize: "14px" }}
+    >
+      Revision history
+    </a>{" "}
+    of the <a href="https://en.wikipedia.org/wiki/Mark_Yudof">Mark Yudof</a>{" "}
+    article on Wikipedia
+  </div>
 </body>
 
 <br />
 
 <body>
   <GatsbyImage image={getImage(props.localImages[1])} />
+  <div
+    style={{
+      color: "#545454",
+      fontFamily: "Georgia",
+      fontSize: "15px",
+      padding: "10px 15px",
+    }}
+  >
+    <em>
+      Edits by Kliner916 removing the "Criticism" section from the article and
+      information about Mark Yudof's salary, as well as vandalism from anonymous
+      users.
+    </em>
+    <br />
+    <b>Source:</b>{" "}
+    <a
+      href="https://en.wikipedia.org/w/index.php?title=Mark_Yudof&action=history"
+      style={{ color: "#545454", fontFamily: "Georgia", fontSize: "14px" }}
+    >
+      Revision history
+    </a>{" "}
+    of the <a href="https://en.wikipedia.org/wiki/Mark_Yudof">Mark Yudof</a>{" "}
+    article on Wikipedia
+  </div>
 </body>
 
 <br />
@@ -148,6 +210,26 @@ The text added by **Brandonkline** and **Kliner916** was eventually removed by o
 
 <body>
   <GatsbyImage image={getImage(props.localImages[3])} />
+  <div
+    style={{
+      color: "#545454",
+      fontFamily: "Georgia",
+      fontSize: "15px",
+      padding: "10px 15px",
+    }}
+  >
+    <em>Wikipedia users discussing edits made to the Mark Yudof article.</em>
+    <br />
+    <b>Source:</b>{" "}
+    <a
+      href="https://en.wikipedia.org/wiki/Talk:Mark_Yudof"
+      style={{ color: "#545454", fontFamily: "Georgia", fontSize: "14px" }}
+    >
+      Talk page
+    </a>{" "}
+    of the <a href="https://en.wikipedia.org/wiki/Mark_Yudof">Mark Yudof</a>{" "}
+    article on Wikipedia
+  </div>
 </body>
 
 <br />

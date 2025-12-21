@@ -8,7 +8,7 @@ export default function SemanticMap() {
         width: '100%',
         height: '600px',
         border: 'none',
-        margin: '20px 0',
+        margin: '0px 0px',
       }}
       title="Semantic Map"
     />

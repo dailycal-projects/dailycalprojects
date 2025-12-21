@@ -49,7 +49,7 @@ function Wikidiff({ diff_id }) {
         {`
           /* Adjust line content padding in react-diff-viewer (inner wrapper)*/
           .react-diff-pa3tg-content-text {
-            padding: 10px 10px;
+            padding: 10px 12.5px;
           }
 
           /*Override and set to 0 for consistency (outer wrapper) */
