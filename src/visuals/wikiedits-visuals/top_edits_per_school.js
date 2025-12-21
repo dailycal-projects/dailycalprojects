@@ -20,7 +20,7 @@ import data from './data';
 import human_names from './human_names';
 
 const ROW_FONT_SIZE = '17px';
-const ROW_PADDING = '5px 15px';
+const ROW_PADDING = '0px 15px';
 
 function TopEditsPerSchool() {
   const [selectedSchool, setSelectedSchool] = React.useState(Object.keys(data)[0]);

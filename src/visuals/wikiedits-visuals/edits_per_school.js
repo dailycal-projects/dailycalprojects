@@ -59,6 +59,7 @@ function EditsPerSchool() {
       axisLabel: 'Number of changes (edits)',
       formatter: (val) => formatNumber(val),
     },
+    /*
     {
       value: 'totalDeletion',
       dropDownLabel: 'Total deletions (millions of characters)',
@@ -75,6 +76,7 @@ function EditsPerSchool() {
       axisLabel: 'Total growth (millions of characters)',
       formatter: (val, payload) => `${formatNumber(payload.rawAddition)} characters`,
     },
+    */
     {
       value: 'net',
       dropDownLabel: 'Net change (millions of characters)',
@@ -106,12 +108,13 @@ function EditsPerSchool() {
 
   return (
     <div style={{ width: '100%', height: 520, marginBottom: '5rem' }}>
-      {/* <h3 style={{ textAlign: 'center', marginBottom: 12 }}>Wikipedia edits by UC campus</h3> */}
       <FormControl
         variant="outlined"
         style={{
           minWidth: 200,
           marginBottom: 30,
+          fontFamily: 'Georgia',
+          fontSize: '17px',
         }}
       >
         <InputLabel id="metric-select-label">Select metric</InputLabel>
@@ -127,6 +130,14 @@ function EditsPerSchool() {
           ))}
         </Select>
       </FormControl>
+      <h3 style={{
+        textAlign: 'center', marginBottom: '10px', fontFamily: 'Georgia', fontSize: '17px',
+      }}
+      >
+        {selectedMetric === 'net'
+          ? 'Net change made to Wikipedia articles by campus'
+          : 'Total number of edits made to Wikipedia articles by campus'}
+      </h3>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           layout="vertical"
@@ -135,9 +146,10 @@ function EditsPerSchool() {
             top: 10,
             right: 50,
             left: 10,
-            bottom: 20,
+            bottom: 50,
           }}
         >
+
           <CartesianGrid strokeDasharray="24 4" />
           <XAxis
             tickFormatter={(val) => (val.toLocaleString())}

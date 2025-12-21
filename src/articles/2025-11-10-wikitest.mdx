@@ -12,9 +12,10 @@ featuredImage: "../images/wikiedits.jpg"
 imageAttribution: "Noelle Chang | Staff"
 aboutStory: "Data from this project came from Wikipedia, scraped using Wikimedia REST API."
 embeddedImages:
-  - "../images/wikiedits_list.png"
-  - "../images/kliner_edits.png"
-  - "../images/wikiedits_unethical.png"
+  - "../images/wikiedits-brandonkline.png"
+  - "../images/wikiedits-kliner916.png"
+  - "../images/wikiedits-talk1.png"
+  - "../images/wikiedits-talk2.png"
 ---
 
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
@@ -145,6 +146,12 @@ The text added by **Brandonkline** and **Kliner916** was eventually removed by o
 
 <br />
 
+<body>
+  <GatsbyImage image={getImage(props.localImages[3])} />
+</body>
+
+<br />
+
 Some edits from within the Office of the President deal with non-UC related content. A fan of the show Buffy the Vampire Slayer edited the season four episode 13 article from a UCOP IP address to include in-depth analysis of the characters' interactions foreshadowing a romance.
 
 <Wikidiff diff_id="UCOP_buffy" />
@@ -164,3 +171,7 @@ In 2007, a user with a UCOP IP address edited the People’s Park article to add
 The Communist Party USA article was the subject of a 2011 edit by a UCOP IP address who challenged the claim that Julius and Ethel Rosenberg, who were convicted and executed by the United States, provided nuclear secrets to the Soviets during the Cold War.
 
 <Wikidiff diff_id="UCOP_accused" />
+
+_Ajith Araiza-Singh is a data developer. Contact him at [aaraiza-singh@dailycal.org](mailto:aaraiza-singh@dailycal.org)_
+
+_John Bragado is a data developer. Contact him at [johnbragado@dailycal.org](mailto:johnbragado@dailycal.org)_
