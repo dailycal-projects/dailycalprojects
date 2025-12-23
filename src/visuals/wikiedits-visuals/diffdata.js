@@ -324,7 +324,7 @@ At Berkeley, Lyons also served as Acting Dean of the Haas School from 2004 to 20
 
 In 2008, Lyons left Goldman Sachs to serve as the dean of the Haas School of Business, succeeding [[Tom Campbell (California politician)|Tom Campbell]].<ref>{{cite news |url=https://www.sfgate.com/business/article/Richard-Lyons-succeeds-Campbell-as-Haas-dean-3276562.php |title=Richard Lyons succeeds Campbell as Haas dean |first=George |last=Raine |newspaper=[[San Francisco Chronicle]] |date=July 19, 2008}}</ref> In 2018, Lyons returned to teaching after serving 11 years as dean as the William and Janet Cronk Chair in Innovative Leadership.<ref>{{cite news |url=https://www.losaltosonline.com/schools/rich-lyons-los-altos-native-steps-down-from-haas-school-of-business/article_2ffe7192-5d7f-5ce7-a345-eb986a777f64.html |title=Rich Lyons, Los Altos native, steps down from Haas School of Business |work=Los Altos Town Crier |first=Emily |last=MacInnis |date=August 22, 2018}}</ref>
 
-His teaching expertise is in [[international finance]].<ref name="haas.berkeley.edu" /> Lyons’s early [[research]] focuses on [[currency markets]], a focus reflected in his book “The Microstructure Approach to Exchange Rates” ([[MIT Press]]).<ref>''The Microstructure Approach to Exchange Rates'' at MIT Press ([http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=10838] {{Webarchive|url=https://web.archive.org/web/20060914101030/http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=10838|date=2006-09-14}})</ref>`, 
+His teaching expertise is in [[international finance]].<ref name="haas.berkeley.edu" /> Lyons’s early [[research]] focuses on [[currency markets]], a focus reflected in his book “The Microstructure Approach to Exchange Rates” ([[MIT Press]]).<ref>''The Microstructure Approach to Exchange Rates'' at MIT Press ([http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=10838] {{Webarchive|url=https://web.archive.org/web/20060914101030/http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=10838|date=2006-09-14}})</ref>`,
     new: `== Career ==
 Before joining Haas in 1993, Lyons spent six years on the [[Faculty (teaching staff)|faculty]] at [[Columbia Business School]]. In addition to teaching, he held several leadership roles at Haas, including acting dean (2004–05), executive associate dean (2005–08), and dean (2008–18). Under his leadership as the chief innovation and entrepreneurship officer, UC Berkeley topped PitchBook’s list as the nation’s top university for the number of venture-funded startups founded by undergraduate alums. Lyons also served as the chief learning officer at [[Goldman Sachs]] in [[New York City]] from 2006–08. 
 
@@ -335,25 +335,25 @@ Lyons’ pioneering work as a scholar focuses on how information within a societ
 Lyons is also known for culture leadership — anchoring institutions on distinctive values that help create a cohesive community that supports the mission. As dean of the Haas School of Business, he led an initiative that codified the school's culture around four defining leadership principles: question the status quo, confidence without attitude, students always, and beyond yourself. He is a powerful advocate for public higher education that is both accessible and excellent. He also believes culture leadership connects to the “why” of great education, including not just knowledge and thinking tools, but also opportunities that enhance personal development.  
 
 In 2018, Lyons received the Berkeley Citation, one of UC Berkeley’s highest honors, for contributions that go beyond the call of duty. In 1998, he received the Distinguished Teaching Award, Berkeley’s highest teaching honor, and he won the Earl F. Cheit Award For Excellence In Teaching at Haas six times.
-`, 
-    name: 'Rich Lyons', 
-    article: 'https://en.wikipedia.org/w/index.php?title=Rich_Lyons&diff=prev&oldid=1268021051', 
-    time: 'January 7th, 2025'
+`,
+    name: 'Rich Lyons',
+    article: 'https://en.wikipedia.org/w/index.php?title=Rich_Lyons&diff=prev&oldid=1268021051',
+    time: 'January 7th, 2025',
   },
 
   Lyons_delete: {
     legend_delete: true,
     intro: true,
-    "old": `Lyons’ teaching expertise is in [[international finance]], [[Foreign exchange market|currency markets]], and financial market microstructure. He is fluent in French and, as an accomplished musician, owns several musical copyrights. He and Jennifer, his wife, have two children.
+    old: `Lyons’ teaching expertise is in [[international finance]], [[Foreign exchange market|currency markets]], and financial market microstructure. He is fluent in French and, as an accomplished musician, owns several musical copyrights. He and Jennifer, his wife, have two children.
 
 Lyons’ pioneering work as a scholar focuses on how information within a society is aggregated and expressed in price signals, which in turn helps societies make better decisions. Most of that work focuses on international exchange rates, i.e., the prices of all of one country’s goods and services relative to another. His book, ''The Microstructure Approach to Exchange Rates'' ([[MIT Press]]),  was instrumental in creating the field. Other interests include leadership and culture, [[Cryptocurrency|cryptocurrencies]], and exchange rate economics.
 
 Lyons is also known for culture leadership — anchoring institutions on distinctive values that help create a cohesive community that supports the mission. As dean of the Haas School of Business, he led an initiative that codified the school's culture around four defining leadership principles: question the status quo, confidence without attitude, students always, and beyond yourself. He is a powerful advocate for public higher education that is both accessible and excellent. He also believes culture leadership connects to the “why” of great education, including not just knowledge and thinking tools, but also opportunities that enhance personal development.  `,
-    "new": `Lyons’ teaching expertise is in [[international finance]], [[Foreign exchange market|currency markets]], and financial market microstructure. He is fluent in French and, as an accomplished musician, owns several musical copyrights. He and Jennifer, his wife, have two children.`,
-    "name": "Rich Lyons",
-    "article": "https://en.wikipedia.org/w/index.php?title=Rich_Lyons&diff=next&oldid=1270362287",
-    "time": "January 18th, 2025"
-  }
+    new: 'Lyons’ teaching expertise is in [[international finance]], [[Foreign exchange market|currency markets]], and financial market microstructure. He is fluent in French and, as an accomplished musician, owns several musical copyrights. He and Jennifer, his wife, have two children.',
+    name: 'Rich Lyons',
+    article: 'https://en.wikipedia.org/w/index.php?title=Rich_Lyons&diff=next&oldid=1270362287',
+    time: 'January 18th, 2025',
+  },
 
 };
 
