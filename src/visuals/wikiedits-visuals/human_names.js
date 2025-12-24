@@ -1,4 +1,4 @@
-const human_names = {
+const humanNames = {
   UCB: 'Berkeley',
   UCLA: 'Los Angeles',
   UCSD: 'San Diego',
@@ -13,4 +13,4 @@ const human_names = {
 
 };
 
-export default human_names;
+export default humanNames;

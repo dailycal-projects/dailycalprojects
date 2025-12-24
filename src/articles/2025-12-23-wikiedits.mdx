@@ -41,6 +41,8 @@ UCOP is a special case. Its Oakland headquarters are not regularly open to the p
 
 There are lots of metrics to quantify this anonymous Wikipedia editing activity, such as edit count, edit volume and unique editors.
 
+<br />
+
 <TopEditsPerSchool />
 
 <br />
@@ -49,17 +51,23 @@ The article with the most unique editors from UC Berkeley’s network was the on
 
 The amount of edits made from a UC IP address have been steadily increasing since the site’s founding in 2001. Edits from UC Berkeley IP addresses quickly rose to the top in the first few years before falling behind edits from UCLA.
 
+<br />
+
 <EditsOverTime metric="edit_volume" />
 
 <br />
 
 The majority of changes on Wikipedia come from a small percentage of edits. This is due to a small number of massive vandalism edits that can be millions of characters large.
 
+<br />
+
 <EditsOverTime metric="edit_count" />
 
 <br />
 
 UCLA’s network has been the host of several such vandalous edits, making it the campus with the highest net change in characters to Wikipedia. At other campuses such as UC Santa Cruz and UC Riverside, users have removed hundreds of thousands of characters from the site. UC Berkeley currently has a net change of -40,000 characters — meaning users have overall deleted more than added — despite being the runner up for campus with the most number of edits.
+
+<br />
 
 <EditsPerSchool />
 
@@ -68,6 +76,8 @@ UCLA’s network has been the host of several such vandalous edits, making it th
 Counting only IP address users of data we scraped, the UC system as a whole has contributed to 105,643 unique articles as of publication time, which are spread among thousands of different semantic categories.
 
 We visualized this by using a semantic vector approximation algorithm to graph articles in 3D space. This algorithm is a way to turn article topics into points in space so that similar topics end up near each other.
+
+<br />
 
 <SemanticMap />
 <div
@@ -97,6 +107,8 @@ Not everyone abides by that honor system. Due to how accessible Wikipedia is to 
 
 In February 2007, a user with a UCLA IP address replaced the entire “Leonardo DiCaprio” article with 57,000 instances of the f-slur. Later in May 2007, another UCLA IP address deleted the entire “History of Estonia” article and replaced it with more than 475,000 digits of pi and obscenity and references to Nazis. These were among the largest individual edits from the dataset.
 
+<br />
+
 <Wikidiff diff_id="fuck_estonia" />
 
 <br />
@@ -113,35 +125,63 @@ However, many edits made from UCOP IP addresses and accounts linked to administr
 
 Former UC President Mark Yudof left behind a [complicated legacy](https://www.dailycal.org/archives/wading-through-the-grand-narrative-the-yudof-legacy/article_d012b2d7-f834-5440-9afa-4ad0f02d60e5.html) over his 2008-13 term. His Wikipedia page was vandalized on multiple occasions by users with UC IP addresses. In instances, Yudof was cursed out, while in another he was described as “the son of the Devil and Emperor Palpatine.”
 
+<br />
+
 <Wikidiff diff_id="yudof_palpatine" />
+
+<br />
 
 Another vandal replaced the entire article with critical poem titled, “Ode to Mark yudof.”
 
+<br />
+
 <Wikidiff diff_id="yudof_ode" />
+
+<br />
 
 These edits were reverted within minutes by Wikipedia contributors who recognized them as vandalism.
 
 During fall 2009, several users contributed information about the announcement of his appointment as UC President, his yearly compensation and his controversial handling of the budget crisis California had faced that same year. Though these edits included sources, the section on his handling of the crisis and the protests it sparked was removed in December 2009 by a contributor with the username “Brandonkline.” These edits were accompanied by additions of multiple sections praising Yudof and highlighting his contributions to the UC system.
 
+<br />
+
 <Wikidiff diff_id="kline_timebest" />
+
+<br />
 
 Later, the user cited an op-ed in The New York Times about UC Berkeley in a section of the article about federal funding for public universities.
 
+<br />
+
 <Wikidiff diff_id="kline_berkeley" />
+
+<br />
 
 User Brandonkline also removed a paragraph discussing one of Yudof’s votes of no confidence.
 
+<br />
+
 <Wikidiff diff_id="kline_budget" />
+
+<br />
 
 Two months earlier, an account with the username “Kliner916” had removed thousands of characters from the article, including information about his salary and pension.
 
+<br />
+
 <Wikidiff diff_id="kliner_infobox" />
 
+<br />
+
 Kliner916 also removed the entire “Criticism” section of the article.
+
+<br />
 
 <Wikidiff diff_id="kliner_criticism" />
 
 <Wikidiff diff_id="kliner_large" />
+
+<br />
 
 UC spokesperson Stett Holbrook, told The Daily Californian in an email that the UCOP does not have information about the edited article, nor about who made the edits.
 
@@ -152,6 +192,8 @@ He explained social media use was limited while working there. In addition to th
 During Yudof’s term, the UC system faced a steep decline in state funding related to the 2008 financial crisis, leading to furloughs and budget cuts. Kline described part of his job as finding new ways of communicating with students and staff during the crisis, many of whom were mad at the Yudof. “[The] most difficult part of the job was explaining how it's not Mark Yudof who was deciding to not fund the University of California … the faculty didn't really see that furloughs were being caused by the shortfalls in funding”. “The outcomes were intended to increase support for the UC budget … and try to stop the cuts [to higher education,” Kline said.
 
 Now counsel for the California Air Resources Board, Kline said the edits were made by a younger version of himself without direct permission from anyone.
+
+<br />
 
 <body>
   <GatsbyImage image={getImage(props.localImages[0])} />
@@ -221,6 +263,8 @@ The text added by Brandonkline and Kliner916 was eventually removed by other con
 
 “A great disservice is done by allowing the powers that be to dictate their version of the truth to the public via Wikipedia,” the anonymous user wrote. “For shame!”
 
+<br />
+
 <body>
   <GatsbyImage image={getImage(props.localImages[2])} />
 </body>
@@ -257,19 +301,35 @@ The text added by Brandonkline and Kliner916 was eventually removed by other con
 
 Some edits from UCOP IP addresses deal with non-UC related content. A fan of the show “Buffy the Vampire Slayer” edited the [season 4, episode 13 article](https://en.wikipedia.org/wiki/The_I_in_Team) from a UCOP IP address to include in-depth analysis of the characters’ interactions foreshadowing a romance.
 
+<br />
+
 <Wikidiff diff_id="UCOP_buffy" />
+
+<br />
 
 In another instance, a UCOP IP address made an edit to the article for Berkeley’s Aquatic Park, removing references to meetings between homosexual men. A year before the edit, the East Bay Times reported on efforts by the city to clean up the park which they said was a well known place for casual sex.
 
 The Wikipedia article on affirmative action was edited by a user with a UCOP IP address who included in the article a suggestion that a paragraph only provided negative opinions on the topic. Affirmative action has been banned in California’s public universities since 1996.
 
+<br />
+
 <Wikidiff diff_id="UCOP_action" />
+
+<br />
 
 In 2007, a user with a UCOP IP address edited the People’s Park article to add information about James Rector. Rector was visiting Berkeley in 1969 when he was shot and killed by police when lethal force was deployed against students and reporters. People’s Park had a [history](https://www.dailycal.org/archives/an-intersection-of-housing-and-history-a-look-at-peoples-park/article_9b0f951a-2ab0-5f8f-b597-585531aeeda1.html) of tensions between activists, the pro-development University of California and police.
 
+<br />
+
 <Wikidiff diff_id="UCOP_rector" />
 
-The “[Communist Party USA](https://en.wikipedia.org/wiki/Communist_Party_USA)” article was the subject of a 2011 edit by a UCOP IP address who challenged the claim that Julius and Ethel Rosenberg, who were convicted and executed by the United States, provided nuclear secrets to the Soviets during the Cold War.
+<br />
+The “[Communist Party USA](https://en.wikipedia.org/wiki/Communist_Party_USA)” article
+was the subject of a 2011 edit by a UCOP IP address who challenged the claim that
+Julius and Ethel Rosenberg, who were convicted and executed by the United States,
+provided nuclear secrets to the Soviets during the Cold War.
+
+<br />
 
 <Wikidiff diff_id="UCOP_accused" />
 
@@ -278,6 +338,8 @@ The “[Communist Party USA](https://en.wikipedia.org/wiki/Communist_Party_USA)�
 ## UC Berkeley PR administrator edits Rich Lyons article
 
 Current UC Berkeley Chancellor Rich Lyons’ Wikipedia article has also been edited by accounts linked to high-ranking campus officials. Eight edits were made to the article by an account named “Mgoehring” on Jan. 7 and 8, 2025, between the hours of 11 a.m. and 1 p.m.
+
+<br />
 
 <body>
   <GatsbyImage image={getImage(props.localImages[4])} />
@@ -290,7 +352,8 @@ Current UC Berkeley Chancellor Rich Lyons’ Wikipedia article has also been edi
     }}
   >
     <em>
-      Edits by user Mgoehring, all of which were made to the Rich Lyons Wikipedia article. Edit times are displayed in UTC.
+      Edits by user Mgoehring, all of which were made to the Rich Lyons
+      Wikipedia article. Edit times are displayed in UTC.
     </em>
     <br />
     Source:{" "}
@@ -298,15 +361,24 @@ Current UC Berkeley Chancellor Rich Lyons’ Wikipedia article has also been edi
       href="https://en.wikipedia.org/w/index.php?title=Special%3AContributions&target=Mgoehring&namespace=all&tagfilter=&start=&end="
       style={{ color: "#545454", fontFamily: "Georgia", fontSize: "14px" }}
     >
-      User contributions for Mgoehring</a>
+      User contributions for Mgoehring
+    </a>
   </div>
 </body>
 
+<br />
+
 <Wikidiff diff_id="Lyons_change" />
+
+<br />
 
 Though some of the edits made still remain on the page, several were removed within days of their creation. Wikipedia user GuardianH reverted these two paragraphs of Mgoehring’s work, writing “promotional unsourced puffery” as the purpose of the deletion in their edit summary. They also cited Wikipedia’s rules on “[no original research](https://en.wikipedia.org/wiki/Wikipedia:No_original_research)”.
 
+<br />
+
 <Wikidiff diff_id="Lyons_delete" />
+
+<br />
 
 Campus spokesperson Dan Mogulof said in an email “Moehring” is Maya Goehring-Harris, the current Director of External Relations at UC Berkeley, and that she was authorized to make these edits.
 

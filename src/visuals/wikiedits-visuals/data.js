@@ -6733,7 +6733,7 @@ const data = {
   },
 };
 
-const time_data = [
+const timeData = [
   {
     year: 2001,
     UCLA: {
@@ -8186,7 +8186,7 @@ const time_data = [
   },
 ];
 
-const per_school = {
+const perSchool = {
   UCB: {
     count: 41776,
     total_deletion: -5467643,
@@ -8255,5 +8255,5 @@ const per_school = {
   },
 };
 export default data;
-export { per_school };
-export { time_data };
+export { perSchool };
+export { timeData };

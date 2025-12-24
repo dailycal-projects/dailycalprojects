@@ -17,23 +17,23 @@ import {
   MenuItem,
 } from '@material-ui/core';
 import humanNames from './human_names';
-import { per_school as perSchoolTotals } from './data';
+import { perSchool as perSchoolTotals } from './data';
 
 const VOLUME_DIVISOR = 1_000_000;
 
-const COLORS = [
-  '#4E79A7',
-  '#F28E2B',
-  '#E15759',
-  '#76B7B2',
-  '#59A14F',
-  '#EDC948',
-  '#B07AA1',
-  '#FF9DA7',
-  '#9C755F',
-  '#BAB0AB',
-  '#5C5CA3',
-];
+// const COLORS = [
+//   '#4E79A7',
+//   '#F28E2B',
+//   '#E15759',
+//   '#76B7B2',
+//   '#59A14F',
+//   '#EDC948',
+//   '#B07AA1',
+//   '#FF9DA7',
+//   '#9C755F',
+//   '#BAB0AB',
+//   '#5C5CA3',
+// ];
 
 const chartData = Object.entries(perSchoolTotals).map(([campus, metrics]) => ({
   campus,
@@ -175,6 +175,7 @@ function EditsPerSchool() {
               const value = entry[selectedMetric];
               const isNegative = value < 0;
               return (
+                // eslint-disable-next-line react/no-array-index-key
                 <Cell key={`cell-${index}`} fill={isNegative ? '#f4b400' : '#8694c3'} />
               );
             })}

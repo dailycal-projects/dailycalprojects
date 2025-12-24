@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import {
   XAxis,
@@ -10,13 +11,13 @@ import {
   CartesianGrid,
 } from 'recharts';
 
-import { time_data } from './data';
+import { timeData } from './data';
 
-import human_names from './human_names';
+import humanNames from './human_names';
 
 function EditsOverTime({ metric = 'edit_volume' }) {
   // List of campuses to show; get from human_names order
-  const campusKeys = Object.keys(human_names);
+  const campusKeys = Object.keys(humanNames);
 
   // Colors for each school (just a preset list, loop if not enough keys)
   const COLORS = [
@@ -49,7 +50,7 @@ function EditsOverTime({ metric = 'edit_volume' }) {
       </h3>
       <ResponsiveContainer width="100%" height={400}>
         <AreaChart
-          data={time_data}
+          data={timeData}
           margin={{
             top: 0,
             right: 50,
@@ -88,16 +89,24 @@ function EditsOverTime({ metric = 'edit_volume' }) {
             labelFormatter={(label) => `Year: ${label}`}
             opacity={0.5}
             itemSorter={(item) => -item.value}
-            allowEscapeViewBox={true}
-            position={{ x: 620, y: -100 }}
+            allowEscapeViewBox
+            position={{ x: 640, y: 0 }}
+            wrapperStyle={{ lineHeight: '1.5' }}
+            itemStyle={{ padding: 0, margin: 0 }}
+            contentStyle={{ padding: '8px' }}
+            labelStyle={{
+              fontWeight: 'bold',
+              marginBottom: '8px',
+            }}
           />
+
           {/* Area import and usage */}
           {campusKeys.map((key, idx) => (
             <Area
               key={key}
               type="monotone"
               dataKey={(d) => d[key]?.[metric] ?? 0}
-              name={human_names[key]}
+              name={humanNames[key]}
               stroke={COLORS[idx % COLORS.length]}
               fill={COLORS[idx % COLORS.length]}
               fillOpacity={0}
