@@ -88,6 +88,8 @@ function EditsOverTime({ metric = 'edit_volume' }) {
             labelFormatter={(label) => `Year: ${label}`}
             opacity={0.5}
             itemSorter={(item) => -item.value}
+            allowEscapeViewBox={true}
+            position={{ x: 620, y: -100 }}
           />
           {/* Area import and usage */}
           {campusKeys.map((key, idx) => (

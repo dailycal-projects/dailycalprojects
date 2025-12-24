@@ -16,6 +16,7 @@ embeddedImages:
   - "../images/wikiedits-kliner916.png"
   - "../images/wikiedits-talk1.png"
   - "../images/wikiedits-talk2.png"
+  - "../images/wikiedits-mgedits.png"
 ---
 
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
@@ -276,9 +277,30 @@ The “[Communist Party USA](https://en.wikipedia.org/wiki/Communist_Party_USA)�
 
 ## UC Berkeley PR administrator edits Rich Lyons article
 
-Current UC Berkeley Chancellor Rich Lyon’s Wikipedia article has also been edited by accounts linked to high-ranking campus officials. Eight edits were made to the article by an account named “Mgoehring” on Jan. 7 and 8, 2025, between the hours of 11 a.m. and 1 p.m.
+Current UC Berkeley Chancellor Rich Lyons’ Wikipedia article has also been edited by accounts linked to high-ranking campus officials. Eight edits were made to the article by an account named “Mgoehring” on Jan. 7 and 8, 2025, between the hours of 11 a.m. and 1 p.m.
 
-[add edit history image]
+<body>
+  <GatsbyImage image={getImage(props.localImages[4])} />
+  <div
+    style={{
+      color: "#545454",
+      fontFamily: "Georgia",
+      fontSize: "15px",
+      padding: "10px 15px",
+    }}
+  >
+    <em>
+      Edits by user Mgoehring, all of which were made to the Rich Lyons Wikipedia article. Edit times are displayed in UTC.
+    </em>
+    <br />
+    Source:{" "}
+    <a
+      href="https://en.wikipedia.org/w/index.php?title=Special%3AContributions&target=Mgoehring&namespace=all&tagfilter=&start=&end="
+      style={{ color: "#545454", fontFamily: "Georgia", fontSize: "14px" }}
+    >
+      User contributions for Mgoehring</a>
+  </div>
+</body>
 
 <Wikidiff diff_id="Lyons_change" />
 

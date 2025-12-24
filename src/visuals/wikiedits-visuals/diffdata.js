@@ -126,7 +126,7 @@ You too shall pass<br />
 To nothing.<br />
 <br />
 - /|nt|\/1ru$ -`,
-    name: 'Mark_Yudof',
+    name: 'Mark Yudof',
     article: 'https://en.wikipedia.org/w/index.php?title=Mark_Yudof&diff=next&oldid=316707479',
     time: 'September 28th, 2009',
   },
@@ -238,7 +238,7 @@ In August 2009, UC employment unions called a vote of [[no confidence]] in Presi
 In an interview for The New York Times, Yudof compares being the President of the University of California to "being a manager of a cemetery: there are many people under you, but no one is listening" When asked how he got into education Yudof replied 
 "I don’t know. It’s all an accident. I thought I’d go work for a law firm."`,
     new: '',
-    name: 'Mark_Yudof',
+    name: 'Mark Yudof',
     article: 'https://en.wikipedia.org/w/index.php?title=Mark_Yudof&diff=prev&oldid=316707247',
     time: 'September 28th, 2009',
   },
