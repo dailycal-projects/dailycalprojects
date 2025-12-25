@@ -67,6 +67,12 @@ import DropdownBudgetOverTime from '../visuals/pac-12-finances-visuals/visuals/D
 import ClassDayMap from '../visuals/campus-busyness-visuals/visuals/ClassDayMap';
 import ClassEnrollmentLineChart from '../visuals/campus-busyness-visuals/visuals/ClassEnrollmentLineChart';
 import ClassSizeBarChart from '../visuals/campus-busyness-visuals/visuals/ClassSizeBarChart';
+import TopEditsPerSchool from '../visuals/wikiedits-visuals/top_edits_per_school';
+import EditsOverTime from '../visuals/wikiedits-visuals/edits_over_time';
+import Wikidiff from '../visuals/wikiedits-visuals/wikidiff';
+import EditsPerSchool from '../visuals/wikiedits-visuals/edits_per_school';
+import SemanticMap from '../visuals/wikiedits-visuals/semantic_map';
+import Wikimage from '../visuals/wikiedits-visuals/wikimage';
 import DatawrapperChart from './dataWrapper';
 import ASUCFunding from '../visuals/club-finances-visuals/asucFunding';
 /*
@@ -148,6 +154,12 @@ const shortcodes = {
   ClassDayMap,
   ClassEnrollmentLineChart,
   ClassSizeBarChart,
+  TopEditsPerSchool,
+  EditsOverTime,
+  Wikidiff,
+  EditsPerSchool,
+  SemanticMap,
+  Wikimage,
   DatawrapperChart,
   ASUCFunding,
 };

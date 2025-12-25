@@ -47,6 +47,7 @@
     "prop-types": "^15.7.2",
     "react": "^18.3.1",
     "react-datawrapper-chart": "^1.1.2",
+    "react-diff-viewer-continued": "^3.4.0",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-leaflet": "^3.2.0",
