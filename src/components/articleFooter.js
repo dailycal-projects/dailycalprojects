@@ -9,7 +9,7 @@ const ArticleFooter = ({ classes, about }) => (
       <h3>
         <b> About this story </b>
       </h3>
-      <p> This project was developed by the Projects Department at The Daily Californian. </p>
+      <p> This project was developed by the Data Department at The Daily Californian. </p>
       <p>
         {about}
       </p>

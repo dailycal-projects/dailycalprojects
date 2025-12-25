@@ -73,7 +73,8 @@ import Wikidiff from '../visuals/wikiedits-visuals/wikidiff';
 import EditsPerSchool from '../visuals/wikiedits-visuals/edits_per_school';
 import SemanticMap from '../visuals/wikiedits-visuals/semantic_map';
 import Wikimage from '../visuals/wikiedits-visuals/wikimage';
-
+import DatawrapperChart from './dataWrapper';
+import ASUCFunding from '../visuals/club-finances-visuals/asucFunding';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -159,6 +160,8 @@ const shortcodes = {
   EditsPerSchool,
   SemanticMap,
   Wikimage,
+  DatawrapperChart,
+  ASUCFunding,
 };
 
 export default function Layout({ children }) {
