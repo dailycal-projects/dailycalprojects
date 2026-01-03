@@ -69,7 +69,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
                       {author}
                     </a>
                     {bylineName.length > 2 && !isLast && !isSecondToLast && ', '}
-                    {isSecondToLast ? ' and ' : ''}
+                    {isSecondToLast ? ' & ' : ''}
                   </React.Fragment>
                 );
               })}
@@ -107,11 +107,11 @@ export const pageQuery = graphql`
               width
             }
             gatsbyImageData(width: 750)
-          } 
+          }
         }
         imageAttribution
         imageCaption1
-        
+
         embeddedImages {
           childImageSharp {
             gatsbyImageData
