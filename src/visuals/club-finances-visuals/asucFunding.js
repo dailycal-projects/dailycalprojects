@@ -205,7 +205,7 @@ const ASUCFunding = ({ data = asucData }) => {
         tooltip.style('opacity', 0);
       });
 
-    const labeledClubs = ['Queer Alliance Resource Center', 'Community Projects', 'UC Rally Committee'];
+    const labeledClubs = ['Queer Alliance & Resource Center', 'Community Projects', 'UC Rally Committee'];
 
     function ticked() {
       circles.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
