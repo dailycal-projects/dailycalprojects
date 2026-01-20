@@ -13,11 +13,6 @@ const ArticleCard = ({
   <div>
     <Card className={classes.card}>
       <div className={classes.date}>
-        {/* TO DO: need add categories */}
-        {/* <b>CAMPUS </b> */}
-        {' '}
-        {/* | */}
-        {' '}
         {formatDate(date)}
       </div>
       <div className={classes.cardImage}>
