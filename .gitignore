@@ -69,4 +69,4 @@ yarn-error.log
 .yarn-integrity
 
 # VScode 
-.VScode
+.VScode.eslintcache*
