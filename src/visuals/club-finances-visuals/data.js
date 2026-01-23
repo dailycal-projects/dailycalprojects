@@ -9,7 +9,7 @@ const asucData = [
   },
   {
     category: 'Community and culture',
-    name: 'Queer Alliance Resource Center',
+    name: 'Queer Alliance & Resource Center',
     years_of_sponsorship: 57,
     funding: '87,500.00',
     asuc_category: 'Student Activity Group (SAG)',

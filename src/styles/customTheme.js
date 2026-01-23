@@ -6,19 +6,38 @@ export const styles = () => createStyles({
   main: {
     display: 'flex',
     width: '100%',
-    flexDirection: 'row',
+    flexDirection: 'column',
     backgroundColor: theme.palette.background,
     overflow: 'hidden',
-  },
-  sideBar: {
-    display: 'flex',
-    position: 'sticky',
-    top: '0',
-    flexDirection: 'column',
-    backgroundColor: theme.palette.dcBlue,
-    overflow: 'hidden',
-    minWidth: '25%',
     alignItems: 'center',
+
+  },
+  content: {
+    display: 'flex',
+    width: '1200px',
+    flexDirection: 'column',
+    paddingTop: '50px',
+
+    '@media (max-width: 600px)': {
+      display: 'flex',
+      width: '350px',
+      flexDirection: 'column',
+      paddingTop: '50px',
+    },
+
+  },
+  intro: {
+    fontFamily: "'Georgia', sans-serif",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: '8px',
+  },
+  dataTitle: {
+    fontFamily: 'Georgia',
+    fontSize: theme.spacing[5],
+    fontWeight: 800,
+    margin: 0,
   },
   headingContainer: {
     paddingTop: '5rem',
@@ -75,47 +94,24 @@ export const styles = () => createStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    width: '400px',
+    width: '360px',
     height: '350px',
     margin: '20px',
     boxShadow: 'none',
-    // borderRadius: '15px',
     backgroundColor: theme.palette.background,
     fontSize: theme.spacing[0],
     transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
     '&:hover $articleTitle': {
       textDecoration: 'underline',
     },
-    // '&:hover': {
-    //   boxShadow: theme.cardShadow,
-    //   transform: 'translate(0px, -7px)',
-    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-    // },
-    // '& .cardContent': {
-    //   padding: '0rem 1rem 0rem 1rem',
-    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-    //   overflow: 'hidden',
-    // },
-    // '& .cardHidden': {
-    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-    //   visibility: 'hidden',
-    //   height: 0,
-    //   overflow: 'hidden',
-    // },
-    // '&:hover .cardContent': {
-    //   transform: 'translate(0px, -1px)',
-    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-    // },
-    // '&:hover .cardHidden': {
-    //   transform: 'translate(0px, -1px)',
-    //   transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
-    //   visibility: 'visible',
-    //   height: 'auto',
-    // },
+
+    '@media (max-width: 600px)': {
+      width: '350px',
+    },
   },
   cardImage: {
     width: '100%',
-    height: '240px',
+    height: '230px',
   },
   cardContent: {
     padding: '1rem 1rem 0rem 1rem',
@@ -129,15 +125,19 @@ export const styles = () => createStyles({
   },
   articleContent: {
     fontSize: theme.spacing[1],
-    fontFamily: "'Georgia', sans-serif", // UPDATE FONT
+    fontFamily: "'Georgia', sans-serif",
     maxWidth: '640px',
-    // textAlign: 'justify',
+
+    '@media (max-width: 600px)': {
+      display: 'flex',
+      width: '350px',
+      flexDirection: 'column',
+      paddingTop: '50px',
+    },
   },
   byline: {
-    // display: 'flex',
-    // flexDirection: 'row',
     fontSize: theme.spacing[0],
-    fontFamily: ' sans-serif', // UPDATE FONT
+    fontFamily: 'sans-serif',
     textDecoration: 'none',
     marginBottom: '25px',
     textAlign: 'left',
@@ -159,7 +159,7 @@ export const styles = () => createStyles({
   },
   teamTitle: {
     fontWeight: 800,
-    fontFamily: "'Georgia', serif", // change to Tiempo as used in main DC site
+    fontFamily: "'Georgia', serif",
     lineHeight: 'normal',
     color: theme.palette.background,
     fontSize: '4vw',
@@ -167,12 +167,11 @@ export const styles = () => createStyles({
 
   articleTitle: {
     fontWeight: 400,
-    fontFamily: "'Georgia', serif", // change to Tiempo as used in main DC site
+    fontFamily: "'Georgia', serif",
     lineHeight: 'normal',
     color: theme.palette.black,
-    fontSize: '1.9vw',
+    fontSize: theme.spacing[2],
     textDecoration: 'none',
-    // transition: 'all 0.3s ease-out',
   },
 
   date: {
@@ -180,25 +179,21 @@ export const styles = () => createStyles({
     borderTop: '1px solid',
     borderColor: theme.palette.grey,
     fontWeight: 400,
-    fontFamily: "'Georgia', sans-serif", // change to Tiempo as used in main DC site
+    fontFamily: "'Georgia', sans-serif",
     lineHeight: 'normal',
-    fontSize: '1vw',
-    paddingBottom: '1vw',
-    paddingTop: '1vw',
+    fontSize: '12px',
+    paddingBottom: '10px',
+    paddingTop: '10px',
   },
 
   cardByline: {
     color: theme.palette.grey,
     fontWeight: 800,
-    fontFamily: "'Helvetica', sans-serif", // change to Tiempo as used in main DC site
+    fontFamily: "'Helvetica', sans-serif",
     lineHeight: 'normal',
     fontSize: '1vw',
-    // paddingBottom: '1vw',
     paddingTop: '2vw',
   },
-
-  // Styling for article page
-
   topBar: {
     position: 'fixed',
     top: 0,
@@ -216,7 +211,7 @@ export const styles = () => createStyles({
   },
 
   headerContainer: {
-    maxWidth: '640px', // see what happens if change to width
+    maxWidth: '640px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

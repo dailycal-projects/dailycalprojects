@@ -4,11 +4,11 @@ import { graphql, Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 import ArticleCard from '../components/articleCard';
-// import Header from '../components/header';
 import Layout from '../components/layout';
-// import NavBar from '../components/navBar';
 import Seo from '../components/seo';
-import logo from '../images/dclogo.png';
+import circlelogo from '../images/dclogocircle.png';
+import logo from '../images/dclogoblack.png';
+import { theme } from '../styles/theme';
 
 const IndexPage = ({ classes, data }) => {
   const articles = data.allMdx.edges;
@@ -16,45 +16,55 @@ const IndexPage = ({ classes, data }) => {
   return (
     <Layout>
       <div className={classes.main}>
-        <div className={classes.sideBar}>
-          <div className={classes.headingContainer}>
-            <img src={logo} alt="The Daily Californian" width="320" style={{ marginBottom: '0.5rem' }} />
-            <div className={classes.teamTitle}>
-              Data
-            </div>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <div className={classes.topBar}>
+            <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
           </div>
-        </div>
-        {/* <NavBar /> */}
+        </Link>
         <Seo title="Daily Cal Data" />
-        {/* <Header /> */}
-        <div className={classes.index}>
-          {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
-            const { frontmatter, slug } = node;
-            const image = getImage(frontmatter.featuredImage);
+        <div className={classes.content}>
+          <div className={classes.intro}>
+            <img src={circlelogo} alt="The Daily Californian" width="100" style={{ margin: '0px' }} />
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <h1 style={{
+                fontFamily: 'Georgia', fontSize: theme.spacing[5], fontWeight: 800, margin: 0, color: theme.palette.black,
+              }}
+              >
+                Data
+              </h1>
+              <p style={{ fontFamily: 'Georgia', margin: 0, color: theme.palette.darkGrey }}>Investigative stories, data analysis and graphics by The Daily Californian’s Data Team</p>
+            </div>
 
-            if (!frontmatter.oldLink) {
+          </div>
+          <div className={classes.index}>
+            {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
+              const { frontmatter, slug } = node;
+              const image = getImage(frontmatter.featuredImage);
+
+              if (!frontmatter.oldLink) {
+                return (
+                  <Link to={slug} key={slug} style={{ textDecoration: 'none' }}>
+                    <ArticleCard
+                      title={frontmatter.title}
+                      date={frontmatter.date}
+                      image={image}
+                      byline={frontmatter.byline}
+                    />
+                  </Link>
+                );
+              }
               return (
-                <Link to={slug} key={slug} style={{ textDecoration: 'none' }}>
+                <a href={frontmatter.oldLink} key={slug} style={{ textDecoration: 'none' }}>
                   <ArticleCard
                     title={frontmatter.title}
                     date={frontmatter.date}
                     image={image}
                     byline={frontmatter.byline}
                   />
-                </Link>
+                </a>
               );
-            }
-            return (
-              <a href={frontmatter.oldLink} key={slug} style={{ textDecoration: 'none' }}>
-                <ArticleCard
-                  title={frontmatter.title}
-                  date={frontmatter.date}
-                  image={image}
-                  byline={frontmatter.byline}
-                />
-              </a>
-            );
-          })}
+            })}
+          </div>
         </div>
       </div>
     </Layout>
@@ -68,7 +78,7 @@ export const query = graphql`
     ){
       edges {
         node {
-          id 
+          id
           slug
           frontmatter {
             title
@@ -79,11 +89,11 @@ export const query = graphql`
             featuredImage {
               childImageSharp {
                 gatsbyImageData(width: 450 height: 250)
-              } 
+              }
             }
-          } 
+          }
         }
-      } 
+      }
     }
   }
 `;
