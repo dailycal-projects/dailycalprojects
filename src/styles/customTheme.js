@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { createStyles } from '@material-ui/core';
+import createStyles from '@mui/styles/createStyles';
 import { theme } from './theme';
 
 export const styles = () => createStyles({

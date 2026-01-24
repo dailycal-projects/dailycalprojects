@@ -39,7 +39,7 @@ const TestStripMap = () => {
       </div>
       {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
 
-        <MapContainer
+        (<MapContainer
           scrollWheelZoom={false}
           minZoom={7}
           style={containerStyle}
@@ -51,7 +51,6 @@ const TestStripMap = () => {
           ]}
         >
           <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
-
           {data.info.map((info) => (
             <CircleMarker
               key={info.center[0].toString + info.center[1].toString}
@@ -71,7 +70,7 @@ const TestStripMap = () => {
               </Popup>
             </CircleMarker>
           ))}
-        </MapContainer>
+        </MapContainer>)
       ) : <p> Map is loading... </p>}
     </div>
   );

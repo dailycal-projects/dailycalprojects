@@ -11,8 +11,8 @@ import {
   FormControl,
   Select,
   MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+} from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import L from 'leaflet';
 import { bikeTheftMapDataByYear } from './bikeTheftMapDataByYear';
@@ -143,7 +143,6 @@ function MarkerClusterMap() {
           <MenuItem value="E-Bikes">E-bikes</MenuItem>
         </Select>
       </FormControl>
-
       <FormControl className={classes.formControl}>
         <InputLabel>Select year</InputLabel>
         <Select
@@ -161,10 +160,9 @@ function MarkerClusterMap() {
           <MenuItem value="all">All years</MenuItem>
         </Select>
       </FormControl>
-
       {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
 
-        <MapContainer
+        (<MapContainer
           scrollWheelZoom={false}
           minZoom={7}
           style={containerStyle}
@@ -176,7 +174,6 @@ function MarkerClusterMap() {
           ]}
         >
           <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
-
           {year.name == '2019' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2019'].Bikes.filter((info) => info.count != 1).map((info) => (
@@ -191,7 +188,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2019' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2019'].Bikes.filter((info) => info.count == 1).map((info) => (
@@ -206,7 +202,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2019' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2019']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
@@ -221,7 +216,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2019' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2019']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
@@ -236,7 +230,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2019' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2019']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
@@ -251,7 +244,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2019' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2019']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
@@ -266,7 +258,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2020' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2020'].Bikes.filter((info) => info.count != 1).map((info) => (
@@ -281,7 +272,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2020' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2020'].Bikes.filter((info) => info.count == 1).map((info) => (
@@ -296,7 +286,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2020' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2020']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
@@ -311,7 +300,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2020' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2020']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
@@ -326,7 +314,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2020' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2020']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
@@ -341,7 +328,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2020' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2020']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
@@ -356,7 +342,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2021' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2021'].Bikes.filter((info) => info.count != 1).map((info) => (
@@ -371,7 +356,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2021' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2021'].Bikes.filter((info) => info.count == 1).map((info) => (
@@ -386,7 +370,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2021' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2021']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
@@ -401,7 +384,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2021' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2021']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
@@ -416,7 +398,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2021' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2021']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
@@ -431,7 +412,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2021' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2021']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
@@ -446,7 +426,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2022' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2022'].Bikes.filter((info) => info.count != 1).map((info) => (
@@ -461,7 +440,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2022' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2022'].Bikes.filter((info) => info.count == 1).map((info) => (
@@ -476,7 +454,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2022' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2022']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
@@ -491,7 +468,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2022' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2022']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
@@ -506,7 +482,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2022' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2022']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
@@ -521,7 +496,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2022' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2022']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
@@ -536,7 +510,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2023' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2023'].Bikes.filter((info) => info.count != 1).map((info) => (
@@ -551,7 +524,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2023' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2023'].Bikes.filter((info) => info.count == 1).map((info) => (
@@ -566,7 +538,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2023' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2023']['E-Scooters'].filter((info) => info.count != 1).map((info) => (
@@ -581,7 +552,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2023' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2023']['E-Scooters'].filter((info) => info.count == 1).map((info) => (
@@ -596,7 +566,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2023' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear['2023']['E-Bikes'].filter((info) => info.count != 1).map((info) => (
@@ -611,7 +580,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == '2023' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear['2023']['E-Bikes'].filter((info) => info.count == 1).map((info) => (
@@ -626,7 +594,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == 'all' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear.all.Bikes.filter((info) => info.count != 1).map((info) => (
@@ -641,7 +608,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == 'all' && vehicleType.name == 'Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear.all.Bikes.filter((info) => info.count == 1).map((info) => (
@@ -656,7 +622,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == 'all' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear.all['E-Scooters'].filter((info) => info.count != 1).map((info) => (
@@ -671,7 +636,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == 'all' && vehicleType.name == 'E-Scooters' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear.all['E-Scooters'].filter((info) => info.count == 1).map((info) => (
@@ -686,7 +650,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == 'all' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup>
               {bikeTheftMapDataByYear.all['E-Bikes'].filter((info) => info.count != 1).map((info) => (
@@ -701,7 +664,6 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
           {year.name == 'all' && vehicleType.name == 'E-Bikes' ? (
             <MarkerClusterGroup singleMarkerMode>
               {bikeTheftMapDataByYear.all['E-Bikes'].filter((info) => info.count == 1).map((info) => (
@@ -716,12 +678,10 @@ function MarkerClusterMap() {
             </MarkerClusterGroup>
           )
             : null}
-
-        </MapContainer>
+        </MapContainer>)
 
       ) : <p> Map is loading... </p>}
     </div>
-
   );
 }
 

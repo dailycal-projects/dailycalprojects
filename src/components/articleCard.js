@@ -1,6 +1,6 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
+import withStyles from '@mui/styles/withStyles';
+import Card from '@mui/material/Card';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 

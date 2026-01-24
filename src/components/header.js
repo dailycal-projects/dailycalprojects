@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@mui/styles/withStyles';
 import { styles } from '../styles/customTheme';
 import GitHubIcon from '../assets/github.svg';
 import DCIcon from '../assets/dailycal.svg';

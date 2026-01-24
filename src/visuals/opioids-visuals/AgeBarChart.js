@@ -11,8 +11,8 @@ import {
 } from 'recharts';
 import {
   InputLabel, FormControl, Select, MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+} from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import accessData from './lineData';
 
 function OpioidsLineChart() {

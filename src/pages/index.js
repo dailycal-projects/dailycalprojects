@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { withStyles } from '@material-ui/core';
+import withStyles from '@mui/styles/withStyles';
 import { graphql, Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';

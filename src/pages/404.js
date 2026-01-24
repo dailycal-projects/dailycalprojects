@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { withStyles } from '@material-ui/core';
+import withStyles from '@mui/styles/withStyles';
 import Seo from '../components/seo';
 import { styles } from '../styles/customTheme';
 
