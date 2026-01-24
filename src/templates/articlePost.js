@@ -40,13 +40,15 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
         </div>
         <h5>{frontmatter.date}</h5>
 
-        <div className={classes.imageContainer}>
-          <GatsbyImage image={image} />
-          <div style={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></div>
+        {!frontmatter.hideHeroImage && image && (
+          <div className={classes.imageContainer}>
+            <GatsbyImage image={image} />
+            <div style={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></div>
 
-          <h5 style={{ marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
+            <h5 style={{ marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
 
-        </div>
+          </div>
+        )}
 
         <div className={classes.articleContent}>
 
@@ -99,6 +101,7 @@ export const pageQuery = graphql`
         bylineUrl
         subhead
         aboutStory
+        hideHeroImage
         featuredImage {
           childImageSharp {
             resize(width: 1200) {
