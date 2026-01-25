@@ -75,6 +75,7 @@ import SemanticMap from '../visuals/wikiedits-visuals/semantic_map';
 import Wikimage from '../visuals/wikiedits-visuals/wikimage';
 import DatawrapperChart from './dataWrapper';
 import ASUCFunding from '../visuals/club-finances-visuals/asucFunding';
+import SexyMap from '../visuals/too-sexy-visuals/map';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -162,6 +163,7 @@ const shortcodes = {
   Wikimage,
   DatawrapperChart,
   ASUCFunding,
+  SexyMap,
 };
 
 export default function Layout({ children }) {
