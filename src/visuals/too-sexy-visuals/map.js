@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
@@ -45,6 +45,7 @@ function createSexSpotIcon(year) {
 
 const SexyMap = () => {
   const mapRef = useRef(null);
+  const markerRef = useRef(null);
   const [isAddingPin, setIsAddingPin] = useState(false);
   const [draggablePosition, setDraggablePosition] = useState([37.8716, -122.2585]);
   const [pinMessage, setPinMessage] = useState('');
@@ -67,6 +68,18 @@ const SexyMap = () => {
     }
     setIsAddingPin(true);
   };
+
+  // Auto-open popup when pin is added
+  useEffect(() => {
+    if (isAddingPin && markerRef.current) {
+      // Small delay to ensure marker is fully rendered
+      setTimeout(() => {
+        if (markerRef.current) {
+          markerRef.current.openPopup();
+        }
+      }, 100);
+    }
+  }, [isAddingPin]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -156,6 +169,7 @@ const SexyMap = () => {
               ))}
               {isAddingPin && (
                 <Marker
+                  ref={markerRef}
                   position={draggablePosition}
                   icon={createSexSpotIcon(0)}
                   draggable
@@ -166,7 +180,11 @@ const SexyMap = () => {
                     },
                   }}
                   zIndexOffset={2000}
-                />
+                >
+                  <Popup closeButton={false}>
+                    <b>Drag me 🐻</b>
+                  </Popup>
+                </Marker>
               )}
             </MapContainer>
             <div
