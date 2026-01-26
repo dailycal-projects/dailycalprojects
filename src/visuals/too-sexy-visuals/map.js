@@ -102,7 +102,7 @@ const SexyMap = () => {
           >
             <h4 style={{ fontSize: '1rem', fontWeight: 'bold', marginBottom: '10px' }}>
               Legend — 
-              <i>Click an encounter to read more</i>
+              <i> Click an encounter to read more</i>
             </h4>
             <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
               {[2018, 2026].map((year) => (
