@@ -101,7 +101,7 @@ const SexyMap = () => {
           }}
           >
             <h4 style={{ fontSize: '1rem', fontWeight: 'bold', marginBottom: '10px' }}>
-              Legend —
+              Legend — 
               <i>Click an encounter to read more</i>
             </h4>
             <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
