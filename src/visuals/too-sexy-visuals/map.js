@@ -29,6 +29,17 @@ function createSexSpotIcon(year) {
       iconSize: [32, 32],
     });
   }
+
+  if (year === 0) {
+    return L.icon({
+      iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+      shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
+    });
+  }
   return null;
 }
 
@@ -54,19 +65,16 @@ const SexyMap = () => {
     e.preventDefault();
     // Handle form submission here
     console.log('Submitting pin:', { position: draggablePosition, message: pinMessage });
+
+    try {
+      window.fetch(`https://docs.google.com/forms/d/e/1FAIpQLSfxEQSGr4_mPqU4nMrgUEMQNu_nPUUJkBU62RtYDOaNYzxpCw/formResponse?&submit=Submit?usp=pp_url&entry.949812204=${pinMessage}&entry.262371575=${draggablePosition[0]}&entry.1560180432=${draggablePosition[1]}&entry.1483653783=NA`);
+    } catch (error) {
+      // This fetch should fail, but the response will still be recorded
+    }
     // Reset form
     setIsAddingPin(false);
     setPinMessage('');
   };
-
-  const defaultIcon = L.icon({
-    iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41],
-  });
 
   return (
     <div>
@@ -85,7 +93,10 @@ const SexyMap = () => {
             zIndex: 100,
           }}
           >
-            <h4 style={{ fontSize: '1rem', fontWeight: 'bold', marginBottom: '10px' }}>Legend — <i>Click an encounter to read more</i></h4>
+            <h4 style={{ fontSize: '1rem', fontWeight: 'bold', marginBottom: '10px' }}>
+              Legend —
+              <i>Click an encounter to read more</i>
+            </h4>
             <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
               {[2018, 2026].map((year) => (
                 <div
@@ -131,8 +142,8 @@ const SexyMap = () => {
               {isAddingPin && (
                 <Marker
                   position={draggablePosition}
-                  icon={defaultIcon}
-                  draggable={true}
+                  icon={createSexSpotIcon(0)}
+                  draggable
                   eventHandlers={{
                     dragend: (e) => {
                       const marker = e.target;
@@ -159,48 +170,48 @@ const SexyMap = () => {
                 transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out',
               }}
             >
-                <form
-                  onSubmit={handleSubmit}
+              <form
+                onSubmit={handleSubmit}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  width: '100%',
+                  margin: '0px',
+                }}
+              >
+                <input
+                  type="text"
+                  value={pinMessage}
+                  onChange={(e) => setPinMessage(e.target.value)}
+                  placeholder="Describe your encounter..."
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    width: '100%',
-                    margin: '0px'
+                    fontFamily: 'sans-serif',
+                    fontSize: '1rem',
+                    padding: '10px 12px',
+                    borderRadius: '10px',
+                    border: '1px solid #ccc',
+                    flex: 1,
+                  }}
+                />
+                <button
+                  type="submit"
+                  style={{
+                    fontFamily: 'sans-serif',
+                    fontWeight: 'lighter',
+                    border: 'none',
+                    backgroundColor: 'black',
+                    color: 'white',
+                    fontSize: '1rem',
+                    borderRadius: '10px',
+                    cursor: 'pointer',
+                    padding: '10px 20px',
                   }}
                 >
-                  <input
-                    type="text"
-                    value={pinMessage}
-                    onChange={(e) => setPinMessage(e.target.value)}
-                    placeholder="Describe your encounter..."
-                    style={{
-                      fontFamily: 'sans-serif',
-                      fontSize: '1rem',
-                      padding: '10px 12px',
-                      borderRadius: '10px',
-                      border: '1px solid #ccc',
-                      flex: 1,
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    style={{
-                      fontFamily: 'sans-serif',
-                      fontWeight: 'lighter',
-                      border: 'none',
-                      backgroundColor: 'black',
-                      color: 'white',
-                      fontSize: '1rem',
-                      borderRadius: '10px',
-                      cursor: 'pointer',
-                      padding: '10px 20px',
-                    }}
-                  >
-                    SUBMIT
-                  </button>
-                </form>
-              </div>
+                  SUBMIT
+                </button>
+              </form>
+            </div>
           </div>
           <div style={{
             borderRadius: '0px 0px 15px 15px',
@@ -227,7 +238,7 @@ const SexyMap = () => {
               position: 'relative',
               minHeight: '40px',
               display: 'flex',
-              justifyContent: 'center'
+              justifyContent: 'center',
             }}
             >
               <p
@@ -240,7 +251,7 @@ const SexyMap = () => {
                   transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out',
                   position: isAddingPin ? 'relative' : 'absolute',
                   paddingTop: isAddingPin ? '0px' : '0px',
-                  textAlign: 'right'
+                  textAlign: 'right',
                 }}
               >
                 Drag the pin on the map to mark the location, then describe your encounter above. Responses may be edited for clarity and length.
