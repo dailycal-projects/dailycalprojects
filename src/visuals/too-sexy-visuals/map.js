@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
@@ -8,20 +8,23 @@ import L from 'leaflet';
 import zIndex from '@material-ui/core/styles/zIndex';
 // import { sex_spot_icon_2018, sex_spot_icon_2026 } from './icon';
 import { sex_spots_2018, sex_spots_2026 } from './map_data';
+import sexy2018IconPng from '../../images/2-sexy-2018-icon.png';
+import sexy2026IconPng from '../../images/2-sexy-2026-icon.png';
+import sexy2026ShadowPng from '../../images/2-sexy-2026-shadow.png';
 
 function createSexSpotIcon(year) {
   if (typeof window === 'undefined') return null;
 
   if (year === 2018) {
     return L.icon({
-      iconUrl: '/leaflet/icons/2-sexy-2018-icon.png',
+      iconUrl: sexy2018IconPng,
       iconSize: [16, 16],
     });
   }
   if (year === 2026) {
     return L.icon({
-      iconUrl: '/leaflet/icons/2-sexy-2026-icon.png',
-      shadowUrl: '/leaflet/icons/2-sexy-2026-shadow.png',
+      iconUrl: sexy2026IconPng,
+      shadowUrl: sexy2026ShadowPng,
       shadowSize: [32, 32],
       iconSize: [32, 32],
     });
@@ -30,6 +33,10 @@ function createSexSpotIcon(year) {
 }
 
 const SexyMap = () => {
+  const [isAddingPin, setIsAddingPin] = useState(false);
+  const [draggablePosition, setDraggablePosition] = useState([37.8716, -122.2585]);
+  const [pinMessage, setPinMessage] = useState('');
+
   const containerStyle = {
     height: '600px',
     margin: '0px',
@@ -38,6 +45,28 @@ const SexyMap = () => {
     // borderRadius: '0 0 15px 15px',
     // boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.25)',
   };
+
+  const handleAddPinClick = () => {
+    setIsAddingPin(true);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Submitting pin:', { position: draggablePosition, message: pinMessage });
+    // Reset form
+    setIsAddingPin(false);
+    setPinMessage('');
+  };
+
+  const defaultIcon = L.icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
 
   return (
     <div>
@@ -64,7 +93,7 @@ const SexyMap = () => {
                   style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
                 >
                   <img
-                    src={`/leaflet/icons/2-sexy-${year}-icon.png`}
+                    src={year === 2018 ? sexy2018IconPng : sexy2026IconPng}
                     alt={`${year} Encounter`}
                     style={{
                       width: '32px',
@@ -82,35 +111,109 @@ const SexyMap = () => {
               ))}
             </div>
           </div>
-          <MapContainer center={[37.8716, -122.2585]} zoom={15.2} style={containerStyle} zoomSnap={0.1}>
-            <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
-            {sex_spots_2018.map((spot) => (
-              <Marker key={spot.message} position={[spot.lat, spot.long]} icon={createSexSpotIcon(2018)} opacity={0.8} zIndexOffset={0}>
-                <Popup>
-                  <p>{spot.message}</p>
-                </Popup>
-              </Marker>
-            ))}
-            {sex_spots_2026.map((spot) => (
-              <Marker key={spot.message} position={[spot.lat, spot.long]} icon={createSexSpotIcon(2026)} opacity={1} zIndexOffset={1000}>
-                <Popup>
-                  <p>{spot.message}</p>
-                </Popup>
-              </Marker>
-            ))}
-          </MapContainer>
+          <div style={{ position: 'relative' }}>
+            <MapContainer center={[37.8716, -122.2585]} zoom={15.3} style={containerStyle} zoomSnap={0.1}>
+              <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
+              {sex_spots_2018.map((spot) => (
+                <Marker key={spot.message} position={[spot.lat, spot.long]} icon={createSexSpotIcon(2018)} opacity={0.8} zIndexOffset={0}>
+                  <Popup>
+                    <p>{spot.message}</p>
+                  </Popup>
+                </Marker>
+              ))}
+              {sex_spots_2026.map((spot) => (
+                <Marker key={spot.message} position={[spot.lat, spot.long]} icon={createSexSpotIcon(2026)} opacity={1} zIndexOffset={1000}>
+                  <Popup>
+                    <p>{spot.message}</p>
+                  </Popup>
+                </Marker>
+              ))}
+              {isAddingPin && (
+                <Marker
+                  position={draggablePosition}
+                  icon={defaultIcon}
+                  draggable={true}
+                  eventHandlers={{
+                    dragend: (e) => {
+                      const marker = e.target;
+                      setDraggablePosition([marker.getLatLng().lat, marker.getLatLng().lng]);
+                    },
+                  }}
+                  zIndexOffset={2000}
+                />
+              )}
+            </MapContainer>
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '0px',
+                left: '0px',
+                right: '0px',
+                backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                padding: '15px',
+                borderTop: '2px solid gray',
+                zIndex: 1000,
+                opacity: isAddingPin ? 1 : 0,
+                visibility: isAddingPin ? 'visible' : 'hidden',
+                pointerEvents: isAddingPin ? 'auto' : 'none',
+                transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out',
+              }}
+            >
+                <form
+                  onSubmit={handleSubmit}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    width: '100%',
+                    margin: '0px'
+                  }}
+                >
+                  <input
+                    type="text"
+                    value={pinMessage}
+                    onChange={(e) => setPinMessage(e.target.value)}
+                    placeholder="Describe your encounter..."
+                    style={{
+                      fontFamily: 'sans-serif',
+                      fontSize: '1rem',
+                      padding: '10px 12px',
+                      borderRadius: '10px',
+                      border: '1px solid #ccc',
+                      flex: 1,
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    style={{
+                      fontFamily: 'sans-serif',
+                      fontWeight: 'lighter',
+                      border: 'none',
+                      backgroundColor: 'black',
+                      color: 'white',
+                      fontSize: '1rem',
+                      borderRadius: '10px',
+                      cursor: 'pointer',
+                      padding: '10px 20px',
+                    }}
+                  >
+                    SUBMIT
+                  </button>
+                </form>
+              </div>
+          </div>
           <div style={{
-
             borderRadius: '0px 0px 15px 15px',
             backgroundColor: '##d1d1d1',
             padding: '10px',
             display: 'flex',
-
+            flexDirection: 'row',
             alignItems: 'center',
-            // boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.15)',
+            // gap: isAddingPin ? '10px' : '0px',
+            transition: 'all 0.3s ease-in-out',
           }}
           >
-            <div style={{ width: '50%' }}>
+            <div style={{ width: isAddingPin ? '100%' : '50%' }}>
               <h3 style={{
                 margin: '0px',
                 fontWeight: 'bold',
@@ -120,32 +223,50 @@ const SexyMap = () => {
               </h3>
             </div>
             <div style={{
-              width: '50%',
+              width: isAddingPin ? '100%' : '50%',
+              position: 'relative',
+              minHeight: '40px',
+              display: 'flex',
+              justifyContent: 'center'
             }}
             >
-              <form style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0px',
-              }}
+              <p
+                style={{
+                  margin: '0px',
+                  fontFamily: 'sans-serif',
+                  fontSize: '0.7rem',
+                  opacity: isAddingPin ? 1 : 0,
+                  visibility: isAddingPin ? 'visible' : 'hidden',
+                  transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out',
+                  position: isAddingPin ? 'relative' : 'absolute',
+                  paddingTop: isAddingPin ? '0px' : '0px',
+                  textAlign: 'right'
+                }}
               >
-                <input
-                  type="button"
-                  value="ADD A PIN"
-                  style={{
-                    fontFamily: 'sans-serif',
-                    fontWeight: 'lighter',
-                    border: 'none',
-                    backgroundColor: 'black',
-                    color: 'white',
-                    fontSize: '1rem',
-                    borderRadius: '10px',
-                    cursor: 'pointer',
-                    scale: '1.5',
-                  }}
-                />
-              </form>
+                Drag the pin on the map to mark the location, then describe your encounter above. Responses may be edited for clarity and length.
+              </p>
+              <input
+                type="button"
+                value="ADD A PIN"
+                onClick={handleAddPinClick}
+                style={{
+                  fontFamily: 'sans-serif',
+                  fontWeight: 'lighter',
+                  border: 'none',
+                  backgroundColor: 'black',
+                  color: 'white',
+                  fontSize: '1rem',
+                  borderRadius: '10px',
+                  cursor: 'pointer',
+                  // scale: '1.5',
+                  padding: '8px 16px',
+                  position: isAddingPin ? 'absolute' : 'relative',
+                  opacity: isAddingPin ? 0 : 1,
+                  visibility: isAddingPin ? 'hidden' : 'visible',
+                  transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out',
+                  pointerEvents: isAddingPin ? 'none' : 'auto',
+                }}
+              />
             </div>
           </div>
         </div>
