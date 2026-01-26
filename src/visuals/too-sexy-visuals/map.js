@@ -4,27 +4,32 @@ import { MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { sex_spot_icon_2018, sex_spot_icon_2026 } from './icon';
 import { sex_spots_2018, sex_spots_2026 } from './map_data';
+import zIndex from '@material-ui/core/styles/zIndex';
 
 const SexyMap = () => {
   const containerStyle = {
     height: '600px',
-    margin: '0px 0px 10px 0px',
-    borderRadius: '0 0 15px 15px',
-    boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.25)',
+    margin: '0px',
+    borderTop: '2px solid gray',
+    borderBottom: '2px solid gray',
+    // borderRadius: '0 0 15px 15px',
+    // boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.25)',
   };
 
   return (
     <div>
         {(typeof window !== 'undefined') ? (
           <div style={{
-            // border: '1px solid black'
+            border: '2px solid gray',
+            boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.15)',
+            borderRadius: '10px'
           }}>
             <div style={{ 
-                // border: '1px solid #000000',
+                // border: '20pxpx solid #000000',
                 borderRadius: '15px 15px 0px 0px',
                 padding: '10px',
                 backgroundColor: '##d1d1d1',
-                boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.15)'
+                zIndex: 100
               }}>
               <h4 style={{ fontSize: '1rem', fontWeight: 'bold' , marginBottom: '10px'}}>Legend</h4>
               <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
@@ -62,6 +67,45 @@ const SexyMap = () => {
                 </Marker>
               ))}
             </MapContainer>
+            <div style={{
+
+              borderRadius: "0px 0px 15px 15px",
+              backgroundColor: '##d1d1d1',
+              padding: '10px',
+              display: 'flex',
+
+              alignItems: 'center',
+              // boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.15)',
+            }}>
+              <div style={{width: '50%'}}>
+                <h3 style={{
+                  margin: '0px',
+                  fontWeight: 'bold',
+                }}>Tell us about a sexual encounter you've had on Berkeley's campus.</h3>
+              </div>
+              <div style={{
+                width: '50%'
+              }}>
+                <form style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0px'
+                }}>
+                  <input type="button" value={"ADD A PIN"} style={{
+                    fontFamily: "sans-serif",
+                    fontWeight: 'lighter',
+                    border: 'none',
+                    backgroundColor: "black",
+                    color: "white",
+                    fontSize: '1rem',
+                    borderRadius: '10px',
+                    cursor: 'pointer',
+                    scale: '1.5'
+                  }}/>
+                </form>
+              </div>
+            </div>
           </div>
         ) : <p> Map is loading... </p>}
     </div>
