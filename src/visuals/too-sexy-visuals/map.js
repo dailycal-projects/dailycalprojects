@@ -135,6 +135,8 @@ const SexyMap = () => {
               zoom={15.3}
               style={containerStyle}
               zoomSnap={0.5}
+              minZoom={14.5}
+              // maxZoom={10}
               whenCreated={(map) => { mapRef.current = map; }}
             >
               <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
