@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
@@ -44,6 +44,7 @@ function createSexSpotIcon(year) {
 }
 
 const SexyMap = () => {
+  const mapRef = useRef(null);
   const [isAddingPin, setIsAddingPin] = useState(false);
   const [draggablePosition, setDraggablePosition] = useState([37.8716, -122.2585]);
   const [pinMessage, setPinMessage] = useState('');
@@ -58,6 +59,12 @@ const SexyMap = () => {
   };
 
   const handleAddPinClick = () => {
+    // Spawn the pin at the center of the current viewport (what the user is looking at).
+    const map = mapRef.current;
+    if (map && typeof map.getCenter === 'function') {
+      const center = map.getCenter();
+      setDraggablePosition([center.lat, center.lng]);
+    }
     setIsAddingPin(true);
   };
 
@@ -123,7 +130,13 @@ const SexyMap = () => {
             </div>
           </div>
           <div style={{ position: 'relative' }}>
-            <MapContainer center={[37.8716, -122.2585]} zoom={15.3} style={containerStyle} zoomSnap={0.1}>
+            <MapContainer
+              center={[37.8716, -122.2585]}
+              zoom={15.3}
+              style={containerStyle}
+              zoomSnap={0.1}
+              whenCreated={(map) => { mapRef.current = map; }}
+            >
               <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
               {sex_spots_2018.map((spot) => (
                 <Marker key={spot.message} position={[spot.lat, spot.long]} icon={createSexSpotIcon(2018)} opacity={0.8} zIndexOffset={0}>
@@ -263,13 +276,14 @@ const SexyMap = () => {
                 style={{
                   fontFamily: 'sans-serif',
                   fontWeight: 'lighter',
+                  // fontSize: 
                   border: 'none',
                   backgroundColor: 'black',
                   color: 'white',
-                  fontSize: '1rem',
+                  fontSize: '1.5rem',
                   borderRadius: '10px',
                   cursor: 'pointer',
-                  // scale: '1.5',
+                  // scale: '1.3',
                   padding: '8px 16px',
                   position: isAddingPin ? 'absolute' : 'relative',
                   opacity: isAddingPin ? 0 : 1,
