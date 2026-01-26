@@ -49,6 +49,7 @@ const SexyMap = () => {
   const [isAddingPin, setIsAddingPin] = useState(false);
   const [draggablePosition, setDraggablePosition] = useState([37.8716, -122.2585]);
   const [pinMessage, setPinMessage] = useState('');
+  const [warningDismissed, setWarningDismissed] = useState(false);
 
   const containerStyle = {
     height: '600px',
@@ -114,7 +115,7 @@ const SexyMap = () => {
           }}
           >
             <h4 style={{ fontSize: '1rem', fontWeight: 'bold', marginBottom: '10px' }}>
-              Legend — 
+              Legend —
               <i> Click an encounter to read more</i>
             </h4>
             <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
@@ -187,6 +188,47 @@ const SexyMap = () => {
                 </Marker>
               )}
             </MapContainer>
+            <div
+              onClick={() => setWarningDismissed(true)}
+              style={{
+                position: 'absolute',
+                top: '0px',
+                left: '0px',
+                right: '0px',
+                bottom: '0px',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 2000,
+                cursor: 'pointer',
+                opacity: warningDismissed ? 0 : 1,
+                transition: 'opacity 0.5s ease-in-out',
+                pointerEvents: warningDismissed ? 'none' : 'auto',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: '1.5rem',
+                  fontFamily: 'sans-serif',
+                  // fontWeight: 'bold',
+                  color: 'rgb(10, 10, 10)',
+                  textAlign: 'center',
+                  padding: '20px',
+                  width: '75%',
+                }}
+              >
+                <span style={{
+                    // backgroundColor: 'white', 
+                    lineHeight: '1',
+                    padding: '2px 8px',
+                    boxDecorationBreak: 'clone',
+                    WebkitBoxDecorationBreak: 'clone',
+                    display: 'inline',
+                    whiteSpace: 'pre-line',
+                  }}><b>Warning: </b>This project contains graphic descriptions of sex. Viewer discretion is advised. <b>Click to reveal the map</b></span>
+              </div>
+            </div>
             <div
               style={{
                 position: 'absolute',
@@ -296,7 +338,7 @@ const SexyMap = () => {
                 style={{
                   fontFamily: 'sans-serif',
                   fontWeight: 'lighter',
-                  // fontSize: 
+                  // fontSize:
                   border: 'none',
                   backgroundColor: 'black',
                   color: 'white',
