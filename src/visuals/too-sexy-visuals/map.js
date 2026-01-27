@@ -57,6 +57,7 @@ const SexyMap = () => {
   const [warningDismissed, setWarningDismissed] = useState(false);
   const [tutorialMessageDismissed, setTutorialMessageDismissed] = useState(false);
   const [live2026Data, setLive2026Data] = useState(null);
+  const [pinSubmitted, setPinSubmitted] = useState(false);
 
   const containerStyle = {
     height: '600px',
@@ -74,6 +75,7 @@ const SexyMap = () => {
       const center = map.getCenter();
       setDraggablePosition([center.lat, center.lng]);
     }
+    setPinSubmitted(false); // Reset submitted state for new pin
     setIsAddingPin(true);
   };
 
@@ -144,9 +146,17 @@ const SexyMap = () => {
     } catch (error) {
       // This fetch should fail, but the response will still be recorded
     }
-    // Reset form
+    // Mark pin as submitted and show thank you message
+    setPinSubmitted(true);
+    // Hide form but keep pin visible
     setIsAddingPin(false);
     setPinMessage('');
+    // Open popup with thank you message
+    setTimeout(() => {
+      if (markerRef.current) {
+        markerRef.current.openPopup();
+      }
+    }, 100);
   };
 
   return (
@@ -254,22 +264,28 @@ const SexyMap = () => {
                   </Popup>
                 </Marker>
               ))}
-              {isAddingPin && (
+              {(isAddingPin || pinSubmitted) && (
                 <Marker
                   ref={markerRef}
                   position={draggablePosition}
-                  icon={createSexSpotIcon(0)}
-                  draggable
+                  icon={pinSubmitted ? createSexSpotIcon(2026) : createSexSpotIcon(0)}
+                  draggable={!pinSubmitted}
                   eventHandlers={{
                     dragend: (e) => {
-                      const marker = e.target;
-                      setDraggablePosition([marker.getLatLng().lat, marker.getLatLng().lng]);
+                      if (!pinSubmitted) {
+                        const marker = e.target;
+                        setDraggablePosition([marker.getLatLng().lat, marker.getLatLng().lng]);
+                      }
                     },
                   }}
                   zIndexOffset={2000}
                 >
                   <Popup closeButton={false}>
-                    <b>Drag me 🐻</b>
+                    {pinSubmitted ? (
+                      <p>Thanks! Your submission is under review</p>
+                    ) : (
+                      <b>Drag me 🐻</b>
+                    )}
                   </Popup>
                 </Marker>
               )}
