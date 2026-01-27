@@ -14,7 +14,7 @@ import sexy2026ShadowPng from '../../images/2-sexy-2026-shadow.png';
 
 // LIVE: Runtime download the data from Sheet client-side
 // STATIC: Read from map_data like normal
-const source_2026 = "LIVE"
+const source_2026 = 'LIVE';
 
 function createSexSpotIcon(year) {
   if (typeof window === 'undefined') return null;
@@ -129,7 +129,7 @@ const SexyMap = () => {
   useEffect(() => {
     if (source_2026 === 'LIVE' && typeof window !== 'undefined') {
       const sheetsUrl = 'https://docs.google.com/spreadsheets/u/8/d/1Qk_6vu_YB0hxATJR27pkZBLidKyA1QS54Lmng6lUHaM/export?format=tsv&id=1Qk_6vu_YB0hxATJR27pkZBLidKyA1QS54Lmng6lUHaM&gid=0';
-      
+
       fetch(sheetsUrl)
         .then((response) => response.text())
         .then((tsvText) => {
@@ -147,7 +147,7 @@ const SexyMap = () => {
             }
             return null;
           }).filter((item) => item !== null && !isNaN(item.lat) && !isNaN(item.long));
-          
+
           setLive2026Data(parsedData);
         })
         .catch((error) => {
@@ -173,7 +173,7 @@ const SexyMap = () => {
     // Hide form but keep pin visible
     setIsAddingPin(false);
     setPinMessage('');
-    setPinContact('')
+    setPinContact('');
     // Open popup with thank you message
     setTimeout(() => {
       if (markerRef.current) {
@@ -242,12 +242,12 @@ const SexyMap = () => {
               {sex_spots_2018.map((spot, index) => {
                 const isTutorialPin = index === '67';
                 return (
-                  <Marker 
-                    key={spot.message} 
+                  <Marker
+                    key={spot.message}
                     ref={isTutorialPin ? tutorialPinRef : null}
-                    position={[spot.lat, spot.long]} 
-                    icon={createSexSpotIcon(2018)} 
-                    opacity={0.8} 
+                    position={[spot.lat, spot.long]}
+                    icon={createSexSpotIcon(2018)}
+                    opacity={0.8}
                     zIndexOffset={0}
                     eventHandlers={{
                       click: () => {
@@ -271,7 +271,7 @@ const SexyMap = () => {
               {warningDismissed && !tutorialMessageDismissed && (
                 <Marker
                   ref={hiddenTutorialPinRef}
-                  position={[37.872647,-122.259652]}
+                  position={[37.872647, -122.259652]}
                   icon={createSexSpotIcon(-1)}
                   zIndexOffset={3000}
                 >
@@ -281,11 +281,11 @@ const SexyMap = () => {
                 </Marker>
               )}
               {(source_2026 === 'LIVE' && live2026Data ? live2026Data : sex_spots_2026).map((spot, index) => (
-                <Marker 
-                  key={`2026-${index}-${spot.lat}-${spot.long}`} 
-                  position={[spot.lat, spot.long]} 
-                  icon={createSexSpotIcon(2026)} 
-                  opacity={1} 
+                <Marker
+                  key={`2026-${index}-${spot.lat}-${spot.long}`}
+                  position={[spot.lat, spot.long]}
+                  icon={createSexSpotIcon(2026)}
+                  opacity={1}
                   zIndexOffset={1000}
                 >
                   <Popup>
@@ -350,14 +350,19 @@ const SexyMap = () => {
                 }}
               >
                 <span style={{
-                    // backgroundColor: 'white', 
-                    lineHeight: '1',
-                    padding: '2px 8px',
-                    boxDecorationBreak: 'clone',
-                    WebkitBoxDecorationBreak: 'clone',
-                    display: 'inline',
-                    whiteSpace: 'pre-line',
-                  }}><b>Warning: </b>This project contains descriptions of sex. Viewer discretion is advised. <b>Click to reveal the map</b></span>
+                  // backgroundColor: 'white',
+                  lineHeight: '1',
+                  padding: '2px 8px',
+                  boxDecorationBreak: 'clone',
+                  WebkitBoxDecorationBreak: 'clone',
+                  display: 'inline',
+                  whiteSpace: 'pre-line',
+                }}
+                >
+                  <b>Warning: </b>
+                  This project contains descriptions of sex. Viewer discretion is advised.
+                  <b>Click to reveal the map</b>
+                </span>
               </div>
             </div>
             <div
@@ -391,8 +396,9 @@ const SexyMap = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   width: isMobile ? '100%' : '80%',
-                  gap: '5px'
-                }}>
+                  gap: '5px',
+                }}
+                >
 
                   <input
                     type="text"
@@ -408,7 +414,7 @@ const SexyMap = () => {
                       flex: 1,
                     }}
                   />
-                  
+
                   <input
                     type="text"
                     value={pinContact}
@@ -461,7 +467,7 @@ const SexyMap = () => {
                 margin: '0px',
                 fontWeight: 'bold',
                 fontFamily: 'sans-serif',
-                letterSpacing: '1.1'
+                letterSpacing: '1.1',
               }}
               >
                 Tell us about a sexual encounter you've had on Berkeley's campus.
@@ -506,7 +512,7 @@ const SexyMap = () => {
                   borderRadius: '10px',
                   cursor: 'pointer',
                   // boxShadow: '0px 3px 6px rgba(0,0,0,0.1)',
-                  
+
                   // scale: '1.3',
                   padding: '8px 16px',
                   position: 'absolute',
