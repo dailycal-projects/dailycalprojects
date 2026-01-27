@@ -46,10 +46,12 @@ function createSexSpotIcon(year) {
 const SexyMap = () => {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
+  const tutorialPinRef = useRef(null);
   const [isAddingPin, setIsAddingPin] = useState(false);
   const [draggablePosition, setDraggablePosition] = useState([37.8716, -122.2585]);
   const [pinMessage, setPinMessage] = useState('');
   const [warningDismissed, setWarningDismissed] = useState(false);
+  const [tutorialMessageDismissed, setTutorialMessageDismissed] = useState(false);
 
   const containerStyle = {
     height: '600px',
@@ -81,6 +83,18 @@ const SexyMap = () => {
       }, 100);
     }
   }, [isAddingPin]);
+
+  // Open tutorial pin popup when warning is dismissed
+  useEffect(() => {
+    if (warningDismissed && tutorialPinRef.current) {
+      // Small delay to ensure marker is fully rendered
+      setTimeout(() => {
+        if (tutorialPinRef.current) {
+          tutorialPinRef.current.openPopup();
+        }
+      }, 300);
+    }
+  }, [warningDismissed]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -154,15 +168,49 @@ const SexyMap = () => {
               whenCreated={(map) => { mapRef.current = map; }}
             >
               <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
-              {sex_spots_2018.map((spot) => (
-                <Marker key={spot.message} position={[spot.lat, spot.long]} icon={createSexSpotIcon(2018)} opacity={0.8} zIndexOffset={0}>
-                  <Popup>
-                    <p>{spot.message}</p>
-                  </Popup>
-                </Marker>
-              ))}
+              {sex_spots_2018.map((spot, index) => {
+                const pinId = `2018-${index}-${spot.lat}-${spot.long}`;
+                const isTutorialPin = pinId === '2018-23-37.869071--122.261473';
+                return (
+                  <Marker 
+                    key={spot.message} 
+                    ref={isTutorialPin ? tutorialPinRef : null}
+                    position={[spot.lat, spot.long]} 
+                    icon={createSexSpotIcon(2018)} 
+                    opacity={0.8} 
+                    zIndexOffset={0}
+                    eventHandlers={{
+                      click: () => {
+                        if (isTutorialPin && !tutorialMessageDismissed) {
+                          setTutorialMessageDismissed(true);
+                          // Close and reopen popup to show original message
+                          setTimeout(() => {
+                            if (tutorialPinRef.current) {
+                              tutorialPinRef.current.openPopup();
+                            }
+                          }, 50);
+                        }
+                      },
+                    }}
+                  >
+                    <Popup>
+                      {isTutorialPin && warningDismissed && !tutorialMessageDismissed ? (
+                        <p>Click on a pin to read more</p>
+                      ) : (
+                        <p>{spot.message}</p>
+                      )}
+                    </Popup>
+                  </Marker>
+                );
+              })}
               {sex_spots_2026.map((spot) => (
-                <Marker key={spot.message} position={[spot.lat, spot.long]} icon={createSexSpotIcon(2026)} opacity={1} zIndexOffset={1000}>
+                <Marker 
+                  key={spot.message} 
+                  position={[spot.lat, spot.long]} 
+                  icon={createSexSpotIcon(2026)} 
+                  opacity={1} 
+                  zIndexOffset={1000}
+                >
                   <Popup>
                     <p>{spot.message}</p>
                   </Popup>
