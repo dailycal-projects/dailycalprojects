@@ -11,6 +11,8 @@ import { sex_spots_2018, sex_spots_2026 } from './map_data';
 import sexy2018IconPng from '../../images/2-sexy-2018-icon.png';
 import sexy2026IconPng from '../../images/2-sexy-2026-icon.png';
 import sexy2026ShadowPng from '../../images/2-sexy-2026-shadow.png';
+import mapViewIcon from '../../images/2-sexy-map-map.png';
+import satelliteViewIcon from '../../images/2-sexy-map-sattelite.png';
 
 // LIVE: Runtime download the data from Sheet client-side
 // STATIC: Read from map_data like normal
@@ -20,28 +22,29 @@ function createSexSpotIcon(year) {
   if (typeof window === 'undefined') return null;
 
   if (year === 2018) {
-    return L.icon({
-      iconUrl: sexy2018IconPng,
+    return L.divIcon({
+      className: 'sex-spot-icon-2018',
+      html: `<img src="${sexy2018IconPng}" style="width: 16px; height: 16px; transition: transform 0.2s ease-in-out; transform-origin: center center;" onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'" />`,
       iconSize: [16, 16],
+      iconAnchor: [8, 8],
     });
   }
   if (year === 2026) {
-    return L.icon({
-      iconUrl: sexy2026IconPng,
-      shadowUrl: sexy2026ShadowPng,
-      shadowSize: [25, 25],
+    return L.divIcon({
+      className: 'sex-spot-icon-2026',
+      html: `<div style="position: relative; width: 25px; height: 25px; transition: transform 0.2s ease-in-out; transform-origin: center center;" onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'"><img src="${sexy2026ShadowPng}" style="position: absolute; width: 25px; height: 25px; left: 0; top: 0;" /><img src="${sexy2026IconPng}" style="position: absolute; width: 25px; height: 25px; left: 0; top: 0;" /></div>`,
       iconSize: [25, 25],
+      iconAnchor: [12.5, 12.5],
     });
   }
 
   if (year === 0) {
-    return L.icon({
-      iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-      shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+    return L.divIcon({
+      className: 'sex-spot-icon-default',
+      html: `<div style="position: relative; width: 25px; height: 41px; transition: transform 0.2s ease-in-out; transform-origin: center bottom;" onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'"><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" style="position: absolute; width: 41px; height: 41px; left: -8px; top: 0;" /><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png" style="position: absolute; width: 25px; height: 41px; left: 0; top: 0;" /></div>`,
       iconSize: [25, 41],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
-      shadowSize: [41, 41],
     });
   }
   if (year === -1) {
@@ -70,6 +73,7 @@ const SexyMap = () => {
   const [live2026Data, setLive2026Data] = useState(null);
   const [pinSubmitted, setPinSubmitted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [tileLayerIndex, setTileLayerIndex] = useState(0); // 0 = CartoDB, 1 = Esri, 2 = OSM
 
   // Check if mobile on mount and resize
   useEffect(() => {
@@ -229,6 +233,50 @@ const SexyMap = () => {
             </div>
           </div>
           <div style={{ position: 'relative' }}>
+            {/* Tile layer toggle switch */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                zIndex: 1000,
+                backgroundColor: 'rgba(0,0,0,0.2)',
+                borderRadius: '5px',
+                padding: '5px',
+                boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+                display: 'flex',
+                gap: '5px',
+                alignItems: 'center',
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setTileLayerIndex((prev) => (prev + 1) % 2)}
+                style={{
+                  padding: '0',
+                  border: 'none',
+                  borderRadius: '3px',
+                  backgroundColor: 'transparent',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: 'fit-content'
+                }}
+              >
+                <img
+                  src={tileLayerIndex !== 0 ? mapViewIcon : satelliteViewIcon}
+                  alt={tileLayerIndex !== 0 ? 'Map view' : 'Satellite view'}
+                  style={{
+                    width: 'auto',
+                    height: '60px',
+                    display: 'block',
+                    margin: '0px',
+                    borderRadius: '5px'
+                  }}
+                />
+              </button>
+            </div>
             <MapContainer
               center={[37.8716, -122.2585]}
               zoom={15.3}
@@ -238,7 +286,15 @@ const SexyMap = () => {
               // maxZoom={10}
               whenCreated={(map) => { mapRef.current = map; }}
             >
-              <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
+              {tileLayerIndex === 0 && (
+                <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
+              )}
+              {tileLayerIndex === 1 && (
+                <TileLayer
+                  url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+                  attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+                />
+              )}
               {sex_spots_2018.map((spot, index) => {
                 const isTutorialPin = index === '67';
                 return (
@@ -276,7 +332,7 @@ const SexyMap = () => {
                   zIndexOffset={3000}
                 >
                   <Popup>
-                    <p>Click on a pin to read more</p>
+                    <b>Click on a pin to read more</b>
                   </Popup>
                 </Marker>
               )}

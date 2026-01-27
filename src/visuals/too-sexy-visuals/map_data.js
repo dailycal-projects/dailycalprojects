@@ -184,8 +184,8 @@ const sex_spots_2018 = [{
   long: -122.26073,
 }, {
   message: 'My gf and I did hand stuff to each other on the 2nd level of Morrison hall during prime nap time.',
-  lat: 37.872372,
-  long: -122.259629,
+  lat: 37.870954,
+  long: -122.256391,
 }, {
   message: 'Had sex in Underhill freshman year with my girlfriend. 🍆 💦 all over the floor',
   lat: 37.867079,
