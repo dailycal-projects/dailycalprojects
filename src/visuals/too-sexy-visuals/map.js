@@ -199,7 +199,7 @@ const SexyMap = () => {
             zIndex: 100,
           }}
           >
-            <h4 style={{ fontSize: '1rem', fontWeight: 'bold', marginBottom: '10px' }}>
+            <h4 style={{ fontSize: '0.8rem', fontWeight: 'bold', marginBottom: '10px' }}>
               Legend —
               <i> Click an encounter to read more</i>
             </h4>
@@ -415,7 +415,7 @@ const SexyMap = () => {
                     }}
                   />
 
-                  <input
+                  {/* <input
                     type="text"
                     value={pinContact}
                     onChange={(e) => setPinContact(e.target.value)}
@@ -428,7 +428,7 @@ const SexyMap = () => {
                       border: '1px solid #ccc',
                       flex: 1,
                     }}
-                  />
+                  /> */}
                 </div>
                 <button
                   type="submit"
