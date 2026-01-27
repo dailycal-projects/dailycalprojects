@@ -417,7 +417,7 @@ const SexyMap = () => {
                 >
                   <b>Warning: </b>
                   This project contains descriptions of sex. Viewer discretion is advised.
-                  <b>Click to reveal the map</b>
+                  <b> Click to reveal the map</b>
                 </span>
               </div>
             </div>
