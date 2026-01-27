@@ -240,8 +240,7 @@ const SexyMap = () => {
             >
               <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
               {sex_spots_2018.map((spot, index) => {
-                const pinId = `2018-${index}-${spot.lat}-${spot.long}`;
-                const isTutorialPin = pinId === '2018-23-37.869071--122.261473';
+                const isTutorialPin = index === '67';
                 return (
                   <Marker 
                     key={spot.message} 
@@ -272,7 +271,7 @@ const SexyMap = () => {
               {warningDismissed && !tutorialMessageDismissed && (
                 <Marker
                   ref={hiddenTutorialPinRef}
-                  position={[37.869071, -122.261473]}
+                  position={[37.872647,-122.259652]}
                   icon={createSexSpotIcon(-1)}
                   zIndexOffset={3000}
                 >
@@ -409,6 +408,7 @@ const SexyMap = () => {
                       flex: 1,
                     }}
                   />
+                  
                   <input
                     type="text"
                     value={pinContact}
