@@ -29,8 +29,8 @@ function createSexSpotIcon(year) {
     return L.icon({
       iconUrl: sexy2026IconPng,
       shadowUrl: sexy2026ShadowPng,
-      shadowSize: [32, 32],
-      iconSize: [32, 32],
+      shadowSize: [25, 25],
+      iconSize: [25, 25],
     });
   }
 
@@ -284,7 +284,7 @@ const SexyMap = () => {
                     {pinSubmitted ? (
                       <p>Thanks! Your submission is under review</p>
                     ) : (
-                      <b>Drag me 🐻</b>
+                      <b>Drag me ✥</b>
                     )}
                   </Popup>
                 </Marker>
@@ -405,6 +405,7 @@ const SexyMap = () => {
               <h3 style={{
                 margin: '0px',
                 fontWeight: 'bold',
+                fontFamily: 'serif'
               }}
               >
                 Tell us about a sexual encounter you've had on Berkeley's campus.
@@ -435,15 +436,16 @@ const SexyMap = () => {
               </p>
               <input
                 type="button"
-                value="ADD A PIN"
+                value="Add a Pin"
                 onClick={handleAddPinClick}
                 style={{
-                  fontFamily: 'sans-serif',
+                  fontFamily: 'serif',
                   fontWeight: 'lighter',
                   // fontSize:
                   border: 'none',
-                  backgroundColor: 'black',
-                  color: 'white',
+                  backgroundColor: 'rgba(200,250,200, 1)',
+                  border: '2px solid rgb(76, 110, 75)',
+                  color: 'rgb(76, 110, 75)',
                   fontSize: '1.5rem',
                   borderRadius: '10px',
                   cursor: 'pointer',
