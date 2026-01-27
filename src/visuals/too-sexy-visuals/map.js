@@ -12,6 +12,10 @@ import sexy2018IconPng from '../../images/2-sexy-2018-icon.png';
 import sexy2026IconPng from '../../images/2-sexy-2026-icon.png';
 import sexy2026ShadowPng from '../../images/2-sexy-2026-shadow.png';
 
+// LIVE: Runtime download the data from Sheet client-side
+// STATIC: Read from map_data like normal
+const source_2026 = "LIVE"
+
 function createSexSpotIcon(year) {
   if (typeof window === 'undefined') return null;
 
@@ -52,6 +56,7 @@ const SexyMap = () => {
   const [pinMessage, setPinMessage] = useState('');
   const [warningDismissed, setWarningDismissed] = useState(false);
   const [tutorialMessageDismissed, setTutorialMessageDismissed] = useState(false);
+  const [live2026Data, setLive2026Data] = useState(null);
 
   const containerStyle = {
     height: '600px',
@@ -95,6 +100,39 @@ const SexyMap = () => {
       }, 300);
     }
   }, [warningDismissed]);
+
+  // Fetch live 2026 data from Google Sheets if in LIVE mode
+  useEffect(() => {
+    if (source_2026 === 'LIVE' && typeof window !== 'undefined') {
+      const sheetsUrl = 'https://docs.google.com/spreadsheets/u/8/d/1Qk_6vu_YB0hxATJR27pkZBLidKyA1QS54Lmng6lUHaM/export?format=tsv&id=1Qk_6vu_YB0hxATJR27pkZBLidKyA1QS54Lmng6lUHaM&gid=0';
+      
+      fetch(sheetsUrl)
+        .then((response) => response.text())
+        .then((tsvText) => {
+          // Parse TSV data
+          const lines = tsvText.trim().split('\n');
+          const parsedData = lines.map((line) => {
+            // Split by tab character
+            const parts = line.split('\t');
+            if (parts.length >= 3) {
+              return {
+                message: parts[0].trim(),
+                lat: parseFloat(parts[1].trim()),
+                long: parseFloat(parts[2].trim()),
+              };
+            }
+            return null;
+          }).filter((item) => item !== null && !isNaN(item.lat) && !isNaN(item.long));
+          
+          setLive2026Data(parsedData);
+        })
+        .catch((error) => {
+          console.error('Error fetching live 2026 data:', error);
+          // Fallback to static data on error
+          setLive2026Data(null);
+        });
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -203,9 +241,9 @@ const SexyMap = () => {
                   </Marker>
                 );
               })}
-              {sex_spots_2026.map((spot) => (
+              {(source_2026 === 'LIVE' && live2026Data ? live2026Data : sex_spots_2026).map((spot, index) => (
                 <Marker 
-                  key={spot.message} 
+                  key={`2026-${index}-${spot.lat}-${spot.long}`} 
                   position={[spot.lat, spot.long]} 
                   icon={createSexSpotIcon(2026)} 
                   opacity={1} 
