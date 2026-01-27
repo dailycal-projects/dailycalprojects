@@ -41,7 +41,7 @@ function createSexSpotIcon(year) {
   if (year === 0) {
     return L.divIcon({
       className: 'sex-spot-icon-default',
-      html: `<div style="position: relative; width: 25px; height: 41px; transition: transform 0.2s ease-in-out; transform-origin: center bottom;" onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'"><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" style="position: absolute; width: 41px; height: 41px; left: -8px; top: 0;" /><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png" style="position: absolute; width: 25px; height: 41px; left: 0; top: 0;" /></div>`,
+      html: `<div style="position: relative; width: 25px; height: 41px; transition: transform 0.2s ease-in-out; transform-origin: center bottom;"><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" style="position: absolute; width: 41px; height: 41px; left: -8px; top: 0;" /><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png" style="position: absolute; width: 25px; height: 41px; left: 0; top: 0;" /></div>`,
       iconSize: [25, 41],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
