@@ -554,7 +554,7 @@ const SexyMap = () => {
               </p>
               <input
                 type="button"
-                value="Add a Pin"
+                value="Add Pin"
                 onClick={handleAddPinClick}
                 style={{
                   fontFamily: 'sans-serif',
@@ -567,6 +567,7 @@ const SexyMap = () => {
                   fontSize: '1.5rem',
                   borderRadius: '10px',
                   cursor: 'pointer',
+                  whiteSpace: 'normal',
                   // boxShadow: '0px 3px 6px rgba(0,0,0,0.1)',
 
                   // scale: '1.3',
