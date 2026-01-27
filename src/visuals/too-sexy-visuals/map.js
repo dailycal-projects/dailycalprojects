@@ -64,10 +64,22 @@ const SexyMap = () => {
   const [isAddingPin, setIsAddingPin] = useState(false);
   const [draggablePosition, setDraggablePosition] = useState([37.8716, -122.2585]);
   const [pinMessage, setPinMessage] = useState('');
+  const [pinContact, setPinContact] = useState('');
   const [warningDismissed, setWarningDismissed] = useState(false);
   const [tutorialMessageDismissed, setTutorialMessageDismissed] = useState(false);
   const [live2026Data, setLive2026Data] = useState(null);
   const [pinSubmitted, setPinSubmitted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const containerStyle = {
     height: '600px',
@@ -149,10 +161,10 @@ const SexyMap = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Submitting pin:', { position: draggablePosition, message: pinMessage });
+    // console.log('Submitting pin:', { position: draggablePosition, message: pinMessage });
 
     try {
-      window.fetch(`https://docs.google.com/forms/d/e/1FAIpQLSfxEQSGr4_mPqU4nMrgUEMQNu_nPUUJkBU62RtYDOaNYzxpCw/formResponse?&submit=Submit?usp=pp_url&entry.949812204=${pinMessage}&entry.262371575=${draggablePosition[0]}&entry.1560180432=${draggablePosition[1]}&entry.1483653783=NA`);
+      window.fetch(`https://docs.google.com/forms/d/e/1FAIpQLSfxEQSGr4_mPqU4nMrgUEMQNu_nPUUJkBU62RtYDOaNYzxpCw/formResponse?&submit=Submit?usp=pp_url&entry.949812204=${pinMessage}&entry.262371575=${draggablePosition[0]}&entry.1560180432=${draggablePosition[1]}&entry.1483653783=${pinContact}`);
     } catch (error) {
       // This fetch should fail, but the response will still be recorded
     }
@@ -161,6 +173,7 @@ const SexyMap = () => {
     // Hide form but keep pin visible
     setIsAddingPin(false);
     setPinMessage('');
+    setPinContact('')
     // Open popup with thank you message
     setTimeout(() => {
       if (markerRef.current) {
@@ -368,26 +381,49 @@ const SexyMap = () => {
                 onSubmit={handleSubmit}
                 style={{
                   display: 'flex',
+                  flexDirection: isMobile ? 'column' : 'row',
                   alignItems: 'center',
                   gap: '10px',
                   width: '100%',
                   margin: '0px',
                 }}
               >
-                <input
-                  type="text"
-                  value={pinMessage}
-                  onChange={(e) => setPinMessage(e.target.value)}
-                  placeholder="Describe your encounter..."
-                  style={{
-                    fontFamily: 'sans-serif',
-                    fontSize: '1rem',
-                    padding: '10px 12px',
-                    borderRadius: '10px',
-                    border: '1px solid #ccc',
-                    flex: 1,
-                  }}
-                />
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: isMobile ? '100%' : '80%',
+                  gap: '5px'
+                }}>
+
+                  <input
+                    type="text"
+                    value={pinMessage}
+                    onChange={(e) => setPinMessage(e.target.value)}
+                    placeholder="Describe your encounter..."
+                    style={{
+                      fontFamily: 'sans-serif',
+                      fontSize: '1rem',
+                      padding: '10px 12px',
+                      borderRadius: '10px',
+                      border: '1px solid #ccc',
+                      flex: 1,
+                    }}
+                  />
+                  <input
+                    type="text"
+                    value={pinContact}
+                    onChange={(e) => setPinContact(e.target.value)}
+                    placeholder="Optionally, add your contact info so the Daily Cal can privately follow up"
+                    style={{
+                      fontFamily: 'sans-serif',
+                      fontSize: isMobile ? '0.5rem' : '0.7rem',
+                      padding: '10px 12px',
+                      borderRadius: '10px',
+                      border: '1px solid #ccc',
+                      flex: 1,
+                    }}
+                  />
+                </div>
                 <button
                   type="submit"
                   style={{
@@ -400,6 +436,8 @@ const SexyMap = () => {
                     borderRadius: '10px',
                     cursor: 'pointer',
                     padding: '10px 20px',
+                    height: isMobile ? 'auto' : '100%',
+                    width: isMobile ? '100%' : 'auto',
                   }}
                 >
                   SUBMIT
