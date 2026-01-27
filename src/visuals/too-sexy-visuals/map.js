@@ -44,6 +44,15 @@ function createSexSpotIcon(year) {
       shadowSize: [41, 41],
     });
   }
+  if (year === -1) {
+    // Transparent invisible icon for hidden tutorial pin
+    return L.divIcon({
+      className: 'hidden-tutorial-pin',
+      html: '',
+      iconSize: [0, 0],
+      iconAnchor: [0, 0],
+    });
+  }
   return null;
 }
 
@@ -51,6 +60,7 @@ const SexyMap = () => {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const tutorialPinRef = useRef(null);
+  const hiddenTutorialPinRef = useRef(null);
   const [isAddingPin, setIsAddingPin] = useState(false);
   const [draggablePosition, setDraggablePosition] = useState([37.8716, -122.2585]);
   const [pinMessage, setPinMessage] = useState('');
@@ -91,17 +101,17 @@ const SexyMap = () => {
     }
   }, [isAddingPin]);
 
-  // Open tutorial pin popup when warning is dismissed
+  // Open hidden tutorial pin popup when warning is dismissed
   useEffect(() => {
-    if (warningDismissed && tutorialPinRef.current) {
+    if (warningDismissed && hiddenTutorialPinRef.current && !tutorialMessageDismissed) {
       // Small delay to ensure marker is fully rendered
       setTimeout(() => {
-        if (tutorialPinRef.current) {
-          tutorialPinRef.current.openPopup();
+        if (hiddenTutorialPinRef.current) {
+          hiddenTutorialPinRef.current.openPopup();
         }
       }, 300);
     }
-  }, [warningDismissed]);
+  }, [warningDismissed, tutorialMessageDismissed]);
 
   // Fetch live 2026 data from Google Sheets if in LIVE mode
   useEffect(() => {
@@ -230,27 +240,34 @@ const SexyMap = () => {
                     eventHandlers={{
                       click: () => {
                         if (isTutorialPin && !tutorialMessageDismissed) {
+                          // Close the hidden pin's popup
+                          if (hiddenTutorialPinRef.current) {
+                            hiddenTutorialPinRef.current.closePopup();
+                          }
                           setTutorialMessageDismissed(true);
-                          // Close and reopen popup to show original message
-                          setTimeout(() => {
-                            if (tutorialPinRef.current) {
-                              tutorialPinRef.current.openPopup();
-                            }
-                          }, 50);
                         }
                       },
                     }}
                   >
                     <Popup>
-                      {isTutorialPin && warningDismissed && !tutorialMessageDismissed ? (
-                        <p>Click on a pin to read more</p>
-                      ) : (
-                        <p>{spot.message}</p>
-                      )}
+                      <p>{spot.message}</p>
                     </Popup>
                   </Marker>
                 );
               })}
+              {/* Hidden invisible pin for tutorial message at same location as tutorial pin */}
+              {warningDismissed && !tutorialMessageDismissed && (
+                <Marker
+                  ref={hiddenTutorialPinRef}
+                  position={[37.869071, -122.261473]}
+                  icon={createSexSpotIcon(-1)}
+                  zIndexOffset={3000}
+                >
+                  <Popup>
+                    <p>Click on a pin to read more</p>
+                  </Popup>
+                </Marker>
+              )}
               {(source_2026 === 'LIVE' && live2026Data ? live2026Data : sex_spots_2026).map((spot, index) => (
                 <Marker 
                   key={`2026-${index}-${spot.lat}-${spot.long}`} 
@@ -284,7 +301,7 @@ const SexyMap = () => {
                     {pinSubmitted ? (
                       <p>Thanks! Your submission is under review</p>
                     ) : (
-                      <b>Drag me ✥</b>
+                      <b>Drag me</b>
                     )}
                   </Popup>
                 </Marker>
@@ -328,7 +345,7 @@ const SexyMap = () => {
                     WebkitBoxDecorationBreak: 'clone',
                     display: 'inline',
                     whiteSpace: 'pre-line',
-                  }}><b>Warning: </b>This project contains graphic descriptions of sex. Viewer discretion is advised. <b>Click to reveal the map</b></span>
+                  }}><b>Warning: </b>This project contains descriptions of sex. Viewer discretion is advised. <b>Click to reveal the map</b></span>
               </div>
             </div>
             <div
@@ -405,7 +422,8 @@ const SexyMap = () => {
               <h3 style={{
                 margin: '0px',
                 fontWeight: 'bold',
-                fontFamily: 'serif'
+                fontFamily: 'sans-serif',
+                letterSpacing: '1.1'
               }}
               >
                 Tell us about a sexual encounter you've had on Berkeley's campus.
@@ -439,7 +457,7 @@ const SexyMap = () => {
                 value="Add a Pin"
                 onClick={handleAddPinClick}
                 style={{
-                  fontFamily: 'serif',
+                  fontFamily: 'sans-serif',
                   fontWeight: 'lighter',
                   // fontSize:
                   border: 'none',
@@ -449,9 +467,14 @@ const SexyMap = () => {
                   fontSize: '1.5rem',
                   borderRadius: '10px',
                   cursor: 'pointer',
+                  // boxShadow: '0px 3px 6px rgba(0,0,0,0.1)',
+                  
                   // scale: '1.3',
                   padding: '8px 16px',
-                  position: isAddingPin ? 'absolute' : 'relative',
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
                   opacity: isAddingPin ? 0 : 1,
                   visibility: isAddingPin ? 'hidden' : 'visible',
                   transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out',
