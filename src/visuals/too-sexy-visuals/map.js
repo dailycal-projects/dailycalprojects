@@ -242,7 +242,7 @@ const SexyMap = () => {
                 zIndex: 1000,
                 backgroundColor: 'rgba(0,0,0,0.2)',
                 borderRadius: '5px',
-                padding: '5px',
+                padding: '2px',
                 boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
                 display: 'flex',
                 gap: '5px',
