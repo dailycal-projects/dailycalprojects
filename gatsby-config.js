@@ -4,10 +4,10 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Daily Cal Projects',
-    description: 'Site for Daily Cal Projects',
+    title: 'The Daily Californian',
+    description: 'Investigative stories, data analysis and graphics by The Daily Californian’s Data Team',
     author: '@shannonbonet',
-    siteUrl: 'https://dailycal-projects.netlify.app/',
+    siteUrl: 'https://data.dailycal.org/',
   },
   flags: {
     // preserves files + cache except on `gatsby clean`

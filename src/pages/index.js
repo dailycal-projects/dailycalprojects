@@ -21,7 +21,7 @@ const IndexPage = ({ classes, data }) => {
             <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
           </div>
         </Link>
-        <Seo title="Daily Cal Data" />
+        {/* <Seo title="Daily Cal Data" /> */}
         <div className={classes.content}>
           <div className={classes.intro}>
             <img src={circlelogo} alt="The Daily Californian" width="100" style={{ margin: '0px' }} />
