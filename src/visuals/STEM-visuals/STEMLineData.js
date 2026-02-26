@@ -1,6 +1,6 @@
 const STEMEnrollmentData = [
   {
-    year: '2012-13',
+    year: "2012-13",
     EECS: 1177.5,
     POLSCI: 937,
     ECON: 900.5,
@@ -20,7 +20,7 @@ const STEMEnrollmentData = [
     MCELLBI: null,
   },
   {
-    year: '2013-14',
+    year: "2013-14",
     EECS: 1236.5,
     ECON: 1029,
     POLSCI: 881,
@@ -40,7 +40,7 @@ const STEMEnrollmentData = [
     MCELLBI: null,
   },
   {
-    year: '2014-15',
+    year: "2014-15",
     EECS: 1205,
     ECON: 1056,
     COMPSCI: 832.5,
@@ -60,7 +60,7 @@ const STEMEnrollmentData = [
     MCELLBI: null,
   },
   {
-    year: '2015-16',
+    year: "2015-16",
     EECS: 1245.5,
     ECON: 1073,
     COMPSCI: 994.5,
@@ -80,7 +80,7 @@ const STEMEnrollmentData = [
     MCELLBI: null,
   },
   {
-    year: '2016-17',
+    year: "2016-17",
     COMPSCI: 1301,
     EECS: 1287,
     ECON: 1157.5,
@@ -100,7 +100,7 @@ const STEMEnrollmentData = [
     MCELLBI: null,
   },
   {
-    year: '2017-18',
+    year: "2017-18",
     COMPSCI: 1545.5,
     EECS: 1373.5,
     ECON: 1242.5,
@@ -120,7 +120,7 @@ const STEMEnrollmentData = [
     MCELLBI: null,
   },
   {
-    year: '2018-19',
+    year: "2018-19",
     COMPSCI: 1719,
     EECS: 1535.5,
     ECON: 1341,
@@ -140,7 +140,7 @@ const STEMEnrollmentData = [
     MCELLBI: null,
   },
   {
-    year: '2019-20',
+    year: "2019-20",
     COMPSCI: 1834,
     EECS: 1586,
     ECON: 1362,
@@ -160,7 +160,7 @@ const STEMEnrollmentData = [
     MCELLBI: null,
   },
   {
-    year: '2020-21',
+    year: "2020-21",
     COMPSCI: 1876.5,
     EECS: 1626.5,
     ECON: 1420,
@@ -180,7 +180,7 @@ const STEMEnrollmentData = [
     COGSCI: null,
   },
   {
-    year: '2021-22',
+    year: "2021-22",
     COMPSCI: 2039,
     EECS: 1651,
     ECON: 1571,

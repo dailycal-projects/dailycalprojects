@@ -1,4 +1,5 @@
-import React from 'react';
+import { InputLabel, FormControl, Select, MenuItem } from "@material-ui/core";
+import React from "react";
 import {
   ResponsiveContainer,
   BarChart,
@@ -9,15 +10,9 @@ import {
   Tooltip,
   ReferenceLine,
   Cell,
-} from 'recharts';
-import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
-import humanNames from './human_names';
-import { perSchool as perSchoolTotals } from './data';
+} from "recharts";
+import { perSchool as perSchoolTotals } from "./data";
+import humanNames from "./human_names";
 
 const VOLUME_DIVISOR = 1_000_000;
 
@@ -52,11 +47,11 @@ const formatNumber = (value) => value.toLocaleString();
 function EditsPerSchool() {
   const metricOptions = [
     {
-      value: 'count',
-      dropDownLabel: 'Total changes (edits)',
-      label: 'Total changes',
-      title: 'Edits made by campus',
-      axisLabel: 'Number of changes (edits)',
+      value: "count",
+      dropDownLabel: "Total changes (edits)",
+      label: "Total changes",
+      title: "Edits made by campus",
+      axisLabel: "Number of changes (edits)",
       formatter: (val) => formatNumber(val),
     },
     /*
@@ -78,43 +73,44 @@ function EditsPerSchool() {
     },
     */
     {
-      value: 'net',
-      dropDownLabel: 'Net change (millions of characters)',
-      label: 'Net change',
-      title: 'Net change made by campus',
-      axisLabel: 'Net change (millions of characters)',
+      value: "net",
+      dropDownLabel: "Net change (millions of characters)",
+      label: "Net change",
+      title: "Net change made by campus",
+      axisLabel: "Net change (millions of characters)",
       formatter: (val, payload) => `${formatNumber(payload.rawNet)} characters`,
     },
   ];
 
-  const [selectedMetric, setSelectedMetric] = React.useState(metricOptions[0].value);
-
-  const selectedConfig = metricOptions.find((opt) => opt.value === selectedMetric) ?? metricOptions[0];
-
-  const orderedData = React.useMemo(
-    () => {
-      const sorted = [...chartData].sort((a, b) => {
-        // For net, sort by absolute value to show largest changes first
-        if (selectedMetric === 'net') {
-          return Math.abs(b.net) - Math.abs(a.net);
-        }
-        // For other metrics, sort descending
-        return b[selectedMetric] - a[selectedMetric];
-      });
-      return sorted;
-    },
-    [selectedMetric],
+  const [selectedMetric, setSelectedMetric] = React.useState(
+    metricOptions[0].value
   );
 
+  const selectedConfig =
+    metricOptions.find((opt) => opt.value === selectedMetric) ??
+    metricOptions[0];
+
+  const orderedData = React.useMemo(() => {
+    const sorted = [...chartData].sort((a, b) => {
+      // For net, sort by absolute value to show largest changes first
+      if (selectedMetric === "net") {
+        return Math.abs(b.net) - Math.abs(a.net);
+      }
+      // For other metrics, sort descending
+      return b[selectedMetric] - a[selectedMetric];
+    });
+    return sorted;
+  }, [selectedMetric]);
+
   return (
-    <div style={{ width: '100%', height: 520, marginBottom: '5rem' }}>
+    <div style={{ width: "100%", height: 520, marginBottom: "5rem" }}>
       <FormControl
         variant="outlined"
         style={{
           minWidth: 200,
           marginBottom: 30,
-          fontFamily: 'Georgia',
-          fontSize: '17px',
+          fontFamily: "Georgia",
+          fontSize: "17px",
         }}
       >
         <InputLabel id="metric-select-label">Select metric</InputLabel>
@@ -126,17 +122,23 @@ function EditsPerSchool() {
           label="Select metric"
         >
           {metricOptions.map((option) => (
-            <MenuItem key={option.value} value={option.value}>{option.dropDownLabel}</MenuItem>
+            <MenuItem key={option.value} value={option.value}>
+              {option.dropDownLabel}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
-      <h3 style={{
-        textAlign: 'center', marginBottom: '10px', fontFamily: 'Georgia', fontSize: '17px',
-      }}
+      <h3
+        style={{
+          textAlign: "center",
+          marginBottom: "10px",
+          fontFamily: "Georgia",
+          fontSize: "17px",
+        }}
       >
-        {selectedMetric === 'net'
-          ? 'Net change made to Wikipedia articles by campus'
-          : 'Total number of edits made to Wikipedia articles by campus'}
+        {selectedMetric === "net"
+          ? "Net change made to Wikipedia articles by campus"
+          : "Total number of edits made to Wikipedia articles by campus"}
       </h3>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -149,21 +151,24 @@ function EditsPerSchool() {
             bottom: 50,
           }}
         >
-
           <CartesianGrid strokeDasharray="24 4" />
           <XAxis
-            tickFormatter={(val) => (val.toLocaleString())}
+            tickFormatter={(val) => val.toLocaleString()}
             type="number"
             label={{
               value: selectedConfig.axisLabel,
-              position: 'insideBottom',
+              position: "insideBottom",
               offset: -15,
             }}
           />
           <YAxis type="category" dataKey="label" width={110} />
-          {selectedMetric === 'net' && <ReferenceLine x={0} stroke="#666" strokeDasharray="3 3" />}
+          {selectedMetric === "net" && (
+            <ReferenceLine x={0} stroke="#666" strokeDasharray="3 3" />
+          )}
           <Tooltip
-            formatter={(value, name, { payload }) => selectedConfig.formatter(value, payload)}
+            formatter={(value, name, { payload }) =>
+              selectedConfig.formatter(value, payload)
+            }
           />
           <Bar
             dataKey={selectedMetric}
@@ -175,8 +180,10 @@ function EditsPerSchool() {
               const value = entry[selectedMetric];
               const isNegative = value < 0;
               return (
-                // eslint-disable-next-line react/no-array-index-key
-                <Cell key={`cell-${index}`} fill={isNegative ? '#f4b400' : '#8694c3'} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={isNegative ? "#f4b400" : "#8694c3"}
+                />
               );
             })}
           </Bar>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ScatterChart,
   Scatter,
@@ -9,18 +9,18 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
-import { beamData } from './gymData';
+} from "recharts";
+import { beamData } from "./gymData";
 
 const GymBeam = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Beam scores by week and team </h4>
@@ -51,23 +51,13 @@ const GymBeam = () => (
           name="Beam score: "
           domain={[47, 50]}
         />
-        <Tooltip cursor={{ strokeDasharray: '3 3' }} separator="" />
+        <Tooltip cursor={{ strokeDasharray: "3 3" }} separator="" />
         <Legend />
-        <Scatter
-          name="UTAH"
-          data={beamData.UTAH}
-          fill="#df4c57"
-          line
-        />
-        <Scatter
-          name="CAL"
-          data={beamData.CAL}
-          fill="#186892"
-          line
-        />
+        <Scatter name="UTAH" data={beamData.UTAH} fill="#df4c57" line />
+        <Scatter name="CAL" data={beamData.CAL} fill="#186892" line />
         <Scatter
           name="OREGON STATE"
-          data={beamData['OREGON STATE']}
+          data={beamData["OREGON STATE"]}
           fill="#f17a32"
           line
         />
@@ -77,25 +67,15 @@ const GymBeam = () => (
           fill="#5f6a9a"
           line
         />
-        <Scatter
-          name="ARIZONA"
-          data={beamData.ARIZONA}
-          fill="#274659"
-          line
-        />
+        <Scatter name="ARIZONA" data={beamData.ARIZONA} fill="#274659" line />
         <Scatter
           name="ARIZONA STATE"
-          data={beamData['ARIZONA STATE']}
+          data={beamData["ARIZONA STATE"]}
           fill="#fdd23c"
           line
         />
         <Scatter name="UCLA" data={beamData.UCLA} fill="#71aad9" line />
-        <Scatter
-          name="STANFORD"
-          data={beamData.STANFORD}
-          fill="#ab4a51"
-          line
-        />
+        <Scatter name="STANFORD" data={beamData.STANFORD} fill="#ab4a51" line />
       </ScatterChart>
     </ResponsiveContainer>
   </div>

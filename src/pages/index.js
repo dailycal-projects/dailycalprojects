@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core';
-import { graphql, Link } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
-import { styles } from '../styles/customTheme';
-import ArticleCard from '../components/articleCard';
-import Layout from '../components/layout';
-import Seo from '../components/seo';
-import circlelogo from '../images/dclogocircle.png';
-import logo from '../images/dclogoblack.png';
-import { theme } from '../styles/theme';
+import { withStyles } from "@material-ui/core";
+import { graphql, Link } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import * as React from "react";
+import ArticleCard from "../components/articleCard";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import logo from "../images/dclogoblack.png";
+import circlelogo from "../images/dclogocircle.png";
+import { styles } from "../styles/customTheme";
+import { theme } from "../styles/theme";
 
 const IndexPage = ({ classes, data }) => {
   const articles = data.allMdx.edges;
@@ -16,34 +16,63 @@ const IndexPage = ({ classes, data }) => {
   return (
     <Layout>
       <div className={classes.main}>
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: "none" }}>
           <div className={classes.topBar}>
-            <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
+            <img
+              src={logo}
+              alt="The Daily Californian"
+              style={{ height: "20px", marginTop: "25px" }}
+            />
           </div>
         </Link>
         {/* <Seo title="Daily Cal Data" /> */}
         <div className={classes.content}>
           <div className={classes.intro}>
-            <img src={circlelogo} alt="The Daily Californian" width="100" style={{ margin: '0px' }} />
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <h1 style={{
-                fontFamily: 'Georgia', fontSize: theme.spacing[5], fontWeight: 800, margin: 0, color: theme.palette.black,
+            <img
+              src={circlelogo}
+              alt="The Daily Californian"
+              width="100"
+              style={{ margin: "0px" }}
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
+            >
+              <h1
+                style={{
+                  fontFamily: "Georgia",
+                  fontSize: theme.spacing[5],
+                  fontWeight: 800,
+                  margin: 0,
+                  color: theme.palette.black,
+                }}
               >
                 Data
               </h1>
-              <p style={{ fontFamily: 'Georgia', margin: 0, color: theme.palette.darkGrey }}>Investigative stories, data analysis and graphics by The Daily Californian’s Data Team</p>
+              <p
+                style={{
+                  fontFamily: "Georgia",
+                  margin: 0,
+                  color: theme.palette.darkGrey,
+                }}
+              >
+                Investigative stories, data analysis and graphics by The Daily
+                Californian’s Data Team
+              </p>
             </div>
-
           </div>
           <div className={classes.index}>
-            {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
+            {articles.map(({ node }) => {
+              // map over edges and render frontmatter content from markdown files
               const { frontmatter, slug } = node;
               const image = getImage(frontmatter.featuredImage);
 
               if (!frontmatter.oldLink) {
                 return (
-                  <Link to={slug} key={slug} style={{ textDecoration: 'none' }}>
+                  <Link to={slug} key={slug} style={{ textDecoration: "none" }}>
                     <ArticleCard
                       title={frontmatter.title}
                       date={frontmatter.date}
@@ -54,7 +83,11 @@ const IndexPage = ({ classes, data }) => {
                 );
               }
               return (
-                <a href={frontmatter.oldLink} key={slug} style={{ textDecoration: 'none' }}>
+                <a
+                  href={frontmatter.oldLink}
+                  key={slug}
+                  style={{ textDecoration: "none" }}
+                >
                   <ArticleCard
                     title={frontmatter.title}
                     date={frontmatter.date}
@@ -73,9 +106,7 @@ const IndexPage = ({ classes, data }) => {
 
 export const query = graphql`
   query HomepageQuery {
-    allMdx (
-      sort: {order: DESC, fields: [frontmatter___date]}
-    ){
+    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
@@ -88,7 +119,7 @@ export const query = graphql`
             oldLink
             featuredImage {
               childImageSharp {
-                gatsbyImageData(width: 450 height: 250)
+                gatsbyImageData(width: 450, height: 250)
               }
             }
           }

@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
 import {
-  MapContainer, CircleMarker, TileLayer, Tooltip, Popup, // Map is outdated; Leaflet now uses MapContainer
-} from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import data from './coordinates';
+  MapContainer,
+  CircleMarker,
+  TileLayer,
+  Tooltip,
+  Popup, // Map is outdated; Leaflet now uses MapContainer
+} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import data from "./coordinates";
 
 const MyMap = () => {
   const centerLat = (data.minLat + data.maxLat) / 2;
@@ -13,16 +17,17 @@ const MyMap = () => {
   const distanceLong = data.maxLong - data.minLong;
   const bufferLong = distanceLong * 0.05;
 
-  const containerStyle = { // omit width for responsive map width
-    height: '600px',
-    margin: '30px 0px 30px 0px',
-    borderRadius: '15px',
-    boxShadow: '0px 6px 6px rgba(0, 0, 0, 0.25)',
+  const containerStyle = {
+    // omit width for responsive map width
+    height: "600px",
+    margin: "30px 0px 30px 0px",
+    borderRadius: "15px",
+    boxShadow: "0px 6px 6px rgba(0, 0, 0, 0.25)",
   };
 
   return (
     <div>
-      {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
+      {typeof window !== "undefined" ? ( // must condition inside of a div in case content is null
         <MapContainer
           scrollWheelZoom={false}
           style={containerStyle}
@@ -44,20 +49,20 @@ const MyMap = () => {
               fillOpacity={0.6}
             >
               <Tooltip opacity={1}>
-                <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                <div style={{ fontWeight: 500, fontSize: "16px" }}>
                   Click me!
                 </div>
               </Tooltip>
               <Popup>
-                <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                  {'ZIP code: '}
+                <div style={{ fontWeight: 500, fontSize: "16px" }}>
+                  {"ZIP code: "}
                   {info.ZIP}
                   <br />
-                  {'Census tract: '}
+                  {"Census tract: "}
                   {info.ct}
                   <br />
                   <div style={{ color: info.color }}>
-                    {'Housing burden percentile: '}
+                    {"Housing burden percentile: "}
                     {info.hbp}
                   </div>
                 </div>
@@ -65,7 +70,9 @@ const MyMap = () => {
             </CircleMarker>
           ))}
         </MapContainer>
-      ) : <p> Map is loading... </p>}
+      ) : (
+        <p> Map is loading... </p>
+      )}
     </div>
   );
 };

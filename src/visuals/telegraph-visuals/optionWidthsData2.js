@@ -1,6 +1,6 @@
 const optionWidthsData2 = [
   {
-    Option: '4a',
+    Option: "4a",
     Sidewalk1: 19,
     CurbExtension1: 0,
     BikeLane: 10,
@@ -10,10 +10,10 @@ const optionWidthsData2 = [
     CurbExtension2: 0,
     Sidewalk2: 19,
     Total: 60,
-    Note: 'One Way',
+    Note: "One Way",
   },
   {
-    Option: '4b',
+    Option: "4b",
     Sidewalk1: 19,
     CurbExtension1: 0,
     BikeLane: 10,
@@ -23,10 +23,10 @@ const optionWidthsData2 = [
     CurbExtension2: 0,
     Sidewalk2: 19,
     Total: 60,
-    Note: 'One Way',
+    Note: "One Way",
   },
   {
-    Option: '4c',
+    Option: "4c",
     Sidewalk1: 19,
     CurbExtension1: 10,
     BikeLane: 0,
@@ -36,10 +36,10 @@ const optionWidthsData2 = [
     CurbExtension2: 0,
     Sidewalk2: 19,
     Total: 60,
-    Note: 'One Way',
+    Note: "One Way",
   },
   {
-    Option: '4d',
+    Option: "4d",
     Sidewalk1: 19,
     CurbExtension1: 10,
     BikeLane: 0,
@@ -49,7 +49,7 @@ const optionWidthsData2 = [
     CurbExtension2: 0,
     Sidewalk2: 19,
     Total: 60,
-    Note: 'One Way',
+    Note: "One Way",
   },
 ];
 

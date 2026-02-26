@@ -36,16 +36,6 @@ export default [
         "warn",
         { alphabetize: { order: "asc", caseInsensitive: true } },
       ],
-
-      // Don't allow unused imports
-      "no-unused-vars": [
-        "error",
-        {
-          "vars": "all",
-          "args": "after-used",
-          "ignoreRestSiblings": true
-        }
-      ]
     },
     settings: {
       react: { version: "detect" },

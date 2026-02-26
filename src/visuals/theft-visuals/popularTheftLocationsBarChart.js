@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -8,9 +8,9 @@ import {
   Tooltip,
   Legend,
   Label,
-} from 'recharts';
+} from "recharts";
 
-import theftsPerLocationData from './popularTheftLocationsData';
+import theftsPerLocationData from "./popularTheftLocationsData";
 
 const PopularTheftLocationsBarChart = () => (
   <div>
@@ -30,7 +30,13 @@ const PopularTheftLocationsBarChart = () => (
       <XAxis dataKey="location">
         <Label value="Location" offset={-10} position="insideBottom" />
       </XAxis>
-      <YAxis label={{ value: 'Number of Thefts', angle: -90, position: 'insideLeft' }} />
+      <YAxis
+        label={{
+          value: "Number of Thefts",
+          angle: -90,
+          position: "insideLeft",
+        }}
+      />
       <Tooltip />
       <Legend wrapperStyle={{ bottom: -10 }} />
       <Bar dataKey="count" fill="#f6975f" />

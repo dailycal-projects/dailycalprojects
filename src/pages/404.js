@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core';
-import Seo from '../components/seo';
-import { styles } from '../styles/customTheme';
+import { withStyles } from "@material-ui/core";
+import * as React from "react";
+import Seo from "../components/seo";
+import { styles } from "../styles/customTheme";
 
 const NotFoundPage = ({ classes }) => (
   <div className={classes.main}>

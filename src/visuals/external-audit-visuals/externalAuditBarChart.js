@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { InputLabel, FormControl, Select, MenuItem } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import React, { useState, useEffect } from "react";
 import {
   BarChart,
   Bar,
@@ -9,12 +11,8 @@ import {
   ResponsiveContainer,
   Rectangle,
   CartesianGrid,
-} from 'recharts';
-import {
-  InputLabel, FormControl, Select, MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import accessData from './externalAuditData';
+} from "recharts";
+import accessData from "./externalAuditData";
 
 function ExternalAuditBarChart() {
   const useStyles = makeStyles(() => ({
@@ -28,17 +26,17 @@ function ExternalAuditBarChart() {
   const classes = useStyles();
 
   const [question, setQuestion] = useState({
-    name: 'Age',
+    name: "Age",
   });
 
-  const [chartLayout, setChartLayout] = useState('vertical');
+  const [chartLayout, setChartLayout] = useState("vertical");
 
   useEffect(() => {
     const selectedQuestionData = accessData[question.name];
     if (selectedQuestionData.length > 7) {
-      setChartLayout('horizontal');
+      setChartLayout("horizontal");
     } else {
-      setChartLayout('vertical');
+      setChartLayout("vertical");
     }
   }, [question]);
 
@@ -49,29 +47,34 @@ function ExternalAuditBarChart() {
     });
   };
 
-  const renderBlackLegendText = (value) => <span style={{ color: '#666666' }}>{value}</span>;
+  const renderBlackLegendText = (value) => (
+    <span style={{ color: "#666666" }}>{value}</span>
+  );
 
   return (
     <div
       style={{
-        backgroundColor: '#e9edf0',
-        padding: '20px',
+        backgroundColor: "#e9edf0",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          padding: '10px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          padding: "10px",
         }}
       >
         <strong>
           <p>{`${question.name} of source`}</p>
         </strong>
       </div>
-      <FormControl className={classes.formControl} style={{ paddingBottom: '-100px' }}>
+      <FormControl
+        className={classes.formControl}
+        style={{ paddingBottom: "-100px" }}
+      >
         <InputLabel>Select question</InputLabel>
         <Select
           value={question.name}
@@ -90,7 +93,7 @@ function ExternalAuditBarChart() {
       </FormControl>
 
       <ResponsiveContainer height={500}>
-        {chartLayout === 'vertical' ? (
+        {chartLayout === "vertical" ? (
           <BarChart
             data={accessData[question.name]}
             margin={{
@@ -100,16 +103,12 @@ function ExternalAuditBarChart() {
               bottom: -30,
             }}
           >
-            <XAxis
-              dataKey="name"
-              height={100}
-              minTickGap={-10}
-            />
+            <XAxis dataKey="name" height={100} minTickGap={-10} />
             <YAxis
               label={{
-                value: 'Percent',
+                value: "Percent",
                 angle: -90,
-                position: 'insideLeft',
+                position: "insideLeft",
               }}
             />
             <Tooltip separator=": " />
@@ -140,22 +139,22 @@ function ExternalAuditBarChart() {
             <XAxis
               type="number"
               label={{
-                value: 'Percent',
+                value: "Percent",
                 angle: 0,
-                position: 'bottom',
+                position: "bottom",
                 minWidth: 100,
               }}
-
             />
             <YAxis
               dataKey="name"
               type="category"
               tick={{
                 style: {
-                  fontSize: accessData[question.name].length > 9 ? '10px' : '16px',
-                  textOverflow: 'ellipsis',
-                  overflow: 'hidden',
-                  whiteSpace: 'nowrap',
+                  fontSize:
+                    accessData[question.name].length > 9 ? "10px" : "16px",
+                  textOverflow: "ellipsis",
+                  overflow: "hidden",
+                  whiteSpace: "nowrap",
                 },
               }}
             />

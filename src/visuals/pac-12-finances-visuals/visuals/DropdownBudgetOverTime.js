@@ -1,14 +1,28 @@
-import '../App.css';
-import React, { useState } from 'react';
+import "../App.css";
+import React, { useState } from "react";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-} from 'recharts';
-import data from '../data/net_budget';
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import data from "../data/net_budget";
 
-const sports = ['Football', "Men's basketball", "Women's basketball", "Other men's sports", "Other women's sports", 'Non-program specific', 'Total'];
+const sports = [
+  "Football",
+  "Men's basketball",
+  "Women's basketball",
+  "Other men's sports",
+  "Other women's sports",
+  "Non-program specific",
+  "Total",
+];
 
 function DropdownBudgetOverTime() {
-  const [selectedSport, setSelectedSport] = useState('Football');
+  const [selectedSport, setSelectedSport] = useState("Football");
 
   const handleChange = (event) => {
     setSelectedSport(event.target.value);
@@ -18,13 +32,15 @@ function DropdownBudgetOverTime() {
 
   return (
     <div>
-      <h3 style={{ textAlign: 'center' }}>Net revenue by sport over time</h3>
+      <h3 style={{ textAlign: "center" }}>Net revenue by sport over time</h3>
       <div>
         <label htmlFor="sport">
           Select a sport:&nbsp;
           <select id="sport" value={selectedSport} onChange={handleChange}>
             {sports.map((option) => (
-              <option key={option} value={option}>{option}</option>
+              <option key={option} value={option}>
+                {option}
+              </option>
             ))}
           </select>
         </label>
@@ -40,10 +56,18 @@ function DropdownBudgetOverTime() {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="Year" label={{ value: 'Year', position: 'insideBottom', offset: -20 }} />
-            <YAxis label={{
-              value: 'Net revenue ($M in 2024)', angle: -90, position: 'insideLeft', textAlign: 'center', dy: 80,
-            }}
+            <XAxis
+              dataKey="Year"
+              label={{ value: "Year", position: "insideBottom", offset: -20 }}
+            />
+            <YAxis
+              label={{
+                value: "Net revenue ($M in 2024)",
+                angle: -90,
+                position: "insideLeft",
+                textAlign: "center",
+                dy: 80,
+              }}
             />
             <Tooltip formatter={(value) => `$${value.toFixed(2)}M`} />
             <Bar dataKey="Net ($M in 2024)" fill="#72577a" fillOpacity={0.7} />

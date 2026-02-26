@@ -1,347 +1,345 @@
 const editorship = [
   {
-    name: 'Yes',
+    name: "Yes",
     Percent: 20.3,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: 'No',
+    name: "No",
     Percent: 79.7,
-    color: '#e87876',
+    color: "#e87876",
   },
 ];
 
 const age = [
   {
-    name: '17',
+    name: "17",
     Percent: 1.0,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: '18',
+    name: "18",
     Percent: 18.3,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: '19',
+    name: "19",
     Percent: 28.7,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: '20',
+    name: "20",
     Percent: 23.3,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: '21',
+    name: "21",
     Percent: 16.3,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: '22',
+    name: "22",
     Percent: 6.9,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: '23',
+    name: "23",
     Percent: 2.5,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: 'Other',
-    Percent: '0.9',
-    color: '#fcba64',
+    name: "Other",
+    Percent: "0.9",
+    color: "#fcba64",
   },
   {
-    name: 'PND',
+    name: "PND",
     Percent: 1.5,
-    color: '#fcba64',
+    color: "#fcba64",
   },
 ];
 
 const year = [
   {
-    name: 'First Year',
+    name: "First Year",
     Percent: 20.7,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Second Year',
+    name: "Second Year",
     Percent: 31.5,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Third Year',
+    name: "Third Year",
     Percent: 26.1,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Fourth Year',
+    name: "Fourth Year",
     Percent: 18.9,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Fifth Year+',
+    name: "Fifth Year+",
     Percent: 1.8,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Prefer not to disclose',
+    name: "Prefer not to disclose",
     Percent: 0.9,
-    color: '#aacd80',
+    color: "#aacd80",
   },
 ];
 
 const transfer = [
   {
-    name: 'Yes',
+    name: "Yes",
     Percent: 11.3,
-    color: '#70aada',
+    color: "#70aada",
   },
   {
-    name: 'No',
+    name: "No",
     Percent: 88.3,
-    color: '#70aada',
-
+    color: "#70aada",
   },
   {
-    name: 'Prefer not to disclose',
+    name: "Prefer not to disclose",
     Percent: 0.5,
-    color: '#70aada',
-
+    color: "#70aada",
   },
 ];
 
 const international = [
   {
-    name: 'Yes',
+    name: "Yes",
     Percent: 6.8,
-    color: '#7c7ea7',
+    color: "#7c7ea7",
   },
   {
-    name: 'No',
+    name: "No",
     Percent: 92.8,
-    color: '#7c7ea7',
+    color: "#7c7ea7",
   },
   {
-    name: 'Prefer not to disclose',
+    name: "Prefer not to disclose",
     Percent: 0.5,
-    color: '#7c7ea7',
+    color: "#7c7ea7",
   },
 ];
 
 const gender = [
   {
-    name: 'Cisgender man',
+    name: "Cisgender man",
     Percent: 27.47,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: 'Cisgender woman',
+    name: "Cisgender woman",
     Percent: 64.41,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: 'Genderqueer',
-    Percent: 1.80,
-    color: '#e87876',
+    name: "Genderqueer",
+    Percent: 1.8,
+    color: "#e87876",
   },
   {
-    name: 'Nonbinary',
+    name: "Nonbinary",
     Percent: 4.5,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: 'Unsure',
+    name: "Unsure",
     Percent: 2.25,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: 'Other',
-    Percent: 1.80,
-    color: '#e87876',
+    name: "Other",
+    Percent: 1.8,
+    color: "#e87876",
   },
 ];
 
 const lgbtq = [
   {
-    name: 'Yes',
+    name: "Yes",
     Percent: 35.1,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: 'No',
+    name: "No",
     Percent: 57.2,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: 'Prefer not to disclose',
+    name: "Prefer not to disclose",
     Percent: 4.1,
-    color: '#fcba64',
+    color: "#fcba64",
   },
   {
-    name: 'Unsure',
+    name: "Unsure",
     Percent: 3.6,
-    color: '#fcba64',
+    color: "#fcba64",
   },
 ];
 
 const sexuality = [
   {
-    name: 'Heterosexual',
+    name: "Heterosexual",
     Percent: 56.2,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'PND',
+    name: "PND",
     Percent: 4.7,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Queer',
+    name: "Queer",
     Percent: 8.2,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Bisexual',
+    name: "Bisexual",
     Percent: 15.5,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Lesbian',
+    name: "Lesbian",
     Percent: 2.6,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Questioning',
+    name: "Questioning",
     Percent: 2.6,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Asexual',
+    name: "Asexual",
     Percent: 1.3,
-    color: '#aacd80',
+    color: "#aacd80",
   },
   {
-    name: 'Gay',
+    name: "Gay",
     Percent: 6.4,
-    color: '#aacd80',
+    color: "#aacd80",
   },
 ];
 
 const race = [
   {
-    name: 'White',
+    name: "White",
     Percent: 26.1,
-    color: '#70aada',
+    color: "#70aada",
   },
 
   {
-    name: 'Asian',
+    name: "Asian",
     Percent: 53.6,
-    color: '#70aada',
+    color: "#70aada",
   },
 
   {
-    name: 'Latine/Hispanic',
+    name: "Latine/Hispanic",
     Percent: 14.9,
-    color: '#70aada',
+    color: "#70aada",
   },
   {
-    name: 'Indigenous',
+    name: "Indigenous",
     Percent: 0.9,
-    color: '#70aada',
+    color: "#70aada",
   },
   {
-    name: 'North African',
+    name: "North African",
     Percent: 0.5,
-    color: '#70aada',
+    color: "#70aada",
   },
   {
-    name: 'Middle Eastern',
+    name: "Middle Eastern",
     Percent: 1.8,
-    color: '#70aada',
+    color: "#70aada",
   },
   {
-    name: 'PND',
+    name: "PND",
     Percent: 1.4,
-    color: '#70aada',
+    color: "#70aada",
   },
   {
-    name: 'Black',
+    name: "Black",
     Percent: 0.9,
-    color: '#70aada',
+    color: "#70aada",
   },
 ];
 
 const disability = [
   {
-    name: 'Yes',
+    name: "Yes",
     Percent: 14.4,
-    color: '#7c7ea7',
+    color: "#7c7ea7",
   },
   {
-    name: 'No',
+    name: "No",
     Percent: 82,
-    color: '#7c7ea7',
+    color: "#7c7ea7",
   },
   {
-    name: 'Prefer not to disclose',
+    name: "Prefer not to disclose",
     Percent: 3.6,
-    color: '#7c7ea7',
+    color: "#7c7ea7",
   },
 ];
 
 const semesters = [
   {
-    name: '1',
+    name: "1",
     Percent: 27.9,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '2',
+    name: "2",
     Percent: 16.7,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '3',
+    name: "3",
     Percent: 19.4,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '4',
+    name: "4",
     Percent: 12.6,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '5',
+    name: "5",
     Percent: 9.9,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '6',
+    name: "6",
     Percent: 3.6,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '7',
+    name: "7",
     Percent: 3.2,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '8',
+    name: "8",
     Percent: 4.5,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '9',
+    name: "9",
     Percent: 0.5,
-    color: '#e87876',
+    color: "#e87876",
   },
   {
-    name: '10',
+    name: "10",
     Percent: 1.8,
-    color: '#e87876',
+    color: "#e87876",
   },
 ];
 
@@ -424,13 +422,13 @@ const accessData = {
   Editor: editorship,
   Age: age,
   Year: year,
-  'Transfer rate': transfer,
-  'International student rate': international,
+  "Transfer rate": transfer,
+  "International student rate": international,
   Gender: gender,
-  'LGBTQ+ rate': lgbtq,
+  "LGBTQ+ rate": lgbtq,
   Sexuality: sexuality,
-  'Race and ethnicity': race,
-  'Disability rate': disability,
+  "Race and ethnicity": race,
+  "Disability rate": disability,
   Semesters: semesters,
 };
 

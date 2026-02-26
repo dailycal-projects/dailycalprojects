@@ -1,17 +1,23 @@
-import React from 'react';
+import React from "react";
 import {
-  Legend, BarChart, XAxis, YAxis, Tooltip, Bar, ResponsiveContainer,
-} from 'recharts';
+  Legend,
+  BarChart,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Bar,
+  ResponsiveContainer,
+} from "recharts";
 
-import { data1, data2 } from './data';
+import { data1, data2 } from "./data";
 
 const HateBar = () => {
-  const yellowOrange = '#F9A84A';
-  const orange = '#F28147';
-  const blueViolet = '#6F82B5';
-  const blue = '#4B9CCF';
+  const yellowOrange = "#F9A84A";
+  const orange = "#F28147";
+  const blueViolet = "#6F82B5";
+  const blue = "#4B9CCF";
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <div style={{ display: "flex", flexDirection: "row" }}>
       <ResponsiveContainer width={550} height={400}>
         <BarChart
           width={550}
@@ -24,7 +30,10 @@ const HateBar = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" tick={{ fontSize: 16, transform: 'translate(0, 7)' }} />
+          <XAxis
+            dataKey="name"
+            tick={{ fontSize: 16, transform: "translate(0, 7)" }}
+          />
           <YAxis yAxisId="left" orientation="left" stroke={yellowOrange} />
           <YAxis yAxisId="right" orientation="right" stroke="#83a6ed" />
           <Tooltip />
@@ -45,7 +54,10 @@ const HateBar = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" tick={{ fontSize: 16, transform: 'translate(0, 7)' }} />
+          <XAxis
+            dataKey="name"
+            tick={{ fontSize: 16, transform: "translate(0, 7)" }}
+          />
           <YAxis yAxisId="left" orientation="left" stroke={orange} />
           <YAxis yAxisId="right" orientation="right" stroke={blue} />
           <Tooltip />

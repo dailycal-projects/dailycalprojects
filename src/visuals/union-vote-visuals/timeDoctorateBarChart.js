@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-} from 'recharts';
-import doctorateData from './timeDoctorateData';
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import doctorateData from "./timeDoctorateData";
 
 class CustomizedAxisTick extends Component {
   render() {
-    const {
-      x, y, payload,
-    } = this.props;
+    const { x, y, payload } = this.props;
 
     return (
       <g transform={`translate(${x},${y})`}>
@@ -28,26 +33,23 @@ class CustomizedAxisTick extends Component {
 }
 
 const TimeDoctorateBarChart = () => (
-
   <div
     style={{
-      backgroundColor: '#e9edf0',
-      padding: '20px',
+      backgroundColor: "#e9edf0",
+      padding: "20px",
     }}
   >
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        padding: '10px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        padding: "10px",
       }}
     >
       <strong>
-        <p>
-          Average number of years to complete doctoral degree by campus
-        </p>
+        <p>Average number of years to complete doctoral degree by campus</p>
       </strong>
     </div>
 
@@ -63,7 +65,12 @@ const TimeDoctorateBarChart = () => (
           bottom: 5,
         }}
       >
-        <XAxis dataKey="campus" tick={<CustomizedAxisTick />} height={100} minTickGap={-10} />
+        <XAxis
+          dataKey="campus"
+          tick={<CustomizedAxisTick />}
+          height={100}
+          minTickGap={-10}
+        />
         <YAxis domain={[0, 7]} />
         <Tooltip />
         <CartesianGrid strokeDasharray="3 3" />
@@ -72,7 +79,6 @@ const TimeDoctorateBarChart = () => (
       </BarChart>
     </ResponsiveContainer>
   </div>
-
 );
 
 export default TimeDoctorateBarChart;

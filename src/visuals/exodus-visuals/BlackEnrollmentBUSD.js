@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   AreaChart,
   Area,
@@ -7,13 +7,19 @@ import {
   Tooltip,
   Label,
   ResponsiveContainer,
-} from 'recharts';
-import berkACData from './berkACData';
+} from "recharts";
+import berkACData from "./berkACData";
 
 const AlignedAxisLabel = ({
-  axisType, x, y, width, height, stroke, children,
+  axisType,
+  x,
+  y,
+  width,
+  height,
+  stroke,
+  children,
 }) => {
-  const isVert = axisType === 'yAxis';
+  const isVert = axisType === "yAxis";
   const cx = isVert ? x : x + width / 2;
   const cy = isVert ? height / 2 + y : y + height + 10;
   const rot = isVert ? `270 ${cx} ${cy}` : 0;
@@ -34,18 +40,14 @@ const BUSDBlackEnrollment = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '0px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "0px",
       }}
     >
-      <h4>
-
-        Enrollment of Black students in Berkeley Unified School District
-
-      </h4>
+      <h4>Enrollment of Black students in Berkeley Unified School District</h4>
     </div>
     <ResponsiveContainer height={400}>
       <AreaChart
@@ -61,13 +63,7 @@ const BUSDBlackEnrollment = () => (
         }}
       >
         <defs>
-          <linearGradient
-            id="colorEnrollBerkeley"
-            x1="0"
-            y1="0"
-            x2="0"
-            y2="1"
-          >
+          <linearGradient id="colorEnrollBerkeley" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="#9d3134" stopOpacity={0.9} />
             <stop offset="95%" stopColor="#9d3134" stopOpacity={0.3} />
           </linearGradient>
@@ -76,13 +72,13 @@ const BUSDBlackEnrollment = () => (
         <XAxis
           dataKey="year"
           angle={0}
-          tick={{ fontSize: 16, transform: 'translate(0, 7)' }}
+          tick={{ fontSize: 16, transform: "translate(0, 7)" }}
         >
           <Label value="Academic year" offset={-20} position="insideBottom" />
         </XAxis>
         <YAxis
           tick={{ fontSize: 16 }}
-          label={(
+          label={
             <AlignedAxisLabel
               x={13}
               y={180}
@@ -92,7 +88,7 @@ const BUSDBlackEnrollment = () => (
             >
               Enrollment
             </AlignedAxisLabel>
-              )}
+          }
         />
         <Tooltip />
         <Area
@@ -106,18 +102,14 @@ const BUSDBlackEnrollment = () => (
     <br />
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '0px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "0px",
       }}
     >
-      <h4>
-        {' '}
-        Enrollment of Black students in Alameda County public schools
-        {' '}
-      </h4>
+      <h4> Enrollment of Black students in Alameda County public schools </h4>
     </div>
     <br />
     <ResponsiveContainer height={400}>
@@ -136,13 +128,13 @@ const BUSDBlackEnrollment = () => (
         <XAxis
           dataKey="year"
           angle={0}
-          tick={{ fontSize: 16, transform: 'translate(0, 7)' }}
+          tick={{ fontSize: 16, transform: "translate(0, 7)" }}
         >
           <Label value="Academic year" offset={-20} position="insideBottom" />
         </XAxis>
         <YAxis
           tick={{ fontSize: 16 }}
-          label={(
+          label={
             <AlignedAxisLabel
               x={13}
               y={180}
@@ -152,7 +144,7 @@ const BUSDBlackEnrollment = () => (
             >
               Enrollment
             </AlignedAxisLabel>
-              )}
+          }
         />
         <Tooltip />
         <defs>

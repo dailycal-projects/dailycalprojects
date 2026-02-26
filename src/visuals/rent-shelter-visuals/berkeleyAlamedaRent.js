@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   AreaChart,
   Area,
@@ -7,19 +7,30 @@ import {
   Label,
   Tooltip,
   ResponsiveContainer,
-
-} from 'recharts';
-import { rentShelterData } from './rentShelterData';
+} from "recharts";
+import { rentShelterData } from "./rentShelterData";
 
 const AlignedAxisLabel = ({
-  axisType, x, y, width, height, stroke, children,
+  axisType,
+  x,
+  y,
+  width,
+  height,
+  stroke,
+  children,
 }) => {
-  const isVert = axisType === 'yAxis';
-  const cx = isVert ? x : x + (width / 2);
-  const cy = isVert ? (height / 2) + y : y + height + 10;
+  const isVert = axisType === "yAxis";
+  const cx = isVert ? x : x + width / 2;
+  const cy = isVert ? height / 2 + y : y + height + 10;
   const rot = isVert ? `270 ${cx} ${cy}` : 0;
   return (
-    <text x={cx} y={cy} transform={`rotate(${rot})`} textAnchor="middle" stroke={stroke}>
+    <text
+      x={cx}
+      y={cy}
+      transform={`rotate(${rot})`}
+      textAnchor="middle"
+      stroke={stroke}
+    >
       {children}
     </text>
   );
@@ -29,11 +40,11 @@ const RentChart = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Gross median rent in Berkeley by year </h4>
@@ -58,12 +69,15 @@ const RentChart = () => (
           </linearGradient>
         </defs>
 
-        <XAxis dataKey="year" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
+        <XAxis
+          dataKey="year"
+          tick={{ fontSize: 16, transform: "translate(0, 7)" }}
+        >
           <Label value="Year" offset={-24} position="insideBottom" />
         </XAxis>
         <YAxis
           tick={{ fontSize: 16 }}
-          label={(
+          label={
             <AlignedAxisLabel
               x={20}
               y={160}
@@ -73,7 +87,7 @@ const RentChart = () => (
             >
               Gross median rent
             </AlignedAxisLabel>
-)}
+          }
         />
         <Tooltip separator=": $" />
         {/* content={<RentCustomTooltip />} */}
@@ -92,11 +106,11 @@ const RentChart = () => (
 
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Gross median rent in Alameda County by year </h4>
@@ -128,12 +142,15 @@ const RentChart = () => (
             stroke="#b399bc"
             fill="url(#colorRentAlameda)"
           />
-          <XAxis dataKey="year" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
+          <XAxis
+            dataKey="year"
+            tick={{ fontSize: 16, transform: "translate(0, 7)" }}
+          >
             <Label value="Year" offset={-24} position="insideBottom" />
           </XAxis>
           <YAxis
             tick={{ fontSize: 16 }}
-            label={(
+            label={
               <AlignedAxisLabel
                 x={20}
                 y={160}
@@ -143,13 +160,12 @@ const RentChart = () => (
               >
                 Gross median rent
               </AlignedAxisLabel>
-                  )}
+            }
           />
           <Tooltip separator=": $" />
         </AreaChart>
       </ResponsiveContainer>
     </div>
-
   </div>
 );
 

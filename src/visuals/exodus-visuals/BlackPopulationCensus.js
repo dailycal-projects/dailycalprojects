@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   AreaChart,
   Area,
@@ -7,8 +7,8 @@ import {
   Tooltip,
   Label,
   ResponsiveContainer,
-} from 'recharts';
-import berkACBlackCensus from './berkACBlackCensus';
+} from "recharts";
+import berkACBlackCensus from "./berkACBlackCensus";
 
 const AlignedAxisLabel = ({
   axisType,
@@ -19,7 +19,7 @@ const AlignedAxisLabel = ({
   stroke,
   children,
 }) => {
-  const isVert = axisType === 'yAxis';
+  const isVert = axisType === "yAxis";
   const cx = isVert ? x : x + width / 2;
   const cy = isVert ? height / 2 + y : y + height + 10;
   const rot = isVert ? `270 ${cx} ${cy}` : 0;
@@ -40,11 +40,11 @@ const BlackPopulationCensus = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Black population in Berkeley over time </h4>
@@ -65,13 +65,13 @@ const BlackPopulationCensus = () => (
         <XAxis
           dataKey="year"
           angle={0}
-          tick={{ fontSize: 16, transform: 'translate(0, 7)' }}
+          tick={{ fontSize: 16, transform: "translate(0, 7)" }}
         >
           <Label value="Year" offset={-10} position="insideBottom" />
         </XAxis>
         <YAxis
           tick={{ fontSize: 16 }}
-          label={(
+          label={
             <AlignedAxisLabel
               x={14}
               y={180}
@@ -81,7 +81,7 @@ const BlackPopulationCensus = () => (
             >
               Count
             </AlignedAxisLabel>
-              )}
+          }
         />
         <Tooltip />
         <defs>
@@ -100,11 +100,11 @@ const BlackPopulationCensus = () => (
     </ResponsiveContainer>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Black population in Alameda County over time </h4>
@@ -126,13 +126,13 @@ const BlackPopulationCensus = () => (
         <XAxis
           dataKey="year"
           angle={0}
-          tick={{ fontSize: 16, transform: 'translate(0, 7)' }}
+          tick={{ fontSize: 16, transform: "translate(0, 7)" }}
         >
           <Label value="Year" offset={-10} position="insideBottom" />
         </XAxis>
         <YAxis
           tick={{ fontSize: 16 }}
-          label={(
+          label={
             <AlignedAxisLabel
               x={14}
               y={170}
@@ -142,7 +142,7 @@ const BlackPopulationCensus = () => (
             >
               Count
             </AlignedAxisLabel>
-              )}
+          }
         />
         <Tooltip />
         <defs>

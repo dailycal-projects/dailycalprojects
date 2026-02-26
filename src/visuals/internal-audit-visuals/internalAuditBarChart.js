@@ -1,15 +1,17 @@
-import React from 'react';
+import { InputLabel, FormControl, Select, MenuItem } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import React from "react";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-} from 'recharts';
-import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import accessData from './internalAuditData';
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import accessData from "./internalAuditData";
 
 const CustomizedAxisTick = ({ x, y, payload }) => (
   <g transform={`translate(${x},${y})`}>
@@ -30,7 +32,7 @@ const CustomizedAxisTick = ({ x, y, payload }) => (
 function InternalAuditBarChart() {
   const useStyles = makeStyles(() => ({
     formControl: {
-      margin: '1%',
+      margin: "1%",
       minWidth: 150,
     },
   }));
@@ -38,7 +40,7 @@ function InternalAuditBarChart() {
   const classes = useStyles();
 
   const [question, setUnit] = React.useState({
-    name: 'Editor',
+    name: "Editor",
   });
 
   const handleUnitChange = (event) => {
@@ -51,26 +53,21 @@ function InternalAuditBarChart() {
   return (
     <div
       style={{
-        backgroundColor: '#e9edf0',
-        padding: '20px',
-
+        backgroundColor: "#e9edf0",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          padding: '10px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          padding: "10px",
         }}
       >
         <strong>
-          <p>
-            {`${question.name}`}
-            {' '}
-            at the Daily Cal
-          </p>
+          <p>{`${question.name}`} at the Daily Cal</p>
         </strong>
       </div>
       <FormControl className={classes.formControl}>
@@ -87,7 +84,9 @@ function InternalAuditBarChart() {
           <MenuItem value="Age">Age</MenuItem>
           <MenuItem value="Year">Year</MenuItem>
           <MenuItem value="Transfer rate">Transfer rate</MenuItem>
-          <MenuItem value="International student rate">International student rate</MenuItem>
+          <MenuItem value="International student rate">
+            International student rate
+          </MenuItem>
           <MenuItem value="Gender">Gender</MenuItem>
           <MenuItem value="LGBTQ+ rate">LGBTQ+ rate</MenuItem>
           <MenuItem value="Sexuality">Sexuality</MenuItem>
@@ -109,18 +108,28 @@ function InternalAuditBarChart() {
             bottom: -10,
           }}
         >
-          <XAxis dataKey="name" tick={<CustomizedAxisTick />} height={100} minTickGap={-10} />
+          <XAxis
+            dataKey="name"
+            tick={<CustomizedAxisTick />}
+            height={100}
+            minTickGap={-10}
+          />
           <YAxis
             label={{
-              value: 'Percent',
+              value: "Percent",
               angle: -90,
-              position: 'insideLeft',
+              position: "insideLeft",
             }}
           />
           <Tooltip separator=": " />
           <CartesianGrid strokeDasharray="3 3" />
           <Legend />
-          <Bar dataKey="Percent" angle={0} fill={accessData[question.name][0].color} legendType="none" />
+          <Bar
+            dataKey="Percent"
+            angle={0}
+            fill={accessData[question.name][0].color}
+            legendType="none"
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>
