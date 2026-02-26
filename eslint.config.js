@@ -5,7 +5,6 @@ import tsPlugin from "@typescript-eslint/eslint-plugin";
 import prettierConfig from "eslint-config-prettier"; // just disables conflicting ESLint rules
 import importPlugin from "eslint-plugin-import";
 import reactPlugin from "eslint-plugin-react";
-import unusedImportsPlugin from "eslint-plugin-unused-imports";
 
 export default [
   {
@@ -24,7 +23,6 @@ export default [
       react: reactPlugin,
       "@typescript-eslint": tsPlugin,
       import: importPlugin,
-      "unused-imports": unusedImportsPlugin,
     },
     rules: {
       // Allow jsx in all js/ts files
@@ -38,7 +36,16 @@ export default [
         "warn",
         { alphabetize: { order: "asc", caseInsensitive: true } },
       ],
-      "unused-imports/no-unused-imports": "error", // No unused imports
+
+      // Don't allow unused imports
+      "no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": true
+        }
+      ]
     },
     settings: {
       react: { version: "detect" },
