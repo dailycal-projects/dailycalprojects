@@ -1,27 +1,21 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { styles } from '../styles/customTheme';
+import Card from "@material-ui/core/Card";
+import { withStyles } from "@material-ui/core/styles";
+import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react";
+import { styles } from "../styles/customTheme";
 
 function formatDate(dateStr) {
-  return dateStr.replace(/\b0(?=\d)/, ''); // remove leading zeros
+  return dateStr.replace(/\b0(?=\d)/, ""); // remove leading zeros
 }
-const ArticleCard = ({
-  classes, title, date, image,
-}) => (
+const ArticleCard = ({ classes, title, date, image }) => (
   <div>
     <Card className={classes.card}>
-      <div className={classes.date}>
-        {formatDate(date)}
-      </div>
+      <div className={classes.date}>{formatDate(date)}</div>
       <div className={classes.cardImage}>
         <GatsbyImage image={image} />
       </div>
       <div className="cardContent">
-        <div className={classes.articleTitle}>
-          {title}
-        </div>
+        <div className={classes.articleTitle}>{title}</div>
       </div>
     </Card>
   </div>

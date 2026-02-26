@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   BarChart,
   Bar,
@@ -8,19 +8,24 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
-import gapDataMath from './gapDataMath';
-import gapDataELA from './gapDataELA';
+} from "recharts";
+import gapDataELA from "./gapDataELA";
+import gapDataMath from "./gapDataMath";
 
 class CustomizedAxisTick extends Component {
   render() {
-    const {
-      x, y, payload,
-    } = this.props;
+    const { x, y, payload } = this.props;
 
     return (
       <g transform={`translate(${x},${y})`}>
-        <text x={0} y={10} dy={0} textAnchor="end" fill="#666" transform="rotate(-35)">
+        <text
+          x={0}
+          y={10}
+          dy={0}
+          textAnchor="end"
+          fill="#666"
+          transform="rotate(-35)"
+        >
           {payload.value}
         </text>
       </g>
@@ -29,27 +34,30 @@ class CustomizedAxisTick extends Component {
 }
 
 const GapStackedBarChart = () => (
-
   <div className="App">
-
     <br />
     <div
       style={{
-        backgroundColor: '#e9edf0',
-        padding: '20px',
+        backgroundColor: "#e9edf0",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          padding: '30px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          padding: "30px",
         }}
       >
         <strong>
-          <p> California school districts with the largest gaps in Black and white students meeting state standards on the 2022 Smarter Balanced Assessments in math </p>
+          <p>
+            {" "}
+            California school districts with the largest gaps in Black and white
+            students meeting state standards on the 2022 Smarter Balanced
+            Assessments in math{" "}
+          </p>
         </strong>
       </div>
       <ResponsiveContainer height={745}>
@@ -70,25 +78,12 @@ const GapStackedBarChart = () => (
             tick={<CustomizedAxisTick />}
             height={145}
           />
-          <YAxis
-            tickFormatter={(tick) => `${tick}%`}
-          />
-          <Tooltip
-            formatter={(value) => `${value}%`}
-          />
+          <YAxis tickFormatter={(tick) => `${tick}%`} />
+          <Tooltip formatter={(value) => `${value}%`} />
           <Legend />
-          <Bar
-            dataKey="Difference in performance"
-            fill="#f0876a"
-          />
-          <Bar
-            dataKey="White students"
-            fill="#abcd80"
-          />
-          <Bar
-            dataKey="Black students"
-            fill="#a07fac"
-          />
+          <Bar dataKey="Difference in performance" fill="#f0876a" />
+          <Bar dataKey="White students" fill="#abcd80" />
+          <Bar dataKey="Black students" fill="#a07fac" />
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -99,21 +94,26 @@ const GapStackedBarChart = () => (
     <br />
     <div
       style={{
-        backgroundColor: '#e9edf0',
-        padding: '20px',
+        backgroundColor: "#e9edf0",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          padding: '30px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          padding: "30px",
         }}
       >
         <strong>
-          <p> California school districts with the largest gaps in Black and white students meeting state standards on the 2022 Smarter Balanced Assessments in English language arts </p>
+          <p>
+            {" "}
+            California school districts with the largest gaps in Black and white
+            students meeting state standards on the 2022 Smarter Balanced
+            Assessments in English language arts{" "}
+          </p>
         </strong>
       </div>
       <ResponsiveContainer height={740}>
@@ -133,27 +133,13 @@ const GapStackedBarChart = () => (
             dataKey="District"
             tick={<CustomizedAxisTick />}
             height={140}
-          />
-          {' '}
-          <YAxis
-            tickFormatter={(tick) => `${tick}%`}
-          />
-          <Tooltip
-            formatter={(value) => `${value}%`}
-          />
+          />{" "}
+          <YAxis tickFormatter={(tick) => `${tick}%`} />
+          <Tooltip formatter={(value) => `${value}%`} />
           <Legend />
-          <Bar
-            dataKey="Difference in performance"
-            fill="#f0876a"
-          />
-          <Bar
-            dataKey="White students"
-            fill="#abcd80"
-          />
-          <Bar
-            dataKey="Black students"
-            fill="#a07fac"
-          />
+          <Bar dataKey="Difference in performance" fill="#f0876a" />
+          <Bar dataKey="White students" fill="#abcd80" />
+          <Bar dataKey="Black students" fill="#a07fac" />
         </BarChart>
       </ResponsiveContainer>
     </div>

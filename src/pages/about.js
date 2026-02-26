@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core';
-import { styles } from '../styles/customTheme';
+import { withStyles } from "@material-ui/core";
+import * as React from "react";
 
-import NavBar from '../components/navBar';
-import Seo from '../components/seo';
+import NavBar from "../components/navBar";
+import Seo from "../components/seo";
+import { styles } from "../styles/customTheme";
 
 const About = ({ classes }) => (
   <div className={classes.main}>

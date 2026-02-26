@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   AreaChart,
   Area,
@@ -7,19 +7,22 @@ import {
   Label,
   Tooltip,
   ResponsiveContainer,
+} from "recharts";
+import { rentShelterData } from "./rentShelterData";
 
-} from 'recharts';
-import { rentShelterData } from './rentShelterData';
-
-const AxisLabel = ({
-  axisType, x, y, width, height, stroke, children,
-}) => {
-  const isVert = axisType === 'yAxis';
-  const cx = isVert ? x : x + (width / 2);
-  const cy = isVert ? (height / 2) + y : y + height + 10;
+const AxisLabel = ({ axisType, x, y, width, height, stroke, children }) => {
+  const isVert = axisType === "yAxis";
+  const cx = isVert ? x : x + width / 2;
+  const cy = isVert ? height / 2 + y : y + height + 10;
   const rot = isVert ? `270 ${cx} ${cy}` : 0;
   return (
-    <text x={cx} y={cy} transform={`rotate(${rot})`} textAnchor="middle" stroke={stroke}>
+    <text
+      x={cx}
+      y={cy}
+      transform={`rotate(${rot})`}
+      textAnchor="middle"
+      stroke={stroke}
+    >
       {children}
     </text>
   );
@@ -29,19 +32,14 @@ const AlamedaShelterChart = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
-
-      <h4>
-        {' '}
-        Point-in-Time counts of homeless population in Alameda County
-        {' '}
-      </h4>
+      <h4> Point-in-Time counts of homeless population in Alameda County </h4>
     </div>
     <ResponsiveContainer height={400}>
       <AreaChart
@@ -69,10 +67,20 @@ const AlamedaShelterChart = () => (
           stroke="#95C361"
           fill="url(#colorPv)"
         />
-        <XAxis dataKey="year" tick={{ fontSize: 16, transform: 'translate(0, 7)' }}>
+        <XAxis
+          dataKey="year"
+          tick={{ fontSize: 16, transform: "translate(0, 7)" }}
+        >
           <Label value="Year" offset={-24} position="insideBottom" />
         </XAxis>
-        <YAxis tick={{ fontSize: 16 }} label={<AxisLabel x={20} y={160} width={0} height={0} axisType="yAxis">Point-in-Time count</AxisLabel>} />
+        <YAxis
+          tick={{ fontSize: 16 }}
+          label={
+            <AxisLabel x={20} y={160} width={0} height={0} axisType="yAxis">
+              Point-in-Time count
+            </AxisLabel>
+          }
+        />
         <Tooltip />
       </AreaChart>
     </ResponsiveContainer>

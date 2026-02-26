@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -9,19 +9,19 @@ import {
   Legend,
   Label,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
 
-import theftsPerYearData from './theftsPerYearData';
+import theftsPerYearData from "./theftsPerYearData";
 
 const TheftsPerYearBarChart = () => (
-  <div style={{ backgroundColor: '#e9edf0', padding: '20px' }}>
+  <div style={{ backgroundColor: "#e9edf0", padding: "20px" }}>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Thefts per year </h4>
@@ -42,9 +42,13 @@ const TheftsPerYearBarChart = () => (
         <XAxis dataKey="year">
           <Label value="Year" offset={-10} position="insideBottom" />
         </XAxis>
-        <YAxis label={{
-          value: 'Number of thefts', angle: -90, position: 'insideLeft', offset: 10,
-        }}
+        <YAxis
+          label={{
+            value: "Number of thefts",
+            angle: -90,
+            position: "insideLeft",
+            offset: 10,
+          }}
         />
         <Tooltip />
         <Legend wrapperStyle={{ bottom: -10, left: 25 }} />

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { InputLabel, FormControl, Select, MenuItem } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import React, { useState, useEffect } from "react";
 import {
   LineChart,
   Line,
@@ -8,12 +10,8 @@ import {
   Legend,
   ResponsiveContainer,
   CartesianGrid,
-} from 'recharts';
-import {
-  InputLabel, FormControl, Select, MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import accessData from './lineData';
+} from "recharts";
+import accessData from "./lineData";
 
 function OpioidsLineChart() {
   const useStyles = makeStyles(() => ({
@@ -26,7 +24,7 @@ function OpioidsLineChart() {
 
   const classes = useStyles();
 
-  const [question, setQuestion] = useState('CalvAlameda');
+  const [question, setQuestion] = useState("CalvAlameda");
 
   useEffect(() => {
     // Any additional logic based on question change can be placed here
@@ -38,23 +36,23 @@ function OpioidsLineChart() {
   };
 
   const renderBlackLegendText = (value) => (
-    <span style={{ color: '#666666' }}>{value}</span>
+    <span style={{ color: "#666666" }}>{value}</span>
   );
 
   return (
     <div
       style={{
-        backgroundColor: '#e9edf0',
-        padding: '20px',
+        backgroundColor: "#e9edf0",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          padding: '10px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          padding: "10px",
         }}
       >
         <h4>
@@ -92,13 +90,13 @@ function OpioidsLineChart() {
           <Legend formatter={renderBlackLegendText} verticalAlign="top" />
 
           {/* Conditionally render lines based on the selected 'question' */}
-          {question === 'CalvAlameda' && (
+          {question === "CalvAlameda" && (
             <>
               <Line type="monotone" dataKey="California" stroke="#fba93d" />
               <Line type="monotone" dataKey="Alameda" stroke="#3d5c70" />
             </>
           )}
-          {question === 'agerates' && (
+          {question === "agerates" && (
             <>
               <Line type="monotone" dataKey="15 to 19" stroke="#fed039" />
               <Line type="monotone" dataKey="20 to 24" stroke="#9ec949" />

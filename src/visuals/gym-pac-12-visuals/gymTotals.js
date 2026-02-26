@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ScatterChart,
   Scatter,
@@ -9,19 +9,18 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-}
-  from 'recharts';
-import { totalsData } from './gymData';
+} from "recharts";
+import { totalsData } from "./gymData";
 
 const GymTotals = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Total scores by week and team </h4>
@@ -53,23 +52,13 @@ const GymTotals = () => (
           name="Total score: "
           domain={[193, 200]}
         />
-        <Tooltip cursor={{ strokeDasharray: '3 3' }} separator="" />
+        <Tooltip cursor={{ strokeDasharray: "3 3" }} separator="" />
         <Legend />
-        <Scatter
-          name="UTAH"
-          data={totalsData.UTAH}
-          fill="#df4c57"
-          line
-        />
-        <Scatter
-          name="CAL"
-          data={totalsData.CAL}
-          fill="#186892"
-          line
-        />
+        <Scatter name="UTAH" data={totalsData.UTAH} fill="#df4c57" line />
+        <Scatter name="CAL" data={totalsData.CAL} fill="#186892" line />
         <Scatter
           name="OREGON STATE"
-          data={totalsData['OREGON STATE']}
+          data={totalsData["OREGON STATE"]}
           fill="#f17a32"
           line
         />
@@ -79,15 +68,10 @@ const GymTotals = () => (
           fill="#5f6a9a"
           line
         />
-        <Scatter
-          name="ARIZONA"
-          data={totalsData.ARIZONA}
-          fill="#274659"
-          line
-        />
+        <Scatter name="ARIZONA" data={totalsData.ARIZONA} fill="#274659" line />
         <Scatter
           name="ARIZONA STATE"
-          data={totalsData['ARIZONA STATE']}
+          data={totalsData["ARIZONA STATE"]}
           fill="#fdd23c"
           line
         />

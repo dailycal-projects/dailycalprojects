@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
 import {
-  MapContainer, CircleMarker, TileLayer, Popup, // Map is outdated; Leaflet now uses MapContainer
-} from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import data from './TestStripData';
+  MapContainer,
+  CircleMarker,
+  TileLayer,
+  Popup, // Map is outdated; Leaflet now uses MapContainer
+} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import data from "./TestStripData";
 
 const TestStripMap = () => {
   const centerLat = (data.minLat + data.maxLat) / 2;
@@ -13,32 +16,28 @@ const TestStripMap = () => {
   const distanceLong = data.maxLong - data.minLong;
   const bufferLong = distanceLong * 0.05;
 
-  const containerStyle = { // omit width for responsive map width
-    height: '600px',
-    margin: '0px 0px 0px 0px',
-    borderRadius: '15px',
-    boxShadow: '0px 6px 6px rgba(0, 0, 0, 0.25)',
+  const containerStyle = {
+    // omit width for responsive map width
+    height: "600px",
+    margin: "0px 0px 0px 0px",
+    borderRadius: "15px",
+    boxShadow: "0px 6px 6px rgba(0, 0, 0, 0.25)",
   };
 
   return (
     <div>
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          left: '0px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          left: "0px",
         }}
       >
-        <h4>
-
-          FentCheck and campus fentanyl test strip availability
-
-        </h4>
+        <h4>FentCheck and campus fentanyl test strip availability</h4>
       </div>
-      {(typeof window !== 'undefined') ? ( // must condition inside of a div in case content is null
-
+      {typeof window !== "undefined" ? ( // must condition inside of a div in case content is null
         <MapContainer
           scrollWheelZoom={false}
           minZoom={7}
@@ -61,18 +60,20 @@ const TestStripMap = () => {
               fillOpacity={0.6}
             >
               <Popup>
-                <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                  {'Location: '}
+                <div style={{ fontWeight: 500, fontSize: "16px" }}>
+                  {"Location: "}
                   {info.Location}
                   <br />
-                  {'Address: '}
+                  {"Address: "}
                   {info.Address}
                 </div>
               </Popup>
             </CircleMarker>
           ))}
         </MapContainer>
-      ) : <p> Map is loading... </p>}
+      ) : (
+        <p> Map is loading... </p>
+      )}
     </div>
   );
 };

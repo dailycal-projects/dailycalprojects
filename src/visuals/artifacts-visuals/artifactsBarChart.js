@@ -1,11 +1,6 @@
-import React from 'react';
-import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { InputLabel, FormControl, Select, MenuItem } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -15,13 +10,13 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
-import allData from './artifactsData';
+} from "recharts";
+import allData from "./artifactsData";
 
 function ArtifactsBarChart() {
   const useStyles = makeStyles(() => ({
     formControl: {
-      margin: '1%',
+      margin: "1%",
       minWidth: 120,
     },
   }));
@@ -29,7 +24,7 @@ function ArtifactsBarChart() {
   const classes = useStyles();
 
   const [UC, setUC] = React.useState({
-    campus: 'UC Berkeley',
+    campus: "UC Berkeley",
   });
 
   const handleChange = (event) => {
@@ -43,22 +38,25 @@ function ArtifactsBarChart() {
     <div
       className="App"
       style={{
-        backgroundColor: '#e9edf0',
-        padding: '20px',
+        backgroundColor: "#e9edf0",
+        padding: "20px",
       }}
     >
-
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          padding: '30px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          padding: "30px",
         }}
       >
         <strong>
-          <p> Number of cultural objects and human remains held by five UC campuses separated by origin </p>
+          <p>
+            {" "}
+            Number of cultural objects and human remains held by five UC
+            campuses separated by origin{" "}
+          </p>
         </strong>
       </div>
       <FormControl className={classes.formControl}>
@@ -72,8 +70,12 @@ function ArtifactsBarChart() {
         >
           <MenuItem value="UC Berkeley">UC Berkeley</MenuItem>
           <MenuItem value="UCLA">Fowler Museum at UCLA</MenuItem>
-          <MenuItem value="UC Davis">UC Davis Department of Anthropology Museum</MenuItem>
-          <MenuItem value="UC Santa Barbara">UC Santa Barbara department of anthropology</MenuItem>
+          <MenuItem value="UC Davis">
+            UC Davis Department of Anthropology Museum
+          </MenuItem>
+          <MenuItem value="UC Santa Barbara">
+            UC Santa Barbara department of anthropology
+          </MenuItem>
           <MenuItem value="UC Riverside">UC Riverside</MenuItem>
         </Select>
       </FormControl>

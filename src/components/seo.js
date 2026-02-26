@@ -5,14 +5,12 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
+import * as React from "react";
+import { Helmet } from "react-helmet";
 
-function Seo({
-  description, lang, meta, title, image: metaImage, pathname,
-}) {
+function Seo({ description, lang, meta, title, image: metaImage, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,15 +23,13 @@ function Seo({
           }
         }
       }
-    `,
+    `
   );
 
   const metaDescription = description || site.siteMetadata.description;
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
   const defaultTitle = site.siteMetadata?.title;
-  const image = metaImage && metaImage.src
-    ? `${metaImage.src}`
-    : null;
+  const image = metaImage && metaImage.src ? `${metaImage.src}` : null;
 
   return (
     <Helmet
@@ -45,82 +41,83 @@ function Seo({
       link={
         canonical
           ? [
-            {
-              rel: 'canonical',
-              href: canonical,
-            },
-          ]
+              {
+                rel: "canonical",
+                href: canonical,
+              },
+            ]
           : []
       }
       meta={[
         {
-          name: 'description',
+          name: "description",
           content: metaDescription,
         },
         {
-          property: 'og:title',
+          property: "og:title",
           content: title,
         },
         {
-          property: 'og:url',
+          property: "og:url",
           content: canonical,
         },
         {
-          property: 'og:description',
+          property: "og:description",
           content: metaDescription,
         },
         {
-          property: 'og:type',
-          content: 'website',
+          property: "og:type",
+          content: "website",
         },
         {
-          name: 'twitter:card',
-          content: 'summary',
+          name: "twitter:card",
+          content: "summary",
         },
         {
-          name: 'twitter:title',
+          name: "twitter:title",
           content: title,
         },
         {
-          name: 'twitter:description',
+          name: "twitter:description",
           content: metaDescription,
         },
       ]
         .concat(
           metaImage
             ? [
-              {
-                property: 'og:image',
-                content: image,
-              },
-              {
-                property: 'og:image:width',
-                content: metaImage.width,
-              },
-              {
-                property: 'og:image:height',
-                content: metaImage.height,
-              },
-              {
-                name: 'twitter:card',
-                content: 'summary_large_image',
-              },
-            ]
+                {
+                  property: "og:image",
+                  content: image,
+                },
+                {
+                  property: "og:image:width",
+                  content: metaImage.width,
+                },
+                {
+                  property: "og:image:height",
+                  content: metaImage.height,
+                },
+                {
+                  name: "twitter:card",
+                  content: "summary_large_image",
+                },
+              ]
             : [
-              {
-                name: 'twitter:card',
-                content: 'summary',
-              },
-            ],
-        ).concat(meta)}
+                {
+                  name: "twitter:card",
+                  content: "summary",
+                },
+              ]
+        )
+        .concat(meta)}
     />
   );
 }
 
 Seo.defaultProps = {
-  lang: 'en',
+  lang: "en",
   meta: [],
-  description: '',
+  description: "",
 };
 
 Seo.propTypes = {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   BarChart,
   ResponsiveContainer,
@@ -7,19 +7,18 @@ import {
   YAxis,
   Bar,
   Tooltip,
-} from 'recharts';
-import data from './postsPerFlairData';
+} from "recharts";
+import data from "./postsPerFlairData";
 
 const PostsPerFlairBarChart = () => (
-
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Total number of posts per flair </h4>

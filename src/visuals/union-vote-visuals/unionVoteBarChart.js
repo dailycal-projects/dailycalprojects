@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import { InputLabel, FormControl, Select, MenuItem } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import React, { Component } from "react";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-} from 'recharts';
-import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import accessData from './unionVoteData';
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import accessData from "./unionVoteData";
 
 class CustomizedAxisTick extends Component {
   render() {
-    const {
-      x, y, payload,
-    } = this.props;
+    const { x, y, payload } = this.props;
 
     return (
       <g transform={`translate(${x},${y})`}>
@@ -37,7 +37,7 @@ class CustomizedAxisTick extends Component {
 function UnionVoteBarChart() {
   const useStyles = makeStyles(() => ({
     formControl: {
-      margin: '1%',
+      margin: "1%",
       minWidth: 120,
     },
   }));
@@ -45,7 +45,7 @@ function UnionVoteBarChart() {
   const classes = useStyles();
 
   const [unit, setUnit] = React.useState({
-    name: 'Academic student employees',
+    name: "Academic student employees",
   });
 
   const handleUnitChange = (event) => {
@@ -56,7 +56,7 @@ function UnionVoteBarChart() {
   };
 
   const [type, setType] = React.useState({
-    name: 'Number of votes',
+    name: "Number of votes",
   });
 
   const handleTypeChange = (event) => {
@@ -69,40 +69,33 @@ function UnionVoteBarChart() {
   const access = `${unit.name} ${type.name}`;
 
   const accessDataKey = {
-
-    'Academic student employees': 'UAW 2865',
-    'Student researchers': 'SRU-UAW',
-
+    "Academic student employees": "UAW 2865",
+    "Student researchers": "SRU-UAW",
   };
 
   return (
     <div
       style={{
-        backgroundColor: '#e9edf0',
-        padding: '20px',
+        backgroundColor: "#e9edf0",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-          padding: '10px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          padding: "10px",
         }}
       >
         <strong>
           <p>
-            {type.name}
-            {' '}
-            from
+            {type.name} from
             {/* {' '}
             {unit.name.toLowerCase()}
-            , or */}
-            {' '}
-            {`${accessDataKey[unit.name]}`}
-            {' '}
-            by campus
+            , or */}{" "}
+            {`${accessDataKey[unit.name]}`} by campus
           </p>
         </strong>
       </div>
@@ -116,9 +109,7 @@ function UnionVoteBarChart() {
           defaultValue="Academic student employees"
           autoWidth
         >
-          <MenuItem value="Academic student employees">
-            UAW 2865
-          </MenuItem>
+          <MenuItem value="Academic student employees">UAW 2865</MenuItem>
           <MenuItem value="Student researchers">SRU-UAW</MenuItem>
         </Select>
       </FormControl>
@@ -149,17 +140,30 @@ function UnionVoteBarChart() {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="campus" tick={<CustomizedAxisTick />} height={100} minTickGap={-10} />
-          {(type.name === 'Percent of votes') ? (
-
+          <XAxis
+            dataKey="campus"
+            tick={<CustomizedAxisTick />}
+            height={100}
+            minTickGap={-10}
+          />
+          {type.name === "Percent of votes" ? (
             <YAxis domain={[0, 100]} />
-
-          ) : <YAxis domain={[0, 5000]} />}
+          ) : (
+            <YAxis domain={[0, 5000]} />
+          )}
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
           <Legend />
-          <Bar dataKey={`${accessDataKey[unit.name]} "yes" votes`} stackId="a" fill="#95c361" />
-          <Bar dataKey={`${accessDataKey[unit.name]} "no" votes`} stackId="a" fill="#e3565f" />
+          <Bar
+            dataKey={`${accessDataKey[unit.name]} "yes" votes`}
+            stackId="a"
+            fill="#95c361"
+          />
+          <Bar
+            dataKey={`${accessDataKey[unit.name]} "no" votes`}
+            stackId="a"
+            fill="#e3565f"
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>

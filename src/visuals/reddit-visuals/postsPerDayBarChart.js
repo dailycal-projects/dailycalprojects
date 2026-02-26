@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   BarChart,
   ResponsiveContainer,
@@ -7,18 +7,18 @@ import {
   XAxis,
   YAxis,
   Bar,
-} from 'recharts';
-import data from './postsPerDayData';
+} from "recharts";
+import data from "./postsPerDayData";
 
 const PostsPerDayBarChart = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Total number of posts per day </h4>

@@ -1,13 +1,18 @@
-import React from 'react';
+import React from "react";
 import {
-  BarChart, Bar, YAxis, XAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-} from 'recharts';
-import department from './departmentBarChartData';
+  BarChart,
+  Bar,
+  YAxis,
+  XAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import department from "./departmentBarChartData";
 
 const CustomizedAxisTick = (props) => {
-  const {
-    x, y, payload,
-  } = props;
+  const { x, y, payload } = props;
 
   return (
     <g transform={`translate(${x},${y})`}>
@@ -28,23 +33,21 @@ const CustomizedAxisTick = (props) => {
 const DepartmentBarChart = () => (
   <div
     style={{
-      backgroundColor: '#e9edf0',
-      padding: '20px',
+      backgroundColor: "#e9edf0",
+      padding: "20px",
     }}
   >
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        padding: '10px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        padding: "10px",
       }}
     >
       <strong>
-        <p>
-          Departments at the Daily Cal
-        </p>
+        <p>Departments at the Daily Cal</p>
       </strong>
     </div>
 
@@ -60,7 +63,12 @@ const DepartmentBarChart = () => (
         }}
       >
         <XAxis type="number" />
-        <YAxis dataKey="name" type="category" tick={<CustomizedAxisTick />} width={100} />
+        <YAxis
+          dataKey="name"
+          type="category"
+          tick={<CustomizedAxisTick />}
+          width={100}
+        />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip separator=": " />
         <Legend />

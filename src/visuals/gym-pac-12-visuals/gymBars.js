@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ScatterChart,
   Scatter,
@@ -9,18 +9,18 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
-import { barsData } from './gymData';
+} from "recharts";
+import { barsData } from "./gymData";
 
 const GymBars = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Bar scores by week and team </h4>
@@ -51,23 +51,13 @@ const GymBars = () => (
           name="Bar score: "
           domain={[46.75, 50]}
         />
-        <Tooltip cursor={{ strokeDasharray: '3 3' }} separator="" />
+        <Tooltip cursor={{ strokeDasharray: "3 3" }} separator="" />
         <Legend />
-        <Scatter
-          name="UTAH"
-          data={barsData.UTAH}
-          fill="#df4c57"
-          line
-        />
-        <Scatter
-          name="CAL"
-          data={barsData.CAL}
-          fill="#186892"
-          line
-        />
+        <Scatter name="UTAH" data={barsData.UTAH} fill="#df4c57" line />
+        <Scatter name="CAL" data={barsData.CAL} fill="#186892" line />
         <Scatter
           name="OREGON STATE"
-          data={barsData['OREGON STATE']}
+          data={barsData["OREGON STATE"]}
           fill="#f17a32"
           line
         />
@@ -77,25 +67,15 @@ const GymBars = () => (
           fill="#5f6a9a"
           line
         />
-        <Scatter
-          name="ARIZONA"
-          data={barsData.ARIZONA}
-          fill="#274659"
-          line
-        />
+        <Scatter name="ARIZONA" data={barsData.ARIZONA} fill="#274659" line />
         <Scatter
           name="ARIZONA STATE"
-          data={barsData['ARIZONA STATE']}
+          data={barsData["ARIZONA STATE"]}
           fill="#fdd23c"
           line
         />
         <Scatter name="UCLA" data={barsData.UCLA} fill="#71aad9" line />
-        <Scatter
-          name="STANFORD"
-          data={barsData.STANFORD}
-          fill="#ab4a51"
-          line
-        />
+        <Scatter name="STANFORD" data={barsData.STANFORD} fill="#ab4a51" line />
       </ScatterChart>
     </ResponsiveContainer>
   </div>

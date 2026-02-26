@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   LineChart,
   Line,
@@ -9,18 +9,19 @@ import {
   Legend,
   Label,
   ResponsiveContainer,
-} from 'recharts';
-import { lunchData } from './rentShelterData';
+} from "recharts";
+import { lunchData } from "./rentShelterData";
 
 const LunchChart = () => (
   <div>
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      position: 'relative',
-      left: '20px',
-    }}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
+      }}
     >
       <h4> Percent of students in free and reduced-price meals program </h4>
     </div>

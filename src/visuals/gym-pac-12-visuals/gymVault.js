@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ScatterChart,
   Scatter,
@@ -9,18 +9,18 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
-import { vaultData } from './gymData';
+} from "recharts";
+import { vaultData } from "./gymData";
 
 const GymVault = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Vault scores by week and team </h4>
@@ -51,23 +51,13 @@ const GymVault = () => (
           name="Vault score: "
           domain={[48.25, 50]}
         />
-        <Tooltip cursor={{ strokeDasharray: '3 3' }} separator="" />
+        <Tooltip cursor={{ strokeDasharray: "3 3" }} separator="" />
         <Legend />
-        <Scatter
-          name="UTAH"
-          data={vaultData.UTAH}
-          fill="#df4c57"
-          line
-        />
-        <Scatter
-          name="CAL"
-          data={vaultData.CAL}
-          fill="#186892"
-          line
-        />
+        <Scatter name="UTAH" data={vaultData.UTAH} fill="#df4c57" line />
+        <Scatter name="CAL" data={vaultData.CAL} fill="#186892" line />
         <Scatter
           name="OREGON STATE"
-          data={vaultData['OREGON STATE']}
+          data={vaultData["OREGON STATE"]}
           fill="#f17a32"
           line
         />
@@ -77,15 +67,10 @@ const GymVault = () => (
           fill="#5f6a9a"
           line
         />
-        <Scatter
-          name="ARIZONA"
-          data={vaultData.ARIZONA}
-          fill="#274659"
-          line
-        />
+        <Scatter name="ARIZONA" data={vaultData.ARIZONA} fill="#274659" line />
         <Scatter
           name="ARIZONA STATE"
-          data={vaultData['ARIZONA STATE']}
+          data={vaultData["ARIZONA STATE"]}
           fill="#fdd23c"
           line
         />

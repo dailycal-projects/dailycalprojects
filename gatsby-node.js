@@ -6,30 +6,30 @@
 
 // You can delete this file if you're not using it
 
-const path = require('path');
+const path = require("path");
 
-const { createFilePath } = require('gatsby-source-filesystem');
+const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const articlePost = path.resolve('src/templates/articlePost.js');
+  const articlePost = path.resolve("src/templates/articlePost.js");
   const result = await graphql(
     `
-        {
-            allMdx(
-                sort: { fields: [frontmatter___date], order: DESC }
-                limit: 1000
-            ) {
-                edges {
-                    node {
-                        id
-                        slug
-                    }
-                }
+      {
+        allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              id
+              slug
             }
+          }
         }
-        `,
+      }
+    `
   );
 
   if (result.errors) {
@@ -53,10 +53,10 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === 'Mdx') {
+  if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode });
     createNodeField({
-      name: 'slug',
+      name: "slug",
       node,
       value,
     });
@@ -65,7 +65,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 // during server side rendering, leaflet maps will be ignored
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === 'build-html' || stage === 'develop-html') {
+  if (stage === "build-html" || stage === "develop-html") {
     actions.setWebpackConfig({
       module: {
         rules: [

@@ -1,11 +1,11 @@
-import './App.css';
-import React from 'react';
+import "./App.css";
+import React from "react";
 
-import DebtBarChart from './visuals/DebtBarChart';
-import DropdownBudgetOverTime from './visuals/DropdownBudgetOverTime';
-import Map from './visuals/Map';
-import AreaCharts from './visuals/AreaCharts';
-import ConferenceBarChart from './visuals/ConferenceBarChart';
+import AreaCharts from "./visuals/AreaCharts";
+import ConferenceBarChart from "./visuals/ConferenceBarChart";
+import DebtBarChart from "./visuals/DebtBarChart";
+import DropdownBudgetOverTime from "./visuals/DropdownBudgetOverTime";
+import Map from "./visuals/Map";
 
 function financeVisuals() {
   return (

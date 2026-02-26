@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import { withStyles } from '@material-ui/core/styles';
-import { styles } from '../styles/customTheme';
-import GitHubIcon from '../assets/github.svg';
-import DCIcon from '../assets/dailycal.svg';
+import { withStyles } from "@material-ui/core/styles";
+import { StaticQuery, graphql } from "gatsby";
+import * as React from "react";
+import DCIcon from "../assets/dailycal.svg";
+import GitHubIcon from "../assets/github.svg";
+import { styles } from "../styles/customTheme";
 
 const TitleAndDescription = ({ classes, data }) => {
   // to make sitewide edits, go to gatsby-config -> siteMetaData
@@ -12,23 +12,23 @@ const TitleAndDescription = ({ classes, data }) => {
 
   return (
     <div className={classes.header}>
-      <h1>
-        {' '}
-        {title}
-        {' '}
-      </h1>
-      <p>
-        {' '}
-        {description}
-        {' '}
-      </p>
+      <h1> {title} </h1>
+      <p> {description} </p>
       <div className={classes.icons}>
-        <a href="https://github.com/dailycal-projects" key="dailycalgithub" style={{ textDecoration: 'none' }}>
-          {' '}
+        <a
+          href="https://github.com/dailycal-projects"
+          key="dailycalgithub"
+          style={{ textDecoration: "none" }}
+        >
+          {" "}
           <GitHubIcon className={classes.iconHover} />
         </a>
-        <a href="https://www.dailycal.org/" key="dailycal" style={{ textDecoration: 'none' }}>
-          {' '}
+        <a
+          href="https://www.dailycal.org/"
+          key="dailycal"
+          style={{ textDecoration: "none" }}
+        >
+          {" "}
           <DCIcon className={classes.iconHover} />
         </a>
       </div>
@@ -39,15 +39,15 @@ const TitleAndDescription = ({ classes, data }) => {
 const Header = ({ classes }) => (
   <StaticQuery
     query={graphql`
-          query {
-            site {
-              siteMetadata {
-                title 
-                description 
-              }
-            }
+      query {
+        site {
+          siteMetadata {
+            title
+            description
           }
-        `}
+        }
+      }
+    `}
     render={(data) => <TitleAndDescription classes={classes} data={data} />}
   />
 );

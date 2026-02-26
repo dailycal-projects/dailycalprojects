@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDiffViewer, { DiffMethod } from 'react-diff-viewer-continued';
-import diffs from './diffdata';
+import React from "react";
+import ReactDiffViewer, { DiffMethod } from "react-diff-viewer-continued";
+import diffs from "./diffdata";
 
 function Wikidiff({ diff_id }) {
   const newStyles = {
@@ -10,10 +10,10 @@ function Wikidiff({ diff_id }) {
       },
     },
     line: {
-      padding: '10px 20px',
-      wordBreak: 'break-word',
-      overflowWrap: 'break-word',
-      '&:hover': {
+      padding: "10px 20px",
+      wordBreak: "break-word",
+      overflowWrap: "break-word",
+      "&:hover": {
         // background: "#a26ea1",
       },
     },
@@ -21,15 +21,15 @@ function Wikidiff({ diff_id }) {
     diffRemoved: {
       // color: "red",
       // background: "red",
-      textDecoration: 'line-through',
-      '&:hover': {
-        textDecoration: 'none',
+      textDecoration: "line-through",
+      "&:hover": {
+        textDecoration: "none",
       },
     },
 
     diffContainer: {
-      padding: '20px 40px',
-      margin: '10px 0',
+      padding: "20px 40px",
+      margin: "10px 0",
       // background: "red",
     },
   };
@@ -42,9 +42,9 @@ function Wikidiff({ diff_id }) {
   return (
     <div
       style={{
-        boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
-        padding: '10px 20px',
-        marginBottom: '1rem',
+        boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)",
+        padding: "10px 20px",
+        marginBottom: "1rem",
       }}
     >
       <style>
@@ -74,28 +74,22 @@ function Wikidiff({ diff_id }) {
         `}
       </style>
       <span
-        style={{ color: 'grey', fontSize: '12px', fontFamily: 'sans-serif' }}
+        style={{ color: "grey", fontSize: "12px", fontFamily: "sans-serif" }}
       >
-        <b>{diffs[diff_id].name}</b>
-        {' '}
-        on Wikipedia - Edit on
-        {' '}
-        {diffs[diff_id].time}
-        {' '}
-        -
-        {' '}
+        <b>{diffs[diff_id].name}</b> on Wikipedia - Edit on{" "}
+        {diffs[diff_id].time} -{" "}
         <a href={diffs[diff_id].article} target="_blank" rel="noreferrer">
           Full Diff
         </a>
         {diffs[diff_id].refs_hidden && (
           <i
             style={{
-              color: 'grey',
-              fontSize: '12px',
-              fontFamily: 'sans-serif',
+              color: "grey",
+              fontSize: "12px",
+              fontFamily: "sans-serif",
             }}
           >
-            {' '}
+            {" "}
             - References hidden
           </i>
         )}
@@ -103,87 +97,87 @@ function Wikidiff({ diff_id }) {
       {/* Legend for diff colors */}
       <div
         style={{
-          margin: '10px 0 10px 0',
-          fontSize: '13px',
-          fontFamily: 'sans-serif',
-          display: 'flex',
-          gap: '20px',
+          margin: "10px 0 10px 0",
+          fontSize: "13px",
+          fontFamily: "sans-serif",
+          display: "flex",
+          gap: "20px",
         }}
       >
         {diffs[diff_id].legend_delete && (
           <span>
             <span
               style={{
-                display: 'inline-block',
-                background: '#ffcccc',
+                display: "inline-block",
+                background: "#ffcccc",
                 // background: '#ffeef0', // actual color of deletions is #ffeef0
-                color: '#900',
-                borderRadius: '4px',
-                padding: '2px 8px',
-                marginRight: '4px',
-                border: '1px solid #f99',
-                fontFamily: 'monospace',
+                color: "#900",
+                borderRadius: "4px",
+                padding: "2px 8px",
+                marginRight: "4px",
+                border: "1px solid #f99",
+                fontFamily: "monospace",
               }}
             >
               Deletion
             </span>
-            <span style={{ color: 'grey' }}>= removed text</span>
+            <span style={{ color: "grey" }}>= removed text</span>
           </span>
         )}
         {diffs[diff_id].legend_add && (
           <span>
             <span
               style={{
-                display: 'inline-block',
-                background: '#ccffcc',
+                display: "inline-block",
+                background: "#ccffcc",
                 // background: '#e6ffed', // actual color of additions is #e6ffed
-                color: '#135c17',
-                borderRadius: '4px',
-                padding: '2px 8px',
-                marginRight: '4px',
-                border: '1px solid #8f8',
-                fontFamily: 'monospace',
+                color: "#135c17",
+                borderRadius: "4px",
+                padding: "2px 8px",
+                marginRight: "4px",
+                border: "1px solid #8f8",
+                fontFamily: "monospace",
               }}
             >
               Addition
             </span>
-            <span style={{ color: 'grey' }}>= added text</span>
+            <span style={{ color: "grey" }}>= added text</span>
           </span>
         )}
       </div>
       <div
         style={{
-          boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
-          width: '100%',
-          overflow: 'hidden',
+          boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)",
+          width: "100%",
+          overflow: "hidden",
         }}
       >
         {diffs[diff_id].raw ? (
           <div
             style={{
-              fontFamily: 'monospace, monospace',
-              fontSize: '16px',
-              background: '#f5f5f5',
-              padding: '10px',
-              borderRadius: '6px',
-              whiteSpace: 'pre-wrap',
-              wordBreak: 'break-word',
-              marginTop: '1rem',
-              maxHeight: '50vh',
-              overflowY: 'scroll',
+              fontFamily: "monospace, monospace",
+              fontSize: "16px",
+              background: "#f5f5f5",
+              padding: "10px",
+              borderRadius: "6px",
+              whiteSpace: "pre-wrap",
+              wordBreak: "break-word",
+              marginTop: "1rem",
+              maxHeight: "50vh",
+              overflowY: "scroll",
             }}
           >
-            {(diffs[diff_id].new || '').replace(/<br\s*\/?>/g, '')}
+            {(diffs[diff_id].new || "").replace(/<br\s*\/?>/g, "")}
           </div>
         ) : (
           <div
             style={{
-              width: '100%',
+              width: "100%",
               ...(diffs[diff_id].scroll_VH && {
-                maxHeight: '75vh',
-                overflowY: 'auto',
+                maxHeight: "75vh",
+                overflowY: "auto",
               }),
-              overflowX: 'auto',
+              overflowX: "auto",
             }}
           >
             <ReactDiffViewer

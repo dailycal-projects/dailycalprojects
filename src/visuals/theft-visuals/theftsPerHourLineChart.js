@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   LineChart,
   Line,
@@ -9,14 +9,20 @@ import {
   // Legend,
   Label,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
 
-import theftsPerHourData from './theftsPerHourData';
+import theftsPerHourData from "./theftsPerHourData";
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (
-      <div style={{ backgroundColor: '#fff', border: '1px solid #ccc', padding: '10px' }}>
+      <div
+        style={{
+          backgroundColor: "#fff",
+          border: "1px solid #ccc",
+          padding: "10px",
+        }}
+      >
         <p>{`Hour: ${label}`}</p>
         <p>{`Thefts: ${payload[0].value}`}</p>
       </div>
@@ -27,14 +33,14 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const TheftsPerHourLineChart = () => (
-  <div style={{ backgroundColor: '#e9edf0', padding: '20px' }}>
+  <div style={{ backgroundColor: "#e9edf0", padding: "20px" }}>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Thefts per hour of day </h4>
@@ -55,10 +61,22 @@ const TheftsPerHourLineChart = () => (
         <XAxis dataKey="hour">
           <Label value="Hour of day" offset={-10} position="insideBottom" />
         </XAxis>
-        <YAxis label={{ value: 'Number of thefts', angle: -90, position: 'insideLeft' }} />
+        <YAxis
+          label={{
+            value: "Number of thefts",
+            angle: -90,
+            position: "insideLeft",
+          }}
+        />
         <Tooltip content={<CustomTooltip />} />
         {/* <Legend wrapperStyle={{ bottom: -10 }} /> */}
-        <Line type="monotone" dataKey="thefts" stackId="a" fill="#FFFFFF" stroke="#70aada" />
+        <Line
+          type="monotone"
+          dataKey="thefts"
+          stackId="a"
+          fill="#FFFFFF"
+          stroke="#70aada"
+        />
       </LineChart>
     </ResponsiveContainer>
   </div>

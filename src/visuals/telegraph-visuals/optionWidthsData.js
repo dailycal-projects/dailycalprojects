@@ -10,7 +10,7 @@ const optionWidthsData = [
     CurbExtension2: 0,
     Sidewalk2: 10,
     Total: 60,
-    Notes: 'One Way',
+    Notes: "One Way",
   },
   {
     Option: 2,
@@ -23,7 +23,7 @@ const optionWidthsData = [
     CurbExtension2: 6,
     Sidewalk2: 10,
     Total: 60,
-    Note: 'Two Way',
+    Note: "Two Way",
   },
   {
     Option: 3,
@@ -36,7 +36,7 @@ const optionWidthsData = [
     CurbExtension2: 6,
     Sidewalk2: 10,
     Total: 60,
-    Note: 'One Way',
+    Note: "One Way",
   },
   {
     Option: 4,
@@ -49,7 +49,7 @@ const optionWidthsData = [
     CurbExtension2: 0,
     Sidewalk2: 12,
     Total: 60,
-    Note: 'One Way',
+    Note: "One Way",
   },
   {
     Option: 5,
@@ -62,7 +62,7 @@ const optionWidthsData = [
     CurbExtension2: 0,
     Sidewalk2: 16,
     Total: 60,
-    Note: 'One Way',
+    Note: "One Way",
   },
 ];
 

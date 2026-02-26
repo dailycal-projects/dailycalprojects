@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   LineChart,
   Line,
@@ -8,8 +8,8 @@ import {
   Tooltip,
   Label,
   ResponsiveContainer,
-} from 'recharts';
-import STEMEnrollmentData from './STEMLineData';
+} from "recharts";
+import STEMEnrollmentData from "./STEMLineData";
 
 const AlignedAxisLabel = ({
   axisType,
@@ -20,7 +20,7 @@ const AlignedAxisLabel = ({
   stroke,
   children,
 }) => {
-  const isVert = axisType === 'yAxis';
+  const isVert = axisType === "yAxis";
   const cx = isVert ? x : x + width / 2;
   const cy = isVert ? height / 2 + y : y + height + 10;
   const rot = isVert ? `270 ${cx} ${cy}` : 0;
@@ -41,11 +41,11 @@ const STEMEnrollmentLine = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> The 10 largest major programs over time </h4>
@@ -65,7 +65,7 @@ const STEMEnrollmentLine = () => (
         <XAxis
           dataKey="year"
           angle={0}
-          tick={{ fontSize: 16, transform: 'translate(0, 7)' }}
+          tick={{ fontSize: 16, transform: "translate(0, 7)" }}
         >
           <Label value="Academic year" offset={-20} position="insideBottom" />
         </XAxis>
@@ -73,7 +73,7 @@ const STEMEnrollmentLine = () => (
         <XAxis dataKey="year" />
         <YAxis
           tick={{ fontSize: 16 }}
-          label={(
+          label={
             <AlignedAxisLabel
               x={30}
               y={250}
@@ -83,23 +83,16 @@ const STEMEnrollmentLine = () => (
             >
               Undergraduate students enrolled
             </AlignedAxisLabel>
-            )}
+          }
         />
-        <Tooltip
-          itemSorter={(item) => -item.value}
-        />
+        <Tooltip itemSorter={(item) => -item.value} />
         <Line
           type="monotone"
           dataKey="COMPSCI"
           stroke="#489BD1"
           fill="#489BD1"
         />
-        <Line
-          type="monotone"
-          dataKey="EECS"
-          stroke="#489BD1"
-          fill="#489BD1"
-        />
+        <Line type="monotone" dataKey="EECS" stroke="#489BD1" fill="#489BD1" />
         <Line
           type="monotone"
           dataKey="MECENG"
@@ -118,12 +111,7 @@ const STEMEnrollmentLine = () => (
           stroke="#489BD1"
           fill="#489BD1"
         />
-        <Line
-          type="monotone"
-          dataKey="DATA"
-          stroke="#489BD1"
-          fill="#489BD1"
-        />
+        <Line type="monotone" dataKey="DATA" stroke="#489BD1" fill="#489BD1" />
         <Line
           type="monotone"
           dataKey="INTEGBI"
@@ -142,24 +130,9 @@ const STEMEnrollmentLine = () => (
           stroke="#FED23B"
           fill="#FED23B"
         />
-        <Line
-          type="monotone"
-          dataKey="ECON"
-          stroke="#489BD1"
-          fill="#489BD1"
-        />
-        <Line
-          type="monotone"
-          dataKey="PSYCH"
-          stroke="#489BD1"
-          fill="#489BD1"
-        />
-        <Line
-          type="monotone"
-          dataKey="UGBA"
-          stroke="#489BD1"
-          fill="#489BD1"
-        />
+        <Line type="monotone" dataKey="ECON" stroke="#489BD1" fill="#489BD1" />
+        <Line type="monotone" dataKey="PSYCH" stroke="#489BD1" fill="#489BD1" />
+        <Line type="monotone" dataKey="UGBA" stroke="#489BD1" fill="#489BD1" />
         <Line
           type="monotone"
           dataKey="ENGLISH"
@@ -172,31 +145,20 @@ const STEMEnrollmentLine = () => (
           stroke="#FED23B"
           fill="#FED23B"
         />
-        <Line
-          type="monotone"
-          dataKey="ARCH"
-          stroke="#FED23B"
-          fill="#FED23B"
-        />
+        <Line type="monotone" dataKey="ARCH" stroke="#FED23B" fill="#FED23B" />
         <Line
           type="monotone"
           dataKey="MEDIAST"
           stroke="#FED23B"
           fill="#FED23B"
         />
-        <Line
-          type="monotone"
-          dataKey="MATH"
-          stroke="#489BD1"
-          fill="#489BD1"
-        />
+        <Line type="monotone" dataKey="MATH" stroke="#489BD1" fill="#489BD1" />
         <Line
           type="monotone"
           dataKey="CHMENG"
           stroke="#489BD1"
           fill="#489BD1"
         />
-
       </LineChart>
     </ResponsiveContainer>
   </div>

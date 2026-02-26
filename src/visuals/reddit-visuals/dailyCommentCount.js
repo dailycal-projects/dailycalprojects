@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   LineChart,
   Line,
@@ -7,14 +7,12 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from 'recharts';
-import data from './dailyCommentCountData';
+} from "recharts";
+import data from "./dailyCommentCountData";
 
 class CustomizedAxisTick extends Component {
   render() {
-    const {
-      x, y, payload,
-    } = this.props;
+    const { x, y, payload } = this.props;
 
     return (
       <g transform={`translate(${x},${y})`}>
@@ -37,11 +35,11 @@ const DailyCommentLineChart = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Total number of daily comments </h4>

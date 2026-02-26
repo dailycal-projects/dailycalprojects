@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import React from "react";
 import {
   ResponsiveContainer,
   ScatterChart,
@@ -10,9 +10,9 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-} from 'recharts';
+} from "recharts";
 
-import { theme } from '../../styles/theme';
+import { theme } from "../../styles/theme";
 
 const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
   const colors = [
@@ -20,45 +20,59 @@ const ScatterPlot = ({ data, xDataKey, yDataKey }) => {
     theme.palette.yellowGreen,
     theme.palette.yellowOrange,
     theme.palette.orange,
-    theme.palette.red];
+    theme.palette.red,
+  ];
 
   const ranges = [];
   ranges[0] = data.filter((d) => d.housing_burden < 15);
   ranges[1] = data.filter(
-    (d) => d.housing_burden >= 15 && d.housing_burden < 30,
+    (d) => d.housing_burden >= 15 && d.housing_burden < 30
   );
   ranges[2] = data.filter(
-    (d) => d.housing_burden >= 30 && d.housing_burden < 50,
+    (d) => d.housing_burden >= 30 && d.housing_burden < 50
   );
   ranges[3] = data.filter(
-    (d) => d.housing_burden >= 50 && d.housing_burden < 80,
+    (d) => d.housing_burden >= 50 && d.housing_burden < 80
   );
   ranges[4] = data.filter(
-    (d) => d.housing_burden >= 80 && d.housing_burden < 100,
+    (d) => d.housing_burden >= 80 && d.housing_burden < 100
   );
 
   return (
     <ResponsiveContainer width="100%" height={550}>
       <ScatterChart
         padding={{
-          top: 0, right: 10, bottom: 0, left: 10,
+          top: 0,
+          right: 10,
+          bottom: 0,
+          left: 10,
         }}
         margin={{
-          top: 0, right: 0, bottom: 50, left: 10,
+          top: 0,
+          right: 0,
+          bottom: 50,
+          left: 10,
         }}
       >
         <CartesianGrid strokeDasharray="3" horizontal={false} />
         <XAxis
           dataKey={xDataKey}
           type="category"
-          label={{ value: 'Zip code area', position: 'bottom', fontWeight: '500' }}
+          label={{
+            value: "Zip code area",
+            position: "bottom",
+            fontWeight: "500",
+          }}
           padding={{ left: 20, right: 20 }}
           allowDuplicatedCategory={false}
         />
         <YAxis
           dataKey={yDataKey}
           label={{
-            value: 'Percentile', position: 'insideLeft', fontWeight: '500', angle: -90,
+            value: "Percentile",
+            position: "insideLeft",
+            fontWeight: "500",
+            angle: -90,
           }}
           padding={{ top: 20, bottom: 20 }}
           name={yDataKey}

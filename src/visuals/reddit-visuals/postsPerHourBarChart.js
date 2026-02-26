@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   BarChart,
   ResponsiveContainer,
@@ -7,14 +7,12 @@ import {
   XAxis,
   YAxis,
   Bar,
-} from 'recharts';
-import data from './postsPerHourData';
+} from "recharts";
+import data from "./postsPerHourData";
 
 class CustomizedAxisTick extends Component {
   render() {
-    const {
-      x, y, payload,
-    } = this.props;
+    const { x, y, payload } = this.props;
 
     return (
       <g transform={`translate(${x},${y})`}>
@@ -37,11 +35,11 @@ const PostsPerHourBarChart = () => (
   <div>
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        left: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        left: "20px",
       }}
     >
       <h4> Total number of posts per hour of day </h4>
@@ -49,7 +47,12 @@ const PostsPerHourBarChart = () => (
     <ResponsiveContainer height={600}>
       <BarChart width={400} height={600} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="time" tick={<CustomizedAxisTick />} height={125} minTickGap={-10} />
+        <XAxis
+          dataKey="time"
+          tick={<CustomizedAxisTick />}
+          height={125}
+          minTickGap={-10}
+        />
         <YAxis />
         <Tooltip />
         <Bar dataKey="Number of posts" fill="#f38040" />

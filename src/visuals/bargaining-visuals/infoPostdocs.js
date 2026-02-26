@@ -1,76 +1,75 @@
 export const articlesPostdocs = [
-
-  'Recognition',
-  'Appointments',
-  'Benefits',
-  'Child care',
-  'Compensation',
-  'Discipline and dismissal',
-  'Grievance and arbitration procedures',
-  'Health and safety',
-  'Housing',
-  'Holidays',
-  'Immigration',
-  'Individual development plans and progress assessments',
-  'International scholar and immigrant support',
-  'Job abandonment',
-  'Labor management meetings',
-  'Lawrence Berkeley National Lab article',
-  'Layoff',
-  'Leaves of absence',
-  'Management and academic rights',
-  'Medical separation',
-  'No strikes',
-  'Nondiscrimination',
-  'Parking and transit',
-  'Past practices',
-  'Personal time off',
-  'Personnel files',
-  'Posting',
-  'Professional development and career counseling',
-  'Progress assessments',
-  'President\'s postdoctoral fellowships',
-  'Reasonable accommodation',
-  'Relocation reimbursement',
-  'Respectful work environment',
-  'Respect is a part of research training',
-  'Severability',
-  'Sick leave',
-  'Successorship',
-  'Time and effort commitment',
-  'Titles and classifications',
-  'Training',
-  'Travel reimbursement',
-  'Union access and rights',
-  'Union security',
-  'University facilities and services',
-  'Voluntary resignation',
-  'Waiver',
-  'Work authorization',
-  'Work-incurred injury and illness',
-  'Workspace and materials',
-  'Duration',
-  'Health benefits side letter',
-  'Compensation side letter',
-  'Transit side letter',
-  'Joint labor management committee side letter',
-  'Appendix A',
-  'Appendix B',
-  'Appendix C',
-  'Appendix F',
-  'Appendix G',
-  'Appendix H',
-  'Ground rules',
-  'Extension of previous contract',
+  "Recognition",
+  "Appointments",
+  "Benefits",
+  "Child care",
+  "Compensation",
+  "Discipline and dismissal",
+  "Grievance and arbitration procedures",
+  "Health and safety",
+  "Housing",
+  "Holidays",
+  "Immigration",
+  "Individual development plans and progress assessments",
+  "International scholar and immigrant support",
+  "Job abandonment",
+  "Labor management meetings",
+  "Lawrence Berkeley National Lab article",
+  "Layoff",
+  "Leaves of absence",
+  "Management and academic rights",
+  "Medical separation",
+  "No strikes",
+  "Nondiscrimination",
+  "Parking and transit",
+  "Past practices",
+  "Personal time off",
+  "Personnel files",
+  "Posting",
+  "Professional development and career counseling",
+  "Progress assessments",
+  "President's postdoctoral fellowships",
+  "Reasonable accommodation",
+  "Relocation reimbursement",
+  "Respectful work environment",
+  "Respect is a part of research training",
+  "Severability",
+  "Sick leave",
+  "Successorship",
+  "Time and effort commitment",
+  "Titles and classifications",
+  "Training",
+  "Travel reimbursement",
+  "Union access and rights",
+  "Union security",
+  "University facilities and services",
+  "Voluntary resignation",
+  "Waiver",
+  "Work authorization",
+  "Work-incurred injury and illness",
+  "Workspace and materials",
+  "Duration",
+  "Health benefits side letter",
+  "Compensation side letter",
+  "Transit side letter",
+  "Joint labor management committee side letter",
+  "Appendix A",
+  "Appendix B",
+  "Appendix C",
+  "Appendix F",
+  "Appendix G",
+  "Appendix H",
+  "Ground rules",
+  "Extension of previous contract",
 ];
 
 // Instantiate a list of dictionaries for each article, appendix or side letter here.
 
 const recognitionProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view",
+    color: "success",
   },
 ];
 
@@ -181,17 +180,17 @@ const appointmentsProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1YU3Acospv5nA4UKoKlvK0Ofq982Nr0SJ/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1YU3Acospv5nA4UKoKlvK0Ofq982Nr0SJ/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const benefitsProposals = [
   {
-    name: 'Tentative agreement | Nov. 17, 2022',
-    link: 'https://drive.google.com/file/d/1yEtPW_YapHEc-jn-rJCxDqakjfcT7s7X/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Nov. 17, 2022",
+    link: "https://drive.google.com/file/d/1yEtPW_YapHEc-jn-rJCxDqakjfcT7s7X/view?usp=share_link",
+    color: "success",
   },
 ];
 
@@ -297,136 +296,136 @@ const childCareProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1J7DYTGiMx189c153oT0CsO7Zdfml53Bl/view',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1J7DYTGiMx189c153oT0CsO7Zdfml53Bl/view",
+    color: "success",
   },
 ];
 
 const compensationProposals = [
   {
-    name: 'Proposal | UAW to UC | Aug. 2, 2021',
-    link: 'https://drive.google.com/file/d/1vEUmhrMiLXNvW_5hwxP8Y62PPMtouvke/view?usp=sharing',
-    color: 'secondary',
+    name: "Proposal | UAW to UC | Aug. 2, 2021",
+    link: "https://drive.google.com/file/d/1vEUmhrMiLXNvW_5hwxP8Y62PPMtouvke/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UAW to UC | Aug. 25, 2021',
-    link: 'https://drive.google.com/file/d/1Eys_UleUB2OAw9W_Fsqy_at308Cibs-P/view?usp=sharing',
-    color: 'secondary',
+    name: "Proposal | UAW to UC | Aug. 25, 2021",
+    link: "https://drive.google.com/file/d/1Eys_UleUB2OAw9W_Fsqy_at308Cibs-P/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UC to UAW | Oct. 5, 2021',
-    link: 'https://drive.google.com/file/d/14jB3GKT0JzuO2WBYLOtC-EGPK8uInQGs/view',
-    color: 'secondary',
+    name: "Proposal | UC to UAW | Oct. 5, 2021",
+    link: "https://drive.google.com/file/d/14jB3GKT0JzuO2WBYLOtC-EGPK8uInQGs/view",
+    color: "secondary",
   },
   {
-    name: 'Package | UC to UAW | Oct. 5, 2021',
-    link: 'https://drive.google.com/file/d/1QGEAZzt3vjK59R9r8sGSoXnxjlZG1LTq/view?usp=sharing',
-    color: 'secondary',
+    name: "Package | UC to UAW | Oct. 5, 2021",
+    link: "https://drive.google.com/file/d/1QGEAZzt3vjK59R9r8sGSoXnxjlZG1LTq/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UC to UAW | June 23, 2022',
-    link: 'https://drive.google.com/file/d/1gDr6dH2y71Sax60IvG-57rPO1nkOV7Vq/view?usp=sharing',
-    color: 'secondary',
+    name: "Proposal | UC to UAW | June 23, 2022",
+    link: "https://drive.google.com/file/d/1gDr6dH2y71Sax60IvG-57rPO1nkOV7Vq/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Package | UC to UAW | June 23, 2022',
-    link: 'https://drive.google.com/file/d/15zA4XPiNK7_CgTMFUPuPztbeGxqosQN_/view?usp=sharing',
-    color: 'secondary',
+    name: "Package | UC to UAW | June 23, 2022",
+    link: "https://drive.google.com/file/d/15zA4XPiNK7_CgTMFUPuPztbeGxqosQN_/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Package | UAW to UC | July 14, 2022',
-    link: 'https://drive.google.com/file/d/1dmTNcFI7dxc9gQWcQLWKaYdjj_GmHYMc/view?usp=sharing',
-    color: 'secondary',
+    name: "Package | UAW to UC | July 14, 2022",
+    link: "https://drive.google.com/file/d/1dmTNcFI7dxc9gQWcQLWKaYdjj_GmHYMc/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UC to UAW | Sept. 27, 2022',
-    link: 'https://drive.google.com/file/d/10Iiqe6UvmwaCm5wWfQmqo9tDbMWnN8Ce/view?usp=sharing',
-    color: 'secondary',
+    name: "Proposal | UC to UAW | Sept. 27, 2022",
+    link: "https://drive.google.com/file/d/10Iiqe6UvmwaCm5wWfQmqo9tDbMWnN8Ce/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Package | UC to UAW | Sept. 27, 2022',
-    link: 'https://drive.google.com/file/d/1hzxQ_7vNSUVn26kUMYCfLXdsRq-kDMl4/view?usp=sharing',
-    color: 'secondary',
+    name: "Package | UC to UAW | Sept. 27, 2022",
+    link: "https://drive.google.com/file/d/1hzxQ_7vNSUVn26kUMYCfLXdsRq-kDMl4/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UAW to UC | Oct. 10, 2022',
-    link: 'https://drive.google.com/file/d/1nrRf0kTJFGVP3axwiVdv1EI0Ri4vYyLS/view?usp=sharing',
-    color: 'secondary',
+    name: "Proposal | UAW to UC | Oct. 10, 2022",
+    link: "https://drive.google.com/file/d/1nrRf0kTJFGVP3axwiVdv1EI0Ri4vYyLS/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Package | UAW to UC | Oct. 10, 2022',
-    link: 'https://drive.google.com/file/d/1YgHxrVKsdRqOziBU5K9GwyOlmrXRvQbm/view?usp=sharing',
-    color: 'secondary',
+    name: "Package | UAW to UC | Oct. 10, 2022",
+    link: "https://drive.google.com/file/d/1YgHxrVKsdRqOziBU5K9GwyOlmrXRvQbm/view?usp=sharing",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UC to UAW | Nov. 1, 2022',
-    link: 'https://drive.google.com/file/d/1n5RK5F6_gZU3WcO3DQnTnc-N4zs1cSNF/view?usp=share_link',
-    color: 'secondary',
+    name: "Proposal | UC to UAW | Nov. 1, 2022",
+    link: "https://drive.google.com/file/d/1n5RK5F6_gZU3WcO3DQnTnc-N4zs1cSNF/view?usp=share_link",
+    color: "secondary",
   },
   {
-    name: 'Package | UC to UAW | Nov. 1, 2022',
-    link: 'https://drive.google.com/file/d/1rnb6DTqouYLBeZPYwAEF4bZ4vWD_XDyv/view?usp=share_link',
-    color: 'secondary',
+    name: "Package | UC to UAW | Nov. 1, 2022",
+    link: "https://drive.google.com/file/d/1rnb6DTqouYLBeZPYwAEF4bZ4vWD_XDyv/view?usp=share_link",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UC to UAW | Nov. 13, 2022',
-    link: 'https://drive.google.com/file/d/1rYttF65_dHizJSNCzY2qK6xaq1xyoBgY/view?usp=share_link',
-    color: 'secondary',
+    name: "Proposal | UC to UAW | Nov. 13, 2022",
+    link: "https://drive.google.com/file/d/1rYttF65_dHizJSNCzY2qK6xaq1xyoBgY/view?usp=share_link",
+    color: "secondary",
   },
   {
-    name: 'Package | UC to UAW | Nov. 13, 2022',
-    link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view',
-    color: 'secondary',
+    name: "Package | UC to UAW | Nov. 13, 2022",
+    link: "https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UAW to UC | Nov. 13, 2022',
-    link: 'https://drive.google.com/file/d/1hNJRUty8YhSM8J6tzMSSUA83aLoJVb2x/view?usp=share_link',
-    color: 'secondary',
+    name: "Proposal | UAW to UC | Nov. 13, 2022",
+    link: "https://drive.google.com/file/d/1hNJRUty8YhSM8J6tzMSSUA83aLoJVb2x/view?usp=share_link",
+    color: "secondary",
   },
   {
-    name: 'Package | UAW to UC | Nov. 13, 2022',
-    link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
-    color: 'secondary',
+    name: "Package | UAW to UC | Nov. 13, 2022",
+    link: "https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link",
+    color: "secondary",
   },
   {
-    name: 'Proposal | UC to UAW | Nov. 23, 2022',
-    link: 'https://drive.google.com/file/d/1SMPi2wOB5I94SIdD0xgQbQD2_hPZAeiv/view?usp=share_link',
-    color: 'secondary',
+    name: "Proposal | UC to UAW | Nov. 23, 2022",
+    link: "https://drive.google.com/file/d/1SMPi2wOB5I94SIdD0xgQbQD2_hPZAeiv/view?usp=share_link",
+    color: "secondary",
   },
   {
-    name: 'Package | UC to UAW | Nov. 23, 2022',
-    link: 'https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link',
-    color: 'secondary',
+    name: "Package | UC to UAW | Nov. 23, 2022",
+    link: "https://drive.google.com/file/d/1jWaIjii94vxdMsK5AV0ai-9MZTFm_r1_/view?usp=share_link",
+    color: "secondary",
   },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const disciplineProposals = [
   {
-    name: 'Tentative agreement | Sept. 13, 2021',
-    link: 'https://drive.google.com/file/d/1WgQ1HCntgUSQSVLRMqO8Djd-d-EdJ6-Q/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Sept. 13, 2021",
+    link: "https://drive.google.com/file/d/1WgQ1HCntgUSQSVLRMqO8Djd-d-EdJ6-Q/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const grievanceProposals = [
   {
-    name: 'Tentative agreement | Sept. 27, 2022',
-    link: 'https://drive.google.com/file/d/1OpsnaJIwKCcvWde_f4jTAzg_kBAW9nuS/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Sept. 27, 2022",
+    link: "https://drive.google.com/file/d/1OpsnaJIwKCcvWde_f4jTAzg_kBAW9nuS/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const healthSafetyProposals = [
   {
-    name: 'Tentative agreement | Oct. 21, 2021',
-    link: 'https://drive.google.com/file/d/1agOJCgmuBRmG1I70ZXQhSyFKe0zW5k-A/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Oct. 21, 2021",
+    link: "https://drive.google.com/file/d/1agOJCgmuBRmG1I70ZXQhSyFKe0zW5k-A/view?usp=share_link",
+    color: "success",
   },
 ];
 
@@ -471,30 +470,29 @@ const housingProposals = [
   //   link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
   //   color: 'secondary',
   // },
-
 ];
 
 const holidaysProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1_XzA8dlOLDViETGalmCtyZTBIfhJyGaf/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1_XzA8dlOLDViETGalmCtyZTBIfhJyGaf/view",
+    color: "success",
   },
 ];
 
 const immigrationProposals = [
   {
-    name: 'Tentative agreement | Nov. 18, 2022',
-    link: 'https://drive.google.com/file/d/1lidcVZn2i64tH9V5sJNFQmtkb3o-gNoX/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Nov. 18, 2022",
+    link: "https://drive.google.com/file/d/1lidcVZn2i64tH9V5sJNFQmtkb3o-gNoX/view?usp=share_link",
+    color: "success",
   },
 ];
 
 const individualDevelopmentProposals = [
   {
-    name: 'Tentative agreement | Feb. 21, 2022',
-    link: 'https://drive.google.com/file/d/1PMczmCqBqDG_H-czpvoLKRDE8k1ots9K/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Feb. 21, 2022",
+    link: "https://drive.google.com/file/d/1PMczmCqBqDG_H-czpvoLKRDE8k1ots9K/view?usp=sharing",
+    color: "success",
   },
 ];
 
@@ -539,13 +537,11 @@ const internationalScholarProposals = [
   //   link: 'https://drive.google.com/file/d/1vDnBFZSbohW7EpB2fA47jV7zs8N0E8Lm/view?usp=share_link',
   //   color: 'secondary',
   // },
-
   // {
   //   name: 'Package | UAW to UC | Nov. 13, 2022',
   //   link: 'https://drive.google.com/file/d/1apk9KZyph3kN_olbYevfQdNiF6u3i7G4/view?usp=share_link',
   //   color: 'secondary',
   // },
-
   // {
   //   name: 'Package | UAW to UC | Nov. 19, 2022',
   //   link: 'https://drive.google.com/file/d/1lWIIE6qKMxJrR2vgWtjs28jVT3Fjm9qh/view?usp=share_link',
@@ -557,17 +553,17 @@ const jobAbandonmentProposals = [];
 
 const laborManagementProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view",
+    color: "success",
   },
 ];
 
 const LBNLProposals = [
   {
-    name: 'Tentative agreement | Nov. 22, 2022',
-    link: 'https://drive.google.com/file/d/1J7UkE9combxSV4dK_Ze_B1b9zwh_8w4p/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Nov. 22, 2022",
+    link: "https://drive.google.com/file/d/1J7UkE9combxSV4dK_Ze_B1b9zwh_8w4p/view?usp=share_link",
+    color: "success",
   },
 ];
 
@@ -658,9 +654,9 @@ const layoffProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1rMBB4NVzqT_rf4OjE5KAojK-4AKXGsWw/view',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1rMBB4NVzqT_rf4OjE5KAojK-4AKXGsWw/view",
+    color: "success",
   },
 ];
 
@@ -772,9 +768,9 @@ const leavesProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/15lctXwcvCtdYfq8RtdQAZ1S6Ghzq8XBH/view',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/15lctXwcvCtdYfq8RtdQAZ1S6Ghzq8XBH/view",
+    color: "success",
   },
 ];
 
@@ -835,11 +831,10 @@ const managementAcademicProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=share_link",
+    color: "success",
   },
-
 ];
 
 const medicalSeparationProposals = [];
@@ -881,17 +876,17 @@ const noStrikesProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1YKs8pPnvuBwbZzfwZCx8mnKvZbjVqYen/view?usp=share_link",
+    color: "success",
   },
 ];
 
 const nondiscriminationProposals = [
   {
-    name: 'Tentative agreement | Feb. 8, 2022',
-    link: 'https://drive.google.com/file/d/14dj7mleOrWNmk03InY5BW_iOLhq8JLEJ/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Feb. 8, 2022",
+    link: "https://drive.google.com/file/d/14dj7mleOrWNmk03InY5BW_iOLhq8JLEJ/view?usp=sharing",
+    color: "success",
   },
 ];
 
@@ -1017,52 +1012,51 @@ const parkingProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1mQKtIH8S0nZmXMcQc3uXjf_AI10PLhGB/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1mQKtIH8S0nZmXMcQc3uXjf_AI10PLhGB/view?usp=sharing",
+    color: "success",
   },
-
 ];
 
 const pastPracticesProposals = [];
 
 const personalTimeOffProposals = [
   {
-    name: 'Tentative agreement | Jan. 19, 2022',
-    link: 'https://drive.google.com/file/d/14WFHoH3l1aojsnHzmmtFW-ReXBPo5Fmk/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Jan. 19, 2022",
+    link: "https://drive.google.com/file/d/14WFHoH3l1aojsnHzmmtFW-ReXBPo5Fmk/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const personnelProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view",
+    color: "success",
   },
 ];
 
 const postingProposals = [
   {
-    name: 'Tentative agreement | Sept. 16, 2021',
-    link: 'https://drive.google.com/file/d/1_wBMF50bfWmV6JNuqky5DQgSUIFYcL9_/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Sept. 16, 2021",
+    link: "https://drive.google.com/file/d/1_wBMF50bfWmV6JNuqky5DQgSUIFYcL9_/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const developmentProposals = [
   {
-    name: 'Tentative agreement | Feb. 21, 2021',
-    link: 'https://drive.google.com/file/d/1Dw7vvY-2QW2iEtWSy0EVS2sSjFTMRFCG/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Feb. 21, 2021",
+    link: "https://drive.google.com/file/d/1Dw7vvY-2QW2iEtWSy0EVS2sSjFTMRFCG/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const progressAssessProposals = [
   {
-    name: 'Tentative agreement | Feb. 21, 2021',
-    link: 'https://drive.google.com/file/d/14r5h7GCVkC42qPcrlIFW2D17PimiVcVw/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Feb. 21, 2021",
+    link: "https://drive.google.com/file/d/14r5h7GCVkC42qPcrlIFW2D17PimiVcVw/view?usp=sharing",
+    color: "success",
   },
 ];
 
@@ -1111,9 +1105,9 @@ const postdocFellowProposals = [
 
 const accommodationProposals = [
   {
-    name: 'Tentative agreement | Oct. 31, 2022',
-    link: 'https://drive.google.com/file/d/1vTYUdcIArk6erGKGz4qcoYZk5dOo6aiQ/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Oct. 31, 2022",
+    link: "https://drive.google.com/file/d/1vTYUdcIArk6erGKGz4qcoYZk5dOo6aiQ/view?usp=sharing",
+    color: "success",
   },
 ];
 
@@ -1167,9 +1161,9 @@ const reimbursementProposals = [
 
 const respectfulProposals = [
   {
-    name: 'Tentative agreement | Sept. 27, 2022',
-    link: 'https://drive.google.com/file/d/143IbRBpyHdiBeeuzM1qQjyrDEPmSaRHj/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Sept. 27, 2022",
+    link: "https://drive.google.com/file/d/143IbRBpyHdiBeeuzM1qQjyrDEPmSaRHj/view?usp=sharing",
+    color: "success",
   },
 ];
 
@@ -1208,81 +1202,81 @@ const respectResearchProposals = [
 
 const severabilityProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view",
+    color: "success",
   },
 ];
 
 const sickLeaveProposals = [
   {
-    name: 'Tentative agreement | Jan. 19, 2022',
-    link: 'https://drive.google.com/file/d/1ZVkTsk2aX-F_kiADsaJQNblL4wweF_Oi/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Jan. 19, 2022",
+    link: "https://drive.google.com/file/d/1ZVkTsk2aX-F_kiADsaJQNblL4wweF_Oi/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const successorshipProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view",
+    color: "success",
   },
 ];
 
 const timeProposals = [
   {
-    name: 'Tentative agreement | Sept. 16, 2021',
-    link: 'https://drive.google.com/file/d/1JNXBaxyxq4BJBTx_57D7nWOidSDgSEEz/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Sept. 16, 2021",
+    link: "https://drive.google.com/file/d/1JNXBaxyxq4BJBTx_57D7nWOidSDgSEEz/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const titlesProposals = [
   {
-    name: 'Tentative agreement | Jan. 19, 2022',
-    link: 'https://drive.google.com/file/d/1hZaut74TJ3BmsU7dBu-V-yLNZF8vwPv0/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Jan. 19, 2022",
+    link: "https://drive.google.com/file/d/1hZaut74TJ3BmsU7dBu-V-yLNZF8vwPv0/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const trainingProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view",
+    color: "success",
   },
 ];
 
 const travelProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1agOJCgmuBRmG1I70ZXQhSyFKe0zW5k-A/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1agOJCgmuBRmG1I70ZXQhSyFKe0zW5k-A/view?usp=share_link",
+    color: "success",
   },
 ];
 
 const unionAccessProposals = [
   {
-    name: 'Tentative agreement | Feb. 8, 2022',
-    link: 'https://drive.google.com/file/d/1r6a1F-qeaeiaWrgOsxZf-mqFW1W1M9su/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Feb. 8, 2022",
+    link: "https://drive.google.com/file/d/1r6a1F-qeaeiaWrgOsxZf-mqFW1W1M9su/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const unionSecurityProposals = [
   {
-    name: 'Tentative agreement | Oct. 3, 2022',
-    link: 'https://drive.google.com/file/d/1uDfqnhPJks_4bO7NRDZNlnApmk1T8dga/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Oct. 3, 2022",
+    link: "https://drive.google.com/file/d/1uDfqnhPJks_4bO7NRDZNlnApmk1T8dga/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const facilitiesProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2022',
-    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2022",
+    link: "https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view",
+    color: "success",
   },
 ];
 
@@ -1290,9 +1284,9 @@ const voluntaryResignationProposals = [];
 
 const waiverProposals = [
   {
-    name: 'Tentative agreement | Feb. 21, 2022',
-    link: 'https://drive.google.com/file/d/1Ja3WA9LR5H2nYRfdkf6uxaLD3Q0b2JPd/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Feb. 21, 2022",
+    link: "https://drive.google.com/file/d/1Ja3WA9LR5H2nYRfdkf6uxaLD3Q0b2JPd/view?usp=sharing",
+    color: "success",
   },
 ];
 
@@ -1379,25 +1373,25 @@ const workAuthProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1M_N2HWjuWYexxfbXeVGi1Z89qRwz5COr/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1M_N2HWjuWYexxfbXeVGi1Z89qRwz5COr/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const injuriesProposals = [
   {
-    name: 'Tentative agreement | Sept. 16, 2021',
-    link: 'https://drive.google.com/file/d/1f8dFtmruNHtqNFDTAMOi1r2P9xJVXOuI/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Sept. 16, 2021",
+    link: "https://drive.google.com/file/d/1f8dFtmruNHtqNFDTAMOi1r2P9xJVXOuI/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const workspaceProposals = [
   {
-    name: 'Tentative agreement | Aug. 1, 2021',
-    link: 'https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view',
-    color: 'success',
+    name: "Tentative agreement | Aug. 1, 2021",
+    link: "https://drive.google.com/file/d/1EFVNTQnpeFA-buWZaq9QG73kdGn2jzrs/view",
+    color: "success",
   },
 ];
 
@@ -1433,26 +1427,25 @@ const durationProposals = [
   //   color: 'success',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1YJ2zI4_Kyz0RGRHO0E9pTZKwGNoiL-WA/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1YJ2zI4_Kyz0RGRHO0E9pTZKwGNoiL-WA/view?usp=sharing",
+    color: "success",
   },
-
 ];
 
 const healthBenefitsProposals = [
   {
-    name: 'Tentative agreement | Nov. 17, 2022',
-    link: 'https://drive.google.com/file/d/1_IRlQMYTu31_qkuBeSVSPAPiR8sWpkG_/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Nov. 17, 2022",
+    link: "https://drive.google.com/file/d/1_IRlQMYTu31_qkuBeSVSPAPiR8sWpkG_/view?usp=share_link",
+    color: "success",
   },
 ];
 
 const compLetter = [
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1OBSm8SM7ZAE5IGg_fCnWEeRdOCAxl_6L/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1OBSm8SM7ZAE5IGg_fCnWEeRdOCAxl_6L/view?usp=sharing",
+    color: "success",
   },
   // {
   //   name: 'Package | UC to UAW | Sept. 27, 2022',
@@ -1461,46 +1454,45 @@ const compLetter = [
   // },
 ];
 
-const transitLetter = [
-];
+const transitLetter = [];
 
 const jlmcLetter = [
   {
-    name: 'Tentative agreement | Oct. 24, 2022',
-    link: 'https://drive.google.com/file/d/1ay0pC-0pIWt-iIAcf1SpbA6VoAP1Ggyq/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Oct. 24, 2022",
+    link: "https://drive.google.com/file/d/1ay0pC-0pIWt-iIAcf1SpbA6VoAP1Ggyq/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const appendixAProposals = [
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1OoanhUhz-SrfbZq7-zY4GkTUhXeNmWPF/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1OoanhUhz-SrfbZq7-zY4GkTUhXeNmWPF/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const appendixBProposals = [
   {
-    name: 'Tentative agreement | Nov. 22, 2022',
-    link: 'https://drive.google.com/file/d/1lagV0Vg56XJwrnRuQnm0VPHCfDX6IuA4/view?usp=share_link',
-    color: 'success',
+    name: "Tentative agreement | Nov. 22, 2022",
+    link: "https://drive.google.com/file/d/1lagV0Vg56XJwrnRuQnm0VPHCfDX6IuA4/view?usp=share_link",
+    color: "success",
   },
 ];
 
 const appendixCProposals = [
   {
-    name: 'Tentative agreement | Oct. 3, 2022',
-    link: 'https://drive.google.com/file/d/1R24EDevPVnTbSq_-7ZkTmuNN9CpVxrXA/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Oct. 3, 2022",
+    link: "https://drive.google.com/file/d/1R24EDevPVnTbSq_-7ZkTmuNN9CpVxrXA/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const appendixFProposals = [
   {
-    name: 'Tentative agreement | July 14, 2022',
-    link: 'https://drive.google.com/file/d/12ZGAP8-7YguTu41NG0q1-Mod6nIFLPoF/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | July 14, 2022",
+    link: "https://drive.google.com/file/d/12ZGAP8-7YguTu41NG0q1-Mod6nIFLPoF/view?usp=sharing",
+    color: "success",
   },
 ];
 
@@ -1546,366 +1538,343 @@ const appendixGProposals = [
   //   color: 'secondary',
   // },
   {
-    name: 'Tentative agreement | Nov. 28, 2022',
-    link: 'https://drive.google.com/file/d/1yhAc67picvmdHzD8dhMhfY4k1R2sLIz7/view',
-    color: 'success',
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1yhAc67picvmdHzD8dhMhfY4k1R2sLIz7/view",
+    color: "success",
   },
-
 ];
 
-const appendixHProposals = [{
-  name: 'Tentative agreement | Nov. 28, 2022',
-  link: 'https://drive.google.com/file/d/1B5MfqDnB1ng-OjMRnSbFOnsuS_JatCyF/view?usp=sharing',
-  color: 'success',
-}];
+const appendixHProposals = [
+  {
+    name: "Tentative agreement | Nov. 28, 2022",
+    link: "https://drive.google.com/file/d/1B5MfqDnB1ng-OjMRnSbFOnsuS_JatCyF/view?usp=sharing",
+    color: "success",
+  },
+];
 
 const groundRulesProposals = [
   {
-    name: 'Tentative agreement | Aug. 11, 2021',
-    link: 'https://drive.google.com/file/d/1Zfg4dj1awQkPHfoN-gsDr_gSBm-jOmBK/view?usp=sharing',
-    color: 'success',
+    name: "Tentative agreement | Aug. 11, 2021",
+    link: "https://drive.google.com/file/d/1Zfg4dj1awQkPHfoN-gsDr_gSBm-jOmBK/view?usp=sharing",
+    color: "success",
   },
 ];
 
 const extensionProposals = [
   {
-    name: 'Extension of previous contract to Oct. 31, 2022',
-    link: 'https://drive.google.com/file/d/1zGA2poRjeQL63syfCMYf-4R_yZztTex4/view?usp=sharing',
-    color: 'secondary',
+    name: "Extension of previous contract to Oct. 31, 2022",
+    link: "https://drive.google.com/file/d/1zGA2poRjeQL63syfCMYf-4R_yZztTex4/view?usp=sharing",
+    color: "secondary",
   },
 ];
 
 export const infoPostdocs = {
-
   Recognition: {
-
     proposals: recognitionProposals,
-    intro: 'A tentative agreement on the recognition article was reached in August 2021 as part of a package of proposals. The package agreement maintained the language of eight articles from the previous contract between the UAW Local 5810 and the UC system.',
-
+    intro:
+      "A tentative agreement on the recognition article was reached in August 2021 as part of a package of proposals. The package agreement maintained the language of eight articles from the previous contract between the UAW Local 5810 and the UC system.",
   },
   Appointments: {
-
     proposals: appointmentsProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.',
-
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.",
   },
   Benefits: {
-
     proposals: benefitsProposals,
-    intro: 'The Nov. 17, 2021 tentative agreement outlines postdocs’ participation in several benefits programs by the UC. It includes the Postdoctoral Scholar Benefit Plans medical, dental and vision plans, among others.',
-
+    intro:
+      "The Nov. 17, 2021 tentative agreement outlines postdocs’ participation in several benefits programs by the UC. It includes the Postdoctoral Scholar Benefit Plans medical, dental and vision plans, among others.",
   },
-  'Child care': {
-
+  "Child care": {
     proposals: childCareProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.',
-
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract.",
   },
   Compensation: {
-
     proposals: compensationProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract. However, the complete proposal history for this article is attached.',
-
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract. However, the complete proposal history for this article is attached.",
   },
-  'Discipline and dismissal': {
-
+  "Discipline and dismissal": {
     proposals: disciplineProposals,
-    intro: 'A tentative agreement on discipline and dismissal was reached Sept. 16, 2021.',
-
+    intro:
+      "A tentative agreement on discipline and dismissal was reached Sept. 16, 2021.",
   },
-  'Grievance and arbitration procedures': {
-
+  "Grievance and arbitration procedures": {
     proposals: grievanceProposals,
-    intro: 'On Sept. 27, 2022, parties tentatively agreed on procedures for grievances and arbitrations.',
-
+    intro:
+      "On Sept. 27, 2022, parties tentatively agreed on procedures for grievances and arbitrations.",
   },
-  'Health and safety': {
-
+  "Health and safety": {
     proposals: healthSafetyProposals,
-    intro: 'UAW Local 5810 and the UC system tentatively agreed to language for this article Oct. 21, 2021. The union and the UC system acknowledge that it is both parties’ responsibility to maintain safe and healthy workplaces — which includes those in laboratory settings.',
-
+    intro:
+      "UAW Local 5810 and the UC system tentatively agreed to language for this article Oct. 21, 2021. The union and the UC system acknowledge that it is both parties’ responsibility to maintain safe and healthy workplaces — which includes those in laboratory settings.",
   },
   Housing: {
-
     proposals: housingProposals,
-    intro: 'This article was withdrawn as part of a Nov. 28, 2022 package deal.',
-
+    intro:
+      "This article was withdrawn as part of a Nov. 28, 2022 package deal.",
   },
   Holidays: {
-
     proposals: holidaysProposals,
-    intro: 'A tentative agreement on time off for designated holidays was reached Aug. 1, 2021.',
-
+    intro:
+      "A tentative agreement on time off for designated holidays was reached Aug. 1, 2021.",
   },
   Immigration: {
-
     proposals: immigrationProposals,
-    intro: 'Both parties tentatively agreed to language on the immigration article Nov. 18, 2022, but the language has not yet been provided.',
-
+    intro:
+      "Both parties tentatively agreed to language on the immigration article Nov. 18, 2022, but the language has not yet been provided.",
   },
-  'Individual development plans and progress assessments': {
-
+  "Individual development plans and progress assessments": {
     proposals: individualDevelopmentProposals,
-    intro: 'The union and the UC system reached a tentative agreement on this article Feb. 21, 2022.',
-
+    intro:
+      "The union and the UC system reached a tentative agreement on this article Feb. 21, 2022.",
   },
-  'International scholar and immigrant support': {
-
+  "International scholar and immigrant support": {
     proposals: internationalScholarProposals,
-    intro: 'This article was withdrawn as part of a package proposal Nov. 28, 2022.',
-
+    intro:
+      "This article was withdrawn as part of a package proposal Nov. 28, 2022.",
   },
-  'Job abandonment': {
-
+  "Job abandonment": {
     proposals: jobAbandonmentProposals,
-    intro: 'The UC system withdrew its job abandonment proposal Sept. 21, 2021.',
-
+    intro:
+      "The UC system withdrew its job abandonment proposal Sept. 21, 2021.",
   },
-  'Labor management meetings': {
-
+  "Labor management meetings": {
     proposals: laborManagementProposals,
-    intro: 'Both parties came to a tentative agreement on labor management meetings in August 2021 as part of a package that maintained the language of eight articles from their previous contract.',
-
+    intro:
+      "Both parties came to a tentative agreement on labor management meetings in August 2021 as part of a package that maintained the language of eight articles from their previous contract.",
   },
-  'Lawrence Berkeley National Lab article': {
-
+  "Lawrence Berkeley National Lab article": {
     proposals: LBNLProposals,
-    intro: 'The Nov. 22, 2022 tentative agreement on this article details some policies for postdocs working in the Lawrence Berkeley National Lab – including holidays, compensation and personal time off.',
-
+    intro:
+      "The Nov. 22, 2022 tentative agreement on this article details some policies for postdocs working in the Lawrence Berkeley National Lab – including holidays, compensation and personal time off.",
   },
   Layoff: {
-
     proposals: layoffProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on an Oct. 21, 2021 UC system proposal.',
-
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on an Oct. 21, 2021 UC system proposal.",
   },
-  'Leaves of absence': {
-
+  "Leaves of absence": {
     proposals: leavesProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on a Nov. 23, 2022 UC system proposal.',
-
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on a Nov. 23, 2022 UC system proposal.",
   },
-  'Management and academic rights': {
-
+  "Management and academic rights": {
     proposals: managementAcademicProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on a May 12, 2022 UC system proposal.',
-
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract, moving forward on a May 12, 2022 UC system proposal.",
   },
-  'Medical separation': {
-
+  "Medical separation": {
     proposals: medicalSeparationProposals,
-    intro: 'Medical separation occurs when a postdoc is unable to perform the essential function of their position due to their disability, according to the UC system\'s original Aug. 17, 2021 proposal for the article. The UC system withdrew its proposal for this new article March 3, 2022.',
-
+    intro:
+      "Medical separation occurs when a postdoc is unable to perform the essential function of their position due to their disability, according to the UC system's original Aug. 17, 2021 proposal for the article. The UC system withdrew its proposal for this new article March 3, 2022.",
   },
-  'No strikes': {
-
+  "No strikes": {
     proposals: noStrikesProposals,
-    intro: 'The UC system’s original July 23, 2021, proposal for this article sought to maintain the previous contract’s no strikes article, which prohibited striking. On Nov. 28, 2022, the parties tentatively agreed on this article\'s previous contract language.',
-
+    intro:
+      "The UC system’s original July 23, 2021, proposal for this article sought to maintain the previous contract’s no strikes article, which prohibited striking. On Nov. 28, 2022, the parties tentatively agreed on this article's previous contract language.",
   },
   Nondiscrimination: {
-
     proposals: nondiscriminationProposals,
-    intro: 'The parties reached a tentative agreement on nondiscrimination in the workplace Feb. 8, 2022.',
-
+    intro:
+      "The parties reached a tentative agreement on nondiscrimination in the workplace Feb. 8, 2022.",
   },
-  'Parking and transit': {
-
+  "Parking and transit": {
     proposals: parkingProposals,
-    intro: 'After more than 20 packages and proposals, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract Nov. 28, 2022.',
+    intro:
+      "After more than 20 packages and proposals, the UC system and UAW Local 5810 came to a tentative agreement on this portion of the contract Nov. 28, 2022.",
   },
-  'Past practices': {
-
+  "Past practices": {
     proposals: pastPracticesProposals,
-    intro: 'As part of a Feb. 18, 2022, package of proposals, the union withdrew their proposal for a new past practice article.',
+    intro:
+      "As part of a Feb. 18, 2022, package of proposals, the union withdrew their proposal for a new past practice article.",
   },
-  'Personal time off': {
-
+  "Personal time off": {
     proposals: personalTimeOffProposals,
-    intro: 'Both parties tentatively agreed upon a policy for personal time off Jan. 19, 2022. Now, postdocs should get 24 paid days of personal time off for each year-long appointment, but using them requires approval from the UC system.',
+    intro:
+      "Both parties tentatively agreed upon a policy for personal time off Jan. 19, 2022. Now, postdocs should get 24 paid days of personal time off for each year-long appointment, but using them requires approval from the UC system.",
   },
-  'Personnel files': {
-
+  "Personnel files": {
     proposals: personnelProposals,
-    intro: 'Personnel files refer to information about postdocs’ appointment with the UC system. On Aug. 1, 2021, the union and the UC system tentatively agreed to maintain their previous contract’s article on personnel files.',
+    intro:
+      "Personnel files refer to information about postdocs’ appointment with the UC system. On Aug. 1, 2021, the union and the UC system tentatively agreed to maintain their previous contract’s article on personnel files.",
   },
   Posting: {
-
     proposals: postingProposals,
-    intro: 'The UC system and the UAW Local 5810 have reached a tentative agreement maintaining the status quo. Posting policies — regarding job offers and equivalent compensation — will not change from the last contract, but campuses may expand upon them if they so choose.',
+    intro:
+      "The UC system and the UAW Local 5810 have reached a tentative agreement maintaining the status quo. Posting policies — regarding job offers and equivalent compensation — will not change from the last contract, but campuses may expand upon them if they so choose.",
   },
-  'Professional development and career counseling': {
-
+  "Professional development and career counseling": {
     proposals: developmentProposals,
-    intro: 'A tentative agreement was reached after more than 15 proposals and packages. Under the agreement, the UC system should offer career counseling, writing workshops and international scholar workshops for its postdocs.',
+    intro:
+      "A tentative agreement was reached after more than 15 proposals and packages. Under the agreement, the UC system should offer career counseling, writing workshops and international scholar workshops for its postdocs.",
   },
-  'Progress assessments': {
-
+  "Progress assessments": {
     proposals: progressAssessProposals,
-    intro: 'Both parties reached a tentative agreement Feb. 21, 2022.',
+    intro: "Both parties reached a tentative agreement Feb. 21, 2022.",
   },
-  'President\'s postdoctoral fellowships': {
-
+  "President's postdoctoral fellowships": {
     proposals: postdocFellowProposals,
-    intro: 'This article was withdrawn as part of a package deal Nov. 28, 2022.',
+    intro:
+      "This article was withdrawn as part of a package deal Nov. 28, 2022.",
   },
-  'Reasonable accommodation': {
-
+  "Reasonable accommodation": {
     proposals: accommodationProposals,
-    intro: 'On Oct. 31, 2022, a tentative agreement regarding disability accommodations and work adjustments was reached. This was achieved after almost 20 back-and-forth proposals and packages.',
+    intro:
+      "On Oct. 31, 2022, a tentative agreement regarding disability accommodations and work adjustments was reached. This was achieved after almost 20 back-and-forth proposals and packages.",
   },
-  'Relocation reimbursement': {
-
+  "Relocation reimbursement": {
     proposals: reimbursementProposals,
-    intro: 'Proposals from the UAW Local 5810 have asked the UC system to reimburse long-term work relocation expenses, such as rent, airfare and visa fees. According to a Nov. 28, 2022 tentative agreement on a package, the union withdrew the article.',
+    intro:
+      "Proposals from the UAW Local 5810 have asked the UC system to reimburse long-term work relocation expenses, such as rent, airfare and visa fees. According to a Nov. 28, 2022 tentative agreement on a package, the union withdrew the article.",
   },
-  'Respectful work environment': {
-
+  "Respectful work environment": {
     proposals: respectfulProposals,
-    intro: 'A tentative agreement was reached Sept. 27, 2022, defining what is and is not abusive conduct.',
+    intro:
+      "A tentative agreement was reached Sept. 27, 2022, defining what is and is not abusive conduct.",
   },
-  'Respect is a part of research training': {
-
+  "Respect is a part of research training": {
     proposals: respectResearchProposals,
-    intro: 'The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. By a Nov. 28, 2022 tentative agreement on a package proposal, the UAW Local 5810 withdrew the article.',
+    intro:
+      "The union’s first proposal for this new article would mandate in-person sexual harrasment prevention and response workshops for newly employed postdocs. By a Nov. 28, 2022 tentative agreement on a package proposal, the UAW Local 5810 withdrew the article.",
   },
   Severability: {
-
     proposals: severabilityProposals,
-    intro: 'Both parties reached a tentative agreement not to change the previous contract language for this article — along with seven others — Aug. 1, 2021.',
+    intro:
+      "Both parties reached a tentative agreement not to change the previous contract language for this article — along with seven others — Aug. 1, 2021.",
   },
-  'Sick leave': {
-
+  "Sick leave": {
     proposals: sickLeaveProposals,
-    intro: 'Provisions for sick leave to care for family members now include grandparents, grandchildren and siblings, according to the Jan. 18, 2022, tentative agreement.',
+    intro:
+      "Provisions for sick leave to care for family members now include grandparents, grandchildren and siblings, according to the Jan. 18, 2022, tentative agreement.",
   },
   Successorship: {
-
     proposals: successorshipProposals,
-    intro: 'As part of an Aug. 1, 2021, tentative agreement, the UAW Local 5810 and the UC system agreed to maintain the previous contract language for this article and seven others.',
+    intro:
+      "As part of an Aug. 1, 2021, tentative agreement, the UAW Local 5810 and the UC system agreed to maintain the previous contract language for this article and seven others.",
   },
-  'Time and effort commitment': {
-
+  "Time and effort commitment": {
     proposals: timeProposals,
-    intro: 'After two proposals, a tentative agreement was reached Sept. 16, 2021. Like their previous contract, time spent during meals and commuting to work are not counted as working hours.',
+    intro:
+      "After two proposals, a tentative agreement was reached Sept. 16, 2021. Like their previous contract, time spent during meals and commuting to work are not counted as working hours.",
   },
-  'Titles and classifications': {
-
+  "Titles and classifications": {
     proposals: titlesProposals,
-    intro: 'On Jan. 19, 2022, a tentative agreement was reached between the UC system and UAW Local 5810. The new article removes special classifications for postdocs working at Lawrence Berkeley National Lab, abbreviated as LBL on the contract.',
+    intro:
+      "On Jan. 19, 2022, a tentative agreement was reached between the UC system and UAW Local 5810. The new article removes special classifications for postdocs working at Lawrence Berkeley National Lab, abbreviated as LBL on the contract.",
   },
   Training: {
-
     proposals: trainingProposals,
-    intro: 'The tentative agreement reached August 1, 2021, includes training among the articles that will not be changed from previous contract language.',
+    intro:
+      "The tentative agreement reached August 1, 2021, includes training among the articles that will not be changed from previous contract language.",
   },
-  'Travel reimbursement': {
-
+  "Travel reimbursement": {
     proposals: travelProposals,
-    intro: 'On Oct, 21, 2021, parties tentatively agreed on a proposal for this article, according to the union’s postdoc bargaining tracking Google Sheet. However, a link to the agreement was not provided.',
+    intro:
+      "On Oct, 21, 2021, parties tentatively agreed on a proposal for this article, according to the union’s postdoc bargaining tracking Google Sheet. However, a link to the agreement was not provided.",
   },
-  'Union access and rights': {
-
+  "Union access and rights": {
     proposals: unionAccessProposals,
-    intro: 'By a Feb. 8, 2022 tentative agreement, each UC campus should conduct a monthly, campuswide orientation for new postdocs.',
+    intro:
+      "By a Feb. 8, 2022 tentative agreement, each UC campus should conduct a monthly, campuswide orientation for new postdocs.",
   },
-  'Union security': {
-
+  "Union security": {
     proposals: unionSecurityProposals,
-    intro: 'The UC system and the UAW Local 5810 tentatively established policies on union security Oct. 3, 2022. Among its many guidelines, it required the UC system to send postdocs a form for union membership along with Appendix YY.',
+    intro:
+      "The UC system and the UAW Local 5810 tentatively established policies on union security Oct. 3, 2022. Among its many guidelines, it required the UC system to send postdocs a form for union membership along with Appendix YY.",
   },
-  'University facilities and services': {
-
+  "University facilities and services": {
     proposals: facilitiesProposals,
-    intro: 'Under an Aug. 1, 2021 tentative agreement, this article and seven others will not change from previous contract language.',
+    intro:
+      "Under an Aug. 1, 2021 tentative agreement, this article and seven others will not change from previous contract language.",
   },
-  'Voluntary resignation': {
-
+  "Voluntary resignation": {
     proposals: voluntaryResignationProposals,
-    intro: 'This new article proposed by the UC system would have established the conditions for postdocs’ voluntary resignations. However, it was withdrawn, according to the UAW Local 5810.',
+    intro:
+      "This new article proposed by the UC system would have established the conditions for postdocs’ voluntary resignations. However, it was withdrawn, according to the UAW Local 5810.",
   },
   Waiver: {
-
     proposals: waiverProposals,
-    intro: 'A tentative agreement on the waiver article was reached Feb. 21, 2022. It acknowledges that both parties have been free to collectively bargain during these contract negotiations.',
+    intro:
+      "A tentative agreement on the waiver article was reached Feb. 21, 2022. It acknowledges that both parties have been free to collectively bargain during these contract negotiations.",
   },
-  'Work authorization': {
-
+  "Work authorization": {
     proposals: workAuthProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on a UC system proposal from Jan. 7, 2022.',
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on a UC system proposal from Jan. 7, 2022.",
   },
-  'Work-incurred injury and illness': {
-
+  "Work-incurred injury and illness": {
     proposals: injuriesProposals,
-    intro: 'The Sept. 13, 2022 tentative agreement between both parties changed little from the original contract, save for a pronoun update.',
+    intro:
+      "The Sept. 13, 2022 tentative agreement between both parties changed little from the original contract, save for a pronoun update.",
   },
-  'Workspace and materials': {
-
+  "Workspace and materials": {
     proposals: workspaceProposals,
-    intro: 'This was the final proposal included in the Aug. 1, 2022, tentative agreement package between the UC system and UAW Local 5810. The original contract language is not slated to change.',
+    intro:
+      "This was the final proposal included in the Aug. 1, 2022, tentative agreement package between the UC system and UAW Local 5810. The original contract language is not slated to change.",
   },
   Duration: {
-
     proposals: durationProposals,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 tentatively agreed that this contract should be in effect until Sept. 30, 2027.',
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 tentatively agreed that this contract should be in effect until Sept. 30, 2027.",
   },
-  'Health benefits side letter': {
-
+  "Health benefits side letter": {
     proposals: healthBenefitsProposals,
-    intro: 'The Nov. 17, 2022 tentative agreement requires the UC system to include partial coverage for infertility treatments.',
+    intro:
+      "The Nov. 17, 2022 tentative agreement requires the UC system to include partial coverage for infertility treatments.",
   },
-  'Compensation side letter': {
-
+  "Compensation side letter": {
     proposals: compLetter,
-    intro: 'On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this side letter.',
+    intro:
+      "On Nov. 28, 2022, the UC system and UAW Local 5810 came to a tentative agreement on this side letter.",
   },
-  'Transit side letter': {
-
+  "Transit side letter": {
     proposals: transitLetter,
-    intro: 'According to UAW Local 5810, this article was withdrawn.',
+    intro: "According to UAW Local 5810, this article was withdrawn.",
   },
-  'Joint labor management committee side letter': {
-
+  "Joint labor management committee side letter": {
     proposals: jlmcLetter,
-    intro: 'This side letter, which details agenda items for a joint labor management committee, was tentatively agreed upon Oct. 28, 2022.',
+    intro:
+      "This side letter, which details agenda items for a joint labor management committee, was tentatively agreed upon Oct. 28, 2022.",
   },
-  'Appendix A': {
-
+  "Appendix A": {
     proposals: appendixAProposals,
-    intro: 'With some updates, parties will maintain their previous contract language for this appendix, according to a Nov. 28, 2022 tentative agreement on a package.',
+    intro:
+      "With some updates, parties will maintain their previous contract language for this appendix, according to a Nov. 28, 2022 tentative agreement on a package.",
   },
-  'Appendix B': {
-
+  "Appendix B": {
     proposals: appendixBProposals,
-    intro: 'This Nov. 22, 2022, tentative agreement mirrors the UC system\'s June 9, 2022, proposal for Appendix B.',
+    intro:
+      "This Nov. 22, 2022, tentative agreement mirrors the UC system's June 9, 2022, proposal for Appendix B.",
   },
-  'Appendix C': {
-
+  "Appendix C": {
     proposals: appendixCProposals,
-    intro: 'The membership election form allows postdocs to opt into union membership. The form is sent through Appendix C, which looks like an email template. A tentative agreement for the appendix was reached by both parties Oct. 3, 2022.',
+    intro:
+      "The membership election form allows postdocs to opt into union membership. The form is sent through Appendix C, which looks like an email template. A tentative agreement for the appendix was reached by both parties Oct. 3, 2022.",
   },
-  'Appendix F': {
-
+  "Appendix F": {
     proposals: appendixFProposals,
-    intro: 'A finalized panel of arbitrators, written out in Appendix F, was tentatively agreed upon July 14, 2022.',
+    intro:
+      "A finalized panel of arbitrators, written out in Appendix F, was tentatively agreed upon July 14, 2022.",
   },
-  'Appendix G': {
-
+  "Appendix G": {
     proposals: appendixGProposals,
-    intro: 'By a Nov. 28, 2022 tentative agreement, Appendix G contains required information for a postdoc’s appointment letter. It mirrors an Oct. 12, 2022 proposal from the union.',
+    intro:
+      "By a Nov. 28, 2022 tentative agreement, Appendix G contains required information for a postdoc’s appointment letter. It mirrors an Oct. 12, 2022 proposal from the union.",
   },
-  'Appendix H': {
+  "Appendix H": {
     proposals: appendixHProposals,
-    intro: 'Parties tentatively agreed upon the contract language for Appendix H, which concerns parking rates.',
+    intro:
+      "Parties tentatively agreed upon the contract language for Appendix H, which concerns parking rates.",
   },
-  'Ground rules': {
-
+  "Ground rules": {
     proposals: groundRulesProposals,
-    intro: 'The ground rules for bargaining negotiations were tentatively agreed upon by both parties Aug. 11, 2021.',
+    intro:
+      "The ground rules for bargaining negotiations were tentatively agreed upon by both parties Aug. 11, 2021.",
   },
-  'Extension of previous contract': {
-
+  "Extension of previous contract": {
     proposals: extensionProposals,
-    intro: 'The previous AR contact between the UC system and the UAW Local 5810 was originally slated to be in effect until Sept. 30, 2020. That contract barred the union from authorizing strikes that interfere with the UC system’s operations. It was only extended to Oct. 31, 2022.',
+    intro:
+      "The previous AR contact between the UC system and the UAW Local 5810 was originally slated to be in effect until Sept. 30, 2020. That contract barred the union from authorizing strikes that interfere with the UC system’s operations. It was only extended to Oct. 31, 2022.",
   },
 };
