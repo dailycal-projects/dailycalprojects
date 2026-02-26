@@ -1,40 +1,48 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
+ */
+import { dirname, resolve } from "path";
+import { fileURLToPath } from "url";
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
+  // Site-wide metadata
   siteMetadata: {
     title: 'The Daily Californian',
     description: 'Investigative stories, data analysis and graphics by The Daily Californian’s Data Team',
     author: '@shannonbonet',
     siteUrl: 'https://data.dailycal.org/',
   },
+  
+  // Gatsby build flags
   flags: {
     // preserves files + cache except on `gatsby clean`
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
     PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
-    'gatsby-theme-material-ui',
-    'gatsby-transformer-sharp', // Needed for dynamic images
-    'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
+    "gatsby-transformer-sharp", // Needed for dynamic images
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-leaflet",
     {
-      resolve: 'gatsby-plugin-sharp',
+      resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
           quality: 70,
-          placeholder: 'blurred',
+          placeholder: "blurred",
         },
       },
     },
-    'gatsby-remark-images',
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1000,
             },
@@ -43,84 +51,33 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images`,
+        name: "images",
+        path: resolve(__dirname, "src/images"),
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'articles',
-        path: `${__dirname}/src/articles`,
+        name: "articles",
+        path: resolve(__dirname, "src/articles"),
       },
     },
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: "gatsby-source-filesystem",
       options: {
-        pathToConfigModule: 'src/styles/typography.js',
+        name: "src",
+        path: "./src",
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'src',
-        path: './src',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
           include: /assets/,
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-react-leaflet',
-      options: {
-        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
-      },
-    },
-    'gatsby-plugin-gatsby-cloud',
-    {
-      resolve: 'gatsby-plugin-prettier-eslint',
-      options: {
-        prettier: {
-          patterns: [
-            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
-            '**/*.{css,scss,less}',
-            '**/*.{json,json5}',
-            '**/*.{graphql}',
-            '**/*.{md,mdx}',
-            '**/*.{html}',
-            '**/*.{yaml,yml}',
-          ],
-        },
-        eslint: {
-          patterns: '**/*.{js,jsx,ts,tsx}',
-          customOptions: {
-            fix: true,
-            cache: true,
-          },
-        },
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };

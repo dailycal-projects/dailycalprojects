@@ -4,74 +4,83 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+import path from "path";
+import { createFilePath } from "gatsby-source-filesystem";
 
-const path = require('path');
-
-const { createFilePath } = require('gatsby-source-filesystem');
-
-exports.createPages = async ({ graphql, actions }) => {
+/**
+ * Creates pages for each MDX article using the template.
+ */
+export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const articlePost = path.resolve('src/templates/articlePost.js');
-  const result = await graphql(
-    `
-        {
-            allMdx(
-                sort: { fields: [frontmatter___date], order: DESC }
-                limit: 1000
-            ) {
-                edges {
-                    node {
-                        id
-                        slug
-                    }
-                }
+  const articleTemplate = path.resolve("src/templates/articlePost.js");
+  const result = await graphql(`
+    {
+      allMdx(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+        edges {
+          node {
+            id
+            fields {
+              slug
             }
+          }
         }
-        `,
-  );
+      }
+    }
+  `);
 
   if (result.errors) {
     throw result.errors;
   }
 
-  // Create article post pages
+  // Create article pages
   const posts = result.data.allMdx.edges;
 
   posts.forEach((post) => {
+    const slug = post.node.fields?.slug;
+
     createPage({
-      path: post.node.slug,
-      component: articlePost,
+      path: slug,
+      component: articleTemplate,
       context: {
-        slug: post.node.slug,
+        slug,
       },
     });
   });
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+/**
+ * Called on every node (file, images, etc) in GraphQL layer.
+ * Attaches slug fields to each MDX file.
+ */
+export const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === 'Mdx') {
+  if (node.internal.type === "Mdx") {
+    // Create URL-friendly path from mdx file name
     const value = createFilePath({ node, getNode });
+
+    // Make that file path the "slug" field of the MDX node
     createNodeField({
-      name: 'slug',
+      name: "slug",
       node,
       value,
     });
   }
 };
 
-// during server side rendering, leaflet maps will be ignored
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === 'build-html' || stage === 'develop-html') {
+/**
+ * During server-side rendering, do not render leaflet maps.
+ * (These can only run in browser, so it would cause errors)
+ */
+export const onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === "build-html" || stage === "develop-html") {
     actions.setWebpackConfig({
       module: {
         rules: [
           {
             test: /react-leaflet/,
-            use: loaders.null(),
+            use: require.resolve("null-loader"),
           },
         ],
       },
