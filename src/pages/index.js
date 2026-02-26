@@ -73,13 +73,13 @@ const IndexPage = ({ classes, data }) => {
 
 export const query = graphql`
   query HomepageQuery {
-    allMdx (
-      sort: {order: DESC, fields: [frontmatter___date]}
-    ){
+    allMdx(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           id
-          slug
+          fields {
+            slug
+          }
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
@@ -88,7 +88,7 @@ export const query = graphql`
             oldLink
             featuredImage {
               childImageSharp {
-                gatsbyImageData(width: 450 height: 250)
+                gatsbyImageData(width: 450, height: 250)
               }
             }
           }
