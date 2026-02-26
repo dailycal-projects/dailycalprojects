@@ -90,7 +90,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    mdx(slug: { eq: $slug } ) {
+    mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
@@ -107,11 +107,11 @@ export const pageQuery = graphql`
               width
             }
             gatsbyImageData(width: 750)
-          } 
+          }
         }
         imageAttribution
         imageCaption1
-        
+
         embeddedImages {
           childImageSharp {
             gatsbyImageData

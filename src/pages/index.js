@@ -29,7 +29,8 @@ const IndexPage = ({ classes, data }) => {
         {/* <Header /> */}
         <div className={classes.index}>
           {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
-            const { frontmatter, slug } = node;
+            const { frontmatter, fields } = node;
+            const { slug } = fields;
             const image = getImage(frontmatter.featuredImage);
 
             if (!frontmatter.oldLink) {
@@ -68,8 +69,8 @@ export const query = graphql`
     ){
       edges {
         node {
-          id 
-          slug
+          id
+          fields { slug }
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
@@ -79,11 +80,11 @@ export const query = graphql`
             featuredImage {
               childImageSharp {
                 gatsbyImageData(width: 450 height: 250)
-              } 
+              }
             }
-          } 
+          }
         }
-      } 
+      }
     }
   }
 `;
