@@ -1,31 +1,26 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
-import ArticleCard from '../components/articleCard';
-import Layout from '../components/layout';
-import Seo from '../components/seo';
 import circlelogo from '../images/dclogocircle.png';
 import logo from '../images/dclogoblack.png';
 import { theme } from '../styles/theme';
 
-const IndexPage = ({ classes, data }) => {
+const IndexPage = ({ data }) => {
   const articles = data.allMdx.edges;
 
   return (
     <Layout>
-      <div className={classes.main}>
+      <Box sx={styles.main}>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <div className={classes.topBar}>
+          <Box sx={styles.topBar}>
             <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
-          </div>
+          </Box>
         </Link>
         {/* <Seo title="Daily Cal Data" /> */}
-        <div className={classes.content}>
-          <div className={classes.intro}>
+        <Box sx={styles.content}>
+          <Box sx={styles.intro}>
             <img src={circlelogo} alt="The Daily Californian" width="100" style={{ margin: '0px' }} />
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <h1 style={{
                 fontFamily: 'Georgia', fontSize: theme.spacing[5], fontWeight: 800, margin: 0, color: theme.palette.black,
               }}
@@ -33,10 +28,10 @@ const IndexPage = ({ classes, data }) => {
                 Data
               </h1>
               <p style={{ fontFamily: 'Georgia', margin: 0, color: theme.palette.darkGrey }}>Investigative stories, data analysis and graphics by The Daily Californian’s Data Team</p>
-            </div>
+            </Box>
 
-          </div>
-          <div className={classes.index}>
+          </Box>
+          <Box sx={styles.index}>
             {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
               const { frontmatter, slug } = node;
               const image = getImage(frontmatter.featuredImage);
@@ -64,9 +59,9 @@ const IndexPage = ({ classes, data }) => {
                 </a>
               );
             })}
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Box>
+      </Box>
     </Layout>
   );
 };
@@ -98,4 +93,4 @@ export const query = graphql`
   }
 `;
 
-export default withStyles(styles)(IndexPage);
+export default IndexPage;

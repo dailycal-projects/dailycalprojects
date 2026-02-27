@@ -1,26 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 
-const useStyles = makeStyles({
-  table: {
-    margin: 20,
-    maxWidth: '100%',
-  },
-});
+const tableSx = {
+  margin: 20,
+  maxWidth: '100%',
+}
 
 const BasicTable = ({ rows }) => {
-  const classes = useStyles();
-
   return (
     <TableContainer>
-      <Table className={classes.table} aria-label="simple table">
+      <Table sx={tableSx} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>

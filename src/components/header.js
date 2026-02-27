@@ -1,17 +1,14 @@
-import * as React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import { withStyles } from '@material-ui/core/styles';
+import { graphql } from 'gatsby';
 import { styles } from '../styles/customTheme';
 import GitHubIcon from '../assets/github.svg';
 import DCIcon from '../assets/dailycal.svg';
 
-const TitleAndDescription = ({ classes, data }) => {
-  // to make sitewide edits, go to gatsby-config -> siteMetaData
-  const { title } = data.site.siteMetadata;
-  const { description } = data.site.siteMetadata;
+const TitleAndDescription = ({ data }) => {
+  // to make site-wide edits, go to gatsby-config -> siteMetaData
+  const { title, description } = data.site.siteMetadata;
 
   return (
-    <div className={classes.header}>
+    <Box sx={styles.header}>
       <h1>
         {' '}
         {title}
@@ -22,21 +19,29 @@ const TitleAndDescription = ({ classes, data }) => {
         {description}
         {' '}
       </p>
-      <div className={classes.icons}>
-        <a href="https://github.com/dailycal-projects" key="dailycalgithub" style={{ textDecoration: 'none' }}>
-          {' '}
-          <GitHubIcon className={classes.iconHover} />
-        </a>
-        <a href="https://www.dailycal.org/" key="dailycal" style={{ textDecoration: 'none' }}>
-          {' '}
-          <DCIcon className={classes.iconHover} />
-        </a>
-      </div>
-    </div>
+      <Box sx={styles.icons}>
+        <Box 
+          component="a"
+          href="https://github.com/dailycal-projects" 
+          key="dailycalgithub" 
+          style={{ textDecoration: 'none', ...styles.iconHover }}
+        >
+          <GitHubIcon />
+        </Box>
+        <Box
+          component="a" 
+          href="https://www.dailycal.org/" 
+          key="dailycal" 
+          style={{ textDecoration: 'none', ...styles.iconHover }}
+        >
+          <DCIcon />
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
-const Header = ({ classes }) => (
+const Header = () => (
   <StaticQuery
     query={graphql`
           query {
@@ -48,8 +53,8 @@ const Header = ({ classes }) => (
             }
           }
         `}
-    render={(data) => <TitleAndDescription classes={classes} data={data} />}
+    render={(data) => <TitleAndDescription data={data} />}
   />
 );
 
-export default withStyles(styles)(Header);
+export default Header;

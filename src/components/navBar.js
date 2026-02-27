@@ -1,15 +1,17 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'gatsby';
 import { styles } from '../styles/customTheme';
 
-const NavBar = ({ classes }) => (
-  <div className={classes.navHeader}>
-    <div className={classes.navBar}>
-      <Link to="/" className={classes.navText}>Home.</Link>
-      <Link to="/about/" className={classes.navText}> About.</Link>
-    </div>
-  </div>
+const NavBar = () => (
+  <Box sx={styles.navHeader}>
+    <Box sx={styles.navBar}>
+      <Box component={Link} to="/" sx={styles.navText}>
+        Home.
+      </Box>
+      <Box component={Link} to="/about/" sx={styles.navText}>
+        About.
+      </Box>
+    </Box>
+  </Box>
 );
 
-export default withStyles(styles)(NavBar);
+export default NavBar;

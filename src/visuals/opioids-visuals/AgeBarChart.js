@@ -9,23 +9,15 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from 'recharts';
-import {
-  InputLabel, FormControl, Select, MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
 import accessData from './lineData';
 
+const formControlSx = {
+  marginTop: -20,
+  marginLeft: 10,
+  minWidth: 150,
+}
+
 function OpioidsLineChart() {
-  const useStyles = makeStyles(() => ({
-    formControl: {
-      marginTop: -20,
-      marginLeft: 10,
-      minWidth: 150,
-    },
-  }));
-
-  const classes = useStyles();
-
   const [question, setQuestion] = useState('CalvAlameda');
 
   useEffect(() => {
@@ -62,7 +54,7 @@ function OpioidsLineChart() {
           faster than the California average
         </h4>
       </div>
-      <FormControl className={classes.formControl}>
+      <FormControl sx={formControlSx}>
         <InputLabel>Select View</InputLabel>
         <Select
           value={question}

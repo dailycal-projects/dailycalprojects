@@ -1,16 +1,14 @@
-import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { withStyles } from '@material-ui/core/styles';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import SEO from '../components/seo';
-import Layout from '../components/layout';
+import { getImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
-import ArticleFooter from '../components/articleFooter';
 import logo from '../images/dclogoblack.png';
+import React from "react";
+import Box from '@mui/material/Box';
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
+const ArticlePost = ({ data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
   const {
     bylineName, bylineUrl,
@@ -21,11 +19,11 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
     : null;
 
   return (
-    <div className={classes.articleRoot}>
+    <Box sx={styles.articleRoot}>
       <Link to="/" style={{ textDecoration: 'none' }}>
-        <div className={classes.topBar}>
+        <Box sx={styles.topBar}>
           <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
-        </div>
+        </Box>
       </Link>
       <Layout>
         <SEO
@@ -34,26 +32,26 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
           image={socialImage}
           pathname={location.pathname}
         />
-        <div className={classes.headerContainer}>
-          <h1 className={classes.title}>{frontmatter.title}</h1>
-          <h3 className={classes.subhead}>{frontmatter.subhead}</h3>
-        </div>
+        <Box sx={styles.headerContainer}>
+          <h1 style={styles.title}>{frontmatter.title}</h1>
+          <h3 style={styles.subhead}>{frontmatter.subhead}</h3>
+        </Box>
         <h5>{frontmatter.date}</h5>
 
         {!frontmatter.hideHeroImage && image && (
-          <div className={classes.imageContainer}>
+          <Box sx={styles.imageContainer}>
             <GatsbyImage image={image} />
-            <div style={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></div>
+            <Box sx={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></Box>
 
             <h5 style={{ marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
 
-          </div>
+          </Box>
         )}
 
-        <div className={classes.articleContent}>
+        <Box sx={styles.articleContent}>
 
           {(bylineName && bylineUrl) ? (
-            <div className={classes.byline}>
+            <Box sx={styles.byline}>
               By
               {' '}
               {bylineName.map((author, i) => {
@@ -75,18 +73,18 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
                   </React.Fragment>
                 );
               })}
-            </div>
+            </Box>
           ) : null}
           <MDXRenderer
             localImages={frontmatter.embeddedImages} // prop that allows <GatsbyImage/> usage possible in MDX
           >
             {body}
           </MDXRenderer>
-        </div>
+        </Box>
 
         <ArticleFooter about={frontmatter.aboutStory} />
       </Layout>
-    </div>
+    </Box>
   );
 };
 
@@ -125,4 +123,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default withStyles(styles)(ArticlePost);
+export default ArticlePost;

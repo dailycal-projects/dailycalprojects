@@ -1,32 +1,30 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 
 function formatDate(dateStr) {
   return dateStr.replace(/\b0(?=\d)/, ''); // remove leading zeros
 }
+
 const ArticleCard = ({
-  classes, title, date, image,
+  title, date, image,
 }) => (
   <div>
-    <Card className={classes.card}>
-      <div className={classes.date}>
+    <Card sx={styles.card}>
+      <Box sx={styles.date}>
         {formatDate(date)}
-      </div>
-      <div className={classes.cardImage}>
+      </Box>
+      <Box sx={styles.cardImage}>
         <GatsbyImage image={image} />
-      </div>
-      <div className="cardContent">
-        <div className={classes.articleTitle}>
+      </Box>
+      <Box sx={styles.cardContent}>
+        <Box sx={styles.articleTitle}>
           {title}
-        </div>
-      </div>
+        </Box>
+      </Box>
     </Card>
   </div>
 );
-export default withStyles(styles)(ArticleCard);
+
+export default ArticleCard;
 
 // // not in use yet
 // function formatByline(byline) {

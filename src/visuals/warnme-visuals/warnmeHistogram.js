@@ -1,9 +1,5 @@
 import React from 'react';
 import {
-  InputLabel, FormControl, Select, MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import {
   BarChart,
   Bar,
   Brush,
@@ -17,16 +13,12 @@ import {
 } from 'recharts';
 import data from './data';
 
+const formControlSx = {
+  margin: '1%',
+  minWidth: 120,
+}
+
 function WarnmeHistogram() {
-  const useStyles = makeStyles(() => ({
-    formControl: {
-      margin: '1%',
-      minWidth: 120,
-    },
-  }));
-
-  const classes = useStyles();
-
   const [Sem, setSem] = React.useState({
     semester: 'All semesters', // Changed the key to lowercase "semester"
   });
@@ -57,7 +49,7 @@ function WarnmeHistogram() {
       >
         <h4> Discrepancy between time of incident report and time of WarnMe email </h4>
       </div>
-      <FormControl className={classes.formControl}>
+      <FormControl sx={formControlSx}>
         <InputLabel>Select semester</InputLabel>
         <Select
           value={Sem.semester}

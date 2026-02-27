@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const theme = {
   palette: {
     background: '#F8F8F8',
@@ -24,5 +23,14 @@ export const theme = {
   },
   cardShadow: '0px 2px 0px 0.5px rgba(14, 20, 27, 0.15)',
   iconShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-  spacing: [15, 17, 24, 30, 35, 48, 60],
+  fontSizes: [
+    15, // Card text, byline
+    17, // Nav bar, article content
+    24, // Article title, subheading
+    30, // Article root
+    35, // Title
+    48, // Data title
+    60,
+    // Footer container?
+  ],
 };

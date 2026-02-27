@@ -3,13 +3,8 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
-import { dirname, resolve } from "path";
-import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-export default {
+module.exports = {
   // Site-wide metadata
   siteMetadata: {
     title: 'The Daily Californian',
@@ -54,14 +49,14 @@ export default {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: resolve(__dirname, "src/images"),
+        path: `${__dirname}/src/images`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "articles",
-        path: resolve(__dirname, "src/articles"),
+        path: `${__dirname}/src/articles`,
       },
     },
     {
