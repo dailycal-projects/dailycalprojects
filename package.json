@@ -27,6 +27,7 @@
     "react": "^18.2.0",
     "react-diff-viewer-continued": "^4.1.2",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
     "recharts": "^3.7.0",
     "topojson-client": "^3.1.0"
   },

@@ -1,5 +1,5 @@
 import { graphql, Link } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
 import logo from '../images/dclogoblack.png';
@@ -7,6 +7,8 @@ import React from "react";
 import Box from '@mui/material/Box';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import ArticleFooter from '../components/articleFooter';
 
 const ArticlePost = ({ data, location }) => { // data.markdownRemark holds your article data
   const { frontmatter, body } = data.mdx;
