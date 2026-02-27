@@ -1,3 +1,6 @@
+import React from 'react';
+import Box from '@mui/material/Box';
+import Seo from '../components/seo';
 import { styles } from '../styles/customTheme';
 
 const NotFoundPage = ( ) => (

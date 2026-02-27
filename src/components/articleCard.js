@@ -1,3 +1,7 @@
+import React from 'react';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { styles } from '../styles/customTheme';
 
 function formatDate(dateStr) {

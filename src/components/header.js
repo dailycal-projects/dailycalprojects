@@ -1,4 +1,6 @@
-import { graphql } from 'gatsby';
+import React from 'react';
+import Box from '@mui/material/Box';
+import { graphql, StaticQuery } from 'gatsby';
 import { styles } from '../styles/customTheme';
 import GitHubIcon from '../assets/github.svg';
 import DCIcon from '../assets/dailycal.svg';

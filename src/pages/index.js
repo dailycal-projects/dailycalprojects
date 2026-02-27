@@ -1,5 +1,9 @@
-import { graphql } from 'gatsby';
+import React from 'react';
+import Box from '@mui/material/Box';
+import { graphql, Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
+import ArticleCard from '../components/articleCard';
+import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import circlelogo from '../images/dclogocircle.png';
 import logo from '../images/dclogoblack.png';
@@ -22,7 +26,7 @@ const IndexPage = ({ data }) => {
             <img src={circlelogo} alt="The Daily Californian" width="100" style={{ margin: '0px' }} />
             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <h1 style={{
-                fontFamily: 'Georgia', fontSize: theme.spacing[5], fontWeight: 800, margin: 0, color: theme.palette.black,
+                fontFamily: 'Georgia', fontSize: theme.fontSizes[5], fontWeight: 800, margin: 0, color: theme.palette.black,
               }}
               >
                 Data
