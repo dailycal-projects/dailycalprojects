@@ -7,11 +7,12 @@ import React from "react";
 import Box from '@mui/material/Box';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import ArticleFooter from '../components/articleFooter';
+import { ScopeInjector } from '../components/scopeInjector';
 
-const ArticlePost = ({ data, location }) => { // data.markdownRemark holds your article data
-  const { frontmatter, body } = data.mdx;
+const ArticlePost = ({ data, location, children }) => { // data.markdownRemark holds your article data
+  const { frontmatter } = data.mdx;
+
   const {
     bylineName, bylineUrl,
   } = frontmatter;
@@ -27,7 +28,7 @@ const ArticlePost = ({ data, location }) => { // data.markdownRemark holds your 
           <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
         </Box>
       </Link>
-      <Layout>
+      <Layout localImages={frontmatter.embeddedImages}>
         <SEO
           title={frontmatter.title}
           description={frontmatter.subhead}
@@ -77,11 +78,10 @@ const ArticlePost = ({ data, location }) => { // data.markdownRemark holds your 
               })}
             </Box>
           ) : null}
-          <MDXRenderer
-            localImages={frontmatter.embeddedImages} // prop that allows <GatsbyImage/> usage possible in MDX
-          >
-            {body}
-          </MDXRenderer>
+
+          <ScopeInjector scope={{ localImages: frontmatter.embeddedImages }}>
+            { children }
+          </ScopeInjector>
         </Box>
 
         <ArticleFooter about={frontmatter.aboutStory} />
@@ -93,7 +93,6 @@ const ArticlePost = ({ data, location }) => { // data.markdownRemark holds your 
 export const pageQuery = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

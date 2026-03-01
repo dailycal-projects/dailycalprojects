@@ -2,6 +2,7 @@ import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 import accessData from './internalAuditData';
 
 const CustomizedAxisTick = ({ x, y, payload }) => (

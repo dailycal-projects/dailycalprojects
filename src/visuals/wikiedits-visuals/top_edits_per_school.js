@@ -11,6 +11,7 @@ import {
   Label,
   ResponsiveContainer,
 } from 'recharts';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 
 import data from './data';
 import human_names from './human_names';

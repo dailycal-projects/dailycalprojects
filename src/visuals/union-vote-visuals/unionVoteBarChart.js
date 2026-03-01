@@ -3,6 +3,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
 import accessData from './unionVoteData';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 
 class CustomizedAxisTick extends Component {
   render() {

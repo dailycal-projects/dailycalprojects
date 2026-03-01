@@ -9,6 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 import allData from './artifactsData';
 
 const formControlSx = {

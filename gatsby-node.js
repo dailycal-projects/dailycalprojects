@@ -11,17 +11,22 @@ const { createFilePath } = require('gatsby-source-filesystem');
  */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-
   const articleTemplate = path.resolve("src/templates/articlePost.js");
+
+  // Query MDX files
   const result = await graphql(`
     {
-      allMdx(sort: { frontmatter: { date: DESC } }, limit: 1000) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
+      allMdx(sort: { frontmatter: { date: DESC } }) {
+        nodes {
+          id
+          internal {
+            contentFilePath
+          }
+          fields {
+            slug
+          }
+          frontmatter {
+            oldLink
           }
         }
       }
@@ -33,16 +38,22 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create article pages
-  const posts = result.data.allMdx.edges;
+  const posts = result.data.allMdx.nodes;
 
-  posts.forEach((post) => {
-    const slug = post.node.fields?.slug;
+  posts.forEach(({ fields: { slug }, frontmatter: { oldLink }, internal: { contentFilePath } }) => {
+    // Skip pages with oldLink
+    if (oldLink !== null) {
+      // TODO make redirect pages for these so they appear in the sitemap
+      console.log(`Not building page for ${slug} because of oldLink frontmatter`);
+      return;
+    }
 
+    // Create page
     createPage({
       path: slug,
-      component: articleTemplate,
+      component: `${articleTemplate}?__contentFilePath=${contentFilePath}`,
       context: {
-        slug,
+        slug
       },
     });
   });
@@ -72,7 +83,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  * During server-side rendering, do not render leaflet maps.
  * (These can only run in browser, so it would cause errors)
  */
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {  
   if (stage === "build-html" || stage === "develop-html") {
     console.log("Disabling leaflet rendering");
 

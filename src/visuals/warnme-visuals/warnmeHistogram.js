@@ -12,6 +12,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import data from './data';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 
 const formControlSx = {
   margin: '1%',

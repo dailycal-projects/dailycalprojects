@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   MapContainer, TileLayer, Popup, Marker, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 import './BikeTheftMap.css';
 // import 'leaflet/dist/leaflet.css';
 // import 'leaflet.markercluster/dist/MarkerCluster.css';
