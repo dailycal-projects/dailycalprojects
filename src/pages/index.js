@@ -1,95 +1,124 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core';
+import React from 'react';
+import Box from '@mui/material/Box';
 import { graphql, Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-import { styles } from '../styles/customTheme';
 import ArticleCard from '../components/articleCard';
-import Layout from '../components/layout';
-import Seo from '../components/seo';
 import circlelogo from '../images/dclogocircle.png';
-import logo from '../images/dclogoblack.png';
-import { theme } from '../styles/theme';
+import Header from '../components/header';
+import { useTheme } from '@mui/material';
 
-const IndexPage = ({ classes, data }) => {
-  const articles = data.allMdx.edges;
+const IndexPage = ({ data }) => {
+  const articles = data.allMdx.nodes;
+  const theme = useTheme();
 
   return (
-    <Layout>
-      <div className={classes.main}>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <div className={classes.topBar}>
-            <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
-          </div>
-        </Link>
-        {/* <Seo title="Daily Cal Data" /> */}
-        <div className={classes.content}>
-          <div className={classes.intro}>
-            <img src={circlelogo} alt="The Daily Californian" width="100" style={{ margin: '0px' }} />
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <h1 style={{
-                fontFamily: 'Georgia', fontSize: theme.spacing[5], fontWeight: 800, margin: 0, color: theme.palette.black,
+    <Box>
+      <Header />
+      {/* Page Container */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          pt: { xs: 4, md: 6 },
+          px: 2,
+          width: { xs: '100%', md: 1200 },
+          mx: 'auto',
+        }}
+      >
+        {/* Hero Section */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            alignItems: 'center',
+            gap: 2,
+            mb: 4,
+          }}
+        >
+          <Box
+            component="img"
+            src={circlelogo}
+            alt="The Daily Californian"
+            sx={{ width: { xs: 80, sm: 100 }, m: 0 }}
+          />
+          <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <Box
+              component="h1"
+              sx={{
+                fontFamily: 'Georgia',
+                fontSize: "48px",
+                fontWeight: 800,
+                m: 0,
+                color: theme.palette.text.primary,
               }}
-              >
-                Data
-              </h1>
-              <p style={{ fontFamily: 'Georgia', margin: 0, color: theme.palette.darkGrey }}>Investigative stories, data analysis and graphics by The Daily Californian’s Data Team</p>
-            </div>
+            >
+              Data
+            </Box>
+            <Box
+              component="p"
+              sx={{
+                m: 0,
+                color: theme.palette.grey[700],
+                fontSize: theme.typography.body1.fontSize,
+              }}
+            >
+              Investigative stories, data analysis and graphics by The Daily Californian’s Data Team
+            </Box>
+          </Box>
+        </Box>
 
-          </div>
-          <div className={classes.index}>
-            {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
-              const { frontmatter, slug } = node;
-              const image = getImage(frontmatter.featuredImage);
+        {/* Article Cards Grid */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 3,
+          }}
+        >
+          {articles.map((node) => {
+            const { frontmatter, fields } = node;
+            const { featuredImage, oldLink, title, date, byline } = frontmatter;
+            const { slug } = fields;
+            const image = getImage(featuredImage);
 
-              if (!frontmatter.oldLink) {
-                return (
-                  <Link to={slug} key={slug} style={{ textDecoration: 'none' }}>
-                    <ArticleCard
-                      title={frontmatter.title}
-                      date={frontmatter.date}
-                      image={image}
-                      byline={frontmatter.byline}
-                    />
-                  </Link>
-                );
-              }
-              return (
-                <a href={frontmatter.oldLink} key={slug} style={{ textDecoration: 'none' }}>
-                  <ArticleCard
-                    title={frontmatter.title}
-                    date={frontmatter.date}
-                    image={image}
-                    byline={frontmatter.byline}
-                  />
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </Layout>
+            const content = (
+              <ArticleCard title={title} date={date} image={image} byline={byline} />
+            );
+
+            return oldLink ? (
+              <Box component="a" href={oldLink} key={slug} sx={{ textDecoration: 'none' }}>
+                {content}
+              </Box>
+            ) : (
+              <Box component={Link} to={slug} key={slug} sx={{ textDecoration: 'none' }}>
+                {content}
+              </Box>
+            );
+          })}
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
+// GraphQL query
 export const query = graphql`
   query HomepageQuery {
-    allMdx (
-      sort: {order: DESC, fields: [frontmatter___date]}
-    ){
-      edges {
-        node {
-          id
+    allMdx(sort: { frontmatter: { date: DESC } }) {
+      nodes {
+        id
+        fields {
           slug
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            subhead
-            byline
-            oldLink
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(width: 450 height: 250)
-              }
+        }
+        frontmatter {
+          title
+          date(formatString: "MMMM DD, YYYY")
+          byline
+          oldLink
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 450, height: 250)
             }
           }
         }
@@ -98,4 +127,4 @@ export const query = graphql`
   }
 `;
 
-export default withStyles(styles)(IndexPage);
+export default IndexPage;

@@ -1,12 +1,5 @@
 import React from 'react';
 import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import {
   BarChart,
   Bar,
   XAxis,
@@ -16,18 +9,16 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 import allData from './artifactsData';
 
+const formControlSx = {
+  margin: '1%',
+  minWidth: 120,
+}
+
+
 function ArtifactsBarChart() {
-  const useStyles = makeStyles(() => ({
-    formControl: {
-      margin: '1%',
-      minWidth: 120,
-    },
-  }));
-
-  const classes = useStyles();
-
   const [UC, setUC] = React.useState({
     campus: 'UC Berkeley',
   });
@@ -61,7 +52,7 @@ function ArtifactsBarChart() {
           <p> Number of cultural objects and human remains held by five UC campuses separated by origin </p>
         </strong>
       </div>
-      <FormControl className={classes.formControl}>
+      <FormControl sx={formControlSx}>
         <InputLabel>Select campus</InputLabel>
         <Select
           value={UC.campus}

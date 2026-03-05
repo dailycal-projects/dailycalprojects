@@ -1,28 +1,69 @@
-/* eslint-disable import/prefer-default-export */
-export const theme = {
+import { createTheme } from "@mui/material/styles";
+
+export const theme = createTheme({
   palette: {
-    background: '#F8F8F8',
-    black: '#0E141B',
-    red: '#E2565F',
-    redOrange: '#EA6B4E',
-    orange: '#F28147',
-    yellowOrange: '#F9A84A',
-    yellow: '#FDD04C',
-    yellowGreen: '#96C066',
-    green: '#30B189',
-    blueGreen: '#3FA6AB',
-    darkBlueGreen: '#1D8B90',
-    blue: '#4B9CCF',
-    darkBlue: '#1D6A92',
-    blueViolet: '#6F82B5',
-    darkBlueViolet: '#606A97',
-    violet: '#8E689B',
-    redViolet: '#B8607E',
-    dcBlue: '#94bbe2',
-    grey: '#949494',
-    darkGrey: 'rgba(67, 67, 67, 1)',
+    background: {
+      default: "#F8F8F8", // main background
+    },
+    text: {
+      primary: "#0E141B",
+      secondary: "#949494",
+    },
+    red: { main: "#E2565F" },
+    redOrange: { main: "#EA6B4E" },
+    orange: { main: "#F28147" },
+    yellowOrange: { main: "#F9A84A" },
+    yellow: { main: "#FDD04C" },
+    yellowGreen: { main: "#96C066" },
+    green: { main: "#30B189" },
+    blueGreen: { main: "#3FA6AB" },
+    darkBlueGreen: { main: "#1D8B90" },
+    blue: { main: "#4B9CCF" },
+    darkBlue: { main: "#1D6A92" },
+    blueViolet: { main: "#6F82B5" },
+    darkBlueViolet: { main: "#606A97" },
+    violet: { main: "#8E689B" },
+    redViolet: { main: "#B8607E" },
+    dcBlue: { main: "#94bbe2" },
+    grey: { main: "#949494", dark: "rgba(67, 67, 67, 1)" },
   },
-  cardShadow: '0px 2px 0px 0.5px rgba(14, 20, 27, 0.15)',
+
+  shadows: [
+    "none", // 0
+    "0px 2px 0px 0.5px rgba(14, 20, 27, 0.15)", // cardShadow
+    "0px 4px 4px rgba(0, 0, 0, 0.25)", // iconShadow
+  ],
+
+  typography: {
+    fontFamily: "'Georgia', sans-serif",
+    fontSize: 15, // base font size
+
+
+    h2: { fontSize: "48px" },
+    h3: { fontSize: "35px" },
+    h4: { fontSize: "30px" },
+    h5: { fontSize: "24px" },
+    body1: { fontSize: "17px" },
+    body2: { fontSize: "15px" },
+  },
+
+  spacing: 8,
+});
+
+
+/**
+ *   cardShadow: '0px 2px 0px 0.5px rgba(14, 20, 27, 0.15)',
   iconShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-  spacing: [15, 17, 24, 30, 35, 48, 60],
+  fontSizes: [
+    15, // Card text, byline
+    17, // Nav bar, article content
+    24, // Article title, subheading
+    30, // Article root
+    35, // Title
+    48, // Data title
+    60,
+    // Footer container?
+  ],
 };
+
+ */

@@ -10,23 +10,16 @@ import {
   Rectangle,
   CartesianGrid,
 } from 'recharts';
-import {
-  InputLabel, FormControl, Select, MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 import accessData from './externalAuditData';
 
+const formControlSx = {
+  marginTop: -20,
+  marginLeft: 10,
+  minWidth: 150,
+}
+
 function ExternalAuditBarChart() {
-  const useStyles = makeStyles(() => ({
-    formControl: {
-      marginTop: -20,
-      marginLeft: 10,
-      minWidth: 150,
-    },
-  }));
-
-  const classes = useStyles();
-
   const [question, setQuestion] = useState({
     name: 'Age',
   });
@@ -71,7 +64,7 @@ function ExternalAuditBarChart() {
           <p>{`${question.name} of source`}</p>
         </strong>
       </div>
-      <FormControl className={classes.formControl} style={{ paddingBottom: '-100px' }}>
+      <FormControl sx={formControlSx} style={{ paddingBottom: '-100px' }}>
         <InputLabel>Select question</InputLabel>
         <Select
           value={question.name}

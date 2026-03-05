@@ -11,11 +11,8 @@ import {
   Label,
   ResponsiveContainer,
 } from 'recharts';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 
-import {
-  InputLabel, FormControl, Select, MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
 import data from './data';
 import human_names from './human_names';
 

@@ -3,5 +3,6 @@
  *
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
+const { wrapRootElement } = require("./gatsby-ssr");
 
-// You can delete this file if you're not using it
+exports.wrapRootElement = wrapRootElement;

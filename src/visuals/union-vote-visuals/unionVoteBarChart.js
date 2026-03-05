@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
-import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
 import accessData from './unionVoteData';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 
 class CustomizedAxisTick extends Component {
   render() {
@@ -34,16 +28,12 @@ class CustomizedAxisTick extends Component {
   }
 }
 
+const formControlSx = {
+  margin: '1%',
+  minWidth: 120,
+}
+
 function UnionVoteBarChart() {
-  const useStyles = makeStyles(() => ({
-    formControl: {
-      margin: '1%',
-      minWidth: 120,
-    },
-  }));
-
-  const classes = useStyles();
-
   const [unit, setUnit] = React.useState({
     name: 'Academic student employees',
   });
@@ -106,7 +96,7 @@ function UnionVoteBarChart() {
           </p>
         </strong>
       </div>
-      <FormControl className={classes.formControl}>
+      <FormControl sx={formControlSx}>
         <InputLabel>Select unit</InputLabel>
         <Select
           value={unit.name}
@@ -123,7 +113,7 @@ function UnionVoteBarChart() {
         </Select>
       </FormControl>
 
-      <FormControl className={classes.formControl}>
+      <FormControl sx={formControlSx}>
         <InputLabel>Select type</InputLabel>
         <Select
           value={type.name}

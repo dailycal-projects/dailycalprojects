@@ -1,18 +1,14 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core';
-import { styles } from '../styles/customTheme';
-
-import NavBar from '../components/navBar';
+import React from 'react';
+import Box from '@mui/material/Box';
 import Seo from '../components/seo';
+import Header from '../components/header';
 
-const About = ({ classes }) => (
-  <div className={classes.main}>
-    <NavBar />
+const About = () => (
+  <Box>
+    <Header />
     <Seo title="About" />
-    <div className={classes.header}>
-      <h1>Meet The Team</h1>
-    </div>
-  </div>
+    <h1>Meet The Team</h1>
+  </Box>
 );
 
-export default withStyles(styles)(About);
+export default About;

@@ -2,18 +2,12 @@ import React, { Component } from 'react';
 import {
   MapContainer, TileLayer, Popup, Marker, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 import './BikeTheftMap.css';
 // import 'leaflet/dist/leaflet.css';
 // import 'leaflet.markercluster/dist/MarkerCluster.css';
 // import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
-import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import MarkerClusterGroup from 'react-leaflet-markercluster';
+import MarkerClusterGroup from './react-leaflet-markercluster';
 import L from 'leaflet';
 import { bikeTheftMapDataByYear } from './bikeTheftMapDataByYear';
 
@@ -62,6 +56,11 @@ function createIcon(vehicleType, size) {
   return null;
 }
 
+const formControlSx = {
+  margin: '1%',
+  minWidth: 120,
+}
+
 function MarkerClusterMap() {
   const minLat = 37.8503526;
   const maxLat = 37.899434;
@@ -80,15 +79,6 @@ function MarkerClusterMap() {
     borderRadius: '15px',
     boxShadow: '0px 6px 6px rgba(0, 0, 0, 0.25)',
   };
-
-  const useStyles = makeStyles(() => ({
-    formControl: {
-      margin: '1%',
-      minWidth: 120,
-    },
-  }));
-
-  const classes = useStyles();
 
   const [vehicleType, setVehicleType] = React.useState({
     name: 'Bikes',
@@ -129,7 +119,7 @@ function MarkerClusterMap() {
       >
         <h4> Locations of bike, e-bike and e-scooter thefts reported to UCPD since 2019 </h4>
       </div>
-      <FormControl className={classes.formControl}>
+      <FormControl sx={formControlSx}>
         <InputLabel>Select vehicle</InputLabel>
         <Select
           value={vehicleType.name}
@@ -144,7 +134,7 @@ function MarkerClusterMap() {
         </Select>
       </FormControl>
 
-      <FormControl className={classes.formControl}>
+      <FormControl sx={formControlSx}>
         <InputLabel>Select year</InputLabel>
         <Select
           value={year.name}

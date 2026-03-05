@@ -10,12 +10,7 @@ import {
   ReferenceLine,
   Cell,
 } from 'recharts';
-import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 import humanNames from './human_names';
 import { perSchool as perSchoolTotals } from './data';
 

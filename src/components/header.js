@@ -1,55 +1,44 @@
-import * as React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import { withStyles } from '@material-ui/core/styles';
-import { styles } from '../styles/customTheme';
-import GitHubIcon from '../assets/github.svg';
-import DCIcon from '../assets/dailycal.svg';
+import React from 'react';
+import { Link } from 'gatsby';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import logo from '../images/dclogoblack.png';
 
-const TitleAndDescription = ({ classes, data }) => {
-  // to make sitewide edits, go to gatsby-config -> siteMetaData
-  const { title } = data.site.siteMetadata;
-  const { description } = data.site.siteMetadata;
+/**
+ * Top bar used on all site pages.
+ */
+const Header = () => {
+  const theme = useTheme();
 
   return (
-    <div className={classes.header}>
-      <h1>
-        {' '}
-        {title}
-        {' '}
-      </h1>
-      <p>
-        {' '}
-        {description}
-        {' '}
-      </p>
-      <div className={classes.icons}>
-        <a href="https://github.com/dailycal-projects" key="dailycalgithub" style={{ textDecoration: 'none' }}>
-          {' '}
-          <GitHubIcon className={classes.iconHover} />
-        </a>
-        <a href="https://www.dailycal.org/" key="dailycal" style={{ textDecoration: 'none' }}>
-          {' '}
-          <DCIcon className={classes.iconHover} />
-        </a>
-      </div>
-    </div>
+    <Link to="/" style={{ textDecoration: 'none' }}>
+      <Box sx={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: 50,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        bgcolor: theme.palette.background.default,
+        zIndex: 9999,
+        borderBottom: "1px solid #D3D3D3",
+      }}>
+        <Box
+          component="img"
+          src={logo}
+          alt="The Daily Californian"
+          sx={{
+            height: 20,
+            mt: '25px', // margin-top
+            mb: "1.45rem"
+          }}
+        />
+      </Box>
+    </Link>
   );
 };
 
-const Header = ({ classes }) => (
-  <StaticQuery
-    query={graphql`
-          query {
-            site {
-              siteMetadata {
-                title 
-                description 
-              }
-            }
-          }
-        `}
-    render={(data) => <TitleAndDescription classes={classes} data={data} />}
-  />
-);
-
-export default withStyles(styles)(Header);
+export default Header;

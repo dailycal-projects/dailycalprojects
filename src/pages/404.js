@@ -1,14 +1,13 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core';
-import Seo from '../components/seo';
-import { styles } from '../styles/customTheme';
+import React from 'react';
+import Box from '@mui/material/Box';
+import Header from '../components/header';
 
-const NotFoundPage = ({ classes }) => (
-  <div className={classes.main}>
-    <Seo title="404: Not found" />
+const NotFoundPage = ( ) => (
+  <Box>
+    <Header />
     <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
+    <p>This page does not exist.</p>
+  </Box>
 );
 
-export default withStyles(styles)(NotFoundPage);
+export default NotFoundPage;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
-import 'leaflet-choropleth';
+import './leaflet-choropleth';
 import L from 'leaflet';
 
 import data from './alameda_data.json';

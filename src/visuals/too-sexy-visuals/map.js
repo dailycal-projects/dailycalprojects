@@ -5,7 +5,6 @@ import {
 // import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import zIndex from '@material-ui/core/styles/zIndex';
 // import { sex_spot_icon_2018, sex_spot_icon_2026 } from './icon';
 import { sex_spots_2018, sex_spots_2026 } from './map_data';
 import sexy2018IconPng from '../../images/2-sexy-2018-icon.png';

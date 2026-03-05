@@ -2,13 +2,7 @@ import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
-import {
-  InputLabel,
-  FormControl,
-  Select,
-  MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { InputLabel, FormControl, Select, MenuItem } from '@mui/material';
 import accessData from './internalAuditData';
 
 const CustomizedAxisTick = ({ x, y, payload }) => (
@@ -27,16 +21,12 @@ const CustomizedAxisTick = ({ x, y, payload }) => (
   </g>
 );
 
+const formControlSx = {
+  margin: '1%',
+  minWidth: 150,
+}
+
 function InternalAuditBarChart() {
-  const useStyles = makeStyles(() => ({
-    formControl: {
-      margin: '1%',
-      minWidth: 150,
-    },
-  }));
-
-  const classes = useStyles();
-
   const [question, setUnit] = React.useState({
     name: 'Editor',
   });
@@ -73,7 +63,7 @@ function InternalAuditBarChart() {
           </p>
         </strong>
       </div>
-      <FormControl className={classes.formControl}>
+      <FormControl sx={formControlSx}>
         <InputLabel>Select question</InputLabel>
         <Select
           value={question.name}

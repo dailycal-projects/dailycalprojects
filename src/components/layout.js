@@ -76,21 +76,24 @@ import Wikimage from '../visuals/wikiedits-visuals/wikimage';
 import DatawrapperChart from './dataWrapper';
 import ASUCFunding from '../visuals/club-finances-visuals/asucFunding';
 import SexyMap from '../visuals/too-sexy-visuals/map';
-/*
+
+/**
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
 To use a component in MDX, simply type <MyComponent />
 Note: MDXProvider doesn't like parsing individual HTML elements followed
 by an array of React components, so we must include them in the same array.
 */
-
 const shortcodes = {
-  // style MDX files for any html element here!!
+  // Shared common HTML elements
   a: (props) => (
-    <a {...props} style={{ textDecoration: 'underline', color: theme.palette.black }} />), // styles MDX hyperlinks
+    <a {...props} style={{ textDecoration: 'underline', color: theme.palette.black }} />
+  ),
   p: (props) => <p {...props} style={{ color: theme.palette.black }} />,
   img: (props) => <img {...props} style={{ display: 'flex', flexDirection: 'column' }} />,
   // cap: (props) => <cap {...props} style={{ text:  }} />,
+
+  // Visualizations
   WaterPlot,
   ChemPlot,
   HealthPlot,
@@ -168,9 +171,7 @@ const shortcodes = {
 
 export default function Layout({ children }) {
   return (
-    <MDXProvider
-      components={shortcodes}
-    >
+    <MDXProvider components={shortcodes}>
       {children}
     </MDXProvider>
   );

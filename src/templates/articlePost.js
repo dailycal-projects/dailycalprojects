@@ -1,99 +1,171 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { withStyles } from '@material-ui/core/styles';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import SEO from '../components/seo';
-import Layout from '../components/layout';
-import { styles } from '../styles/customTheme';
-import { theme } from '../styles/theme';
-import ArticleFooter from '../components/articleFooter';
-import logo from '../images/dclogoblack.png';
+import React from "react";
+import { graphql, Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data
-  const { frontmatter, body } = data.mdx;
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
+
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import ArticleFooter from "../components/articleFooter";
+import { ScopeInjector } from "../components/scopeInjector";
+
+import logo from "../images/dclogoblack.png";
+
+const ArticlePost = ({ data, location, children }) => {
+  const { frontmatter } = data.mdx;
+  const theme = useTheme();
+
   const {
-    bylineName, bylineUrl,
+    bylineName,
+    bylineUrl,
   } = frontmatter;
+
   const image = getImage(frontmatter.featuredImage);
   const socialImage = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.resize
     : null;
 
   return (
-    <div className={classes.articleRoot}>
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <div className={classes.topBar}>
-          <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
-        </div>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        pt: 10,
+        px: 2,
+      }}
+    >
+      {/* Top bar */}
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <Box
+          sx={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: 50,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            bgcolor: "background.default",
+            borderBottom: "1px solid #D3D3D3",
+            zIndex: 9999,
+          }}
+        >
+          <Box
+            component="img"
+            src={logo}
+            alt="The Daily Californian"
+            sx={{ height: 20, mt: "25px" }}
+          />
+        </Box>
       </Link>
-      <Layout>
+
+      <Layout localImages={frontmatter.embeddedImages}>
         <SEO
           title={frontmatter.title}
           description={frontmatter.subhead}
           image={socialImage}
           pathname={location.pathname}
         />
-        <div className={classes.headerContainer}>
-          <h1 className={classes.title}>{frontmatter.title}</h1>
-          <h3 className={classes.subhead}>{frontmatter.subhead}</h3>
-        </div>
-        <h5>{frontmatter.date}</h5>
 
+        {/* Header */}
+        <Box
+          sx={{
+            maxWidth: 640,
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h3" component="h1">
+            {frontmatter.title}
+          </Typography>
+
+          <Typography variant="h5" color="text.secondary">
+            {frontmatter.subhead}
+          </Typography>
+        </Box>
+
+        <Typography variant="body2" sx={{ mt: 2 }}>
+          {frontmatter.date}
+        </Typography>
+
+        {/* Hero Image */}
         {!frontmatter.hideHeroImage && image && (
-          <div className={classes.imageContainer}>
+          <Box sx={{ maxWidth: 640, mt: 3 }}>
             <GatsbyImage image={image} />
-            <div style={{ marginTop: '10px' }}><em>{frontmatter.imageCaption1}</em></div>
 
-            <h5 style={{ marginTop: '10px' }}>{frontmatter.imageAttribution}</h5>
+            <Typography variant="caption" sx={{ mt: 1, display: "block" }}>
+              <em>{frontmatter.imageCaption1}</em>
+            </Typography>
 
-          </div>
+            <Typography variant="body2" sx={{ mt: 1 }}>
+              {frontmatter.imageAttribution}
+            </Typography>
+          </Box>
         )}
 
-        <div className={classes.articleContent}>
-
-          {(bylineName && bylineUrl) ? (
-            <div className={classes.byline}>
-              By
-              {' '}
+        {/* Article Body */}
+        <Box
+          sx={{
+            fontFamily: "Georgia, serif",
+            fontSize: "1.0625rem",
+            maxWidth: 640,
+            mt: 4,
+          }}
+        >
+          {(bylineName && bylineUrl) && (
+            <Typography variant="body2" sx={{ mb: 3 }}>
+              By{" "}
               {bylineName.map((author, i) => {
                 const url = bylineUrl[i];
                 const isLast = i === bylineName.length - 1;
                 const isSecondToLast = i === bylineName.length - 2;
+
                 return (
                   <React.Fragment key={i}>
-                    <a
+                    <Box
+                      component="a"
                       href={url}
                       target="_blank"
-                      style={{ textDecoration: 'underline', color: theme.palette.darkBlue }}
                       rel="noreferrer"
+                      sx={{
+                        color: "primary.main",
+                        textDecoration: "underline",
+                      }}
                     >
                       {author}
-                    </a>
-                    {bylineName.length > 2 && !isLast && !isSecondToLast && ', '}
-                    {isSecondToLast ? ' & ' : ''}
+                    </Box>
+
+                    {bylineName.length > 2 &&
+                      !isLast &&
+                      !isSecondToLast &&
+                      ", "}
+                    {isSecondToLast ? " & " : ""}
                   </React.Fragment>
                 );
               })}
-            </div>
-          ) : null}
-          <MDXRenderer
-            localImages={frontmatter.embeddedImages} // prop that allows <GatsbyImage/> usage possible in MDX
-          >
-            {body}
-          </MDXRenderer>
-        </div>
+            </Typography>
+          )}
+
+          <ScopeInjector scope={{ localImages: frontmatter.embeddedImages }}>
+            {children}
+          </ScopeInjector>
+        </Box>
 
         <ArticleFooter about={frontmatter.aboutStory} />
       </Layout>
-    </div>
+    </Box>
   );
 };
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    mdx(slug: { eq: $slug } ) {
-      body
+    mdx(fields: { slug: { eq: $slug } }) {
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
@@ -114,7 +186,6 @@ export const pageQuery = graphql`
         }
         imageAttribution
         imageCaption1
-
         embeddedImages {
           childImageSharp {
             gatsbyImageData
@@ -125,4 +196,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default withStyles(styles)(ArticlePost);
+export default ArticlePost;
