@@ -6,7 +6,9 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "type": "commonjs",
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.14.1",
     "@mdx-js/react": "^2.0.0",
     "@mui/icons-material": "^7.3.8",
@@ -30,6 +32,7 @@
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
     "recharts": "^3.7.0",
+    "stream": "^0.0.3",
     "topojson-client": "^3.1.0"
   },
   "devDependencies": {

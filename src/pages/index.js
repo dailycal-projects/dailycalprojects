@@ -3,69 +3,97 @@ import Box from '@mui/material/Box';
 import { graphql, Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import ArticleCard from '../components/articleCard';
-import { styles } from '../styles/customTheme';
 import circlelogo from '../images/dclogocircle.png';
-import logo from '../images/dclogoblack.png';
-import { theme } from '../styles/theme';
+import Header from '../components/header';
+import { useTheme } from '@mui/material';
 
 const IndexPage = ({ data }) => {
   const articles = data.allMdx.nodes;
+  const theme = useTheme();
 
   return (
-    <Box sx={styles.main}>
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <Box sx={styles.topBar}>
-          <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
-        </Box>
-      </Link>
-      {/* <Seo title="Daily Cal Data" /> */}
-      <Box sx={styles.content}>
-        <Box sx={styles.intro}>
-          <img src={circlelogo} alt="The Daily Californian" width="100" style={{ margin: '0px' }} />
+    <Box>
+      <Header />
+      {/* Page Container */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          pt: { xs: 4, md: 6 },
+          px: 2,
+          width: { xs: '100%', md: 1200 },
+          mx: 'auto',
+        }}
+      >
+        {/* Hero Section */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            alignItems: 'center',
+            gap: 2,
+            mb: 4,
+          }}
+        >
+          <Box
+            component="img"
+            src={circlelogo}
+            alt="The Daily Californian"
+            sx={{ width: { xs: 80, sm: 100 }, m: 0 }}
+          />
           <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <h1 style={{
-              fontFamily: 'Georgia', fontSize: theme.fontSizes[5], fontWeight: 800, margin: 0, color: theme.palette.black,
-            }}
+            <Box
+              component="h1"
+              sx={{
+                fontFamily: 'Georgia',
+                fontSize: "48px",
+                fontWeight: 800,
+                m: 0,
+                color: theme.palette.text.primary,
+              }}
             >
               Data
-            </h1>
-            <p style={{ fontFamily: 'Georgia', margin: 0, color: theme.palette.darkGrey }}>Investigative stories, data analysis and graphics by The Daily Californian’s Data Team</p>
+            </Box>
+            <Box
+              component="p"
+              sx={{
+                m: 0,
+                color: theme.palette.grey[700],
+                fontSize: theme.typography.body1.fontSize,
+              }}
+            >
+              Investigative stories, data analysis and graphics by The Daily Californian’s Data Team
+            </Box>
           </Box>
-
         </Box>
-        <Box sx={styles.index}>
+
+        {/* Article Cards Grid */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 3,
+          }}
+        >
           {articles.map((node) => {
-            // Unpack each mdx node data
             const { frontmatter, fields } = node;
             const { featuredImage, oldLink, title, date, byline } = frontmatter;
             const { slug } = fields;
-
             const image = getImage(featuredImage);
 
-            // Link to page if not old link
-            if (!oldLink) {
-              return (
-                <Link to={slug} key={slug} style={{ textDecoration: 'none' }}>
-                  <ArticleCard
-                    title={title}
-                    date={date}
-                    image={image}
-                    byline={byline}
-                  />
-                </Link>
-              );
-            }
+            const content = (
+              <ArticleCard title={title} date={date} image={image} byline={byline} />
+            );
 
-            // Link to old link
-            return (
-              <a href={frontmatter.oldLink} key={slug} style={{ textDecoration: 'none' }}>
-                <ArticleCard
-                  title={title}
-                  date={date}
-                  image={image}
-                  byline={byline}
-                />
-              </a>
+            return oldLink ? (
+              <Box component="a" href={oldLink} key={slug} sx={{ textDecoration: 'none' }}>
+                {content}
+              </Box>
+            ) : (
+              <Box component={Link} to={slug} key={slug} sx={{ textDecoration: 'none' }}>
+                {content}
+              </Box>
             );
           })}
         </Box>
@@ -74,10 +102,10 @@ const IndexPage = ({ data }) => {
   );
 };
 
-// Graphql lookup for articles
+// GraphQL query
 export const query = graphql`
   query HomepageQuery {
-    allMdx(sort: {frontmatter: {date: DESC}}) {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         id
         fields {

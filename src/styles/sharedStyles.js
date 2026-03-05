@@ -1,33 +1,20 @@
 import { theme } from "./theme";
 
-export const styles = {
-  main: {
-    display: "flex",
-    width: "100%",
-    flexDirection: "column",
-    backgroundColor: theme.palette.background,
-    overflow: "hidden",
-    alignItems: "center",
-  },
-  content: {
-    display: "flex",
-    width: "1200px",
-    flexDirection: "column",
-    paddingTop: "50px",
-    "@media (max-width: 600px)": {
-      display: "flex",
-      width: "350px",
-      flexDirection: "column",
-      paddingTop: "50px",
-    },
-  },
-  intro: {
-    fontFamily: "'Georgia', sans-serif",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    gap: "8px",
-  },
+/**
+ * Style used for the overall background and layout of each page.
+ */
+export const main = {
+  display: "flex",
+  width: "100%",
+  flexDirection: "column",
+  backgroundColor: theme.palette.background.default,
+  overflow: "hidden",
+  alignItems: "center"
+}
+
+export const stylesz = {
+
+
   dataTitle: {
     fontFamily: "Georgia",
     fontSize: theme.fontSizes[5],
@@ -41,12 +28,7 @@ export const styles = {
     flexDirection: "column",
     alignItems: "center",
   },
-  header: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginBottom: "2rem",
-  },
+
   navHeader: {
     display: "flex",
     flexDirection: "row-reverse",
@@ -81,11 +63,7 @@ export const styles = {
       transition: "all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)",
     },
   },
-  index: {
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-  },
+
   card: {
     display: "flex",
     flexDirection: "column",
@@ -100,13 +78,7 @@ export const styles = {
       width: "350px",
     },
   },
-  cardImage: {
-    width: "100%",
-    height: "230px",
-  },
-  cardContent: {
-    padding: "1rem 1rem 0rem 1rem",
-  },
+
   articleRoot: {
     display: "flex",
     flexDirection: "column",
@@ -132,17 +104,8 @@ export const styles = {
     marginBottom: "25px",
     textAlign: "left",
   },
-  footerContainer: {
-    fontSize: theme.fontSizes[7],
-    maxWidth: "640px",
-  },
-  footerCard: {
-    padding: "20px 20px 0px 20px",
-    margin: "10px 0px 20px 0px",
-    border: "1px solid",
-    borderColor: "#dbdbdbff",
-    borderRadius: "10px",
-  },
+
+
   footBar: {
     width: "100%",
   },
@@ -153,25 +116,7 @@ export const styles = {
     color: theme.palette.background,
     fontSize: "4vw",
   },
-  articleTitle: {
-    fontWeight: 400,
-    fontFamily: "'Georgia', serif",
-    lineHeight: "normal",
-    color: theme.palette.black,
-    fontSize: theme.fontSizes[2],
-    textDecoration: "none",
-  },
-  date: {
-    color: theme.palette.grey,
-    borderTop: "1px solid",
-    borderColor: theme.palette.grey,
-    fontWeight: 400,
-    fontFamily: "'Georgia', sans-serif",
-    lineHeight: "normal",
-    fontSize: "12px",
-    paddingBottom: "10px",
-    paddingTop: "10px",
-  },
+
   cardByline: {
     color: theme.palette.grey,
     fontWeight: 800,
@@ -179,20 +124,6 @@ export const styles = {
     lineHeight: "normal",
     fontSize: "1vw",
     paddingTop: "2vw",
-  },
-  topBar: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "50px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: theme.palette.background,
-    zIndex: 9999,
-    borderBottom: "1px solid #D3D3D3",
   },
   headerContainer: {
     maxWidth: "640px",

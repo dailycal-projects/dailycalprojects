@@ -1,62 +1,44 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Box from '@mui/material/Box';
-import { graphql, StaticQuery } from 'gatsby';
-import { styles } from '../styles/customTheme';
-import GitHubIcon from '../assets/github.svg';
-import DCIcon from '../assets/dailycal.svg';
+import { useTheme } from '@mui/material/styles';
+import logo from '../images/dclogoblack.png';
 
-const TitleAndDescription = ({ data }) => {
-  // to make site-wide edits, go to gatsby-config -> siteMetaData
-  const { title, description } = data.site.siteMetadata;
+/**
+ * Top bar used on all site pages.
+ */
+const Header = () => {
+  const theme = useTheme();
 
   return (
-    <Box sx={styles.header}>
-      <h1>
-        {' '}
-        {title}
-        {' '}
-      </h1>
-      <p>
-        {' '}
-        {description}
-        {' '}
-      </p>
-      <Box sx={styles.icons}>
-        <Box 
-          component="a"
-          href="https://github.com/dailycal-projects" 
-          key="dailycalgithub" 
-          style={{ textDecoration: 'none', ...styles.iconHover }}
-        >
-          <GitHubIcon />
-        </Box>
+    <Link to="/" style={{ textDecoration: 'none' }}>
+      <Box sx={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: 50,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        bgcolor: theme.palette.background.default,
+        zIndex: 9999,
+        borderBottom: "1px solid #D3D3D3",
+      }}>
         <Box
-          component="a" 
-          href="https://www.dailycal.org/" 
-          key="dailycal" 
-          style={{ textDecoration: 'none', ...styles.iconHover }}
-        >
-          <DCIcon />
-        </Box>
+          component="img"
+          src={logo}
+          alt="The Daily Californian"
+          sx={{
+            height: 20,
+            mt: '25px', // margin-top
+            mb: "1.45rem"
+          }}
+        />
       </Box>
-    </Box>
+    </Link>
   );
 };
-
-const Header = () => (
-  <StaticQuery
-    query={graphql`
-          query {
-            site {
-              siteMetadata {
-                title 
-                description 
-              }
-            }
-          }
-        `}
-    render={(data) => <TitleAndDescription data={data} />}
-  />
-);
 
 export default Header;
