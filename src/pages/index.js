@@ -11,6 +11,7 @@ import logo from '../images/dclogoblack.png';
 import { theme } from '../styles/theme';
 
 const IndexPage = ({ classes, data }) => {
+  const buildExamples = process.env.GATSBY_BUILD_EXAMPLES === 'true';
   const articles = data.allMdx.edges;
 
   return (
@@ -40,6 +41,9 @@ const IndexPage = ({ classes, data }) => {
             {articles.map(({ node }) => { // map over edges and render frontmatter content from markdown files
               const { frontmatter, slug } = node;
               const image = getImage(frontmatter.featuredImage);
+
+              // Don't put links for examples that are not built
+              if (frontmatter.example && !buildExamples) return;
 
               if (!frontmatter.oldLink) {
                 return (
@@ -85,6 +89,7 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             subhead
             byline
+            example
             oldLink
             featuredImage {
               childImageSharp {

@@ -13,7 +13,11 @@ const { createFilePath } = require('gatsby-source-filesystem');
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
+  const buildExamples = process.env.GATSBY_BUILD_EXAMPLES === 'true';
+
   const articlePost = path.resolve('src/templates/articlePost.js');
+  const reactArticlePost = path.resolve('src/templates/reactArticle.js');
+
   const result = await graphql(
     `
         {
@@ -25,6 +29,10 @@ exports.createPages = async ({ graphql, actions }) => {
                     node {
                         id
                         slug
+                        frontmatter {
+                          noTemplate
+                          example
+                        }
                     }
                 }
             }
@@ -40,9 +48,16 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMdx.edges;
 
   posts.forEach((post) => {
+    const { noTemplate, example } = post.node.frontmatter;
+
+    if (example && !buildExamples) {
+      // Do not build examples if flag not set
+      return;
+    }
+
     createPage({
       path: post.node.slug,
-      component: articlePost,
+      component: noTemplate ? reactArticlePost : articlePost,
       context: {
         slug: post.node.slug,
       },
