@@ -16,8 +16,6 @@ const ReactArticle = ({ data, location }) => { // data.markdownRemark holds your
     ? frontmatter.featuredImage.childImageSharp.resize
     : null;
 
-  console.log(`BODY LENGTH: ${body.length}`);
-
   return (
     <Layout>
       <Helmet>
