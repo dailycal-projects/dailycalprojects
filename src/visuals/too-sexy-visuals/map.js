@@ -41,7 +41,7 @@ function createSexSpotIcon(year) {
   if (year === 0) {
     return L.divIcon({
       className: 'sex-spot-icon-default',
-      html: '<div style="position: relative; width: 25px; height: 41px; transition: transform 0.2s ease-in-out; transform-origin: center bottom;"><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" style="position: absolute; width: 41px; height: 41px; left: -8px; top: 0;" /><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png" style="position: absolute; width: 25px; height: 41px; left: 0; top: 0;" /></div>',
+      html: `<div style="position: relative; width: 25px; height: 41px; transition: transform 0.2s ease-in-out; transform-origin: center bottom;"><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" style="position: absolute; width: 41px; height: 41px; left: -8px; top: 0;" /><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png" style="position: absolute; width: 25px; height: 41px; left: 0; top: 0;" /></div>`,
       iconSize: [25, 41],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
@@ -261,7 +261,7 @@ const SexyMap = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  height: 'fit-content',
+                  height: 'fit-content'
                 }}
               >
                 <img
@@ -272,7 +272,7 @@ const SexyMap = () => {
                     height: '60px',
                     display: 'block',
                     margin: '0px',
-                    borderRadius: '5px',
+                    borderRadius: '5px'
                   }}
                 />
               </button>
@@ -292,7 +292,7 @@ const SexyMap = () => {
               {tileLayerIndex === 1 && (
                 <TileLayer
                   url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-                  attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
+                  attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
                 />
               )}
               {sex_spots_2018.map((spot, index) => {
