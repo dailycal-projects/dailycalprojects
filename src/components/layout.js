@@ -76,7 +76,6 @@ import Wikimage from '../visuals/wikiedits-visuals/wikimage';
 import DatawrapperChart from './dataWrapper';
 import ASUCFunding from '../visuals/club-finances-visuals/asucFunding';
 import SexyMap from '../visuals/too-sexy-visuals/map';
-import ExampleReactVisual from '../visuals/example-visuals/react-template';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -165,7 +164,6 @@ const shortcodes = {
   DatawrapperChart,
   ASUCFunding,
   SexyMap,
-  ExampleReactVisual,
 };
 
 export default function Layout({ children }) {
