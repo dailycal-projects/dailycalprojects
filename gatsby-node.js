@@ -14,6 +14,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const articlePost = path.resolve('src/templates/articlePost.js');
+  const reactArticlePost = path.resolve('src/templates/reactArticle.js');
+
   const result = await graphql(
     `
         {
@@ -25,6 +27,9 @@ exports.createPages = async ({ graphql, actions }) => {
                     node {
                         id
                         slug
+                        frontmatter {
+                          noTemplate
+                        }
                     }
                 }
             }
@@ -40,9 +45,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMdx.edges;
 
   posts.forEach((post) => {
+    const { noTemplate } = post.node.frontmatter;
+
     createPage({
       path: post.node.slug,
-      component: articlePost,
+      component: noTemplate ? reactArticlePost : articlePost,
       context: {
         slug: post.node.slug,
       },
