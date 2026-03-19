@@ -1,0 +1,235 @@
+---
+date: "2026-03-20"
+title: "UC Berkeley Dining, Decoded"
+bylineName:
+  - "Anika Bhutani"
+  - "Antara Gangwal"
+bylineUrl:
+  - "https://www.dailycal.org/users/profile/data/"
+  - "https://www.dailycal.org/users/profile/data/"
+subhead: "Here's what we found after scraping UC Berkeley dining menus for a month"
+featuredImage: "../images/coloredited_danalim_buildings.PNG"
+imageAttribution: "Dana Lim | Staff"
+aboutStory: "Data from this project came from UC Berkeley Dining Services menus, scraped from February 10 to March 10, 2026."
+embeddedImages:
+  - "../images/coloredited_danalim_data_egg.PNG"
+  - "../images/coloredited_danalim_data_broccoli.PNG"
+  - "../images/coloredited_danalim_data_nugget_.PNG"
+  - "../images/coloredited_danalim_data_students.PNG"
+  - "../images/coloredited_danalim_data_clark.PNG"
+  - "../images/coloredited_danalim_data_container.PNG"
+  - "../images/coloredited_danalim_data_monsoon.PNG"
+  - "../images/coloredited_danalim_buildings.PNG"
+  - "../images/coloredited_danalim_data_clark.PNG"
+  - "../images/coloredited_danalim_data_croads.PNG"
+  - "../images/coloredited_danalim_data_foothill.PNG"
+  - "../images/coloredited_danalim_data_cafe3.PNG"
+  - "../images/coloredited_danalim_data_truck.PNG"
+  - "../images/coloredited_danalim_data_road.PNG"
+---
+
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+
+Encompassing four dining halls and five campus restaurants, UC Berkeley Dining serves a diverse group of students including undergraduate students living in the residence halls who are required to have a meal plan, as well as graduate students who choose to purchase one.
+
+We scraped the dining hall and eatery menus from February 10 to March 10 to investigate the patterns in food offerings, allergen-friendly options and sustainability across locations.
+
+---
+
+## How each dining hall's menu differs
+
+While campus restaurants or eateries have fixed menus, dining hall menus are more variable. They are planned six months in advance and follow a four-week menu cycle, according to Critical Communications Manager of Student Affairs Communications Lindsey Michels. Dining's culinary team leads menu development, yet incorporates ideas from groups such as RHA, Residential Life and other student groups and campus partners.
+
+Menus vary from one dining hall to the other as well because "each dining commons has its own culinary identity, kitchen configuration, and service model," according to Michels. She explained that the design and infrastructure of each dining hall informs what is served there; for example, Cafe 3 is the only dining hall with a Kosher-certified food station and therefore prioritizes halal service.
+
+<br />
+
+<DiningScrollytell
+  buildingsImg={props.localImages[7]}
+  clarkImg={props.localImages[8]}
+  croadsImg={props.localImages[9]}
+  foothillImg={props.localImages[10]}
+  cafe3Img={props.localImages[11]}
+/>
+
+<br />
+
+---
+
+## Allergen and dietary-restriction friendly options
+
+<div style={{ float: "right", marginLeft: 28, marginBottom: 16, width: 160 }}>
+  <GatsbyImage
+    image={getImage(props.localImages[0])}
+    alt="Fried egg illustration"
+  />
+</div>
+
+Students like sophomore Olga Klymenko have noticed that the online menus—which are posted each day for students to view dining hall and eatery menus ahead of time—sometimes vary from what is actually served in-person. Klymenko recalls visiting specific dining halls solely for one item that was listed on the online menu, and finding that it was not there in-person. Michels stated that these discrepancies are often due to supply chain disruptions from growers or manufacturers.
+
+Klymenko has the standard Blue & Gold meal plan, encompassing 14 meal swipes per week and 300 flex dollars per semester, 150 of which can be used on campus and the remaining off-campus. As she lives in Blackwell Hall, she chose to keep a meal plan due to the ease of getting food without a kitchen. However, she feels that the dining halls have been more repetitive this year compared to her freshman year.
+
+<br />
+
+<AllergenVis />
+
+<br />
+
+<div style={{ color: "#707070", fontSize: "13px", padding: "0px 15px" }}>
+  <em>
+    Percentage of menu items containing each allergen and dietary
+    classification, broken down by dining hall. Select a hall to explore its
+    profile.
+  </em>
+</div>
+
+<br />
+
+Of the four dining halls, Clark Kerr possessed the largest amount of allergen-containing menu items, especially gluten, milk and egg. Conversely, Foothill had the fewest percentages of allergen-containing items.
+
+Michels stated that Berkeley Dining strives to support students with allergies and dietary restrictions through allergen-friendly stations at each dining hall as well as allergen labels in-person. There is also a registered dietitian who students can schedule one-on-one support with.
+
+"Even though there's sometimes limited options, I've never felt excluded by the menus," Singhvi said.
+
+---
+
+## What's most often on the plate?
+
+<div style={{ float: "left", marginRight: 28, marginBottom: 16, width: 150 }}>
+  <GatsbyImage
+    image={getImage(props.localImages[1])}
+    alt="Broccoli illustration"
+  />
+</div>
+
+<div style={{ float: "right", marginLeft: 28, marginBottom: 16, width: 150 }}>
+  <GatsbyImage
+    image={getImage(props.localImages[2])}
+    alt="Chicken illustration"
+  />
+</div>
+
+The most common grains are rice and wheat-based, such as jasmine rice, bagels and pasta. Furthermore, there are more unique protein options than grains and greens combined — with 379 unique proteins yet 157 unique grains and 110 greens.
+
+<br />
+
+<NutritionVis />
+
+<br />
+
+<div style={{ color: "#707070", fontSize: "13px", padding: "0px 15px" }}>
+  <em>
+    Top menu items by category across all Berkeley dining halls, ranked by how
+    often they appeared on the menu from Feb. 10 – Mar. 10, 2026.
+  </em>
+</div>
+
+<br />
+
+"People want to stay healthy here, and the dining halls should take that into consideration and offer the best [nutrition] sources for that," Klymenko said. She suggested having alternatives for main food groups, such as including grains other than white rice like brown rice or couscous, and including a broader variety of protein options.
+
+"I've had raw chicken before, and so now I don't really trust eating it. Other than that, they usually have boiled eggs. As much as I love boiled eggs, I don't want to eat them every day," Klymenko said.
+
+Another concern of students like freshman Coolsjes Singhvi is receiving enough options to accommodate dietary restrictions. Singhvi follows a Jain vegetarian diet, meaning he cannot consume meat or root vegetables such as onion, garlic and potatoes, and he cannot eat after sunset.
+
+"If they have onions in a dish, just having those on a side so it's easier for people who do the same dietary restrictions as me [would be helpful]," Singhvi recommended.
+
+<br />
+
+<AllergenVis />
+
+<br />
+
+---
+
+## Dining menus during cultural events celebrate diversity
+
+<div style={{ float: "right", marginLeft: 28, marginBottom: 16, width: 260 }}>
+  <GatsbyImage
+    image={getImage(props.localImages[3])}
+    alt="Students gathered around a table"
+  />
+  <div
+    style={{
+      color: "#707070",
+      fontSize: "11px",
+      padding: "6px 0 0",
+      fontStyle: "italic",
+    }}
+  >
+    The Berkeley Dining Student Advisory Board meets regularly with dining
+    leadership. Dana Lim | Staff
+  </div>
+</div>
+
+Many students have noticed unique dinner menus on certain days to represent cultural traditions and holidays, such as Black History Month or Lunar New Year. Berkeley Dining's Student Events and Marketing Team Lead Evelyn Campbell has been involved in planning these events for the past three years.
+
+When she first joined, the process involved decorating the residence halls for holidays celebrated by the UC Berkeley Academic calendar, such as Latin and Hispanic Heritage Month or Women's History Month. Yet Berkeley Dining's Executive Director Christopher Hennings recently encouraged students to incorporate cultural food into the celebrations as well.
+
+Along with a team of about four other students, Campbell uses the calendar of official cultural events to plan celebrations throughout the year. They consult with university and government resources, as well as representatives from student groups such as the RHA, to research the background and common of events to plan decorations and event execution.
+
+The time period that we scraped dining hall data from includes the Ramadan Welcome Iftar dinner on February 17, Lunar New Year dinner on February 19 and Women's History Month dinner on March 6. All four dining halls served dinners with special menu items on these days. For example, Crossroads and Foothill served a halal shawarma chicken or mediterranean hummus wrap for Ramadan. All four dining halls served Thai noodle salad and longevity noodles for Lunar New Year, and all served Martha Stewart's Vibrant Green Broccoli Curry for Women's History Month.
+
+Campbell finds her role rewarding, especially when she sees students get excited to celebrate an event that highlights their background. "Everyone passes through the dining halls, so it's a really great space to make people feel included [through food]," Campbell said.
+
+Students like Singhvi agree. "I really appreciate the fact that we have this representation for these different holidays and celebrations on a campus which encompasses so many diverse people," he said.
+
+---
+
+## Berkeley Dining's sustainability practices
+
+<TruckScene
+  truckImg={props.localImages[12]}
+  roadImg={props.localImages[13]}
+  caption="Berkeley Dining sources ingredients from local growers and manufacturers, though supply chain disruptions can affect what ends up on the menu."
+/>
+
+Other than convenient and community-centered, Berkeley Dining's third principle of service is being socially and environmentally responsible. On their website, they claim that they prioritize sustainability goals including "plant-forward cooking," sourcing sustainable food and reducing both solid and food waste.
+
+Michels stated that Berkeley Dining donates 50,000 pounds of food to organizations such as the Basic Needs Center and local food banks each semester—equivalent to 40,000 meals. Dining uses an AI-powered food waste management program, Leanpath, to track and analyze food waste.
+
+Furthermore, University of California's 2024 policy on sustainable practices outlined a goal to obtain 25% plant-based food products by 2030. They defined sustainability according to the AASHE STARS's global sustainability standard, a self-reporting sustainability ranking system. When asked how close UC Berkeley was to achieving this goal, Michels stated that UC Berkeley has surpassed this goal and is at 37% plant-based food purchasing.
+
+Berkeley Dining additionally implements sustainability initiatives through partnering with organizations like Cal Zero Waste—a facilities service committed to reducing waste on campus. Sydney Woolley, a Staff Associate of Cal Zero Waste's ReUse Team, worked with Berkeley Dining as well as the Housing and Dining Sustainability team to pioneer the reusable containers now used by Monsoon Kitchens.
+
+<br />
+
+<ContainerVis
+  containerImg={props.localImages[5]}
+  monsoonImg={props.localImages[6]}
+/>
+
+<br />
+
+Cal Zero Waste partnered with a third-party reusable container distributor, Dispatch Goods, to produce a reusable container with washing capacity. Woolley explained that they chose to start implementation in Monsoon Kitchens because there is only one standardized container size, rather than other eateries such as Ladle and Leaf where items such as soups or salads require containers of various sizes.
+
+At the end of the day or week, all reusable containers are sent back to Cal Zero Waste's office, where staff send them to Dispatch Goods to be washed and returned for reuse.
+
+Woolley hopes to expand this process to other eateries in the future, and appreciates that Berkeley Dining has been very receptive to these changes. "I understand that it can be like a little much sometimes to have students constantly telling you you have to change your ways, and being like, 'Hey, could you do this differently?'... But the workers have been, like, super, super, super helpful."
+
+---
+
+## Newly established Berkeley Dining Student Advisory Board encourages student input
+
+<div style={{ float: "left", marginRight: 28, marginBottom: 16, width: 200 }}>
+  <GatsbyImage
+    image={getImage(props.localImages[4])}
+    alt="Clark Kerr dining hall illustration"
+  />
+</div>
+
+Student input into the dining process is always encouraged, according to sophomore Steven Wang, member of the newly established Berkeley Dining Student Advisory Board.
+
+The newly formed board consists of about 15-18 students and is led by Berkeley Dining's Executive Director, Christopher Henning, and Director of Administration, Katie Urbanowitch.
+
+Wang—along with a few students and parents—reached out to Berkeley Dining in March last year to share feedback on a few issues they wanted to see improved. Namely, there were a few instances of improperly cooked food causing sickness in students, availability and quality of allergen-friendly options, as well as a food quality drop in the spring semester compared to fall semester.
+
+After communicating with Henning via email, Berkeley Dining set up a meeting with students and parents on Cal Day to discuss feedback and solutions.
+
+"Berkeley Dining themselves recognized that they weren't up to their own standard of operation, especially at Crossroads [which is] supposed to be the flagship facility," Wang said. "That's where the idea of the Advisory Board was first pitched to me."
+
+Urbanowitch reached out to Wang and other students involved in the initial dialogue with the application last semester, and the board had its first meeting in February. During this meeting, students discussed initiatives such as operational and service improvements, optimizing the geographic distribution of Berkeley Dining offerings across campus and even expanding Berkeley Dining into groceries.
+
+Campbell, who is also a part of the advisory board, appreciates how "the conversation was just really open… [the staff] just genuinely wanted to hear anything and everything we had to say, good or bad."
+
+"I think it goes to show the breadth and capacity of the student advisory board to come up with new ideas and continue to propagate the mission of bringing people together over food," Wang said. "We'd love to hear your feedback."
