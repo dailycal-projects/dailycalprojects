@@ -33,7 +33,7 @@ export default function TruckScene({ truckImg, roadImg, caption }) {
         height: 210,
         overflow: 'hidden',
         margin: '48px 0',
-        background: '#080808',
+        // background: '#080808',
         borderRadius: 4,
       }}
     >
@@ -75,7 +75,7 @@ export default function TruckScene({ truckImg, roadImg, caption }) {
           right: 28,
           top: '50%',
           transform: 'translateY(-50%)',
-          color: 'rgba(255,255,255,0.7)',
+          color: 'rgba(0, 0, 0, 0.7)',
           fontSize: 13,
           fontStyle: 'italic',
           maxWidth: 220,

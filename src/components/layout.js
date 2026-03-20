@@ -77,6 +77,12 @@ import DatawrapperChart from './dataWrapper';
 import ASUCFunding from '../visuals/club-finances-visuals/asucFunding';
 import SexyMap from '../visuals/too-sexy-visuals/map';
 import AllergenVis from '../visuals/diningmenus-visuals/AllergenVis';
+import NutritionVis from '../visuals/diningmenus-visuals/NutritionVis';
+import TruckScene from '../visuals/diningmenus-visuals/TruckScene';
+import DiningScrollytell from '../visuals/diningmenus-visuals/DiningScrollytell';
+import CampusMap from '../visuals/diningmenus-visuals/CampusMap';
+import ContainerVis from '../visuals/diningmenus-visuals/ContainerVis';
+
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -166,6 +172,11 @@ const shortcodes = {
   ASUCFunding,
   SexyMap,
   AllergenVis,
+  NutritionVis,
+  TruckScene,
+  DiningScrollytell,
+  CampusMap,
+  ContainerVis,
 };
 
 export default function Layout({ children }) {
