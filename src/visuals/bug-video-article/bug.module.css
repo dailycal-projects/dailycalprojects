@@ -1,0 +1,175 @@
+.container {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  overflow: auto;
+  padding-top: 50px;
+  overscroll-behavior: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::selection {
+  background-color: white;
+  color: black;
+}
+
+/* Top bar */
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: black;
+  border-bottom: 3px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 0 10px;
+}
+
+.topBar img {
+  max-height: 20px;
+  filter: invert(1);
+  margin: 0;
+}
+
+/* Scroll Sections */
+.scrollGroupContainer {
+  position: relative;
+}
+
+.scrollGroupBackgroundContainer {
+  position: sticky;
+  width: 100%;
+  height: calc(100vh - 50px);
+  margin-bottom: calc(-1 * (100vh - 50px));
+  top: 0;
+  z-index: 1;
+  background: black;
+}
+
+/* Hero */
+.heroBackgroundImage {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+}
+
+.heroIntroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: black;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.heroImageSourceText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.heroSlideContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px);
+  z-index: 4;
+}
+
+.heroTextbox {
+  width: min(85%, 700px);
+  padding: 30px;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.heroTextbox h1 {
+  font-family: "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.heroTextbox p {
+  margin: 0;
+  font-family: BlinkMacSystemFont, Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Video segments */
+.videoPlayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  filter: none;
+  transition: filter 0.6s ease;
+}
+
+.videoPlaybackControls {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.videoControlsScrubber {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  height: 5px;
+  top: 0;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: 0.3s height ease;
+}
+
+.videoControlsScrubber:hover {
+  height: 15px;
+}
+
+.videoControlsScrubberActiveSegment {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #0693e3;
+}
+
+.videoControlsLabel {
+  position: absolute;
+  top: 25px;
+  font-size: 16px;
+}
