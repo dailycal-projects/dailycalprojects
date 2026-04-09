@@ -1,0 +1,8 @@
+/* Video player styling */
+.videoElement {
+  pointer-events: none;
+}
+
+.videoPoster {
+  filter: grayscale(70%) blur(1.5px) brightness(60%);
+}

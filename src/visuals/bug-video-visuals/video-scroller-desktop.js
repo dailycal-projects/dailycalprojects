@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import * as styles from './bug.module.css';
+import * as styles from './styling/segment-scroller.module.css';
 import { VideoPlayer } from './video-player';
 import posterImage from '../../images/bug-video.jpg';
 

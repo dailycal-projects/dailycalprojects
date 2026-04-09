@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zoomElement {
+  width: 95vw;
+  aspect-ratio: 16/9;
+  background-color: black;
+}

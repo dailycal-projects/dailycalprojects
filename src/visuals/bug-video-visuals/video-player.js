@@ -5,7 +5,7 @@ import {
 import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import '@vidstack/react/player/styles/default/theme.css';
 import '@vidstack/react/player/styles/default/layouts/video.css';
-import * as styles from './bug.module.css';
+import * as styles from './styling/video-player.module.css';
 
 export const VideoPlayer = ({
   src, poster, alt, title,

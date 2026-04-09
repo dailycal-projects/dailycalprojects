@@ -77,6 +77,7 @@ import DatawrapperChart from './dataWrapper';
 import ASUCFunding from '../visuals/club-finances-visuals/asucFunding';
 import SexyMap from '../visuals/too-sexy-visuals/map';
 import { BugVideoScroller } from '../visuals/bug-video-visuals/bug-video-scroller';
+import { VideoExpander } from '../visuals/bug-video-visuals/video-expander';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -166,6 +167,7 @@ const shortcodes = {
   ASUCFunding,
   SexyMap,
   BugVideoScroller,
+  VideoExpander,
 };
 
 export default function Layout({ children }) {
