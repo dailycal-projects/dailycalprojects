@@ -1,7 +1,7 @@
 import React from 'react';
 import { VideoScroller, VideoScrollerSegment } from './video-scroller-desktop';
 
-export const BugVideoScrollerDesktop = () => (
+export const BugVideoScroller = () => (
   <VideoScroller>
     <VideoScrollerSegment
       src="/bug-video/bug-bodycam.mp4"

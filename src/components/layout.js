@@ -76,7 +76,7 @@ import Wikimage from '../visuals/wikiedits-visuals/wikimage';
 import DatawrapperChart from './dataWrapper';
 import ASUCFunding from '../visuals/club-finances-visuals/asucFunding';
 import SexyMap from '../visuals/too-sexy-visuals/map';
-import { BugVideoScrollerDesktop } from '../visuals/bug-video-visuals/bug-video-scroller-desktop';
+import { BugVideoScroller } from '../visuals/bug-video-visuals/bug-video-scroller';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -165,7 +165,7 @@ const shortcodes = {
   DatawrapperChart,
   ASUCFunding,
   SexyMap,
-  BugVideoScrollerDesktop,
+  BugVideoScroller,
 };
 
 export default function Layout({ children }) {
