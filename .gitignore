@@ -70,3 +70,6 @@ yarn-error.log
 
 # VScode 
 .VScode.eslintcache*
+
+# Temporary files for testing video players
+static/**/*.mp4

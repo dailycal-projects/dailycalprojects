@@ -1,0 +1,51 @@
+/* Scroll container styling */
+.videoScrollerContainer {
+  position: relative;
+  width: calc(100vw - 50px);
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1280px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.textSide {
+  flex: 1;
+  padding-left: 10%;
+}
+
+.videoSide {
+  width: 55%;
+  flex-shrink: 0;
+  align-self: stretch;
+  margin: 30px 0;
+}
+
+.videoContainer {
+  width: 100%;
+}
+
+/* Text sections styling */
+.segmentText {
+  background-color: white;
+  padding: 15px;
+  border-radius: 7px;
+  margin: 30px 0;
+  border: 1px solid white;
+  opacity: 0.5;
+}
+
+.segmentText[data-active="true"] {
+  border: 1px solid black;
+  opacity: 1;
+}
+
+/* Video styling */
+.videoElement {
+  pointer-events: none;
+}
+
+.videoPoster {
+  filter: grayscale(70%) blur(1.5px) brightness(60%);
+}
