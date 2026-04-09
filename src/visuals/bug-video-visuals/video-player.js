@@ -23,7 +23,7 @@ export const VideoPlayer = ({
   }));
 
   return (
-    <MediaPlayer title={title} src={src} preload="auto" className={styles.videoElement}>
+    <MediaPlayer title={title} src={src} preload="auto" className={styles.videoElement} ref={playerRef}>
       <MediaProvider>
         <Poster
           className={['vds-poster', styles.videoPoster].join(' ')}
