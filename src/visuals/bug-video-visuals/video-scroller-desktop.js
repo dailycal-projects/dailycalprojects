@@ -92,7 +92,6 @@ export const VideoScroller = ({ children }) => {
         <div className={styles.videoContainer} style={stickyStyle}>
           <VideoPlayer
             src={[{ src: segments[activeSegment].props.src, type: segments[activeSegment].props.type }]}
-            subtitles={segments[activeSegment].props.subtitles}
             poster={posterImage}
             alt="Body-worn camera footage clip."
             title={segments[activeSegment].props.clipTitle}
