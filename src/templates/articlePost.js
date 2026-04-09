@@ -84,7 +84,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
           </MDXRenderer>
         </div>
 
-        <ArticleFooter about={frontmatter.aboutStory} />
+        <ArticleFooter about={frontmatter.aboutStory} jointDept={frontmatter.jointDept} />
       </Layout>
     </div>
   );
@@ -102,6 +102,7 @@ export const pageQuery = graphql`
         subhead
         aboutStory
         hideHeroImage
+        jointDept
         featuredImage {
           childImageSharp {
             resize(width: 1200) {

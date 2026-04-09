@@ -2,14 +2,24 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../styles/customTheme';
 
-const ArticleFooter = ({ classes, about }) => (
+const ArticleFooter = ({ classes, about, jointDept }) => (
   <div className={classes.footerContainer}>
     <br />
     <div className={classes.footerCard}>
       <h3>
         <b> About this story </b>
       </h3>
-      <p> This project was developed by the Data Department at The Daily Californian. </p>
+      {jointDept
+        ? (
+          <p>
+            This project was developed jointly by the Data Department and the
+            {' '}
+            {jointDept}
+            {' '}
+            Department at The Daily Californian.
+          </p>
+        )
+        : <p>This project was developed by the Data Department at The Daily Californian.</p>}
       <p>
         {about}
       </p>
@@ -38,7 +48,15 @@ const ArticleFooter = ({ classes, about }) => (
         to support our coverage.
       </p>
     </div>
-    <p style={{ fontSize: '14px' }}> Copyright © 2025 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
+    <p style={{ fontSize: '14px' }}>
+      {' '}
+      Copyright ©
+      {' '}
+      {new Date().getFullYear()}
+      {' '}
+      The Daily Californian, The Independent Berkeley Student Publishing Co., Inc.
+      {' '}
+    </p>
   </div>
 );
 
