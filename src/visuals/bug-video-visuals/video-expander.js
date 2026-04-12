@@ -62,7 +62,7 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
           }
 
           // Update dark mode
-          setIsDarkMode(self.progress > 0.3 && self.progress < 0.6);
+          setIsDarkMode(self.progress > 0.27 && self.progress < 0.85);
         },
       },
     });
@@ -71,22 +71,31 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
     tl.fromTo(
       zoomRef.current,
       { scale: 0.375 },
-      { scale: 1.0, duration: 1 },
+      {
+        scale: 1.0,
+        duration: 1,
+        ease: 'power2.inOut',
+      },
     );
 
     // Fade in animation
     tl.fromTo(
       zoomRef.current,
       { opacity: 0.5 },
-      { opacity: 1.0, duration: 0.2 },
+      {
+        opacity: 1.0,
+        duration: 0.2,
+        ease: 'power2.inOut',
+      },
       '<',
     );
 
     // Large to small scroll
-    tl.to(
-      zoomRef.current,
-      { scale: 0.375, duration: 1 },
-    );
+    tl.to(zoomRef.current, {
+      scale: 0.375,
+      duration: 1,
+      ease: 'power2.inOut',
+    });
   });
 
   // Handle dark mode transition
