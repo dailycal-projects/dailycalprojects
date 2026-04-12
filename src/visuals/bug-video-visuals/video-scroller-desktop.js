@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import * as styles from './styling/segment-scroller.module.css';
 import { VideoPlayer } from './video-player';
 import posterImage from '../../images/bug-video.jpg';
+import { setBackgroundDarkMode } from './styling/dark-mode';
 
 export const VideoScrollerSegment = () => null;
 
@@ -76,15 +77,7 @@ export const VideoScroller = ({ children }) => {
 
   // Handle dark mode transition
   useEffect(() => {
-    const topBar = document.getElementById('topBar');
-    topBar.style.backgroundColor = isDarkMode ? '#080808' : '';
-    topBar.style.borderBottom = isDarkMode ? '1px solid #2b2b2b' : '';
-
-    const logo = document.getElementById('logo');
-    logo.style.filter = isDarkMode ? 'invert(1)' : '';
-
-    document.body.style.transition = '.2s background ease';
-    document.body.style.background = isDarkMode ? '#0a0a0a' : '';
+    setBackgroundDarkMode(isDarkMode);
 
     const root = document.querySelector(':root');
     root.style.setProperty('--segment-color', isDarkMode ? 'hsla(0,0%,100%,0.8)' : 'hsla(0,0%,0%,0.8)');

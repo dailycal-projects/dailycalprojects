@@ -1,4 +1,6 @@
-import React, { useImperativeHandle, useRef } from 'react';
+import React, {
+  forwardRef, useEffect, useImperativeHandle, useRef, useState,
+} from 'react';
 import {
   MediaPlayer, MediaProvider, Poster,
 } from '@vidstack/react';
@@ -7,23 +9,50 @@ import '@vidstack/react/player/styles/default/theme.css';
 import '@vidstack/react/player/styles/default/layouts/video.css';
 import * as styles from './styling/video-player.module.css';
 
-export const VideoPlayer = ({
-  src, poster, alt, title,
+export const VideoPlayer = forwardRef(({
+  src, poster, alt, title, playsInline = true,
 }, ref) => {
   const playerRef = useRef(null);
+  const [showControls, setShowControls] = useState(true);
+  const [isPaused, setIsPaused] = useState(true);
 
   // Expose API to parent
   useImperativeHandle(ref, () => ({
-    play: () => playerRef.current?.play(),
-    seek: (time) => {
-      if (playerRef.current) {
-        playerRef.current.currentTime = time;
-      }
-    },
+    play: () => playerRef.current?.play?.(),
+    pause: () => playerRef.current?.pause?.(),
+    setControlsShown: (show) => setShowControls(show),
   }));
 
+  // Pause listener
+  useEffect(() => {
+    const player = playerRef.current;
+    if (!player) return;
+
+    const onPlay = () => setIsPaused(false);
+    const onPause = () => setIsPaused(true);
+
+    player.addEventListener('play', onPlay);
+    player.addEventListener('pause', onPause);
+
+    return () => {
+      player.removeEventListener('play', onPlay);
+      player.removeEventListener('pause', onPause);
+    };
+  }, []);
+
   return (
-    <MediaPlayer title={title} src={src} preload="auto" className={styles.videoElement} ref={playerRef}>
+    <MediaPlayer
+      title={title}
+      src={src}
+      preload="auto"
+      className={styles.videoElement}
+      playsInline={playsInline}
+      onClick={() => {
+        isPaused ? playerRef.current?.play?.() : playerRef.current?.pause?.();
+      }}
+      ref={playerRef}
+    >
+      {/* Poster image */}
       <MediaProvider>
         <Poster
           className={['vds-poster', styles.videoPoster].join(' ')}
@@ -31,6 +60,17 @@ export const VideoPlayer = ({
           alt={alt}
         />
       </MediaProvider>
+
+      {/* Centered play button */}
+      {showControls && isPaused && (
+      <button
+        className={styles.playButton}
+        onClick={() => playerRef.current?.play?.()}
+      />
+      )}
+
+      {/* Media controls */}
+      {showControls && (
       <DefaultVideoLayout
         icons={defaultLayoutIcons}
         slots={{
@@ -39,6 +79,7 @@ export const VideoPlayer = ({
           googleCastButton: null,
         }}
       />
+      )}
     </MediaPlayer>
   );
-};
+});
