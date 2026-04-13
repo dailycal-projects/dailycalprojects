@@ -111,12 +111,17 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
 
   return (
     <div className={styles.container} ref={containerRef}>
-      <div className={styles.zoomElement} ref={zoomRef}>
+      <div
+        className={styles.zoomElement}
+        ref={zoomRef}
+        onClick={() => (videoRef.current?.isPaused() && showControls ? videoRef.current?.play() : videoRef.current?.pause())}
+      >
         <VideoPlayer
           src={[{ src, type }]}
           poster={posterImage}
           alt="Body-worn camera footage clip."
           ref={videoRef}
+          listenForSpace={showControls}
         />
       </div>
     </div>

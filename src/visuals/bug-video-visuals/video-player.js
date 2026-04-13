@@ -10,7 +10,7 @@ import '@vidstack/react/player/styles/default/layouts/video.css';
 import * as styles from './styling/video-player.module.css';
 
 export const VideoPlayer = forwardRef(({
-  src, poster, alt, title, playsInline = true,
+  src, poster, alt, title, playsInline = true, listenForSpace = true,
 }, ref) => {
   const playerRef = useRef(null);
   const [showControls, setShowControls] = useState(true);
@@ -21,7 +21,8 @@ export const VideoPlayer = forwardRef(({
     play: () => playerRef.current?.play?.(),
     pause: () => playerRef.current?.pause?.(),
     setControlsShown: (show) => setShowControls(show),
-  }));
+    isPaused: () => isPaused,
+  }), [isPaused]);
 
   // Pause listener
   useEffect(() => {
@@ -34,11 +35,40 @@ export const VideoPlayer = forwardRef(({
     player.addEventListener('play', onPlay);
     player.addEventListener('pause', onPause);
 
+    // Detach listeners
     return () => {
       player.removeEventListener('play', onPlay);
       player.removeEventListener('pause', onPause);
     };
   }, []);
+
+  // Space bar play/pause listener
+  useEffect(() => {
+    if (!listenForSpace) return;
+
+    const player = playerRef.current;
+    if (!player) return;
+
+    const onSpace = (evt) => {
+      // Don't run listener if user is typing somewhere
+      if (evt.code === 'Space'
+          && evt.target.tagName !== 'INPUT'
+          && evt.target.tagName !== 'TEXTAREA'
+          && !evt.target.isContentEditable
+      ) {
+        // Toggle player play/pause
+        evt.preventDefault();
+
+        if (isPaused) player.play();
+        else player.pause();
+      }
+    };
+
+    window.addEventListener('keydown', onSpace);
+
+    // Detach listener
+    return () => window.removeEventListener('keydown', onSpace);
+  }, [isPaused, listenForSpace]);
 
   return (
     <MediaPlayer
@@ -47,9 +77,6 @@ export const VideoPlayer = forwardRef(({
       preload="auto"
       className={styles.videoElement}
       playsInline={playsInline}
-      onClick={() => {
-        isPaused ? playerRef.current?.play?.() : playerRef.current?.pause?.();
-      }}
       ref={playerRef}
     >
       {/* Poster image */}
