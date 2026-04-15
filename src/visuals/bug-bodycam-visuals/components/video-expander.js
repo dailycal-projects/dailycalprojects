@@ -169,6 +169,7 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
             alt="Body-worn camera footage clip."
             ref={videoRef}
             aspectRatio={aspectRatio}
+            pauseOnScrollOut={false}
           />
         </div>
       </div>

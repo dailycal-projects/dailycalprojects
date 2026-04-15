@@ -17,6 +17,8 @@ export const DCVideoPlayer = forwardRef(({
   preloadInHead = true,
   playsInline = true,
   alt = null,
+  loop = false,
+  pauseOnScrollOut = true,
 }, ref) => {
   // MARK: Init
   aspectRatio = (typeof aspectRatio === 'string') ? parseFloat(aspectRatio) : aspectRatio;
@@ -68,6 +70,11 @@ export const DCVideoPlayer = forwardRef(({
     const observer = new IntersectionObserver(
       ([entry]) => {
         inViewportRef.current = entry.isIntersecting;
+
+        // Pause on outro
+        if (pauseOnScrollOut && !entry.isIntersecting && videoRef.current) {
+          videoRef.current.pause();
+        }
       }, {
         threshold: 0.3,
       },
@@ -82,7 +89,7 @@ export const DCVideoPlayer = forwardRef(({
       if (video) observer.unobserve(video);
       observer.disconnect();
     };
-  }, []);
+  }, [pauseOnScrollOut]);
 
   // MARK: Manual scrubbing
   // On pointer down on scrubber
@@ -248,6 +255,7 @@ export const DCVideoPlayer = forwardRef(({
         onClick={togglePlay}
         aria-label={alt}
         style={{ aspectRatio }}
+        loop={loop}
       >
         <source src={src} type={type} />
       </video>

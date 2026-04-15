@@ -110,7 +110,10 @@ export const VideoScroller = ({ children }) => {
             data-active={activeSegment === i}
             ref={(el) => (segmentTextRefs.current[i] = el)}
             key={i}
-            style={{ borderTop: i === 0 ? '1px solid black' : '' }}
+            style={{
+              borderTop: i !== 0 ? '1px solid black' : '',
+              paddingTop: i !== 0 ? 'calc(1.45rem + 15px)' : '',
+            }}
           >
             {segment.props.children}
           </div>
