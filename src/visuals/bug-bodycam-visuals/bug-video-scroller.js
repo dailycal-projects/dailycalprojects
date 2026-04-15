@@ -1,5 +1,5 @@
 import React from 'react';
-import { VideoScroller, VideoScrollerSegment } from './components/video-scroller-desktop';
+import { VideoScroller, VideoScrollerSegment } from './components/video-scroller';
 
 export const BugVideoScroller = () => (
   <VideoScroller>

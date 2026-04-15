@@ -79,6 +79,7 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
+        pinSpacing: true,
         onRefreshInit: computeWidths,
 
         // Callback to play video and set dark mode

@@ -28,10 +28,15 @@ export const VideoScroller = ({ children }) => {
   // Sticky video handler
   const splitRef = useRef(null);
   const [stickyStyle, setStickyStyle] = useState({});
+  const [isMobileView, setIsMobileView] = useState(false);
 
   useEffect(() => {
     function onScroll() {
-      const TOP_OFFSET = 75;
+      const isMobile = window.innerWidth < 600;
+
+      if (isMobile !== isMobileView) {
+        setIsMobileView(isMobile);
+      }
 
       // Update video stickiness
       if (!splitRef.current || !videoContainerRef.current) return;
@@ -39,18 +44,26 @@ export const VideoScroller = ({ children }) => {
       const split = splitRef.current.getBoundingClientRect();
       const videoContainer = videoContainerRef.current.getBoundingClientRect();
 
-      // Distance from top of viewport and top of videoContainer when videoContainer is vertically centered
-      const midline = (window.innerHeight - videoContainer.height) / 2;
+      const TOP_OFFSET = isMobile ? (videoContainer.bottom || 0) : 75;
 
-      if (split.top <= midline) {
-        // Video is below TOP_OFFSET, make sticky to page
+      // Desktop: center in viewport while sticky.
+      // Mobile: stick to top of the container for the full section duration.
+      if (isMobile) {
         setStickyStyle({
           position: 'sticky',
-          top: `${midline}px`,
+          top: '75px',
         });
       } else {
-        // Remove sticky styling
-        setStickyStyle({});
+        const stickyTop = (window.innerHeight - videoContainer.height) / 2;
+
+        if (split.top <= stickyTop) {
+          setStickyStyle({
+            position: 'sticky',
+            top: `${stickyTop}px`,
+          });
+        } else {
+          setStickyStyle({});
+        }
       }
 
       // Update active segment
@@ -59,8 +72,11 @@ export const VideoScroller = ({ children }) => {
         const el = segmentTextRefs.current[s];
         if (!el) continue;
         const segment = el.getBoundingClientRect();
+        const top = isMobile
+          ? (segment.top + (segment.height * 0.75))
+          : segment.top;
 
-        if (segment.top >= TOP_OFFSET) {
+        if (top >= TOP_OFFSET) {
           // This is the first element to be below the TOP_OFFSET
           if (s !== activeSegment) {
             // Active segment has changed!
@@ -82,7 +98,7 @@ export const VideoScroller = ({ children }) => {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, [activeSegment]);
+  }, [activeSegment, isMobileView]);
 
   return (
     <div className={styles.videoScrollerContainer} ref={splitRef}>
@@ -102,11 +118,11 @@ export const VideoScroller = ({ children }) => {
       </div>
 
       {/* Video section */}
-      <div className={styles.videoSide}>
+      <div className={styles.videoSide} style={isMobileView ? stickyStyle : {}}>
         <div
           className={styles.videoContainer}
           style={{
-            ...stickyStyle,
+            ...(!isMobileView ? stickyStyle : {}),
             aspectRatio: getEffectiveContainerAspectRatio(),
           }}
           ref={videoContainerRef}
