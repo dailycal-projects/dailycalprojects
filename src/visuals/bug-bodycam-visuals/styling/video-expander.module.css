@@ -2,13 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90vw;
+  width: 96vw;
   position: relative;
-  left: calc(50% - 45vw);
-  margin-bottom: 50px;
+  left: calc(50% - 48vw);
   /*transform: translateX(-50%);*/
 }
 
 .zoomElement {
-  width: 75vw;
+  width: 95%;
+}
+
+.spacer {
+  width: 1px;
+  height: 0px;
+  margin-bottom: 20px;
 }

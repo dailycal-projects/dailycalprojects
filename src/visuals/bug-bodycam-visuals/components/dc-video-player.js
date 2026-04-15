@@ -10,6 +10,7 @@ import playIcon from '../icons/play-solid-full.svg';
 
 export const DCVideoPlayer = forwardRef(({
   src,
+  aspectRatio = null,
   type = 'video/mp4',
   preload = 'auto',
   playsInline = true,
@@ -219,6 +220,7 @@ export const DCVideoPlayer = forwardRef(({
         onPause={syncStates}
         onClick={togglePlay}
         aria-label={alt}
+        style={{ aspectRatio }}
       >
         <source src={src} type={type} />
       </video>
