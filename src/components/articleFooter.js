@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'gatsby';
 import { styles } from '../styles/customTheme';
 
 const ArticleFooter = ({ classes, about, jointDept }) => (
@@ -23,15 +24,29 @@ const ArticleFooter = ({ classes, about, jointDept }) => (
       <p>
         {about}
       </p>
-      <p>
-        Questions, comments or corrections? Email
-        {' '}
-        <a href="mailto: projects@dailycal.org.">projects@dailycal.org</a>
-        . Code, data and text are open-source on
-        {' '}
-        <a href="https://github.com/dailycal-projects/dailycalprojects">GitHub</a>
-        .
-      </p>
+
+      { jointDept
+        ? (
+          <p>
+            <Link
+              to="https://www.dailycal.org/site/contact-us.html"
+              style={{ color: 'gray', fontSize: '14px' }}
+            >
+              Contact the Daily Californian
+            </Link>
+          </p>
+        )
+        : (
+          <p>
+            Questions, comments or corrections? Email
+            {' '}
+            <a href="mailto: projects@dailycal.org.">projects@dailycal.org</a>
+            . Code, data and text are open-source on
+            {' '}
+            <a href="https://github.com/dailycal-projects/dailycalprojects">GitHub</a>
+            .
+          </p>
+        )}
     </div>
 
     <div className={classes.footerCard}>
