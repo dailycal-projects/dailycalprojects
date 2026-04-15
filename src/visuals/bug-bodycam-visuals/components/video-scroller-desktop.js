@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import * as styles from '../styling/video-scroller.module.css';
 import { DCVideoPlayer } from './dc-video-player';
 
@@ -23,7 +22,7 @@ export const VideoScroller = ({ children }) => {
     if (width <= 0) return videoAspectRatio;
 
     const videoHeight = width / videoAspectRatio;
-    return width / (videoHeight + 12); // + scrubber height
+    return width / (videoHeight + 12); // include scrubber height
   };
 
   // Sticky video handler
@@ -87,25 +86,6 @@ export const VideoScroller = ({ children }) => {
 
   return (
     <div className={styles.videoScrollerContainer} ref={splitRef}>
-      {/* Preload videos */}
-      <Helmet>
-        {segments.map((s, i) => {
-          if (s.props.src) {
-            return (
-              <link
-                key={`preload-${i}`}
-                rel="preload"
-                href={s.props.src}
-                as="video"
-                type={s.props.type}
-              />
-            );
-          }
-
-          return null;
-        })}
-      </Helmet>
-
       {/* Text descriptions */}
       <div className={styles.textSide}>
         {segments.map((segment, i) => (

@@ -90,7 +90,7 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
             shouldPlayRef.current = shouldPlayNow;
 
             if (shouldPlayNow) {
-              videoRef.current.play();
+              videoRef.current.play(true);
               setShowControls(true);
             } else {
               videoRef.current.pause();

@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useEffect, useImperativeHandle, useRef, useState,
 } from 'react';
+import { Helmet } from 'react-helmet';
 import * as styles from '../styling/dc-video-player.module.css';
 import muteIcon from '../icons/volume-xmark-solid-full.svg';
 import fullVolumeIcon from '../icons/volume-solid-full.svg';
@@ -13,6 +14,7 @@ export const DCVideoPlayer = forwardRef(({
   aspectRatio = null,
   type = 'video/mp4',
   preload = 'auto',
+  preloadInHead = true,
   playsInline = true,
   alt = null,
 }, ref) => {
@@ -35,11 +37,27 @@ export const DCVideoPlayer = forwardRef(({
   const wasVideoPlayingBeforeScrub = useRef(false);
 
   // MARK: Handle
+  // Play video, with the option to mute it if autoplay doesn't work
+  const playVideo = useCallback((muteIfFails = false) => {
+    const video = videoRef.current;
+    if (!video?.play) return Promise.resolve();
+
+    const attempt = () => video.play().catch(() => undefined);
+
+    if (!muteIfFails) return attempt();
+
+    return video.play().catch(() => {
+      video.muted = true;
+      setIsMuted(true);
+      return attempt();
+    });
+  }, []);
+
   useImperativeHandle(ref, () => ({
-    play: () => videoRef.current?.play?.(),
+    play: (muteIfFails = false) => playVideo(muteIfFails),
     pause: () => videoRef.current?.pause?.(),
     setControlsShown: (show) => setShowControls(show),
-  }), []);
+  }), [playVideo]);
 
   // MARK: Check in viewport
   // Is in viewport
@@ -168,7 +186,7 @@ export const DCVideoPlayer = forwardRef(({
     if (!videoRef.current) { return; }
     evt.stopPropagation();
 
-    videoRef.current.play();
+    playVideo(false);
   };
 
   // Toggle playback (on screen clicked or space pressed)
@@ -178,16 +196,16 @@ export const DCVideoPlayer = forwardRef(({
     if (!videoRef.current.paused) {
       videoRef.current.pause();
     } else {
-      videoRef.current.play();
+      playVideo(false);
     }
-  }, [showControls]);
+  }, [showControls, playVideo]);
 
   // Space bar listeners
   useEffect(() => {
     const onKeyDown = (evt) => {
       if (!videoRef.current) { return; }
 
-      if (evt.code === 'Space' && inViewportRef.current) {
+      if (evt.code === 'Space' && inViewportRef.current && showControls) {
         evt.preventDefault();
         togglePlay();
       }
@@ -197,7 +215,7 @@ export const DCVideoPlayer = forwardRef(({
 
     // Remove handlers after
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [togglePlay]);
+  }, [togglePlay, showControls]);
 
   // MARK: UI
   // Sync UI states and video states
@@ -211,6 +229,13 @@ export const DCVideoPlayer = forwardRef(({
     <div
       className={styles.container}
     >
+      {/* Head preload */}
+      {preloadInHead && (
+      <Helmet>
+        <link rel="preload" href={src} as="video" type={type} />
+      </Helmet>
+      )}
+
       {/* Video */}
       <video
         className={styles.video}
@@ -251,6 +276,7 @@ export const DCVideoPlayer = forwardRef(({
       <button
         className={[styles.control, styles.volumeButton].join(' ')}
         onClick={onMuteButtonClick}
+        type="button"
       >
         <img
           src={isMuted ? muteIcon : fullVolumeIcon}
@@ -264,6 +290,7 @@ export const DCVideoPlayer = forwardRef(({
       <button
         className={[styles.control, styles.playButton].join(' ')}
         onClick={onPlayButtonPressed}
+        type="button"
       >
         <img
           src={playIcon}
