@@ -6,6 +6,7 @@ export const BugVideoScroller = () => (
     <VideoScrollerSegment
       src="https://github.com/projectseditor/projects-media/raw/refs/heads/main/bug-bodycam/scuffle_cut.mp4"
       type="video/mp4"
+      aspectRatio={3840 / 2160}
     >
       <p>
         Legal experts who reviewed the video said that the force exercised by Tinney appeared excessive,
@@ -26,6 +27,7 @@ export const BugVideoScroller = () => (
     <VideoScrollerSegment
       src="https://github.com/projectseditor/projects-media/raw/refs/heads/main/bug-bodycam/verbal_abuse_clip.mp4"
       type="video/mp4"
+      aspectRatio={3840 / 2160}
     >
       <p>The experts also said that Tinney’s remarks, while not in violation of department policy or the law, were unprofessional.</p>
 

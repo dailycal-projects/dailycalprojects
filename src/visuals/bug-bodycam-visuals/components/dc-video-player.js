@@ -17,6 +17,8 @@ export const DCVideoPlayer = forwardRef(({
   alt = null,
 }, ref) => {
   // MARK: Init
+  aspectRatio = (typeof aspectRatio === 'string') ? parseFloat(aspectRatio) : aspectRatio;
+
   // Refs
   const videoRef = useRef(null);
   const scrubberRef = useRef(null);

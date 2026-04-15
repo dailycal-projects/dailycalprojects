@@ -62,7 +62,7 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
 
       // Apply height spacing below this element
       // This is a shoddy way of doing this, but it works.
-      const diff = ((end / aspectRatio) - (start / aspectRatio)) / 2; 
+      const diff = ((end / aspectRatio) - (start / aspectRatio)) / 2;
       spacerRef.current.style.height = `${Math.max(diff, 0)}px`;
     };
 

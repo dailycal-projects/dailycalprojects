@@ -23,22 +23,36 @@
 }
 
 .videoContainer {
+  position: relative;
   width: 100%;
+  overflow: hidden;
+}
+
+.videoLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.videoLayer[data-active="true"] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Text sections styling */
 .segmentText {
   color: hsla(0, 0%, 0%, 0.8);
-  background-color: white;
   padding: 15px;
-  border-radius: 7px;
   margin: 30px 0;
-  border: 1px solid white;
   opacity: 0.5;
-  transition: 0.2s border ease 0.2s background-color ease 0.2s color ease;
+  border-bottom: 1px solid black;
+  transition: 0.2s opacity ease;
 }
 
 .segmentText[data-active="true"] {
-  border: 1px solid black;
   opacity: 1;
 }
