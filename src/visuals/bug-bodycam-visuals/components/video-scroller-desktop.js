@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import * as styles from './styling/segment-scroller.module.css';
+import * as styles from '../styling/video-scroller.module.css';
 import { VideoPlayer } from './video-player';
-import posterImage from '../../images/bug-video.jpg';
-import { setBackgroundDarkMode } from './styling/dark-mode';
+import posterImage from '../../../images/bug-video.jpg';
 
 export const VideoScrollerSegment = () => null;
 
@@ -21,13 +20,9 @@ export const VideoScroller = ({ children }) => {
   const splitRef = useRef(null);
   const [stickyStyle, setStickyStyle] = useState({});
 
-  // Dark mode handler
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
   useEffect(() => {
     function onScroll() {
       const TOP_OFFSET = 75;
-      const DARK_MODE_THRESHOLD = 200;
 
       // Update video stickiness
       if (!splitRef.current || !videoContainerRef.current) return;
@@ -45,12 +40,6 @@ export const VideoScroller = ({ children }) => {
         // Remove sticky styling
         setStickyStyle({});
       }
-
-      // Update dark mode
-      setIsDarkMode(
-        split.top <= DARK_MODE_THRESHOLD // Top is below dark mode threshold
-        && split.bottom - videoContainer.bottom > 31, // Video hasn't reached the end
-      );
 
       // Update active segment
       for (let s = 0; s < segments.length; s++) {
@@ -74,16 +63,6 @@ export const VideoScroller = ({ children }) => {
     // Unmount handler
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  // Handle dark mode transition
-  useEffect(() => {
-    setBackgroundDarkMode(isDarkMode);
-
-    const root = document.querySelector(':root');
-    root.style.setProperty('--segment-color', isDarkMode ? 'hsla(0,0%,100%,0.8)' : 'hsla(0,0%,0%,0.8)');
-    root.style.setProperty('--segment-bg', isDarkMode ? 'black' : 'white');
-    root.style.setProperty('--segment-border-active', isDarkMode ? 'white' : 'black');
-  }, [isDarkMode]);
 
   return (
     <div className={styles.videoScrollerContainer} ref={splitRef}>

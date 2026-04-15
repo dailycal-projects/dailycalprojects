@@ -2,10 +2,9 @@ import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import * as styles from './styling/video-expander.module.css';
+import * as styles from '../styling/video-expander.module.css';
 import { VideoPlayer } from './video-player';
-import posterImage from '../../images/bug-video.jpg';
-import { setBackgroundDarkMode } from './styling/dark-mode';
+import posterImage from '../../../images/bug-video.jpg';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -127,3 +126,15 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
     </div>
   );
 };
+
+export function setBackgroundDarkMode(darkMode) {
+  const topBar = document.getElementById('topBar');
+  topBar.style.backgroundColor = darkMode ? '#080808' : '';
+  topBar.style.borderBottom = darkMode ? '1px solid #2b2b2b' : '';
+
+  const logo = document.getElementById('logo');
+  logo.style.filter = darkMode ? 'invert(1)' : '';
+
+  document.body.style.transition = '.2s background ease';
+  document.body.style.background = darkMode ? '#0a0a0a' : '';
+}

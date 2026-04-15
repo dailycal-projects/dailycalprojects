@@ -7,7 +7,7 @@ import {
 import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import '@vidstack/react/player/styles/default/theme.css';
 import '@vidstack/react/player/styles/default/layouts/video.css';
-import * as styles from './styling/video-player.module.css';
+import * as styles from '../styling/video-player.module.css';
 
 export const VideoPlayer = forwardRef(({
   src, poster, alt, title, playsInline = true, listenForSpace = true,
@@ -78,6 +78,7 @@ export const VideoPlayer = forwardRef(({
       className={styles.videoElement}
       playsInline={playsInline}
       ref={playerRef}
+      muted
     >
       {/* Poster image */}
       <MediaProvider>

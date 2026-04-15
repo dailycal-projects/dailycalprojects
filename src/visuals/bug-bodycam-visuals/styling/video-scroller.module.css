@@ -28,17 +28,17 @@
 
 /* Text sections styling */
 .segmentText {
-  color: var(--segment-color);
-  background-color: var(--segment-bg);
+  color: hsla(0, 0%, 0%, 0.8);
+  background-color: white;
   padding: 15px;
   border-radius: 7px;
   margin: 30px 0;
-  border: 1px solid var(--segment-bg);
+  border: 1px solid white;
   opacity: 0.5;
   transition: 0.2s border ease 0.2s background-color ease 0.2s color ease;
 }
 
 .segmentText[data-active="true"] {
-  border: 1px solid var(--segment-border-active);
+  border: 1px solid black;
   opacity: 1;
 }
