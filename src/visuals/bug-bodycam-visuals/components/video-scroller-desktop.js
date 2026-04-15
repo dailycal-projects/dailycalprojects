@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import * as styles from '../styling/video-scroller.module.css';
-import { VideoPlayer } from './video-player';
-import posterImage from '../../../images/bug-video.jpg';
+import { DCVideoPlayer } from './dc-video-player';
 
 export const VideoScrollerSegment = () => null;
 
 export const VideoScroller = ({ children }) => {
   // Video container references
-  const videoRef = useRef(null);
   const videoContainerRef = useRef(null);
 
   // Segments
@@ -94,12 +92,9 @@ export const VideoScroller = ({ children }) => {
       {/* Video section */}
       <div className={styles.videoSide}>
         <div className={styles.videoContainer} style={stickyStyle} ref={videoContainerRef}>
-          <VideoPlayer
-            src={[{ src: segments[activeSegment].props.src, type: segments[activeSegment].props.type }]}
-            poster={posterImage}
-            alt="Body-worn camera footage clip."
-            title={segments[activeSegment].props.clipTitle}
-            ref={videoRef}
+          <DCVideoPlayer
+            src={segments[activeSegment].props.src}
+            type={segments[activeSegment].props.type}
           />
         </div>
       </div>

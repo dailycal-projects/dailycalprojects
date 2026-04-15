@@ -5,6 +5,7 @@
   width: 90vw;
   position: relative;
   left: calc(50% - 45vw);
+  margin-bottom: 50px;
   /*transform: translateX(-50%);*/
 }
 

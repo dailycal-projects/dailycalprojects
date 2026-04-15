@@ -3,8 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import * as styles from '../styling/video-expander.module.css';
-import { VideoPlayer } from './video-player';
-import posterImage from '../../../images/bug-video.jpg';
+import { DCVideoPlayer } from './dc-video-player';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -34,18 +33,10 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
         scrub: true,
         pin: true,
         anticipatePin: 1,
-        /* snap: {
-          snapTo: (value) => {
-            if (value < 0.65) return 0.5;
-            return 1.0;
-          },
-          delay: 0,
-          duration: 0.2,
-        }, */
 
         // Callback to play video and set dark mode
         onUpdate: (self) => {
-          const shouldPlayNow = self.progress > 0.27 && self.progress < 0.85;
+          const shouldPlayNow = self.progress > 0.27 && self.progress < 1.0;
 
           // Only request play/pause when shouldPlayNow changes, not every frame
           if (shouldPlayNow !== shouldPlayRef.current) {
@@ -61,7 +52,7 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
           }
 
           // Update dark mode
-          setIsDarkMode(self.progress > 0.27 && self.progress < 0.85);
+          setIsDarkMode(self.progress > 0.27 && self.progress < 1.0);
         },
       },
     });
@@ -88,13 +79,6 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
       },
       '<',
     );
-
-    // Large to small scroll
-    tl.to(zoomRef.current, {
-      scale: 0.375,
-      duration: 1,
-      ease: 'power2.inOut',
-    });
   });
 
   // Handle dark mode transition
@@ -113,14 +97,12 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
       <div
         className={styles.zoomElement}
         ref={zoomRef}
-        onClick={() => (videoRef.current?.isPaused() && showControls ? videoRef.current?.play() : videoRef.current?.pause())}
       >
-        <VideoPlayer
-          src={[{ src, type }]}
-          poster={posterImage}
+        <DCVideoPlayer
+          src={src}
+          type={type}
           alt="Body-worn camera footage clip."
           ref={videoRef}
-          listenForSpace={showControls}
         />
       </div>
     </div>

@@ -4,69 +4,32 @@ import { VideoScroller, VideoScrollerSegment } from './components/video-scroller
 export const BugVideoScroller = () => (
   <VideoScroller>
     <VideoScrollerSegment
-      src="/bug-video/bug-bodycam.mp4"
+      src="https://github.com/projectseditor/projects-media/raw/refs/heads/main/bug-bodycam/scuffle_cut.mp4"
       type="video/mp4"
-      clipStart="50"
-      clipTitle="This is clip 1"
     >
-      Some analysis of the video clip goes here. This analysis is very important.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-      in culpa qui officia deserunt mollit anim id est laborum.
-      <br />
-      <br />
-      Some more text down here...
+      <p>
+        Legal experts who reviewed the video said that the force exercised by Tinney appeared excessive,
+        especially in initially grabbing the first student’s arm.
+      </p>
+      <p>
+        “He should not have put his hands on them. There was zero reason to use any force against any
+        of these kids,” Walker said in an email. “Officers may use reasonable force to enforce compliance
+        when a person resists a lawful order, but I didn’t see any resistance by anyone and his orders
+        were not lawful.”
+      </p>
+      <p>
+        Some who reviewed the video had a more moderate take. A former officer and expert on police
+        conduct, Roger Clark, said the use of force “would not rise to the level of concern.”
+      </p>
     </VideoScrollerSegment>
 
     <VideoScrollerSegment
-      src="/bug-video/bug-clipped.mp4"
+      src="https://github.com/projectseditor/projects-media/raw/refs/heads/main/bug-bodycam/verbal_abuse_clip.mp4"
       type="video/mp4"
-      clipStart="50"
-      clipTitle="Clip 2 here"
     >
-      This is segment 2. This is also important Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-      officia deserunt mollit anim id est laborum.
-      <br />
-      <br />
-      Some more text down here...
-    </VideoScrollerSegment>
+      <p>The experts also said that Tinney’s remarks, while not in violation of department policy or the law, were unprofessional.</p>
 
-    <VideoScrollerSegment
-      src="/bug-video/bug-bodycam.mp4"
-      type="video/mp4"
-      clipStart="50"
-      clipTitle="This is clip 3"
-    >
-      Segment three. Lorum impusm dolor lorum ipsum ipsum ipsum... Lorem ipsum dolor
-      sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-      culpa qui officia deserunt mollit anim id est laborum.
-      <br />
-      <br />
-      Some more text down here...
-    </VideoScrollerSegment>
-
-    <VideoScrollerSegment
-      src="/bug-video/bug-clipped.mp4"
-      type="video/mp4"
-      clipStart="50"
-      clipTitle="This is clip 4"
-    >
-      Brendan Raykoff Ajith Ariaza-Singh Jackson Woodward are the goats.
-      <br />
-      <br />
-      Some more text down here...
+      <p>“It seemed to me that he was personally offended that the students' message was directed at the Turning Point USA event which was going to be held the next day on campus,” Lederman said in her email, “I got the impression he really dislikes students, which is disturbing coming from a UC officer.”</p>
     </VideoScrollerSegment>
   </VideoScroller>
 );

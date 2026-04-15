@@ -1,0 +1,100 @@
+.container {
+  position: relative;
+  background-color: black;
+  cursor: pointer;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.video {
+  height: calc(100% - 12px);
+  width: 100%;
+}
+
+/* Scrubber */
+.scrubber {
+  width: 100%;
+  height: 12px;
+  position: relative;
+  background-color: #121212;
+  touch-action: none;
+}
+
+.scrubberViewed {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #4c9ad0;
+}
+
+.scrubberHandle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 7px;
+  background-color: lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0;
+  transition: 0.3s opacity ease;
+}
+
+.scrubber:hover .scrubberHandle {
+  opacity: 1;
+}
+
+/* Controls */
+.control {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  transition: 0.3s background-color ease, 0.3s border ease;
+  position: absolute;
+  cursor: pointer;
+}
+
+.control:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+}
+
+.controlIcon {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  transition: 0.3s opacity ease;
+}
+
+.control:hover .controlIcon {
+  opacity: 1;
+}
+
+/* Mute button */
+.volumeButton {
+  width: 40px;
+  height: 40px;
+  right: 10px;
+  bottom: 22px;
+  border-radius: 20px;
+}
+
+.playButton {
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+}
