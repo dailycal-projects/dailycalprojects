@@ -11,9 +11,4 @@
 
 .zoomElement {
   width: 75vw;
-  aspect-ratio: 16/9;
-  /*max-height: calc(100vh - 50px);*/
-  background-color: black;
-  border-radius: 1px;
-  /* border: 5px solid white; */
 }

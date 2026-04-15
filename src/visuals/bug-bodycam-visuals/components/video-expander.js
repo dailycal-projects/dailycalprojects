@@ -79,6 +79,9 @@ export const VideoExpander = ({ src, type = 'video/mp4' }) => {
       },
       '<',
     );
+
+    // Buffer at end
+    tl.to({}, { duration: 0.25 });
   });
 
   // Handle dark mode transition
