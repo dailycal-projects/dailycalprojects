@@ -110,6 +110,14 @@
   border-radius: 20px;
 }
 
+.externalSourceButton {
+  width: 40px;
+  height: 40px;
+  right: 10px;
+  bottom: 72px;
+  border-radius: 20px;
+}
+
 .playButton {
   width: 100px;
   height: 100px;

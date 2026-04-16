@@ -7,7 +7,9 @@ import { DCVideoPlayer } from './dc-video-player';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) => {
+export const VideoExpander = ({
+  src, type = 'video/mp4', aspectRatio = null, externalSourceLink = null,
+}) => {
   // References
   const containerRef = useRef(null);
   const zoomRef = useRef(null);
@@ -175,6 +177,7 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
             ref={videoRef}
             aspectRatio={aspectRatio}
             pauseOnScrollOut={false}
+            externalSourceLink={externalSourceLink}
           />
         </div>
       </div>

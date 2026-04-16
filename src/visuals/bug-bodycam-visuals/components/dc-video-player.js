@@ -8,6 +8,7 @@ import * as styles from '../styling/dc-video-player.module.css';
 import muteIcon from '../icons/volume-xmark-solid-full.svg';
 import fullVolumeIcon from '../icons/volume-solid-full.svg';
 import playIcon from '../icons/play-solid-full.svg';
+import externalSrcIcon from '../icons/arrow-up-right-from-square-solid-full.svg';
 
 export const DCVideoPlayer = forwardRef(({
   src,
@@ -19,6 +20,7 @@ export const DCVideoPlayer = forwardRef(({
   alt = null,
   loop = false,
   pauseOnScrollOut = true,
+  externalSourceLink = null,
 }, ref) => {
   // MARK: Init
   aspectRatio = (typeof aspectRatio === 'string') ? parseFloat(aspectRatio) : aspectRatio;
@@ -311,6 +313,7 @@ export const DCVideoPlayer = forwardRef(({
         className={[styles.control, styles.volumeButton].join(' ')}
         onClick={onMuteButtonClick}
         type="button"
+        title={isMuted ? 'Unmute' : 'Mute'}
       >
         <img
           src={isMuted ? muteIcon : fullVolumeIcon}
@@ -320,11 +323,28 @@ export const DCVideoPlayer = forwardRef(({
       </button>
       )}
 
+      {showControls && externalSourceLink && (
+      <button
+        className={[styles.control, styles.externalSourceButton].join(' ')}
+        onClick={() => window.open(externalSourceLink)}
+        type="button"
+        title="View vide externally"
+      >
+        <img
+          src={externalSrcIcon}
+          className={styles.controlIcon}
+          style={{ filter: 'invert(1)' }}
+        />
+      </button>
+      )}
+
+      {/* Centered play button */}
       {!isPlaying && showControls && !loading && (
       <button
         className={[styles.control, styles.playButton].join(' ')}
         onClick={onPlayButtonPressed}
         type="button"
+        title="Play"
       >
         <img
           src={playIcon}

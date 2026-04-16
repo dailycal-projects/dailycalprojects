@@ -173,6 +173,7 @@ export const VideoScroller = ({ children }) => {
                 aspectRatio={segment.props.aspectRatio}
                 ref={(el) => (videoPlayerRefs.current[i] = el)}
                 pauseOnScrollOut={false}
+                externalSourceLink={segment.props.externalSourceLink}
               />
             </div>
           ))}
