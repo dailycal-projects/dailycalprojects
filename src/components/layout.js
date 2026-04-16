@@ -79,6 +79,7 @@ import SexyMap from '../visuals/too-sexy-visuals/map';
 import { BugVideoScroller } from '../visuals/bug-bodycam-visuals/bug-video-scroller';
 import { BugVideoExpander } from '../visuals/bug-bodycam-visuals/bug-video-expander';
 import { DCVideoPlayer } from '../visuals/bug-bodycam-visuals/components/dc-video-player';
+import { TextImage } from '../visuals/bug-bodycam-visuals/components/text-image';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -170,6 +171,7 @@ const shortcodes = {
   BugVideoScroller,
   BugVideoExpander,
   DCVideoPlayer,
+  TextImage,
 };
 
 export default function Layout({ children }) {
