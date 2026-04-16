@@ -61,8 +61,6 @@ export const VideoScroller = ({ children }) => {
             position: 'sticky',
             top: `${stickyTop}px`,
           });
-        } else {
-          setStickyStyle({});
         }
       }
 
@@ -82,6 +80,10 @@ export const VideoScroller = ({ children }) => {
             // Active segment has changed!
             videoPlayerRefs.current[activeSegment].pause();
             setActiveSegment(s);
+
+            // Restart and play next video:
+            videoPlayerRefs.current[s].seek(0);
+            videoPlayerRefs.current[s].play(true);
           }
           break;
         }
@@ -99,6 +101,35 @@ export const VideoScroller = ({ children }) => {
       window.removeEventListener('resize', onScroll);
     };
   }, [activeSegment, isMobileView]);
+
+  // Play/pause on enter and leave
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Scroller has entered the page
+          videoPlayerRefs.current[activeSegment].play(true);
+        } else {
+          // Scroller has left the page
+          videoPlayerRefs.current[activeSegment].pause();
+        }
+
+        // Pausing on scroll out is redundant because its handled by dc-video-player.
+      }, {
+        threshold: 0.3,
+      },
+    );
+
+    // Attach observer
+    const split = splitRef.current;
+    if (split) observer.observe(split);
+
+    // Clean up
+    return () => {
+      if (split) observer.unobserve(split);
+      observer.disconnect();
+    };
+  }, [activeSegment]);
 
   return (
     <div className={styles.videoScrollerContainer} ref={splitRef}>
@@ -141,6 +172,7 @@ export const VideoScroller = ({ children }) => {
                 type={segment.props.type}
                 aspectRatio={segment.props.aspectRatio}
                 ref={(el) => (videoPlayerRefs.current[i] = el)}
+                pauseOnScrollOut={false}
               />
             </div>
           ))}

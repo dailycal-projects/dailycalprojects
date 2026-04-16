@@ -32,6 +32,7 @@ export const DCVideoPlayer = forwardRef(({
   const [isMuted, setIsMuted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showControls, setShowControls] = useState(true);
+  const [loading, setIsLoading] = useState(true);
 
   // Scrubber dragging logic
   const draggingScrubber = useRef(false);
@@ -59,6 +60,7 @@ export const DCVideoPlayer = forwardRef(({
     play: (muteIfFails = false) => playVideo(muteIfFails),
     pause: () => videoRef.current?.pause?.(),
     setControlsShown: (show) => setShowControls(show),
+    seek: (timestamp) => { if (videoRef.current) videoRef.current.currentTime = timestamp; },
   }), [playVideo]);
 
   // MARK: Check in viewport
@@ -228,7 +230,23 @@ export const DCVideoPlayer = forwardRef(({
   // Sync UI states and video states
   const syncStates = useCallback(() => {
     if (videoRef.current) {
-      setIsPlaying(!videoRef.current.paused);
+      const currentlyPlaying = !videoRef.current.paused;
+      setIsPlaying(currentlyPlaying);
+
+      // If playback has started, loader should be hidden even if canplay events were missed.
+      if (currentlyPlaying) {
+        setIsLoading(false);
+      }
+    }
+  }, []);
+
+  const onWaiting = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Show loader only when playback is actively stalling.
+    if (!video.paused && !video.ended) {
+      setIsLoading(true);
     }
   }, []);
 
@@ -251,14 +269,22 @@ export const DCVideoPlayer = forwardRef(({
         ref={videoRef}
         onContextMenu={(evt) => evt.preventDefault()}
         onPlay={syncStates}
+        onPlaying={syncStates}
         onPause={syncStates}
         onClick={togglePlay}
         aria-label={alt}
         style={{ aspectRatio }}
         loop={loop}
+        onWaiting={onWaiting}
+        onCanPlay={() => setIsLoading(false)}
+        onLoadedData={() => setIsLoading(false)}
+        onSeeked={() => setIsLoading(false)}
       >
         <source src={src} type={type} />
       </video>
+
+      {/* Loading icon */}
+      {loading && <div className={styles.loader} />}
 
       {/* Scrubber */}
       <div
@@ -294,7 +320,7 @@ export const DCVideoPlayer = forwardRef(({
       </button>
       )}
 
-      {!isPlaying && showControls && (
+      {!isPlaying && showControls && !loading && (
       <button
         className={[styles.control, styles.playButton].join(' ')}
         onClick={onPlayButtonPressed}
