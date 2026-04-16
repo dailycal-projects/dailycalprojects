@@ -5,6 +5,7 @@ import { DCVideoPlayer } from './dc-video-player';
 export const VideoScrollerSegment = () => null;
 
 export const VideoScroller = ({ children }) => {
+  // MARK: Init
   // Video container references
   const videoContainerRef = useRef(null);
 
@@ -14,6 +15,7 @@ export const VideoScroller = ({ children }) => {
   const videoPlayerRefs = useRef([]);
   const [activeSegment, setActiveSegment] = useState(0);
 
+  // MARK: Aspect ratio
   // Compute video aspect ratio, taking into account scrubber height
   const getEffectiveContainerAspectRatio = () => {
     const videoAspectRatio = segments[activeSegment]?.props?.aspectRatio || 16 / 9;
@@ -25,6 +27,7 @@ export const VideoScroller = ({ children }) => {
     return width / (videoHeight + 12); // include scrubber height
   };
 
+  // MARK: Sticky Handler
   // Sticky video handler
   const splitRef = useRef(null);
   const [stickyStyle, setStickyStyle] = useState({});
@@ -46,6 +49,7 @@ export const VideoScroller = ({ children }) => {
 
       const TOP_OFFSET = isMobile ? (videoContainer.bottom || 0) : 75;
 
+      // MARK: Set sticky
       // Desktop: center in viewport while sticky.
       // Mobile: stick to top of the container for the full section duration.
       if (isMobile) {
@@ -64,6 +68,7 @@ export const VideoScroller = ({ children }) => {
         }
       }
 
+      // MARK: Get active segment
       // Update active segment
       for (let s = 0; s < segments.length; s++) {
         // Get element
@@ -100,6 +105,7 @@ export const VideoScroller = ({ children }) => {
     };
   }, [activeSegment, isMobileView]);
 
+  // MARK: Autoplay
   // Play/pause on enter and leave
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -129,6 +135,7 @@ export const VideoScroller = ({ children }) => {
     };
   }, [activeSegment]);
 
+  // MARK: UI
   return (
     <div className={styles.videoScrollerContainer} ref={splitRef}>
       {/* Text descriptions */}
