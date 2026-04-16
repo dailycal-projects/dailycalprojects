@@ -20,6 +20,7 @@ export const DCVideoPlayer = forwardRef(({
   alt = null,
   loop = false,
   pauseOnScrollOut = true,
+  playOnScrollIn = false,
   externalSourceLink = null,
 }, ref) => {
   // MARK: Init
@@ -75,12 +76,14 @@ export const DCVideoPlayer = forwardRef(({
       ([entry]) => {
         inViewportRef.current = entry.isIntersecting;
 
-        // Pause on outro
+        // Pause on leave
         if (pauseOnScrollOut && !entry.isIntersecting && videoRef.current) {
           videoRef.current.pause();
+        } else if (playOnScrollIn && entry.isIntersecting) {
+          playVideo(true);
         }
       }, {
-        threshold: 0.3,
+        threshold: 0.7,
       },
     );
 
@@ -93,7 +96,7 @@ export const DCVideoPlayer = forwardRef(({
       if (video) observer.unobserve(video);
       observer.disconnect();
     };
-  }, [pauseOnScrollOut]);
+  }, [pauseOnScrollOut, playOnScrollIn, playVideo]);
 
   // MARK: Manual scrubbing
   // On pointer down on scrubber
