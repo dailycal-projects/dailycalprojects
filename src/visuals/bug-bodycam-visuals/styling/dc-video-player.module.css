@@ -58,8 +58,8 @@
   right: 0;
   top: 50%;
   transform: translate(50%, -50%);
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 7px;
   background-color: lightgray;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

@@ -56,7 +56,7 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
 
       // Recalculate start/end sizing
       const start = getClampedWidthPx(window.innerWidth > 600 ? 640 : 350, aspectRatio);
-      const end = getClampedWidthPx(window.innerWidth * 0.95, aspectRatio);
+      const end = Math.max(start, getClampedWidthPx(window.innerWidth * 0.85, aspectRatio));
 
       widthsRef.current = { start, end };
 
@@ -74,7 +74,7 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'center center+=25px',
-        end: '+=1000',
+        end: window.innerWidth > 600 ? '+=1000' : '+=200',
         scrub: true,
         pin: true,
         anticipatePin: 1,
@@ -148,6 +148,11 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
   // Handle dark mode transition
   useEffect(() => {
     setBackgroundDarkMode(isDarkMode);
+
+    // Switch off dark mode while unmounting
+    return () => {
+      setBackgroundDarkMode(false);
+    };
   }, [isDarkMode]);
 
   // Handle controls show/hide
@@ -180,11 +185,15 @@ export const VideoExpander = ({ src, type = 'video/mp4', aspectRatio = null }) =
 
 export function setBackgroundDarkMode(darkMode) {
   const topBar = document.getElementById('topBar');
-  topBar.style.backgroundColor = darkMode ? '#080808' : '';
-  topBar.style.borderBottom = darkMode ? '1px solid #2b2b2b' : '';
+  if (topBar) {
+    topBar.style.backgroundColor = darkMode ? '#080808' : '';
+    topBar.style.borderBottom = darkMode ? '1px solid #2b2b2b' : '';
+  }
 
   const logo = document.getElementById('logo');
-  logo.style.filter = darkMode ? 'invert(1)' : '';
+  if (logo) {
+    logo.style.filter = darkMode ? 'invert(1)' : '';
+  }
 
   document.body.style.transition = '.2s background ease';
   document.body.style.background = darkMode ? '#0a0a0a' : '';
