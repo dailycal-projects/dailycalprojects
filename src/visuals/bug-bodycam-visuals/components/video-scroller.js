@@ -70,9 +70,7 @@ export const VideoScroller = ({ children }) => {
         const el = segmentTextRefs.current[s];
         if (!el) continue;
         const segment = el.getBoundingClientRect();
-        const top = isMobile
-          ? (segment.top + (segment.height * 0.75))
-          : segment.top;
+        const top = segment.top + (segment.height * 0.5);
 
         if (top >= TOP_OFFSET) {
           // This is the first element to be below the TOP_OFFSET
