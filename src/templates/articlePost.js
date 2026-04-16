@@ -23,8 +23,8 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
   return (
     <div className={classes.articleRoot}>
       <Link to="/" style={{ textDecoration: 'none' }}>
-        <div className={classes.topBar}>
-          <img src={logo} alt="The Daily Californian" style={{ height: '20px', marginTop: '25px' }} />
+        <div className={classes.topBar} id="topBar">
+          <img src={logo} alt="The Daily Californian" className={classes.logo} id="logo" />
         </div>
       </Link>
       <Layout>
@@ -84,7 +84,7 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
           </MDXRenderer>
         </div>
 
-        <ArticleFooter about={frontmatter.aboutStory} />
+        <ArticleFooter about={frontmatter.aboutStory} jointDept={frontmatter.jointDept} />
       </Layout>
     </div>
   );
@@ -102,6 +102,7 @@ export const pageQuery = graphql`
         subhead
         aboutStory
         hideHeroImage
+        jointDept
         featuredImage {
           childImageSharp {
             resize(width: 1200) {

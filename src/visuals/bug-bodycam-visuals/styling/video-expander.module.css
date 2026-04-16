@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96vw;
+  position: relative;
+  left: calc(50% - 48vw);
+  /*transform: translateX(-50%);*/
+}
+
+.zoomElement {
+  width: 95%;
+}
+
+.spacer {
+  width: 1px;
+  height: 0px;
+  margin-bottom: 30px;
+}

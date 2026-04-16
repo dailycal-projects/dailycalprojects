@@ -72,6 +72,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 // during server side rendering, leaflet maps will be ignored
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  // Do not tree shake vidstack css files
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /@vidstack\/react\/.*\.css$/,
+          sideEffects: true,
+        },
+      ],
+    },
+  });
+
   if (stage === 'build-html' || stage === 'develop-html') {
     actions.setWebpackConfig({
       module: {

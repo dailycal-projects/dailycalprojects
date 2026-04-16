@@ -1,27 +1,52 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'gatsby';
 import { styles } from '../styles/customTheme';
 
-const ArticleFooter = ({ classes, about }) => (
+const ArticleFooter = ({ classes, about, jointDept }) => (
   <div className={classes.footerContainer}>
     <br />
     <div className={classes.footerCard}>
       <h3>
         <b> About this story </b>
       </h3>
-      <p> This project was developed by the Data Department at The Daily Californian. </p>
+      {jointDept
+        ? (
+          <p>
+            This project was developed jointly by the Data Department and the
+            {' '}
+            {jointDept}
+            {' '}
+            Department at The Daily Californian.
+          </p>
+        )
+        : <p>This project was developed by the Data Department at The Daily Californian.</p>}
       <p>
         {about}
       </p>
-      <p>
-        Questions, comments or corrections? Email
-        {' '}
-        <a href="mailto: projects@dailycal.org.">projects@dailycal.org</a>
-        . Code, data and text are open-source on
-        {' '}
-        <a href="https://github.com/dailycal-projects/dailycalprojects">GitHub</a>
-        .
-      </p>
+
+      { jointDept
+        ? (
+          <p>
+            <Link
+              to="https://www.dailycal.org/site/contact-us.html"
+              style={{ color: 'gray', fontSize: '14px' }}
+            >
+              Contact the Daily Californian
+            </Link>
+          </p>
+        )
+        : (
+          <p>
+            Questions, comments or corrections? Email
+            {' '}
+            <a href="mailto: projects@dailycal.org.">projects@dailycal.org</a>
+            . Code, data and text are open-source on
+            {' '}
+            <a href="https://github.com/dailycal-projects/dailycalprojects">GitHub</a>
+            .
+          </p>
+        )}
     </div>
 
     <div className={classes.footerCard}>
@@ -38,7 +63,15 @@ const ArticleFooter = ({ classes, about }) => (
         to support our coverage.
       </p>
     </div>
-    <p style={{ fontSize: '14px' }}> Copyright © 2025 The Daily Californian, The Independent Berkeley Student Publishing Co., Inc. </p>
+    <p style={{ fontSize: '14px' }}>
+      {' '}
+      Copyright ©
+      {' '}
+      {new Date().getFullYear()}
+      {' '}
+      The Daily Californian, The Independent Berkeley Student Publishing Co., Inc.
+      {' '}
+    </p>
   </div>
 );
 

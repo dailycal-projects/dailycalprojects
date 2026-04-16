@@ -207,7 +207,13 @@ export const styles = () => createStyles({
     backgroundColor: theme.palette.background,
     zIndex: 9999,
     borderBottom: '1px solid #D3D3D3',
-
+    transition: '.2s backgroundColor ease, .2s borderBottom ease',
+  },
+  logo: {
+    height: '20px',
+    marginTop: '25px',
+    filter: 'none',
+    transition: '.2s filter ease',
   },
 
   headerContainer: {
