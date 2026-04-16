@@ -11,11 +11,11 @@ export const BugVideoScroller = () => (
       aspectRatio={3840 / 2160}
       externalSourceLink={externalSourceLink}
     >
-      <p>Legal experts who reviewed the video said the force Tinney exercised appeared excessive, especially when he initially grabbed the first protester’s arm.  </p>
+      <p>Legal experts who reviewed the video said the force Tinney exercised appeared excessive, especially when he initially grabbed the first protester’s arm.</p>
 
       <p>“He should not have put his hands on them. There was zero reason to use any force against any of these kids,” said Jayme Walker, a lawyer with expertise in police misconduct, in an email. “Officers may use reasonable force to enforce compliance when a person resists a lawful order, but I didn’t see any resistance by anyone and his orders were not lawful.”</p>
 
-      <p>Of the multiple experts that the Daily Cal spoke with, only one — former officer and expert on police conduct Roger Clark — defended Tinney’s use of force, saying “it would not rise to the level of concern.”</p>
+      <p>Of the multiple experts that The Daily Californian spoke with, only one — former officer and expert on police conduct Roger Clark — defended Tinney’s use of force, saying “it would not rise to the level of concern.”</p>
     </VideoScrollerSegment>
 
     <VideoScrollerSegment

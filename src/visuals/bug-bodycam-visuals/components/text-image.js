@@ -1,22 +1,23 @@
-import React from "react"
+import React from 'react';
 
 export const TextImage = ({
   text,
   imageSrc,
-  imageAlt = "",
+  imageAlt = '',
   children,
-  className = "",
+  className = '',
   // Desktop: paragraph left, image right.
   // Mobile: image stacks above the paragraph.
-  imageWidth = "50%",
+  imageWidth = '50%',
 }) => {
-  const content = children ?? text
+  const content = children ?? text;
 
-  if (!imageSrc || content == null) return null
+  if (!imageSrc || content == null) return null;
 
   return (
     <div data-text-image-root className={className}>
-      <style>{`
+      <style>
+        {`
         [data-text-image-root]{
           display:flex;
           align-items:flex-start;
@@ -53,7 +54,8 @@ export const TextImage = ({
           }
         }
 
-      `}</style>
+      `}
+      </style>
 
       <p className="ti-text">{content}</p>
 
@@ -69,9 +71,9 @@ export const TextImage = ({
           <b
             className="ti-contrib"
             style={{
-              fontSize: "12px",
+              fontSize: '12px',
               fontFamily:
-                "Candal, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+                'Candal, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
             }}
           >
             Hayes Gaboury | File
@@ -79,5 +81,5 @@ export const TextImage = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};
