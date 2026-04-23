@@ -80,6 +80,9 @@ import { BugVideoScroller } from '../visuals/bug-bodycam-visuals/bug-video-scrol
 import { BugVideoExpander } from '../visuals/bug-bodycam-visuals/bug-video-expander';
 import { DCVideoPlayer } from '../visuals/bug-bodycam-visuals/components/dc-video-player';
 import { TextImage } from '../visuals/bug-bodycam-visuals/components/text-image';
+import MichVis from '../visuals/dining-visuals/MichVis';
+import NutritionVis from '../visuals/dining-visuals/NutritionVis';
+import ScrollyNew from '../visuals/dining-visuals/ScrollyNew';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -172,6 +175,9 @@ const shortcodes = {
   BugVideoExpander,
   DCVideoPlayer,
   TextImage,
+  michVis: MichVis,
+  nutritionVis: NutritionVis,
+  scrollyNew: ScrollyNew,
 };
 
 export default function Layout({ children }) {

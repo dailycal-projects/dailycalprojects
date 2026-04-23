@@ -1,0 +1,167 @@
+.wrapper {
+  background: #ffffff;
+  font-family: "Source Sans 3", sans-serif;
+  color: #1a1a1a;
+  padding: 52px 44px 72px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.18;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.deck {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.tab {
+  padding: 8px 16px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  color: #777;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab:not(.tabActive):hover {
+  border-color: #aaa;
+  color: #333;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.controlsLabel {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.nButtons {
+  display: flex;
+  gap: 4px;
+}
+
+.nBtn {
+  padding: 5px 13px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  color: #777;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.nBtn:hover {
+  border-color: #aaa;
+  color: #333;
+}
+
+.nBtnActive {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: white;
+}
+
+.chartArea {
+  position: relative;
+  min-height: 360px;
+  overflow-x: auto;
+}
+
+.chartArea svg {
+  display: block;
+  overflow: visible;
+}
+
+.catSummary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.tooltip {
+  position: fixed;
+  background: #1a1a1a;
+  color: white;
+  padding: 9px 14px;
+  border-radius: 5px;
+  font-size: 12.5px;
+  font-family: "Source Sans 3", sans-serif;
+  pointer-events: none;
+  transition: opacity 0.12s;
+  z-index: 999;
+  line-height: 1.6;
+  max-width: 220px;
+}
+
+.source {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid #e8e8e8;
+  font-size: 11px;
+  color: #bbb;
+}
+
+.loading {
+  font-size: 14px;
+  color: #999;
+  padding: 40px 0;
+}

@@ -1,0 +1,175 @@
+.wrapper {
+  font-family: "Source Sans 3", sans-serif;
+  color: #1a1a1a;
+}
+
+.cardsWrapper {
+  padding: 44px 44px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cardsLabel {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.01em;
+  margin-bottom: 18px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.hallCard {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.18s ease;
+  position: relative;
+}
+
+.hallCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.cardBand {
+  height: 6px;
+}
+
+.cardInfo {
+  padding: 14px 18px 18px;
+  border-top: 1px solid #e4e4e4;
+}
+
+.cardName {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.cardHint {
+  display: block;
+  padding: 6px 14px 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.hallCard:hover .cardHint {
+  opacity: 1;
+}
+
+.detailPanel {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 44px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease,
+    padding 0.45s ease;
+}
+
+.detailPanelOpen {
+  max-height: 1200px;
+  opacity: 1;
+  padding: 28px 44px 44px;
+}
+
+.detailInner {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+.detailSidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 32px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  color: white;
+}
+
+.detailImg {
+  width: 100%;
+  max-width: 170px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.18));
+}
+
+.detailHallName {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.detailDesc {
+  font-size: 12.5px;
+  text-align: center;
+  line-height: 1.6;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.detailClose {
+  margin-top: auto;
+  background: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  padding: 7px 16px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.15s;
+}
+
+.detailClose:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: white;
+}
+
+.detailContent {
+  flex: 1;
+  padding: 28px 28px 28px 40px;
+  border-left: 1px solid #e4e4e4;
+}
+
+.detailContentLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.dwContainer {
+  width: 100%;
+}
