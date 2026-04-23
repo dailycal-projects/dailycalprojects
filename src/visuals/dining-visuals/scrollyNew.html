@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berkeley Dining — Hall Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & base ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --clark:     #3d2b1f;
+      --clark-acc: #C4956A;
+      --croads:    #003262;
+      --croads-acc:#FDB515;
+      --foothill:  #2d4a2d;
+      --foot-acc:  #A4C3A2;
+      --cafe3:     #4a1942;
+      --cafe3-acc: #B5829A;
+
+      --bg:        #f8f6f2;
+      --white:     #ffffff;
+      --text:      #1a1a1a;
+      --muted:     #777;
+      --border:    #e4e4e4;
+    }
+
+    body {
+      font-family: "Source Sans 3", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ────────────────────────────────────────────── */
+    .page-header {
+      background: #1a1a1a;
+      padding: 22px 44px;
+      border-bottom: 3px solid var(--clark-acc);
+    }
+
+    .page-header h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.01em;
+    }
+
+    .page-header p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+      margin-top: 3px;
+    }
+
+    /* ── Card grid ─────────────────────────────────────────── */
+    .cards-wrapper {
+      padding: 44px 44px 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .cards-label {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: rgb(0, 0, 0);
+      letter-spacing: 0.01em;
+      margin-bottom: 18px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    /* ── Individual card ───────────────────────────────────── */
+    .hall-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.18s ease;
+      position: relative;
+    }
+
+    .hall-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+
+    .hall-card.active {
+      border-color: var(--card-acc);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--card-acc) 20%, transparent);
+    }
+
+    .hall-card[data-hall="clark"]    { --card-color: var(--clark);     --card-acc: var(--clark-acc); }
+    .hall-card[data-hall="crossroads"]{ --card-color: var(--croads);   --card-acc: var(--croads-acc); }
+    .hall-card[data-hall="foothill"] { --card-color: var(--foothill);  --card-acc: var(--foot-acc); }
+    .hall-card[data-hall="cafe3"]    { --card-color: var(--cafe3);     --card-acc: var(--cafe3-acc); }
+
+    /* Top color band */
+    .card-band {
+      height: 6px;
+      background: var(--card-color);
+    }
+
+    /* Building image */
+    .card-img-wrap {
+      padding: 20px 20px 12px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 160px;
+      background: color-mix(in srgb, var(--card-color) 4%, white);
+    }
+
+    .card-img-wrap img {
+      max-height: 130px;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+      transition: transform 0.2s ease;
+    }
+
+    .hall-card:hover .card-img-wrap img {
+      transform: scale(1.04) translateY(-2px);
+    }
+
+    /* Card footer */
+    .card-info {
+      padding: 14px 18px 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-name {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: color-mix(in srgb, var(--card-acc) 15%, white);
+      color: color-mix(in srgb, var(--card-color) 80%, black);
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+
+    /* Click hint */
+    .card-hint {
+      position: absolute;
+      bottom: 52px;
+      right: 14px;
+      font-size: 10px;
+      color: var(--card-acc);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .hall-card:hover .card-hint { opacity: 1; }
+
+    /* ── Detail panel ──────────────────────────────────────── */
+    .detail-panel {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 44px;
+      overflow: hidden;
+      height: 0;
+      opacity: 0;
+      transition:
+        height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.35s ease,
+        padding 0.45s ease;
+    }
+
+    .detail-panel.open {
+      height: auto;
+      opacity: 1;
+      padding: 28px 44px 44px;
+    }
+
+    .detail-inner {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    /* Left sidebar */
+    .detail-sidebar {
+      width: 220px;
+      flex-shrink: 0;
+      padding: 32px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .detail-sidebar img {
+      width: 100%;
+      max-width: 170px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.18));
+    }
+
+    .detail-hall-name {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    .detail-desc {
+      font-size: 12.5px;
+      text-align: center;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .detail-close {
+      margin-top: auto;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 5px;
+      padding: 7px 16px;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.15s;
+    }
+    .detail-close:hover { border-color: #aaa; color: var(--text); }
+
+    /* Right content */
+    .detail-content {
+      flex: 1;
+      padding: 28px 28px 28px 40px;
+      border-left: 1px solid var(--border);
+    }
+
+    .detail-content-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* Datawrapper iframe container */
+    .dw-container {
+      width: 100%;
+    }
+
+    /* ── Hall-specific color theming ───────────────────────── */
+    .panel-clark    .detail-sidebar { background: var(--clark);    color: white; }
+    .panel-clark    .detail-sidebar .detail-desc { color: rgba(255,255,255,0.65); }
+    .panel-clark    .detail-sidebar .detail-close { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.6); }
+    .panel-clark    .detail-sidebar .detail-close:hover { color: white; border-color: rgba(255,255,255,0.6); }
+    .panel-clark    .detail-content-label { color: var(--clark-acc); }
+
+    .panel-crossroads .detail-sidebar { background: var(--croads);  color: white; }
+    .panel-crossroads .detail-sidebar .detail-desc { color: rgba(255,255,255,0.65); }
+    .panel-crossroads .detail-sidebar .detail-close { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.6); }
+    .panel-crossroads .detail-sidebar .detail-close:hover { color: white; border-color: rgba(255,255,255,0.6); }
+    .panel-crossroads .detail-content-label { color: var(--croads-acc); }
+
+    .panel-foothill .detail-sidebar { background: var(--foothill); color: white; }
+    .panel-foothill .detail-sidebar .detail-desc { color: rgba(255,255,255,0.65); }
+    .panel-foothill .detail-sidebar .detail-close { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.6); }
+    .panel-foothill .detail-sidebar .detail-close:hover { color: white; border-color: rgba(255,255,255,0.6); }
+    .panel-foothill .detail-content-label { color: var(--foot-acc); }
+
+    .panel-cafe3    .detail-sidebar { background: var(--cafe3);    color: white; }
+    .panel-cafe3    .detail-sidebar .detail-desc { color: rgba(255,255,255,0.65); }
+    .panel-cafe3    .detail-sidebar .detail-close { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.6); }
+    .panel-cafe3    .detail-sidebar .detail-close:hover { color: white; border-color: rgba(255,255,255,0.6); }
+    .panel-cafe3    .detail-content-label { color: var(--cafe3-acc); }
+  </style>
+</head>
+<body>
+
+
+<div class="cards-wrapper">
+  <h1 class="cards-label">Click on a dining hall to explore its menu data</h1>
+
+  <!-- ── 4 Cards ─────────────────────────────────────────── -->
+  <div class="cards-grid">
+
+    <div class="hall-card" data-hall="clark" onclick="toggleHall('clark')">
+      <div class="card-band"></div>
+      
+      <span class="card-hint">Explore ↓</span>
+      <div class="card-info">
+        <div class="card-name">Clark Kerr</div>
+      </div>
+    </div>
+
+    <div class="hall-card" data-hall="crossroads" onclick="toggleHall('crossroads')">
+      <div class="card-band"></div>
+      
+      <span class="card-hint">Explore ↓</span>
+      <div class="card-info">
+        <div class="card-name">Crossroads<br></br></div>
+      </div>
+    </div>
+
+    <div class="hall-card" data-hall="foothill" onclick="toggleHall('foothill')">
+      <div class="card-band"></div>
+      
+      <span class="card-hint">Explore ↓</span>
+      <div class="card-info">
+        <div class="card-name">Foothill</div>
+      </div>
+    </div>
+
+    <div class="hall-card" data-hall="cafe3" onclick="toggleHall('cafe3')">
+      <div class="card-band"></div>
+      
+      <span class="card-hint">Explore ↓</span>
+      <div class="card-info">
+        <div class="card-name">Café 3</div>
+      </div>
+    </div>
+
+  </div><!-- /cards-grid -->
+</div><!-- /cards-wrapper -->
+
+<!-- ── Detail Panel (single, reused for all halls) ──────── -->
+<div class="detail-panel" id="detail-panel">
+  <div class="detail-inner" id="detail-inner">
+
+    <!-- Sidebar — content injected by JS -->
+    <div class="detail-sidebar" id="detail-sidebar">
+      <img id="detail-img" src="" alt="" />
+      <div class="detail-hall-name" id="detail-name"></div>
+      <div class="detail-desc" id="detail-desc"></div>
+      <button class="detail-close" onclick="closePanel()">✕ Close</button>
+    </div>
+
+    <!-- Main content -->
+    <div class="detail-content">
+      <div class="detail-content-label" id="detail-label">Menu Analysis</div>
+      <div class="dw-container" id="dw-container">
+        <!-- Datawrapper embed injected by JS -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const HALLS = {
+  clark: {
+    name:   "Clark Kerr",
+    img:    "coloredited_danalim_data_clark.PNG",
+    desc:   "Clark Kerr had the highest proportion of allergen-containing items of the four dining halls, particularly gluten, milk and egg.",
+    panelClass: "panel-clark",
+    // Replace src with Clark Kerr-specific Datawrapper URL when ready
+    dwSrc:  "https://datawrapper.dwcdn.net/2BrGR/4/",
+    dwHeight: 387,
+  },
+  crossroads: {
+    name:   "Crossroads",
+    img:    "coloredited_danalim_data_croads.PNG",
+    desc:   "Crossroads is Berkeley Dining's flagship facility — the largest dining hall on campus, serving breakfast, lunch and dinner daily.",
+    panelClass: "panel-crossroads",
+    dwSrc:  "https://datawrapper.dwcdn.net/R2Ljp/1/",
+    dwHeight: 387,
+  },
+  foothill: {
+    name:   "Foothill",
+    img:    "coloredited_danalim_data_foothill.PNG",
+    desc:   "Foothill had the fewest allergen-containing items of all four dining halls — a standout for students managing dietary restrictions.",
+    panelClass: "panel-foothill",
+    dwSrc:  "https://datawrapper.dwcdn.net/JgXO3/2/",
+    dwHeight: 387,
+  },
+  cafe3: {
+    name:   "Café 3",
+    img:    "coloredited_danalim_data_cafe3.PNG",
+    desc:   "Café 3 is the only dining hall with a Kosher-certified food station and prioritizes halal service.",
+    panelClass: "panel-cafe3",
+    dwSrc:  "https://datawrapper.dwcdn.net/kWcBp/1/",
+    dwHeight: 387,
+  },
+}
+
+let activeHall = null
+
+function toggleHall(key) {
+  if (activeHall === key) {
+    closePanel()
+    return
+  }
+  openPanel(key)
+}
+
+function openPanel(key) {
+  const hall    = HALLS[key]
+  const panel   = document.getElementById('detail-panel')
+  const inner   = document.getElementById('detail-inner')
+  const sidebar = document.getElementById('detail-sidebar')
+
+  // Update sidebar content
+  document.getElementById('detail-img').src = hall.img
+  document.getElementById('detail-img').alt = hall.name
+  document.getElementById('detail-name').textContent = hall.name
+  document.getElementById('detail-desc').textContent = hall.desc
+
+  // Swap panel color class
+  inner.className = 'detail-inner ' + hall.panelClass
+
+  // Inject Datawrapper embed
+  document.getElementById('dw-container').innerHTML = `
+    <iframe
+      title="${hall.name}"
+      aria-label="Table"
+      src="${hall.dwSrc}"
+      scrolling="no"
+      frameborder="0"
+      style="width:0; min-width:100% !important; border:none;"
+      height="${hall.dwHeight}"
+      data-external="1"
+    ></iframe>
+    <script type="text/javascript">
+      window.addEventListener("message", function(a) {
+        if (void 0 !== a.data["datawrapper-height"]) {
+          var e = document.querySelectorAll("iframe");
+          for (var t in a.data["datawrapper-height"])
+            for (var r, i = 0; r = e[i]; i++)
+              if (r.contentWindow === a.source) {
+                var d = a.data["datawrapper-height"][t] + "px";
+                r.style.height = d;
+              }
+        }
+      });
+    <\/script>
+  `
+
+  // Mark active card
+  document.querySelectorAll('.hall-card').forEach(c => c.classList.remove('active'))
+  document.querySelector(`.hall-card[data-hall="${key}"]`).classList.add('active')
+
+  // Open panel
+  panel.classList.add('open')
+  activeHall = key
+
+  // Scroll panel into view smoothly
+  setTimeout(() => {
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+  }, 60)
+}
+
+function closePanel() {
+  const panel = document.getElementById('detail-panel')
+  panel.classList.remove('open')
+  document.querySelectorAll('.hall-card').forEach(c => c.classList.remove('active'))
+
+  // Clear iframe after animation
+  setTimeout(() => {
+    document.getElementById('dw-container').innerHTML = ''
+  }, 450)
+
+  activeHall = null
+}
+</script>
+
+<!-- Datawrapper resize listener (global, handles any open embed) -->
+<script type="text/javascript">
+window.addEventListener("message", function(a) {
+  if (void 0 !== a.data["datawrapper-height"]) {
+    var e = document.querySelectorAll("iframe");
+    for (var t in a.data["datawrapper-height"])
+      for (var r, i = 0; r = e[i]; i++)
+        if (r.contentWindow === a.source) {
+          var d = a.data["datawrapper-height"][t] + "px";
+          r.style.height = d;
+        }
+  }
+});
+</script>
+
+</body>
+</html>
