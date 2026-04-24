@@ -285,13 +285,7 @@ export default function NutritionVis() {
 
   return (
     <div className={styles.wrapper}>
-      <p className={styles.eyebrow}>Berkeley Dining · Nutrition</p>
-      <h2 className={styles.title}>What&apos;s most often on the plate?</h2>
-      <p className={styles.deck}>
-        The most frequently served grains, proteins, and greens across all Berkeley
-        dining halls — counted by how many times each item appeared on the menu.
-        Hover any bar for details.
-      </p>
+      <h2 className={styles.title}>Most commonly served grains, proteins and greens</h2>
 
       <div className={styles.tabs}>
         {['grains', 'proteins', 'greens'].map((cat) => (

@@ -68,9 +68,9 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
   const fmt = (s) => (s.length === 8 ? `${s.slice(4, 6)}/${s.slice(6, 8)}/${s.slice(0, 4)}` : s);
   const range = dates.length ? `${fmt(dates[0])} to ${fmt(dates[dates.length - 1])}` : '';
 
-  const subtitle = `${`<strong>${itemName}</strong> was served <strong>${peakC}</strong> time${peakC !== 1 ? 's' : ''} `
-    + `on <strong>${peakD}s</strong> at <strong>${peakL}</strong>`}${
-    range ? ` · <strong>${range}</strong>` : ''}.`;
+  const subtitle = `<strong>${itemName}</strong> was served <strong>${peakC}</strong> time${ peakC !== 1 ? 's' : ''} `
+    + `on <strong>${peakD}s</strong> at <strong>${peakL}</strong>`
+    + `${range ? ` between <strong>${range}</strong>` : ''}.`;
 
   const W = M.left + activeDays.length * (CELL + PAD) + M.right;
   const H = M.top + locs.length * (CELL + PAD) + M.bottom;
@@ -329,16 +329,27 @@ export default function MichVis() {
 
         <p className={styles.vizSource}>
           Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
-          Source: UC Berkeley Dining Services &nbsp;·&nbsp;
+          Source:
+          {' '}
+          <a
+            href="https://dining.berkeley.edu/menus/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            UC Berkeley Dining
+          </a>
+          &nbsp;·&nbsp;
           Visualization adapted from
           {' '}
+          “
           <a
             href="https://www.michigandaily.com/web/data/diving-deep-into-mdining/"
             target="_blank"
             rel="noreferrer"
           >
-            &ldquo;Diving Deep into MDining&rdquo;
+            Diving Deep into MDining
           </a>
+          ”
           {' '}
           by The Michigan Daily Data Team
         </p>
