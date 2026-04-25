@@ -347,7 +347,7 @@ export default function MichVis() {
             target="_blank"
             rel="noreferrer"
           >
-            Diving Deep into MDining
+            Diving deep into MDining
           </a>
           ”
           {' '}

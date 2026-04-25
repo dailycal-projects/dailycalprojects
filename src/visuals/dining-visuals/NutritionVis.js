@@ -349,7 +349,7 @@ export default function NutritionVis() {
 
       <div className={styles.chartArea} ref={chartAreaRef} />
 
-      <p className={styles.source}>Anika Bhutani/The Daily Californian</p>
+      <p className={styles.source}>Chart: Anika Bhutani/The Daily Californian</p>
 
       <div ref={tooltipRef} className={styles.tooltip} style={{ opacity: 0 }} />
     </div>
