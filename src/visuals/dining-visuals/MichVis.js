@@ -7,11 +7,22 @@ const COLOR_MID1 = '#C4956A';
 const COLOR_MID2 = '#6B8F71';
 const COLOR_HI = '#3B5E4F';
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-const M = {
-  top: 10, right: 20, bottom: 50, left: 150,
-};
+const M = { top: 10, right: 20, bottom: 50, left: 150 };
 const CELL = 62;
 const PAD = 5;
+
+// fix 4: lowercase item names (first letter of first word only)
+function formatItemName(name) {
+  if (!name) return name;
+  return name.charAt(0).toLowerCase() + name.slice(1);
+}
+
+// fix 6: number to word for small counts, numeral for large
+const NUMBER_WORDS = ['zero','one','two','three','four','five','six','seven','eight','nine','ten',
+  'eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'];
+function toWord(n) {
+  return n <= 20 ? NUMBER_WORDS[n] : String(n);
+}
 
 function parseDataset(raw) {
   return raw.map((row) => {
@@ -27,7 +38,8 @@ function parseDataset(raw) {
     } else {
       r._day = 'Unknown';
     }
-    r._location = (r.Location || '').replace(/_/g, ' ').trim();
+    // fix 8: restore é in Café 3
+    r._location = (r.Location || '').replace(/_/g, ' ').trim().replace(/Cafe 3/i, 'Café 3');
     return r;
   });
 }
@@ -63,14 +75,15 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
     if (c > peakC) { peakC = c; peakL = loc; peakD = day; }
   }));
 
-  const allRows = dataset.filter((d) => d.Item_Name === itemName);
-  const dates = allRows.map((d) => d.Date).filter(Boolean).sort();
-  const fmt = (s) => (s.length === 8 ? `${s.slice(4, 6)}/${s.slice(6, 8)}/${s.slice(0, 4)}` : s);
-  const range = dates.length ? `${fmt(dates[0])} to ${fmt(dates[dates.length - 1])}` : '';
-
-  const subtitle = `<strong>${itemName}</strong> was served <strong>${peakC}</strong> time${ peakC !== 1 ? 's' : ''} `
-    + `on <strong>${peakD}s</strong> at <strong>${peakL}</strong>`
-    + `${range ? ` between <strong>${range}</strong>` : ''}.`;
+  // fix 1: new subtitle format
+  // fix 4: lowercase item name
+  // fix 5: "were"
+  // fix 6: number as word
+  // fix 7: example sentence format
+  const displayName = formatItemName(itemName);
+  const countWord = toWord(peakC);
+  const subtitle = `<strong>${displayName}</strong> were served <strong>${countWord}</strong> time${peakC !== 1 ? 's' : ''} `
+    + `on <strong>${peakD}s</strong> at <strong>${peakL}</strong> between Feb. to March.`;
 
   const W = M.left + activeDays.length * (CELL + PAD) + M.right;
   const H = M.top + locs.length * (CELL + PAD) + M.bottom;
@@ -121,10 +134,8 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
       const cell = g.append('g');
       cell.append('rect')
         .attr('x', cx + 2).attr('y', cy + 2)
-        .attr('width', CELL - 2)
-        .attr('height', CELL - 2)
-        .attr('rx', 5)
-        .attr('ry', 5)
+        .attr('width', CELL - 2).attr('height', CELL - 2)
+        .attr('rx', 5).attr('ry', 5)
         .attr('fill', fill)
         .style('cursor', 'default')
         .style('transition', 'opacity 0.12s')
@@ -138,16 +149,12 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
         .on('mouseover', function () { d3.select(this).style('opacity', '0.82'); })
         .on('mouseout', function () { d3.select(this).style('opacity', '1'); });
       cell.append('text')
-        .attr('x', cx + 2 + (CELL - 2) / 2)
-        .attr('y', cy + 2 + (CELL - 2) / 2)
-        .attr('dominant-baseline', 'central')
-        .attr('text-anchor', 'middle')
+        .attr('x', cx + 2 + (CELL - 2) / 2).attr('y', cy + 2 + (CELL - 2) / 2)
+        .attr('dominant-baseline', 'central').attr('text-anchor', 'middle')
         .style('font-family', "'Source Sans 3',sans-serif")
-        .style('font-size', '12.5px')
-        .style('font-weight', '600')
+        .style('font-size', '12.5px').style('font-weight', '600')
         .style('pointer-events', 'none')
-        .attr('fill', tf)
-        .text(count);
+        .attr('fill', tf).text(count);
     });
   });
 
@@ -159,32 +166,30 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
   d3.range(0, 1.01, 0.1).forEach((t) => {
     grad.append('stop').attr('offset', `${t * 100}%`).attr('stop-color', cScale(minC + t * (maxC - minC)));
   });
-  lsvg.append('rect').attr('x', 8).attr('y', 2).attr('width', lW)
-    .attr('height', 13)
-    .attr('rx', 3)
-    .style('fill', 'url(#michLg)');
+  lsvg.append('rect').attr('x', 8).attr('y', 2).attr('width', lW).attr('height', 13).attr('rx', 3).style('fill', 'url(#michLg)');
   const lxSc = d3.scaleLinear().domain([minC, maxC]).range([8, 8 + lW]);
   lsvg.append('g').attr('transform', 'translate(0,15)')
     .call(d3.axisBottom(lxSc).ticks(4).tickSize(3))
     .call((ax) => ax.select('.domain').remove())
     .selectAll('text')
     .style('font-family', "'Source Sans 3',sans-serif")
-    .style('font-size', '10px')
-    .attr('fill', '#aaa');
+    .style('font-size', '10px').attr('fill', '#aaa');
 
   return { subtitle, noResults: false, showLegend: true };
 }
+
+const DEFAULT_ITEM = 'Scrambled Eggs'; // fix 2
 
 export default function MichVis() {
   const [dataset, setDataset] = useState([]);
   const [allItems, setAllItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(DEFAULT_ITEM);
   const [acItems, setAcItems] = useState([]);
   const [acIdx, setAcIdx] = useState(-1);
   const [showAc, setShowAc] = useState(false);
-  const [currentItem, setCurrentItem] = useState(null);
+  const [currentItem, setCurrentItem] = useState(DEFAULT_ITEM);
   const [subtitle, setSubtitle] = useState('');
   const [noResults, setNoResults] = useState(false);
   const [locations, setLocations] = useState([]);
@@ -214,6 +219,7 @@ export default function MichVis() {
     });
   }, []);
 
+  // fix 2: render default item once data loads
   useEffect(() => {
     if (!currentItem || !dataset.length || !chartRef.current) return;
     const result = renderHeatmap(
@@ -254,106 +260,88 @@ export default function MichVis() {
   if (error) return <p className={styles.loading}>⚠️ Could not load allMenus.csv.</p>;
 
   return (
-    <div className={styles.wrapper}>
-      <header className={styles.header}>
-        <h2 className={styles.headerH1}>Most commonly served items</h2>
-        <span className={styles.subhead}>Search by menu item</span>
-      </header>
+    // fix 3: no header wrapper, just the main content
+    <div className={styles.main}>
+      <p className={styles.searchLabel}>Search Menu Items</p>
+      {subtitle && (
+        <p
+          className={styles.subtitle}
+          dangerouslySetInnerHTML={{ __html: subtitle }}
+        />
+      )}
 
-      <main className={styles.main}>
-        <p className={styles.searchLabel}>Search Menu Items</p>
-        {subtitle && (
-          <p
-            className={styles.subtitle}
-            dangerouslySetInnerHTML={{ __html: subtitle }}
-          />
-        )}
-
-        <div className={styles.searchBox}>
-          <input
-            className={styles.searchInput}
-            type="text"
-            placeholder="e.g. Scrambled Eggs, Pasta, Chicken…"
-            autoComplete="off"
-            value={searchQuery}
-            onChange={handleSearchInput}
-            onKeyDown={handleKeyDown}
-            onBlur={() => setTimeout(() => setShowAc(false), 150)}
-          />
-          {showAc && (
-            <div className={styles.autocompleteList}>
-              {acItems.map((item, i) => (
-                <div
-                  key={item}
-                  className={`${styles.autocompleteItem}${i === acIdx ? ` ${styles.autocompleteItemActive}` : ''}`}
-                  onMouseDown={() => pick(item)}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-        <p className={styles.searchHint}>Type 2 or more characters for results.</p>
-
-        <div className={styles.filterRow}>
-          <label className={styles.filterLabel}>Location</label>
-          <select
-            className={styles.filterSelect}
-            value={filterLocation}
-            onChange={(e) => setFilterLocation(e.target.value)}
-          >
-            <option value="ALL">All Locations</option>
-            {locations.map((l) => <option key={l} value={l}>{l}</option>)}
-          </select>
-          <label className={styles.filterLabel}>Meal</label>
-          <select
-            className={styles.filterSelect}
-            value={filterMeal}
-            onChange={(e) => setFilterMeal(e.target.value)}
-          >
-            <option value="ALL">All Meals</option>
-            {meals.map((m) => <option key={m} value={m}>{m}</option>)}
-          </select>
-        </div>
-
-        <div className={styles.chartContainer} ref={chartRef} />
-        {noResults && <p className={styles.noResults}>No results found for this item.</p>}
-
-        {showLegend && (
-          <div className={styles.legendWrap}>
-            <p className={styles.legendLabel}>Times served</p>
-            <svg ref={legendRef} />
+      <div className={styles.searchBox}>
+        <input
+          className={styles.searchInput}
+          type="text"
+          placeholder="e.g. Scrambled Eggs, Pasta, Chicken…"
+          autoComplete="off"
+          value={searchQuery}
+          onChange={handleSearchInput}
+          onKeyDown={handleKeyDown}
+          onBlur={() => setTimeout(() => setShowAc(false), 150)}
+        />
+        {showAc && (
+          <div className={styles.autocompleteList}>
+            {acItems.map((item, i) => (
+              <div
+                key={item}
+                className={`${styles.autocompleteItem}${i === acIdx ? ` ${styles.autocompleteItemActive}` : ''}`}
+                onMouseDown={() => pick(item)}
+              >
+                {item}
+              </div>
+            ))}
           </div>
         )}
+      </div>
+      <p className={styles.searchHint}>Type 2 or more characters for results.</p>
 
-        <p className={styles.vizSource}>
-          Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
-          Source:
-          {' '}
-          <a
-            href="https://dining.berkeley.edu/menus/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            UC Berkeley Dining
-          </a>
-          &nbsp;·&nbsp;
-          Visualization adapted from
-          {' '}
-          “
-          <a
-            href="https://www.michigandaily.com/web/data/diving-deep-into-mdining/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Diving deep into MDining
-          </a>
-          ”
-          {' '}
-          by The Michigan Daily Data Team
-        </p>
-      </main>
+      <div className={styles.filterRow}>
+        <label className={styles.filterLabel}>Location</label>
+        <select
+          className={styles.filterSelect}
+          value={filterLocation}
+          onChange={(e) => setFilterLocation(e.target.value)}
+        >
+          <option value="ALL">All Locations</option>
+          {locations.map((l) => <option key={l} value={l}>{l}</option>)}
+        </select>
+        <label className={styles.filterLabel}>Meal</label>
+        <select
+          className={styles.filterSelect}
+          value={filterMeal}
+          onChange={(e) => setFilterMeal(e.target.value)}
+        >
+          <option value="ALL">All Meals</option>
+          {meals.map((m) => <option key={m} value={m}>{m}</option>)}
+        </select>
+      </div>
+
+      <div className={styles.chartContainer} ref={chartRef} />
+      {noResults && <p className={styles.noResults}>No results found for this item.</p>}
+
+      {showLegend && (
+        <div className={styles.legendWrap}>
+          <p className={styles.legendLabel}>Times served</p>
+          <svg ref={legendRef} />
+        </div>
+      )}
+
+      <p className={styles.vizSource}>
+        Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
+        Source:{' '}
+        <a href="https://dining.berkeley.edu/menus/" target="_blank" rel="noreferrer">
+          UC Berkeley Dining
+        </a>
+        &nbsp;·&nbsp;
+        Visualization adapted from{' '}
+        {/* fix 9: lowercase "deep" */}
+        "<a href="https://www.michigandaily.com/web/data/diving-deep-into-mdining/" target="_blank" rel="noreferrer">
+          Diving deep into MDining
+        </a>"
+        {' '}by The Michigan Daily Data Team
+      </p>
 
       <div ref={tooltipRef} className={styles.tooltip} style={{ opacity: 0 }} />
     </div>
