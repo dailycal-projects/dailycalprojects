@@ -42,7 +42,7 @@ const HALLS = {
 };
 
 export default function ScrollyNew() {
-  const [activeHall, setActiveHall] = useState(null);
+  const [activeHall, setActiveHall] = useState('clark');
 
   function toggleHall(key) {
     setActiveHall((prev) => (prev === key ? null : key));
