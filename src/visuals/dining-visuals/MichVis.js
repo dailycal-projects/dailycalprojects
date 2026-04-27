@@ -185,11 +185,11 @@ export default function MichVis() {
   const [allItems, setAllItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(DEFAULT_ITEM);
+  const [searchQuery, setSearchQuery] = useState('');
   const [acItems, setAcItems] = useState([]);
   const [acIdx, setAcIdx] = useState(-1);
   const [showAc, setShowAc] = useState(false);
-  const [currentItem, setCurrentItem] = useState(DEFAULT_ITEM);
+  const [currentItem, setCurrentItem] = useState(null);
   const [subtitle, setSubtitle] = useState('');
   const [noResults, setNoResults] = useState(false);
   const [locations, setLocations] = useState([]);
@@ -213,6 +213,10 @@ export default function MichVis() {
       setLocations(locs);
       setMeals(mls);
       setLoading(false);
+      // Render default item immediately once we have data — find exact match in CSV
+      const matchedDefault = items.find((i) => i.toLowerCase() === DEFAULT_ITEM.toLowerCase()) || items[0];
+      setSearchQuery(matchedDefault);
+      setCurrentItem(matchedDefault);
     }).catch(() => {
       setError(true);
       setLoading(false);
@@ -336,10 +340,7 @@ export default function MichVis() {
         </a>
         &nbsp;·&nbsp;
         Visualization adapted from{' '}
-        {/* fix 9: lowercase "deep" */}
-        "<a href="https://www.michigandaily.com/web/data/diving-deep-into-mdining/" target="_blank" rel="noreferrer">
-          Diving deep into MDining
-        </a>"
+        &ldquo;<a href="https://www.michigandaily.com/web/data/diving-deep-into-mdining/" target="_blank" rel="noreferrer">Diving deep into MDining</a>&rdquo;
         {' '}by The Michigan Daily Data Team
       </p>
 
