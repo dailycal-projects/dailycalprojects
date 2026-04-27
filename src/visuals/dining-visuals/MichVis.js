@@ -14,7 +14,9 @@ const PAD = 5;
 // fix 4: lowercase item names (first letter of first word only)
 function formatItemName(name) {
   if (!name) return name;
-  return name.charAt(0).toLowerCase() + name.slice(1);
+
+  const cleaned = name.trim().toLowerCase();
+  return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
 }
 
 // fix 6: number to word for small counts, numeral for large
