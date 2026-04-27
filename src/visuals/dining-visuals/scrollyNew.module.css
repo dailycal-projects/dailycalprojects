@@ -1,9 +1,13 @@
+/* ─────────────────────────────────────────────
+   scrollyNew.module.css
+   ───────────────────────────────────────────── */
+
 .wrapper {
   font-family: "Source Sans 3", sans-serif;
   color: #1a1a1a;
 }
 
-/* ── Cards section ───────────────────────────────────────────────── */
+/* ── Cards ──────────────────────────────────── */
 
 .cardsWrapper {
   padding: 24px 20px 0;
@@ -11,33 +15,33 @@
   margin: 0 auto;
 }
 
+/* Keep heading on one line; shrink font so it never wraps at normal widths */
 .cardsLabel {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #000;
   letter-spacing: 0.01em;
   margin-bottom: 18px;
-  /* Never let the heading wrap awkwardly */
-  max-width: 100%;
+  white-space: nowrap;
 }
 
 .cardsGrid {
   display: grid;
-  /* Fixed min width per card so names never wrap */
+  /* 4 equal columns; minmax(0,1fr) prevents blowout */
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 
 .hallCard {
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.18s ease;
   position: relative;
-  /* Ensure card never collapses narrower than its content */
+  /* Critical: lets card shrink without overflowing its grid cell */
   min-width: 0;
 }
 
@@ -50,18 +54,17 @@
   height: 6px;
 }
 
+/* Tight padding so names have maximum horizontal room */
 .cardInfo {
-  /* Tighter padding so names have more room */
   padding: 10px 10px 14px;
   border-top: 1px solid #e4e4e4;
 }
 
 .cardName {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #1a1a1a;
-  /* Single line with ellipsis if truly can't fit */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -81,7 +84,7 @@
   opacity: 1;
 }
 
-/* ── Detail panel ────────────────────────────────────────────────── */
+/* ── Detail panel ───────────────────────────── */
 
 .detailPanel {
   max-width: 1100px;
@@ -90,19 +93,20 @@
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease,
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease,
     padding 0.45s ease;
 }
 
 .detailPanelOpen {
-  /* Tall enough to never clip the Datawrapper chart */
-  max-height: 2400px;
+  /* Tall enough for the longest Datawrapper chart */
+  max-height: 3000px;
   opacity: 1;
   padding: 20px 20px 36px;
 }
 
 .detailInner {
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -118,7 +122,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  color: white;
+  color: #fff;
 }
 
 .detailImg {
@@ -161,12 +165,12 @@
 
 .detailClose:hover {
   border-color: rgba(255, 255, 255, 0.6);
-  color: white;
+  color: #fff;
 }
 
 .detailContent {
   flex: 1;
-  /* Prevent chart from overflowing */
+  /* Prevent chart from overflowing the flex container */
   min-width: 0;
   padding: 28px 28px 28px 32px;
   border-left: 1px solid #e4e4e4;
@@ -184,55 +188,51 @@
   width: 100%;
 }
 
-/* ── Byline ──────────────────────────────────────────────────────── */
+/* ── Byline — Daily Cal house style ─────────── */
 
 .vizSource {
+  font-family: "Source Sans 3", sans-serif;
   font-size: 11px;
-  color: #aaa;
-  margin-top: 12px;
-  margin-bottom: 0;
-  padding-top: 14px;
-  padding-bottom: 8px;
-  border-top: 1px solid #eee;
+  color: #999;
+  margin: 12px auto 0;
+  padding: 10px 20px 0;
+  border-top: 1px solid #e8e8e8;
   line-height: 1.7;
   max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .vizSource a {
-  color: #999;
+  color: #888;
   text-decoration: underline;
 }
 
-/* ── Mobile ──────────────────────────────────────────────────────── */
+/* ── Mobile (≤ 700 px) ──────────────────────── */
 
 @media (max-width: 700px) {
   .cardsWrapper {
     padding: 16px 12px 0;
   }
 
+  /* Allow heading to wrap on very narrow screens rather than overflow */
   .cardsLabel {
-    font-size: 1rem;
     white-space: normal;
+    font-size: 0.95rem;
   }
 
   .cardsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
   .cardInfo {
-    padding: 8px 8px 12px;
+    padding: 8px 8px 10px;
   }
 
   .cardName {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
   }
 
-  /* Detail panel: stack sidebar on top as a slim horizontal bar */
+  /* Panel */
   .detailPanel {
     padding: 0 12px;
   }
@@ -241,6 +241,7 @@
     padding: 12px 12px 24px;
   }
 
+  /* Stack: sidebar becomes a slim horizontal bar on top */
   .detailInner {
     flex-direction: column;
   }
@@ -249,21 +250,22 @@
     width: 100%;
     flex-direction: row;
     align-items: center;
-    padding: 12px 16px;
-    gap: 12px;
+    padding: 12px 14px;
+    gap: 10px;
   }
 
   .detailImg {
-    max-width: 52px;
+    max-width: 48px;
     flex-shrink: 0;
   }
 
   .detailHallName {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     text-align: left;
     flex: 1;
   }
 
+  /* Hide description — not enough room */
   .detailDesc {
     display: none;
   }
@@ -272,13 +274,13 @@
     margin-top: 0;
     width: auto;
     flex-shrink: 0;
-    padding: 6px 12px;
+    padding: 5px 10px;
   }
 
   .detailContent {
-    padding: 16px;
+    padding: 14px;
     border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .vizSource {
