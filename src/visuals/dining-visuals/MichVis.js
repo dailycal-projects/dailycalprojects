@@ -15,8 +15,8 @@ const PAD = 5;
 function formatItemName(name) {
   if (!name) return name;
 
-  const cleaned = name.trim().toLowerCase();
-  return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+  const lower = name.trim().toLowerCase();
+  return lower.charAt(0).toUpperCase() + lower.slice(1);
 }
 
 // fix 6: number to word for small counts, numeral for large
