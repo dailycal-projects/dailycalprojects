@@ -14,9 +14,7 @@ const PAD = 5;
 // fix 4: lowercase item names (first letter of first word only)
 function formatItemName(name) {
   if (!name) return name;
-
-  const lower = name.trim().toLowerCase();
-  return lower.charAt(0).toUpperCase() + lower.slice(1);
+  return name.charAt(0).toLowerCase() + name.slice(1);
 }
 
 // fix 6: number to word for small counts, numeral for large
@@ -216,12 +214,9 @@ export default function MichVis() {
       setMeals(mls);
       setLoading(false);
       // Render default item immediately once we have data — find exact match in CSV
-      const matchedDefault =
-      items.find((i) => i.toLowerCase() === DEFAULT_ITEM.toLowerCase()) ||
-      items[0];
-
+      const matchedDefault = items.find((i) => i.toLowerCase() === DEFAULT_ITEM.toLowerCase()) || items[0];
+      setSearchQuery(matchedDefault);
       setCurrentItem(matchedDefault);
-      setSearchQuery(formatItemName(matchedDefault));
     }).catch(() => {
       setError(true);
       setLoading(false);
