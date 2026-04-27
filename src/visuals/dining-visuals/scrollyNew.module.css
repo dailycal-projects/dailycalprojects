@@ -4,7 +4,7 @@
 }
 
 .cardsWrapper {
-  padding: 44px 44px 0;
+  padding: 24px 20px 0;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -56,10 +56,12 @@
 
 .cardName {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cardHint {
@@ -79,7 +81,7 @@
 .detailPanel {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 44px;
+  padding: 0 20px;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
@@ -90,7 +92,7 @@
 .detailPanelOpen {
   max-height: 1200px;
   opacity: 1;
-  padding: 28px 44px 44px;
+  padding: 20px 20px 36px;
 }
 
 .detailInner {
@@ -172,4 +174,56 @@
 
 .dwContainer {
   width: 100%;
+}
+
+@media (max-width: 700px) {
+  .detailInner {
+    flex-direction: column;
+  }
+  .detailSidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+  }
+  .detailImg {
+    max-width: 64px;
+    flex-shrink: 0;
+  }
+  .detailHallName {
+    font-size: 1rem;
+    text-align: left;
+  }
+  .detailDesc {
+    display: none;
+  }
+  .detailClose {
+    margin-top: 0;
+    width: auto;
+    padding: 6px 12px;
+  }
+  .detailContent {
+    padding: 16px;
+    border-left: none;
+    border-top: 1px solid #e4e4e4;
+  }
+}
+
+.vizSource {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+  line-height: 1.7;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 44px;
+  padding-right: 44px;
+}
+.vizSource a {
+  color: #999;
+  text-decoration: underline;
 }
