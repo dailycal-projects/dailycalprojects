@@ -42,6 +42,7 @@ const HALLS = {
 };
 
 export default function ScrollyNew() {
+  /* Default open to Clark Kerr on first render */
   const [activeHall, setActiveHall] = useState('clark');
 
   function toggleHall(key) {
