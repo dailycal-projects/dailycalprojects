@@ -1,42 +1,13 @@
-.wrapper {
-  font-family: "Source Sans 3", sans-serif;
-  background: #ffffff;
-  color: #1a1a1a;
-  min-height: 100vh;
-}
-
-.header {
-  background: #3b5e4f;
-  color: white;
-  padding: 20px 44px;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 4px;
-  border-bottom: 4px solid #c4956a;
-}
-
-.headerH1 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-}
-
-.subhead {
-  font-size: 0.9rem;
-  opacity: 0.75;
-  font-style: italic;
-  font-family: "Source Sans 3", sans-serif;
-}
+/* fix 3: .wrapper and .header removed — component renders without a banner */
 
 .main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 36px 44px 64px;
+  font-family: "Source Sans 3", sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
 }
-
 .searchLabel {
   font-size: 10.5px;
   font-weight: 700;
@@ -45,7 +16,6 @@
   color: #bbb;
   margin-bottom: 10px;
 }
-
 .subtitle {
   font-family: "Playfair Display", serif;
   font-style: italic;
@@ -55,13 +25,11 @@
   min-height: 1.5em;
   line-height: 1.6;
 }
-
 .searchBox {
   position: relative;
   display: inline-block;
   margin-bottom: 6px;
 }
-
 .searchInput {
   width: 420px;
   padding: 10px 16px;
@@ -74,15 +42,12 @@
   transition: border-color 0.18s;
   color: #1a1a1a;
 }
-
 .searchInput:focus {
   border-color: #3b5e4f;
 }
-
 .searchInput::placeholder {
   color: #bbb;
 }
-
 .autocompleteList {
   position: absolute;
   top: 100%;
@@ -97,25 +62,21 @@
   overflow-y: auto;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
 }
-
 .autocompleteItem {
   padding: 9px 16px;
   font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.12s;
 }
-
 .autocompleteItem:hover,
 .autocompleteItemActive {
   background: #f0f5f2;
 }
-
 .searchHint {
   font-size: 0.8rem;
   color: #bbb;
   margin-bottom: 22px;
 }
-
 .filterRow {
   display: flex;
   gap: 10px;
@@ -123,7 +84,6 @@
   flex-wrap: wrap;
   align-items: center;
 }
-
 .filterLabel {
   font-size: 11px;
   font-weight: 700;
@@ -131,7 +91,6 @@
   text-transform: uppercase;
   color: #bbb;
 }
-
 .filterSelect {
   padding: 6px 12px;
   font-family: "Source Sans 3", sans-serif;
@@ -143,31 +102,25 @@
   color: #1a1a1a;
   outline: none;
 }
-
 .filterSelect:focus {
   border-color: #3b5e4f;
 }
-
 .chartContainer {
   overflow-x: auto;
   margin-bottom: 12px;
 }
-
 .chartContainer svg {
   display: block;
 }
-
 .noResults {
   font-style: italic;
   color: #666;
   padding: 24px 0;
   font-size: 0.9rem;
 }
-
 .legendWrap {
   margin-top: 10px;
 }
-
 .legendLabel {
   font-size: 10.5px;
   font-weight: 700;
@@ -176,7 +129,6 @@
   color: #bbb;
   margin-bottom: 5px;
 }
-
 .tooltip {
   position: fixed;
   background: #1a1a1a;
@@ -190,14 +142,12 @@
   z-index: 999;
   line-height: 1.6;
 }
-
 .loading {
   font-size: 14px;
   color: #bbb;
   padding: 40px 44px;
   font-style: italic;
 }
-
 .vizSource {
   font-size: 11px;
   color: #aaa;
@@ -206,7 +156,6 @@
   border-top: 1px solid #eee;
   line-height: 1.7;
 }
-
 .vizSource a {
   color: #999;
   text-decoration: underline;
