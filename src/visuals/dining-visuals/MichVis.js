@@ -11,12 +11,11 @@ const M = { top: 10, right: 20, bottom: 50, left: 150 };
 const CELL = 62;
 const PAD = 5;
 
-// fix 4: lowercase item names (first letter of first word only)
+// Title case: first letter of first word capitalised, everything else lowercase
 function formatItemName(name) {
   if (!name) return name;
-
-  const cleaned = name.trim().toLowerCase();
-  return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+  const lower = name.toLowerCase();
+  return lower.charAt(0).toUpperCase() + lower.slice(1);
 }
 
 // fix 6: number to word for small counts, numeral for large
