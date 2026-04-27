@@ -105,6 +105,15 @@ export default function ScrollyNew() {
           </div>
         )}
       </div>
+
+      <p className={styles.vizSource}>
+        Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
+        Illustration: Dana Lim | Staff &nbsp;·&nbsp;
+        Source:{' '}
+        <a href="https://dining.berkeley.edu/menus/" target="_blank" rel="noreferrer">
+          UC Berkeley Dining
+        </a>
+      </p>
     </div>
   );
 }
