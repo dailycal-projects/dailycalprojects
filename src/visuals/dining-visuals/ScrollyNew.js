@@ -47,6 +47,7 @@ export default function ScrollyNew() {
 
   function toggleHall(key) {
     setActiveHall((prev) => (prev === key ? null : key));
+    setTimeout(() => window.dispatchEvent(new Event('resize')), 500);
   }
 
   const hall = activeHall ? HALLS[activeHall] : null;
