@@ -113,7 +113,7 @@ export default function ScrollyNew() {
         Illustration: Dana Lim | Staff &nbsp;·&nbsp;
         Source:{' '}
         <a href="https://dining.berkeley.edu/menus/" target="_blank" rel="noreferrer">
-          UC Berkeley Dining
+          Berkeley Dining
         </a>
       </p>
     </div>
