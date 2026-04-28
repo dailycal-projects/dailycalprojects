@@ -43,11 +43,17 @@ const HALLS = {
 
 export default function ScrollyNew() {
   // Opens to Clark Kerr by default on first load
+  // scrollyNew.js
+  
   const [activeHall, setActiveHall] = useState('clark');
-
+  const [chartReady, setChartReady] = useState(true); // add this
+  
   function toggleHall(key) {
-    setActiveHall((prev) => (prev === key ? null : key));
-    setTimeout(() => window.dispatchEvent(new Event('resize')), 500);
+    const next = activeHall === key ? null : key;
+    setActiveHall(next);
+    // add this: force iframe to remount AFTER the 450ms open transition
+    setChartReady(false);
+    setTimeout(() => setChartReady(true), 460);
   }
 
   const hall = activeHall ? HALLS[activeHall] : null;
@@ -101,7 +107,7 @@ export default function ScrollyNew() {
                 Menu Analysis
               </div>
               <div className={styles.dwContainer}>
-                <DatawrapperChart chartId={hall.chartId} />
+                {chartReady && <DatawrapperChart chartId={hall.chartId} />}
               </div>
             </div>
           </div>
