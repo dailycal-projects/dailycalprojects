@@ -69,7 +69,7 @@ export default function NutritionVis() {
         if (!name) return;
         const cat = categorizeItem(name);
         if (!cat) return;
-        const key = name.replace(/\b\w/g, (c) => c.toUpperCase());
+        const key = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
         counts[cat][key] = (counts[cat][key] || 0) + 1;
       });
       setCategorized(counts);
