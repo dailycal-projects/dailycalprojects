@@ -350,13 +350,7 @@ export default function MichVis() {
       <div className={styles.chartContainer} ref={chartRef} />
       {noResults && <p className={styles.noResults}>No results found for this item.</p>}
 
-      {/* Legend — label and gradient together, only shown when chart renders */}
-      {showLegend && (
-        <div className={styles.legendWrap}>
-          <p className={styles.legendLabel}>Times served</p>
-          <svg ref={legendRef} />
-        </div>
-      )}
+      
 
       <p className={styles.vizSource}>
         Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
