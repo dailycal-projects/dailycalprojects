@@ -362,7 +362,7 @@ export default function MichVis() {
         Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
         Source:{' '}
         <a href="https://dining.berkeley.edu/menus/" target="_blank" rel="noreferrer">
-          UC Berkeley Dining
+          Berkeley Dining
         </a>
         &nbsp;·&nbsp;
         Visualization adapted from{' '}
