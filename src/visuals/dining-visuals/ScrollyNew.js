@@ -10,7 +10,6 @@ const HALLS = {
   clark: {
     name: 'Clark Kerr',
     img: clarkImg,
-    desc: 'Clark Kerr had the highest proportion of allergen-containing items of the four dining halls, particularly gluten, milk and egg.',
     color: '#3d2b1f',
     accent: '#C4956A',
     chartId: '2BrGR/4/',
@@ -18,7 +17,6 @@ const HALLS = {
   crossroads: {
     name: 'Crossroads',
     img: croadsImg,
-    desc: "Crossroads is Berkeley Dining's flagship facility — the largest dining hall on campus, serving breakfast, lunch and dinner daily.",
     color: '#003262',
     accent: '#FDB515',
     chartId: 'R2Ljp/1/',
@@ -26,7 +24,6 @@ const HALLS = {
   foothill: {
     name: 'Foothill',
     img: foothillImg,
-    desc: 'Foothill had the fewest allergen-containing items of all four dining halls — a standout for students managing dietary restrictions.',
     color: '#2d4a2d',
     accent: '#A4C3A2',
     chartId: 'JgXO3/2/',
@@ -34,7 +31,6 @@ const HALLS = {
   cafe3: {
     name: 'Café 3',
     img: cafe3Img,
-    desc: 'Café 3 is the only dining hall with a Kosher-certified food station and prioritizes halal service.',
     color: '#4a1942',
     accent: '#B5829A',
     chartId: 'kWcBp/1/',
@@ -42,16 +38,12 @@ const HALLS = {
 };
 
 export default function ScrollyNew() {
-  // Opens to Clark Kerr by default on first load
-  // scrollyNew.js
-  
   const [activeHall, setActiveHall] = useState('clark');
-  const [chartReady, setChartReady] = useState(true); // add this
-  
+  const [chartReady, setChartReady] = useState(true);
+
   function toggleHall(key) {
     const next = activeHall === key ? null : key;
     setActiveHall(next);
-    // add this: force iframe to remount AFTER the 450ms open transition
     setChartReady(false);
     setTimeout(() => setChartReady(true), 460);
   }
@@ -63,49 +55,60 @@ export default function ScrollyNew() {
       <div className={styles.cardsWrapper}>
         <h2 className={styles.cardsLabel}>Click on a dining hall to explore its menu data</h2>
         <div className={styles.cardsGrid}>
-          {Object.entries(HALLS).map(([key, h]) => (
-            <div
-              key={key}
-              role="button"
-              tabIndex={0}
-              className={styles.hallCard}
-              style={
-                activeHall === key
-                  ? { borderColor: h.accent, boxShadow: `0 0 0 3px ${h.accent}33` }
-                  : {}
-              }
-              onClick={() => toggleHall(key)}
-              onKeyDown={(e) => e.key === 'Enter' && toggleHall(key)}
-            >
-              <div className={styles.cardBand} style={{ background: h.color }} />
-              <span className={styles.cardHint} style={{ color: h.accent }}>Explore ↓</span>
-              <div className={styles.cardInfo}>
-                <div className={styles.cardName}>{h.name}</div>
+          {Object.entries(HALLS).map(([key, h]) => {
+            const isActive = activeHall === key;
+            return (
+              <div
+                key={key}
+                role="button"
+                tabIndex={0}
+                className={styles.hallCard}
+                style={
+                  isActive
+                    ? { borderColor: h.accent, boxShadow: `0 0 0 3px ${h.accent}33` }
+                    : {}
+                }
+                onClick={() => toggleHall(key)}
+                onKeyDown={(e) => e.key === 'Enter' && toggleHall(key)}
+              >
+                <div className={styles.cardBand} style={{ background: h.color }} />
+
+                {/* Illustration lives in the card now */}
+                <div
+                  className={styles.cardImgWrap}
+                  style={{ background: isActive ? `${h.color}18` : '#f4f4f2' }}
+                >
+                  <img src={h.img} alt={h.name} className={styles.cardImg} />
+                </div>
+
+                <div className={styles.cardInfo}>
+                  <div className={styles.cardName}>{h.name}</div>
+                  {isActive ? (
+                    <span className={styles.cardHintActive} style={{ color: h.accent }}>
+                      Menu Analysis ▲
+                    </span>
+                  ) : (
+                    <span className={styles.cardHint} style={{ color: h.accent }}>
+                      Explore ↓
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
+      {/* Detail panel — chart only, no sidebar */}
       <div className={`${styles.detailPanel}${activeHall ? ` ${styles.detailPanelOpen}` : ''}`}>
         {hall && (
           <div className={styles.detailInner}>
-            <div className={styles.detailSidebar} style={{ background: hall.color }}>
-              <img src={hall.img} alt={hall.name} className={styles.detailImg} />
-              <div className={styles.detailHallName}>{hall.name}</div>
-              <div className={styles.detailDesc}>{hall.desc}</div>
-              <button
-                type="button"
-                className={styles.detailClose}
-                onClick={() => setActiveHall(null)}
-              >
-                ✕ Close
-              </button>
+            <div className={styles.detailHeader}>
+              <div className={styles.detailContentLabel} style={{ color: hall.accent }}>
+                {hall.name} — Menu Analysis
+              </div>
             </div>
             <div className={styles.detailContent}>
-              <div className={styles.detailContentLabel} style={{ color: hall.accent }}>
-                Menu Analysis
-              </div>
               <div className={styles.dwContainer}>
                 {chartReady && <DatawrapperChart chartId={hall.chartId} />}
               </div>

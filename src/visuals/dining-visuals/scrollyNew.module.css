@@ -15,7 +15,6 @@
   margin: 0 auto;
 }
 
-/* Keep heading on one line; shrink font so it never wraps at normal widths */
 .cardsLabel {
   font-family: "Playfair Display", Georgia, serif;
   font-size: 1.05rem;
@@ -28,7 +27,6 @@
 
 .cardsGrid {
   display: grid;
-  /* 4 equal columns; minmax(0,1fr) prevents blowout */
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
@@ -41,7 +39,6 @@
   border: 2px solid transparent;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.18s ease;
   position: relative;
-  /* Critical: lets card shrink without overflowing its grid cell */
   min-width: 0;
 }
 
@@ -50,13 +47,35 @@
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Colored top band */
 .cardBand {
   height: 6px;
 }
 
-/* Tight padding so names have maximum horizontal room */
+/* Illustration image container */
+.cardImgWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f2;
+}
+
+.cardImg {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.hallCard:hover .cardImg {
+  transform: scale(1.05);
+}
+
 .cardInfo {
-  padding: 10px 10px 14px;
+  padding: 10px 10px 12px;
   border-top: 1px solid #e4e4e4;
 }
 
@@ -70,12 +89,13 @@
   text-overflow: ellipsis;
 }
 
+/* "Explore ↓" hint — visible on hover, hidden when active */
 .cardHint {
   display: block;
-  padding: 6px 10px 0;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.06em;
+  margin-top: 4px;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -84,21 +104,36 @@
   opacity: 1;
 }
 
+/* When a card is active, show a small "▲ Close" label instead */
+.cardHintActive {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
 /* ── Detail panel ───────────────────────────── */
 
 .detailPanel {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px 20px 36px;
+  padding: 0 20px;
   display: none;
 }
 
 .detailPanelOpen {
   display: block;
+  padding: 16px 20px 36px;
 }
 
 .detailInner {
-  /* keeps a smooth visual without touching layout */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
   animation: panelFade 0.35s ease;
 }
 
@@ -107,75 +142,10 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.detailInner {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  border: 1px solid #e4e4e4;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-}
-
-.detailSidebar {
-  width: 160px;
-  flex-shrink: 0;
-  padding: 28px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  color: #fff;
-}
-
-.detailImg {
-  width: 100%;
-  max-width: 150px;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.18));
-}
-
-.detailHallName {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.25;
-}
-
-.detailDesc {
-  font-size: 12px;
-  text-align: center;
-  line-height: 1.6;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.detailClose {
-  margin-top: auto;
-  background: none;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  border-radius: 5px;
-  padding: 7px 16px;
-  font-family: "Source Sans 3", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.15s;
-}
-
-.detailClose:hover {
-  border-color: rgba(255, 255, 255, 0.6);
-  color: #fff;
-}
-
-.detailContent {
-  flex: 1;
-  /* Prevent chart from overflowing the flex container */
-  min-width: 420px;
-  padding: 28px 28px 28px 32px;
-  border-left: 1px solid #e4e4e4;
+/* Header bar inside detail panel: accent label on left */
+.detailHeader {
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .detailContentLabel {
@@ -183,7 +153,10 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+}
+
+.detailContent {
+  padding: 20px 24px 24px;
 }
 
 .dwContainer {
@@ -215,7 +188,6 @@
     padding: 16px 12px 0;
   }
 
-  /* Allow heading to wrap on very narrow screens rather than overflow */
   .cardsLabel {
     white-space: normal;
     font-size: 0.95rem;
@@ -234,7 +206,6 @@
     font-size: 0.75rem;
   }
 
-  /* Panel */
   .detailPanel {
     padding: 0 12px;
   }
@@ -243,46 +214,8 @@
     padding: 12px 12px 24px;
   }
 
-  /* Stack: sidebar becomes a slim horizontal bar on top */
-  .detailInner {
-    flex-direction: column;
-  }
-
-  .detailSidebar {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    padding: 12px 14px;
-    gap: 10px;
-  }
-
-  .detailImg {
-    max-width: 48px;
-    flex-shrink: 0;
-  }
-
-  .detailHallName {
-    font-size: 0.9rem;
-    text-align: left;
-    flex: 1;
-  }
-
-  /* Hide description — not enough room */
-  .detailDesc {
-    display: none;
-  }
-
-  .detailClose {
-    margin-top: 0;
-    width: auto;
-    flex-shrink: 0;
-    padding: 5px 10px;
-  }
-
   .detailContent {
     padding: 14px;
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .vizSource {
