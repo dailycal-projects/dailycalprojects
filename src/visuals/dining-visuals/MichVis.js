@@ -11,18 +11,20 @@ const M = { top: 10, right: 20, bottom: 50, left: 150 };
 const CELL = 62;
 const PAD = 5;
 
-// Title case: first letter of first word capitalised, everything else lowercase
+// Sentence case: first letter capitalised, rest lowercase
 function formatItemName(name) {
   if (!name) return name;
   const lower = name.toLowerCase();
   return lower.charAt(0).toUpperCase() + lower.slice(1);
 }
 
-// fix 6: number to word for small counts, numeral for large
-const NUMBER_WORDS = ['zero','one','two','three','four','five','six','seven','eight','nine','ten',
-  'eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'];
+const NUMBER_WORDS = [
+  'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+  'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen',
+  'nineteen', 'twenty',
+];
 function toWord(n) {
-  return n <= 20 ? NUMBER_WORDS[n] : String(n);
+  return n <= 20 ? NUMBER_WORDS[n] : n.toLocaleString();
 }
 
 function parseDataset(raw) {
@@ -39,7 +41,6 @@ function parseDataset(raw) {
     } else {
       r._day = 'Unknown';
     }
-    // fix 8: restore é in Café 3
     r._location = (r.Location || '').replace(/_/g, ' ').trim().replace(/Cafe 3/i, 'Café 3');
     return r;
   });
@@ -76,15 +77,13 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
     if (c > peakC) { peakC = c; peakL = loc; peakD = day; }
   }));
 
-  // fix 1: new subtitle format
-  // fix 4: lowercase item name
-  // fix 5: "were"
-  // fix 6: number as word
-  // fix 7: example sentence format
+  // New subtitle format: "The most popular day and location for [dish] was on [day] at [dining hall],
+  // where it was served [number] times between Feb. 10 to March 10."
   const displayName = formatItemName(itemName);
   const countWord = toWord(peakC);
-  const subtitle = `<strong>${displayName}</strong> were served <strong>${countWord}</strong> time${peakC !== 1 ? 's' : ''} `
-    + `on <strong>${peakD}s</strong> at <strong>${peakL}</strong> between Feb. to March.`;
+  const subtitle = `The most popular day and location for <strong>${displayName}</strong> was on `
+    + `<strong>${peakD}s</strong> at <strong>${peakL}</strong>, where it was served `
+    + `<strong>${countWord}</strong> time${peakC !== 1 ? 's' : ''} between Feb. 10 to March 10.`;
 
   const W = M.left + activeDays.length * (CELL + PAD) + M.right;
   const H = M.top + locs.length * (CELL + PAD) + M.bottom;
@@ -159,17 +158,26 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
     });
   });
 
-  // Legend
+  // Legend — only render gradient, no blank label
   const lW = 260;
-  const lsvg = d3.select(legendEl).attr('width', lW + 40).attr('height', 36);
-  const defs = lsvg.append('defs');
+  // Set explicit dimensions so the SVG element has size before D3 writes
+  d3.select(legendEl)
+    .attr('width', lW + 40)
+    .attr('height', 36)
+    .style('display', 'block');
+  const defs = d3.select(legendEl).append('defs');
   const grad = defs.append('linearGradient').attr('id', 'michLg');
   d3.range(0, 1.01, 0.1).forEach((t) => {
-    grad.append('stop').attr('offset', `${t * 100}%`).attr('stop-color', cScale(minC + t * (maxC - minC)));
+    grad.append('stop')
+      .attr('offset', `${t * 100}%`)
+      .attr('stop-color', cScale(minC + t * (maxC - minC)));
   });
-  lsvg.append('rect').attr('x', 8).attr('y', 2).attr('width', lW).attr('height', 13).attr('rx', 3).style('fill', 'url(#michLg)');
+  d3.select(legendEl).append('rect')
+    .attr('x', 8).attr('y', 2)
+    .attr('width', lW).attr('height', 13)
+    .attr('rx', 3).style('fill', 'url(#michLg)');
   const lxSc = d3.scaleLinear().domain([minC, maxC]).range([8, 8 + lW]);
-  lsvg.append('g').attr('transform', 'translate(0,15)')
+  d3.select(legendEl).append('g').attr('transform', 'translate(0,15)')
     .call(d3.axisBottom(lxSc).ticks(4).tickSize(3))
     .call((ax) => ax.select('.domain').remove())
     .selectAll('text')
@@ -179,11 +187,13 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
   return { subtitle, noResults: false, showLegend: true };
 }
 
-const DEFAULT_ITEM = 'Scrambled Eggs'; // fix 2
+const DEFAULT_ITEM = 'Scrambled Eggs';
 
 export default function MichVis() {
   const [dataset, setDataset] = useState([]);
   const [allItems, setAllItems] = useState([]);
+  // displayItems: sentence-cased versions for UI; maps index → raw CSV name
+  const [displayItems, setDisplayItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -211,12 +221,16 @@ export default function MichVis() {
       const mls = [...new Set(data.map((d) => d.Meal))].filter(Boolean).sort();
       setDataset(data);
       setAllItems(items);
+      // Build sentence-cased display list (used in autocomplete)
+      setDisplayItems(items.map(formatItemName));
       setLocations(locs);
       setMeals(mls);
       setLoading(false);
-      // Render default item immediately once we have data — find exact match in CSV
-      const matchedDefault = items.find((i) => i.toLowerCase() === DEFAULT_ITEM.toLowerCase()) || items[0];
-      setSearchQuery(matchedDefault);
+      const matchedDefault = items.find(
+        (i) => i.toLowerCase() === DEFAULT_ITEM.toLowerCase(),
+      ) || items[0];
+      // Show sentence-cased version in the input
+      setSearchQuery(formatItemName(matchedDefault));
       setCurrentItem(matchedDefault);
     }).catch(() => {
       setError(true);
@@ -224,7 +238,6 @@ export default function MichVis() {
     });
   }, []);
 
-  // fix 2: render default item once data loads
   useEffect(() => {
     if (!currentItem || !dataset.length || !chartRef.current) return;
     const result = renderHeatmap(
@@ -241,7 +254,10 @@ export default function MichVis() {
     setSearchQuery(q);
     setAcIdx(-1);
     if (q.length < 2) { setAcItems([]); setShowAc(false); return; }
-    const hits = allItems.filter((i) => i.toLowerCase().includes(q.toLowerCase())).slice(0, 12);
+    // Match against sentence-cased display items
+    const hits = displayItems
+      .filter((i) => i.toLowerCase().includes(q.toLowerCase()))
+      .slice(0, 12);
     setAcItems(hits);
     setShowAc(hits.length > 0);
   }
@@ -255,19 +271,27 @@ export default function MichVis() {
     } else if (e.key === 'Escape') setShowAc(false);
   }
 
-  function pick(name) {
-    setSearchQuery(name);
+  // pick receives a sentence-cased display name; look up the raw CSV name to pass to renderHeatmap
+  function pick(displayName) {
+    setSearchQuery(displayName);
     setShowAc(false);
-    setCurrentItem(name);
+    // Find raw CSV item whose sentence-cased form matches
+    const idx = displayItems.indexOf(displayName);
+    const rawName = idx >= 0 ? allItems[idx] : allItems.find(
+      (i) => formatItemName(i).toLowerCase() === displayName.toLowerCase(),
+    );
+    if (rawName) setCurrentItem(rawName);
   }
 
   if (loading) return <p className={styles.loading}>Loading menu data…</p>;
   if (error) return <p className={styles.loading}>⚠️ Could not load allMenus.csv.</p>;
 
   return (
-    // fix 3: no header wrapper, just the main content
     <div className={styles.main}>
-      <p className={styles.searchLabel}>Search Menu Items</p>
+      {/* Title — restored */}
+      <h2 className={styles.title}>Search Berkeley Dining menus</h2>
+
+      <p className={styles.searchLabel}>Menu item</p>
       {subtitle && (
         <p
           className={styles.subtitle}
@@ -279,7 +303,7 @@ export default function MichVis() {
         <input
           className={styles.searchInput}
           type="text"
-          placeholder="e.g. Scrambled Eggs, Pasta, Chicken…"
+          placeholder="e.g. Scrambled eggs, Pasta, Chicken…"
           autoComplete="off"
           value={searchQuery}
           onChange={handleSearchInput}
@@ -300,7 +324,7 @@ export default function MichVis() {
           </div>
         )}
       </div>
-      <p className={styles.searchHint}>Type 2 or more characters for results.</p>
+      <p className={styles.searchHint}>Type 2 or more characters to search.</p>
 
       <div className={styles.filterRow}>
         <label className={styles.filterLabel}>Location</label>
@@ -326,6 +350,7 @@ export default function MichVis() {
       <div className={styles.chartContainer} ref={chartRef} />
       {noResults && <p className={styles.noResults}>No results found for this item.</p>}
 
+      {/* Legend — label and gradient together, only shown when chart renders */}
       {showLegend && (
         <div className={styles.legendWrap}>
           <p className={styles.legendLabel}>Times served</p>
