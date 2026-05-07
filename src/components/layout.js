@@ -80,6 +80,8 @@ import { BugVideoScroller } from '../visuals/bug-bodycam-visuals/bug-video-scrol
 import { BugVideoExpander } from '../visuals/bug-bodycam-visuals/bug-video-expander';
 import { DCVideoPlayer } from '../visuals/bug-bodycam-visuals/components/dc-video-player';
 import { TextImage } from '../visuals/bug-bodycam-visuals/components/text-image';
+import HackVisuals from '../visuals/shiny-hunters-visuals/hack_visuals';
+
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -172,6 +174,7 @@ const shortcodes = {
   BugVideoExpander,
   DCVideoPlayer,
   TextImage,
+  HackVisuals,
 };
 
 export default function Layout({ children }) {
