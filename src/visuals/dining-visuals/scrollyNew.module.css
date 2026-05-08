@@ -1,0 +1,225 @@
+/* ─────────────────────────────────────────────
+   scrollyNew.module.css
+   ───────────────────────────────────────────── */
+
+.wrapper {
+  font-family: "Source Sans 3", sans-serif;
+  color: #1a1a1a;
+}
+
+/* ── Cards ──────────────────────────────────── */
+
+.cardsWrapper {
+  padding: 24px 20px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cardsLabel {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.01em;
+  margin-bottom: 18px;
+  white-space: nowrap;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hallCard {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.18s ease;
+  position: relative;
+  min-width: 0;
+}
+
+.hallCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Colored top band */
+.cardBand {
+  height: 6px;
+}
+
+/* Illustration image container */
+.cardImgWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f2;
+}
+
+.cardImg {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.hallCard:hover .cardImg {
+  transform: scale(1.05);
+}
+
+.cardInfo {
+  padding: 10px 10px 12px;
+  border-top: 1px solid #e4e4e4;
+}
+
+.cardName {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* "Explore ↓" hint — visible on hover, hidden when active */
+.cardHint {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.hallCard:hover .cardHint {
+  opacity: 1;
+}
+
+/* When a card is active, show a small "▲ Close" label instead */
+.cardHintActive {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* ── Detail panel ───────────────────────────── */
+
+.detailPanel {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: none;
+}
+
+.detailPanelOpen {
+  display: block;
+  padding: 16px 20px 36px;
+}
+
+.detailInner {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  animation: panelFade 0.35s ease;
+}
+
+@keyframes panelFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Header bar inside detail panel: accent label on left */
+.detailHeader {
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.detailContentLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.detailContent {
+  padding: 20px 24px 24px;
+}
+
+.dwContainer {
+  width: 100%;
+}
+
+/* ── Byline — Daily Cal house style ─────────── */
+
+.vizSource {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 11px;
+  color: #999;
+  margin: 12px auto 0;
+  padding: 10px 20px 0;
+  border-top: 1px solid #e8e8e8;
+  line-height: 1.7;
+  max-width: 1100px;
+}
+
+.vizSource a {
+  color: #888;
+  text-decoration: underline;
+}
+
+/* ── Mobile (≤ 700 px) ──────────────────────── */
+
+@media (max-width: 700px) {
+  .cardsWrapper {
+    padding: 16px 12px 0;
+  }
+
+  .cardsLabel {
+    white-space: normal;
+    font-size: 0.95rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .cardInfo {
+    padding: 8px 8px 10px;
+  }
+
+  .cardName {
+    font-size: 0.75rem;
+  }
+
+  .detailPanel {
+    padding: 0 12px;
+  }
+
+  .detailPanelOpen {
+    padding: 12px 12px 24px;
+  }
+
+  .detailContent {
+    padding: 14px;
+  }
+
+  .vizSource {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

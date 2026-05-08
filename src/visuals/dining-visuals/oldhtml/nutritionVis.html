@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berkeley Dining — Nutrition on the Menu</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --grain:        #C4956A;   /* warm amber */
+      --grain-light:  #F5E6D3;
+      --grain-mid:    #E8C4A0;
+      --protein:      #7A9CBF;   /* dusty blue */
+      --protein-light:#D8E8F5;
+      --protein-mid:  #A8C4DA;
+      --green:        #6B8F71;   /* sage */
+      --green-light:  #D8EAD8;
+      --green-mid:    #A4C3A2;
+      --text:         #1a1a1a;
+      --muted:        #666;
+      --rule:         #e8e8e8;
+      --bg:           #ffffff;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--text);
+      padding: 52px 44px 72px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ───────────────────────────────── */
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.18;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .deck {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    /* ── Category tabs (Now consistent buttons) ─ */
+    .tabs {
+      display: flex;
+      justify-content: flex-start; /* Left aligned */
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .tab {
+      padding: 8px 16px;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 1.5px solid #ddd;
+      border-radius: 4px;
+      background: white;
+      color: #777;
+      transition: all 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab .dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .tab[data-cat="grains"]  .dot { background: var(--grain); }
+    .tab[data-cat="proteins"] .dot { background: var(--protein); }
+    .tab[data-cat="greens"]  .dot { background: var(--green); }
+
+    .tab.active[data-cat="grains"]   { color: var(--grain);   border-color: var(--grain);   background: var(--grain-light); }
+    .tab.active[data-cat="proteins"] { color: var(--protein); border-color: var(--protein); background: var(--protein-light); }
+    .tab.active[data-cat="greens"]   { color: var(--green);   border-color: var(--green);   background: var(--green-light); }
+
+    .tab:not(.active):hover { border-color: #aaa; color: #333; }
+
+    /* ── N slider ─────────────────────────────── */
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .controls label {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .n-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .n-btn {
+      padding: 5px 13px;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      border: 1.5px solid #ddd;
+      border-radius: 4px;
+      background: white;
+      color: #777;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .n-btn:hover { border-color: #aaa; color: #333; }
+    .n-btn.active { background: #1a1a1a; border-color: #1a1a1a; color: white; }
+
+    /* ── Chart panel ──────────────────────────── */
+    #chart-area {
+      position: relative;
+      min-height: 360px;
+    }
+
+    #chart-area svg { display: block; overflow: visible; }
+
+    /* tooltip */
+    #tooltip {
+      position: fixed;
+      background: #1a1a1a;
+      color: white;
+      padding: 9px 14px;
+      border-radius: 5px;
+      font-size: 12.5px;
+      font-family: "Source Sans 3", sans-serif;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.12s;
+      z-index: 999;
+      line-height: 1.6;
+      max-width: 220px;
+    }
+
+    /* category summary pill */
+    .cat-summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 22px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .cat-summary.visible { opacity: 1; }
+
+    /* ── Source ───────────────────────────────── */
+    .source {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      font-size: 11px;
+      color: #bbb;
+    }
+
+    #loading {
+      font-size: 14px;
+      color: #999;
+      padding: 40px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="eyebrow">Berkeley Dining · Nutrition</p>
+  <h1>What's most often on the plate?</h1>
+  <p class="deck">
+    The most frequently served grains, proteins, and greens across all Berkeley
+    dining halls — counted by how many times each item appeared on the menu.
+    Hover any bar for details.
+  </p>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-cat="grains"><span class="dot"></span>Grains</button>
+    <button class="tab"        data-cat="proteins"><span class="dot"></span>Proteins</button>
+    <button class="tab"        data-cat="greens"><span class="dot"></span>Greens</button>
+  </div>
+
+  <div class="controls">
+    <label>Show top</label>
+    <div class="n-buttons">
+      <button class="n-btn" data-n="5">5</button>
+      <button class="n-btn active" data-n="10">10</button>
+      <button class="n-btn" data-n="15">15</button>
+    </div>
+  </div>
+
+  <div class="cat-summary" id="cat-summary"></div>
+
+  <div id="chart-area"><p id="loading">Loading data…</p></div>
+
+  <p class="source">Anika Bhutani/The Daily Californian</p>
+
+  <div id="tooltip"></div>
+
+<script>
+// ── KEYWORD MAPS ───────────────────────────────────────────────────────────
+const KEYWORDS = {
+  grains: [
+    "rice","noodle","pasta","bread","roll","bun","tortilla","wrap","pita",
+    "bagel","english muffin","waffle","pancake","oatmeal","oat","grits",
+    "quinoa","grain","farro","barley","couscous","polenta","cornbread",
+    "biscuit","croissant","muffin","danish","flatbread","lavash","naan",
+    "pretzel","crouton","cracker","cereal","granola","pilaf","risotto",
+    "lo mein","udon","ramen","spaghetti","linguine","penne","mac","grilled bread",
+  ],
+  proteins: [
+    "chicken","beef","pork","turkey","fish","salmon","tuna","tilapia","cod",
+    "shrimp","tofu","tempeh","egg","eggs","sausage","bacon","ham","lamb",
+    "steak","burger","meatball","meatloaf","pepperoni","salami","lentil",
+    "bean","beans","chickpea","hummus","edamame","seitan","veggie burger",
+    "black bean","kidney bean","falafel","crab","lobster","clam","oyster",
+    "scallop","brisket","pulled pork","carnitas","chorizo","soyrizo","gyro",
+    "deli","pastrami","roast beef","ground beef","ground turkey",
+  ],
+  greens: [
+    "spinach","kale","lettuce","arugula","chard","collard","broccoli",
+    "asparagus","green bean","green beans","snap pea","edamame","bok choy",
+    "cabbage","brussels","zucchini","cucumber","celery","leek","fennel",
+    "watercress","endive","radicchio","romaine","mixed green","spring mix",
+    "herb","basil","parsley","cilantro","mint","dill","chive","broccolini",
+    "rapini","pesto","salad","slaw","coleslaw","microgreen",
+  ],
+};
+
+const CATEGORY_META = {
+  grains:   { color: "var(--grain)",   light: "var(--grain-light)",  mid: "var(--grain-mid)",   hex: "#C4956A" },
+  proteins: { color: "var(--protein)", light: "var(--protein-light)",mid: "var(--protein-mid)", hex: "#7A9CBF" },
+  greens:   { color: "var(--green)",   light: "var(--green-light)",  mid: "var(--green-mid)",   hex: "#6B8F71" },
+};
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+let categorized = { grains: {}, proteins: {}, greens: {} };
+let activeCat   = "grains";
+let activeN     = 10;
+let svgEl, gEl, xSc, ySc, xAxisG, yAxisG;
+
+// ── CATEGORIZE ─────────────────────────────────────────────────────────────
+function categorizeItem(name) {
+  const n = name.toLowerCase();
+  // Check all three; item may match multiple — assign to first match
+  for (const [cat, kws] of Object.entries(KEYWORDS)) {
+    if (kws.some(kw => n.includes(kw))) return cat;
+  }
+  return null;
+}
+
+// ── LOAD CSV ───────────────────────────────────────────────────────────────
+d3.csv("allMenus.csv").then(raw => {
+  const counts = { grains: {}, proteins: {}, greens: {} };
+
+  raw.forEach(row => {
+    const name = (row.Item_Name || "").trim();
+    if (!name) return;
+    const cat = categorizeItem(name);
+    if (!cat) return;
+    // Canonical name: title-case
+    const key = name.replace(/\b\w/g, c => c.toUpperCase());
+    counts[cat][key] = (counts[cat][key] || 0) + 1;
+  });
+
+  categorized = counts;
+
+  document.getElementById("loading").style.display = "none";
+  buildChart();
+  render(activeCat, activeN, false);
+
+}).catch(() => {
+  document.getElementById("loading").textContent =
+    "⚠️ Could not load allMenus.csv — make sure it's in the same folder.";
+});
+
+// ── BUILD SVG (once) ───────────────────────────────────────────────────────
+const M  = { top: 10, right: 90, bottom: 40, left: 210 };
+const W  = 880;
+let   H  = 480;
+const iW = W - M.left - M.right;
+
+function buildChart() {
+  const wrap = document.getElementById("chart-area");
+
+  svgEl = d3.select(wrap).append("svg")
+    .attr("width", W)
+    .attr("height", H);
+
+  gEl = svgEl.append("g").attr("transform", `translate(${M.left},${M.top})`);
+  gEl.append("g").attr("class", "grid-g");
+  xAxisG = gEl.append("g").attr("class", "x-axis");
+  yAxisG = gEl.append("g").attr("class", "y-axis");
+  gEl.append("g").attr("class", "bars-g");
+  gEl.append("g").attr("class", "labels-g");
+
+  // x-axis label
+  svgEl.append("text")
+    .attr("class","x-foot")
+    .attr("x", M.left + iW / 2)
+    .attr("y", H - 4)
+    .attr("text-anchor", "middle")
+    .style("font-family", "'Source Sans 3', sans-serif")
+    .style("font-size", "11px")
+    .style("fill", "#aaa")
+    .text("Times served across all dining halls");
+}
+
+// ── RENDER / UPDATE ────────────────────────────────────────────────────────
+function render(cat, n, animated = true) {
+  const meta = CATEGORY_META[cat];
+  const T    = animated ? 550 : 0;
+  const ease = d3.easeCubicInOut;
+
+  // Prepare data — top N by frequency
+  const data = Object.entries(categorized[cat] || {})
+    .map(([label, count]) => ({ label, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, n);
+
+  if (!data.length) return;
+
+  // Resize SVG height for N items
+  const rowH = 38;
+  const iH   = data.length * rowH;
+  H = iH + M.top + M.bottom + 10;
+  svgEl.transition().duration(T).ease(ease).attr("height", H);
+  svgEl.select(".x-foot").transition().duration(T).ease(ease).attr("y", H - 4);
+
+  // Scales
+  xSc = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.count) * 1.08])
+    .range([0, iW]);
+
+  ySc = d3.scaleBand()
+    .domain(data.map(d => d.label))
+    .range([0, iH])
+    .padding(0.28);
+
+  const t = d3.transition().duration(T).ease(ease);
+
+  // Grid
+  const gridTicks = xSc.ticks(5);
+  const gridSel = gEl.select(".grid-g").selectAll("line.grid").data(gridTicks, d => d);
+  gridSel.enter().append("line").attr("class","grid")
+    .attr("x1", d => xSc(d)).attr("x2", d => xSc(d))
+    .attr("y1", 0).attr("y2", iH).attr("stroke","#f2f2f2").attr("stroke-width",1)
+  .merge(gridSel).transition(t)
+    .attr("x1", d => xSc(d)).attr("x2", d => xSc(d)).attr("y2", iH);
+  gridSel.exit().remove();
+
+  // X axis
+  xAxisG.transition(t)
+    .attr("transform", `translate(0,${iH})`)
+    .call(d3.axisBottom(xSc).ticks(5).tickSize(0)
+      .tickFormat(d => d >= 1000 ? `${(d/1000).toFixed(1)}k` : d))
+    .call(ax => ax.select(".domain").attr("stroke","#e0e0e0"))
+    .call(ax => ax.selectAll("text")
+      .style("font-family","'Source Sans 3',sans-serif")
+      .style("font-size","11px").attr("fill","#aaa").attr("dy","1.3em"));
+
+  // Y axis
+  yAxisG.transition(t)
+    .call(d3.axisLeft(ySc).tickSize(0))
+    .call(ax => ax.select(".domain").remove())
+    .call(ax => ax.selectAll("text")
+      .style("font-family","'Source Sans 3',sans-serif")
+      .style("font-size","13px").attr("fill","#333").attr("dx","-10px"));
+
+  // ── Background track (full-width light bar) ──
+  const tracks = gEl.select(".bars-g").selectAll("rect.track").data(data, d => d.label);
+  tracks.enter().append("rect").attr("class","track")
+    .attr("x",0).attr("y", d => ySc(d.label))
+    .attr("width", iW).attr("height", ySc.bandwidth())
+    .attr("fill", meta.light).attr("rx",3).attr("opacity",0)
+  .merge(tracks).transition(t)
+    .attr("y", d => ySc(d.label)).attr("height", ySc.bandwidth())
+    .attr("fill", meta.light).attr("opacity",1);
+  tracks.exit().transition(t).attr("opacity",0).remove();
+
+  // ── Main bars ──
+  const tooltip = document.getElementById("tooltip");
+
+  const bars = gEl.select(".bars-g").selectAll("rect.bar").data(data, d => d.label);
+  bars.enter().append("rect").attr("class","bar")
+    .attr("x",0).attr("y", d => ySc(d.label))
+    .attr("height", ySc.bandwidth()).attr("width",0)
+    .attr("fill", meta.hex).attr("rx",3)
+    .on("mousemove", (event, d) => {
+      tooltip.style.opacity = "1";
+      tooltip.style.left = (event.clientX + 14) + "px";
+      tooltip.style.top  = (event.clientY - 38) + "px";
+      tooltip.innerHTML  =
+        `<strong>${d.label}</strong><br/>` +
+        `Served <strong>${d.count.toLocaleString()}</strong> time${d.count !== 1 ? "s" : ""}`;
+    })
+    .on("mouseleave", () => { tooltip.style.opacity = "0"; })
+  .merge(bars).transition(t)
+    .attr("y", d => ySc(d.label))
+    .attr("height", ySc.bandwidth())
+    .attr("width", d => xSc(d.count))
+    .attr("fill", meta.hex);
+  bars.exit().transition(t).attr("width",0).remove();
+
+  // ── Value labels ──
+  const vals = gEl.select(".labels-g").selectAll("text.val").data(data, d => d.label);
+  vals.enter().append("text").attr("class","val")
+    .attr("x", d => xSc(d.count) + 7)
+    .attr("y", d => ySc(d.label) + ySc.bandwidth() / 2)
+    .attr("dominant-baseline","central")
+    .style("font-family","'Source Sans 3',sans-serif")
+    .style("font-size","12px").style("font-weight","600")
+    .attr("fill","#444").attr("opacity",0)
+  .merge(vals).transition(t)
+    .attr("x", d => xSc(d.count) + 7)
+    .attr("y", d => ySc(d.label) + ySc.bandwidth() / 2)
+    .attr("opacity",1)
+    .text(d => d.count.toLocaleString());
+  vals.exit().transition(t).attr("opacity",0).remove();
+
+  // ── Rank numbers on Y axis ──
+  const ranks = gEl.select(".labels-g").selectAll("text.rank").data(data, d => d.label);
+  ranks.enter().append("text").attr("class","rank")
+    .attr("x", -M.left + 4)
+    .attr("y", d => ySc(d.label) + ySc.bandwidth() / 2)
+    .attr("dominant-baseline","central")
+    .style("font-family","'Source Sans 3',sans-serif")
+    .style("font-size","11px").style("font-weight","600")
+    .attr("fill", meta.hex).attr("opacity",0)
+  .merge(ranks).transition(t)
+    .attr("y", d => ySc(d.label) + ySc.bandwidth() / 2)
+    .attr("fill", meta.hex).attr("opacity",1)
+    .text((d, i) => `#${i + 1}`);
+  ranks.exit().transition(t).attr("opacity",0).remove();
+
+  // ── Summary pill ──
+  const total = Object.values(categorized[cat]).reduce((a,b) => a+b, 0);
+  const unique = Object.keys(categorized[cat]).length;
+  const pill = document.getElementById("cat-summary");
+  pill.style.background = meta.light;
+  pill.style.color = meta.hex;
+  pill.innerHTML =
+    `<span style="width:9px;height:9px;border-radius:50%;background:${meta.hex};display:inline-block;flex-shrink:0"></span>` +
+    `${unique.toLocaleString()} unique ${cat} &nbsp;·&nbsp; ${total.toLocaleString()} total servings`;
+  pill.classList.add("visible");
+}
+
+// ── TAB SWITCHING ──────────────────────────────────────────────────────────
+document.getElementById("tabs").addEventListener("click", e => {
+  const btn = e.target.closest(".tab");
+  if (!btn) return;
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  btn.classList.add("active");
+  activeCat = btn.dataset.cat;
+  render(activeCat, activeN);
+});
+
+// ── N BUTTONS ─────────────────────────────────────────────────────────────
+document.querySelectorAll(".n-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".n-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeN = +btn.dataset.n;
+    render(activeCat, activeN);
+  });
+});
+</script>
+</body>
+</html>

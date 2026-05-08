@@ -80,8 +80,14 @@ import { BugVideoScroller } from '../visuals/bug-bodycam-visuals/bug-video-scrol
 import { BugVideoExpander } from '../visuals/bug-bodycam-visuals/bug-video-expander';
 import { DCVideoPlayer } from '../visuals/bug-bodycam-visuals/components/dc-video-player';
 import { TextImage } from '../visuals/bug-bodycam-visuals/components/text-image';
+<<<<<<< HEAD
 import HackVisuals from '../visuals/shiny-hunters-visuals/hack_visuals';
 
+=======
+import MichVis from '../visuals/dining-visuals/MichVis';
+import NutritionVis from '../visuals/dining-visuals/NutritionVis';
+import ScrollyNew from '../visuals/dining-visuals/ScrollyNew';
+>>>>>>> d76ac9b2a35ed9958a727c5ab6ee8ba6efd9142a
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -174,7 +180,13 @@ const shortcodes = {
   BugVideoExpander,
   DCVideoPlayer,
   TextImage,
+<<<<<<< HEAD
   HackVisuals,
+=======
+  michVis: MichVis,
+  nutritionVis: NutritionVis,
+  scrollyNew: ScrollyNew,
+>>>>>>> d76ac9b2a35ed9958a727c5ab6ee8ba6efd9142a
 };
 
 export default function Layout({ children }) {
