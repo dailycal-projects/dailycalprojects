@@ -229,7 +229,6 @@ const HackVisuals = () => {
             <i style={{ fontSize: '12px' }}>The Daily Cal was unable to verify the list’s accuracy, though several universities on it have begun reporting intrusions. Additionally, the geolocation of some pins may be inaccurate due to a lack of precision in the published list.</i>
           </div>
         </div>
-        <div />
       </div>
 
       {/* Content split */}
