@@ -264,7 +264,7 @@ const HackVisuals = () => {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search universities..."
+              placeholder="Search organizations..."
               style={{
                 width: '100%',
                 padding: '8px 12px',
