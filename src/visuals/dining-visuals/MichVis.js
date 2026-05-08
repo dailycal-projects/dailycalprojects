@@ -7,7 +7,9 @@ const COLOR_MID1 = '#C4956A';
 const COLOR_MID2 = '#6B8F71';
 const COLOR_HI = '#3B5E4F';
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-const M = { top: 10, right: 20, bottom: 50, left: 150 };
+const M = {
+  top: 10, right: 20, bottom: 50, left: 150,
+};
 const CELL = 62;
 const PAD = 5;
 
@@ -134,8 +136,10 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
       const cell = g.append('g');
       cell.append('rect')
         .attr('x', cx + 2).attr('y', cy + 2)
-        .attr('width', CELL - 2).attr('height', CELL - 2)
-        .attr('rx', 5).attr('ry', 5)
+        .attr('width', CELL - 2)
+        .attr('height', CELL - 2)
+        .attr('rx', 5)
+        .attr('ry', 5)
         .attr('fill', fill)
         .style('cursor', 'default')
         .style('transition', 'opacity 0.12s')
@@ -150,11 +154,14 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
         .on('mouseout', function () { d3.select(this).style('opacity', '1'); });
       cell.append('text')
         .attr('x', cx + 2 + (CELL - 2) / 2).attr('y', cy + 2 + (CELL - 2) / 2)
-        .attr('dominant-baseline', 'central').attr('text-anchor', 'middle')
+        .attr('dominant-baseline', 'central')
+        .attr('text-anchor', 'middle')
         .style('font-family', "'Source Sans 3',sans-serif")
-        .style('font-size', '12.5px').style('font-weight', '600')
+        .style('font-size', '12.5px')
+        .style('font-weight', '600')
         .style('pointer-events', 'none')
-        .attr('fill', tf).text(count);
+        .attr('fill', tf)
+        .text(count);
     });
   });
 
@@ -174,15 +181,18 @@ function renderHeatmap(itemName, dataset, filterLocation, filterMeal, chartEl, l
   });
   d3.select(legendEl).append('rect')
     .attr('x', 8).attr('y', 2)
-    .attr('width', lW).attr('height', 13)
-    .attr('rx', 3).style('fill', 'url(#michLg)');
+    .attr('width', lW)
+    .attr('height', 13)
+    .attr('rx', 3)
+    .style('fill', 'url(#michLg)');
   const lxSc = d3.scaleLinear().domain([minC, maxC]).range([8, 8 + lW]);
   d3.select(legendEl).append('g').attr('transform', 'translate(0,15)')
     .call(d3.axisBottom(lxSc).ticks(4).tickSize(3))
     .call((ax) => ax.select('.domain').remove())
     .selectAll('text')
     .style('font-family', "'Source Sans 3',sans-serif")
-    .style('font-size', '10px').attr('fill', '#aaa');
+    .style('font-size', '10px')
+    .attr('fill', '#aaa');
 
   return { subtitle, noResults: false, showLegend: true };
 }
@@ -350,18 +360,21 @@ export default function MichVis() {
       <div className={styles.chartContainer} ref={chartRef} />
       {noResults && <p className={styles.noResults}>No results found for this item.</p>}
 
-      
-
       <p className={styles.vizSource}>
         Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
-        Source:{' '}
+        Source:
+        {' '}
         <a href="https://dining.berkeley.edu/menus/" target="_blank" rel="noreferrer">
           Berkeley Dining
         </a>
         &nbsp;·&nbsp;
-        Visualization adapted from{' '}
-        &ldquo;<a href="https://www.michigandaily.com/web/data/diving-deep-into-mdining/" target="_blank" rel="noreferrer">Diving deep into MDining</a>&rdquo;
-        {' '}by The Michigan Daily Data Team
+        Visualization adapted from
+        {' '}
+        &ldquo;
+        <a href="https://www.michigandaily.com/web/data/diving-deep-into-mdining/" target="_blank" rel="noreferrer">Diving deep into MDining</a>
+        &rdquo;
+        {' '}
+        by The Michigan Daily Data Team
       </p>
 
       <div ref={tooltipRef} className={styles.tooltip} style={{ opacity: 0 }} />

@@ -83,6 +83,8 @@ import { TextImage } from '../visuals/bug-bodycam-visuals/components/text-image'
 import MichVis from '../visuals/dining-visuals/MichVis';
 import NutritionVis from '../visuals/dining-visuals/NutritionVis';
 import ScrollyNew from '../visuals/dining-visuals/ScrollyNew';
+import HackVisuals from '../visuals/shiny-hunters-visuals/hack_visuals';
+
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -178,6 +180,7 @@ const shortcodes = {
   michVis: MichVis,
   nutritionVis: NutritionVis,
   scrollyNew: ScrollyNew,
+  HackVisuals,
 };
 
 export default function Layout({ children }) {

@@ -1,0 +1,121 @@
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import rawCsv from '!!raw-loader!./data.csv';
+
+function parseCsv(csv) {
+  const rows = [];
+  let row = [];
+  let field = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < csv.length; i++) {
+    const char = csv[i];
+    const nextChar = csv[i + 1];
+
+    if (char === '"') {
+      if (inQuotes && nextChar === '"') {
+        field += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
+    } else if (char === ',' && !inQuotes) {
+      row.push(field);
+      field = '';
+    } else if ((char === '\n' || char === '\r') && !inQuotes) {
+      if (char === '\r' && nextChar === '\n') i++;
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = '';
+    } else {
+      field += char;
+    }
+  }
+
+  if (field || row.length) {
+    row.push(field);
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+function parseGeoloc(geoloc) {
+  if (!geoloc || geoloc === 'Address not found') {
+    return { lat: null, lng: null };
+  }
+
+  const [lat, lng] = geoloc.split(',').map((coord) => Number(coord.trim()));
+
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    return { lat: null, lng: null };
+  }
+
+  return { lat, lng };
+}
+
+function parsePinned(pinned) {
+  return pinned && pinned.trim().toLowerCase() === 'true' ? true : null;
+}
+
+function getHeaderIndex(headers, names) {
+  return names.map((name) => headers.indexOf(name)).find((index) => index !== -1);
+}
+
+function rowsToUniversities(csv) {
+  const [headers, ...rows] = parseCsv(csv);
+  const nameIndex = getHeaderIndex(headers, ['Name or Correct Name', 'Name']);
+  const geolocIndex = headers.indexOf('Geoloc');
+  const pinnedIndex = headers.indexOf('Pinned');
+  const universities = [];
+
+  if (nameIndex == null || geolocIndex === -1 || pinnedIndex === -1) {
+    return universities;
+  }
+
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i];
+    const name = row[nameIndex] && row[nameIndex].trim();
+
+    if (name) {
+      const { lat, lng } = parseGeoloc(row[geolocIndex]);
+
+      universities.push({
+        id: i,
+        name,
+        searchName: name.toLowerCase(),
+        lat,
+        lng,
+        pinned: parsePinned(row[pinnedIndex]),
+      });
+    }
+  }
+
+  return universities;
+}
+
+const universities = rowsToUniversities(rawCsv);
+const startsWithLetterOrNumber = (name) => /^[a-z0-9]/i.test(name);
+const defaultUniversities = [...universities].sort((a, b) => {
+  if (a.pinned !== b.pinned) {
+    return a.pinned ? -1 : 1;
+  }
+
+  const aStartsNormally = startsWithLetterOrNumber(a.name);
+  const bStartsNormally = startsWithLetterOrNumber(b.name);
+
+  if (aStartsNormally !== bStartsNormally) {
+    return aStartsNormally ? -1 : 1;
+  }
+
+  return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }) || a.id - b.id;
+});
+const mappableUniversities = universities.filter(
+  (u) => u.lat != null && u.lng != null,
+);
+
+export const hackData = {
+  universities,
+  defaultUniversities,
+  mappableUniversities,
+};
