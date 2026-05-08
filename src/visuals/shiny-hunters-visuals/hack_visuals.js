@@ -126,7 +126,18 @@ const HackVisuals = () => {
                   holding
                 </a>
                 {' '}
-                the data from some organizations for ransom and launched an extensive seizure of school Canvas pages Thursday. While the list includes schools and universities, it also includes public institutions, financial institutions, nonprofits, businesses, religious institutions and hospitals. This was revealed in an expansive list of purportedly breached organizations published by ShinyHunters on its dark web page, which The Daily Californian reviewed and processed. Read the article here. Below is a searchable map.
+                the data from some organizations for ransom and launched an extensive seizure of school Canvas pages Thursday. While the list includes schools and universities, it also includes public institutions, financial institutions, nonprofits, businesses, religious institutions and hospitals. This was revealed in an expansive list of purportedly breached organizations published by ShinyHunters on its dark web page, which The Daily Californian reviewed and processed.
+                {' '}
+                <a
+                  href="https://www.dailycal.org/news/investigations/we-mapped-the-nationwide-instructure-breach-see-if-your-organization-could-be-at-risk/article_4cbb09e4-a112-4d0b-b8e5-2b307424fa5c.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: '#00529B', textDecoration: 'underline' }}
+                >
+                  Read the article here.
+                </a>
+                {' '}
+                Below is a searchable map.
               </p>
 
             </p>
@@ -215,8 +226,10 @@ const HackVisuals = () => {
             >
               Submit Tips
             </button>
+            <i style={{ fontSize: '12px' }}>The Daily Cal was unable to verify the list’s accuracy, though several universities on it have begun reporting intrusions. Additionally, the geolocation of some pins may be inaccurate due to a lack of precision in the published list.</i>
           </div>
         </div>
+        <div />
       </div>
 
       {/* Content split */}
