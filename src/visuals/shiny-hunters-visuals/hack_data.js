@@ -1,14 +1,95 @@
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import rawCsv from '!!raw-loader!./data.csv';
+
+function parseCsv(csv) {
+  const rows = [];
+  let row = [];
+  let field = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < csv.length; i++) {
+    const char = csv[i];
+    const nextChar = csv[i + 1];
+
+    if (char === '"') {
+      if (inQuotes && nextChar === '"') {
+        field += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
+    } else if (char === ',' && !inQuotes) {
+      row.push(field);
+      field = '';
+    } else if ((char === '\n' || char === '\r') && !inQuotes) {
+      if (char === '\r' && nextChar === '\n') i++;
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = '';
+    } else {
+      field += char;
+    }
+  }
+
+  if (field || row.length) {
+    row.push(field);
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+function parseGeoloc(geoloc) {
+  if (!geoloc || geoloc === 'Address not found') {
+    return { lat: null, lng: null };
+  }
+
+  const [lat, lng] = geoloc.split(',').map((coord) => Number(coord.trim()));
+
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    return { lat: null, lng: null };
+  }
+
+  return { lat, lng };
+}
+
+function parsePinned(pinned) {
+  return pinned && pinned.trim().toLowerCase() === 'true' ? true : null;
+}
+
+function rowsToUniversities(csv) {
+  const [headers, ...rows] = parseCsv(csv);
+  const nameIndex = headers.indexOf('Name');
+  const geolocIndex = headers.indexOf('Geoloc');
+  const pinnedIndex = headers.indexOf('Pinned');
+  const universities = [];
+
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i];
+    const name = row[nameIndex] && row[nameIndex].trim();
+
+    if (name) {
+      const { lat, lng } = parseGeoloc(row[geolocIndex]);
+
+      universities.push({
+        id: i,
+        name,
+        searchName: name.toLowerCase(),
+        lat,
+        lng,
+        pinned: parsePinned(row[pinnedIndex]),
+      });
+    }
+  }
+
+  return universities;
+}
+
+const universities = rowsToUniversities(rawCsv);
+const mappableUniversities = universities.filter((u) => u.lat != null && u.lng != null);
+
 export const hackData = {
-  universities: [
-    { name: 'UC Berkeley', lat: 37.8724, lng: -122.2595 },
-    { name: 'Stanford University', lat: 37.4275, lng: -122.1697 },
-    { name: 'MIT', lat: 42.3601, lng: -71.0942 },
-    { name: 'University of Michigan', lat: 42.2780, lng: -83.7382 },
-    { name: 'UT Austin', lat: null, lng: null },
-    { name: 'Georgia Tech', lat: 33.7756, lng: -84.3963 },
-    { name: 'Carnegie Mellon', lat: 40.4433, lng: -79.9436 },
-    { name: 'University of Washington', lat: null, lng: null },
-    { name: 'Columbia University', lat: 40.8075, lng: -73.9626 },
-    { name: 'University of Illinois', lat: 40.1020, lng: -88.2272 },
-  ],
+  universities,
+  mappableUniversities,
 };
