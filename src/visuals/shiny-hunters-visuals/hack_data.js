@@ -58,12 +58,20 @@ function parsePinned(pinned) {
   return pinned && pinned.trim().toLowerCase() === 'true' ? true : null;
 }
 
+function getHeaderIndex(headers, names) {
+  return names.map((name) => headers.indexOf(name)).find((index) => index !== -1);
+}
+
 function rowsToUniversities(csv) {
   const [headers, ...rows] = parseCsv(csv);
-  const nameIndex = headers.indexOf('Name');
+  const nameIndex = getHeaderIndex(headers, ['Name or Correct Name', 'Name']);
   const geolocIndex = headers.indexOf('Geoloc');
   const pinnedIndex = headers.indexOf('Pinned');
   const universities = [];
+
+  if (nameIndex == null || geolocIndex === -1 || pinnedIndex === -1) {
+    return universities;
+  }
 
   for (let i = 0; i < rows.length; i++) {
     const row = rows[i];
@@ -87,9 +95,27 @@ function rowsToUniversities(csv) {
 }
 
 const universities = rowsToUniversities(rawCsv);
-const mappableUniversities = universities.filter((u) => u.lat != null && u.lng != null);
+const startsWithLetterOrNumber = (name) => /^[a-z0-9]/i.test(name);
+const defaultUniversities = [...universities].sort((a, b) => {
+  if (a.pinned !== b.pinned) {
+    return a.pinned ? -1 : 1;
+  }
+
+  const aStartsNormally = startsWithLetterOrNumber(a.name);
+  const bStartsNormally = startsWithLetterOrNumber(b.name);
+
+  if (aStartsNormally !== bStartsNormally) {
+    return aStartsNormally ? -1 : 1;
+  }
+
+  return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }) || a.id - b.id;
+});
+const mappableUniversities = universities.filter(
+  (u) => u.lat != null && u.lng != null,
+);
 
 export const hackData = {
   universities,
+  defaultUniversities,
   mappableUniversities,
 };
