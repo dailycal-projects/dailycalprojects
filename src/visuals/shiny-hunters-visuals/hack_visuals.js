@@ -188,7 +188,7 @@ const HackVisuals = () => {
                 color: '#555',
               }}
             >
-              Aarya Mukherjee, Brendan Raykoff, Antara Gangwal, Saloni Sethi, Emanuel Luo, and Jun Oh contributed to this project.
+              Brendan Raykoff, Aarya Mukherjee, Antara Gangwal, Saloni Sethi, Emanuel Luo, and Jun Oh contributed to this project.
             </p>
             <button
               style={{
