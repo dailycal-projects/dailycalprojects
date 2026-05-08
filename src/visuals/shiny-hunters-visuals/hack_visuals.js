@@ -96,7 +96,7 @@ const HackVisuals = () => {
         >
           <div
             style={{
-              flex: 2,
+              flex: 3,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -114,16 +114,20 @@ const HackVisuals = () => {
                 // fontFamily: 'sans-serif',
               }}
             >
-<p>In what appears to be a global attack on thousands of schools, cybercrime group ShinyHunters has claimed credit for a massive breach of Instructure, the ed-tech company that provides the learning management system Canvas to roughly 41% of North American institutions of higher education. </p>
-{/* <p> */}
-
-{/* <p>ShinyHunters is holding the data from some schools for ransom and, this afternoon, launched an extensive seizure of school Canvas pages operated by Instructure, including UC Berkeley, resulting in students nationwide losing access to their course materials.</p> */}
-
-{/* <p>While the list includes schools and universities, it also includes public institutions, financial institutions, nonprofits, businesses, religious institutions and hospitals. This was revealed in an expansive list of purportedly breached organizations published by ShinyHunters on its dark web page, which The Daily Californian reviewed and processed the list. Below is a searchable map.</p> */}
-
-{/* <p>Organizations listed include Apple, The Church of Jesus Christ of Latter-day Saints, Goldman Sachs, California Department of Education, California Department of Corrections and Rehabilitation and Amazon. While ShinyHunters released 8809 names, some were subsidiaries of the same organization. Additionally, the Daily Californian found that some employees of Instructure were listed amongst the organizations.</p> */}
-
-{/* <p>The Daily Californian was unable to verify the list's accuracy, though several universities on it have begun reporting intrusions. Additionally, the geolocation of some pins may be inaccurate due to lack of precision in the published list.</p> */}
+              <p>
+                In what appears to be a global attack on thousands of organizations, cybercrime group ShinyHunters has claimed credit for a massive breach of Instructure, the ed-tech company that provides the learning management system Canvas. ShinyHunters is
+                {' '}
+                <a
+                  href="https://www.dailycal.org/news/campus/cybercrime-group-seizes-uc-berkeley-canvas-600k-student-staff-records-at-risk/article_5b3b01de-bcad-45a1-994b-e0d19aa88591.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: '#00529B', textDecoration: 'underline' }}
+                >
+                  holding
+                </a>
+                {' '}
+                the data from some organizations for ransom and launched an extensive seizure of school Canvas pages Thursday. While the list includes schools and universities, it also includes public institutions, financial institutions, nonprofits, businesses, religious institutions and hospitals. This was revealed in an expansive list of purportedly breached organizations published by ShinyHunters on its dark web page, which The Daily Californian reviewed and processed. Read the article here. Below is a searchable map.
+              </p>
 
             </p>
           </div>
@@ -330,7 +334,7 @@ const HackVisuals = () => {
               <CircleMarker
                 key={u.id}
                 center={[u.lat, u.lng]}
-                radius={6}
+                radius={2}
                 pathOptions={{
                   color: '#1a1a1a',
                   fillColor: '#1a1a1a',

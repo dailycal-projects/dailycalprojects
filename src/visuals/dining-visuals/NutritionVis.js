@@ -31,12 +31,14 @@ const KEYWORDS = {
 };
 
 const CATEGORY_META = {
-  grains:   { hex: '#C4956A', light: '#F5E6D3' },
+  grains: { hex: '#C4956A', light: '#F5E6D3' },
   proteins: { hex: '#7A9CBF', light: '#D8E8F5' },
-  greens:   { hex: '#6B8F71', light: '#D8EAD8' },
+  greens: { hex: '#6B8F71', light: '#D8EAD8' },
 };
 
-const M = { top: 10, right: 90, bottom: 40, left: 210 };
+const M = {
+  top: 10, right: 90, bottom: 40, left: 210,
+};
 const W = 880;
 const iW = W - M.left - M.right;
 
@@ -49,17 +51,19 @@ function categorizeItem(name) {
 }
 
 export default function NutritionVis() {
-  const [activeCat, setActiveCat]   = useState('grains');
-  const [activeN,   setActiveN]     = useState(10);
+  const [activeCat, setActiveCat] = useState('grains');
+  const [activeN, setActiveN] = useState(10);
   const [categorized, setCategorized] = useState(null);
-  const [loading, setLoading]       = useState(true);
-  const [error,   setError]         = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [catSummary, setCatSummary] = useState(null);
 
   const chartAreaRef = useRef(null);
-  const tooltipRef   = useRef(null);
-  const d3State      = useRef({ svgEl: null, gEl: null, xAxisG: null, yAxisG: null });
-  const chartBuilt   = useRef(false);
+  const tooltipRef = useRef(null);
+  const d3State = useRef({
+    svgEl: null, gEl: null, xAxisG: null, yAxisG: null,
+  });
+  const chartBuilt = useRef(false);
 
   useEffect(() => {
     d3.csv('/allMenus.csv').then((raw) => {
@@ -119,7 +123,7 @@ export default function NutritionVis() {
     if (!state.svgEl) return;
 
     const meta = CATEGORY_META[cat];
-    const T    = 550;
+    const T = 550;
     const ease = d3.easeCubicInOut;
 
     const chartData = Object.entries(data[cat] || {})
@@ -130,11 +134,12 @@ export default function NutritionVis() {
     if (!chartData.length) return;
 
     const rowH = 38;
-    const iH   = chartData.length * rowH;
-    const H    = iH + M.top + M.bottom + 10;
+    const iH = chartData.length * rowH;
+    const H = iH + M.top + M.bottom + 10;
 
     state.svgEl.transition().duration(T).ease(ease).attr('height', H);
-    state.svgEl.select('.x-foot').transition().duration(T).ease(ease).attr('y', H - 4);
+    state.svgEl.select('.x-foot').transition().duration(T).ease(ease)
+      .attr('y', H - 4);
 
     const maxVal = d3.max(chartData, (d) => d.count);
 
@@ -154,11 +159,16 @@ export default function NutritionVis() {
     const gridSel = state.gEl.select('.grid-g')
       .selectAll('line.grid').data(gridTicks, (d) => d);
     gridSel.enter().append('line').attr('class', 'grid')
-      .attr('x1', (d) => xSc(d)).attr('x2', (d) => xSc(d))
-      .attr('y1', 0).attr('y2', iH)
-      .attr('stroke', '#f2f2f2').attr('stroke-width', 1)
-      .merge(gridSel).transition(t)
-      .attr('x1', (d) => xSc(d)).attr('x2', (d) => xSc(d))
+      .attr('x1', (d) => xSc(d))
+      .attr('x2', (d) => xSc(d))
+      .attr('y1', 0)
+      .attr('y2', iH)
+      .attr('stroke', '#f2f2f2')
+      .attr('stroke-width', 1)
+      .merge(gridSel)
+      .transition(t)
+      .attr('x1', (d) => xSc(d))
+      .attr('x2', (d) => xSc(d))
       .attr('y2', iH);
     gridSel.exit().remove();
 
@@ -190,13 +200,19 @@ export default function NutritionVis() {
     const tracks = state.gEl.select('.bars-g')
       .selectAll('rect.track').data(chartData, (d) => d.label);
     tracks.enter().append('rect').attr('class', 'track')
-      .attr('x', 0).attr('y', (d) => ySc(d.label))
-      .attr('width', iW).attr('height', ySc.bandwidth())
-      .attr('fill', meta.light).attr('rx', 3).attr('opacity', 0)
-      .merge(tracks).transition(t)
+      .attr('x', 0)
+      .attr('y', (d) => ySc(d.label))
+      .attr('width', iW)
+      .attr('height', ySc.bandwidth())
+      .attr('fill', meta.light)
+      .attr('rx', 3)
+      .attr('opacity', 0)
+      .merge(tracks)
+      .transition(t)
       .attr('y', (d) => ySc(d.label))
       .attr('height', ySc.bandwidth())
-      .attr('fill', meta.light).attr('opacity', 1);
+      .attr('fill', meta.light)
+      .attr('opacity', 1);
     tracks.exit().transition(t).attr('opacity', 0).remove();
 
     // Main bars
@@ -204,17 +220,21 @@ export default function NutritionVis() {
     const bars = state.gEl.select('.bars-g')
       .selectAll('rect.bar').data(chartData, (d) => d.label);
     bars.enter().append('rect').attr('class', 'bar')
-      .attr('x', 0).attr('y', (d) => ySc(d.label))
-      .attr('height', ySc.bandwidth()).attr('width', 0)
-      .attr('fill', meta.hex).attr('rx', 3)
+      .attr('x', 0)
+      .attr('y', (d) => ySc(d.label))
+      .attr('height', ySc.bandwidth())
+      .attr('width', 0)
+      .attr('fill', meta.hex)
+      .attr('rx', 3)
       .on('mousemove', (event, d) => {
         tooltip.style.opacity = '1';
-        tooltip.style.left    = `${event.clientX + 14}px`;
-        tooltip.style.top     = `${event.clientY - 38}px`;
-        tooltip.innerHTML     = `<strong>${d.label}</strong><br/>Served <strong>${d.count.toLocaleString()}</strong> time${d.count !== 1 ? 's' : ''}`;
+        tooltip.style.left = `${event.clientX + 14}px`;
+        tooltip.style.top = `${event.clientY - 38}px`;
+        tooltip.innerHTML = `<strong>${d.label}</strong><br/>Served <strong>${d.count.toLocaleString()}</strong> time${d.count !== 1 ? 's' : ''}`;
       })
       .on('mouseleave', () => { tooltip.style.opacity = '0'; })
-      .merge(bars).transition(t)
+      .merge(bars)
+      .transition(t)
       .attr('y', (d) => ySc(d.label))
       .attr('height', ySc.bandwidth())
       .attr('width', (d) => xSc(d.count))
@@ -224,7 +244,7 @@ export default function NutritionVis() {
     // Value labels — placed INSIDE the track on the right edge when bar is near-full,
     // otherwise just to the right of the bar end. Avoids overlap with bar end.
     const LABEL_GAP = 6;
-    const LABEL_W   = 36; // approx px a 4-digit label needs
+    const LABEL_W = 36; // approx px a 4-digit label needs
 
     const vals = state.gEl.select('.labels-g')
       .selectAll('text.val').data(chartData, (d) => d.label);
@@ -234,7 +254,8 @@ export default function NutritionVis() {
       .style('font-size', '12px')
       .style('font-weight', '600')
       .attr('opacity', 0)
-      .merge(vals).transition(t)
+      .merge(vals)
+      .transition(t)
       .attr('y', (d) => ySc(d.label) + ySc.bandwidth() / 2)
       .attr('x', (d) => {
         const barX = xSc(d.count);
@@ -247,12 +268,12 @@ export default function NutritionVis() {
         return barX - LABEL_GAP;
       })
       .attr('text-anchor', (d) => {
-        const barX  = xSc(d.count);
+        const barX = xSc(d.count);
         const outsideX = barX + LABEL_GAP;
         return outsideX + LABEL_W <= iW ? 'start' : 'end';
       })
       .attr('fill', (d) => {
-        const barX     = xSc(d.count);
+        const barX = xSc(d.count);
         const outsideX = barX + LABEL_GAP;
         return outsideX + LABEL_W <= iW ? '#444' : '#fff';
       })
@@ -271,20 +292,23 @@ export default function NutritionVis() {
       .style('font-size', '11px')
       .style('font-weight', '600')
       .attr('opacity', 0)
-      .merge(ranks).transition(t)
+      .merge(ranks)
+      .transition(t)
       .attr('y', (d) => ySc(d.label) + ySc.bandwidth() / 2)
       .attr('fill', meta.hex)
       .attr('opacity', 1)
       .text((d, i) => `#${i + 1}`);
     ranks.exit().transition(t).attr('opacity', 0).remove();
 
-    const total  = Object.values(data[cat]).reduce((a, b) => a + b, 0);
+    const total = Object.values(data[cat]).reduce((a, b) => a + b, 0);
     const unique = Object.keys(data[cat]).length;
-    setCatSummary({ total, unique, cat, meta });
+    setCatSummary({
+      total, unique, cat, meta,
+    });
   }
 
   if (loading) return <p className={styles.loading}>Loading data…</p>;
-  if (error)   return <p className={styles.loading}>⚠️ Could not load allMenus.csv.</p>;
+  if (error) return <p className={styles.loading}>⚠️ Could not load allMenus.csv.</p>;
 
   return (
     <div className={styles.wrapper}>
@@ -297,9 +321,9 @@ export default function NutritionVis() {
             type="button"
             className={`${styles.tab}${activeCat === cat ? ` ${styles.tabActive}` : ''}`}
             style={activeCat === cat ? {
-              color:       CATEGORY_META[cat].hex,
+              color: CATEGORY_META[cat].hex,
               borderColor: CATEGORY_META[cat].hex,
-              background:  CATEGORY_META[cat].light,
+              background: CATEGORY_META[cat].light,
             } : {}}
             onClick={() => setActiveCat(cat)}
           >
@@ -331,15 +355,23 @@ export default function NutritionVis() {
           style={{ background: catSummary.meta.light, color: catSummary.meta.hex }}
         >
           <span style={{
-            width: 9, height: 9, borderRadius: '50%',
+            width: 9,
+            height: 9,
+            borderRadius: '50%',
             background: catSummary.meta.hex,
-            display: 'inline-block', flexShrink: 0,
+            display: 'inline-block',
+            flexShrink: 0,
           }}
           />
           {/* Fixed: space between unique count and category word */}
-          {catSummary.unique.toLocaleString()} unique {catSummary.cat}
+          {catSummary.unique.toLocaleString()}
+          {' '}
+          unique
+          {catSummary.cat}
           &nbsp;·&nbsp;
-          {catSummary.total.toLocaleString()} total servings
+          {catSummary.total.toLocaleString()}
+          {' '}
+          total servings
         </div>
       )}
 
@@ -348,7 +380,8 @@ export default function NutritionVis() {
       {/* Byline — matches scrollyNew style */}
       <p className={styles.vizSource}>
         Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
-        Source:{' '}
+        Source:
+        {' '}
         <a href="https://dining.berkeley.edu/menus/" target="_blank" rel="noreferrer">
           Berkeley Dining
         </a>

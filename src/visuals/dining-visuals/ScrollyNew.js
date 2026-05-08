@@ -105,7 +105,9 @@ export default function ScrollyNew() {
           <div className={styles.detailInner}>
             <div className={styles.detailHeader}>
               <div className={styles.detailContentLabel} style={{ color: hall.accent }}>
-                {hall.name} — Menu Analysis
+                {hall.name}
+                {' '}
+                — Menu Analysis
               </div>
             </div>
             <div className={styles.detailContent}>
@@ -120,7 +122,8 @@ export default function ScrollyNew() {
       <p className={styles.vizSource}>
         Chart: Anika Bhutani/The Daily Californian &nbsp;·&nbsp;
         Illustration: Dana Lim | Staff &nbsp;·&nbsp;
-        Source:{' '}
+        Source:
+        {' '}
         <a href="https://dining.berkeley.edu/menus/" target="_blank" rel="noreferrer">
           Berkeley Dining
         </a>
