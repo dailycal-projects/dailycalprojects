@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Link } from 'gatsby';
 import logo from '../../images/dclogoblack.png';
+import { FinanceTreemap } from './treemap';
 
 const CandidateFinanceVisuals = () => {
   const [isMobile, setIsMobile] = useState(
@@ -94,7 +95,7 @@ const CandidateFinanceVisuals = () => {
                 textJustify: 'inter-word',
               }}
             >
-              Given the upcoming elections, we anaylzed federal and state campgain contributions from City of Berkeley residents and UC Berkeley employees from August 2025 through August 2026 using data made available by the Federal Election Commission and the California Secretary of State.
+              With federal and state elections coming up this November, how much are Berkeley residents and UC Berkeley employees contributing financially to campaigns? The Daily Californian used data made available by the Federal Election Commission (FEC) and California Secretary of State to analyze which committees and candidates were most donated to.
             </p>
           </div>
           <div
@@ -150,16 +151,8 @@ const CandidateFinanceVisuals = () => {
         </div>
       </div>
 
-      {/* Content split */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: isMobile ? 'column-reverse' : 'row',
-          flex: isMobile ? 'none' : 1,
-          overflow: isMobile ? 'visible' : 'hidden',
-          minHeight: isMobile ? 'auto' : 0,
-        }}
-      />
+      {/* Treemap Content */}
+      <FinanceTreemap />
     </div>
   );
 };
