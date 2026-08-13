@@ -206,6 +206,8 @@ export function FinanceTreemap() {
   const [source, setSource] = useState(SOURCE_COLUMNS.city); // which columns to sum
   const [sourceKey, setSourceKey] = useState('city'); // which columns to sum id: uc | city | both
 
+  const [isScreenTooSmall, setScreenToSmall] = useState(false); // if screen is too small to show
+
   const treemapRef = useRef(null); // ref to treemap div
 
   // Color scale
@@ -225,6 +227,14 @@ export function FinanceTreemap() {
     const nextKey = event.target.value;
     setDatasetKey(nextKey);
   };
+
+  // Handle screen size change
+  useEffect(() => {
+    const handleResize = () => setScreenToSmall(window.innerWidth <= 685);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Fetch CSV files (once)
   useEffect(() => {
@@ -258,7 +268,7 @@ export function FinanceTreemap() {
   // Generate treemap
   useEffect(() => {
     // Get data
-    if (!datasets || !treemapRef.current) {
+    if (isScreenTooSmall || !datasets || !treemapRef.current) {
       return undefined;
     }
 
@@ -421,7 +431,7 @@ export function FinanceTreemap() {
     return () => {
       container.selectAll('*').remove();
     };
-  }, [datasets, datasetKey, source]);
+  }, [datasets, datasetKey, source, isScreenTooSmall]);
 
   // Error handler
   if (error) {
@@ -432,6 +442,11 @@ export function FinanceTreemap() {
         <code>{error.message || String(error)}</code>
       </Message>
     );
+  }
+
+  // Screen too small
+  if (isScreenTooSmall) {
+    return <Message>This visualization looks best on larger screens.</Message>;
   }
 
   // Loading indicator
