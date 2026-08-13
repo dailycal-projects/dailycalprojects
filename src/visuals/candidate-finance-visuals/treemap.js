@@ -7,6 +7,10 @@ const CSV_URLS = {
   federal: '/candidate-finance/federal_finance_treemap_v2.csv',
 };
 
+// Treemap dimensions
+const WIDTH = 1200;
+const HEIGHT = 600;
+
 /** Observable's DOM.uid replacement for clipPath / rect ids */
 function uid(prefix) {
   uid.next = (uid.next || 0) + 1;
@@ -100,13 +104,45 @@ function treemapElementFontSize(d) {
 }
 
 /**
+ * A message (such as a warning) that takes the same dimensions as the treemap.
+ */
+function Message({ children, background = 'lightgrey' }) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
+      }}
+    >
+      <div
+        style={{
+          font: '9px Roboto sans-serif',
+          maxWidth: '100%',
+          width: `${WIDTH}px`,
+          height: 'auto',
+          aspectRatio: WIDTH / (HEIGHT + 18.5), // including legend
+          background,
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          fontSize: '0.95rem',
+          fontWeight: 'bold',
+          userSelect: 'none',
+        }}
+      >
+        <div>{children}</div>
+      </div>
+    </div>
+  );
+}
+
+/**
  * The finanace treemap React element, with a legend and dropdowns for election and source.
  */
 export function FinanceTreemap() {
-  // Constants
-  const width = 1200;
-  const height = 600;
-
+  // Columns in source csv file
   const SOURCE_COLUMNS = {
     uc: ['ucberkeley_amount', 'both_amount'],
     city: ['cityofberkeley_amount', 'both_amount'],
@@ -118,7 +154,7 @@ export function FinanceTreemap() {
   const [error, setError] = useState(null); // error while loading csv
 
   const [datasetKey, setDatasetKey] = useState('state'); // which csv to use
-  const [source, setSource] = useState(SOURCE_COLUMNS['city']); // which columns to sum
+  const [source, setSource] = useState(SOURCE_COLUMNS.city); // which columns to sum
   const [sourceKey, setSourceKey] = useState('city'); // which columns to sum id: uc | city | both
 
   const treemapRef = useRef(null); // ref to treemap div
@@ -190,7 +226,7 @@ export function FinanceTreemap() {
     const root = d3
       .treemap()
       .tile(d3.treemapBinary)
-      .size([width, height])
+      .size([WIDTH, HEIGHT])
       .padding(1)
       .round(true)(
         d3
@@ -216,10 +252,10 @@ export function FinanceTreemap() {
     // Create the SVG container.
     const svg = container
       .append('svg')
-      .attr('viewBox', [0, 0, width, height])
-      .attr('width', width)
-      .attr('height', height)
-      .attr('style', 'max-width: 100%; height: auto; font: 9px sans-serif;');
+      .attr('viewBox', [0, 0, WIDTH, HEIGHT])
+      .attr('width', WIDTH)
+      .attr('height', HEIGHT)
+      .attr('style', 'max-width: 100%; height: auto; font: 9px Roboto sans-serif;');
 
     // Add a cell for each leaf of the hierarchy, with a click action.
     const leaf = svg
@@ -336,16 +372,22 @@ export function FinanceTreemap() {
     return () => {
       container.selectAll('*').remove();
     };
-  }, [datasets, datasetKey, source, width, height]);
+  }, [datasets, datasetKey, source]);
 
   // Error handler
   if (error) {
-    return <div>Failed to load finance data.</div>;
+    return (
+      <Message background="salmon">
+        Failed to load finance datasets:
+        <br />
+        <code>{error.message || String(error)}</code>
+      </Message>
+    );
   }
 
   // Loading indicator
   if (!datasets) {
-    return <div>loading</div>;
+    return <Message>Loading Data...</Message>;
   }
 
   // Build layout
