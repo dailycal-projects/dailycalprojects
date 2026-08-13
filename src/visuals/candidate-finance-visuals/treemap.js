@@ -166,7 +166,7 @@ function Message({ children, background = 'lightgrey' }) {
     >
       <div
         style={{
-          font: '9px Roboto sans-serif',
+          font: '9px sans-serif',
           maxWidth: '100%',
           width: `${WIDTH}px`,
           height: 'auto',
@@ -304,7 +304,7 @@ export function FinanceTreemap() {
       .attr('viewBox', [0, 0, WIDTH, HEIGHT])
       .attr('width', WIDTH)
       .attr('height', HEIGHT)
-      .attr('style', 'max-width: 100%; height: auto; font: 9px Roboto sans-serif;');
+      .attr('style', 'max-width: 100%; height: auto; font: 9px sans-serif;');
 
     // Add a cell for each leaf of the hierarchy, with a click action.
     const leaf = svg
