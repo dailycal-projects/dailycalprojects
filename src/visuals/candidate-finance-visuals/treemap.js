@@ -501,8 +501,8 @@ export function FinanceTreemap() {
             value={sourceKey}
             onChange={handleSourceChange}
           >
-            <option value="uc">UC Berkeley</option>
-            <option value="city">City of Berkeley</option>
+            <option value="uc">UC Berkeley Employees</option>
+            <option value="city">City of Berkeley Residents</option>
             <option value="both">Both</option>
           </select>
         </div>
