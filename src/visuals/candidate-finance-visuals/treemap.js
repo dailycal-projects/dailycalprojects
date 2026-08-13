@@ -11,7 +11,9 @@ const CSV_URLS = {
 const WIDTH = 1200;
 const HEIGHT = 600;
 
-/** Observable's DOM.uid replacement for clipPath / rect ids */
+/**
+ * Observable's DOM.uid replacement for clipPath / rect ids
+ */
 function uid(prefix) {
   uid.next = (uid.next || 0) + 1;
   const id = `${prefix}-${uid.next}`;
@@ -24,40 +26,84 @@ function uid(prefix) {
   };
 }
 
+// Amount columns to merge when deduping leaves with the same id
+const AMOUNT_COLUMNS = [
+  'cityofberkeley_amount',
+  'ucberkeley_amount',
+  'both_amount',
+];
+
 /**
- * Filter out nodes smaller than "min".
+ * Dedup leaves with the same id (summing amounts), then combine small leaves into Other.
  */
-function filterSmallChildren(node, sources, min = 1000) {
+function filterChildren(node, sources, min = 1000) {
   if (!node.children) {
     return;
   }
 
-  let otherSum = 0;
-  let otherCount = 0;
-  const remainingChildren = [];
-
+  // Recurse into internal nodes first
   for (const child of node.children) {
-    if (!child.children) {
-      // Leaf node — stratify nodes keep the CSV row on `.data`
-      const amount = sumSourceAmounts(child.data, sources);
-
-      if (amount < min && amount > 0) {
-        // Too small, add to "Other"
-        otherSum += amount;
-        otherCount += 1;
-      } else {
-        // Large enough, keep
-        remainingChildren.push(child);
-      }
-    } else {
-      // Internal node, process children
-      filterSmallChildren(child, sources, min);
-      remainingChildren.push(child);
+    if (child.children) {
+      filterChildren(child, sources, min);
     }
   }
 
-  // Add an "Other" node if necessary
-  if (otherCount > 1) {
+  // Dedupe leaves by id, summing all amount columns
+  const seen = {};
+  const deduped = [];
+
+  for (const child of node.children) {
+    if (child.children) {
+      // Not a leaf node, keep it
+      deduped.push(child);
+      continue;
+    }
+
+    if (child.id in seen) {
+      // Leaf node that is a duplicate key, sum
+      const existing = seen[child.id];
+      AMOUNT_COLUMNS.forEach((col) => {
+        existing.data[col] = Number(existing.data[col] || 0) + Number(child.data[col] || 0);
+      });
+    } else {
+      // Clone data so we don't mutate the cached CSV row
+      const merged = {
+        ...child,
+        data: { ...child.data },
+      };
+      AMOUNT_COLUMNS.forEach((col) => {
+        merged.data[col] = Number(merged.data[col] || 0);
+      });
+      seen[child.id] = merged;
+      deduped.push(merged);
+    }
+  }
+
+  // Combine small leaves into Other
+  let otherSum = 0;
+  const remainingChildren = [];
+  const smallLeaves = [];
+
+  for (const child of deduped) {
+    if (child.children) {
+      // Not a leaf node, keep it
+      remainingChildren.push(child);
+      continue;
+    }
+
+    const amount = sumSourceAmounts(child.data, sources);
+
+    if (amount >= min) {
+      remainingChildren.push(child);
+    } else if (amount > 0) {
+      otherSum += amount;
+      smallLeaves.push(child);
+    }
+    // amount <= 0 purposefully dropped
+  }
+
+  if (smallLeaves.length > 1) {
+    // Build Other node, inject amounts into it
     const otherData = {};
     if (sources.length) {
       otherData[sources[0]] = otherSum;
@@ -67,13 +113,16 @@ function filterSmallChildren(node, sources, min = 1000) {
     }
 
     remainingChildren.push({
-      id: `${node.id}/OTHER (${otherCount})`,
+      id: `${node.id}/OTHER (${smallLeaves.length})`,
       parentId: node.id,
       data: otherData,
     });
-
-    node.children = remainingChildren;
+  } else if (smallLeaves.length === 1) {
+    // Don't drop a lone small leaf when Other isn't created
+    remainingChildren.push(smallLeaves[0]);
   }
+
+  node.children = remainingChildren;
 }
 
 /**
@@ -220,7 +269,7 @@ export function FinanceTreemap() {
 
     // Stratify a fresh tree each time so filtering doesn't mutate the cache
     const data = d3.stratify().path((d) => d.name)(rows);
-    filterSmallChildren(data, source);
+    filterChildren(data, source);
 
     // Compute the layout.
     const root = d3
