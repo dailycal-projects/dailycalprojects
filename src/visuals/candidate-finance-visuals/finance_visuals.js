@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import logo from '../../images/dclogoblack.png';
 import { FinanceTreemap } from './treemap';
+import { FinanaceDatawrapperCharts } from './datawrapper_charts';
 
 const CandidateFinanceVisuals = () => {
   const [isMobile, setIsMobile] = useState(
@@ -23,7 +24,7 @@ const CandidateFinanceVisuals = () => {
         flexDirection: 'column',
         height: '100vh',
         overflowX: 'hidden',
-        overflowY: isMobile ? 'auto' : 'hidden',
+        overflowY: 'scroll',
         WebkitOverflowScrolling: 'touch',
         fontFamily: "'Georgia', serif",
       }}
@@ -153,6 +154,9 @@ const CandidateFinanceVisuals = () => {
 
       {/* Treemap Content */}
       <FinanceTreemap />
+
+      {/* Piechart Content */}
+      <FinanaceDatawrapperCharts />
     </div>
   );
 };

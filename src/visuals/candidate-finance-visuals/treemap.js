@@ -7,8 +7,8 @@ const CSV_URLS = {
   federal: '/candidate-finance/federal_finance_treemap_v2.csv',
 };
 
-// Treemap dimensions
-const WIDTH = 1200;
+// Treemap dimensions (shared with Datawrapper charts)
+export const WIDTH = 1200;
 const HEIGHT = 600;
 
 /**
