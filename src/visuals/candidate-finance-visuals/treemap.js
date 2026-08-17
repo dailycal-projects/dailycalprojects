@@ -33,10 +33,19 @@ const AMOUNT_COLUMNS = [
   'both_amount',
 ];
 
+// Other combines the smallest leaves until they reach this share of total dollars
+const OTHER_FRACTION_STATE = 0.01;
+const OTHER_FRACTION_FEDERAL = 0.065;
+
 /**
- * Dedup leaves with the same id (summing amounts), then combine small leaves into Other.
+ * Dedup leaves with same id (summing amounts), drop zeros, and group smallest leaves into Other.
  */
-function filterChildren(node, sources, min = 1000) {
+function filterChildren(node, sources, datasetKey) {
+  dedupChildren(node, sources);
+  foldSmallestIntoOther(node, sources, datasetKey);
+}
+
+function dedupChildren(node, sources) {
   if (!node.children) {
     return;
   }
@@ -44,7 +53,7 @@ function filterChildren(node, sources, min = 1000) {
   // Recurse into internal nodes first
   for (const child of node.children) {
     if (child.children) {
-      filterChildren(child, sources, min);
+      dedupChildren(child, sources);
     }
   }
 
@@ -79,31 +88,87 @@ function filterChildren(node, sources, min = 1000) {
     }
   }
 
-  // Combine small leaves into Other
+  // Drop zero/negative leaves; keep internals and positive leaves
+  node.children = deduped.filter((child) => (
+    child.children || sumSourceAmounts(child.data, sources) > 0
+  ));
+}
+
+/**
+ * Return every leaf under node.
+ */
+function collectLeaves(node) {
+  if (!node.children) {
+    return [node];
+  }
+
+  return node.children.flatMap(collectLeaves);
+}
+
+/**
+ * Fold smallest leaves (by dollars) into per-group Other tiles until Other is as close to
+ * possible to the election's cutoff of the total.
+ */
+function foldSmallestIntoOther(root, sources, datasetKey) {
+  const leaves = collectLeaves(root);
+  const total = leaves.reduce((sum, leaf) => sum + sumSourceAmounts(leaf.data, sources), 0);
+  const fraction = datasetKey === 'federal' ? OTHER_FRACTION_FEDERAL : OTHER_FRACTION_STATE;
+  const budget = total * fraction;
+
+  // Sort leaves by amount
+  const ranked = [...leaves].sort(
+    (a, b) => sumSourceAmounts(a.data, sources) - sumSourceAmounts(b.data, sources),
+  );
+
+  const smallSet = new Set();
   let otherSum = 0;
+
+  // Add to smallSet until they are just about to go over the budget
+  for (const leaf of ranked) {
+    const amount = sumSourceAmounts(leaf.data, sources);
+    if (otherSum + amount > budget) {
+      break;
+    }
+    smallSet.add(leaf);
+    otherSum += amount;
+  }
+
+  foldOtherAtNode(root, sources, smallSet);
+}
+
+/**
+ * Replace this node's small leaves with a single Other child.
+ */
+function foldOtherAtNode(node, sources, smallSet) {
+  if (!node.children) {
+    return;
+  }
+
+  for (const child of node.children) {
+    if (child.children) {
+      foldOtherAtNode(child, sources, smallSet);
+    }
+  }
+
   const remainingChildren = [];
   const smallLeaves = [];
+  let otherSum = 0;
 
-  for (const child of deduped) {
+  for (const child of node.children) {
     if (child.children) {
-      // Not a leaf node, keep it
       remainingChildren.push(child);
       continue;
     }
 
-    const amount = sumSourceAmounts(child.data, sources);
-
-    if (amount >= min) {
-      remainingChildren.push(child);
-    } else if (amount > 0) {
-      otherSum += amount;
+    if (smallSet.has(child)) {
+      otherSum += sumSourceAmounts(child.data, sources);
       smallLeaves.push(child);
+    } else {
+      remainingChildren.push(child);
     }
-    // amount <= 0 purposefully dropped
   }
 
   if (smallLeaves.length > 1) {
-    // Build Other node, inject amounts into it
     const otherData = {};
     if (sources.length) {
       otherData[sources[0]] = otherSum;
@@ -279,7 +344,7 @@ export function FinanceTreemap() {
 
     // Stratify a fresh tree each time so filtering doesn't mutate the cache
     const data = d3.stratify().path((d) => d.name)(rows);
-    filterChildren(data, source);
+    filterChildren(data, source, datasetKey);
 
     // Compute the layout.
     const root = d3
@@ -446,7 +511,7 @@ export function FinanceTreemap() {
 
   // Screen too small
   if (isScreenTooSmall) {
-    return <Message>This visualization looks best on larger screens.</Message>;
+    return <Message>This visualization is better viewed on larger screens.</Message>;
   }
 
   // Loading indicator
