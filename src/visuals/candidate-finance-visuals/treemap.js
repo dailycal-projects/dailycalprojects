@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 
-/** URLs of the csv files */
+// URLs of the csv files
 const CSV_URLS = {
   state: '/candidate-finance/state_finance_treemap_v2.csv',
   federal: '/candidate-finance/federal_finance_treemap_v2.csv',
@@ -113,7 +113,7 @@ function filterChildren(node, sources, min = 1000) {
     }
 
     remainingChildren.push({
-      id: `${node.id}/OTHER (${smallLeaves.length})`,
+      id: `${node.id}/Other (${smallLeaves.length})`,
       parentId: node.id,
       data: otherData,
     });
@@ -294,8 +294,8 @@ export function FinanceTreemap() {
           .sum((d) => Math.sqrt(sumSourceAmounts(d.data, source)))
           .sort((a, b) => {
             // Sort largest to smallest, forcing "Other" category to be last
-            const aOther = a.data.id?.includes('/OTHER');
-            const bOther = b.data.id?.includes('/OTHER');
+            const aOther = a.data.id?.includes('/Other');
+            const bOther = b.data.id?.includes('/Other');
 
             if (aOther && !bOther) return 1;
             if (!aOther && bOther) return -1;
