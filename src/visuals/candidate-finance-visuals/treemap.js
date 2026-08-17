@@ -45,8 +45,25 @@ function filterChildren(node, sources, datasetKey) {
   foldSmallestIntoOther(node, sources, datasetKey);
 }
 
+/**
+ * Get committee name from a leaf's CSV row, or '' if missing.
+ */
+function committeeNameOf(node) {
+  const name = node.data && node.data['committee name'];
+  return (name && String(name).trim()) || '';
+}
+
+/**
+ * Get committees included in this node (can be several if deduped)
+ */
+function committeesOf(node) {
+  return node.committees || [];
+}
+
 function dedupChildren(node, sources) {
   if (!node.children) {
+    const name = committeeNameOf(node);
+    node.committees = name ? [name] : [];
     return;
   }
 
@@ -68,17 +85,23 @@ function dedupChildren(node, sources) {
       continue;
     }
 
+    const committeeName = committeeNameOf(child);
+
     if (child.id in seen) {
-      // Leaf node that is a duplicate key, sum
+      // Leaf node that is a duplicate key, sum amounts and committees
       const existing = seen[child.id];
       AMOUNT_COLUMNS.forEach((col) => {
         existing.data[col] = Number(existing.data[col] || 0) + Number(child.data[col] || 0);
       });
+      if (committeeName) {
+        existing.committees.push(committeeName);
+      }
     } else {
       // Clone data so we don't mutate the cached CSV row
       const merged = {
         ...child,
         data: { ...child.data },
+        committees: committeeName ? [committeeName] : [],
       };
       AMOUNT_COLUMNS.forEach((col) => {
         merged.data[col] = Number(merged.data[col] || 0);
@@ -92,6 +115,8 @@ function dedupChildren(node, sources) {
   node.children = deduped.filter((child) => (
     child.children || sumSourceAmounts(child.data, sources) > 0
   ));
+
+  node.committees = node.children.flatMap(committeesOf);
 }
 
 /**
@@ -181,6 +206,7 @@ function foldOtherAtNode(node, sources, smallSet) {
       id: `${node.id}/Other (${smallLeaves.length})`,
       parentId: node.id,
       data: otherData,
+      committees: smallLeaves.flatMap(committeesOf),
     });
   } else if (smallLeaves.length === 1) {
     // Don't drop a lone small leaf when Other isn't created
@@ -188,6 +214,7 @@ function foldOtherAtNode(node, sources, smallSet) {
   }
 
   node.children = remainingChildren;
+  node.committees = remainingChildren.flatMap(committeesOf);
 }
 
 /**
@@ -391,6 +418,7 @@ export function FinanceTreemap() {
       .on('click', (event, d) => {
         // eslint-disable-next-line no-console
         console.log(d.data.id.split('/').at(-1));
+        console.log(d);
         // TODO popup
       });
 
@@ -594,6 +622,7 @@ export function FinanceTreemap() {
           display: 'flex',
           justifyContent: 'center',
           width: '100%',
+          userSelect: 'none',
         }}
       />
     </>
