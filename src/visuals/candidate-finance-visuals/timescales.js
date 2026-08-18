@@ -6,7 +6,7 @@ export const POINTS_CSV_URLS = {
   federal: '/candidate-finance/finance_points_fec_v1.csv',
 };
 
-// Treemap amount column -> the `bucket` value used for it in the points csv files
+// Treemap amount column
 const SOURCE_BUCKETS = {
   cityofberkeley_amount: 'city',
   ucberkeley_amount: 'ucb',
@@ -68,7 +68,7 @@ export function indexPointsByHash(rows) {
 
 /**
  * Every contribution to the given candidate hashes that counts towards the active source,
- * oldest first. An "Other" tile passes several hashes, so its points are all of theirs.
+ * oldest first.
  */
 export function pointsForHashes(index, hashes, sources) {
   if (!index) {
@@ -84,8 +84,7 @@ export function pointsForHashes(index, hashes, sources) {
 }
 
 /**
- * Dollar gridlines for a symlog axis: zero plus each power of ten it spans, dropping any label
- * that would collide with the one below it.
+ * Dollar gridlines for a symlog axis
  */
 function dollarTicks(y) {
   const [lowest, highest] = y.domain();
@@ -109,8 +108,7 @@ function dollarTicks(y) {
 }
 
 /**
- * Draw the contributions-over-time scatter into a d3 selection, colored by the candidate's party.
- * Returns the appended svg selection, or null when there is nothing to plot.
+ * Draw the contributions-over-time scatter into a d3 selection.
  */
 export function drawTimescale(parent, { points, color }) {
   if (!points || !points.length) {

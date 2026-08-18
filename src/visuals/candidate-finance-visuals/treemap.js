@@ -6,8 +6,8 @@ import { POINTS_CSV_URLS, indexPointsByHash, pointsForHashes } from './timescale
 
 // URLs of the csv files
 const CSV_URLS = {
-  state: '/candidate-finance/state_finance_treemap_v4.csv',
-  federal: '/candidate-finance/federal_finance_treemap_v4.csv',
+  state: '/candidate-finance/state_finance_treemap_v5.csv',
+  federal: '/candidate-finance/federal_finance_treemap_v5.csv',
 };
 
 // Treemap dimensions (shared with Datawrapper charts)
@@ -87,14 +87,16 @@ function committeesOf(node) {
 }
 
 /**
- * Candidate hashes covered by a node, used to look up its contributions in the points csv.
- * A tile is one candidate (one hash) unless it is an "Other" tile, which carries all of them.
+ * True for the tiles that bundle the smallest candidates together, e.g. "Other (34)".
+ */
+function isOtherTile(node) {
+  return Boolean(node.id) && node.id.split('/').at(-1).startsWith('Other (');
+}
+
+/**
+ * The candidate hash of a node, used to look up its contributions in the points csv.
  */
 function hashesOf(node) {
-  if (node.hashes) {
-    return node.hashes;
-  }
-
   const hash = node.data && node.data.hash;
   return hash ? [hash] : [];
 }
@@ -254,7 +256,6 @@ function foldOtherAtNode(node, sources, smallSet) {
       parentId: node.id,
       data: otherData,
       committees: mergeCommitteeEntries(smallLeaves.flatMap(committeesOf)),
-      hashes: smallLeaves.flatMap(hashesOf),
     });
   } else if (smallLeaves.length === 1) {
     // Don't drop a lone small leaf when Other isn't created
@@ -476,8 +477,7 @@ export function FinanceTreemap() {
       .style('cursor', 'pointer')
       .on('click', (event, d) => {
         // Open the candidate in Google
-        const name = d.data.id.split('/').at(-1);
-        if (!name.startsWith('Other (')) {
+        if (!isOtherTile(d.data)) {
           window.open(`https://google.com/search?q=${d.data.id.split('/').at(-1)}`);
         }
       });
@@ -490,7 +490,10 @@ export function FinanceTreemap() {
       container: wrapperRef.current,
       name: (d) => d.data.id.split('/').at(-1),
       amount: (d) => `$${format(sumSourceAmounts(d.data.data, source))}`,
-      points: (d) => pointsForHashes(pointIndex, hashesOf(d.data), source),
+      // An "Other" tile is many candidates at once, so it gets no contributions chart
+      points: (d) => (
+        isOtherTile(d.data) ? [] : pointsForHashes(pointIndex, hashesOf(d.data), source)
+      ),
       color: (d) => color(d.data.id.split('/').at(2)),
       committees: (d) => displayCommitteesOf(d.data),
     });

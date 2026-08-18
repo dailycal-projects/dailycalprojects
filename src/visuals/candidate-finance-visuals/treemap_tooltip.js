@@ -40,10 +40,10 @@ export function TreemapTooltip({ innerRef }) {
 }
 
 /**
- * A small uppercase section label inside the tooltip.
+ * A small uppercase section label inside the tooltip. Returns it, so a caller can add a note.
  */
 function appendSectionLabel(tooltip, text) {
-  tooltip
+  return tooltip
     .append('div')
     .style('margin-top', '6px')
     .style('font-size', '11px')
@@ -67,7 +67,11 @@ function renderTooltip(tooltip, {
 
   // Contributions over time, between the total and the committee list
   if (points.length) {
-    appendSectionLabel(tooltip, 'Contributions over time');
+    appendSectionLabel(tooltip, 'Contributions over time')
+      .append('span')
+      .style('text-transform', 'none')
+      .style('font-size', '10px')
+      .text(' (log scale)');
     drawTimescale(tooltip.append('div').style('margin-top', '2px'), { points, color });
   }
 
