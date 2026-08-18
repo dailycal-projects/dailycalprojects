@@ -158,7 +158,7 @@ const CandidateFinanceVisuals = () => {
       {/* Middle Text */}
       <FinanaceVizElement maxWidth={640}>
         <p style={TEXT_STYLING}>We tracked what amount Berkeley residents and UC Berkeley employees donated to each candidate on both a federal and state level. Of all the state candidates, Xavier Becerra’s campaign for California governor received the most donations from both Berkeley residents. For the federal candidates, Scott Wiener’s campaign for California’s 11th Congressional representative.</p>
-
+        <br />
         <p style={TEXT_STYLING}>Hover over each candidate’s name in the map to see information about their political party, as well as their campaign contributions over time.</p>
       </FinanaceVizElement>
 

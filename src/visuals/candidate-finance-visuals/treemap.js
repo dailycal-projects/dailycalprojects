@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 
 import { TreemapTooltip, attachTreemapTooltip, hideTreemapTooltip } from './treemap_tooltip';
+import { POINTS_CSV_URLS, indexPointsByHash, pointsForHashes } from './timescales';
 
 // URLs of the csv files
 const CSV_URLS = {
@@ -83,6 +84,19 @@ function mergeCommitteeEntries(entries) {
  */
 function committeesOf(node) {
   return node.committees || [];
+}
+
+/**
+ * Candidate hashes covered by a node, used to look up its contributions in the points csv.
+ * A tile is one candidate (one hash) unless it is an "Other" tile, which carries all of them.
+ */
+function hashesOf(node) {
+  if (node.hashes) {
+    return node.hashes;
+  }
+
+  const hash = node.data && node.data.hash;
+  return hash ? [hash] : [];
 }
 
 /**
@@ -240,6 +254,7 @@ function foldOtherAtNode(node, sources, smallSet) {
       parentId: node.id,
       data: otherData,
       committees: mergeCommitteeEntries(smallLeaves.flatMap(committeesOf)),
+      hashes: smallLeaves.flatMap(hashesOf),
     });
   } else if (smallLeaves.length === 1) {
     // Don't drop a lone small leaf when Other isn't created
@@ -325,6 +340,7 @@ export function FinanceTreemap() {
 
   // States
   const [datasets, setDatasets] = useState(null); // cached CSV rows
+  const [points, setPoints] = useState(null); // individual contributions, grouped by candidate hash
   const [error, setError] = useState(null); // error while loading csv
 
   const [datasetKey, setDatasetKey] = useState('state'); // which csv to use
@@ -367,18 +383,26 @@ export function FinanceTreemap() {
   useEffect(() => {
     let cancelled = false;
 
-    Promise.all(
-      Object.entries(CSV_URLS).map(async ([key, path]) => {
-        const origin = typeof window !== 'undefined'
-          ? window.location.origin
-          : 'https://data.dailycal.org';
+    const origin = typeof window !== 'undefined'
+      ? window.location.origin
+      : 'https://data.dailycal.org';
+
+    const load = (urls) => Promise.all(
+      Object.entries(urls).map(async ([key, path]) => {
         const rows = await d3.csv(`${origin}${path}`);
         return [key, rows];
       }),
-    )
-      .then((entries) => {
+    ).then(Object.fromEntries);
+
+    Promise.all([load(CSV_URLS), load(POINTS_CSV_URLS)])
+      .then(([treemapRows, pointRows]) => {
         if (!cancelled) {
-          setDatasets(Object.fromEntries(entries));
+          setDatasets(treemapRows);
+          setPoints(
+            Object.fromEntries(
+              Object.entries(pointRows).map(([key, rows]) => [key, indexPointsByHash(rows)]),
+            ),
+          );
         }
       })
       .catch((err) => {
@@ -460,11 +484,14 @@ export function FinanceTreemap() {
 
     // Attach the hover tooltip.
     const format = d3.format(',d');
+    const pointIndex = points && points[datasetKey];
     attachTreemapTooltip(leaf, {
       tooltip: tooltipRef.current,
       container: wrapperRef.current,
       name: (d) => d.data.id.split('/').at(-1),
       amount: (d) => `$${format(sumSourceAmounts(d.data.data, source))}`,
+      points: (d) => pointsForHashes(pointIndex, hashesOf(d.data), source),
+      color: (d) => color(d.data.id.split('/').at(2)),
       committees: (d) => displayCommitteesOf(d.data),
     });
 
@@ -563,7 +590,7 @@ export function FinanceTreemap() {
       hideTreemapTooltip(tooltipRef.current);
       container.selectAll('*').remove();
     };
-  }, [datasets, datasetKey, source, isScreenTooSmall]);
+  }, [datasets, points, datasetKey, source, isScreenTooSmall]);
 
   // Error handler
   if (error) {

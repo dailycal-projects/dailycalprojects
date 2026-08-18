@@ -1,6 +1,8 @@
 import React from 'react';
 import * as d3 from 'd3';
 
+import { drawTimescale } from './timescales';
+
 // Committees listed before collapsing the rest into a "+N more" line
 const MAX_COMMITTEES = 8;
 
@@ -38,19 +40,9 @@ export function TreemapTooltip({ innerRef }) {
 }
 
 /**
- * Render tooltip content.
+ * A small uppercase section label inside the tooltip.
  */
-function renderTooltip(tooltip, name, amount, committees, formatAmount) {
-  tooltip.selectAll('*').remove();
-
-  tooltip.append('div').style('font-weight', 'bold').text(name);
-
-  tooltip.append('div').text(amount);
-
-  if (!committees.length) {
-    return;
-  }
-
+function appendSectionLabel(tooltip, text) {
   tooltip
     .append('div')
     .style('margin-top', '6px')
@@ -58,7 +50,32 @@ function renderTooltip(tooltip, name, amount, committees, formatAmount) {
     .style('text-transform', 'uppercase')
     .style('letter-spacing', '0.04em')
     .style('opacity', 0.6)
-    .text(committees.length === 1 ? 'Committee' : 'Committees');
+    .text(text);
+}
+
+/**
+ * Render tooltip content.
+ */
+function renderTooltip(tooltip, {
+  name, amount, points, color, committees, formatAmount,
+}) {
+  tooltip.selectAll('*').remove();
+
+  tooltip.append('div').style('font-weight', 'bold').text(name);
+
+  tooltip.append('div').text(amount);
+
+  // Contributions over time, between the total and the committee list
+  if (points.length) {
+    appendSectionLabel(tooltip, 'Contributions over time');
+    drawTimescale(tooltip.append('div').style('margin-top', '2px'), { points, color });
+  }
+
+  if (!committees.length) {
+    return;
+  }
+
+  appendSectionLabel(tooltip, committees.length === 1 ? 'Committee' : 'Committees');
 
   const list = tooltip
     .append('ul')
@@ -92,6 +109,8 @@ export function attachTreemapTooltip(selection, {
   container: containerNode,
   name,
   amount,
+  points,
+  color,
   committees,
   formatAmount = d3.format(',d'),
 }) {
@@ -119,7 +138,14 @@ export function attachTreemapTooltip(selection, {
 
   selection
     .on('mouseover', (event, d) => {
-      renderTooltip(tooltip, name(d), amount(d), committees(d), formatAmount);
+      renderTooltip(tooltip, {
+        name: name(d),
+        amount: amount(d),
+        points: points ? points(d) : [],
+        color: color ? color(d) : 'currentColor',
+        committees: committees(d),
+        formatAmount,
+      });
       tooltip.style('opacity', 1);
       move(event);
     })
