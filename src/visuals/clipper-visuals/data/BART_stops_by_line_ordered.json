@@ -1,0 +1,462 @@
+[
+  {
+    "line_id": "Orange-N",
+    "stop_id": "BERY"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "MLPT"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "WARM"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "FRMT"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "UCTY"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "SHAY"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "HAYW"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "BAYF"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "SANL"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "COLS"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "FTVL"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "LAKE"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "12TH"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "19TH"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "MCAR"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "ASHB"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "DBRK"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "NBRK"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "PLZA"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "DELN"
+  },
+  {
+    "line_id": "Orange-N",
+    "stop_id": "RICH"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "MLBR"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "SFIA"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "SBRN"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "SSAN"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "COLM"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "DALY"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "BALB"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "GLEN"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "24TH"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "16TH"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "CIVC"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "POWL"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "MONT"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "EMBR"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "WOAK"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "12TH"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "19TH"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "MCAR"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "ASHB"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "DBRK"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "NBRK"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "PLZA"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "DELN"
+  },
+  {
+    "line_id": "Red-N",
+    "stop_id": "RICH"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "MLBR"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "SFIA"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "SBRN"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "SSAN"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "COLM"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "DALY"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "BALB"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "GLEN"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "24TH"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "16TH"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "CIVC"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "POWL"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "MONT"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "EMBR"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "WOAK"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "12TH"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "19TH"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "MCAR"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "ROCK"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "ORIN"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "LAFY"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "WCRK"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "PHIL"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "CONC"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "NCON"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "PITT"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "PCTR"
+  },
+  {
+    "line_id": "Yellow-N",
+    "stop_id": "ANTC"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "DALY"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "BALB"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "GLEN"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "24TH"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "16TH"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "CIVC"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "POWL"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "MONT"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "EMBR"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "WOAK"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "LAKE"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "FTVL"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "COLS"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "SANL"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "BAYF"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "CAST"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "WDUB"
+  },
+  {
+    "line_id": "Blue-N",
+    "stop_id": "DUBL"
+  },
+  {
+    "line_id": "Beige-N",
+    "stop_id": "OAKL"
+  },
+  {
+    "line_id": "Beige-N",
+    "stop_id": "COLS"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "DALY"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "BALB"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "GLEN"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "24TH"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "16TH"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "CIVC"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "POWL"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "MONT"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "EMBR"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "WOAK"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "LAKE"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "FTVL"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "COLS"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "SANL"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "BAYF"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "HAYW"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "SHAY"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "UCTY"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "FRMT"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "WARM"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "MLPT"
+  },
+  {
+    "line_id": "Green-N",
+    "stop_id": "BERY"
+  }
+]
