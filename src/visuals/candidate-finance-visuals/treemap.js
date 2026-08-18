@@ -10,6 +10,49 @@ const CSV_URLS = {
   federal: '/candidate-finance/federal_finance_treemap_v5.csv',
 };
 
+// Columns in source csv file
+const SOURCE_COLUMNS = {
+  uc: ['ucberkeley_amount', 'both_amount'],
+  city: ['cityofberkeley_amount', 'both_amount'],
+  both: ['cityofberkeley_amount', 'ucberkeley_amount', 'both_amount'],
+};
+
+// Defaults, also used when a url param is missing or unrecognized
+const DEFAULT_SOURCE_KEY = 'city';
+const DEFAULT_DATASET_KEY = 'state';
+
+// Query params that keep the dropdown choices in the url, so a view can be shared as a link
+const SOURCE_PARAM = 'treemaps-source';
+const ELECTION_PARAM = 'treemap-election';
+
+/**
+ * Read one dropdown choice out of the url, falling back when it is missing or not a real option.
+ */
+function readParam(name, options, fallback) {
+  if (typeof window === 'undefined') {
+    return fallback;
+  }
+
+  const value = new URLSearchParams(window.location.search).get(name);
+  return options.includes(value) ? value : fallback;
+}
+
+/**
+ * Put the current dropdown choices in the url without navigating or adding history entries.
+ */
+function writeParams(sourceKey, datasetKey) {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  params.set(SOURCE_PARAM, sourceKey);
+  params.set(ELECTION_PARAM, datasetKey);
+
+  const { pathname, hash } = window.location;
+  window.history.replaceState(null, '', `${pathname}?${params.toString()}${hash}`);
+}
+
 // Treemap dimensions (shared with Datawrapper charts)
 export const WIDTH = 1200;
 const HEIGHT = 600;
@@ -332,21 +375,16 @@ function Message({ children, background = 'lightgrey' }) {
  * The finance treemap React element, with a legend and dropdowns for election and source.
  */
 export function FinanceTreemap() {
-  // Columns in source csv file
-  const SOURCE_COLUMNS = {
-    uc: ['ucberkeley_amount', 'both_amount'],
-    city: ['cityofberkeley_amount', 'both_amount'],
-    both: ['cityofberkeley_amount', 'ucberkeley_amount', 'both_amount'],
-  };
-
   // States
   const [datasets, setDatasets] = useState(null); // cached CSV rows
   const [points, setPoints] = useState(null); // individual contributions, grouped by candidate hash
   const [error, setError] = useState(null); // error while loading csv
 
-  const [datasetKey, setDatasetKey] = useState('state'); // which csv to use
-  const [source, setSource] = useState(SOURCE_COLUMNS.city); // which columns to sum
-  const [sourceKey, setSourceKey] = useState('city'); // which columns to sum id: uc | city | both
+  // These start at the defaults and are replaced by the url params on mount, so that the server
+  // rendered markup and the first client render agree
+  const [datasetKey, setDatasetKey] = useState(DEFAULT_DATASET_KEY); // which csv to use
+  const [source, setSource] = useState(SOURCE_COLUMNS[DEFAULT_SOURCE_KEY]); // which columns to sum
+  const [sourceKey, setSourceKey] = useState(DEFAULT_SOURCE_KEY); // uc | city | both
 
   const [isScreenTooSmall, setScreenToSmall] = useState(false); // if screen is too small to show
 
@@ -372,6 +410,21 @@ export function FinanceTreemap() {
     const nextKey = event.target.value;
     setDatasetKey(nextKey);
   };
+
+  // Apply the dropdown choices from a shared link (once, on mount)
+  useEffect(() => {
+    const nextSourceKey = readParam(SOURCE_PARAM, Object.keys(SOURCE_COLUMNS), DEFAULT_SOURCE_KEY);
+    const nextDatasetKey = readParam(ELECTION_PARAM, Object.keys(CSV_URLS), DEFAULT_DATASET_KEY);
+
+    setSourceKey(nextSourceKey);
+    setSource(SOURCE_COLUMNS[nextSourceKey]);
+    setDatasetKey(nextDatasetKey);
+  }, []);
+
+  // Keep the url in step with the dropdowns
+  useEffect(() => {
+    writeParams(sourceKey, datasetKey);
+  }, [sourceKey, datasetKey]);
 
   // Handle screen size change
   useEffect(() => {
