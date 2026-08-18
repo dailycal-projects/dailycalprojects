@@ -9,6 +9,11 @@ const MAX_COMMITTEES = 8;
 // Gap between the cursor and the tooltip
 const CURSOR_OFFSET = 14;
 
+// Some committee names need to be replaced in the UI
+const COMMITTEE_REPLACEMENTS = {
+  'Yes on 50, The Election Rigging Response Act, Governor Newsom?s Ballot Measure Committee': "Yes on 50, The Election Rigging Response Act, Governor Newsom's Ballot Measure Committee",
+};
+
 const formatContributionDate = d3.utcFormat('%B %-d, %Y');
 
 /**
@@ -54,6 +59,13 @@ function appendSectionLabel(tooltip, text) {
     .style('letter-spacing', '0.04em')
     .style('opacity', 0.6)
     .text(text);
+}
+
+/**
+ * The committee name to show, cleaned up when the raw data spells it badly.
+ */
+function committeeLabel(name) {
+  return COMMITTEE_REPLACEMENTS[name] || name;
 }
 
 /**
@@ -127,7 +139,7 @@ function renderTooltip(tooltip, {
     .style('margin', '0')
     .style('padding', '0')
     .style('line-height', '1.15')
-    .text((committee) => `${committee.name} ($${formatAmount(committee.amount)})`);
+    .text((committee) => `${committeeLabel(committee.name)} ($${formatAmount(committee.amount)})`);
 
   if (committees.length > MAX_COMMITTEES) {
     tooltip
