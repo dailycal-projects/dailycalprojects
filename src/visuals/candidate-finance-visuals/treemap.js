@@ -5,8 +5,8 @@ import { TreemapTooltip, attachTreemapTooltip, hideTreemapTooltip } from './tree
 
 // URLs of the csv files
 const CSV_URLS = {
-  state: '/candidate-finance/state_finance_treemap_v3.csv',
-  federal: '/candidate-finance/federal_finance_treemap_v3.csv',
+  state: '/candidate-finance/state_finance_treemap_v4.csv',
+  federal: '/candidate-finance/federal_finance_treemap_v4.csv',
 };
 
 // Treemap dimensions (shared with Datawrapper charts)
@@ -675,7 +675,7 @@ export function FinanceTreemap() {
       </div>
 
       {/* Treemap (wrapper positions the tooltip, which d3 must not clear with the SVG) */}
-      <div ref={wrapperRef} style={{ position: 'relative', width: '100%' }}>
+      <div ref={wrapperRef} style={{ position: 'relative', width: '100%', marginBottom: '20px' }}>
         <div
           ref={treemapRef}
           style={{

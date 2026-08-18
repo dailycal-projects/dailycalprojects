@@ -3,7 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import logo from '../../images/dclogoblack.png';
 import { FinanceTreemap } from './treemap';
-import { FinanceDatawrapperCharts } from './datawrapper_charts';
+import { FinanaceVizElement, FinanceDatawrapperCharts } from './extra_graphs';
+
+const TEXT_STYLING = {
+  fontSize: '0.95rem',
+  margin: 0,
+  textAlign: 'justify',
+  textJustify: 'inter-word',
+};
 
 const CandidateFinanceVisuals = () => {
   const [isMobile, setIsMobile] = useState(
@@ -88,14 +95,7 @@ const CandidateFinanceVisuals = () => {
               paddingInline: '25px',
             }}
           >
-            <p
-              style={{
-                fontSize: '0.95rem',
-                margin: 0,
-                textAlign: 'justify',
-                textJustify: 'inter-word',
-              }}
-            >
+            <p style={TEXT_STYLING}>
               With federal and state elections coming up this November, how much are Berkeley residents and UC Berkeley employees contributing financially to campaigns? The Daily Californian used data made available by the Federal Election Commission (FEC) and California Secretary of State to analyze which committees and candidates were most donated to.
             </p>
           </div>
@@ -154,6 +154,13 @@ const CandidateFinanceVisuals = () => {
 
       {/* Treemap Content */}
       <FinanceTreemap />
+
+      {/* Middle Text */}
+      <FinanaceVizElement maxWidth={640}>
+        <p style={TEXT_STYLING}>We tracked what amount Berkeley residents and UC Berkeley employees donated to each candidate on both a federal and state level. Of all the state candidates, Xavier Becerra’s campaign for California governor received the most donations from both Berkeley residents. For the federal candidates, Scott Wiener’s campaign for California’s 11th Congressional representative.</p>
+
+        <p style={TEXT_STYLING}>Hover over each candidate’s name in the map to see information about their political party, as well as their campaign contributions over time.</p>
+      </FinanaceVizElement>
 
       {/* Piechart Content */}
       <FinanceDatawrapperCharts />

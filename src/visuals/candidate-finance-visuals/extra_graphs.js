@@ -2,22 +2,23 @@ import React from 'react';
 import DatawrapperChart from '../../components/dataWrapper';
 import { WIDTH } from './treemap';
 
-function FinanceDWChart({ chartId }) {
+export function FinanaceVizElement({ children, maxWidth = WIDTH }) {
   return (
     <div
       style={{
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
+        margin: '20px 0',
       }}
     >
       <div
         style={{
           width: '100%',
-          maxWidth: `${WIDTH}px`,
+          maxWidth: `${maxWidth}px`,
         }}
       >
-        <DatawrapperChart chartId={chartId} />
+        {children}
       </div>
     </div>
   );
@@ -25,8 +26,8 @@ function FinanceDWChart({ chartId }) {
 
 export function FinanceDatawrapperCharts() {
   return (
-    <>
-      <FinanceDWChart chartId="ZBnI6" />
-    </>
+    <FinanaceVizElement>
+      <DatawrapperChart chartId="ZBnI6" />
+    </FinanaceVizElement>
   );
 }
