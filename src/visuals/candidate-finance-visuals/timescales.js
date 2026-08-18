@@ -2,8 +2,8 @@ import * as d3 from 'd3';
 
 // URLs of the csv files holding one row per individual contribution
 export const POINTS_CSV_URLS = {
-  state: '/candidate-finance/finance_points_state_v1.csv',
-  federal: '/candidate-finance/finance_points_fec_v1.csv',
+  state: '/candidate-finance/finance_points_state_v2.csv',
+  federal: '/candidate-finance/finance_points_fec_v2.csv',
 };
 
 // Treemap amount column
@@ -29,6 +29,9 @@ const MARGIN = {
 
 const POINT_RADIUS = 2;
 
+// How close the cursor has to get before a contribution counts as hovered
+const HOVER_RADIUS = 12;
+
 // Minimum vertical gap between dollar labels, so a short chart never stacks them
 const TICK_GAP = 16;
 
@@ -36,7 +39,7 @@ const parseDate = d3.utcParse('%Y-%m-%d');
 
 /**
  * Group contributions by the candidate hash they belong to, parsing each row once.
- * Rows outside the x axis window, or without a date or dollar amount, are dropped.
+ * Rows outside the x axis window or without a date or dollar amount are dropped.
  */
 export function indexPointsByHash(rows) {
   const index = new Map();
@@ -54,7 +57,13 @@ export function indexPointsByHash(rows) {
     }
 
     const points = index.get(row.hash);
-    const point = { date, amount, bucket: row.bucket };
+    const point = {
+      date,
+      amount,
+      bucket: row.bucket,
+      // Blank until the initials column lands in the points csv files
+      initials: (row.initials || '').trim(),
+    };
 
     if (points) {
       points.push(point);
@@ -108,9 +117,71 @@ function dollarTicks(y) {
 }
 
 /**
- * Draw the contributions-over-time scatter into a d3 selection.
+ * Cover the plot with a transparent rect that reports the contribution nearest the cursor, and
+ * ring that contribution while it is hovered.
  */
-export function drawTimescale(parent, { points, color }) {
+function attachPointHover(svg, {
+  points, x, y, color, onPointEnter, onPointLeave,
+}) {
+  const nearest = d3.Delaunay.from(points, (point) => x(point.date), (point) => y(point.amount));
+
+  const highlight = svg
+    .append('circle')
+    .attr('r', POINT_RADIUS + 2)
+    .attr('fill', 'none')
+    .attr('stroke', color)
+    .attr('stroke-width', 1.5)
+    .attr('opacity', 0);
+
+  let hovered = null;
+
+  const leave = () => {
+    if (hovered !== null) {
+      hovered = null;
+      highlight.attr('opacity', 0);
+
+      if (onPointLeave) {
+        onPointLeave();
+      }
+    }
+  };
+
+  svg
+    .append('rect')
+    .attr('x', MARGIN.left)
+    .attr('y', MARGIN.top)
+    .attr('width', WIDTH - MARGIN.left - MARGIN.right)
+    .attr('height', HEIGHT - MARGIN.top - MARGIN.bottom)
+    .attr('fill', 'transparent')
+    .on('mousemove', (event) => {
+      const [mouseX, mouseY] = d3.pointer(event);
+      const index = nearest.find(mouseX, mouseY);
+      const point = points[index];
+      const distance = Math.hypot(x(point.date) - mouseX, y(point.amount) - mouseY);
+
+      if (distance > HOVER_RADIUS) {
+        leave();
+        return;
+      }
+
+      hovered = index;
+      highlight
+        .attr('cx', x(point.date))
+        .attr('cy', y(point.amount))
+        .attr('opacity', 1);
+      onPointEnter(event, point);
+    })
+    .on('mouseleave', leave);
+}
+
+/**
+ * Draw the contributions-over-time scatter into a d3 selection.
+ *
+ * `onPointEnter(event, point)` and `onPointLeave()` are optional to make the dots hoverable.
+ */
+export function drawTimescale(parent, {
+  points, color, onPointEnter, onPointLeave,
+}) {
   if (!points || !points.length) {
     return null;
   }
@@ -183,6 +254,12 @@ export function drawTimescale(parent, { points, color }) {
     .attr('r', POINT_RADIUS)
     .attr('fill', color)
     .attr('fill-opacity', 0.55);
+
+  if (onPointEnter) {
+    attachPointHover(svg, {
+      points, x, y, color, onPointEnter, onPointLeave,
+    });
+  }
 
   return svg;
 }

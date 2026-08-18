@@ -353,6 +353,7 @@ export function FinanceTreemap() {
   const wrapperRef = useRef(null); // ref to positioning wrapper (tooltip coordinate space)
   const treemapRef = useRef(null); // ref to treemap div
   const tooltipRef = useRef(null); // ref to hover tooltip div
+  const pointTooltipRef = useRef(null); // ref to the single contribution tooltip
 
   // Color scale
   const color = d3.scaleOrdinal(
@@ -474,19 +475,14 @@ export function FinanceTreemap() {
       .data(root.leaves())
       .join('g')
       .attr('transform', (d) => `translate(${d.x0},${d.y0})`)
-      .style('cursor', 'pointer')
-      .on('click', (event, d) => {
-        // Open the candidate in Google
-        if (!isOtherTile(d.data)) {
-          window.open(`https://google.com/search?q=${d.data.id.split('/').at(-1)}`);
-        }
-      });
+      .style('cursor', 'pointer');
 
-    // Attach the hover tooltip.
+    // Attach the hover tooltip, which also handles clicking a cell to lock it in place.
     const format = d3.format(',d');
     const pointIndex = points && points[datasetKey];
-    attachTreemapTooltip(leaf, {
+    const detachTooltip = attachTreemapTooltip(leaf, {
       tooltip: tooltipRef.current,
+      pointTooltip: pointTooltipRef.current,
       container: wrapperRef.current,
       name: (d) => d.data.id.split('/').at(-1),
       amount: (d) => `$${format(sumSourceAmounts(d.data.data, source))}`,
@@ -590,7 +586,8 @@ export function FinanceTreemap() {
 
     // Teardown
     return () => {
-      hideTreemapTooltip(tooltipRef.current);
+      detachTooltip();
+      hideTreemapTooltip(pointTooltipRef.current);
       container.selectAll('*').remove();
     };
   }, [datasets, points, datasetKey, source, isScreenTooSmall]);
@@ -716,6 +713,7 @@ export function FinanceTreemap() {
           }}
         />
         <TreemapTooltip innerRef={tooltipRef} />
+        <TreemapTooltip innerRef={pointTooltipRef} zIndex={20} />
       </div>
     </>
   );
