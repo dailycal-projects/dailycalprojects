@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import logo from '../../images/dclogoblack.png';
 import { FinanceTreemap } from './treemap';
-import { FinanaceDatawrapperCharts } from './datawrapper_charts';
+import { FinanceDatawrapperCharts } from './datawrapper_charts';
 
 const CandidateFinanceVisuals = () => {
   const [isMobile, setIsMobile] = useState(
@@ -156,7 +156,7 @@ const CandidateFinanceVisuals = () => {
       <FinanceTreemap />
 
       {/* Piechart Content */}
-      <FinanaceDatawrapperCharts />
+      <FinanceDatawrapperCharts />
     </div>
   );
 };

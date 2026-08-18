@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 
+import { TreemapTooltip, attachTreemapTooltip, hideTreemapTooltip } from './treemap_tooltip';
+
 // URLs of the csv files
 const CSV_URLS = {
-  state: '/candidate-finance/state_finance_treemap_v2.csv',
-  federal: '/candidate-finance/federal_finance_treemap_v2.csv',
+  state: '/candidate-finance/state_finance_treemap_v3.csv',
+  federal: '/candidate-finance/federal_finance_treemap_v3.csv',
 };
 
 // Treemap dimensions (shared with Datawrapper charts)
@@ -49,21 +51,52 @@ function filterChildren(node, sources, datasetKey) {
  * Get committee name from a leaf's CSV row, or '' if missing.
  */
 function committeeNameOf(node) {
-  const name = node.data && node.data['committee name'];
+  const name = node.data && node.data.committee_name;
   return (name && String(name).trim()) || '';
 }
 
 /**
- * Get committees included in this node (can be several if deduped)
+ * One committee and its dollars for the active source columns.
+ */
+function committeeEntryOf(node, sources) {
+  const name = committeeNameOf(node);
+  if (!name) {
+    return null;
+  }
+  return { name, amount: sumSourceAmounts(node.data, sources) };
+}
+
+/**
+ * Sum amounts when the same committee name appears more than once.
+ */
+function mergeCommitteeEntries(entries) {
+  const byName = new Map();
+  for (const { name, amount } of entries) {
+    byName.set(name, (byName.get(name) || 0) + amount);
+  }
+  return [...byName.entries()].map(([name, amount]) => ({ name, amount }));
+}
+
+/**
+ * Get committees included in this node (can be several if deduped).
+ * Each entry is `{ name, amount }`.
  */
 function committeesOf(node) {
   return node.committees || [];
 }
 
+/**
+ * Committees for the tooltip, deduped and sorted largest donation first.
+ */
+function displayCommitteesOf(node) {
+  return mergeCommitteeEntries(committeesOf(node))
+    .sort((a, b) => b.amount - a.amount);
+}
+
 function dedupChildren(node, sources) {
   if (!node.children) {
-    const name = committeeNameOf(node);
-    node.committees = name ? [name] : [];
+    const entry = committeeEntryOf(node, sources);
+    node.committees = entry ? [entry] : [];
     return;
   }
 
@@ -85,7 +118,7 @@ function dedupChildren(node, sources) {
       continue;
     }
 
-    const committeeName = committeeNameOf(child);
+    const entry = committeeEntryOf(child, sources);
 
     if (child.id in seen) {
       // Leaf node that is a duplicate key, sum amounts and committees
@@ -93,15 +126,15 @@ function dedupChildren(node, sources) {
       AMOUNT_COLUMNS.forEach((col) => {
         existing.data[col] = Number(existing.data[col] || 0) + Number(child.data[col] || 0);
       });
-      if (committeeName) {
-        existing.committees.push(committeeName);
+      if (entry) {
+        existing.committees.push(entry);
       }
     } else {
       // Clone data so we don't mutate the cached CSV row
       const merged = {
         ...child,
         data: { ...child.data },
-        committees: committeeName ? [committeeName] : [],
+        committees: entry ? [entry] : [],
       };
       AMOUNT_COLUMNS.forEach((col) => {
         merged.data[col] = Number(merged.data[col] || 0);
@@ -116,7 +149,7 @@ function dedupChildren(node, sources) {
     child.children || sumSourceAmounts(child.data, sources) > 0
   ));
 
-  node.committees = node.children.flatMap(committeesOf);
+  node.committees = mergeCommitteeEntries(node.children.flatMap(committeesOf));
 }
 
 /**
@@ -206,7 +239,7 @@ function foldOtherAtNode(node, sources, smallSet) {
       id: `${node.id}/Other (${smallLeaves.length})`,
       parentId: node.id,
       data: otherData,
-      committees: smallLeaves.flatMap(committeesOf),
+      committees: mergeCommitteeEntries(smallLeaves.flatMap(committeesOf)),
     });
   } else if (smallLeaves.length === 1) {
     // Don't drop a lone small leaf when Other isn't created
@@ -214,7 +247,7 @@ function foldOtherAtNode(node, sources, smallSet) {
   }
 
   node.children = remainingChildren;
-  node.committees = remainingChildren.flatMap(committeesOf);
+  node.committees = mergeCommitteeEntries(remainingChildren.flatMap(committeesOf));
 }
 
 /**
@@ -280,7 +313,7 @@ function Message({ children, background = 'lightgrey' }) {
 }
 
 /**
- * The finanace treemap React element, with a legend and dropdowns for election and source.
+ * The finance treemap React element, with a legend and dropdowns for election and source.
  */
 export function FinanceTreemap() {
   // Columns in source csv file
@@ -300,12 +333,14 @@ export function FinanceTreemap() {
 
   const [isScreenTooSmall, setScreenToSmall] = useState(false); // if screen is too small to show
 
+  const wrapperRef = useRef(null); // ref to positioning wrapper (tooltip coordinate space)
   const treemapRef = useRef(null); // ref to treemap div
+  const tooltipRef = useRef(null); // ref to hover tooltip div
 
   // Color scale
   const color = d3.scaleOrdinal(
-    ['Democrat', 'Republican', 'Green', 'Peace and Freedom', 'Non-Partisan'], // explicit order
-    ['#4B9CCF', '#E2565F', '#96C066', '#F28147', '#8E689B'], // matching colors
+    ['Democrat', 'Republican', 'Non-Partisan', 'Independent', 'Peace and Freedom', 'Green', 'Party for Socialism and Liberation'], // explicit order
+    ['#4B9CCF', '#E2565F', '#8E689B', '#FDD04C', '#F28147', '#96C066', '#3FA6AB'], // matching colors
   );
 
   // Handle dropdown changes
@@ -408,7 +443,7 @@ export function FinanceTreemap() {
       .attr('height', HEIGHT)
       .attr('style', 'max-width: 100%; height: auto; font: 9px sans-serif;');
 
-    // Add a cell for each leaf of the hierarchy, with a click action.
+    // Add a cell for each leaf of the hierarchy.
     const leaf = svg
       .selectAll('g')
       .data(root.leaves())
@@ -416,19 +451,22 @@ export function FinanceTreemap() {
       .attr('transform', (d) => `translate(${d.x0},${d.y0})`)
       .style('cursor', 'pointer')
       .on('click', (event, d) => {
-        // eslint-disable-next-line no-console
-        console.log(d.data.id.split('/').at(-1));
-        console.log(d);
-        // TODO popup
+        // Open the candidate in Google
+        const name = d.data.id.split('/').at(-1);
+        if (!name.startsWith('Other (')) {
+          window.open(`https://google.com/search?q=${d.data.id.split('/').at(-1)}`);
+        }
       });
 
-    // Append a tooltip.
+    // Attach the hover tooltip.
     const format = d3.format(',d');
-    leaf
-      .append('title')
-      .text(
-        (d) => `${d.data.id.split('/').at(-1)}\n$${format(sumSourceAmounts(d.data.data, source))}`,
-      );
+    attachTreemapTooltip(leaf, {
+      tooltip: tooltipRef.current,
+      container: wrapperRef.current,
+      name: (d) => d.data.id.split('/').at(-1),
+      amount: (d) => `$${format(sumSourceAmounts(d.data.data, source))}`,
+      committees: (d) => displayCommitteesOf(d.data),
+    });
 
     // Append a color rectangle.
     leaf
@@ -522,6 +560,7 @@ export function FinanceTreemap() {
 
     // Teardown
     return () => {
+      hideTreemapTooltip(tooltipRef.current);
       container.selectAll('*').remove();
     };
   }, [datasets, datasetKey, source, isScreenTooSmall]);
@@ -550,81 +589,104 @@ export function FinanceTreemap() {
   // Build layout
   return (
     <>
-      {/* Party Swatches and Dropdowns */}
+      {/* Party Swatches and Dropdowns: two columns that never wrap onto each other */}
       <div
         style={{
           display: 'flex',
-          flexWrap: 'wrap',
+          flexWrap: 'nowrap',
           gap: '12px 16px',
           font: '12px sans-serif',
           justifyContent: 'center',
           margin: '10px 0',
         }}
       >
-        {/* Party Swatches */}
-        {color.domain().map((party) => (
-          <div key={party} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <span
-              style={{
-                width: 14,
-                height: 14,
-                background: color(party),
-                opacity: 0.6,
-                display: 'inline-block',
-              }}
-            />
-            {party}
-          </div>
-        ))}
-
-        {/* Source Dropdown */}
+        {/* Party Swatches: wrap among themselves, never mixing with the dropdowns */}
         <div
           style={{
             display: 'flex',
+            flexWrap: 'wrap',
             alignItems: 'center',
-            gap: 6,
+            justifyContent: 'center',
+            gap: '8px 16px',
+            flex: '0 1 auto',
+            minWidth: 0,
+          }}
+        >
+          {color.domain().map((party) => (
+            <div key={party} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span
+                style={{
+                  width: 14,
+                  height: 14,
+                  background: color(party),
+                  opacity: 0.6,
+                  display: 'inline-block',
+                  flexShrink: 0,
+                }}
+              />
+              {party}
+            </div>
+          ))}
+        </div>
+
+        {/* Dropdowns: wrap among themselves on the other side of the divider */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px 16px',
+            flex: '0 1 auto',
+            minWidth: 0,
             borderLeft: '1px solid #bbb',
             paddingLeft: '16px',
           }}
         >
-          <label htmlFor="treemap-source">Source:&nbsp;</label>
-          <select
-            id="treemap-source"
-            name="treemap-source"
-            value={sourceKey}
-            onChange={handleSourceChange}
-          >
-            <option value="uc">UC Berkeley Employees</option>
-            <option value="city">City of Berkeley Residents</option>
-            <option value="both">Both</option>
-          </select>
-        </div>
+          {/* Source Dropdown */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <label htmlFor="treemap-source">Source:&nbsp;</label>
+            <select
+              id="treemap-source"
+              name="treemap-source"
+              value={sourceKey}
+              onChange={handleSourceChange}
+            >
+              <option value="uc">UC Berkeley Employees Only</option>
+              <option value="city">City of Berkeley Residents Only</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
 
-        {/* Election Dropdown */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <label htmlFor="treemap-election">Election:&nbsp;</label>
-          <select
-            id="treemap-election"
-            name="treemap-election"
-            value={datasetKey}
-            onChange={handleElectionChange}
-          >
-            <option value="state">State</option>
-            <option value="federal">Federal</option>
-          </select>
+          {/* Election Dropdown */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <label htmlFor="treemap-election">Election:&nbsp;</label>
+            <select
+              id="treemap-election"
+              name="treemap-election"
+              value={datasetKey}
+              onChange={handleElectionChange}
+            >
+              <option value="state">State</option>
+              <option value="federal">Federal</option>
+            </select>
+          </div>
         </div>
       </div>
 
-      {/* Treemap */}
-      <div
-        ref={treemapRef}
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          width: '100%',
-          userSelect: 'none',
-        }}
-      />
+      {/* Treemap (wrapper positions the tooltip, which d3 must not clear with the SVG) */}
+      <div ref={wrapperRef} style={{ position: 'relative', width: '100%' }}>
+        <div
+          ref={treemapRef}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+            userSelect: 'none',
+          }}
+        />
+        <TreemapTooltip innerRef={tooltipRef} />
+      </div>
     </>
   );
 }

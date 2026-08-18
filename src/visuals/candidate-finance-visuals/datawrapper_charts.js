@@ -2,7 +2,7 @@ import React from 'react';
 import DatawrapperChart from '../../components/dataWrapper';
 import { WIDTH } from './treemap';
 
-function FinanaceDWChart({ chartId }) {
+function FinanceDWChart({ chartId }) {
   return (
     <div
       style={{
@@ -23,10 +23,10 @@ function FinanaceDWChart({ chartId }) {
   );
 }
 
-export function FinanaceDatawrapperCharts() {
+export function FinanceDatawrapperCharts() {
   return (
     <>
-      <FinanaceDWChart chartId="ZBnI6" />
+      <FinanceDWChart chartId="ZBnI6" />
     </>
   );
 }
