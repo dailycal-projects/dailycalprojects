@@ -767,6 +767,22 @@ export function FinanceTreemap() {
         />
         <TreemapTooltip innerRef={tooltipRef} />
         <TreemapTooltip innerRef={pointTooltipRef} zIndex={20} />
+
+        {/* Credit line */}
+        <div
+          style={{
+            width: '100%',
+            maxWidth: `${WIDTH}px`,
+            margin: '5px auto 0',
+            fontFamily: 'sans-serif',
+            fontSize: '11px',
+            color: '#888',
+          }}
+        >
+          <span>Source: Antara Gangwal, Brendan Raykoff/The Daily Californian</span>
+          <span style={{ margin: '0 0.249em' }}>•</span>
+          <span>Note: Each cell's area is proportional to the square root of the amount contributed. Candidates making up the smallest shares of contributions are grouped as "Other".</span>
+        </div>
       </div>
     </>
   );

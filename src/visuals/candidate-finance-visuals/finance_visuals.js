@@ -60,7 +60,6 @@ const CandidateFinanceVisuals = () => {
                 height: '20px',
                 marginTop: '5px',
                 marginBottom: '15px',
-                borderBottom: '2px solid #ccc',
               }}
             />
           </Link>
