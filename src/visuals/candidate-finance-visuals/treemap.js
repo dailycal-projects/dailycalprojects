@@ -18,7 +18,7 @@ const SOURCE_COLUMNS = {
 };
 
 // The category the smallest parties are shown under
-const OTHER_PARTY = 'Other Party';
+const OTHER_PARTY = 'Other Parties';
 
 // Defaults, also used when a url param is missing or unrecognized
 const DEFAULT_SOURCE_KEY = 'city';

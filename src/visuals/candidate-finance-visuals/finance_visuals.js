@@ -76,7 +76,7 @@ const CandidateFinanceVisuals = () => {
             textAlign: 'center',
           }}
         >
-          Candidate Finance TITLE HERE
+          Out-of-state spending dominates Berkeley congressional donations
         </h1>
         <div
           style={{
