@@ -39,32 +39,35 @@ const CandidateFinanceVisuals = () => {
       {/* Top bar */}
       <div
         style={{
+          height: '50px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderBottom: '1px solid #D3D3D3',
+          backgroundColor: '#f7f7f7',
+          flexShrink: 0,
+        }}
+      >
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <img
+            src={logo}
+            alt="The Daily Californian"
+            style={{
+              height: '20px',
+              display: 'block',
+              margin: 0,
+            }}
+          />
+        </Link>
+      </div>
+      <div
+        style={{
           padding: '12px 20px',
           borderBottom: '2px solid #ccc',
           backgroundColor: '#f7f7f7',
           flexShrink: 0,
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <img
-              src={logo}
-              alt="The Daily Californian"
-              style={{
-                height: '20px',
-                marginTop: '5px',
-                marginBottom: '15px',
-              }}
-            />
-          </Link>
-        </div>
-
         <h1
           style={{
             fontFamily: 'Georgia, serif',

@@ -17,6 +17,9 @@ const SOURCE_COLUMNS = {
   both: ['cityofberkeley_amount', 'ucberkeley_amount', 'both_amount'],
 };
 
+// The category the smallest parties are shown under
+const OTHER_PARTY = 'Other Party';
+
 // Defaults, also used when a url param is missing or unrecognized
 const DEFAULT_SOURCE_KEY = 'city';
 const DEFAULT_DATASET_KEY = 'state';
@@ -127,6 +130,55 @@ function mergeCommitteeEntries(entries) {
  */
 function committeesOf(node) {
   return node.committees || [];
+}
+
+/**
+ * The party a node belongs to: the second segment of its path, e.g. "/finance/Democrat/Name".
+ */
+function partyOf(node) {
+  return (node.id && node.id.split('/').at(2)) || '';
+}
+
+/**
+ * The parties that are shown together as one "Other" category, and the label they share.
+ */
+const MERGED_PARTIES = ['Peace and Freedom', 'Green', 'Party for Socialism and Liberation'];
+
+/**
+ * Combine small parties into a single "Other Party" group.
+ */
+function mergeSmallParties(rows) {
+  const seen = new Set();
+
+  return rows.reduce((kept, row) => {
+    const segments = String(row.name).split('/');
+    const party = segments[1] || '';
+
+    if (MERGED_PARTIES.includes(party)) {
+      segments[1] = OTHER_PARTY;
+    }
+
+    const name = segments.join('/');
+
+    // Keep only the first of the renamed party rows; candidate rows below them all stay
+    if (segments.length < 3) {
+      if (seen.has(name)) {
+        return kept;
+      }
+
+      seen.add(name);
+    }
+
+    kept.push({ ...row, name, party });
+    return kept;
+  }, []);
+}
+
+/**
+ * The original party name for the tooltip (so candidates in "Other" party don't say party is "Other")
+ */
+function originalPartyOf(node) {
+  return (node.data && node.data.party) || partyOf(node);
 }
 
 /**
@@ -395,8 +447,8 @@ export function FinanceTreemap() {
 
   // Color scale
   const color = d3.scaleOrdinal(
-    ['Democrat', 'Republican', 'Non-Partisan', 'Independent', 'Peace and Freedom', 'Green', 'Party for Socialism and Liberation'], // explicit order
-    ['#4B9CCF', '#E2565F', '#8E689B', '#FDD04C', '#F28147', '#96C066', '#3FA6AB'], // matching colors
+    ['Democrat', 'Republican', 'Non-Partisan', 'Independent', OTHER_PARTY], // explicit order
+    ['#4B9CCF', '#E2565F', '#8E689B', '#FDD04C', '#96C066'], // matching colors
   );
 
   // Handle dropdown changes
@@ -484,7 +536,7 @@ export function FinanceTreemap() {
     }
 
     // Stratify a fresh tree each time so filtering doesn't mutate the cache
-    const data = d3.stratify().path((d) => d.name)(rows);
+    const data = d3.stratify().path((d) => d.name)(mergeSmallParties(rows));
     filterChildren(data, source, datasetKey);
 
     // Compute the layout.
@@ -499,9 +551,9 @@ export function FinanceTreemap() {
           // IMPORTANT: The scaling is proportional to the SQUARE ROOT of the value!
           .sum((d) => Math.sqrt(sumSourceAmounts(d.data, source)))
           .sort((a, b) => {
-            // Sort largest to smallest, forcing "Other" category to be last
-            const aOther = a.data.id?.includes('/Other');
-            const bOther = b.data.id?.includes('/Other');
+            // Sort largest to smallest, forcing "Other" tiles to be last
+            const aOther = isOtherTile(a.data);
+            const bOther = isOtherTile(b.data);
 
             if (aOther && !bOther) return 1;
             if (!aOther && bOther) return -1;
@@ -537,13 +589,17 @@ export function FinanceTreemap() {
       tooltip: tooltipRef.current,
       pointTooltip: pointTooltipRef.current,
       container: wrapperRef.current,
-      name: (d) => d.data.id.split('/').at(-1),
+      // Candidates are named with their party; an "Other" tile already says what it is
+      name: (d) => {
+        const label = d.data.id.split('/').at(-1);
+        return isOtherTile(d.data) ? label : `${label} (${originalPartyOf(d.data)})`;
+      },
       amount: (d) => `$${format(sumSourceAmounts(d.data.data, source))}`,
       // An "Other" tile is many candidates at once, so it gets no contributions chart
       points: (d) => (
         isOtherTile(d.data) ? [] : pointsForHashes(pointIndex, hashesOf(d.data), source)
       ),
-      color: (d) => color(d.data.id.split('/').at(2)),
+      color: (d) => color(partyOf(d.data)),
       committees: (d) => displayCommitteesOf(d.data),
     });
 
@@ -554,7 +610,7 @@ export function FinanceTreemap() {
         d.leafUid = uid('leaf');
         return d.leafUid.id;
       })
-      .attr('fill', (d) => color(d.data.id.split('/').at(2)))
+      .attr('fill', (d) => color(partyOf(d.data)))
       .attr('fill-opacity', 0.6)
       .attr('width', (d) => d.x1 - d.x0)
       .attr('height', (d) => d.y1 - d.y0);
