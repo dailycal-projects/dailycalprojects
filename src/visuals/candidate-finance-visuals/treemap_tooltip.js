@@ -1,13 +1,16 @@
 import React from 'react';
 import * as d3 from 'd3';
 
-import { drawTimescale } from './timescales';
+import { drawTimescale, pointerSource } from './timescales';
 
 // Committees listed before collapsing the rest into a "+N more" line
 const MAX_COMMITTEES = 8;
 
 // Gap between the cursor and the tooltip
 const CURSOR_OFFSET = 14;
+
+// How far a finger may drift and still count as a tap rather than a pan
+const TAP_SLOP = 10;
 
 // Some committee names need to be replaced in the UI
 const COMMITTEE_REPLACEMENTS = {
@@ -154,7 +157,7 @@ function renderTooltip(tooltip, {
  * Put a tooltip next to the cursor, flipping sides when it would run off the container.
  */
 function placeTooltip(node, event, containerNode) {
-  const [x, y] = d3.pointer(event, containerNode);
+  const [x, y] = d3.pointer(pointerSource(event), containerNode);
   const { width, height } = node.getBoundingClientRect();
 
   const left = x + CURSOR_OFFSET + width > containerNode.clientWidth
@@ -172,6 +175,9 @@ function placeTooltip(node, event, containerNode) {
  * that tooltip in place and makes it interactive, so its chart can be hovered: each contribution
  * then gets its own tooltip on top. A locked tooltip stays put until another cell is entered or
  * clicked, or the page scrolls.
+ *
+ * Touch devices have no hover, so a tap does the showing and the locking in one go, and a second
+ * tap on the same cell dismisses it. A finger that drags is panning the treemap, not tapping.
  *
  * Returns a function that detaches the listeners and hides both tooltips.
  */
@@ -195,6 +201,9 @@ export function attachTreemapTooltip(selection, {
 
   // The cell the tooltip is locked to, or null while it is following the cursor
   let lockedCell = null;
+
+  // Where the current touch started, to tell a tap from a pan
+  let touchOrigin = null;
 
   const hidePoint = () => {
     if (pointTooltip) {
@@ -263,6 +272,32 @@ export function attachTreemapTooltip(selection, {
         show(event, d);
       }
 
+      setLockedCell(event.currentTarget);
+    })
+    .on('touchstart', (event) => {
+      const touch = event.touches[0];
+      touchOrigin = touch && { x: touch.clientX, y: touch.clientY };
+    })
+    .on('touchend', (event, d) => {
+      const touch = event.changedTouches[0];
+      const origin = touchOrigin;
+      touchOrigin = null;
+
+      // A drag was the reader panning the treemap
+      if (!origin || !touch || Math.hypot(touch.clientX - origin.x, touch.clientY - origin.y) > TAP_SLOP) {
+        return;
+      }
+
+      // Swallow the click the browser would synthesize from this tap
+      event.preventDefault();
+
+      if (lockedCell === event.currentTarget) {
+        hide();
+        return;
+      }
+
+      setLockedCell(null);
+      show(event, d);
       setLockedCell(event.currentTarget);
     });
 

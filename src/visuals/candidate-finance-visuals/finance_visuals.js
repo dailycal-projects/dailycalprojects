@@ -12,10 +12,11 @@ const TEXT_STYLING = {
   textJustify: 'inter-word',
 };
 
+/**
+ * Root visual element.
+ */
 const CandidateFinanceVisuals = () => {
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== 'undefined' ? window.innerWidth <= 768 : false,
-  );
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);

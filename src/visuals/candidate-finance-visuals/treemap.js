@@ -56,6 +56,9 @@ function writeParams(sourceKey, datasetKey) {
   window.history.replaceState(null, '', `${pathname}?${params.toString()}${hash}`);
 }
 
+// Breathing room kept on both sides of the treemap at every screen width
+const SIDE_PADDING = 16;
+
 // Treemap dimensions (shared with Datawrapper charts)
 export const WIDTH = 1200;
 const HEIGHT = 600;
@@ -438,7 +441,11 @@ export function FinanceTreemap() {
   const [source, setSource] = useState(SOURCE_COLUMNS[DEFAULT_SOURCE_KEY]); // which columns to sum
   const [sourceKey, setSourceKey] = useState(DEFAULT_SOURCE_KEY); // uc | city | both
 
-  const [isScreenTooSmall, setScreenToSmall] = useState(false); // if screen is too small to show
+  // Below this width the treemap is drawn at full size inside a scroll box the reader can pan
+  const [isNarrowScreen, setNarrowScreen] = useState(false);
+
+  // The nudge telling a phone reader the map can be panned, until they pan it
+  const [showDragHint, setShowDragHint] = useState(true);
 
   const wrapperRef = useRef(null); // ref to positioning wrapper (tooltip coordinate space)
   const treemapRef = useRef(null); // ref to treemap div
@@ -480,11 +487,30 @@ export function FinanceTreemap() {
 
   // Handle screen size change
   useEffect(() => {
-    const handleResize = () => setScreenToSmall(window.innerWidth <= 685);
+    const handleResize = () => setNarrowScreen(window.innerWidth <= 685);
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Hide hint once map moves
+  useEffect(() => {
+    const pane = treemapRef.current;
+
+    if (!isNarrowScreen || !pane || !showDragHint) {
+      return undefined;
+    }
+
+    const dismiss = () => setShowDragHint(false);
+
+    pane.addEventListener('scroll', dismiss, { passive: true });
+    pane.addEventListener('touchmove', dismiss, { passive: true });
+
+    return () => {
+      pane.removeEventListener('scroll', dismiss);
+      pane.removeEventListener('touchmove', dismiss);
+    };
+  }, [isNarrowScreen, showDragHint, datasets]);
 
   // Fetch CSV files (once)
   useEffect(() => {
@@ -526,7 +552,7 @@ export function FinanceTreemap() {
   // Generate treemap
   useEffect(() => {
     // Get data
-    if (isScreenTooSmall || !datasets || !treemapRef.current) {
+    if (!datasets || !treemapRef.current) {
       return undefined;
     }
 
@@ -572,7 +598,9 @@ export function FinanceTreemap() {
       .attr('viewBox', [0, 0, WIDTH, HEIGHT])
       .attr('width', WIDTH)
       .attr('height', HEIGHT)
-      .attr('style', 'max-width: 100%; height: auto; font: 9px sans-serif;');
+      .attr('style', isNarrowScreen
+        ? `display: block; width: ${WIDTH}px; height: ${HEIGHT}px; font: 9px sans-serif;`
+        : 'max-width: 100%; height: auto; font: 9px sans-serif;');
 
     // Add a cell for each leaf of the hierarchy.
     const leaf = svg
@@ -699,7 +727,7 @@ export function FinanceTreemap() {
       hideTreemapTooltip(pointTooltipRef.current);
       container.selectAll('*').remove();
     };
-  }, [datasets, points, datasetKey, source, isScreenTooSmall]);
+  }, [datasets, points, datasetKey, source, isNarrowScreen]);
 
   // Error handler
   if (error) {
@@ -712,11 +740,6 @@ export function FinanceTreemap() {
     );
   }
 
-  // Screen too small
-  if (isScreenTooSmall) {
-    return <Message>This visualization is better viewed on larger screens.</Message>;
-  }
-
   // Loading indicator
   if (!datasets) {
     return <Message>Loading Data...</Message>;
@@ -725,18 +748,18 @@ export function FinanceTreemap() {
   // Build layout
   return (
     <>
-      {/* Party Swatches and Dropdowns: two columns that never wrap onto each other */}
+      {/* Party Swatches and Dropdowns */}
       <div
         style={{
           display: 'flex',
-          flexWrap: 'nowrap',
+          flexWrap: isNarrowScreen ? 'wrap' : 'nowrap',
           gap: '12px 16px',
           font: '12px sans-serif',
           justifyContent: 'center',
           margin: '10px 0',
         }}
       >
-        {/* Party Swatches: wrap among themselves, never mixing with the dropdowns */}
+        {/* Party Swatches */}
         <div
           style={{
             display: 'flex',
@@ -765,7 +788,7 @@ export function FinanceTreemap() {
           ))}
         </div>
 
-        {/* Dropdowns: wrap among themselves on the other side of the divider */}
+        {/* Dropdowns */}
         <div
           style={{
             display: 'flex',
@@ -775,8 +798,8 @@ export function FinanceTreemap() {
             gap: '8px 16px',
             flex: '0 1 auto',
             minWidth: 0,
-            borderLeft: '1px solid #bbb',
-            paddingLeft: '16px',
+            borderLeft: isNarrowScreen ? 'none' : '1px solid #bbb',
+            paddingLeft: isNarrowScreen ? 0 : '16px',
           }}
         >
           {/* Source Dropdown */}
@@ -811,16 +834,61 @@ export function FinanceTreemap() {
       </div>
 
       {/* Treemap (wrapper positions the tooltip, which d3 must not clear with the SVG) */}
-      <div ref={wrapperRef} style={{ position: 'relative', width: '100%', marginBottom: '20px' }}>
-        <div
-          ref={treemapRef}
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            width: '100%',
-            userSelect: 'none',
-          }}
-        />
+      <div
+        ref={wrapperRef}
+        style={{
+          position: 'relative',
+          width: '100%',
+          boxSizing: 'border-box',
+          padding: `0 ${SIDE_PADDING}px`,
+          marginBottom: '20px',
+        }}
+      >
+        <div style={{ position: 'relative' }}>
+          <div
+            ref={treemapRef}
+            style={{
+              display: isNarrowScreen ? 'block' : 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              userSelect: 'none',
+              // Pan the full-size treemap in both directions instead of shrinking it away
+              overflow: isNarrowScreen ? 'auto' : 'visible',
+              maxHeight: isNarrowScreen ? '70vh' : 'none',
+              WebkitOverflowScrolling: 'touch',
+              overscrollBehavior: 'contain',
+            }}
+          />
+
+          {/* Nothing on the phone says the map is bigger than the window, so say it */}
+          {isNarrowScreen && (
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'rgba(0, 0, 0, 0.45)',
+                color: 'white',
+                fontFamily: 'sans-serif',
+                fontSize: '0.95rem',
+                fontStyle: 'italic',
+                textAlign: 'center',
+                padding: '0 20px',
+                // Never in the way of the drag it is asking for
+                pointerEvents: 'none',
+                opacity: showDragHint ? 1 : 0,
+                transition: 'opacity 0.4s',
+              }}
+            >
+              Drag to explore the map
+            </div>
+          )}
+        </div>
         <TreemapTooltip innerRef={tooltipRef} />
         <TreemapTooltip innerRef={pointTooltipRef} zIndex={20} />
 

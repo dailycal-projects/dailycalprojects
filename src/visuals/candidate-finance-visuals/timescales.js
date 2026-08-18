@@ -38,6 +38,14 @@ const TICK_GAP = 16;
 const parseDate = d3.utcParse('%Y-%m-%d');
 
 /**
+ * d3.pointer reads clientX/clientY straight off the event, and a touch event carries those on its
+ * Touch objects instead, so hand it the touch when there is one.
+ */
+export function pointerSource(event) {
+  return (event.changedTouches && event.changedTouches[0]) || event;
+}
+
+/**
  * Group contributions by the candidate hash they belong to, parsing each row once.
  * Rows outside the x axis window or without a date or dollar amount are dropped.
  */
@@ -146,6 +154,32 @@ function attachPointHover(svg, {
     }
   };
 
+  // Pick out the contribution nearest the pointer, if one is close enough
+  const probe = (event) => {
+    const [pointerX, pointerY] = d3.pointer(pointerSource(event), event.currentTarget);
+    const index = nearest.find(pointerX, pointerY);
+    const point = points[index];
+    const distance = Math.hypot(x(point.date) - pointerX, y(point.amount) - pointerY);
+
+    if (distance > HOVER_RADIUS) {
+      leave();
+      return;
+    }
+
+    hovered = index;
+    highlight
+      .attr('cx', x(point.date))
+      .attr('cy', y(point.amount))
+      .attr('opacity', 1);
+    onPointEnter(event, point);
+  };
+
+  // A finger on the plot is reading it, not panning the treemap underneath
+  const touchProbe = (event) => {
+    event.preventDefault();
+    probe(event);
+  };
+
   svg
     .append('rect')
     .attr('x', MARGIN.left)
@@ -153,25 +187,10 @@ function attachPointHover(svg, {
     .attr('width', WIDTH - MARGIN.left - MARGIN.right)
     .attr('height', HEIGHT - MARGIN.top - MARGIN.bottom)
     .attr('fill', 'transparent')
-    .on('mousemove', (event) => {
-      const [mouseX, mouseY] = d3.pointer(event);
-      const index = nearest.find(mouseX, mouseY);
-      const point = points[index];
-      const distance = Math.hypot(x(point.date) - mouseX, y(point.amount) - mouseY);
-
-      if (distance > HOVER_RADIUS) {
-        leave();
-        return;
-      }
-
-      hovered = index;
-      highlight
-        .attr('cx', x(point.date))
-        .attr('cy', y(point.amount))
-        .attr('opacity', 1);
-      onPointEnter(event, point);
-    })
-    .on('mouseleave', leave);
+    .on('mousemove', probe)
+    .on('mouseleave', leave)
+    .on('touchstart', touchProbe)
+    .on('touchmove', touchProbe);
 }
 
 /**

@@ -9,7 +9,9 @@ export function FinanaceVizElement({ children, maxWidth = WIDTH }) {
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
-        margin: '20px 10px',
+        boxSizing: 'border-box',
+        padding: '0 10px',
+        margin: '20px 0',
       }}
     >
       <div
