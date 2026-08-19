@@ -458,56 +458,60 @@ export default function BayPassCalculator() {
 
   const BayPassMap = () => (
     <div className="bp-map-div">
-      <MapContainer
-        scrollWheelZoom={false}
-        dragging={!isMobile}
-        minZoom={9}
-        zoom={isMobile ? 9 : 10}
-        center={[centerLat, centerLong]}
-        bounds={[
-          [
-            BART_stops.minLat - bufferLat,
-            BART_stops.minLong - bufferLong,
-          ],
-          [
-            BART_stops.maxLat + bufferLat,
-            BART_stops.maxLong + bufferLong,
-          ],
-        ]}
-      >
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png"
-        />
-        {BART_stops_info.map((stop, k) => (
-          <CircleMarker
-            key={k}
-            center={[stop.Location.Latitude, stop.Location.Longitude]}
-            radius={4}
-            stroke
-            weight={1}
-            fill
-            color="#000"
-            opacity={0.9}
-            fillColor="#000"
-            data={stop}
-          >
-            <Popup>
-              <div style={{ fontWeight: 500, fontSize: '16px' }}>
-                <p><span>{stop.Name}</span></p>
-              </div>
-            </Popup>
-          </CircleMarker>
-        ))}
-        {mapPaths.map((tripPath) => (
-          tripPath.selectedLines.map((line, index) => (
-            <Polyline
-              key={`${tripPath.tripId}-${line}`}
-              pathOptions={{ color: lineNameColorDict[line] }}
-              positions={tripPath.coordinatesSequences[index]}
-            />
-          ))
-        ))}
-      </MapContainer>
+      {/* react-leaflet is null-loaded during SSR (see gatsby-node.js), so only
+          render the map in the browser */}
+      {(typeof window !== 'undefined') ? (
+        <MapContainer
+          scrollWheelZoom={false}
+          dragging={!isMobile}
+          minZoom={9}
+          zoom={isMobile ? 9 : 10}
+          center={[centerLat, centerLong]}
+          bounds={[
+            [
+              BART_stops.minLat - bufferLat,
+              BART_stops.minLong - bufferLong,
+            ],
+            [
+              BART_stops.maxLat + bufferLat,
+              BART_stops.maxLong + bufferLong,
+            ],
+          ]}
+        >
+          <TileLayer
+            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png"
+          />
+          {BART_stops_info.map((stop, k) => (
+            <CircleMarker
+              key={k}
+              center={[stop.Location.Latitude, stop.Location.Longitude]}
+              radius={4}
+              stroke
+              weight={1}
+              fill
+              color="#000"
+              opacity={0.9}
+              fillColor="#000"
+              data={stop}
+            >
+              <Popup>
+                <div style={{ fontWeight: 500, fontSize: '16px' }}>
+                  <p><span>{stop.Name}</span></p>
+                </div>
+              </Popup>
+            </CircleMarker>
+          ))}
+          {mapPaths.map((tripPath) => (
+            tripPath.selectedLines.map((line, index) => (
+              <Polyline
+                key={`${tripPath.tripId}-${line}`}
+                pathOptions={{ color: lineNameColorDict[line] }}
+                positions={tripPath.coordinatesSequences[index]}
+              />
+            ))
+          ))}
+        </MapContainer>
+      ) : null}
       {trips.some((t) => t.mode === 'AC') && (
       <p className="bp-ac-map-note">AC Transit trips aren't shown on the map above — only BART segments are plotted.</p>
       )}
