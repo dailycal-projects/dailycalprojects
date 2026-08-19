@@ -84,6 +84,7 @@ import MichVis from '../visuals/dining-visuals/MichVis';
 import NutritionVis from '../visuals/dining-visuals/NutritionVis';
 import ScrollyNew from '../visuals/dining-visuals/ScrollyNew';
 import HackVisuals from '../visuals/shiny-hunters-visuals/hack_visuals';
+import CandidateFinanceVisuals from '../visuals/candidate-visuals/finance_visuals';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -181,6 +182,7 @@ const shortcodes = {
   nutritionVis: NutritionVis,
   scrollyNew: ScrollyNew,
   HackVisuals,
+  CandidateFinanceVisuals,
 };
 
 export default function Layout({ children }) {

@@ -58,6 +58,7 @@
     "react-scripts": "^5.0.1",
     "react-typography": "^0.16.20",
     "recharts": "^2.0.10",
+    "sharp": "^0.35.3",
     "topojson-client": "^3.1.0",
     "typescript": "^4.3.5",
     "typography": "^0.16.21"
@@ -93,5 +94,20 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "allowScripts": {
+    "@fortawesome/fontawesome-common-types@6.5.1": true,
+    "@fortawesome/fontawesome-svg-core@6.5.1": true,
+    "@fortawesome/free-regular-svg-icons@6.5.1": true,
+    "@fortawesome/free-solid-svg-icons@6.5.1": true,
+    "core-js@2.6.12": true,
+    "core-js@3.35.1": true,
+    "core-js-pure@3.37.1": true,
+    "es5-ext@0.10.62": true,
+    "fsevents@2.3.3": true,
+    "gatsby@3.15.0": true,
+    "gatsby-cli@3.15.0": true,
+    "gatsby-telemetry@2.15.0": true,
+    "sharp@0.29.3": true
   }
 }
