@@ -274,8 +274,7 @@ export default function BayPassCalculator() {
     <div className="bp-trip-row">
       <div className="bp-trip-row-header">
         <span className="bp-trip-row-label">
-          Trip
-          {index + 1}
+          Trip {index + 1}
         </span>
         {trips.length > 1 && (
         <button
@@ -419,7 +418,7 @@ export default function BayPassCalculator() {
 
         <p>
           Bay Pass
-          {worthIt ? <b className="green-text">would</b> : <b className="red-text">would not</b>}
+          {worthIt ? <b className="green-text"> would</b> : <b className="red-text"> would not</b>}
           {' '}
           be worth it.
           {fare === 0 ? <span>(but you should go out more!)</span> : null}
