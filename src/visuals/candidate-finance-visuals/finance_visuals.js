@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import logo from '../../images/dclogoblack.png';
 import { FinanceTreemap } from './treemap';
 import { FinanaceVizElement, FinanceDatawrapperCharts } from './extra_graphs';
+import ArticleFooter from '../../components/articleFooter';
 
 const TEXT_STYLING = {
   fontSize: '0.95rem',
@@ -92,14 +93,18 @@ const CandidateFinanceVisuals = () => {
             style={{
               flex: 3,
               display: 'flex',
-              alignItems: 'center',
+              flexDirection: 'column',
               justifyContent: 'center',
+              gap: '0.75em',
               width: isMobile ? '100%' : 'auto',
               paddingInline: '25px',
             }}
           >
             <p style={TEXT_STYLING}>
-              With federal and state elections coming up this November, how much are Berkeley residents and UC Berkeley employees contributing financially to campaigns? The Daily Californian used data made available by the Federal Election Commission (FEC) and California Secretary of State to analyze which committees and candidates were most donated to.
+              During the most expensive gubernatorial race in California history, Berkeley residents and UC Berkeley employees donated hundreds of thousands of dollars to candidates such as Katie Porter and primary winner Xavier Becerra. Congressional candidates like Graham Platner and Jon Ossoff received significant amounts as well.
+            </p>
+            <p style={TEXT_STYLING}>
+              The Daily Californian analyzed donations reported to the Federal Election Commission and California Secretary of State from Aug. 10, 2025 to Aug. 10, 2026. Here’s which candidates were most donated to.
             </p>
           </div>
           <div
@@ -160,13 +165,49 @@ const CandidateFinanceVisuals = () => {
 
       {/* Middle Text */}
       <FinanaceVizElement maxWidth={640}>
-        <p style={TEXT_STYLING}>We tracked what amount Berkeley residents and UC Berkeley employees donated to each candidate on both a federal and state level. Of all the state candidates, Xavier Becerra’s campaign for California governor received the most donations from both Berkeley residents. For the federal candidates, Scott Wiener’s campaign for California’s 11th Congressional representative.</p>
+        <p style={TEXT_STYLING}>
+          Toggle the map above to view candidate donations from Berkeley residents (City of Berkeley Residents Only), UC Berkeley employees (UC Berkeley Employees Only) as well as their combined totals (Both). Hover over each candidate’s name in the map to see information about their political party, as well as their campaign contributions over time.
+        </p>
         <br />
-        <p style={TEXT_STYLING}>Hover over each candidate’s name in the map to see information about their political party, as well as their campaign contributions over time.</p>
+        <p style={TEXT_STYLING}>
+          California’s gubernatorial race steered state-level contributions. Xavier Becerra’s campaign received the most donations from Berkeley residents: $526,986. Other Democratic candidates also received significant amounts — Katie Porter received $175,622, Matt Mahan received $169,261 and Tom Steyer received $39,800 — whereas Republican candidate Steve Hilton, who advanced to the general election, received only $6,129.
+        </p>
+        <br />
+        <p style={TEXT_STYLING}>
+          The campaign for Proposition 50, a measure on the ballot in California’s November 2025 special election that could allow Democrats to gain up to five U.S. House seats through redistricting, also comprised a significant portion of state contributions. Berkeley residents donated a total of $335,390 to Governor Gavin Newsom’s committee supporting Prop. 50.
+        </p>
+        <br />
+        <p style={TEXT_STYLING}>
+          In federal elections, Berkeley residents donated more to any single out-of-district elections than they did to local ones.
+        </p>
+        <br />
+        <p style={TEXT_STYLING}>
+          Berkeley is located in California’s 12th Congressional District, currently represented by Democrat Lateefah Simon, who ran against Democrat Jamie Joyce in the primary. Yet neither candidate made up a significant amount of federal contributions from Berkeley residents, with Simon receiving $54,315 and Joyce receiving $4,000.
+        </p>
+        <br />
+        <p style={TEXT_STYLING}>
+          Democrat Scott Wiener’s campaign for California’s 11th Congressional District, currently represented by Speaker Emerita Nancy Pelosi and located entirely in San Francisco, received the most contributions on a federal level. He gained $417,380 from Berkeley residents.
+        </p>
+        <br />
+        <p style={TEXT_STYLING}>
+          At a close second came Manhattan Democrat Alex Bores’ campaign for New York’s 12th Congressional District, for which Berkeley residents donated $413,655, more than 10% of his total contributions. Berkeley residents donated 6.6 times more per capita than Manhattanites, who accounted for 21% of his total contributions.
+        </p>
       </FinanaceVizElement>
 
-      {/* Piechart Content */}
+      {/* Datawrapper Content */}
       <FinanceDatawrapperCharts />
+
+      {/* End Content */}
+      <FinanaceVizElement maxWidth={640}>
+        <p style={TEXT_STYLING}>
+          Berkeley’s political spending swayed Democratic: 84% of federal contributions and 60% of state contributions went to Democratic candidates, while only 13% of federal and 10% of state contributions went to Republican ones.
+        </p>
+      </FinanaceVizElement>
+
+      {/* About this story: centre the cards on the page, not the text inside them */}
+      <FinanaceVizElement maxWidth={640}>
+        <ArticleFooter />
+      </FinanaceVizElement>
     </div>
   );
 };
