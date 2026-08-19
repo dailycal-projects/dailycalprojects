@@ -1,0 +1,408 @@
+{
+  "info": [
+    {
+      "id": "12TH",
+      "Name": "12th Street / Oakland City Center",
+      "Location": {
+        "Longitude": "-122.271589",
+        "Latitude": "37.803471"
+      }
+    },
+    {
+      "id": "16TH",
+      "Name": "16th Street / Mission",
+      "Location": {
+        "Longitude": "-122.419755",
+        "Latitude": "37.765176"
+      }
+    },
+    {
+      "id": "19TH",
+      "Name": "19th Street Oakland",
+      "Location": {
+        "Longitude": "-122.268722",
+        "Latitude": "37.80806"
+      }
+    },
+    {
+      "id": "24TH",
+      "Name": "24th Street / Mission",
+      "Location": {
+        "Longitude": "-122.418518",
+        "Latitude": "37.752422"
+      }
+    },
+    {
+      "id": "ANTC",
+      "Name": "Antioch",
+      "Location": {
+        "Longitude": "-121.780353",
+        "Latitude": "37.995415"
+      }
+    },
+    {
+      "id": "BALB",
+      "Name": "Balboa Park",
+      "Location": {
+        "Longitude": "-122.44751",
+        "Latitude": "37.721758"
+      }
+    },
+    {
+      "id": "CIVC",
+      "Name": "Civic Center / UN Plaza",
+      "Location": {
+        "Longitude": "-122.413879",
+        "Latitude": "37.77945"
+      }
+    },
+    {
+      "id": "COLM",
+      "Name": "Colma",
+      "Location": {
+        "Longitude": "-122.466167",
+        "Latitude": "37.684642"
+      }
+    },
+    {
+      "id": "CONC",
+      "Name": "Concord",
+      "Location": {
+        "Longitude": "-122.029126",
+        "Latitude": "37.973773"
+      }
+    },
+    {
+      "id": "DALY",
+      "Name": "Daly City",
+      "Location": {
+        "Longitude": "-122.468994",
+        "Latitude": "37.706304"
+      }
+    },
+    {
+      "id": "EMBR",
+      "Name": "Embarcadero",
+      "Location": {
+        "Longitude": "-122.39708",
+        "Latitude": "37.792789"
+      }
+    },
+    {
+      "id": "GLEN",
+      "Name": "Glen Park",
+      "Location": {
+        "Longitude": "-122.433557",
+        "Latitude": "37.733269"
+      }
+    },
+    {
+      "id": "LAFY",
+      "Name": "Lafayette",
+      "Location": {
+        "Longitude": "-122.124644",
+        "Latitude": "37.89322"
+      }
+    },
+    {
+      "id": "MCAR",
+      "Name": "MacArthur",
+      "Location": {
+        "Longitude": "-122.267163",
+        "Latitude": "37.828814"
+      }
+    },
+    {
+      "id": "MLBR",
+      "Name": "Millbrae",
+      "Location": {
+        "Longitude": "-122.38684",
+        "Latitude": "37.600199"
+      }
+    },
+    {
+      "id": "MONT",
+      "Name": "Montgomery Street",
+      "Location": {
+        "Longitude": "-122.401642",
+        "Latitude": "37.789213"
+      }
+    },
+    {
+      "id": "NCON",
+      "Name": "North Concord / Martinez",
+      "Location": {
+        "Longitude": "-122.024561",
+        "Latitude": "38.003407"
+      }
+    },
+    {
+      "id": "ORIN",
+      "Name": "Orinda",
+      "Location": {
+        "Longitude": "-122.183717",
+        "Latitude": "37.878503"
+      }
+    },
+    {
+      "id": "PITT",
+      "Name": "Pittsburg / Bay Point",
+      "Location": {
+        "Longitude": "-121.944248",
+        "Latitude": "38.01895"
+      }
+    },
+    {
+      "id": "PCTR",
+      "Name": "Pittsburg Center",
+      "Location": {
+        "Longitude": "-121.889011",
+        "Latitude": "38.016873"
+      }
+    },
+    {
+      "id": "PHIL",
+      "Name": "Pleasant Hill / Contra Costa Centre",
+      "Location": {
+        "Longitude": "-122.056015",
+        "Latitude": "37.928463"
+      }
+    },
+    {
+      "id": "POWL",
+      "Name": "Powell Street",
+      "Location": {
+        "Longitude": "-122.407387",
+        "Latitude": "37.784645"
+      }
+    },
+    {
+      "id": "ROCK",
+      "Name": "Rockridge",
+      "Location": {
+        "Longitude": "-122.251271",
+        "Latitude": "37.844795"
+      }
+    },
+    {
+      "id": "SBRN",
+      "Name": "San Bruno",
+      "Location": {
+        "Longitude": "-122.416384",
+        "Latitude": "37.63772"
+      }
+    },
+    {
+      "id": "SFIA",
+      "Name": "San Francisco International Airport",
+      "Location": {
+        "Longitude": "-122.391895",
+        "Latitude": "37.616023"
+      }
+    },
+    {
+      "id": "SSAN",
+      "Name": "South San Francisco",
+      "Location": {
+        "Longitude": "-122.444254",
+        "Latitude": "37.664437"
+      }
+    },
+    {
+      "id": "WCRK",
+      "Name": "Walnut Creek",
+      "Location": {
+        "Longitude": "-122.067379",
+        "Latitude": "37.905812"
+      }
+    },
+    {
+      "id": "WOAK",
+      "Name": "West Oakland",
+      "Location": {
+        "Longitude": "-122.295144",
+        "Latitude": "37.804923"
+      }
+    },
+    {
+      "id": "ASHB",
+      "Name": "Ashby",
+      "Location": {
+        "Longitude": "-122.26975",
+        "Latitude": "37.853069"
+      }
+    },
+    {
+      "id": "BAYF",
+      "Name": "Bay Fair",
+      "Location": {
+        "Longitude": "-122.126431",
+        "Latitude": "37.696938"
+      }
+    },
+    {
+      "id": "BERY",
+      "Name": "Berryessa / North San Jose",
+      "Location": {
+        "Longitude": "-121.874661",
+        "Latitude": "37.368495"
+      }
+    },
+    {
+      "id": "COLS",
+      "Name": "Coliseum",
+      "Location": {
+        "Longitude": "-122.196698",
+        "Latitude": "37.753604"
+      }
+    },
+    {
+      "id": "DBRK",
+      "Name": "Downtown Berkeley",
+      "Location": {
+        "Longitude": "-122.268078",
+        "Latitude": "37.870117"
+      }
+    },
+    {
+      "id": "DELN",
+      "Name": "El Cerrito Del Norte",
+      "Location": {
+        "Longitude": "-122.316868",
+        "Latitude": "37.925205"
+      }
+    },
+    {
+      "id": "PLZA",
+      "Name": "El Cerrito Plaza",
+      "Location": {
+        "Longitude": "-122.298895",
+        "Latitude": "37.902633"
+      }
+    },
+    {
+      "id": "FRMT",
+      "Name": "Fremont",
+      "Location": {
+        "Longitude": "-121.976605",
+        "Latitude": "37.557513"
+      }
+    },
+    {
+      "id": "FTVL",
+      "Name": "Fruitvale",
+      "Location": {
+        "Longitude": "-122.224067",
+        "Latitude": "37.774873"
+      }
+    },
+    {
+      "id": "HAYW",
+      "Name": "Hayward",
+      "Location": {
+        "Longitude": "-122.086941",
+        "Latitude": "37.669731"
+      }
+    },
+    {
+      "id": "LAKE",
+      "Name": "Lake Merritt",
+      "Location": {
+        "Longitude": "-122.265232",
+        "Latitude": "37.797357"
+      }
+    },
+    {
+      "id": "MLPT",
+      "Name": "Milpitas",
+      "Location": {
+        "Longitude": "-121.890803",
+        "Latitude": "37.409836"
+      }
+    },
+    {
+      "id": "NBRK",
+      "Name": "North Berkeley",
+      "Location": {
+        "Longitude": "-122.283508",
+        "Latitude": "37.874032"
+      }
+    },
+    {
+      "id": "RICH",
+      "Name": "Richmond",
+      "Location": {
+        "Longitude": "-122.353004",
+        "Latitude": "37.936795"
+      }
+    },
+    {
+      "id": "SANL",
+      "Name": "San Leandro",
+      "Location": {
+        "Longitude": "-122.160713",
+        "Latitude": "37.721806"
+      }
+    },
+    {
+      "id": "SHAY",
+      "Name": "South Hayward",
+      "Location": {
+        "Longitude": "-122.057158",
+        "Latitude": "37.634363"
+      }
+    },
+    {
+      "id": "UCTY",
+      "Name": "Union City",
+      "Location": {
+        "Longitude": "-122.01723",
+        "Latitude": "37.590765"
+      }
+    },
+    {
+      "id": "WARM",
+      "Name": "Warm Springs / South Fremont",
+      "Location": {
+        "Longitude": "-121.939358",
+        "Latitude": "37.502307"
+      }
+    },
+    {
+      "id": "CAST",
+      "Name": "Castro Valley",
+      "Location": {
+        "Longitude": "-122.075615",
+        "Latitude": "37.690776"
+      }
+    },
+    {
+      "id": "DUBL",
+      "Name": "Dublin / Pleasanton",
+      "Location": {
+        "Longitude": "-121.899242",
+        "Latitude": "37.701692"
+      }
+    },
+    {
+      "id": "WDUB",
+      "Name": "West Dublin / Pleasanton",
+      "Location": {
+        "Longitude": "-121.928301",
+        "Latitude": "37.69976"
+      }
+    },
+    {
+      "id": "OAKL",
+      "Name": "Oakland International Airport",
+      "Location": {
+        "Longitude": "-122.212237",
+        "Latitude": "37.713256"
+      }
+    }
+  ],
+  "minLat": 37.368495,
+  "minLong": -121.780353,
+  "maxLat": 38.01895,
+  "maxLong": -122.468994
+}

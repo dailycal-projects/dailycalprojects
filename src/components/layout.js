@@ -84,6 +84,7 @@ import MichVis from '../visuals/dining-visuals/MichVis';
 import NutritionVis from '../visuals/dining-visuals/NutritionVis';
 import ScrollyNew from '../visuals/dining-visuals/ScrollyNew';
 import HackVisuals from '../visuals/shiny-hunters-visuals/hack_visuals';
+import BayPassCalculator from '../visuals/clipper-visuals/baypasscalculator';
 import CandidateFinanceVisuals from '../visuals/candidate-visuals/finance_visuals';
 
 /*
@@ -182,6 +183,7 @@ const shortcodes = {
   nutritionVis: NutritionVis,
   scrollyNew: ScrollyNew,
   HackVisuals,
+  BayPassCalculator,
   CandidateFinanceVisuals,
 };
 
