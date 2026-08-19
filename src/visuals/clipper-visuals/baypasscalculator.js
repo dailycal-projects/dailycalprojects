@@ -26,7 +26,7 @@ import BART_fares from './data/BART_fares.json';
 
 // styles
 import 'leaflet/dist/leaflet.css';
-import './BayPassCalculator.css';
+import './baypasscalculator.css';
 
 // bay pass fare option parameters [OLD]
 // const bayPassFareMin = 200;
@@ -274,7 +274,9 @@ export default function BayPassCalculator() {
     <div className="bp-trip-row">
       <div className="bp-trip-row-header">
         <span className="bp-trip-row-label">
-          Trip {index + 1}
+          Trip
+          {' '}
+          {index + 1}
         </span>
         {trips.length > 1 && (
         <button

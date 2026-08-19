@@ -87,7 +87,6 @@ import HackVisuals from '../visuals/shiny-hunters-visuals/hack_visuals';
 import BayPassCalculator from '../visuals/clipper-visuals/baypasscalculator';
 import CandidateFinanceVisuals from '../visuals/candidate-visuals/finance_visuals';
 
-
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
