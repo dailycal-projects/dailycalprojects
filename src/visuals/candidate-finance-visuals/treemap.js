@@ -60,6 +60,7 @@ function writeParams(sourceKey, datasetKey) {
 const SIDE_PADDING = 16;
 
 // Treemap dimensions (shared with Datawrapper charts)
+// For flats, the dimensions are 1800 x (1160/2)
 export const WIDTH = 1200;
 const HEIGHT = 600;
 
