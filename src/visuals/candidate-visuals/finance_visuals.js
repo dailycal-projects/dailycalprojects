@@ -198,7 +198,7 @@ const CandidateFinanceVisuals = () => {
       <FinanceDatawrapperCharts />
 
       {/* End Content */}
-      <FinanaceVizElement maxWidth={640}>
+      <FinanaceVizElement maxWidth={640} margin={0}>
         <p style={TEXT_STYLING}>
           Berkeley’s political spending swayed Democratic: 84% of federal contributions and 60% of state contributions went to Democratic candidates, while only 13% of federal and 10% of state contributions went to Republican ones.
         </p>

@@ -2,8 +2,8 @@ import * as d3 from 'd3';
 
 // URLs of the csv files holding one row per individual contribution
 export const POINTS_CSV_URLS = {
-  state: '/candidate-finance/finance_points_state_v2.csv',
-  federal: '/candidate-finance/finance_points_fec_v2.csv',
+  state: '/candidate/finance_points_state_v2.csv',
+  federal: '/candidate/finance_points_fec_v2.csv',
 };
 
 // Treemap amount column

@@ -2,7 +2,7 @@ import React from 'react';
 import DatawrapperChart from '../../components/dataWrapper';
 import { WIDTH } from './treemap';
 
-export function FinanaceVizElement({ children, maxWidth = WIDTH }) {
+export function FinanaceVizElement({ children, maxWidth = WIDTH, margin = '20px 0' }) {
   return (
     <div
       style={{
@@ -11,7 +11,7 @@ export function FinanaceVizElement({ children, maxWidth = WIDTH }) {
         width: '100%',
         boxSizing: 'border-box',
         padding: '0 10px',
-        margin: '20px 0',
+        margin,
       }}
     >
       <div
