@@ -241,4 +241,56 @@ export const styles = () => createStyles({
   imageContainer: {
     maxWidth: '640px',
   },
+
+  applyContent: {
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingTop: 85,
+
+    '& a': {
+      color: theme.palette.black,
+      textDecoration: 'underline dotted',
+      textUnderlineOffset: '3px',
+      transition: 'color 300ms ease-out',
+
+      '&:hover': {
+        color: theme.palette.dcBlue,
+      },
+    },
+  },
+
+  applyBlurb: {
+    width: '50vw',
+
+    '@media (max-width: 600px)': {
+      width: '85%',
+    },
+  },
+
+  applyImage: {
+    width: '25vw',
+    height: 'auto',
+    margin: '16px 0',
+    border: '1px solid',
+    borderColor: theme.palette.black,
+
+    '@media (max-width: 600px)': {
+      width: '42.5%',
+    },
+  },
+
+  applyForm: {
+    border: '1px solid',
+    borderColor: theme.palette.black,
+    padding: '20px',
+  },
+
+  applyField: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px',
+    marginBottom: '16px',
+  },
 });
