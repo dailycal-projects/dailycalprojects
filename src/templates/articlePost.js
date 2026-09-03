@@ -15,7 +15,8 @@ const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark ho
   const {
     bylineName, bylineUrl,
   } = frontmatter;
-  const image = getImage(frontmatter.featuredImage);
+  const heroImageSource = frontmatter.secondaryFeaturedImage || frontmatter.featuredImage;
+  const image = getImage(heroImageSource);
   const socialImage = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.resize
     : null;
@@ -110,6 +111,11 @@ export const pageQuery = graphql`
               height
               width
             }
+            gatsbyImageData(width: 750)
+          }
+        }
+        secondaryFeaturedImage {
+          childImageSharp {
             gatsbyImageData(width: 750)
           }
         }
