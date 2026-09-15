@@ -6,7 +6,7 @@ export const externalSourceLink = 'https://www.youtube.com/watch?v=rbhCGXOTsng';
 export const BugVideoScroller = () => (
   <VideoScroller>
     <VideoScrollerSegment
-      src="https://github.com/projectseditor/projects-media/raw/refs/heads/main/bug-bodycam/scuffle_cut.mp4"
+      src="https://media.dailycal.org/data/bug-bodycam/scuffle_cut.mp4"
       type="video/mp4"
       aspectRatio={3840 / 2160}
       externalSourceLink={externalSourceLink}
@@ -19,7 +19,7 @@ export const BugVideoScroller = () => (
     </VideoScrollerSegment>
 
     <VideoScrollerSegment
-      src="https://github.com/projectseditor/projects-media/raw/refs/heads/main/bug-bodycam/verbal_abuse_clip.mp4"
+      src="https://media.dailycal.org/data/bug-bodycam/verbal_abuse_clip.mp4"
       type="video/mp4"
       aspectRatio={3840 / 2160}
       externalSourceLink={externalSourceLink}
