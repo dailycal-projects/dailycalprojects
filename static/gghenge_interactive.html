@@ -252,9 +252,7 @@
     }
   
     .legend {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      display: block;
       margin-bottom: 12px;
       padding: 10px 10px;
       background: rgba(255,255,255,0.5);
@@ -271,8 +269,13 @@
     }
 
     .legend-group { display: flex; flex-wrap: wrap; gap: 6px; }
+    .legend-group + .legend-group { margin-top: 16px; }
     .travel-filter-group { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
     button.legend-item {
+      -webkit-appearance: none;
+      appearance: none;
+      min-width: 0;
+      line-height: 1.2;
       padding: 6px 8px;
       border: 1px solid rgba(70, 60, 54, 0.16);
       border-radius: 16px;
@@ -355,6 +358,7 @@
     }
 
     .maplibregl-popup { z-index: 1001; }
+    #map.popups-behind-controls .maplibregl-popup { z-index: 999; }
   
     .popup-photo {
       width: 100%;
@@ -653,16 +657,19 @@
 
       input[type="range"]::-webkit-slider-thumb { width: 24px; height: 24px; }
       input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; }
-      button.legend-item { min-height: 44px; }
+      button.legend-item { height: 44px; min-height: 44px; max-height: 44px; }
+      .travel-filter-group {
+        grid-template-rows: repeat(2, 44px);
+        align-content: start;
+      }
+      .legend-group + .legend-group { margin-top: 10px; }
       #helpText { min-height: 44px; }
       .search-suggestion-item { min-height: 44px; }
 
       .legend {
         margin-bottom: 6px;
         padding: 6px;
-        gap: 10px;
         font-size: 10px;
-        flex-wrap: wrap;
       }
 
       .legend-dot {
@@ -822,9 +829,9 @@
       <button class="btn" id="showAllBtn">Filter by Date</button>
     </div>
   </div>
-  <script src="gghenge_interactive/solar-ephemeris.js"></script>
-  <script src="gghenge_interactive/solar-calculations.js"></script>
-  <script src="gghenge_interactive/gold-band.js"></script>
+  <script src="solar-ephemeris.js"></script>
+  <script src="solar-calculations.js"></script>
+  <script src="gold-band.js"></script>
   <script>
     /* ============================================================
        Section 1 — PINS LIST
@@ -937,6 +944,104 @@
     });
 
     map.addControl(new maplibregl.NavigationControl(), "bottom-right");
+
+      function setPopupForeground(foreground) {
+        document.getElementById("map").classList.toggle("popups-behind-controls", !foreground);
+      }
+
+      const popupPreservingControls = "#daySlider, #todayBtn, button.legend-item, .maplibregl-ctrl-zoom-in, .maplibregl-ctrl-zoom-out";
+      let popupPreservingGesture = false;
+      let popupDragOrigin = null;
+      let popupGestureDragged = false;
+
+      function lowerPopupCoveredByMenu() {
+        const popup = document.querySelector(".maplibregl-popup-content");
+        if (!popup) return;
+        const bounds = popup.getBoundingClientRect();
+        if (!bounds.width || !bounds.height) return;
+        const covered = Array.from(document.querySelectorAll(".panel, .pin-menu-wrap")).some(menu => {
+          const menuBounds = menu.getBoundingClientRect();
+          return menuBounds.width > 0 && menuBounds.height > 0 &&
+            bounds.left >= menuBounds.left && bounds.right <= menuBounds.right &&
+            bounds.top >= menuBounds.top && bounds.bottom <= menuBounds.bottom;
+        });
+        if (covered) setPopupForeground(false);
+      }
+
+      let popupMapDragActive = false;
+      let popupOverlapFrame = null;
+      function schedulePopupOverlapCheck() {
+        if (popupOverlapFrame !== null) return;
+        popupOverlapFrame = requestAnimationFrame(() => {
+          popupOverlapFrame = null;
+          lowerPopupCoveredByMenu();
+        });
+      }
+      map.on("dragstart", () => { popupMapDragActive = true; });
+      map.on("move", () => {
+        if (popupMapDragActive) schedulePopupOverlapCheck();
+      });
+      map.on("moveend", () => {
+        if (popupMapDragActive) schedulePopupOverlapCheck();
+        popupMapDragActive = false;
+      });
+
+      function updatePopupLayerFromTarget(event) {
+        // Date, tag, and zoom controls preserve the popup's current layer.
+        if (event.target.closest(popupPreservingControls)) return;
+        if (event.target.closest(".maplibregl-popup")) {
+          setPopupForeground(true);
+        } else if (!event.target.closest(".maplibregl-canvas-container")) {
+          setPopupForeground(false);
+        }
+      }
+      // Capture first: selecting a menu result can then raise its new popup.
+      document.addEventListener("pointerdown", (event) => {
+        popupPreservingGesture = !!event.target.closest(popupPreservingControls);
+        popupDragOrigin = event.target.closest(".maplibregl-canvas-container, .maplibregl-popup")
+          ? { x: event.clientX, y: event.clientY, pointerId: event.pointerId } : null;
+        popupGestureDragged = false;
+        updatePopupLayerFromTarget(event);
+      }, true);
+      function trackPopupGestureMovement(event) {
+        if (!popupDragOrigin || event.pointerId !== popupDragOrigin.pointerId) return;
+        if (Math.hypot(event.clientX - popupDragOrigin.x, event.clientY - popupDragOrigin.y) > 3) {
+          popupGestureDragged = true;
+        }
+      }
+      document.addEventListener("pointermove", trackPopupGestureMovement, true);
+      document.addEventListener("pointerup", (event) => {
+        trackPopupGestureMovement(event);
+        if (popupGestureDragged) schedulePopupOverlapCheck();
+      }, true);
+      document.addEventListener("pointercancel", () => {
+        popupPreservingGesture = false;
+        popupDragOrigin = null;
+        popupGestureDragged = false;
+      }, true);
+      document.addEventListener("click", (event) => {
+        const preserveLayer = popupPreservingGesture && event.detail !== 0;
+        const endedDrag = popupGestureDragged && event.detail !== 0;
+        popupPreservingGesture = false;
+        popupDragOrigin = null;
+        popupGestureDragged = false;
+        if (endedDrag) {
+          // A drag release is not a fresh click on the menu beneath the mouse.
+          event.preventDefault();
+          event.stopPropagation();
+          schedulePopupOverlapCheck();
+          return;
+        }
+        if (preserveLayer) {
+          // A release outside the control can target a shared ancestor or the map.
+          if (!event.target.closest(popupPreservingControls)) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          return;
+        }
+        updatePopupLayerFromTarget(event);
+      }, true);
 
     /* ============================================================
        Section 4 — MARKERS RENDERING
@@ -1167,6 +1272,7 @@
           map.on("click", layerId, (e) => {
             e.preventDefault();
             e.originalEvent.stopPropagation();
+            setPopupForeground(true);
 
             // clear dropped-pin popup
             clearDroppedPin();
@@ -1181,7 +1287,7 @@
             selectedPinLngLat = { lng: e.lngLat.lng, lat: e.lngLat.lat };
             selectedPinProps = { ...e.features[0].properties };
 
-            selectedPinPopup = new maplibregl.Popup({ offset: 16, maxWidth: "280px" })
+            selectedPinPopup = new maplibregl.Popup({ closeOnClick: false, offset: 16, maxWidth: "280px" })
               .setLngLat([selectedPinLngLat.lng, selectedPinLngLat.lat])
               .setHTML(buildPopupHtml(selectedPinProps))
               .addTo(map);
@@ -1197,9 +1303,19 @@
         map.on("click", (e) => {
           const hitFeatures = map.queryRenderedFeatures(e.point, { layers: hitLayers });
           if (hitFeatures.length > 0) return;
+          const droppedHits = map.queryRenderedFeatures([
+            [e.point.x - PIN_TOUCH_RADIUS, e.point.y - PIN_TOUCH_RADIUS],
+            [e.point.x + PIN_TOUCH_RADIUS, e.point.y + PIN_TOUCH_RADIUS]
+          ], { layers: ["clicked-point-layer"] });
+          if (clickedPopup && droppedHits.length) {
+            setPopupForeground(true);
+            return;
+          }
+          clearSelectedPin();
+          applyFilters();
           clickedLngLat = { lng: e.lngLat.lng, lat: e.lngLat.lat };
           clickedPinCameFromSearch = false;
-          updateClickedSunsetPopup();
+          updateClickedSunsetPopup(true);
         });
         renderPinMenu();
         applyFilters();
@@ -1411,7 +1527,7 @@
             });
             clickedLngLat = { lng, lat };
             clickedPinCameFromSearch = true;
-            updateClickedSunsetPopup();
+            updateClickedSunsetPopup(true);
           }
         }));
       }
@@ -1523,6 +1639,7 @@
             return;
           }
           searchPinnedResult = pin;
+          setPopupForeground(true);
           map.flyTo({
             center: [pin.lng, pin.lat],
             zoom: Math.max(map.getZoom(), 14),
@@ -1536,7 +1653,7 @@
             suppressSelectedPinClose = false;
           }
           applyFilters();
-          selectedPinPopup = new maplibregl.Popup({ offset: 16, maxWidth: "280px" })
+          selectedPinPopup = new maplibregl.Popup({ closeOnClick: false, offset: 16, maxWidth: "280px" })
             .setLngLat([pin.lng, pin.lat])
             .setHTML(buildPopupHtml(pin))
             .addTo(map);
@@ -1558,7 +1675,7 @@
           });
           clickedLngLat = { lng: coords.lng, lat: coords.lat };
           clickedPinCameFromSearch = true;
-          updateClickedSunsetPopup();
+          updateClickedSunsetPopup(true);
           return;
         }
 
@@ -1575,7 +1692,7 @@
             });
             clickedLngLat = { lng, lat };
             clickedPinCameFromSearch = true;
-            updateClickedSunsetPopup();
+            updateClickedSunsetPopup(true);
             return;
           }
           countLine.textContent = "No valid pin, address, or coordinate found";
@@ -2044,8 +2161,9 @@
         };
       }
 
-      function updateClickedSunsetPopup() {
+      function updateClickedSunsetPopup(bringToFront = false) {
         if (!clickedLngLat) return;
+        if (bringToFront) setPopupForeground(true);
         const { lng, lat } = clickedLngLat;
         const day = Number(daySlider.value);
         const sunsetStr = sunsetLocalTime(day, lat, lng);
@@ -2072,7 +2190,7 @@
           });
         }
 
-        clickedPopup = new maplibregl.Popup({ offset: 14, maxWidth: "240px" })
+        clickedPopup = new maplibregl.Popup({ closeOnClick: false, offset: 14, maxWidth: "240px" })
           .setLngLat([lng, lat])
           .setHTML(`
             <div class="popup-body">
@@ -2112,7 +2230,7 @@
           selectedPinPopup.remove();
           suppressSelectedPinClose = false;
         }
-        selectedPinPopup = new maplibregl.Popup({ offset: 16, maxWidth: "280px" })
+        selectedPinPopup = new maplibregl.Popup({ closeOnClick: false, offset: 16, maxWidth: "280px" })
           .setLngLat([selectedPinLngLat.lng, selectedPinLngLat.lat])
           .setHTML(buildPopupHtml(selectedPinProps))
           .addTo(map);
