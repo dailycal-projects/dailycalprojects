@@ -28,7 +28,7 @@ export const strings = {
     byline: "By <0>John Schultz</0>",
     lede:
       "While AC Transit ridership has increased from the worst lows during the pandemic, recovery "
-      + "has been uneven. Some neighborhoods have reached pre-pandemic levels of ridership, while many "
+      + "has been uneven. Some neighborhoods have reached prepandemic levels of ridership, while many "
       + "have yet to reach half of their peak.",
     // {message} is the underlying fetch error.
     error: "The ridership data could not be loaded: {message}",
@@ -52,7 +52,7 @@ export const strings = {
         + "counted through automatic people counters, sensors on AC Transit buses that detect when "
         + "people leave and enter.",
       simulated:
-        "However, counter data was not recorded pre-pandemic. The Daily Cal filled in gaps in the "
+        "However, counter data was not recorded prepandemic. The Daily Cal filled in gaps in the "
         + "data using statistical methods which sampled route-level total "
         + "ridership estimates from AC Transit. Estimated rides make up about 40% of rides in 2019, "
         + "but decline to under 8% of rides after 2021. For new routes created after the Realign "
@@ -66,37 +66,37 @@ export const strings = {
         + "In stops near UC Berkeley, ridership declined "
         + "by as much as 97%.",
       sanPablo:
-        "San Pablo Avenue’s transit corridor remained at 51% of pre-pandemic ridership.",
+        "San Pablo Avenue’s transit corridor remained at 51% of prepandemic ridership.",
       stagnant:
         "Even as Berkeley public schools partially reopened, ridership was largely stagnant.",
       returned:
         "When UC Berkeley returned to in-person instruction in August 2021, routes near campus "
-        + "returned to 60% of pre-pandemic ridership.",
+        + "returned to 60% of prepandemic ridership.",
       breaks:
         "During school breaks and the summer, ridership on campus stops falls to pandemic levels. "
         + "Lines outside the university in West Berkeley are unaffected by these breaks.",
       recovered2023:
-        "Ridership at stops near UC Berkeley only reached pre-pandemic levels at the start of the "
+        "Ridership at stops near UC Berkeley only reached prepandemic levels at the start of the "
         + "2023-24 academic year.",
       fullyReturned:
         "After campus relaxed COVID-19 restrictions, ridership slowly recovered throughout the city.",
       sixYearsOn:
         "Six years on, the landscape of ridership in Berkeley looks very different. Ridership is up "
         + "in Central and Downtown Berkeley and down around the edges of the city. In particular, "
-        + "ridership in the Berkeley Hills sits at 30% of pre-pandemic ridership.",
+        + "ridership in the Berkeley Hills sits at 30% of prepandemic ridership.",
       eastBay:
         "Berkeley fared similarly to the rest of the East Bay. Ridership in Berkeley this year is at 75% of "
-        + "pre-pandemic ridership, while Oakland is at 85%. Southern Alameda County communities hang "
+        + "prepandemic ridership, while Oakland is at 85%. Southern Alameda County communities hang "
         + "between 55-70%.",
       tempo:
         "AC Transit’s Tempo bus rapid transit system, completed during the pandemic, led to an "
         + "increase in local ridership along International Boulevard.",
-      transbay: "Transbay service has remained at around 48% of pre-pandemic levels.",
+      transbay: "Transbay service has remained at around 48% of prepandemic levels.",
       // {pct} comes from numbers.json, resolved by build_story_numbers.py.
       highIncome:
-        "High-income areas saw the largest post-pandemic decline, at {pct}% of pre-pandemic "
+        "High-income areas saw the largest post-pandemic decline, at {pct}% of prepandemic "
         + "ridership.",
-      lowIncome: "Low-income areas saw the best recovery, at {pct}% of pre-pandemic ridership.",
+      lowIncome: "Low-income areas saw the best recovery, at {pct}% of prepandemic ridership.",
     },
 
     // Second map: inferred origins and destinations.
@@ -219,38 +219,38 @@ export const strings = {
     // Recovery view
     recoveryTitle: "First month back to {pct}%",
     recoveryNever: "Not yet",
-    recoverySmall: "No pre-pandemic service",
+    recoverySmall: "No prepandemic service",
 
     weekOf: "Week of",
 
     // Speed view. <0> wraps each figure.
     speedNote: "Median Berkeley bus speeds: <0>{mph} mph</0>",
-    speedRidership: " · Total Ridership: <0>{pct}%</0> of pre-pandemic",
+    speedRidership: " · Total Ridership: <0>{pct}%</0> of prepandemic",
     speedRamp: ["6 mph", "12 mph", "20 mph"],
 
     // Ridership view
     seriesSystem: "Systemwide",
     seriesBerkeley: "Berkeley",
     // <0> wraps the percentage.
-    ridershipNote: "Ridership in {scope}: <0>{pct}</0> of pre-pandemic",
+    ridershipNote: "Ridership in {scope}: <0>{pct}</0> of prepandemic",
     ridershipRamp: ["0%", "100%", "200%"],
 
     dotScaleUnit: "riders/week",
 
     // Map callouts and hover tooltips.
-    calloutPrePandemic: "{pct}% of pre-pandemic riders",
-    calloutOfBaseline: "{pct}% of pre-pandemic",
+    calloutPrePandemic: "{pct}% of prepandemic riders",
+    calloutOfBaseline: "{pct}% of prepandemic",
     // A ringed tract's AC Transit commuters over all its commuters. {pct} is
     // already formatted, e.g. "5.2" or "0.43".
     calloutOfTraffic: "{pct}% of all traffic",
     tipCommuteMember: "Stop near UC Berkeley",
     tipInferredRiders: "{n} estimated riders/weekday",
     tipRidersThisWeek: "{n} riders this week",
-    tipNoBaseline: "No pre-pandemic service",
+    tipNoBaseline: "No prepandemic service",
     tipBlockGroup: "Block group {id}",
-    tipRecoveredIn: "Reached pre-pandemic in {month}",
-    tipNotYet: "Hasn't reached pre-pandemic",
-    tipTooLittle: "No pre-pandemic service",
+    tipRecoveredIn: "Reached prepandemic in {month}",
+    tipNotYet: "Hasn't reached prepandemic",
+    tipTooLittle: "No prepandemic service",
   },
 
   /* ------------------------------------------------------------------ */
@@ -392,7 +392,7 @@ export const strings = {
     rowDropOffs: "Drop-offs",
     rowRidership: "Ridership",
     rowImputed: "Estimated",
-    rowVsBaseline: "Versus pre-pandemic",
+    rowVsBaseline: "Versus prepandemic",
     rowAcShare: "AC Transit commuters as share of all commuters",
     rowAllRiders: "All riders per weekday",
     rowRecovered: "Recovered",
@@ -405,10 +405,10 @@ export const strings = {
     // {label} is the commute snapshot, e.g. "Feb 2024".
     commutersHeading: "Commuters · {label}",
     headingWeekly: "Weekly ridership 2019-26",
-    headingRecovery: "Recovery to pre-pandemic",
+    headingRecovery: "Recovery to prepandemic",
     // {pct} is a threshold like 50.
-    recoveryThreshold: "{pct}% of pre-pandemic",
-    recoveryTooSmall: "no pre-pandemic service",
+    recoveryThreshold: "{pct}% of prepandemic",
+    recoveryTooSmall: "no prepandemic service",
     recoveryNotYet: "not yet",
     headingRoutes: "Routes",
     noRouteGeometry: "No routes are mapped here this week.",
@@ -449,7 +449,7 @@ export const strings = {
     // View picker
     headingView: "View",
     viewTotal: "Total ridership",
-    viewRel: "Relative to pre-pandemic",
+    viewRel: "Relative to prepandemic",
     viewRecovery: "Recovery time",
     viewCommute: "Commute pattern",
     viewSpeed: "Speed per corridor",
@@ -457,7 +457,7 @@ export const strings = {
     viewImp: "Percent estimated",
 
     reachedLabel: "Reached",
-    ofBaseline: "of pre-pandemic",
+    ofBaseline: "of prepandemic",
 
     focusTo: "Estimated arrivals",
     focusFrom: "Estimated departures",
@@ -549,7 +549,7 @@ export const strings = {
     legendPerWeek: "{n}+ / week",
     legendImputedHigh: "100% estimated",
     legendNeverSustained: "hasn't recovered",
-    legendBaselineTooSmall: "no pre-pandemic service",
+    legendBaselineTooSmall: "no prepandemic service",
 
     // Commute measures
     cellAcHome: "AC Transit commuters",
