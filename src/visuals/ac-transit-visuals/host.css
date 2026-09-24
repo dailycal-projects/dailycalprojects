@@ -1,0 +1,52 @@
+/* The article's own chrome around the ported app. Hand-written, unlike
+   styles/, which scope-css.js generates. */
+
+/* The site's full-page template locks html and body, so this is what
+   scrolls. dvh keeps it the visible height on phones as the URL bar moves. */
+.acpra.acpra-root {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.acpra .acpra-masthead {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--plane);
+}
+
+.acpra .acpra-masthead img {
+  display: block;
+  height: 20px;
+  width: auto;
+  /* typography.js gives every img a bottom margin. */
+  margin: 0;
+}
+
+.acpra .acpra-footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+  color: var(--text-secondary);
+  font: 16px/1.6 Georgia, serif;
+}
+
+.acpra .acpra-footer a {
+  color: var(--text-primary);
+}
+
+/* The BayPass calculator's stylesheet (clipper-visuals) sizes every
+   .leaflet-container on the site as a rounded 90vw box. Both maps here fill
+   their parent with inset: 0, so undo it. */
+.acpra .leaflet-container {
+  width: auto;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}

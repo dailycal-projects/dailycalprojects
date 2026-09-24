@@ -1,0 +1,92 @@
+{
+  "_source": "scripts/build_story_numbers.py",
+  "week": "2026-02-09",
+  "baseline": "2020-02-03",
+  "income": {
+    "tracts_ranked": 407,
+    "per_group": 81,
+    "high_recovery_pct": 50.1,
+    "low_recovery_pct": 85.8,
+    "high_median_income": 177551,
+    "low_median_income": 83125
+  },
+  "speeds": {
+    "feb2020": {
+      "month": "2020-02",
+      "corridors_in_berkeley": 617,
+      "day": {
+        "p10": 6.4,
+        "p50": 10.6,
+        "p90": 16.3
+      },
+      "peak": {
+        "p10": 6.3,
+        "p50": 10.2,
+        "p90": 16.5
+      },
+      "night": {
+        "p10": 8.2,
+        "p50": 13.5,
+        "p90": 18.3
+      }
+    },
+    "dec2020": {
+      "month": "2020-12",
+      "corridors_in_berkeley": 617,
+      "day": {
+        "p10": 6.9,
+        "p50": 12.5,
+        "p90": 17.3
+      },
+      "peak": {
+        "p10": 7.3,
+        "p50": 12.7,
+        "p90": 18.5
+      },
+      "night": {
+        "p10": 8.6,
+        "p50": 14.1,
+        "p90": 19.9
+      }
+    },
+    "sep2025": {
+      "month": "2025-09",
+      "corridors_in_berkeley": 588,
+      "day": {
+        "p10": 6.0,
+        "p50": 10.9,
+        "p90": 16.5
+      },
+      "peak": {
+        "p10": 4.7,
+        "p50": 9.7,
+        "p90": 15.2
+      },
+      "night": {
+        "p10": 7.8,
+        "p50": 14.4,
+        "p90": 20.4
+      }
+    },
+    "feb2026": {
+      "month": "2026-02",
+      "corridors_in_berkeley": 588,
+      "day": {
+        "p10": 6.2,
+        "p50": 10.6,
+        "p90": 16.7
+      },
+      "peak": {
+        "p10": 5.2,
+        "p50": 9.2,
+        "p90": 15.6
+      },
+      "night": {
+        "p10": 8.7,
+        "p50": 14.7,
+        "p90": 21.0
+      }
+    },
+    "night_vs_peak_pct": 48.5
+  }
+}
