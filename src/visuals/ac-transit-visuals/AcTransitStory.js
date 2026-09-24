@@ -40,8 +40,9 @@ function viewFromUrl() {
   return VIEWS.includes(view) ? view : 'story';
 }
 
-// `about` is the footer's "About this story" text, set in the article's MDX.
-const AcTransitStory = ({ about }) => {
+// `about` is the footer's "About this story" text and `date` the publication
+// date, both set in the article's MDX.
+const AcTransitStory = ({ about, date }) => {
   const [view, setView] = useState('story');
   const rootRef = useRef(null);
 
@@ -76,7 +77,7 @@ const AcTransitStory = ({ about }) => {
           <Link to="/" className="acpra-masthead">
             <img src={logo} alt="The Daily Californian" />
           </Link>
-          <Story />
+          <Story date={date} />
           <div className="acpra-footer">
             <ArticleFooter about={about} />
           </div>

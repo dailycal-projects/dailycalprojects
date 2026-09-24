@@ -50,3 +50,11 @@
   border-radius: 0;
   box-shadow: none;
 }
+
+/* Publication date under the headline, pulled up into the h1's 26px margin. */
+.acpra .story-date {
+  display: block;
+  margin: -12px 0 12px;
+  color: var(--text-secondary);
+  font: 15px/1.4 var(--story-sans);
+}

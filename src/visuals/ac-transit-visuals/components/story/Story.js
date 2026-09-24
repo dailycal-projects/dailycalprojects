@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ensureData, everything, loadVisualizationData } from "../ridership-data";
-import StoryMap from "./StoryMap";
+import StoryMap, { apDate } from "./StoryMap";
 import { resolvePlaces } from "./prepare";
 import { BOUNDS, MAP_ONE, MAP_THREE, MAP_TWO, resolveScenes } from "./steps";
 import { T, t } from "../../lib/i18n";
@@ -139,7 +139,8 @@ function ScrollySection({ data, places, steps, first = "85vh" }) {
   );
 }
 
-export default function Story() {
+// `date` is the publication date, "YYYY-MM-DD", from the article's MDX.
+export default function Story({ date }) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -188,6 +189,7 @@ export default function Story() {
     <article className="story">
       <header className="story-hero">
         <h1>{t("story.title")}</h1>
+        {date ? <time className="story-date" dateTime={date}>{apDate(date)}</time> : null}
         <p className="story-byline">
           <T id="story.byline" c={[<a href="https://www.dailycal.org/users/profile/john%20schultz/" target="_blank" rel="noreferrer" />]} />
         </p>
