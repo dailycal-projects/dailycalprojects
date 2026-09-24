@@ -86,6 +86,7 @@ import ScrollyNew from '../visuals/dining-visuals/ScrollyNew';
 import HackVisuals from '../visuals/shiny-hunters-visuals/hack_visuals';
 import BayPassCalculator from '../visuals/clipper-visuals/baypasscalculator';
 import CandidateFinanceVisuals from '../visuals/candidate-visuals/finance_visuals';
+import AcTransitStory from '../visuals/ac-transit-visuals/AcTransitStory';
 
 /*
 To avoid using exact paths in MDX files, import your components here
@@ -185,6 +186,7 @@ const shortcodes = {
   HackVisuals,
   BayPassCalculator,
   CandidateFinanceVisuals,
+  AcTransitStory,
 };
 
 export default function Layout({ children }) {

@@ -99,6 +99,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-prettier-eslint',
       options: {
+        // Setting this replaces the plugin's defaults, so they are repeated.
+        ignorePatterns: [
+          '**/node_modules/**/*',
+          '**/.git/**/*',
+          '**/dist/**/*',
+          '.cache/**/*',
+          'public/**/*',
+          // Ported from the standalone AC Transit app and kept in its style,
+          // so changes there carry over as plain diffs; see AcTransitStory.js.
+          'src/visuals/ac-transit-visuals/**/*',
+        ],
         prettier: {
           patterns: [
             // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
