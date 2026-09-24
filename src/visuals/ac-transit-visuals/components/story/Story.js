@@ -204,8 +204,6 @@ export default function Story() {
       />
 
       <div className="story-body">
-        <p><T id="story.visitApp" c={[<ViewLink view="explore" />]} /></p>
-
         <h2>{t("story.headingWhereDo")}</h2>
       </div>
 

@@ -24,6 +24,8 @@
   display: block;
   height: 20px;
   width: auto;
+  /* typography.js gives every img a bottom margin. */
+  margin: 0;
 }
 
 .acpra .acpra-footer {
