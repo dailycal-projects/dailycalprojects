@@ -22,7 +22,7 @@
 .acpra .story-hero {
   max-width: 680px;
   margin: 0 auto;
-  padding: 16vh 20px 10vh;
+  padding: 6vh 20px 10vh;
 }
 
 .acpra .story-kicker {
@@ -34,7 +34,7 @@
 }
 
 .acpra .story-hero h1 {
-  margin: 14px 0 26px;
+  margin: 0 0 26px;
   font-size: clamp(38px, 6vw, 64px);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -377,6 +377,10 @@
 }
 
 .acpra .story-cta-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
   margin: 2.4em 0 16vh;
   text-align: center;
 }
@@ -394,6 +398,15 @@
 
 .acpra .story .story-cta:hover {
   transform: translateY(-1px);
+}
+
+/* The data credit: small print at the very foot of the page. */
+.acpra .story-body .story-credit {
+  margin: 0;
+  padding-bottom: 32px;
+  color: var(--text-muted);
+  font: 13px/1.5 var(--story-sans);
+  text-align: center;
 }
 
 /* ------------------------------------------------------------- narrow */

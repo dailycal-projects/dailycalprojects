@@ -228,6 +228,10 @@ export default function Story() {
       <div className="story-body">
         <p className="story-cta-wrap">
           <ViewLink className="story-cta" view="explore">{t("story.seeData")}</ViewLink>
+          <ViewLink className="story-cta" view="methodology">{t("story.seeMethodologyEnd")}</ViewLink>
+        </p>
+        <p className="story-credit">
+          <T id="story.transitland" c={[<a href="https://www.transit.land/terms" target="_blank" rel="noreferrer" />]} />
         </p>
       </div>
 

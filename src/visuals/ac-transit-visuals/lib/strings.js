@@ -24,20 +24,24 @@ export const strings = {
   /* ------------------------------------------------------------------ */
   story: {
     title: "See how AC Transit ridership recovered from the pandemic",
-    byline: "John Schultz",
+    byline: "By John Schultz",
     lede:
-      "While AC Transit ridership has increased from historic lows during the pandemic, recovery "
-      + "has been uneven. Some neighborhoods have reached pre-pandemic levels of ridership while "
-      + "many have yet to reach half of their peak.",
+      "While AC Transit ridership has increased from the worst lows during the pandemic, recovery "
+      + "has been uneven. Some neighborhoods have reached pre-pandemic levels of ridership while many "
+      + "have yet to reach half of their peak.",
     // {message} is the underlying fetch error.
     error: "The ridership data could not be loaded: {message}",
 
-    // Prose between the maps. <0> is a link.
-    visitApp: "To see this data, visit the <0>interactive app</0>.",
+    // Prose between the maps.
     headingWhereDo: "Where do people go on AC Transit?",
     headingTraffic: "Traffic",
     seeData: "See the data →",
     seeMethodology: "See our methodology →",
+    // Beside "See the data" at the foot of the story.
+    seeMethodologyEnd: "See the methodology →",
+    // Data credit at the foot of the story, which Transitland's terms require.
+    // <0> links to those terms.
+    transitland: "<0>Transitland</0> was used to obtain historical GTFS bus schedules",
 
     // First map: the pandemic and the recovery.
     one: {
@@ -53,9 +57,9 @@ export const strings = {
         + "but decline to under 8% of rides after 2021. For new routes created after the Realign "
         + "changes in 2025, 100% of rides are estimated.",
       berkeley2020:
-        "This is the City of Berkeley’s AC Transit ridership in February 2020. Each dot represents "
-        + "a stop, and each line is one or more AC Transit routes. The size of the dots represent "
-        + "the number of people who boarded or left a bus.",
+        "This is the City of Berkeley’s AC Transit ridership in February 2020. Each dot represents a "
+        + "cluster of stops within a specific radius, and each line is one or more AC Transit routes. "
+        + "The size of the dots represent the number of people who boarded or left a bus.",
       pandemic:
         "During the pandemic, ridership sharply declined by 80% throughout the city. "
         + "In stops near UC Berkeley, ridership declined "
@@ -71,8 +75,8 @@ export const strings = {
         "During school breaks and the summer, ridership on campus stops falls to pandemic levels. "
         + "Lines outside the university in West Berkeley are unaffected by these breaks",
       recovered2023:
-        "After UC Berkeley removed most COVID restrictions in 2022, ridership finally recovered to "
-        + "pre-pandemic levels in fall 2023.",
+        "Ridership at stops near UC Berkeley only reached pre-pandemic levels at the start of the "
+        + "2023-24 year.",
       fullyReturned:
         "After campus returned to normal policies, ridership slowly recovered throughout the city.",
       sixYearsOn:
@@ -97,16 +101,14 @@ export const strings = {
     // Second map: inferred origins and destinations.
     two: {
       ipf:
-        "Current data doesn't collect the trips that riders make, only that a certain number "
-        + "of people entered and exited the bus at a given stop. However, using iterative proportional "
-        + "fitting, a statistical method that fits a distribution of trips to fit the known number of "
-        + "of boardings and drop-offs per stop, the Daily Cal estimated the origins and destinations of "
-        + "bus riders.",
+        "Current data doesn’t collect the trips that riders make, only that a certain number of "
+        + "people entered and exited the bus at a given stop. Using iterative proportional fitting, a "
+        + "statistical method that fits a distribution of trips to fit the known number of boardings "
+        + "and drop-offs per stop, the Daily Cal estimated the origins and destinations of bus riders.",
       ipfAccuracy:
-        "Like all estimation methods, it's not perfect. When tested against BART, "
-        + "which does collect these trips, our model achieves a 77% forecast accuracy. "
-        + "The model can't simulate important parts of bus usage, like transfers to other buses "
-        + "or BART.",
+        "Like all estimation methods, it’s not perfect. When tested against BART, which does collect "
+        + "these trips, our model achieves a 77% forecast accuracy. It’s important to note that the "
+        + "model can’t simulate some facets of bus usage, like transfers to other buses or BART.",
       toCampus:
         "These are stops that estimated riders travel from on their way to UC Berkeley on weekday mornings.",
       marks:
@@ -129,10 +131,10 @@ export const strings = {
     // Third map: bus speeds.
     three: {
       speed:
-        "Because we collect per-trip information, the timestamps of each stop can be derived. This "
-        + "is the speed, in miles per hour, that buses travel at on Berkeley streets. This figure "
-        + "is slower than the speeds cars would experience traveling through Berkeley because buses "
-        + "must stop off for passengers.",
+        "Because we collected information per-trip, we know the timestamp and location of each stop. "
+        + "We derived the speed, in miles per hour, that buses travel at on Berkeley streets. This "
+        + "figure is slower than the speeds cars would experience traveling through Berkeley because "
+        + "buses must stop for passengers.",
       pandemicTraffic:
         "During the pandemic, bus speeds weren\u2019t as affected as bus ridership was. Traffic "
         + "spots, like areas near the university, remained at low speeds, while arterial roads "
@@ -281,10 +283,10 @@ export const strings = {
     // The scrollytelling passages, in order.
     step: {
       intro:
-        "This is an example of a bus route. Buses pick up and drop off people from each station. "
-        + "Some bus trips don’t have sensor information. We can find trips that aren’t "
-        + "observed through schedules published by AC Transit, known as GTFS feeds. These public "
-        + "schedules are how applications like Google Maps calculate bus arrival times.",
+        "This is an example of a bus route. Buses pick up and drop off people from each station. Some "
+        + "bus trips don’t report sensor information. We can find trips that aren’t observed through "
+        + "schedules published by AC Transit, known as GTFS feeds. These public schedules are how "
+        + "applications like Google Maps calculate bus arrival times.",
       // <0> is the coloured term "blue bars".
       observed:
         "The <0>blue bars</0> represent observed data from the trip-level public records request. "
@@ -435,6 +437,8 @@ export const strings = {
     aboutStory: "Read the story →",
     aboutMethodology: "Methodology →",
     aboutExplore: "Explore the map",
+    // The same Transitland credit as the story's. <0> links to its terms.
+    aboutTransitland: "<0>Transitland</0> was used to obtain historical GTFS bus schedules",
 
     // View picker
     headingView: "View",

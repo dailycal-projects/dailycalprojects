@@ -1774,6 +1774,9 @@ function AboutModal({ onClose }) {
       >
         <h2 id="aboutTitle">{t("explorer.aboutTitle")}</h2>
         <p><T id="explorer.about3" c={[<b />, <span className="gold" />]} /></p>
+        <p className="about-credit">
+          <T id="explorer.aboutTransitland" c={[<a href="https://www.transit.land/terms" target="_blank" rel="noreferrer" />]} />
+        </p>
         <div className="about-actions">
           <ViewLink className="about-link" view="story">{t("explorer.aboutStory")}</ViewLink>
           <ViewLink className="about-link" view="methodology">{t("explorer.aboutMethodology")}</ViewLink>
