@@ -23,7 +23,7 @@ import { useMemo } from "react";
 import katex from "katex";
 import { t } from "../../lib/i18n";
 
-const STOPS = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th"];
+const STOPS = ["Stop A", "Stop B", "Stop C", "Stop D", "Stop E", "Stop F", "Stop G"];
 const OBSERVED = [120, 85, 160, 210, 95, 140, 60];
 const SPARSE = [0, 15, 0, 25, 10, 0, 8];
 

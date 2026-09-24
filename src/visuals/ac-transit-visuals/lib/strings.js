@@ -24,10 +24,11 @@ export const strings = {
   /* ------------------------------------------------------------------ */
   story: {
     title: "See how AC Transit ridership recovered from the pandemic",
-    byline: "By John Schultz",
+    // <0> links to the author's Daily Californian profile.
+    byline: "By <0>John Schultz</0>",
     lede:
       "While AC Transit ridership has increased from the worst lows during the pandemic, recovery "
-      + "has been uneven. Some neighborhoods have reached pre-pandemic levels of ridership while many "
+      + "has been uneven. Some neighborhoods have reached pre-pandemic levels of ridership, while many "
       + "have yet to reach half of their peak.",
     // {message} is the underlying fetch error.
     error: "The ridership data could not be loaded: {message}",
@@ -51,13 +52,13 @@ export const strings = {
         + "counted through automatic people counters, sensors on AC Transit buses that detect when "
         + "people leave and enter.",
       simulated:
-        "However, especially pre-pandemic, counter data was not recorded. The Daily "
-        + "Californian filled in gaps in the data using statistical methods which sampled route-level total "
+        "However, counter data was not recorded pre-pandemic. The Daily Cal filled in gaps in the "
+        + "data using statistical methods which sampled route-level total "
         + "ridership estimates from AC Transit. Estimated rides make up about 40% of rides in 2019, "
         + "but decline to under 8% of rides after 2021. For new routes created after the Realign "
-        + "changes in 2025, 100% of rides are estimated.",
+        + "service changes in 2025, 100% of rides are estimated.",
       berkeley2020:
-        "This is the City of Berkeley’s AC Transit ridership in February 2020. Each dot represents a "
+        "This is the city of Berkeley’s AC Transit ridership in February 2020. Each dot represents a "
         + "cluster of stops within a specific radius, and each line is one or more AC Transit routes. "
         + "The size of the dots represent the number of people who boarded or left a bus.",
       pandemic:
@@ -65,31 +66,31 @@ export const strings = {
         + "In stops near UC Berkeley, ridership declined "
         + "by as much as 97%.",
       sanPablo:
-        "San Pablo Avenue’s transit corridor remained at about 50% of pre-pandemic ridership.",
+        "San Pablo Avenue’s transit corridor remained at 51% of pre-pandemic ridership.",
       stagnant:
-        "Even as BUSD schools partially reopened, ridership was largely stagnant.",
+        "Even as Berkeley public schools partially reopened, ridership was largely stagnant.",
       returned:
-        "When Berkeley returned to in-person instruction in August 2021, routes near campus "
+        "When UC Berkeley returned to in-person instruction in August 2021, routes near campus "
         + "returned to 60% of pre-pandemic ridership.",
       breaks:
         "During school breaks and the summer, ridership on campus stops falls to pandemic levels. "
-        + "Lines outside the university in West Berkeley are unaffected by these breaks",
+        + "Lines outside the university in West Berkeley are unaffected by these breaks.",
       recovered2023:
         "Ridership at stops near UC Berkeley only reached pre-pandemic levels at the start of the "
-        + "2023-24 year.",
+        + "2023-24 academic year.",
       fullyReturned:
-        "After campus returned to normal policies, ridership slowly recovered throughout the city.",
+        "After campus relaxed COVID-19 restrictions, ridership slowly recovered throughout the city.",
       sixYearsOn:
         "Six years on, the landscape of ridership in Berkeley looks very different. Ridership is up "
-        + "in central and downtown Berkeley and down in the edges of the city. In particular, "
+        + "in Central and Downtown Berkeley and down around the edges of the city. In particular, "
         + "ridership in the Berkeley Hills sits at 30% of pre-pandemic ridership.",
       eastBay:
         "Berkeley fared similarly to the rest of the East Bay. Ridership in Berkeley this year is at 75% of "
-        + "pre-pandemic ridership, while Oakland is at 85%. South East Bay communities hang in the "
-        + "sixties.",
+        + "pre-pandemic ridership, while Oakland is at 85%. Southern Alameda County communities hang "
+        + "between 55-70%.",
       tempo:
-        "The Tempo bus rapid transit system, completed during the pandemic, led to an increase in "
-        + "local ridership along International Blvd.",
+        "AC Transit’s Tempo bus rapid transit system, completed during the pandemic, led to an "
+        + "increase in local ridership along International Boulevard.",
       transbay: "Transbay service has remained at around 48% of pre-pandemic levels.",
       // {pct} comes from numbers.json, resolved by build_story_numbers.py.
       highIncome:
@@ -103,7 +104,7 @@ export const strings = {
       ipf:
         "Current data doesn’t collect the trips that riders make, only that a certain number of "
         + "people entered and exited the bus at a given stop. Using iterative proportional fitting, a "
-        + "statistical method that fits a distribution of trips to fit the known number of boardings "
+        + "statistical method that fits a distribution of trips to the known number of boardings "
         + "and drop-offs per stop, the Daily Cal estimated the origins and destinations of bus riders.",
       ipfAccuracy:
         "Like all estimation methods, it’s not perfect. When tested against BART, which does collect "
@@ -118,32 +119,32 @@ export const strings = {
         "This is where AC Transit commuters are estimated to live. Riders leave there in the "
         + "morning and come back in the evening.",
       compare:
-        "This is AC Transit commuters as a percentage of all commuters, according to the US "
-        + "Census’s LODES survey. In some areas, over 5% of commuters commute via AC Transit.",
+        "This is AC Transit commuters as a percentage of all commuters, according to the U.S. "
+        + "Census’ LODES survey. In some areas, more than 5% of commuters commute via AC Transit.",
       southEastBay:
-        "AC Transit is used heavily in Oakland and Alameda, but in southern communities like "
-        + "Fremont, less than 0.5% of commuters use AC Transit.",
+        "AC Transit is used heavily in Oakland and Alameda, but in southern Alameda County "
+        + "communities such as Fremont, less than 0.5% of commuters use AC Transit.",
       southEastBayHint:
-        "To see estimated trips, select “Commute pattern” and select one or more block groups, "
-        + "Census tracts, or stop groups.",
+        "To see estimated trips, select “commute pattern” and select one or more block groups, "
+        + "census tracts or stop groups.",
     },
 
     // Third map: bus speeds.
     three: {
       speed:
-        "Because we collected information per-trip, we know the timestamp and location of each stop. "
-        + "We derived the speed, in miles per hour, that buses travel at on Berkeley streets. This "
-        + "figure is slower than the speeds cars would experience traveling through Berkeley because "
-        + "buses must stop for passengers.",
+        "Because we collected information per trip, we know the time stamp and location of each "
+        + "stop. We derived the speed, in miles per hour, at which buses travel on Berkeley streets. "
+        + "This figure is slower than the speeds cars would experience traveling through Berkeley, "
+        + "because buses must stop for passengers.",
       pandemicTraffic:
-        "During the pandemic, bus speeds weren\u2019t as affected as bus ridership was. Traffic "
-        + "spots, like areas near the university, remained at low speeds, while arterial roads "
+        "During the pandemic, bus speeds weren\u2019t as affected as bus ridership. Traffic "
+        + "spots, such as areas near campus, remained at low speeds, while arterial roads "
         + "eased up.",
       // {pct} is the night-versus-peak difference.
       timeOfDay:
         "Bus speeds differ vastly throughout the day. Surface speeds at night and at rush hour "
-        + "(peak) differ by {pct}%.",
-      timeOfDayHint: "To see traffic speeds throughout the East Bay, select “Speed per corridor”.",
+        + "differ by {pct}%.",
+      timeOfDayHint: "To see traffic speeds throughout the East Bay, select “speed per corridor.”",
     },
   },
 
@@ -273,11 +274,11 @@ export const strings = {
     // <0> is the publication name, set in italics.
     intro2:
       "To address this, <0>The Daily Californian</0> used an existing public records request that "
-      + "collected ridership per route, per month. This ridership is derived from AC "
-      + "Transit’s own estimation methods, and is what is reported by the agency itself.",
+      + "collected ridership per route for each month. This ridership is derived from AC "
+      + "Transit’s own estimation methods and is reported by the agency itself.",
     intro3:
-      "The gap between the APC dataset and the per-route-month dataset is significant. 27% of "
-      + "boardings do not exist in the APC dataset. Most of the missing data is before the "
+      "The gap between the aforementioned dataset and the APC dataset is significant. Twenty-seven "
+      + "percent of boardings do not exist in the APC dataset. Most of the missing data is before the "
       + "pandemic.",
 
     // The scrollytelling passages, in order.
@@ -285,15 +286,17 @@ export const strings = {
       intro:
         "This is an example of a bus route. Buses pick up and drop off people from each station. Some "
         + "bus trips don’t report sensor information. We can find trips that aren’t observed through "
-        + "schedules published by AC Transit, known as GTFS feeds. These public schedules are how "
-        + "applications like Google Maps calculate bus arrival times.",
+        + "schedules published by AC Transit, known as General Transit Feed Specification, or GTFS, "
+        + "feeds. These public schedules are how applications such as Google Maps calculate bus "
+        + "arrival times.",
       // <0> is the coloured term "blue bars".
       observed:
         "The <0>blue bars</0> represent observed data from the trip-level public records request. "
         + "However, this is not a complete picture of ridership.",
-      // <0> coloured term, <1> the inline formula.
+      // <0> coloured term, <1> the coverage formula, <2> the N_present term.
       coverage:
-        "First, we get a <0>coverage factor</0> of the line <1/>. This is the percent of trips "
+        "First, we get a <0>coverage factor</0> of the line <1/>, where <2/> is the number of "
+        + "trips for which we have data. This is the percentage of trips "
         + "that are covered by the route. This assumes that missing trips are similar to other "
         + "trips.",
       // <0> is the formula.
@@ -309,7 +312,7 @@ export const strings = {
       sparse:
         "Some routes have significant data loss, like the routes introduced in 2025 under the "
         + "Realign program. For this profound data loss, we find other routes that cover the same "
-        + "stops. As an example, the 27 and the 51B cover the same stops near UC Berkeley.",
+        + "stops. As an example, the 27 and the 51B lines cover the same stops near UC Berkeley.",
       donors:
         "Using the existing public records request and the GTFS schedule for the number of trips "
         + "and the total ridership, the distribution of ridership over the stop is estimated.",
@@ -330,7 +333,7 @@ export const strings = {
       mix:
         "<0/> is the % imputed figure shown on the website. Ridership derived from <1/> is still "
         + "from monthly data, and <2/> is derived from the quality of the monthly data.",
-      blend: "This is what is shown on the website",
+      blend: "This is what is shown on the website.",
     },
 
     // Legend under the sticky figure.
@@ -340,17 +343,20 @@ export const strings = {
     legendDonor: "estimated from other routes",
     legendSchedule: "from the schedule",
 
-    closeTurn: "Most routes are unaffected by this imputation, and are only calibrated.",
+    closeTurn: "Most routes are unaffected by this imputation and are only calibrated.",
     colCase: "Case",
-    colRouteMonths: "Route-months (e.g. Route 51B, Jan 2020)",
+    colRouteMonths: "Ridership in route each month (e.g. Route 51B, January 2020)",
     colPercent: "%",
     case0: "No data estimated (w=0)",
     case1: "Some data estimated (w>0)",
     case2: "All data estimated (w=1)",
     case3: "No sensors at all",
 
-    // {t} is 0, 0.5 or 1.
-    histogramTick: "w = {t}",
+    // {t} is a tick on the w axis, 0 to 1.
+    histogramTick: "{t}",
+    histogramAxisX: "w (share of ridership estimated)",
+    histogramAxisY: "Route-months",
+    histogramCaption: "The gold section of the bar refers to months in 2019",
   },
 
   /* ------------------------------------------------------------------ */
@@ -386,19 +392,19 @@ export const strings = {
     rowDropOffs: "Drop-offs",
     rowRidership: "Ridership",
     rowImputed: "Estimated",
-    rowVsBaseline: "vs pre-pandemic",
+    rowVsBaseline: "Versus pre-pandemic",
     rowAcShare: "AC Transit commuters as share of all commuters",
-    rowAllRiders: "All riders/weekday",
+    rowAllRiders: "All riders per weekday",
     rowRecovered: "Recovered",
-    rowOnboardLoad: "Onboard load/wk",
+    rowOnboardLoad: "Onboard load per week",
     // {week} is the week's start date.
-    rowBoardingsWeekOf: "Boardings/wk, week of {week}",
+    rowBoardingsWeekOf: "Boardings per week, week of {week}",
     rowShareOfStreet: "Share of street boardings",
     rowSectionsPerRider: "Sections per rider",
 
     // {label} is the commute snapshot, e.g. "Feb 2024".
     commutersHeading: "Commuters · {label}",
-    headingWeekly: "Weekly ridership 2019-2026",
+    headingWeekly: "Weekly ridership 2019-26",
     headingRecovery: "Recovery to pre-pandemic",
     // {pct} is a threshold like 50.
     recoveryThreshold: "{pct}% of pre-pandemic",
@@ -413,8 +419,8 @@ export const strings = {
     // Route detail
     modeOwn: "This route",
     modeStreet: "Streets it uses",
-    headingRouteWeeklyOwn: "Weekly boardings on this route, 2019-2026",
-    headingRouteWeeklyStreet: "Weekly boardings on the lines using its streets, 2019-2026",
+    headingRouteWeeklyOwn: "Weekly boardings on this route, 2019-26",
+    headingRouteWeeklyStreet: "Total weekly boardings on a street for all lines, 2019-26",
     // <0> is a bold run.
     scheduleWarning:
       "0% of this line's buses reported, so these figures are reconstructed from known ridership " +
@@ -493,8 +499,8 @@ export const strings = {
     errorTitle: "Unable to load the visualization",
 
     // Corridor hover
-    rowBoardingsWk: "Boardings/wk",
-    rowDropOffsWk: "Drop-offs/wk",
+    rowBoardingsWk: "Boardings per week",
+    rowDropOffsWk: "Drop-offs per week",
     rowNetAtGroup: "Net at this stop group",
     tipNoPeak: "no peak",
     tipLine: "Line",
@@ -525,7 +531,7 @@ export const strings = {
 
     // Weekday profile panel
     headingWeekdayProfile: "Weekday profile · {label}",
-    rowRidersWeekday: "Riders/weekday",
+    rowRidersWeekday: "Riders per weekday",
     rowAmBalance: "AM balance",
     rowPmBalance: "PM balance",
     rowPeakStrength: "Peak strength",
@@ -537,10 +543,10 @@ export const strings = {
     legendIncomeHigh: "${hi}k+",
     legendNoFlow: "no estimated trips",
     // {n} riders per weekday.
-    legendRidersWkday: "{n} riders/weekday",
+    legendRidersWkday: "{n} riders per weekday",
     legendOrLess: "{pct} or less",
     legendPlus: "{pct}+",
-    legendPerWeek: "{n}+ / wk",
+    legendPerWeek: "{n}+ / week",
     legendImputedHigh: "100% estimated",
     legendNeverSustained: "hasn't recovered",
     legendBaselineTooSmall: "no pre-pandemic service",

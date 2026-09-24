@@ -191,7 +191,6 @@
 .acpra .mth-list {
   margin: 0 0 1.1em;
   padding-left: 1.3em;
-  color: var(--mth-muted);
 }
 
 .acpra .mth-list li {
@@ -366,6 +365,12 @@
   white-space: nowrap;
 }
 
+/* The count column's heading is a phrase; let it wrap rather than widen the
+   table past its frame. */
+.acpra .mth-table thead th.num {
+  white-space: normal;
+}
+
 .acpra .mth-table td:last-child,
 .acpra .mth-table th:last-child {
   padding-right: 0;
@@ -384,6 +389,20 @@
 
 .acpra .mth-hist .mth-fig-bar {
   stroke-width: 1;
+}
+
+.acpra .mth-hist .mth-hist-grid {
+  fill: var(--mth-faint);
+  opacity: 0.35;
+}
+
+.acpra .mth-hist .mth-hist-ytick {
+  text-anchor: end;
+}
+
+.acpra .mth-hist .mth-hist-xtitle,
+.acpra .mth-hist .mth-hist-ytitle {
+  text-anchor: middle;
 }
 
 .acpra .mth-hist figcaption {

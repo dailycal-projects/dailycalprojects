@@ -188,7 +188,9 @@ export default function Story() {
     <article className="story">
       <header className="story-hero">
         <h1>{t("story.title")}</h1>
-        <p className="story-byline">{t("story.byline")}</p>
+        <p className="story-byline">
+          <T id="story.byline" c={[<a href="https://www.dailycal.org/users/profile/john%20schultz/" target="_blank" rel="noreferrer" />]} />
+        </p>
         <p className="story-lede">{t("story.lede")}</p>
         {error ? (
           <p className="story-error">{t("story.error", { message: error.message })}</p>

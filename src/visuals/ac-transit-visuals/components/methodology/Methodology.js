@@ -70,6 +70,7 @@ const STEPS = [
           <T id="methodology.step.coverage" c={[
             <C c="coverage" />,
             <M>{String.raw`\textcolor{#83C167}{c_{route}} = N_{present}/N_{total}`}</M>,
+            <M>{String.raw`N_{present}`}</M>,
           ]} />
         </p>
       </>
@@ -133,23 +134,40 @@ const STEPS = [
 ];
 
 const CASES = [
-  ["methodology.case0", "6,874", "61.1%"],
-  ["methodology.case1", "1,765", "15.7%"],
-  ["methodology.case2", "2,241", "19.9%"],
-  ["methodology.case3", "325", "2.9%"],
+  ["methodology.case0", "6,929", "62.3%"],
+  ["methodology.case1", "1,754", "15.8%"],
+  ["methodology.case2", "1,904", "17.1%"],
+  ["methodology.case3", "527", "4.7%"],
 ];
 
+// A round step that puts three or four gridlines under the tallest bar.
+function niceStep(max) {
+  return [100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000].find((s) => max / s <= 4) || 10000;
+}
+
 function Histogram() {
-  const { edges, all, y2019 } = HISTOGRAM;
+  const { all, y2019 } = HISTOGRAM;
   const max = Math.max(...all);
+  const step = niceStep(max);
+  const top = Math.ceil(max / step) * step;
+  const yTicks = Array.from({ length: top / step + 1 }, (_, i) => i * step);
   const w = 560;
-  const h = 230;
-  const pad = { l: 16, r: 16, t: 20, b: 40 };
-  const bw = (w - pad.l - pad.r) / all.length;
-  const y = (v) => pad.t + (1 - v / max) * (h - pad.t - pad.b);
+  const h = 262;
+  const pad = { l: 64, r: 16, t: 24, b: 58 };
+  const plotW = w - pad.l - pad.r;
+  const bw = plotW / all.length;
+  const y = (v) => pad.t + (1 - v / top) * (h - pad.t - pad.b);
   return (
     <figure className="mth-hist">
       <svg viewBox={`0 0 ${w} ${h}`}>
+        {yTicks.map((tick) => (
+          <g key={tick}>
+            <rect className="mth-hist-grid" x={pad.l} y={y(tick)} width={plotW} height={1} />
+            <text className="mth-fig-tick mth-hist-ytick" x={pad.l - 8} y={y(tick) + 4}>
+              {tick.toLocaleString()}
+            </text>
+          </g>
+        ))}
         {all.map((value, i) => (
           <g key={i}>
             <rect className="mth-fig-bar" x={pad.l + i * bw + 1.5} width={bw - 3} y={y(value)}
@@ -160,17 +178,25 @@ function Histogram() {
               style={{ fill: "var(--mth-schedule)", stroke: "var(--mth-schedule)" }} />
           </g>
         ))}
-        <rect className="mth-fig-axis" x={pad.l} y={h - pad.b} width={w - pad.l - pad.r} height={1} />
-        {[0, 0.5, 1].map((tick) => (
-          <text key={tick} className="mth-fig-tick" x={pad.l + tick * (w - pad.l - pad.r)}
-            y={h - pad.b + 20}>
-            {t("methodology.histogramTick", { t: tick })}
-          </text>
+        <rect className="mth-fig-axis" x={pad.l} y={pad.t} width={1} height={h - pad.t - pad.b} />
+        <rect className="mth-fig-axis" x={pad.l} y={h - pad.b} width={plotW} height={1} />
+        {[0, 0.25, 0.5, 0.75, 1].map((tick) => (
+          <g key={tick}>
+            <rect className="mth-fig-axis" x={pad.l + tick * plotW} y={h - pad.b} width={1} height={5} />
+            <text className="mth-fig-tick" x={pad.l + tick * plotW} y={h - pad.b + 20}>
+              {t("methodology.histogramTick", { t: tick })}
+            </text>
+          </g>
         ))}
-        <text className="mth-fig-num" x={pad.l + 2} y={y(max) - 8} textAnchor="start">
-          {max.toLocaleString()}
+        <text className="mth-fig-label mth-hist-xtitle" x={pad.l + plotW / 2} y={h - 8}>
+          {t("methodology.histogramAxisX")}
+        </text>
+        <text className="mth-fig-label mth-hist-ytitle"
+          transform={`translate(14 ${pad.t + (h - pad.t - pad.b) / 2}) rotate(-90)`}>
+          {t("methodology.histogramAxisY")}
         </text>
       </svg>
+      <figcaption>{t("methodology.histogramCaption")}</figcaption>
     </figure>
   );
 }

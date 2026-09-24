@@ -2306,7 +2306,7 @@ export default function RidershipExplorer() {
                       className={`segbtn${servicePeriod === index ? " on" : ""}`}
                       onClick={() => setServicePeriod(index)}
                     >
-                      {period.label.replace("Weekday ", "")}
+                      {period.label.replace("Weekday ", "").toLowerCase()}
                     </button>
                   ))}
                 </div>
