@@ -1,0 +1,6 @@
+{
+  "cSpell.words": ["circlelogo", "dclogoblack", "frontmatter", "noreferrer"],
+  "[*.mdx]": {
+    "editor.formatOnSave": false
+  }
+}
