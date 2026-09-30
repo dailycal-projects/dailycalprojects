@@ -59,6 +59,14 @@ function createSexSpotIcon(year) {
   return null;
 }
 
+// Keep clicks/scrolls on overlay controls from panning or zooming the map
+const stopMapEvents = (el) => {
+  if (el) {
+    L.DomEvent.disableClickPropagation(el);
+    L.DomEvent.disableScrollPropagation(el);
+  }
+};
+
 const SexyMap = () => {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
@@ -73,7 +81,7 @@ const SexyMap = () => {
   const [live2026Data, setLive2026Data] = useState(null);
   const [pinSubmitted, setPinSubmitted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [tileLayerIndex, setTileLayerIndex] = useState(0); // 0 = CartoDB, 1 = Esri, 2 = OSM
+  const [tileLayerIndex, setTileLayerIndex] = useState(0); // 0 = Esri Light Gray, 1 = Esri satellite
 
   // Check if mobile on mount and resize
   useEffect(() => {
@@ -85,9 +93,13 @@ const SexyMap = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Width/radius/shadow override the global .leaflet-container rule in baypasscalculator.css
   const containerStyle = {
     height: '600px',
+    width: '100%',
     margin: '0px',
+    borderRadius: '0px',
+    boxShadow: 'none',
     borderTop: '2px solid gray',
     borderBottom: '2px solid gray',
     // borderRadius: '0 0 15px 15px',
@@ -233,50 +245,6 @@ const SexyMap = () => {
             </div>
           </div>
           <div style={{ position: 'relative' }}>
-            {/* Tile layer toggle switch */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '10px',
-                right: '10px',
-                zIndex: 1000,
-                backgroundColor: 'rgba(0,0,0,0.2)',
-                borderRadius: '5px',
-                padding: '2px',
-                boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-                display: 'flex',
-                gap: '5px',
-                alignItems: 'center',
-              }}
-            >
-              <button
-                type="button"
-                onClick={() => setTileLayerIndex((prev) => (prev + 1) % 2)}
-                style={{
-                  padding: '0',
-                  border: 'none',
-                  borderRadius: '3px',
-                  backgroundColor: 'transparent',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: 'fit-content',
-                }}
-              >
-                <img
-                  src={tileLayerIndex !== 0 ? mapViewIcon : satelliteViewIcon}
-                  alt={tileLayerIndex !== 0 ? 'Map view' : 'Satellite view'}
-                  style={{
-                    width: 'auto',
-                    height: '60px',
-                    display: 'block',
-                    margin: '0px',
-                    borderRadius: '5px',
-                  }}
-                />
-              </button>
-            </div>
             <MapContainer
               center={[37.8716, -122.2585]}
               zoom={15.3}
@@ -286,8 +254,65 @@ const SexyMap = () => {
               // maxZoom={10}
               whenCreated={(map) => { mapRef.current = map; }}
             >
+              {/* Tile layer toggle switch */}
+              <div
+                ref={stopMapEvents}
+                style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  zIndex: 1000,
+                  backgroundColor: 'rgba(0,0,0,0.2)',
+                  borderRadius: '5px',
+                  padding: '2px',
+                  boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+                  display: 'flex',
+                  gap: '5px',
+                  alignItems: 'center',
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setTileLayerIndex((prev) => (prev + 1) % 2)}
+                  style={{
+                    padding: '0',
+                    border: 'none',
+                    borderRadius: '3px',
+                    backgroundColor: 'transparent',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: 'fit-content',
+                  }}
+                >
+                  <img
+                    src={tileLayerIndex !== 0 ? mapViewIcon : satelliteViewIcon}
+                    alt={tileLayerIndex !== 0 ? 'Map view' : 'Satellite view'}
+                    style={{
+                      width: 'auto',
+                      height: '60px',
+                      display: 'block',
+                      margin: '0px',
+                      borderRadius: '5px',
+                    }}
+                  />
+                </button>
+              </div>
               {tileLayerIndex === 0 && (
-                <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
+                <>
+                  <TileLayer
+                    url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+                    attribution="Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors, and the GIS User Community"
+                    maxNativeZoom={16}
+                    maxZoom={19}
+                  />
+                  <TileLayer
+                    url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}"
+                    maxNativeZoom={16}
+                    maxZoom={19}
+                  />
+                </>
               )}
               {tileLayerIndex === 1 && (
                 <TileLayer

@@ -7,7 +7,8 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { third_places } from './map_data';
 import mapViewIcon from '../../images/thirdplace-icon.png';
-import placeIconPng from '../../images/thirdplace-icon.png';
+import placeIconPng from '../../images/thirdplace_1.png';
+import publicPlaceIconPng from '../../images/thirdplace_2.png';
 import newPinIconPng from '../../images/thirdplace-icon-2.png';
 import satelliteViewIcon from '../../images/2-sexy-map-sattelite.png';
 
@@ -15,11 +16,38 @@ import satelliteViewIcon from '../../images/2-sexy-map-sattelite.png';
 // STATIC: Read from map_data like normal
 const dataSource = 'LIVE';
 
-function createPlaceIcon() {
+// Pin categories; each sheet below feeds one category
+const categories = {
+  staff: { label: 'Daily Cal staffers', icon: placeIconPng },
+  public: { label: 'Public submissions', icon: publicPlaceIconPng },
+};
+
+const staffSheetUrl = 'https://docs.google.com/spreadsheets/d/1trDSVXjEHSBtRdJkn-N1RnyDQH1dIc2ExpRhL24QZQw/export?format=tsv&gid=1709202706';
+const publicSheetUrl = 'https://docs.google.com/spreadsheets/d/1Cl05phZePtBgfkfrY3pYYiwwVI01WM66D9ETPAZ17ME/export?format=tsv';
+
+// Sheet columns: place name, description, lat, long. Header and blank rows drop out on the lat/long check.
+const fetchSheetPlaces = (url, category) => fetch(url)
+  .then((response) => {
+    if (!response.ok) throw new Error(`Sheet request failed: ${response.status}`);
+    return response.text();
+  })
+  .then((tsvText) => tsvText.trim().split('\n').map((line) => {
+    const parts = line.split('\t');
+    if (parts.length < 4) return null;
+    return {
+      places: parts[0].trim(),
+      reason: parts[1].trim(),
+      lat: parseFloat(parts[2].trim()),
+      long: parseFloat(parts[3].trim()),
+      category,
+    };
+  }).filter((item) => item !== null && !Number.isNaN(item.lat) && !Number.isNaN(item.long)));
+
+function createPlaceIcon(category = 'staff') {
   if (typeof window === 'undefined') return null;
   return L.divIcon({
     className: 'place-icon',
-    html: `<img src="${placeIconPng}" style="width: 24px; height: 24px; transition: transform 0.2s ease-in-out; transform-origin: center center; filter: drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white) drop-shadow(0 1px 0 white) drop-shadow(0 -1px 0 white); onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'" />`,
+    html: `<img src="${categories[category].icon}" style="width: 24px; height: 24px; transition: transform 0.2s ease-in-out; transform-origin: center center; filter: drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white) drop-shadow(0 1px 0 white) drop-shadow(0 -1px 0 white); onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'" />`,
     iconSize: [24, 24],
     iconAnchor: [12, 12],
   });
@@ -35,6 +63,38 @@ function createNewPinIcon() {
   });
 }
 
+// Nudge pins that sit on (nearly) the same spot onto a small circle so each is clickable
+const OVERLAP_DEG = 0.0001; // ~10 m
+const SPREAD_DEG = 0.0002; // ~20 m
+const spreadOverlappingPins = (places) => {
+  const clusters = [];
+  places.forEach((place, i) => {
+    const cluster = clusters.find((c) => (
+      Math.abs(c.lat - place.lat) < OVERLAP_DEG && Math.abs(c.long - place.long) < OVERLAP_DEG
+    ));
+    if (cluster) cluster.members.push(i);
+    else clusters.push({ lat: place.lat, long: place.long, members: [i] });
+  });
+  const spread = places.map((place) => ({ ...place }));
+  clusters.filter((c) => c.members.length > 1).forEach((c) => {
+    const lngScale = Math.cos((c.lat * Math.PI) / 180);
+    c.members.forEach((idx, k) => {
+      const angle = (2 * Math.PI * k) / c.members.length;
+      spread[idx].lat = c.lat + SPREAD_DEG * Math.sin(angle);
+      spread[idx].long = c.long + (SPREAD_DEG * Math.cos(angle)) / lngScale;
+    });
+  });
+  return spread;
+};
+
+// Keep clicks/scrolls on overlay controls from panning or zooming the map
+const stopMapEvents = (el) => {
+  if (el) {
+    L.DomEvent.disableClickPropagation(el);
+    L.DomEvent.disableScrollPropagation(el);
+  }
+};
+
 const ThirdPlaceMap = () => {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
@@ -46,9 +106,10 @@ const ThirdPlaceMap = () => {
   const [pinMessage, setPinMessage] = useState('');
   const [tutorialMessageDismissed, setTutorialMessageDismissed] = useState(false);
   const [livePlacesData, setLivePlacesData] = useState(null);
+  const [publicPlacesData, setPublicPlacesData] = useState([]);
   const [pinSubmitted, setPinSubmitted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [tileLayerIndex, setTileLayerIndex] = useState(0); // 0 = CartoDB, 1 = Esri
+  const [tileLayerIndex, setTileLayerIndex] = useState(0); // 0 = Esri Light Gray, 1 = Esri satellite
 
   // Check if mobile on mount and resize
   useEffect(() => {
@@ -60,9 +121,13 @@ const ThirdPlaceMap = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Width/radius/shadow override the global .leaflet-container rule in baypasscalculator.css
   const containerStyle = {
     height: '600px',
+    width: '100%',
     margin: '0px',
+    borderRadius: '0px',
+    boxShadow: 'none',
     borderTop: '2px solid gray',
     borderBottom: '2px solid gray',
   };
@@ -89,50 +154,20 @@ const ThirdPlaceMap = () => {
     }
   }, [isAddingPin]);
 
-  // Open hidden tutorial pin popup when warning is dismissed
-  useEffect(() => {
-    if (hiddenTutorialPinRef.current && !tutorialMessageDismissed) {
-      setTimeout(() => {
-        if (hiddenTutorialPinRef.current) {
-          hiddenTutorialPinRef.current.openPopup();
-        }
-      }, 300);
-    }
-  }, [tutorialMessageDismissed]);
-
   // Fetch live data from Google Sheets if in LIVE mode
   useEffect(() => {
     if (dataSource === 'LIVE' && typeof window !== 'undefined') {
-      const sheetsUrl = 'https://docs.google.com/spreadsheets/d/1trDSVXjEHSBtRdJkn-N1RnyDQH1dIc2ExpRhL24QZQw/export?format=tsv&gid=1709202706';
-
-      fetch(sheetsUrl)
-        .then((response) => response.text())
-        .then((tsvText) => {
-          const lines = tsvText.trim().split('\n');
-          // test
-          console.log('fetched:', lines.length);
-          lines.forEach((line, i) => {
-            console.log(i, JSON.stringify(line.split('\t')));
-          });
-
-          const parsedData = lines.map((line) => {
-            const parts = line.split('\t');
-            if (parts.length >= 4) {
-              return {
-                places: parts[0].trim(),
-                reason: parts[1].trim(),
-                lat: parseFloat(parts[2].trim()),
-                long: parseFloat(parts[3].trim()),
-              };
-            }
-            return null;
-          }).filter((item) => item !== null && !isNaN(item.lat) && !isNaN(item.long));
-
-          setLivePlacesData(parsedData);
-        })
+      fetchSheetPlaces(staffSheetUrl, 'staff')
+        .then(setLivePlacesData)
         .catch((error) => {
-          console.error('Error fetching live data:', error);
+          console.error('Error fetching staff sheet:', error);
           setLivePlacesData(null);
+        });
+      fetchSheetPlaces(publicSheetUrl, 'public')
+        .then(setPublicPlacesData)
+        .catch((error) => {
+          console.error('Error fetching public submissions sheet:', error);
+          setPublicPlacesData([]);
         });
     }
   }, []);
@@ -146,6 +181,7 @@ const ThirdPlaceMap = () => {
       );
     } catch (error) {
       // This fetch should fail, but the response will still be recorded
+      console.error(error);
     }
     setPinSubmitted(true);
     setIsAddingPin(false);
@@ -159,7 +195,10 @@ const ThirdPlaceMap = () => {
     }, 100);
   };
 
-  const placesToRender = (dataSource === 'LIVE' && livePlacesData) ? livePlacesData : third_places;
+  const placesToRender = spreadOverlappingPins([
+    ...((dataSource === 'LIVE' && livePlacesData) ? livePlacesData : third_places),
+    ...publicPlacesData,
+  ]);
 
   return (
     <div>
@@ -183,67 +222,32 @@ const ThirdPlaceMap = () => {
               <i> Click a pin to read more</i>
             </h4>
             <div style={{
-              display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center',
+              display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '20px',
             }}
             >
-              <img
-                src={placeIconPng}
-                alt="Third Place"
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.3))',
-                  margin: '0px',
-                }}
-              />
-              <h4 style={{ margin: '0px' }}>Third Place</h4>
+              {Object.entries(categories).map(([key, { label, icon }]) => (
+                <div
+                  key={key}
+                  style={{
+                    display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center',
+                  }}
+                >
+                  <img
+                    src={icon}
+                    alt={label}
+                    style={{
+                      width: '32px',
+                      height: '32px',
+                      filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.3))',
+                      margin: '0px',
+                    }}
+                  />
+                  <h4 style={{ margin: '0px' }}>{label}</h4>
+                </div>
+              ))}
             </div>
           </div>
           <div style={{ position: 'relative' }}>
-            {/* Tile layer toggle switch */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '10px',
-                right: '10px',
-                zIndex: 1000,
-                backgroundColor: 'rgba(0,0,0,0.2)',
-                borderRadius: '5px',
-                padding: '2px',
-                boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-                display: 'flex',
-                gap: '5px',
-                alignItems: 'center',
-              }}
-            >
-              <button
-                type="button"
-                onClick={() => setTileLayerIndex((prev) => (prev + 1) % 2)}
-                style={{
-                  padding: '0',
-                  border: 'none',
-                  borderRadius: '3px',
-                  backgroundColor: 'transparent',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: 'fit-content',
-                }}
-              >
-                <img
-                  src={tileLayerIndex !== 0 ? mapViewIcon : satelliteViewIcon}
-                  alt={tileLayerIndex !== 0 ? 'Map view' : 'Satellite view'}
-                  style={{
-                    width: 'auto',
-                    height: '60px',
-                    display: 'block',
-                    margin: '0px',
-                    borderRadius: '5px',
-                  }}
-                />
-              </button>
-            </div>
             <MapContainer
               center={[37.8716, -122.2585]}
               zoom={15.3}
@@ -252,8 +256,65 @@ const ThirdPlaceMap = () => {
               minZoom={14.5}
               whenCreated={(map) => { mapRef.current = map; }}
             >
+              {/* Tile layer toggle switch */}
+              <div
+                ref={stopMapEvents}
+                style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  zIndex: 1000,
+                  backgroundColor: 'rgba(0,0,0,0.2)',
+                  borderRadius: '5px',
+                  padding: '2px',
+                  boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+                  display: 'flex',
+                  gap: '5px',
+                  alignItems: 'center',
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setTileLayerIndex((prev) => (prev + 1) % 2)}
+                  style={{
+                    padding: '0',
+                    border: 'none',
+                    borderRadius: '3px',
+                    backgroundColor: 'transparent',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: 'fit-content',
+                  }}
+                >
+                  <img
+                    src={tileLayerIndex !== 0 ? mapViewIcon : satelliteViewIcon}
+                    alt={tileLayerIndex !== 0 ? 'Map view' : 'Satellite view'}
+                    style={{
+                      width: 'auto',
+                      height: '60px',
+                      display: 'block',
+                      margin: '0px',
+                      borderRadius: '5px',
+                    }}
+                  />
+                </button>
+              </div>
               {tileLayerIndex === 0 && (
-                <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png" />
+                <>
+                  <TileLayer
+                    url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+                    attribution="Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors, and the GIS User Community"
+                    maxNativeZoom={16}
+                    maxZoom={19}
+                  />
+                  <TileLayer
+                    url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}"
+                    maxNativeZoom={16}
+                    maxZoom={19}
+                  />
+                </>
               )}
               {tileLayerIndex === 1 && (
                 <TileLayer
@@ -268,7 +329,7 @@ const ThirdPlaceMap = () => {
                     key={`${spot.places}-${spot.lat}-${spot.long}-${index}`}
                     ref={isTutorialPin ? tutorialPinRef : null}
                     position={[spot.lat, spot.long]}
-                    icon={createPlaceIcon()}
+                    icon={createPlaceIcon(spot.category || 'staff')}
                     opacity={0.9}
                     zIndexOffset={0}
                     eventHandlers={{
@@ -296,8 +357,13 @@ const ThirdPlaceMap = () => {
                   position={[37.872647, -122.259652]}
                   icon={createPlaceIcon()}
                   zIndexOffset={3000}
+                  eventHandlers={{
+                    // Show the hint as soon as the pin lands on the map, and drop the pin once it's closed
+                    add: (e) => setTimeout(() => e.target.openPopup(), 0),
+                    popupclose: () => setTutorialMessageDismissed(true),
+                  }}
                 >
-                  <Popup>
+                  <Popup autoPan={false}>
                     <b>Click on a pin to read more</b>
                   </Popup>
                 </Marker>
@@ -431,7 +497,7 @@ const ThirdPlaceMap = () => {
                 letterSpacing: '1.1',
               }}
               >
-                What's your favorite third place in Berkeley?
+                What’s your favorite third place in Berkeley?
               </h3>
             </div>
             <div style={{
@@ -464,10 +530,9 @@ const ThirdPlaceMap = () => {
                 style={{
                   fontFamily: 'sans-serif',
                   fontWeight: 'lighter',
-                  border: 'none',
-                  backgroundColor: '#F5C266',
-                  border: '2px solid rgb(73, 47, 4)',
-                  color: ' rgb(73, 47, 4)',
+                  backgroundColor: 'rgba(200,250,200, 1)',
+                  border: '2px solid rgb(76, 110, 75)',
+                  color: 'rgb(76, 110, 75)',
                   fontSize: '1.5rem',
                   borderRadius: '10px',
                   cursor: 'pointer',
@@ -475,8 +540,8 @@ const ThirdPlaceMap = () => {
                   padding: '8px 16px',
                   position: 'absolute',
                   top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
+                  right: '0px',
+                  transform: 'translateY(-50%)',
                   opacity: isAddingPin ? 0 : 1,
                   visibility: isAddingPin ? 'hidden' : 'visible',
                   transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out',
