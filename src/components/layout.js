@@ -87,7 +87,7 @@ import HackVisuals from '../visuals/shiny-hunters-visuals/hack_visuals';
 import BayPassCalculator from '../visuals/clipper-visuals/baypasscalculator';
 import CandidateFinanceVisuals from '../visuals/candidate-visuals/finance_visuals';
 import AcTransitStory from '../visuals/ac-transit-visuals/AcTransitStory';
-
+import ThirdPlaceMap from '../visuals/thirdplace-visuals/map';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -187,6 +187,7 @@ const shortcodes = {
   BayPassCalculator,
   CandidateFinanceVisuals,
   AcTransitStory,
+  ThirdPlaceMap,
 };
 
 export default function Layout({ children }) {

@@ -2,62 +2,90 @@ import React, { useRef, useState, useEffect } from 'react';
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
-// import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+// import L from 'leaflet';
 import L from 'leaflet';
-import zIndex from '@material-ui/core/styles/zIndex';
-// import { sex_spot_icon_2018, sex_spot_icon_2026 } from './icon';
-import { sex_spots_2018, sex_spots_2026 } from './map_data';
-import sexy2018IconPng from '../../images/2-sexy-2018-icon.png';
-import sexy2026IconPng from '../../images/2-sexy-2026-icon.png';
-import sexy2026ShadowPng from '../../images/2-sexy-2026-shadow.png';
-import mapViewIcon from '../../images/2-sexy-map-map.png';
+import { third_places } from './map_data';
+import mapViewIcon from '../../images/thirdplace-icon.png';
+import placeIconPng from '../../images/thirdplace_1.png';
+import publicPlaceIconPng from '../../images/thirdplace_2.png';
+import newPinIconPng from '../../images/thirdplace-icon-2.png';
 import satelliteViewIcon from '../../images/2-sexy-map-sattelite.png';
 
 // LIVE: Runtime download the data from Sheet client-side
 // STATIC: Read from map_data like normal
-const source_2026 = 'LIVE';
+const dataSource = 'LIVE';
 
-function createSexSpotIcon(year) {
+// Pin categories; each sheet below feeds one category
+const categories = {
+  staff: { label: 'Daily Cal staffers', icon: placeIconPng },
+  public: { label: 'Public submissions', icon: publicPlaceIconPng },
+};
+
+const staffSheetUrl = 'https://docs.google.com/spreadsheets/d/1trDSVXjEHSBtRdJkn-N1RnyDQH1dIc2ExpRhL24QZQw/export?format=tsv&gid=1709202706';
+const publicSheetUrl = 'https://docs.google.com/spreadsheets/d/1Cl05phZePtBgfkfrY3pYYiwwVI01WM66D9ETPAZ17ME/export?format=tsv';
+
+// Sheet columns: place name, description, lat, long. Header and blank rows drop out on the lat/long check.
+const fetchSheetPlaces = (url, category) => fetch(url)
+  .then((response) => {
+    if (!response.ok) throw new Error(`Sheet request failed: ${response.status}`);
+    return response.text();
+  })
+  .then((tsvText) => tsvText.trim().split('\n').map((line) => {
+    const parts = line.split('\t');
+    if (parts.length < 4) return null;
+    return {
+      places: parts[0].trim(),
+      reason: parts[1].trim(),
+      lat: parseFloat(parts[2].trim()),
+      long: parseFloat(parts[3].trim()),
+      category,
+    };
+  }).filter((item) => item !== null && !Number.isNaN(item.lat) && !Number.isNaN(item.long)));
+
+function createPlaceIcon(category = 'staff') {
   if (typeof window === 'undefined') return null;
-
-  if (year === 2018) {
-    return L.divIcon({
-      className: 'sex-spot-icon-2018',
-      html: `<img src="${sexy2018IconPng}" style="width: 16px; height: 16px; transition: transform 0.2s ease-in-out; transform-origin: center center;" onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'" />`,
-      iconSize: [16, 16],
-      iconAnchor: [8, 8],
-    });
-  }
-  if (year === 2026) {
-    return L.divIcon({
-      className: 'sex-spot-icon-2026',
-      html: `<div style="position: relative; width: 25px; height: 25px; transition: transform 0.2s ease-in-out; transform-origin: center center;" onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'"><img src="${sexy2026ShadowPng}" style="position: absolute; width: 25px; height: 25px; left: 0; top: 0;" /><img src="${sexy2026IconPng}" style="position: absolute; width: 25px; height: 25px; left: 0; top: 0;" /></div>`,
-      iconSize: [25, 25],
-      iconAnchor: [12.5, 12.5],
-    });
-  }
-
-  if (year === 0) {
-    return L.divIcon({
-      className: 'sex-spot-icon-default',
-      html: '<div style="position: relative; width: 25px; height: 41px; transition: transform 0.2s ease-in-out; transform-origin: center bottom;"><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" style="position: absolute; width: 41px; height: 41px; left: -8px; top: 0;" /><img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png" style="position: absolute; width: 25px; height: 41px; left: 0; top: 0;" /></div>',
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34],
-    });
-  }
-  if (year === -1) {
-    // Transparent invisible icon for hidden tutorial pin
-    return L.divIcon({
-      className: 'hidden-tutorial-pin',
-      html: '',
-      iconSize: [0, 0],
-      iconAnchor: [0, 0],
-    });
-  }
-  return null;
+  return L.divIcon({
+    className: 'place-icon',
+    html: `<img src="${categories[category].icon}" style="width: 24px; height: 24px; transition: transform 0.2s ease-in-out; transform-origin: center center; filter: drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white) drop-shadow(0 1px 0 white) drop-shadow(0 -1px 0 white); onmouseover="this.style.transform='scale(1.3)'" onmouseout="this.style.transform='scale(1)'" />`,
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+  });
 }
+
+function createNewPinIcon() {
+  if (typeof window === 'undefined') return null;
+  return L.divIcon({
+    className: 'new-pin-icon',
+    html: `<img src="${newPinIconPng}" style="width: 24px; height: 24px;" />`,
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+  });
+}
+
+// Nudge pins that sit on (nearly) the same spot onto a small circle so each is clickable
+const OVERLAP_DEG = 0.0001; // ~10 m
+const SPREAD_DEG = 0.0002; // ~20 m
+const spreadOverlappingPins = (places) => {
+  const clusters = [];
+  places.forEach((place, i) => {
+    const cluster = clusters.find((c) => (
+      Math.abs(c.lat - place.lat) < OVERLAP_DEG && Math.abs(c.long - place.long) < OVERLAP_DEG
+    ));
+    if (cluster) cluster.members.push(i);
+    else clusters.push({ lat: place.lat, long: place.long, members: [i] });
+  });
+  const spread = places.map((place) => ({ ...place }));
+  clusters.filter((c) => c.members.length > 1).forEach((c) => {
+    const lngScale = Math.cos((c.lat * Math.PI) / 180);
+    c.members.forEach((idx, k) => {
+      const angle = (2 * Math.PI * k) / c.members.length;
+      spread[idx].lat = c.lat + SPREAD_DEG * Math.sin(angle);
+      spread[idx].long = c.long + (SPREAD_DEG * Math.cos(angle)) / lngScale;
+    });
+  });
+  return spread;
+};
 
 // Keep clicks/scrolls on overlay controls from panning or zooming the map
 const stopMapEvents = (el) => {
@@ -67,18 +95,18 @@ const stopMapEvents = (el) => {
   }
 };
 
-const SexyMap = () => {
+const ThirdPlaceMap = () => {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const tutorialPinRef = useRef(null);
   const hiddenTutorialPinRef = useRef(null);
   const [isAddingPin, setIsAddingPin] = useState(false);
   const [draggablePosition, setDraggablePosition] = useState([37.8716, -122.2585]);
+  const [pinTitle, setPinTitle] = useState('');
   const [pinMessage, setPinMessage] = useState('');
-  const [pinContact, setPinContact] = useState('');
-  const [warningDismissed, setWarningDismissed] = useState(false);
   const [tutorialMessageDismissed, setTutorialMessageDismissed] = useState(false);
-  const [live2026Data, setLive2026Data] = useState(null);
+  const [livePlacesData, setLivePlacesData] = useState(null);
+  const [publicPlacesData, setPublicPlacesData] = useState([]);
   const [pinSubmitted, setPinSubmitted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [tileLayerIndex, setTileLayerIndex] = useState(0); // 0 = Esri Light Gray, 1 = Esri satellite
@@ -102,8 +130,6 @@ const SexyMap = () => {
     boxShadow: 'none',
     borderTop: '2px solid gray',
     borderBottom: '2px solid gray',
-    // borderRadius: '0 0 15px 15px',
-    // boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.25)',
   };
 
   const handleAddPinClick = () => {
@@ -120,7 +146,6 @@ const SexyMap = () => {
   // Auto-open popup when pin is added
   useEffect(() => {
     if (isAddingPin && markerRef.current) {
-      // Small delay to ensure marker is fully rendered
       setTimeout(() => {
         if (markerRef.current) {
           markerRef.current.openPopup();
@@ -129,74 +154,51 @@ const SexyMap = () => {
     }
   }, [isAddingPin]);
 
-  // Open hidden tutorial pin popup when warning is dismissed
+  // Fetch live data from Google Sheets if in LIVE mode
   useEffect(() => {
-    if (warningDismissed && hiddenTutorialPinRef.current && !tutorialMessageDismissed) {
-      // Small delay to ensure marker is fully rendered
-      setTimeout(() => {
-        if (hiddenTutorialPinRef.current) {
-          hiddenTutorialPinRef.current.openPopup();
-        }
-      }, 300);
-    }
-  }, [warningDismissed, tutorialMessageDismissed]);
-
-  // Fetch live 2026 data from Google Sheets if in LIVE mode
-  useEffect(() => {
-    if (source_2026 === 'LIVE' && typeof window !== 'undefined') {
-      const sheetsUrl = 'https://docs.google.com/spreadsheets/u/8/d/1Qk_6vu_YB0hxATJR27pkZBLidKyA1QS54Lmng6lUHaM/export?format=tsv&id=1Qk_6vu_YB0hxATJR27pkZBLidKyA1QS54Lmng6lUHaM&gid=0';
-
-      fetch(sheetsUrl)
-        .then((response) => response.text())
-        .then((tsvText) => {
-          // Parse TSV data
-          const lines = tsvText.trim().split('\n');
-          const parsedData = lines.map((line) => {
-            // Split by tab character
-            const parts = line.split('\t');
-            if (parts.length >= 3) {
-              return {
-                message: parts[0].trim(),
-                lat: parseFloat(parts[1].trim()),
-                long: parseFloat(parts[2].trim()),
-              };
-            }
-            return null;
-          }).filter((item) => item !== null && !isNaN(item.lat) && !isNaN(item.long));
-
-          setLive2026Data(parsedData);
-        })
+    if (dataSource === 'LIVE' && typeof window !== 'undefined') {
+      fetchSheetPlaces(staffSheetUrl, 'staff')
+        .then(setLivePlacesData)
         .catch((error) => {
-          console.error('Error fetching live 2026 data:', error);
-          // Fallback to static data on error
-          setLive2026Data(null);
+          console.error('Error fetching staff sheet:', error);
+          setLivePlacesData(null);
+        });
+      fetchSheetPlaces(publicSheetUrl, 'public')
+        .then(setPublicPlacesData)
+        .catch((error) => {
+          console.error('Error fetching public submissions sheet:', error);
+          setPublicPlacesData([]);
         });
     }
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    // console.log('Submitting pin:', { position: draggablePosition, message: pinMessage });
-
     try {
-      window.fetch(`https://docs.google.com/forms/d/e/1FAIpQLSfxEQSGr4_mPqU4nMrgUEMQNu_nPUUJkBU62RtYDOaNYzxpCw/formResponse?&submit=Submit?usp=pp_url&entry.949812204=${pinMessage}&entry.262371575=${draggablePosition[0]}&entry.1560180432=${draggablePosition[1]}&entry.1483653783=${pinContact}`);
+      // window.fetch(`https://docs.google.com/forms/d/e/1FAIpQLSfxEQSGr4_mPqU4nMrgUEMQNu_nPUUJkBU62RtYDOaNYzxpCw/formResponse?&submit=Submit?usp=pp_url&entry.949812204=${pinMessage}&entry.262371575=${draggablePosition[0]}&entry.1560180432=${draggablePosition[1]}&entry.1483653783=${pinContact}`);
+      window.fetch(
+        `https://docs.google.com/forms/d/e/1FAIpQLSfgRPPU7Tdu_kR7emDYIvqxdEi-XdW8WIeFg2zXhlT2Zc4e0Q/formResponse?submit=Submit&usp=pp_url&entry.820777333=${encodeURIComponent(pinTitle)}&entry.2084412628=${encodeURIComponent(pinMessage)}&entry.2131805841=${encodeURIComponent(draggablePosition[0])}&entry.998039144=${encodeURIComponent(draggablePosition[1])}`,
+      );
     } catch (error) {
       // This fetch should fail, but the response will still be recorded
+      console.error(error);
     }
-    // Mark pin as submitted and show thank you message
     setPinSubmitted(true);
-    // Hide form but keep pin visible
     setIsAddingPin(false);
+    setPinTitle('');
     setPinMessage('');
-    setPinContact('');
-    // Open popup with thank you message
+
     setTimeout(() => {
       if (markerRef.current) {
         markerRef.current.openPopup();
       }
     }, 100);
   };
+
+  const placesToRender = spreadOverlappingPins([
+    ...((dataSource === 'LIVE' && livePlacesData) ? livePlacesData : third_places),
+    ...publicPlacesData,
+  ]);
 
   return (
     <div>
@@ -205,10 +207,10 @@ const SexyMap = () => {
           border: '2px solid gray',
           boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.15)',
           borderRadius: '10px',
+          overflow: 'hidden',
         }}
         >
           <div style={{
-            // border: '20pxpx solid #000000',
             borderRadius: '15px 15px 0px 0px',
             padding: '10px',
             backgroundColor: '##d1d1d1',
@@ -217,17 +219,22 @@ const SexyMap = () => {
           >
             <h4 style={{ fontSize: '0.8rem', fontWeight: 'bold', marginBottom: '10px' }}>
               Legend —
-              <i> Click an encounter to read more</i>
+              <i> Click a pin to read more</i>
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
-              {[2018, 2026].map((year) => (
+            <div style={{
+              display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '20px',
+            }}
+            >
+              {Object.entries(categories).map(([key, { label, icon }]) => (
                 <div
-                  key={year}
-                  style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+                  key={key}
+                  style={{
+                    display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center',
+                  }}
                 >
                   <img
-                    src={year === 2018 ? sexy2018IconPng : sexy2026IconPng}
-                    alt={`${year} Encounter`}
+                    src={icon}
+                    alt={label}
                     style={{
                       width: '32px',
                       height: '32px',
@@ -235,11 +242,7 @@ const SexyMap = () => {
                       margin: '0px',
                     }}
                   />
-                  <h4 style={{ margin: '0px' }}>
-                    {year}
-                    {' '}
-                    Encounter
-                  </h4>
+                  <h4 style={{ margin: '0px' }}>{label}</h4>
                 </div>
               ))}
             </div>
@@ -251,7 +254,6 @@ const SexyMap = () => {
               style={containerStyle}
               zoomSnap={0.5}
               minZoom={14.5}
-              // maxZoom={10}
               whenCreated={(map) => { mapRef.current = map; }}
             >
               {/* Tile layer toggle switch */}
@@ -320,20 +322,19 @@ const SexyMap = () => {
                   attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
                 />
               )}
-              {sex_spots_2018.map((spot, index) => {
-                const isTutorialPin = index === '67';
+              {placesToRender.map((spot, index) => {
+                const isTutorialPin = index === 67;
                 return (
                   <Marker
-                    key={spot.message}
+                    key={`${spot.places}-${spot.lat}-${spot.long}-${index}`}
                     ref={isTutorialPin ? tutorialPinRef : null}
                     position={[spot.lat, spot.long]}
-                    icon={createSexSpotIcon(2018)}
-                    opacity={0.8}
+                    icon={createPlaceIcon(spot.category || 'staff')}
+                    opacity={0.9}
                     zIndexOffset={0}
                     eventHandlers={{
                       click: () => {
                         if (isTutorialPin && !tutorialMessageDismissed) {
-                          // Close the hidden pin's popup
                           if (hiddenTutorialPinRef.current) {
                             hiddenTutorialPinRef.current.closePopup();
                           }
@@ -343,42 +344,35 @@ const SexyMap = () => {
                     }}
                   >
                     <Popup>
-                      <p>{spot.message}</p>
+                      <b>{spot.places}</b>
+                      <p>{spot.reason}</p>
                     </Popup>
                   </Marker>
                 );
               })}
-              {/* Hidden invisible pin for tutorial message at same location as tutorial pin */}
-              {warningDismissed && !tutorialMessageDismissed && (
+              {/* Hidden helper pin for tutorial message at a fixed location */}
+              {!tutorialMessageDismissed && (
                 <Marker
                   ref={hiddenTutorialPinRef}
                   position={[37.872647, -122.259652]}
-                  icon={createSexSpotIcon(-1)}
+                  icon={createPlaceIcon()}
                   zIndexOffset={3000}
+                  eventHandlers={{
+                    // Show the hint as soon as the pin lands on the map, and drop the pin once it's closed
+                    add: (e) => setTimeout(() => e.target.openPopup(), 0),
+                    popupclose: () => setTutorialMessageDismissed(true),
+                  }}
                 >
-                  <Popup>
+                  <Popup autoPan={false}>
                     <b>Click on a pin to read more</b>
                   </Popup>
                 </Marker>
               )}
-              {(source_2026 === 'LIVE' && live2026Data ? live2026Data : sex_spots_2026).map((spot, index) => (
-                <Marker
-                  key={`2026-${index}-${spot.lat}-${spot.long}`}
-                  position={[spot.lat, spot.long]}
-                  icon={createSexSpotIcon(2026)}
-                  opacity={1}
-                  zIndexOffset={1000}
-                >
-                  <Popup>
-                    <p>{spot.message}</p>
-                  </Popup>
-                </Marker>
-              ))}
               {(isAddingPin || pinSubmitted) && (
                 <Marker
                   ref={markerRef}
                   position={draggablePosition}
-                  icon={pinSubmitted ? createSexSpotIcon(2026) : createSexSpotIcon(0)}
+                  icon={createNewPinIcon()}
                   draggable={!pinSubmitted}
                   eventHandlers={{
                     dragend: (e) => {
@@ -400,52 +394,7 @@ const SexyMap = () => {
                 </Marker>
               )}
             </MapContainer>
-            <div
-              onClick={() => setWarningDismissed(true)}
-              style={{
-                position: 'absolute',
-                top: '0px',
-                left: '0px',
-                right: '0px',
-                bottom: '0px',
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 2000,
-                cursor: 'pointer',
-                opacity: warningDismissed ? 0 : 1,
-                transition: 'opacity 0.5s ease-in-out',
-                pointerEvents: warningDismissed ? 'none' : 'auto',
-              }}
-            >
-              <div
-                style={{
-                  fontSize: '1.5rem',
-                  fontFamily: 'sans-serif',
-                  // fontWeight: 'bold',
-                  color: 'rgb(10, 10, 10)',
-                  textAlign: 'center',
-                  padding: '20px',
-                  width: '75%',
-                }}
-              >
-                <span style={{
-                  // backgroundColor: 'white',
-                  lineHeight: '1',
-                  padding: '2px 8px',
-                  boxDecorationBreak: 'clone',
-                  WebkitBoxDecorationBreak: 'clone',
-                  display: 'inline',
-                  whiteSpace: 'pre-line',
-                }}
-                >
-                  <b>Warning: </b>
-                  This project contains descriptions of sex. Viewer discretion is advised.
-                  <b> Click to reveal the map</b>
-                </span>
-              </div>
-            </div>
+
             <div
               style={{
                 position: 'absolute',
@@ -480,12 +429,11 @@ const SexyMap = () => {
                   gap: '5px',
                 }}
                 >
-
                   <input
                     type="text"
-                    value={pinMessage}
-                    onChange={(e) => setPinMessage(e.target.value)}
-                    placeholder="Describe your encounter..."
+                    value={pinTitle}
+                    onChange={(e) => setPinTitle(e.target.value)}
+                    placeholder="Name this place..."
                     style={{
                       fontFamily: 'sans-serif',
                       fontSize: '1rem',
@@ -495,21 +443,20 @@ const SexyMap = () => {
                       flex: 1,
                     }}
                   />
-
-                  {/* <input
+                  <input
                     type="text"
-                    value={pinContact}
-                    onChange={(e) => setPinContact(e.target.value)}
-                    placeholder="Optionally, add your contact info so the Daily Cal can privately follow up"
+                    value={pinMessage}
+                    onChange={(e) => setPinMessage(e.target.value)}
+                    placeholder="Describe this place..."
                     style={{
                       fontFamily: 'sans-serif',
-                      fontSize: isMobile ? '0.5rem' : '0.7rem',
+                      fontSize: '1rem',
                       padding: '10px 12px',
                       borderRadius: '10px',
                       border: '1px solid #ccc',
                       flex: 1,
                     }}
-                  /> */}
+                  />
                 </div>
                 <button
                   type="submit"
@@ -539,7 +486,6 @@ const SexyMap = () => {
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            // gap: isAddingPin ? '10px' : '0px',
             transition: 'all 0.3s ease-in-out',
           }}
           >
@@ -551,7 +497,7 @@ const SexyMap = () => {
                 letterSpacing: '1.1',
               }}
               >
-                Tell us about a sexual encounter you've had on Berkeley's campus.
+                What’s your favorite third place in Berkeley?
               </h3>
             </div>
             <div style={{
@@ -575,7 +521,7 @@ const SexyMap = () => {
                   textAlign: 'right',
                 }}
               >
-                Drag the pin on the map to mark the location, then describe your encounter above. Responses may be edited for clarity and length.
+                Drag the pin on the map to mark the location, then describe the place above. Responses may be edited for clarity and length.
               </p>
               <input
                 type="button"
@@ -584,8 +530,6 @@ const SexyMap = () => {
                 style={{
                   fontFamily: 'sans-serif',
                   fontWeight: 'lighter',
-                  // fontSize:
-                  border: 'none',
                   backgroundColor: 'rgba(200,250,200, 1)',
                   border: '2px solid rgb(76, 110, 75)',
                   color: 'rgb(76, 110, 75)',
@@ -593,14 +537,11 @@ const SexyMap = () => {
                   borderRadius: '10px',
                   cursor: 'pointer',
                   whiteSpace: 'normal',
-                  // boxShadow: '0px 3px 6px rgba(0,0,0,0.1)',
-
-                  // scale: '1.3',
                   padding: '8px 16px',
                   position: 'absolute',
                   top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
+                  right: '0px',
+                  transform: 'translateY(-50%)',
                   opacity: isAddingPin ? 0 : 1,
                   visibility: isAddingPin ? 'hidden' : 'visible',
                   transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out',
@@ -615,4 +556,4 @@ const SexyMap = () => {
   );
 };
 
-export default SexyMap;
+export default ThirdPlaceMap;
