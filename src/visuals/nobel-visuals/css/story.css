@@ -1,0 +1,66 @@
+.nobel-visuals {
+  --paper: #f8f8f8;
+  --ink: #222;
+  --muted: #707070;
+  --rule: #ddd;
+  --graphic-font: "Times New Roman", Times, serif;
+  --reading-font: Georgia, serif;
+}
+.nobel-visuals .lab-mention,
+.nobel-visuals .manhattan-mention {
+  position: relative;
+  padding: 0.05em 0.35em;
+  border-radius: 0.4em;
+  background: #176994;
+  color: #fff;
+  cursor: default;
+  pointer-events: auto;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.nobel-visuals .manhattan-mention {
+  background: #97543b;
+}
+.nobel-visuals .lab-mention:focus,
+.nobel-visuals .manhattan-mention:focus {
+  outline: none;
+}
+.nobel-visuals .lab-mention:focus-visible,
+.nobel-visuals .manhattan-mention:focus-visible {
+  outline: 2px solid #176994;
+  outline-offset: 2px;
+}
+.nobel-visuals .manhattan-mention:focus-visible {
+  outline-color: #97543b;
+}
+.nobel-visuals .lab-mention::after,
+.nobel-visuals .manhattan-mention::after {
+  content: attr(data-info);
+  position: absolute;
+  z-index: 30;
+  left: 50%;
+  top: calc(100% + 8px);
+  width: max-content;
+  max-width: min(260px, 80vw);
+  padding: 9px 12px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 6px 24px #00000024;
+  color: #222;
+  font: 400 13px/1.45 var(--graphic-font);
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  pointer-events: none;
+}
+.nobel-visuals .lab-mention:hover::after,
+.nobel-visuals .lab-mention:focus-visible::after,
+.nobel-visuals .manhattan-mention:hover::after,
+.nobel-visuals .manhattan-mention:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}

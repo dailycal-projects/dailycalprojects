@@ -1,0 +1,240 @@
+.nobel-visuals .map-story {
+  position: absolute;
+  z-index: 3;
+  top: 7svh;
+  left: 50%;
+  width: calc(100vw - 32px);
+  height: 86svh;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+.nobel-visuals .map-story__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.nobel-visuals .map-story__local-land {
+  fill: #d5dede;
+  stroke: #95a7ab;
+  stroke-width: 0.65;
+  vector-effect: non-scaling-stroke;
+}
+.nobel-visuals .map-story__campus-label {
+  pointer-events: none;
+}
+.nobel-visuals .map-story__institutions {
+  pointer-events: auto;
+}
+.nobel-visuals .map-story__institutions > g {
+  cursor: default;
+}
+.nobel-visuals .map-story__institution-hit {
+  stroke: transparent;
+  stroke-width: 12;
+  pointer-events: stroke;
+}
+.nobel-visuals
+  .map-story__institutions
+  .is-hovered
+  .map-story__institution-label {
+  fill: #082d40;
+  font-weight: 700;
+}
+.nobel-visuals
+  .map-story__institutions
+  .is-hovered
+  .map-story__institution-line {
+  stroke: #163f51;
+  stroke-width: 2;
+  opacity: 1;
+}
+.nobel-visuals .map-story__country,
+.nobel-visuals .map-story__local-land {
+  pointer-events: all;
+}
+.nobel-visuals .map-story__country.is-hovered {
+  stroke: #718b96;
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+}
+.nobel-visuals .map-story__coast,
+.nobel-visuals .map-story__borders,
+.nobel-visuals .map-story__states,
+.nobel-visuals .map-story__connector {
+  pointer-events: stroke;
+  cursor: crosshair;
+}
+.nobel-visuals .map-story__coast.is-hovered,
+.nobel-visuals .map-story__borders.is-hovered,
+.nobel-visuals .map-story__states.is-hovered,
+.nobel-visuals .map-story__connector.is-hovered,
+.nobel-visuals .map-story__local-land.is-hovered {
+  stroke: #718b96 !important;
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+.nobel-visuals .map-story__state-hit {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 4;
+  vector-effect: non-scaling-stroke;
+  pointer-events: all;
+}
+.nobel-visuals .map-story__state-hit.is-hovered {
+  fill: #809eaa;
+  fill-opacity: 0.15;
+  stroke: #34576a;
+  stroke-width: 1.5;
+}
+.nobel-visuals .map-story__dot.is-linked {
+  stroke: #163f51;
+  stroke-width: 2;
+}
+.nobel-visuals .map-story__hover {
+  position: fixed;
+  z-index: 100;
+  width: 290px;
+  padding: 14px 18px;
+  background: white;
+  border: 1px solid #d1dcdf;
+  box-shadow: 0 4px 18px #163f5115;
+  pointer-events: none;
+  font: 14px/1.45 var(--graphic-font);
+}
+.nobel-visuals .map-story__hover strong,
+.nobel-visuals .map-story__hover span {
+  display: block;
+}
+.nobel-visuals .map-story__hover span {
+  margin-top: 5px;
+  color: #53636a;
+}
+.nobel-visuals .map-story__hover-list {
+  margin: 9px 0 0;
+  padding: 9px 0 0;
+  border-top: 1px solid #e3e9e9;
+  list-style: none;
+  color: #222;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.nobel-visuals .map-story:not(.is-map-interactive) * {
+  pointer-events: none !important;
+}
+.nobel-visuals .map-story__states {
+  pointer-events: none !important;
+}
+.nobel-visuals .map-story__local-land {
+  pointer-events: none;
+}
+.nobel-visuals .map-story__institution-label {
+  fill: #303b3e;
+  font: 11px var(--graphic-font);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 2.5px;
+}
+.nobel-visuals .map-story__institution-line {
+  stroke: #718991;
+  stroke-width: 0.65;
+  opacity: 0.65;
+}
+.nobel-visuals .map-story__svg--mobile {
+  display: none;
+}
+.nobel-visuals .map-story__country {
+  fill: #e3e9e9;
+  stroke: none;
+}
+.nobel-visuals .map-story__country.is-represented {
+  fill: #c7d4d6;
+}
+.nobel-visuals .map-story__country.is-active {
+  fill: #b4c7cc;
+}
+.nobel-visuals .map-story__states {
+  fill: none;
+  stroke: #f8faf9;
+  stroke-width: 0.65;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+.nobel-visuals .map-story__coast,
+.nobel-visuals .map-story__connector,
+.nobel-visuals .map-story__borders {
+  fill: none;
+  stroke: #95a7ab;
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.nobel-visuals .map-story__connector {
+  stroke: #7b8b90;
+  stroke-width: 0.65;
+}
+.nobel-visuals .map-story__label {
+  fill: #252a2c;
+  font: 12px var(--graphic-font);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.nobel-visuals .map-story__count {
+  fill: #505c61;
+  font-size: 11px;
+}
+.nobel-visuals .map-story__heading {
+  fill: #272c29;
+  font: 18px var(--graphic-font);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+.nobel-visuals .map-story__dot {
+  opacity: 0;
+  pointer-events: none;
+  cursor: default;
+}
+.nobel-visuals .map-story__dot:hover,
+.nobel-visuals .map-story__dot:focus-visible {
+  stroke: #252b29;
+  stroke-width: 1.5;
+  outline: none;
+}
+.nobel-visuals .intro-scrolly__step--map {
+  min-height: 230svh;
+}
+.nobel-visuals .intro-scrolly__step--map .intro-scrolly__box {
+  top: 125svh;
+}
+@media (max-width: 700px) {
+  .nobel-visuals .map-story {
+    top: 5svh;
+    width: calc(100vw - 16px);
+    height: 90svh;
+  }
+  .nobel-visuals .map-story__svg--desktop {
+    display: none;
+  }
+  .nobel-visuals .map-story__svg--mobile {
+    display: block;
+  }
+}
+.nobel-visuals .map-story,
+.nobel-visuals .map-story * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.nobel-visuals .map-story *:focus,
+.nobel-visuals .map-story *:focus-visible {
+  outline: none;
+}

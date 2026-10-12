@@ -109,6 +109,8 @@ module.exports = {
           // Ported from the standalone AC Transit app and kept in its style,
           // so changes there carry over as plain diffs; see AcTransitStory.js.
           'src/visuals/ac-transit-visuals/**/*',
+          // The Nobel graphics retain the team's chart layout and source data.
+          'src/visuals/nobel-visuals/**/*',
         ],
         prettier: {
           patterns: [

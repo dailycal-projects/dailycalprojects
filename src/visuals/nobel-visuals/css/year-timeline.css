@@ -1,0 +1,131 @@
+.nobel-visuals .year-story,
+.nobel-visuals .faculty-story {
+  position: absolute;
+  top: 27svh;
+  left: 50%;
+  width: min(1120px, calc(100vw - 48px));
+  aspect-ratio: 1200 / 520;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+.nobel-visuals .year-story {
+  z-index: 3;
+}
+.nobel-visuals .faculty-story {
+  z-index: 4;
+}
+.nobel-visuals .year-story__svg,
+.nobel-visuals .faculty-story__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.nobel-visuals .year-story__svg--mobile,
+.nobel-visuals .faculty-story__svg--mobile {
+  display: none;
+}
+.nobel-visuals .year-story__heading,
+.nobel-visuals .faculty-story__heading {
+  fill: #272c29;
+  font: 18px var(--graphic-font);
+}
+.nobel-visuals .year-story__legend-label {
+  fill: #444;
+  font: 13px var(--graphic-font);
+}
+.nobel-visuals .year-story__legend-ring {
+  fill: #55555533;
+  stroke: #555;
+  stroke-width: 1.2;
+}
+.nobel-visuals .year-story__legend-fill {
+  fill: #555;
+}
+.nobel-visuals .year-story__portion-target {
+  opacity: 0;
+  pointer-events: none;
+}
+.nobel-visuals .year-story__callout {
+  fill: #222;
+  font: 600 14px var(--graphic-font);
+}
+.nobel-visuals .year-story__dot {
+  cursor: pointer;
+  pointer-events: all;
+}
+.nobel-visuals .year-story__dot:hover,
+.nobel-visuals .year-story__dot:focus-visible {
+  stroke: #252b29;
+  stroke-width: 2;
+  outline: none;
+}
+.nobel-visuals .faculty-story__ring {
+  stroke: none;
+}
+.nobel-visuals .faculty-story__mark {
+  cursor: pointer;
+  pointer-events: all;
+  outline: none;
+}
+.nobel-visuals .faculty-story__mark:hover .faculty-story__ring,
+.nobel-visuals .faculty-story__mark:focus-visible .faculty-story__ring {
+  stroke: none;
+  filter: brightness(0.92);
+}
+.nobel-visuals .intro-scrolly__step--year {
+  min-height: 145svh;
+}
+.nobel-visuals .intro-scrolly__step--year .intro-scrolly__box {
+  top: 70svh;
+}
+.nobel-visuals .intro-scrolly__step--year[data-timeline-step="faculty"] {
+  min-height: 185svh;
+}
+.nobel-visuals .intro-scrolly__step--year[data-timeline-step="portion-paabo"] {
+  min-height: 210svh;
+}
+@media (max-width: 700px) {
+  .nobel-visuals .year-story,
+  .nobel-visuals .faculty-story {
+    top: 19svh;
+    width: min(400px, calc(100vw - 24px));
+    aspect-ratio: 500 / 770;
+  }
+  .nobel-visuals .year-story__svg--desktop,
+  .nobel-visuals .faculty-story__svg--desktop {
+    display: none;
+  }
+  .nobel-visuals .year-story__svg--mobile,
+  .nobel-visuals .faculty-story__svg--mobile {
+    display: block;
+  }
+}
+.nobel-visuals .faculty-story {
+  top: 5svh;
+  width: min(780px, calc(100vw - 32px), 88svh);
+  aspect-ratio: 780 / 800;
+}
+.nobel-visuals .faculty-story__guide {
+  fill: none;
+  stroke: #e3e7e4;
+  stroke-width: 0.65;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+.nobel-visuals .faculty-story__hint {
+  fill: #78807b;
+  font: 12px var(--graphic-font);
+}
+.nobel-visuals .faculty-story__heading {
+  font: 20px var(--graphic-font);
+}
+@media (max-width: 700px) {
+  .nobel-visuals .faculty-story {
+    top: 16svh;
+    width: min(500px, calc(100vw - 24px));
+    aspect-ratio: 780 / 800;
+  }
+}

@@ -1,0 +1,51 @@
+.nobel-visuals {
+  width: calc(100vw - 32px);
+  margin: 48px 0 48px calc(50% - 50vw + 16px);
+  color: var(--ink);
+}
+
+.nobel-visuals,
+.nobel-visuals * {
+  box-sizing: border-box;
+}
+
+/* Leave room for the site's fixed, 50px masthead. Scroll phases use viewport
+   coordinates, so only the sticky graphic's available space changes. */
+.nobel-visuals .intro-visual {
+  top: 50px;
+  height: calc(100svh - 50px);
+}
+
+.nobel-visuals .intro-scrolly__steps {
+  margin-top: calc(50px - 100svh);
+}
+
+.nobel-visuals figure,
+.nobel-visuals img {
+  margin-bottom: 0;
+}
+
+.nobel-visuals .intro-profile {
+  margin: auto;
+}
+
+.nobel-visuals .intro-profile p {
+  margin-bottom: 20px;
+}
+
+.nobel-visuals .intro-scrolly__box p {
+  margin-bottom: 0;
+}
+
+.nobel-visuals .story-index {
+  z-index: 30;
+}
+
+.nobel-visuals .intro-profile__close {
+  color: var(--ink);
+}
+
+.nobel-visuals .intro-scrolly__box--story {
+  pointer-events: auto;
+}
+

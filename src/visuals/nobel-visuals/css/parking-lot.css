@@ -1,0 +1,138 @@
+.nobel-visuals .parking-lot__canvas {
+  position: absolute;
+  z-index: 1;
+  top: 27svh;
+  left: 50%;
+  width: min(1120px, calc(100vw - 48px));
+  aspect-ratio: 1200 / 510;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.nobel-visuals .parking-lot__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.nobel-visuals .parking-lot__svg--mobile {
+  display: none;
+}
+.nobel-visuals .parking-lot__asphalt {
+  fill: none;
+}
+.nobel-visuals .parking-lot__stripe,
+.nobel-visuals .parking-lot__stalls path {
+  fill: none;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  vector-effect: non-scaling-stroke;
+}
+.nobel-visuals .parking-lot__stripe {
+  stroke: #d0b159;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+.nobel-visuals .parking-lot__stalls path {
+  stroke: #919995;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.nobel-visuals .parking-lot__dots {
+  opacity: 0;
+}
+.nobel-visuals .parking-lot__dot {
+  pointer-events: all;
+  cursor: pointer;
+}
+.nobel-visuals .parking-lot__dot {
+  transition: none;
+}
+.nobel-visuals .parking-lot__labels {
+  position: absolute;
+  inset: 73% 7.1% 13%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  pointer-events: none;
+}
+.nobel-visuals .parking-lot__field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 0;
+  opacity: var(--field-opacity, 0);
+  color: #252b29;
+  font-family: var(--graphic-font);
+  white-space: nowrap;
+}
+.nobel-visuals .parking-lot__name {
+  font-size: clamp(11px, 1.05vw, 13px);
+  font-weight: 500;
+  line-height: 1.3;
+}
+.nobel-visuals .parking-lot__count {
+  font: 400 13px/1.3 var(--graphic-font);
+  font-variant-numeric: tabular-nums;
+  color: #505956;
+}
+.nobel-visuals .parking-bridge {
+  position: fixed;
+  z-index: 8;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  display: none;
+}
+.nobel-visuals .parking-bridge__item {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  will-change: transform, width, height;
+  cursor: pointer;
+}
+.nobel-visuals .parking-bridge__axis-line {
+  position: absolute;
+  display: none;
+  border-radius: 8px;
+  pointer-events: none;
+}
+.nobel-visuals .parking-bridge__item img {
+  position: absolute;
+  inset: 7%;
+  width: 86%;
+  height: 86%;
+  border: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(1);
+  opacity: var(--photo-opacity, 1);
+}
+@media (max-width: 700px) {
+  .nobel-visuals .parking-lot__canvas {
+    top: 19svh;
+    width: min(400px, calc(100vw - 24px));
+    aspect-ratio: 500 / 770;
+  }
+  .nobel-visuals .parking-lot__svg--desktop {
+    display: none;
+  }
+  .nobel-visuals .parking-lot__svg--mobile {
+    display: block;
+  }
+  .nobel-visuals .parking-lot__labels {
+    inset: 8% 66% 7% 6%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+  }
+  .nobel-visuals .parking-lot__field {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    padding-left: 3px;
+  }
+  .nobel-visuals .parking-lot__name,
+  .nobel-visuals .parking-lot__count {
+    font-size: 11px;
+  }
+}

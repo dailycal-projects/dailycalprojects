@@ -88,6 +88,7 @@ import BayPassCalculator from '../visuals/clipper-visuals/baypasscalculator';
 import CandidateFinanceVisuals from '../visuals/candidate-visuals/finance_visuals';
 import AcTransitStory from '../visuals/ac-transit-visuals/AcTransitStory';
 import ThirdPlaceMap from '../visuals/thirdplace-visuals/map';
+import NobelScrolly, { NobelNote } from '../visuals/nobel-visuals/NobelScrolly';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -188,6 +189,8 @@ const shortcodes = {
   CandidateFinanceVisuals,
   AcTransitStory,
   ThirdPlaceMap,
+  NobelScrolly,
+  NobelNote,
 };
 
 export default function Layout({ children }) {

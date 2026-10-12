@@ -1,0 +1,113 @@
+.nobel-visuals .decade-chart {
+  position: absolute;
+  z-index: 2;
+  top: 27svh;
+  left: 50%;
+  width: min(1120px, calc(100vw - 48px));
+  aspect-ratio: 1200 / 520;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+.nobel-visuals .decade-chart__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.nobel-visuals .decade-chart__svg--mobile {
+  display: none;
+}
+.nobel-visuals .decade-chart__axis,
+.nobel-visuals .decade-chart__guide,
+.nobel-visuals .decade-chart__trend {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.nobel-visuals .decade-chart__axis {
+  stroke: #89938e;
+  stroke-width: 2.5;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.nobel-visuals .decade-chart__guide {
+  stroke: #e4e8e4;
+  stroke-width: 1.5;
+}
+.nobel-visuals .decade-chart__trend {
+  stroke: #c9a33c;
+  stroke-width: 3.5;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.nobel-visuals .decade-chart__label,
+.nobel-visuals .decade-chart__count,
+.nobel-visuals .decade-chart__note,
+.nobel-visuals .decade-chart__heading {
+  fill: #272c29;
+  font-family: var(--graphic-font);
+}
+.nobel-visuals .decade-chart__heading {
+  font-size: 18px;
+  font-weight: 500;
+}
+.nobel-visuals .decade-chart__label {
+  font-size: 15px;
+  text-anchor: middle;
+}
+.nobel-visuals .decade-chart__count {
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  text-anchor: middle;
+  opacity: 0;
+}
+.nobel-visuals .decade-chart__note {
+  fill: #5a625e;
+  font-size: 12px;
+}
+.nobel-visuals .decade-chart__target {
+  opacity: 0;
+  pointer-events: none;
+}
+.nobel-visuals .intro-scrolly__step--decade {
+  min-height: 135svh;
+}
+.nobel-visuals .intro-scrolly__step--decade:last-child {
+  min-height: 150svh;
+}
+.nobel-visuals .intro-scrolly__box--decade {
+  display: block;
+  top: 70svh;
+  width: min(620px, calc(100% - 40px));
+  min-height: 0;
+  padding: 24px 28px;
+  border: 1px solid #d9dcd8;
+  box-shadow: 0 6px 23px #0000000d;
+  font: 20px/1.42 var(--reading-font);
+  color: #222;
+}
+.nobel-visuals .intro-scrolly__box--decade p {
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .nobel-visuals .decade-chart {
+    top: 19svh;
+    width: min(400px, calc(100vw - 24px));
+    aspect-ratio: 500 / 770;
+  }
+  .nobel-visuals .decade-chart__svg--desktop {
+    display: none;
+  }
+  .nobel-visuals .decade-chart__svg--mobile {
+    display: block;
+  }
+  .nobel-visuals .intro-scrolly__box--decade {
+    width: calc(100% - 40px);
+    height: auto;
+    padding: 20px 22px;
+    font-size: 17px;
+  }
+}
