@@ -1,0 +1,1467 @@
+{
+  "generatedFrom": "laureates-full.json",
+  "generatedOn": "2026-10-07",
+  "people": [
+    {
+      "id": "1011",
+      "name": "Svante Pääbo",
+      "year": 2022,
+      "category": "Physiology or Medicine",
+      "relationship": "Alumni",
+      "birthCountry": "Sweden",
+      "birthCountryCode": "SE",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Max Planck Institute for Evolutionary Anthropology, Leipzig, Germany",
+          "city": "Leipzig",
+          "region": null,
+          "country": "Germany",
+          "countryCode": "DE",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Okinawa Institute of Science and Technology, Okinawa, Japan",
+          "city": "Okinawa",
+          "region": null,
+          "country": "Japan",
+          "countryCode": "JP",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Leipzig University, Leipzig, Germany",
+          "city": "Leipzig",
+          "region": null,
+          "country": "Germany",
+          "countryCode": "DE",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "260",
+      "name": "Henry Taube",
+      "year": 1983,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "Canada",
+      "birthCountryCode": "CA",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Stanford University, Stanford, CA, USA",
+          "city": "Stanford",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "694",
+      "name": "Lawrence Klein",
+      "year": 1980,
+      "category": "Economics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of Pennsylvania, Philadelphia, PA, USA",
+          "city": "Philadelphia",
+          "region": "PA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "224",
+      "name": "Willard Libby",
+      "year": 1960,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Los Angeles, CA, USA",
+          "city": "Los Angeles",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "353",
+      "name": "Selman Waksman",
+      "year": 1952,
+      "category": "Physiology or Medicine",
+      "relationship": "Alumni",
+      "birthCountry": "Ukraine",
+      "birthCountryCode": "UA",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Rutgers University, New Brunswick, NJ, USA",
+          "city": "New Brunswick",
+          "region": "NJ",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "192",
+      "name": "Harold Urey",
+      "year": 1934,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Columbia University, New York, NY, USA",
+          "city": "New York",
+          "region": "NY",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "697",
+      "name": "Gerard Debreu",
+      "year": 1983,
+      "category": "Economics",
+      "relationship": "Faculty",
+      "birthCountry": "France",
+      "birthCountryCode": "FR",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "657",
+      "name": "Czesław Miłosz",
+      "year": 1980,
+      "category": "Literature",
+      "relationship": "Faculty",
+      "birthCountry": "Lithuania",
+      "birthCountryCode": "LT",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": []
+    },
+    {
+      "id": "89",
+      "name": "Luis Alvarez",
+      "year": 1968,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "225",
+      "name": "Melvin Calvin",
+      "year": 1961,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "74",
+      "name": "Donald Glaser",
+      "year": 1960,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "209",
+      "name": "William Giauque",
+      "year": 1949,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "Canada",
+      "birthCountryCode": "CA",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "name": "Ernest Lawrence",
+      "year": 1939,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1039",
+      "name": "David Baker",
+      "year": 2024,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of Washington, Seattle, WA, USA",
+          "city": "Seattle",
+          "region": "WA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Howard Hughes Medical Institute, USA",
+          "city": null,
+          "region": null,
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "country-only",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1036",
+      "name": "Gary Ruvkun",
+      "year": 2024,
+      "category": "Physiology or Medicine",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Massachusetts General Hospital, Boston, MA, USA",
+          "city": "Boston",
+          "region": "MA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Harvard Medical School, Boston, MA, USA",
+          "city": "Boston",
+          "region": "MA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "997",
+      "name": "David Julius",
+      "year": 2021,
+      "category": "Physiology or Medicine",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, San Francisco, CA, USA",
+          "city": "San Francisco",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "963",
+      "name": "Frances Arnold",
+      "year": 2018,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "California Institute of Technology (Caltech), Pasadena, CA, USA",
+          "city": "Pasadena",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "877",
+      "name": "David J. Wineland",
+      "year": 2012,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "National Institute of Standards and Technology, Boulder, CO, USA",
+          "city": "Boulder",
+          "region": "CO",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "University of Colorado, Boulder, CO, USA",
+          "city": "Boulder",
+          "region": "CO",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "872",
+      "name": "Thomas Sargent",
+      "year": 2011,
+      "category": "Economics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "New York University, New York, NY, USA",
+          "city": "New York",
+          "region": "NY",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "802",
+      "name": "Andrew Z. Fire",
+      "year": 2006,
+      "category": "Physiology or Medicine",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Stanford University School of Medicine, Stanford, CA, USA",
+          "city": "Stanford",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "804",
+      "name": "John C. Mather",
+      "year": 2006,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "NASA Goddard Space Flight Center, Greenbelt, MD, USA",
+          "city": "Greenbelt",
+          "region": "MD",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "800",
+      "name": "Thomas C. Schelling",
+      "year": 2005,
+      "category": "Economics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of Maryland, Department of Economics and School of Public Policy, College Park, MD, USA",
+          "city": "College Park",
+          "region": "MD",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "759",
+      "name": "Daniel Kahneman",
+      "year": 2002,
+      "category": "Economics",
+      "relationship": "Alumni",
+      "birthCountry": "Israel",
+      "birthCountryCode": "IL",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Princeton University, Princeton, NJ, USA",
+          "city": "Princeton",
+          "region": "NJ",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "278",
+      "name": "Kary Mullis",
+      "year": 1993,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": []
+    },
+    {
+      "id": "710",
+      "name": "Douglass North",
+      "year": 1993,
+      "category": "Economics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Washington University, St. Louis, MO, USA",
+          "city": "St. Louis",
+          "region": "MO",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "274",
+      "name": "Thomas Cech",
+      "year": 1989,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of Colorado, Boulder, CO, USA",
+          "city": "Boulder",
+          "region": "CO",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "63",
+      "name": "Willis Lamb",
+      "year": 1955,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Stanford University, Stanford, CA, USA",
+          "city": "Stanford",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "337",
+      "name": "Joseph Erlanger",
+      "year": 1944,
+      "category": "Physiology or Medicine",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Washington University, St. Louis, MO, USA",
+          "city": "St. Louis",
+          "region": "MO",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1007",
+      "name": "David Card",
+      "year": 2021,
+      "category": "Economics",
+      "relationship": "Faculty",
+      "birthCountry": "Canada",
+      "birthCountryCode": "CA",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "992",
+      "name": "Jennifer Doudna",
+      "year": 2020,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "864",
+      "name": "Saul Perlmutter",
+      "year": 2011,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Lawrence Berkeley National Laboratory, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "847",
+      "name": "Oliver Williamson",
+      "year": 2009,
+      "category": "Economics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "805",
+      "name": "George Smoot",
+      "year": 2006,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "733",
+      "name": "Daniel McFadden",
+      "year": 2000,
+      "category": "Economics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "81",
+      "name": "Charles Townes",
+      "year": 1964,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Massachusetts Institute of Technology (MIT), Cambridge, MA, USA",
+          "city": "Cambridge",
+          "region": "MA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "73",
+      "name": "Owen Chamberlain",
+      "year": 1959,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "72",
+      "name": "Emilio Segrè",
+      "year": 1959,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "Italy",
+      "birthCountryCode": "IT",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "212",
+      "name": "Edwin McMillan",
+      "year": 1951,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "213",
+      "name": "Glenn Seaborg",
+      "year": 1951,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1051",
+      "name": "Michel Devoret",
+      "year": 2025,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "France",
+      "birthCountryCode": "FR",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Yale University, New Haven, CT, USA",
+          "city": "New Haven",
+          "region": "CT",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "University of California, Santa Barbara, CA, USA",
+          "city": "Santa Barbara",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Google Quantum AI, Santa Barbara, CA, USA",
+          "city": "Santa Barbara",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1052",
+      "name": "John Martinis",
+      "year": 2025,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "https://www.nobelprize.org/uploads/2025/12/popular-physicsprize2025-4.pdf",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Santa Barbara, CA, USA",
+          "city": "Santa Barbara",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Qolab, Los Angeles, CA, USA",
+          "city": "Los Angeles",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1015",
+      "name": "Carolyn Bertozzi",
+      "year": 2022,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Stanford University, Stanford, CA, USA",
+          "city": "Stanford",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Howard Hughes Medical Institute, USA",
+          "city": null,
+          "region": null,
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "country-only",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1013",
+      "name": "John Clauser",
+      "year": 2022,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "J.F. Clauser & Assoc., Walnut Creek, CA, USA",
+          "city": "Walnut Creek",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "836",
+      "name": "Carol Greider",
+      "year": 2009,
+      "category": "Physiology or Medicine",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Johns Hopkins University School of Medicine, Baltimore, MD, USA",
+          "city": "Baltimore",
+          "region": "MD",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "776",
+      "name": "David Gross",
+      "year": 2004,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Kavli Institute for Theoretical Physics, Santa Barbara, CA, USA",
+          "city": "Santa Barbara",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "729",
+      "name": "Alan Heeger",
+      "year": 2000,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Santa Barbara, CA, USA",
+          "city": "Santa Barbara",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "155",
+      "name": "Robert Laughlin",
+      "year": 1998,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Stanford University, Stanford, CA, USA",
+          "city": "Stanford",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "152",
+      "name": "Steven Chu",
+      "year": 1997,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Stanford University, Stanford, CA, USA",
+          "city": "Stanford",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "284",
+      "name": "Robert Curl",
+      "year": 1996,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Rice University, Houston, TX, USA",
+          "city": "Houston",
+          "region": "TX",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "282",
+      "name": "Mario Molina",
+      "year": 1995,
+      "category": "Chemistry",
+      "relationship": "Alumni",
+      "birthCountry": "Mexico",
+      "birthCountryCode": "MX",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Massachusetts Institute of Technology (MIT), Cambridge, MA, USA",
+          "city": "Cambridge",
+          "region": "MA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "416",
+      "name": "Hamilton Smith",
+      "year": 1978,
+      "category": "Physiology or Medicine",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Johns Hopkins University School of Medicine, Baltimore, MD, USA",
+          "city": "Baltimore",
+          "region": "MD",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1050",
+      "name": "John Clarke",
+      "year": 2025,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "United Kingdom",
+      "birthCountryCode": "GB",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "1055",
+      "name": "Omar Yaghi",
+      "year": 2025,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "Jordan",
+      "birthCountryCode": "JO",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "909",
+      "name": "Eric Betzig",
+      "year": 2014,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Janelia Research Campus, Howard Hughes Medical Institute, Ashburn, VA, USA",
+          "city": "Ashburn",
+          "region": "VA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "885",
+      "name": "Randy Schekman",
+      "year": 2013,
+      "category": "Physiology or Medicine",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Howard Hughes Medical Institute, USA",
+          "city": null,
+          "region": null,
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "country-only",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "744",
+      "name": "George Akerlof",
+      "year": 2001,
+      "category": "Economics",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "711",
+      "name": "John Harsanyi",
+      "year": 1994,
+      "category": "Economics",
+      "relationship": "Faculty",
+      "birthCountry": "Hungary",
+      "birthCountryCode": "HU",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "265",
+      "name": "Yuan T. Lee",
+      "year": 1986,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "Taiwan",
+      "birthCountryCode": "TW",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "942",
+      "name": "Barry Barish",
+      "year": 2017,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "LIGO/VIRGO Collaboration",
+          "city": null,
+          "region": null,
+          "country": null,
+          "countryCode": null,
+          "locationStatus": "unresolved",
+          "coordinates": null
+        },
+        {
+          "name": "California Institute of Technology (Caltech), Pasadena, CA, USA",
+          "city": "Pasadena",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "866",
+      "name": "Adam Guy Riess",
+      "year": 2011,
+      "category": "Physics",
+      "relationship": "Alumni",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Johns Hopkins University, Baltimore, MD, USA",
+          "city": "Baltimore",
+          "region": "MD",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "Space Telescope Science Institute, Baltimore, MD, USA",
+          "city": "Baltimore",
+          "region": "MD",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "989",
+      "name": "Reinhard Genzel",
+      "year": 2020,
+      "category": "Physics",
+      "relationship": "Faculty",
+      "birthCountry": "Germany",
+      "birthCountryCode": "DE",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Max Planck Institute for Extraterrestrial Physics, Garching, Germany",
+          "city": "Garching",
+          "region": null,
+          "country": "Germany",
+          "countryCode": "DE",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        },
+        {
+          "name": "University of California, Berkeley, CA, USA",
+          "city": "Berkeley",
+          "region": "CA",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "205",
+      "name": "John Howard Northrop",
+      "year": 1946,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Rockefeller Institute for Medical Research, Princeton, NJ, USA",
+          "city": "Princeton",
+          "region": "NJ",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    },
+    {
+      "id": "206",
+      "name": "Wendell Stanley",
+      "year": 1946,
+      "category": "Chemistry",
+      "relationship": "Faculty",
+      "birthCountry": "USA",
+      "birthCountryCode": "US",
+      "birthCountrySource": "laureates-full.json",
+      "awardAffiliations": [
+        {
+          "name": "Rockefeller Institute for Medical Research, Princeton, NJ, USA",
+          "city": "Princeton",
+          "region": "NJ",
+          "country": "USA",
+          "countryCode": "US",
+          "locationStatus": "place-resolved",
+          "coordinates": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "people": 63,
+    "birthCountries": {
+      "Canada": 3,
+      "France": 2,
+      "Germany": 1,
+      "Hungary": 1,
+      "Israel": 1,
+      "Italy": 1,
+      "Jordan": 1,
+      "Lithuania": 1,
+      "Mexico": 1,
+      "Sweden": 1,
+      "Taiwan": 1,
+      "USA": 47,
+      "Ukraine": 1,
+      "United Kingdom": 1
+    },
+    "awardAffiliationEntries": 75,
+    "awardPlacesNeedingReview": [
+      "Howard Hughes Medical Institute, USA",
+      "LIGO/VIRGO Collaboration"
+    ],
+    "stanfordAffiliatedPeopleAtAward": [
+      "Henry Taube",
+      "Andrew Z. Fire",
+      "Willis Lamb",
+      "Carolyn Bertozzi",
+      "Robert Laughlin",
+      "Steven Chu"
+    ]
+  }
+}
