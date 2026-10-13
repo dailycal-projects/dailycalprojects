@@ -32,11 +32,20 @@ export function rich(template: string, vars: Vars = {}): ReactNode {
     if (at > last) out.push(fmt(template.slice(last, at), vars));
     const inner = fmt(m[2], vars);
     const k = key++;
-    if (m[1] === "num") out.push(<span key={k} className="num">{inner}</span>);
-    else if (m[1] === "word") out.push(<span key={k} className="word">{inner}</span>);
-    else if (m[1] === "b") out.push(<strong key={k}>{inner}</strong>);
-    else out.push(<em key={k}>{inner}</em>);
     last = at + m[0].length;
+    if (m[1] === "num") out.push(<span key={k} className="num">{inner}</span>);
+    else if (m[1] === "word") {
+      const punctuation = template.slice(last).match(/^[,.;:!?]+/)?.[0] ?? "";
+      if (punctuation) {
+        out.push(
+          <span key={k} className="word-with-punctuation">
+            <span className="word">{inner}</span>{punctuation}
+          </span>,
+        );
+        last += punctuation.length;
+      } else out.push(<span key={k} className="word">{inner}</span>);
+    } else if (m[1] === "b") out.push(<strong key={k}>{inner}</strong>);
+    else out.push(<em key={k}>{inner}</em>);
   }
   if (last < template.length) out.push(fmt(template.slice(last), vars));
   return out;

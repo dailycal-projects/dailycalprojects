@@ -407,4 +407,3 @@ spelled: ["studio", "one bed", "two bed", "three bed", "four bed", "five bed", "
    back: "back to the app",
  },
 };
-

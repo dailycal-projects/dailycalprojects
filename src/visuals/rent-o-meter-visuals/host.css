@@ -16,3 +16,35 @@ html.rom-page div:has(.rom) {
   width: auto !important;
   height: auto !important;
 }
+
+.rom .word-with-punctuation {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.rom .method .accuracy-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  list-style: none;
+}
+
+.rom .accuracy-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.rom .accuracy-toggle::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  margin-right: 3px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.rom .method[open] .accuracy-toggle::after {
+  transform: rotate(225deg);
+}

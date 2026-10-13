@@ -254,7 +254,7 @@ export function MeterScreen({ me, rm }: { me: Me; rm: Rentometer }) {
         </p>
       )}
       <details className="fine method" data-nonav>
-        <summary>{S.meter.accurateQuestion}</summary>
+        <summary className="accuracy-toggle">{S.meter.accurateQuestion}</summary>
         {S.meter.accurateAnswer.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
