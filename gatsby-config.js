@@ -111,6 +111,9 @@ module.exports = {
           'src/visuals/ac-transit-visuals/**/*',
           // The Nobel graphics retain the team's chart layout and source data.
           'src/visuals/nobel-visuals/**/*',
+          // Copied from the standalone rent-o-meter app by sync.js; see RentOMeterStory.js.
+          'src/visuals/rent-o-meter-visuals/**/*',
+          'static/rent-o-meter/**/*',
         ],
         prettier: {
           patterns: [
