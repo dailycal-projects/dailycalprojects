@@ -1,0 +1,50 @@
+/* The page around the ported app. Hand-written, unlike styles/, which sync.js generates.
+
+   The full-page template (templates/reactArticle.js) locks html and body and puts the article in a
+   100vw x 100vh box, for apps that scroll a container of their own. This one scrolls the window, like the
+   standalone app, so while it is on the page (RentOMeterStory puts .rom-page on <html>) the lock and the box
+   are undone. body.locked is the app's own lock, for its story and sheets, and is left to apply. */
+html.rom-page {
+  overflow: visible !important;
+}
+
+html.rom-page body:not(.locked) {
+  overflow: visible !important;
+}
+
+html.rom-page div:has(.rom) {
+  width: auto !important;
+  height: auto !important;
+}
+
+.rom .word-with-punctuation {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.rom .method .accuracy-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  list-style: none;
+}
+
+.rom .accuracy-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.rom .accuracy-toggle::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  margin-right: 3px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.rom .method[open] .accuracy-toggle::after {
+  transform: rotate(225deg);
+}

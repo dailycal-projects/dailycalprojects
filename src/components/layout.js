@@ -89,6 +89,7 @@ import CandidateFinanceVisuals from '../visuals/candidate-visuals/finance_visual
 import AcTransitStory from '../visuals/ac-transit-visuals/AcTransitStory';
 import ThirdPlaceMap from '../visuals/thirdplace-visuals/map';
 import NobelScrolly, { NobelNote } from '../visuals/nobel-visuals/NobelScrolly';
+import RentOMeterStory from '../visuals/rent-o-meter-visuals/RentOMeterStory';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -191,6 +192,7 @@ const shortcodes = {
   ThirdPlaceMap,
   NobelScrolly,
   NobelNote,
+  RentOMeterStory,
 };
 
 export default function Layout({ children }) {
