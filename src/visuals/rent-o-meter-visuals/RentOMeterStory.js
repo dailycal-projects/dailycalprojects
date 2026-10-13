@@ -3,17 +3,6 @@ import { Helmet } from 'react-helmet';
 import './styles/app.css';
 import './host.css';
 
-/*
-The rent-o-meter: the fake article, the finder, the story and the rent map. Ported from the standalone
-Vite app (berkeley-rent-registry/dc_app), which stays the source of truth: app/, styles/app.css and
-static/rent-o-meter/ are copied from it by sync.js, so change things there and rerun that.
-
-The app is written for a page that scrolls the window, so on this page it undoes the full-page template's
-scroll lock (host.css). Its views are hash routes (#map, #debug), which the site's router leaves alone.
-
-It renders nothing at build time: the app reads window and the viewport from its first render, and
-everything it shows depends on data fetched in the browser anyway.
-*/
 const RentOMeterStory = () => {
   const [App, setApp] = useState(null);
 
