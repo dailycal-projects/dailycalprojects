@@ -1,0 +1,47 @@
+/* The Daily Californian's type (DC_fonts.zip from the style guide), converted to woff2. Linked from index.html,
+ * and on data.dailycal.org from RentOMeterStory. Plain URLs relative to this file, so it works from either host.
+ *
+ * Plantin comes in Regular and Bold only. The app's text weights (500-800) were set for a sans with many steps;
+ * in Plantin everything up to 700 reads best as Regular, so Bold is kept for 800 (numbers, chips, buttons). Tiempos Headline is Bold
+ * up to 800, the weight dailycal.org sets its headlines in; Black only at 900. */
+@font-face {
+  font-family: "DC Plantin";
+  src: url("plantin-regular.woff2") format("woff2");
+  font-weight: 100 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DC Plantin";
+  src: url("plantin-italic.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DC Plantin";
+  src: url("plantin-bold.woff2") format("woff2");
+  font-weight: 800 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DC Tiempos Headline";
+  src: url("tiempos-headline-bold.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DC Tiempos Headline";
+  src: url("tiempos-headline-black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+/* Neither Plantin nor Tiempos has arrows, and a system font's arrow comes in at its own size and makes its line
+ * taller, which pushes the text in buttons and chips off center. arrows.woff2 is just the arrows (and x) from Inter
+ * (SIL Open Font License, via Google Fonts), with its line metrics cut to fit inside both fonts' so it can't. */
+@font-face {
+  font-family: "DC Arrows";
+  src: url("arrows.woff2") format("woff2");
+  font-weight: 100 900;
+  unicode-range: U+2190-2193, U+2197-2198, U+00D7;
+  font-display: block;
+}
