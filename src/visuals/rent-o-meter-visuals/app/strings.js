@@ -228,7 +228,7 @@ spelled: ["studio", "one bed", "two bed", "three bed", "four bed", "five bed", "
      records: "this data was obtained through a public records request.",
      methodSummary: "how it works",
      method: [ // CHANGED: no blank entries (they made double spaces), "age,," and "model to fit to" fixed, period after "can charge"
-       "berkeley keeps a registry of rents paid, which we obtained through a public records request. the data is from july 13, 2026.",
+       "berkeley keeps a registry of rents paid, which we obtained through a public records request. the data is from october 13, 2026.",
        "for rent-controlled units, the registry doesn’t keep a current amount. instead, we use the maximum rent a landlord can charge.",
        "the rent-o-meter is a statistical model fit to every rented unit. it predicts rent from bedrooms, council district, distance to campus, building size and age, the owner, and move-in year, then asks what your apartment would rent for to someone who moved in when you did.",
        "building age is the year built from alameda county assessor records (via attom data, licensed through dewey data), grouped into 20-year periods; where it's missing, we use rent-controlled status which tells us if a building was constructed before 1980.",
