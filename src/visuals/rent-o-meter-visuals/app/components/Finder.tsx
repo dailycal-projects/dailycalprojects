@@ -277,6 +277,9 @@ export function Finder({ ds, onGo }: { ds: Dataset; onGo: (me: Me) => void }) {
       >
         {F.mapLink} <span aria-hidden>→</span>
       </a>
+      <a className="report-error" href={strings.links.reportError} target="_blank" rel="noopener noreferrer">
+        {F.reportError}
+      </a>
       {picking === "address" && (
         <Picker
           aria={F.addressPickerAria}
