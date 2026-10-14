@@ -70,24 +70,26 @@ export function Picker<T>({
     vv?.addEventListener("resize", schedule);
     vv?.addEventListener("scroll", schedule);
 
-    // Scrolling the list must never scroll the page: stop a drag that is past the top or bottom of the list
-    // (the rubber-band that chains to the page), and stop drags on the bar above it.
+    // Scrolling the list must never scroll the page. iOS decides on a swipe's first move whether it scrolls,
+    // and cancelling that move (say, to stop a pull past the top) kills the whole swipe, which made the list
+    // feel stuck. So the list is never left exactly at an end: each touch nudges it 1px in, which gives every
+    // swipe room to scroll the list itself. Only a list too short to scroll has its drags stopped, along with
+    // drags on the bar above it.
     const el = list.current;
     const top = sheet.current;
-    let startY = 0;
-    const onStart = (e: TouchEvent) => {
-      startY = e.touches[0].clientY;
+    const onStart = () => {
+      if (!el) return;
+      const max = el.scrollHeight - el.clientHeight;
+      if (max <= 1) return;
+      if (el.scrollTop <= 0) el.scrollTop = 1;
+      else if (el.scrollTop >= max) el.scrollTop = max - 1;
     };
     const onListMove = (e: TouchEvent) => {
-      if (!el) return;
-      const dy = e.touches[0].clientY - startY;
-      const atTop = el.scrollTop <= 0;
-      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
-      if ((atTop && dy > 0) || (atBottom && dy < 0)) e.preventDefault();
+      if (el && el.scrollHeight <= el.clientHeight + 1 && e.cancelable) e.preventDefault();
     };
     const onSheetMove = (e: TouchEvent) => {
       const t = e.target as HTMLElement;
-      if (!el?.contains(t) && t.tagName !== "INPUT") e.preventDefault();
+      if (!el?.contains(t) && t.tagName !== "INPUT" && e.cancelable) e.preventDefault();
     };
     el?.addEventListener("touchstart", onStart, { passive: true });
     el?.addEventListener("touchmove", onListMove, { passive: false });
