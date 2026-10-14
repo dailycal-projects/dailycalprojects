@@ -21,6 +21,7 @@ export const strings = {
  // ---- links ---------------------------------------------------------------------------------------
  links: {
    story: "", // what the share button shares
+   reportError: "https://forms.gle/C3t4pejTR2vZRiYU8", // the "report an error" link under the finder
  },
 
 
@@ -111,6 +112,7 @@ spelled: ["studio", "one bed", "two bed", "three bed", "four bed", "five bed", "
    unitPickerNone: "no unit matches that.",
    go: "see how your rent compares",
    mapLink: "or explore rent on a map",
+   reportError: "report an error",
  },
 
 

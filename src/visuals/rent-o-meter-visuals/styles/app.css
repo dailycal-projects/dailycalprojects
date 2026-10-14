@@ -930,6 +930,70 @@ body.locked {
   text-decoration-thickness: 2px;
 }
 
+/* small, at the foot of the first screen: margin-top auto pushes it down the finder's flex column */
+.rom .report-error {
+  align-self: flex-start;
+  margin: auto 0 0 6px;
+  padding-top: 28px;
+  font: 400 14px/1.2 var(--body);
+  color: var(--navy);
+  opacity: 0.7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Phones: Safari's bars leave ~660px of a 844px iPhone, and at full size the finder runs ~170px past that, so
+ * the first screen scrolled. Tighten the spacing and the headline so banner and form are one screen again. */
+@media (max-width: 640px) and (max-height: 780px) {
+  .rom .finder {
+    padding-top: 28px;
+    padding-bottom: 16px;
+  }
+  .rom .finder .screwed {
+    font-size: clamp(40px, 12vw, 50px);
+    margin-bottom: 30px;
+  }
+  .rom .finder-byline {
+    margin: -18px 0 22px 6px;
+  }
+  .rom .finder .combo,
+  .rom .finder .select-wrap {
+    margin-bottom: 18px;
+  }
+  .rom .finder .big-input {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .rom .finder .go {
+    margin-top: 2px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .rom .finder .map-link {
+    margin-top: 18px;
+  }
+  .rom .report-error {
+    padding-top: 16px;
+  }
+}
+
+/* the smallest phones (an SE in Safari has ~550px): a smaller headline still */
+@media (max-width: 640px) and (max-height: 600px) {
+  .rom .finder {
+    padding-top: 18px;
+  }
+  .rom .report-error {
+    padding-top: 10px;
+  }
+  .rom .finder .screwed {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+  .rom .finder-byline {
+    margin: -14px 0 18px 6px;
+  }
+}
+
 .rom .map-go {
   align-self: flex-start;
   margin-top: 10px;
