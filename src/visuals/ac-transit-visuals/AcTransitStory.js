@@ -11,6 +11,7 @@ import './styles/story.css';
 import './styles/methodology.css';
 import 'katex/dist/katex.min.css';
 import './host.css';
+import '../../styles/darkStory.css';
 
 /*
 The AC Transit ridership story, with the explorer and methodology it links
@@ -71,14 +72,14 @@ const AcTransitStory = ({ about, date }) => {
   }, []);
 
   return (
-    <div className="acpra acpra-root" ref={attach}>
+    <div className="acpra acpra-root dark-story" ref={attach}>
       {view === 'story' ? (
         <>
-          <Link to="/" className="acpra-masthead">
+          <Link to="/" className="acpra-masthead dark-story-masthead">
             <img src={logo} alt="The Daily Californian" />
           </Link>
           <Story date={date} />
-          <div className="acpra-footer">
+          <div className="acpra-footer dark-story-footer">
             <ArticleFooter about={about} />
           </div>
         </>

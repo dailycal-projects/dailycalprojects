@@ -120,14 +120,14 @@ function ScrollySection({ data, places, steps, first = "85vh" }) {
             style={index === 0 ? { paddingTop: first } : undefined}
           >
             <div
-              className="scrolly-card"
+              className="scrolly-card dark-story-card"
               id={step.id}
               ref={(element) => { cardRefs.current[index] = element; }}
             >
-              {step.text.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {step.text.map((paragraph) => <p className="dark-story-copy" key={paragraph}>{paragraph}</p>)}
               {step.link ? (
                 <p className="scrolly-cta-wrap">
-                  <ViewLink className="story-cta" view={step.link.view}>{step.link.label}</ViewLink>
+                  <ViewLink className="story-cta dark-story-button" view={step.link.view}>{step.link.label}</ViewLink>
                 </p>
               ) : null}
             </div>
@@ -186,14 +186,14 @@ export default function Story({ date }) {
   }, []);
 
   return (
-    <article className="story">
-      <header className="story-hero">
+    <article className="story dark-story-content">
+      <header className="story-hero dark-story-header">
         <h1>{t("story.title")}</h1>
-        {date ? <time className="story-date" dateTime={date}>{apDate(date)}</time> : null}
-        <p className="story-byline">
+        {date ? <time className="story-date dark-story-date" dateTime={date}>{apDate(date)}</time> : null}
+        <p className="story-byline dark-story-byline">
           <T id="story.byline" c={[<a href="https://www.dailycal.org/users/profile/john%20schultz/" target="_blank" rel="noreferrer" />]} />
         </p>
-        <p className="story-lede">{t("story.lede")}</p>
+        <p className="story-lede dark-story-copy dark-story-lede">{t("story.lede")}</p>
         {error ? (
           <p className="story-error">{t("story.error", { message: error.message })}</p>
         ) : null}
@@ -205,7 +205,7 @@ export default function Story({ date }) {
         steps={MAP_ONE}
       />
 
-      <div className="story-body">
+      <div className="story-body dark-story-prose">
         <h2>{t("story.headingWhereDo")}</h2>
       </div>
 
@@ -216,7 +216,7 @@ export default function Story({ date }) {
         first="70vh"
       />
 
-      <div className="story-body">
+      <div className="story-body dark-story-prose">
         <h2>{t("story.headingTraffic")}</h2>
       </div>
 
@@ -227,10 +227,10 @@ export default function Story({ date }) {
         first="70vh"
       />
 
-      <div className="story-body">
+      <div className="story-body dark-story-prose">
         <p className="story-cta-wrap">
-          <ViewLink className="story-cta" view="explore">{t("story.seeData")}</ViewLink>
-          <ViewLink className="story-cta" view="methodology">{t("story.seeMethodologyEnd")}</ViewLink>
+          <ViewLink className="story-cta dark-story-button" view="explore">{t("story.seeData")}</ViewLink>
+          <ViewLink className="story-cta dark-story-button" view="methodology">{t("story.seeMethodologyEnd")}</ViewLink>
         </p>
         <p className="story-credit">
           <T id="story.transitland" c={[<a href="https://www.transit.land/terms" target="_blank" rel="noreferrer" />]} />

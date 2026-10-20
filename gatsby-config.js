@@ -114,6 +114,8 @@ module.exports = {
           // Copied from the standalone rent-o-meter app by sync.js; see RentOMeterStory.js.
           'src/visuals/rent-o-meter-visuals/**/*',
           'static/rent-o-meter/**/*',
+          // Ported from the UCPD crime-log viewer; keep its scripts and styles scoped.
+          'src/visuals/clery-visuals/**/*',
         ],
         prettier: {
           patterns: [
