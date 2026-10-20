@@ -1,0 +1,107 @@
+/* Generated from ucpd_crime_log by scope-css.js. */
+.clery-viewer :where(h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dd, dt, a, button,
+  input, select, textarea, label, table, thead, tbody, tr, th, td, figure,
+  figcaption, blockquote, small, strong, b, em, i, code, pre, hr, img, abbr):where(:not(.leaflet-container *)) {
+  all: revert;
+}
+
+      .clery-viewer { color-scheme: dark; --bg: #0e0f11; --fg: #d7d9dc; --muted: #6b7078; --line: #1d1f23; --band: #ff8a1f; }
+      .clery-viewer * { box-sizing: border-box; }
+      .clery-viewer { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; }
+      .clery-viewer { display: flex; flex-direction: column; overflow: hidden; }
+      .clery-viewer header { position: relative; background: #000; padding: 10px 16px; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .clery-viewer header a { color: var(--muted); text-decoration: none; }
+      .clery-viewer header a:hover { color: var(--fg); }
+      .clery-viewer header b a { color: var(--fg); }
+      .clery-viewer header i { color: #3a3d42; font-style: normal; margin: 0 8px; }
+      .clery-viewer .share { display: inline-grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 4px; background: none; color: var(--muted); cursor: pointer; }
+      .clery-viewer .share:hover { background: #22252a; color: var(--fg); }
+      .clery-viewer .share.done { color: #6fd08c; }
+      .clery-viewer .tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 5px 0 6px; }
+      .clery-viewer .badge, .clery-viewer .chip { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; border-radius: 3px; font-size: 11px; line-height: 16px; font-weight: 500; white-space: nowrap; text-decoration: none; }
+      .clery-viewer .badge { background: #c792ea22; color: #dcb8f7; border: 1px solid #c792ea55; letter-spacing: .04em; cursor: help; }
+      .clery-viewer a.chip, .clery-viewer .leaflet-container a.chip { color: var(--fg); border: 1px solid #3a3d42; background: #ffffff08; }
+      .clery-viewer a.chip:hover, .clery-viewer .leaflet-container a.chip:hover { border-color: #5a5e66; background: #ffffff12; }
+      .clery-viewer .chip svg { color: var(--muted); }
+      .clery-viewer header a#help { display: inline-block; padding: 0 5px; border-radius: 2px; background: #fbe84a; color: #1a1600; }
+      .clery-viewer header a#help:hover { background: #fff27a; }
+      .clery-viewer .tour-hole { position: fixed; z-index: 3000; border-radius: 8px; box-shadow: 0 0 0 2px var(--band), 0 0 0 9999px #000a; pointer-events: none; transition: all .35s cubic-bezier(.3,.7,.2,1); }
+      .clery-viewer .dragging .tour-hole, .clery-viewer .tour-hole.off { opacity: 0; transition: opacity .15s; }
+      .clery-viewer .tour-card { position: fixed; z-index: 3001; width: 290px; padding: 14px 16px 12px; background: #17191c; border: 1px solid #3a3d42; border-radius: 6px; box-shadow: 0 10px 32px #000a; font-size: 14px; line-height: 1.5; transition: top .35s cubic-bezier(.3,.7,.2,1), left .35s cubic-bezier(.3,.7,.2,1); }
+      .clery-viewer .tour-card p { margin: 0 0 12px; }
+      .clery-viewer .tour-card div { display: flex; align-items: center; gap: 6px; }
+      .clery-viewer .tour-card span { flex: 1; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+      .clery-viewer .tour-card button { font: inherit; font-size: 13px; padding: 5px 11px; border-radius: 4px; border: 1px solid #2a2d32; background: none; color: var(--muted); cursor: pointer; }
+      .clery-viewer .tour-card button:hover { color: var(--fg); }
+      .clery-viewer .tour-card button.primary { background: var(--band); border-color: var(--band); color: #1a0e00; font-weight: 600; }
+      .clery-viewer #latest { color: var(--muted); font-size: 14px; min-height: 20px; }
+    
+
+    .clery-viewer #main { flex: 1; display: flex; min-height: 0; }
+    .clery-viewer aside { position: absolute; top: 10px; right: 10px; bottom: 10px; z-index: 600; width: 300px; display: flex; flex-direction: column; overflow: hidden; background: #0e0f11ee; border: 1px solid #2a2d32; border-radius: 6px; box-shadow: 0 8px 28px #0009; backdrop-filter: blur(6px); }
+    .clery-viewer #count { padding: 10px 14px; color: var(--muted); border-bottom: 1px solid var(--line); }
+    .clery-viewer #list { flex: 1; overflow-y: auto; }
+    .clery-viewer #list div { display: grid; grid-template-columns: 8px 1fr 26px; gap: 0 10px; padding: 9px 14px; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .clery-viewer #list div:hover { background: #16181b; }
+    .clery-viewer #list i { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; }
+    .clery-viewer #list b { font-weight: 500; font-size: 13px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .clery-viewer #list span { grid-column: 2; color: var(--muted); }
+    .clery-viewer #list .share { grid-column: 3; grid-row: 1 / 3; align-self: center; opacity: 0; }
+    .clery-viewer #list div:hover .share, .clery-viewer #list .share.done { opacity: 1; }
+    .clery-viewer #list .nomap i { background: none !important; box-shadow: inset 0 0 0 1px var(--muted); }
+    .clery-viewer #all { display: block; margin: 10px; flex: none; padding: 9px; text-align: center; border: 1px solid #2a2d32; border-radius: 4px; color: var(--fg); text-decoration: none; }
+    .clery-viewer #all:hover { background: #16181b; }
+    .clery-viewer #mapwrap { flex: 1; position: relative; }
+    .clery-viewer #map { position: absolute; inset: 0; background: var(--bg); }
+    .clery-viewer #range { position: absolute; left: 10px; top: 10px; z-index: 500; padding: 4px 8px; border-radius: 4px; background: #0e0f11cc; pointer-events: none; font-variant-numeric: tabular-nums; }
+    .clery-viewer #tl { position: relative; height: 72px; flex: none; user-select: none; touch-action: none; border-top: 1px solid var(--line); }
+    .clery-viewer #tl canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .clery-viewer #band { position: absolute; top: 8px; bottom: 22px; background: color-mix(in srgb, var(--band) 22%, transparent); border: 1px solid var(--band); border-radius: 3px; cursor: grab; }
+    .clery-viewer #band:active { cursor: grabbing; }
+    .clery-viewer #handle { position: absolute; left: -5px; top: -1px; bottom: -1px; width: 10px; cursor: ew-resize; }
+    .clery-viewer #handle::after { content: ''; position: absolute; left: 3px; top: 30%; bottom: 30%; width: 4px; border-radius: 2px; background: var(--band); }
+    .clery-viewer .leaflet-tooltip.tip { background: #17191c; color: var(--fg); border: 1px solid #2a2d32; border-radius: 4px; box-shadow: 0 6px 24px #0008; padding: 12px 14px; width: 306px; max-width: 90vw; white-space: normal; font-size: 12.75px; line-height: 1.5; }
+    .clery-viewer .leaflet-tooltip.tip::before { display: none; }
+    .clery-viewer .leaflet-popup.pin .leaflet-popup-content-wrapper { background: #17191c; color: var(--fg); border: 1px solid #3a3d42; border-radius: 4px; box-shadow: 0 6px 24px #0008; padding: 0; }
+    .clery-viewer .leaflet-popup.pin .leaflet-popup-tip { background: #17191c; border: 1px solid #3a3d42; }
+    .clery-viewer .leaflet-popup.pin .leaflet-popup-content { margin: 12px 14px; font-size: 12.75px; line-height: 1.5; }
+    .clery-viewer .leaflet-popup.pin a.leaflet-popup-close-button { color: var(--muted); top: 4px; right: 4px; }
+    .clery-viewer .tip b, .clery-viewer .card b { display: block; margin-bottom: 5px; padding-right: 14px; font-size: 14.5px; line-height: 1.3; }
+    .clery-viewer .tip span, .clery-viewer .card span { color: var(--muted); }
+    .clery-viewer .acts { display: flex; width: fit-content; gap: 2px; margin: 2px 0 -8px -8px; }
+    .clery-viewer .acts .share { width: 30px; height: 30px; }
+    .clery-viewer .leaflet-container .acts a.share { color: var(--muted); }
+    .clery-viewer .leaflet-container .acts a.share:hover { color: var(--fg); }
+    .clery-viewer .leaflet-interactive { cursor: pointer; }
+    .clery-viewer .leaflet-container:focus, .clery-viewer .leaflet-interactive:focus { outline: none; }
+    .clery-viewer .leaflet-control-attribution { background: #0e0f11aa !important; color: var(--muted) !important; }
+    .clery-viewer .leaflet-control-attribution a { color: var(--muted) !important; }
+    .clery-viewer #stats { position: absolute; top: 46px; left: 10px; z-index: 600; width: 220px; max-height: calc(100% - 56px); overflow-y: auto; padding: 14px; background: #0e0f11ee; border: 1px solid #2a2d32; border-radius: 6px; box-shadow: 0 8px 28px #0009; backdrop-filter: blur(6px); }
+    .clery-viewer #pie { display: block; width: 128px; height: 128px; margin: 0 auto 12px; }
+    .clery-viewer #pie path, .clery-viewer #pie circle { stroke: #0e0f11; stroke-width: 1; }
+    .clery-viewer #legend { list-style: none; margin: 0; padding: 0; }
+    .clery-viewer #legend li { display: grid; grid-template-columns: 8px 1fr auto; align-items: center; gap: 8px; padding: 3px 0; font-size: 12.5px; }
+    .clery-viewer #legend i { width: 8px; height: 8px; border-radius: 50%; }
+    .clery-viewer #legend span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .clery-viewer #legend b { font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+    @media (max-width: 640px) { .clery-viewer aside, .clery-viewer #stats { display: none; } }
+  
+
+    .clery-viewer #bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+    .clery-viewer #q { flex: 1; max-width: 520px; background: #16181b; border: 1px solid #2a2d32; border-radius: 4px; color: var(--fg); font: inherit; font-size: 14px; padding: 8px 10px; outline: none; }
+    .clery-viewer #q:focus { border-color: #44484f; }
+    .clery-viewer #n { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .clery-viewer #wrap { flex: 1; overflow: auto; }
+    .clery-viewer table { border-collapse: collapse; font-size: 12.5px; }
+    .clery-viewer th { position: sticky; top: 0; background: var(--bg); text-align: left; font-weight: 500; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid #2a2d32; cursor: pointer; white-space: nowrap; user-select: none; }
+    .clery-viewer th:hover { color: var(--fg); }
+    .clery-viewer td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; white-space: nowrap; }
+    .clery-viewer td.s { padding: 3px 0 0 6px; }
+    .clery-viewer td.s .share { opacity: 0; }
+    .clery-viewer tr:hover td.s .share, .clery-viewer td.s .share.done { opacity: 1; }
+    .clery-viewer td.w { white-space: normal; min-width: 200px; max-width: 380px; }
+    .clery-viewer tr:hover td { background: #131518; }
+    .clery-viewer td a { color: #8ab4f8; text-decoration: none; }
+    .clery-viewer td i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+    .clery-viewer mark { background: #ff8a1f44; color: inherit; }
+  

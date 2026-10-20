@@ -1,0 +1,180 @@
+/* Shared presentation for full-page dark stories. Import after a story's local
+   styles, add .dark-story to its root, and opt its page elements into the
+   classes below. Maps, charts, controls, and scroll layouts stay local. */
+.dark-story {
+  --dark-story-plane: #0d0d0d;
+  --dark-story-surface: #1a1a19;
+  --dark-story-text: #fff;
+  --dark-story-secondary: #c3c2b7;
+  --dark-story-muted: #8e8d84;
+  --dark-story-rule: #383835;
+  --dark-story-accent: #3987e5;
+  --dark-story-serif: Georgia, serif;
+  --dark-story-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --dark-story-measure: 640px;
+  --dark-story-gutter: 20px;
+  color-scheme: dark;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--dark-story-plane);
+  color: var(--dark-story-text);
+  -webkit-overflow-scrolling: touch;
+}
+
+.dark-story .dark-story-content {
+  --story-serif: var(--dark-story-serif);
+  --story-sans: var(--dark-story-sans);
+  background: var(--dark-story-plane);
+  color: var(--dark-story-text);
+  font: 18px/1.6 var(--dark-story-serif);
+}
+
+/* The measure describes the text width; gutters fit inside the viewport. */
+.dark-story .dark-story-header,
+.dark-story .dark-story-prose,
+.dark-story .dark-story-footer {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(var(--dark-story-measure) + 2 * var(--dark-story-gutter));
+  margin: 0 auto;
+  padding-right: var(--dark-story-gutter);
+  padding-left: var(--dark-story-gutter);
+}
+
+.dark-story .dark-story-header {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.dark-story .dark-story-header h1 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 26px;
+  font: 700 clamp(38px, 6vw, 64px) / 1.1 var(--dark-story-serif);
+  letter-spacing: -0.02em;
+  text-wrap: wrap;
+}
+
+/* MDX's site-wide shortcodes set inline black text. Limit the override to
+   explicitly marked narrative copy so map labels and metadata keep their colors. */
+.dark-story .dark-story-copy {
+  color: var(--dark-story-text) !important;
+}
+
+.dark-story .dark-story-prose > .dark-story-copy {
+  margin: 0 0 1.1em;
+}
+
+.dark-story .dark-story-lede {
+  margin: 0;
+  font: 20px/1.55 var(--dark-story-serif);
+}
+
+.dark-story .dark-story-header a,
+.dark-story .dark-story-prose a:not(.dark-story-button),
+.dark-story .dark-story-card a:not(.dark-story-button) {
+  color: inherit !important;
+  text-decoration: underline;
+  text-decoration-color: var(--dark-story-accent) !important;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.dark-story .dark-story-date {
+  display: block;
+  margin: 0 0 24px;
+  color: var(--dark-story-secondary);
+  font: 15px/1.4 var(--dark-story-sans);
+}
+
+.dark-story .dark-story-byline {
+  margin: 0 0 16px;
+  color: var(--dark-story-secondary);
+  font: 15px/1.4 var(--dark-story-sans);
+}
+
+.dark-story .dark-story-masthead {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--dark-story-rule);
+  background: var(--dark-story-plane);
+}
+
+.dark-story .dark-story-masthead img {
+  display: block;
+  width: auto;
+  height: 20px;
+  margin: 0;
+}
+
+.dark-story .dark-story-card {
+  box-sizing: border-box;
+  padding: 24px;
+  border: 1px solid var(--dark-story-rule);
+  border-radius: 4px;
+  background: var(--dark-story-surface);
+  box-shadow: 0 6px 24px #0005;
+  font: 18px/1.6 var(--dark-story-serif);
+}
+
+.dark-story .dark-story-card p {
+  margin: 0;
+}
+
+.dark-story .dark-story-card p + p {
+  margin-top: 0.8em;
+}
+
+.dark-story .dark-story-content .dark-story-button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 13px 26px;
+  border-radius: 999px;
+  background: var(--dark-story-text);
+  color: var(--dark-story-surface) !important;
+  font: 700 16px/1.4 var(--dark-story-sans);
+  text-decoration: none !important;
+}
+
+.dark-story .dark-story-scroll-cue {
+  color: var(--dark-story-secondary) !important;
+  font: 15px/1.4 var(--dark-story-sans);
+}
+
+/* These wrappers still render the site's real ArticleFooter component. */
+.dark-story .dark-story-footer {
+  padding-top: 48px;
+  padding-bottom: 64px;
+  color: var(--dark-story-secondary);
+  font: 16px/1.6 var(--dark-story-serif);
+}
+
+.dark-story .dark-story-footer > div > div {
+  border-color: var(--dark-story-rule);
+  background: var(--dark-story-surface);
+}
+
+.dark-story .dark-story-footer h3 {
+  color: var(--dark-story-text);
+  font: 700 21px/1.2 var(--dark-story-sans);
+}
+
+.dark-story .dark-story-footer a {
+  color: var(--dark-story-text);
+}
+
+@media (max-width: 760px) {
+  .dark-story .dark-story-card {
+    padding: 20px;
+  }
+}

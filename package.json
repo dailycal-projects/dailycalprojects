@@ -47,6 +47,7 @@
     "katex": "^0.18.9",
     "leaflet": "^1.7.1",
     "leaflet-choropleth": "^1.1.4",
+    "leaflet.heat": "^0.2.0",
     "leaflet.markercluster": "^1.5.3",
     "prop-types": "^15.7.2",
     "react": "^18.3.1",

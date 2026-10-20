@@ -1,0 +1,397 @@
+/* Story-specific layout and viewer adjustments. Shared page styles live in
+   src/styles/darkStory.css. */
+.clery-root.clery-root--viewer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.clery-root--viewer > .clery-masthead {
+  flex: none;
+}
+
+.clery-root--viewer > .clery-dashboard {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+}
+
+.clery-root .clery-story-header.dark-story-header {
+  padding-bottom: 0;
+}
+
+.clery-root .clery-opening {
+  padding-top: 0;
+  padding-bottom: 64px;
+}
+
+.clery-root .clery-opening .clery-explore {
+  margin: 12px 0 24px;
+}
+
+.clery-root [data-scene="latest-reports"] .clery-story-card {
+  container-type: inline-size;
+}
+
+.clery-root .clery-story-card .clery-explore.dark-story-button {
+  margin-top: 16px;
+  max-width: 100%;
+  padding: 13px 12px;
+  font-size: clamp(9px, 4.4cqi, 16px);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.clery-root .clery-scrolly {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  position: relative;
+  isolation: isolate;
+  background: var(--dark-story-plane);
+}
+
+.clery-root .clery-map-stage {
+  grid-column: 1;
+  grid-row: 1;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  min-width: 0;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+}
+
+.clery-root .clery-story-steps {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  padding: 0 32px;
+}
+
+.clery-root .clery-story-step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 110vh;
+  padding: 48px 0;
+}
+
+.clery-root .clery-story-connectors {
+  /* Keep the popup end stationary during compositor-driven scrolling. */
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.clery-root .clery-story-connectors[hidden] {
+  display: none;
+}
+
+.clery-root .clery-story-connectors path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 1px 2px #000);
+}
+
+.clery-root .clery-story-connectors [data-clery-statute-line] {
+  stroke: #fff;
+}
+
+.clery-root .clery-story-connectors[data-definition-visible="true"] [data-clery-statute-line] {
+  animation: clery-statute-reveal 400ms ease both;
+}
+
+@keyframes clery-statute-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.clery-root .clery-story-step[data-scene="yearly-heatmap"] {
+  display: block;
+  min-height: 350vh;
+  min-height: 350dvh;
+  padding: 0;
+}
+
+.clery-root [data-scene="yearly-heatmap"] > .clery-story-card {
+  position: sticky;
+  top: max(24px, calc(50vh - 120px));
+  top: max(24px, calc(50dvh - 120px));
+}
+
+.clery-story-map {
+  position: relative;
+}
+
+.clery-story-map .clery-story-map-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-story-plane);
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.clery-story-map .clery-aggregate-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(var(--clery-aggregate-scale, 1));
+  vector-effect: non-scaling-stroke;
+}
+
+.clery-root .clery-statute-note[hidden] {
+  display: none;
+}
+
+.clery-story-map .clery-statute-note {
+  position: absolute;
+  z-index: 750;
+  box-sizing: border-box;
+  width: min(320px, calc(100% - 24px));
+  max-height: 42%;
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  color: #151515;
+  box-shadow: 0 6px 24px #0006;
+  font: 14px/1.5 Georgia, serif;
+  animation: clery-statute-reveal 400ms ease both;
+}
+
+.clery-story-map .clery-featured-crime,
+.clery-root .clery-story-card .clery-featured-crime {
+  background: #f7db70;
+  color: #151515;
+}
+
+.clery-story-map :is([data-featured-case], .clery-featured-report, .clery-category-report) .clery-incident-details > :not(.tags),
+.clery-story-map :is([data-featured-case], .clery-featured-report, .clery-category-report) .clery-incident-details > .tags > :not(.clery-featured-statute),
+.clery-story-map .clery-featured-report > small {
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clery-story-map .clery-statute-note,
+  .clery-root .clery-story-connectors[data-definition-visible="true"] [data-clery-statute-line] {
+    animation: none;
+  }
+}
+
+.clery-story-map .clery-featured-statute {
+  outline: 1px solid #81b7ff;
+  outline-offset: 2px;
+}
+
+.clery-story-map .clery-featured-report {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 700;
+  box-sizing: border-box;
+  width: min(306px, calc(100% - 32px));
+  max-height: 44%;
+  padding: 12px 14px;
+  overflow: auto;
+  border: 1px solid #2a2d32;
+  border-radius: 4px;
+  background: #17191c;
+  color: var(--fg);
+  box-shadow: 0 6px 24px #0008;
+  font: 12.75px/1.5 ui-sans-serif, system-ui, sans-serif;
+}
+
+.clery-story-map .clery-featured-report b {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14.5px;
+}
+
+.clery-story-map .clery-story-map-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 500;
+  max-width: calc(100% - 24px);
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: #0e0f11e6;
+  color: var(--fg);
+  font: 12px/1.4 ui-sans-serif, system-ui, sans-serif;
+  pointer-events: none;
+}
+
+.clery-story-map .clery-story-map-status a {
+  color: inherit;
+  pointer-events: auto;
+}
+
+.clery-story-map .leaflet-heatmap-layer {
+  z-index: 99;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.clery-story-map .clery-story-heat-legend {
+  display: none;
+  position: absolute;
+  bottom: 24px;
+  left: 12px;
+  z-index: 500;
+  width: 170px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: #0e0f11e6;
+  color: var(--fg);
+  font: 12px/1.4 ui-sans-serif, system-ui, sans-serif;
+  pointer-events: none;
+}
+
+.clery-story-map[data-scene="yearly-heatmap"] .clery-story-heat-legend {
+  display: block;
+}
+
+.clery-story-map .clery-story-heat-year {
+  display: block;
+  margin-top: 2px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.clery-story-map .clery-story-heat-legend i {
+  display: block;
+  height: 8px;
+  margin: 6px 0 4px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #2563eb, #22d3ee 31%, #facc15 56%, #fb923c 81%, #ef4444);
+}
+
+.clery-story-map .clery-story-heat-legend > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clery-story-map .clery-location-summary {
+  overflow-wrap: anywhere;
+}
+
+.clery-story-map .clery-location-types-title {
+  margin: 10px 0 6px;
+  font-weight: 600;
+}
+
+.clery-story-map .clery-location-types {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clery-story-map .clery-location-types li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.clery-story-map .clery-location-aliases {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .clery-root .clery-scrolly {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .clery-root .clery-story-steps {
+    grid-column: 1;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    pointer-events: none;
+  }
+
+  .clery-root .clery-story-step {
+    justify-content: flex-end;
+    min-height: 115vh;
+    padding: 0 0 12vh;
+  }
+
+  .clery-root .clery-story-card {
+    max-width: 400px;
+    margin-left: auto;
+    pointer-events: auto;
+  }
+}
+
+.clery-root .clery-loading {
+  padding: 32px;
+  font: 16px/1.5 Georgia, serif;
+}
+
+.clery-dashboard .clery-dashboard-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  white-space: normal;
+}
+
+.clery-dashboard .clery-dashboard-nav [aria-current="page"] {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.clery-dashboard .clery-dashboard-error {
+  margin: 8px 0 0;
+  color: #ffb5a5;
+}
+
+.clery-dashboard #tl {
+  overflow: hidden;
+  cursor: grab;
+}
+
+.clery-dashboard.timeline-panning #tl {
+  cursor: grabbing;
+}
+
+/* The drag class is on the viewer root, alongside .clery-dashboard. */
+.clery-dashboard.dragging .tour-hole {
+  opacity: 0;
+  transition: none;
+}
+
+.clery-dashboard .clery-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Other stories apply global Leaflet sizing; this map fills its own panel. */
+.clery-dashboard .leaflet-container {
+  width: auto;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}

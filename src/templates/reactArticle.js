@@ -36,7 +36,7 @@ const ReactArticle = ({ data, location }) => { // data.markdownRemark holds your
         pathname={location.pathname}
       />
       <div style={{ width: '100vw', height: '100vh' }}>
-        <MDXRenderer>
+        <MDXRenderer frontmatter={frontmatter}>
           {body}
         </MDXRenderer>
       </div>
@@ -50,6 +50,10 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        date(formatString: "YYYY-MM-DD")
+        bylineName
+        bylineUrl
+        aboutStory
         subhead
         featuredImage {
           childImageSharp {
