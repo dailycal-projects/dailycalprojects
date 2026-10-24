@@ -91,6 +91,7 @@ import ThirdPlaceMap from '../visuals/thirdplace-visuals/map';
 import NobelScrolly, { NobelNote } from '../visuals/nobel-visuals/NobelScrolly';
 import RentOMeterStory from '../visuals/rent-o-meter-visuals/RentOMeterStory';
 import CleryStory, { CleryScrolly } from '../visuals/clery-visuals/CleryStory';
+import MoneyFlowMap from '../visuals/money-flow-visuals/MoneyFlowMap';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -196,6 +197,7 @@ const shortcodes = {
   RentOMeterStory,
   CleryStory,
   CleryScrolly,
+  MoneyFlowMap,
 };
 
 export default function Layout({ children }) {
