@@ -73,3 +73,6 @@ yarn-error.log
 
 # Temporary files for testing video players
 static/**/*.mp4
+
+# Transfers extraction scripts and original exports
+src/visuals/transfers-visuals/extra/
