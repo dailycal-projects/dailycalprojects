@@ -88,6 +88,7 @@ import BayPassCalculator from '../visuals/clipper-visuals/baypasscalculator';
 import CandidateFinanceVisuals from '../visuals/candidate-visuals/finance_visuals';
 import TransferVisual from '../visuals/transfers-visuals/TransferVisual';
 import AdmissionsDots from '../visuals/transfers-visuals/AdmissionsDots';
+import CollegePathways from '../visuals/transfers-visuals/CollegePathways';
 import AcTransitStory from '../visuals/ac-transit-visuals/AcTransitStory';
 import ThirdPlaceMap from '../visuals/thirdplace-visuals/map';
 import NobelScrolly, { NobelNote } from '../visuals/nobel-visuals/NobelScrolly';
@@ -193,6 +194,7 @@ const shortcodes = {
   CandidateFinanceVisuals,
   TransferVisual,
   AdmissionsDots,
+  CollegePathways,
   AcTransitStory,
   ThirdPlaceMap,
   NobelScrolly,

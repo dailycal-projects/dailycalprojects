@@ -1,46 +1,242 @@
-.admissions-dots { margin: 20px 0 40px; color: inherit; font-family: Arial, sans-serif; }
-.admissions-controls { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
-.admissions-controls label { display: flex; flex: 1 1 120px; flex-direction: column; gap: 6px; font-size: 11px; color: #555; min-width: 0; }
-.admissions-controls .admissions-search { flex: 2 1 190px; }
-.admissions-controls input { width: 100%; box-sizing: border-box; min-width: 0; padding: 8px 6px; border: 0; border-bottom: 1px solid #bbb; background: transparent; color: #222; font: 13px Arial, sans-serif; border-radius: 0; }
-.admissions-status { font-size: 12px; color: #666; margin: 8px 0; }
-.admissions-scroll { overflow-x: auto; }
-.admissions-canvas { min-width: 600px; width: 100%; position: relative; }
-.admissions-canvas svg { width: 100%; height: 100%; display: block; overflow: visible; }
-.admissions-canvas svg text { font: 15px Arial, sans-serif; fill: #666; }
-.admissions-canvas circle { cursor: pointer; transition: fill-opacity 120ms; }
-.admissions-tooltip { position: absolute; width: 31%; padding: 10px 12px; background: white; border: 1px solid #ddd; box-shadow: 0 2px 8px #0001; font-size: 12px; line-height: 1.5; pointer-events: none; z-index: 1; box-sizing: border-box; }
-.admissions-tooltip strong, .admissions-tooltip span { display: block; }
-.admissions-detail { padding: 14px 0; margin-top: 12px; border-top: 1px solid #ddd; font-size: 13px; line-height: 1.5; }
-.admissions-detail p { margin: 0; }
-.admissions-detail-heading { display: flex; gap: 10px; align-items: start; justify-content: space-between; }
-.admissions-detail h4 { font: bold 15px Arial, sans-serif; margin: 0 0 8px; }
-.admissions-detail h4 i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; }
-.admissions-dots button { cursor: pointer; border: 0; padding: 0; background: transparent; color: #666; text-decoration: underline; font: 11px Arial, sans-serif; }
-.admissions-method { margin: 18px 0 8px; font-size: 11px; line-height: 1.6; color: #777; }
-.admissions-method summary { cursor: pointer; }
-.admissions-method p { margin: 10px 0; }
-.admissions-dots :focus-visible { outline: 2px solid #174b70; outline-offset: 3px; }
-.admissions-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 14px 0; font-size: 15px; color: #666; }
-.admissions-legend span { display: inline-flex; align-items: center; gap: 5px; }
-.admissions-legend i { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-@media (max-width: 600px) { .admissions-scroll::before { content: 'Scroll to explore →'; display: block; font: 10px Arial, sans-serif; margin-bottom: 8px; color: #777; } }
+.admissions-dots {
+  margin: 20px 0 40px;
+  color: inherit;
+  font-family: Arial, sans-serif;
+}
+.admissions-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.admissions-controls label {
+  display: flex;
+  flex: 1 1 120px;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  color: #555;
+  min-width: 0;
+}
+.admissions-controls .admissions-search {
+  flex: 2 1 190px;
+}
+.admissions-controls input {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 8px 6px;
+  border: 0;
+  border-bottom: 1px solid #bbb;
+  background: transparent;
+  color: #222;
+  font: 13px Arial, sans-serif;
+  border-radius: 0;
+}
+.admissions-status {
+  font-size: 12px;
+  color: #666;
+  margin: 8px 0;
+}
+.admissions-scroll {
+  overflow-x: auto;
+}
+.admissions-canvas {
+  min-width: 600px;
+  width: 100%;
+  position: relative;
+}
+.admissions-canvas svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+.admissions-canvas svg text {
+  font: 15px Arial, sans-serif;
+  fill: #666;
+}
+.admissions-canvas circle {
+  cursor: pointer;
+  transition: fill-opacity 120ms;
+}
+.admissions-tooltip {
+  position: absolute;
+  width: 31%;
+  padding: 10px 12px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px #0001;
+  font-size: 12px;
+  line-height: 1.5;
+  pointer-events: none;
+  z-index: 1;
+  box-sizing: border-box;
+}
+.admissions-tooltip strong,
+.admissions-tooltip span {
+  display: block;
+}
+.admissions-detail {
+  padding: 14px 0;
+  margin-top: 12px;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.admissions-detail p {
+  margin: 0;
+}
+.admissions-detail-heading {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  justify-content: space-between;
+}
+.admissions-detail h4 {
+  font: bold 15px Arial, sans-serif;
+  margin: 0 0 8px;
+}
+.admissions-detail h4 i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+.admissions-dots button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #666;
+  text-decoration: underline;
+  font: 11px Arial, sans-serif;
+}
+.admissions-method {
+  margin: 18px 0 8px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #777;
+}
+.admissions-method p {
+  margin: 10px 0;
+}
+.admissions-dots :focus-visible {
+  outline: 2px solid #174b70;
+  outline-offset: 3px;
+}
+.admissions-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 14px 0;
+  font-size: 15px;
+  color: #666;
+}
+.admissions-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.admissions-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .admissions-scroll::before {
+    content: "Scroll to explore →";
+    display: block;
+    font: 10px Arial, sans-serif;
+    margin-bottom: 8px;
+    color: #777;
+  }
+}
 
-.admissions-dots .admissions-heading { font: bold 24px/1.4 Georgia, serif; margin: 0 0 24px; color: inherit; }
+.admissions-dots .admissions-heading {
+  font: bold 24px/1.4 Georgia, serif;
+  margin: 0 0 24px;
+  color: inherit;
+}
 
-.admissions-empty { font: 14px/1.6 Arial, sans-serif; color: #666; padding: 20px 0; }
-.admissions-campus-select { display: inline-block; position: relative; max-width: 100%; vertical-align: baseline; border-bottom: 1px solid #888; }
-.admissions-campus-select > span { display: block; padding: 0 1.1em 2px 0; font: inherit; pointer-events: none; }
-.admissions-campus-select::after { content: ''; position: absolute; right: .2em; top: 45%; width: .22em; height: .22em; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-50%) rotate(45deg); pointer-events: none; }
-.admissions-campus-select select { position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; margin: 0; opacity: 0; cursor: pointer; font: inherit; }
-.admissions-campus-select:focus-within { outline: 2px solid #174b70; outline-offset: 3px; }
+.admissions-empty {
+  font: 14px/1.6 Arial, sans-serif;
+  color: #666;
+  padding: 20px 0;
+}
+.admissions-campus-select {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  vertical-align: baseline;
+  border-bottom: 1px solid #888;
+}
+.admissions-campus-select > span {
+  display: block;
+  padding: 0 1.1em 2px 0;
+  font: inherit;
+  pointer-events: none;
+}
+.admissions-campus-select::after {
+  content: "";
+  position: absolute;
+  right: 0.2em;
+  top: 45%;
+  width: 0.22em;
+  height: 0.22em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+}
+.admissions-campus-select select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.admissions-campus-select:focus-within {
+  outline: 2px solid #174b70;
+  outline-offset: 3px;
+}
 @media (min-width: 901px) {
-  .admissions-dots .admissions-heading { white-space: nowrap; }
-  .admissions-campus-select { max-width: none; }
+  .admissions-dots .admissions-heading {
+    white-space: nowrap;
+  }
+  .admissions-campus-select {
+    max-width: none;
+  }
 }
 @media (max-width: 900px) {
-  .admissions-dots .admissions-heading { white-space: normal; overflow-wrap: anywhere; }
-  .admissions-campus-select { max-width: 100%; }
+  .admissions-dots .admissions-heading {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .admissions-campus-select {
+    max-width: 100%;
+  }
 }
 
-.admissions-canvas svg .admissions-axis-title { font-size: 18px; fill: #555; }
+.admissions-canvas svg .admissions-axis-title {
+  font-size: 18px;
+  fill: #555;
+}
+
+.admissions-hover-hint {
+  color: #555;
+}
+.admissions-canvas svg .admissions-hover-hint text {
+  font: italic 18px Georgia, serif;
+  fill: #555;
+}
+/* Focused dots use the chart's darker circular stroke instead of a browser box. */
+.admissions-canvas circle:focus {
+  outline: none;
+}

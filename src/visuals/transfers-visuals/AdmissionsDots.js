@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   color, format, max, min, sum, scaleLinear, scaleSqrt,
 } from 'd3';
@@ -57,34 +57,14 @@ function makeChart(majors) {
   const y = scaleLinear()
     .domain([Math.floor(min(plotted, (m) => m.gpa) * 10) / 10 - 0.05, Math.ceil(max(plotted, (m) => m.gpa) * 10) / 10 + 0.05])
     .range([baseHeight - 65, 50]);
-  // Keep admission rates exact; choose the closest collision-free vertical
-  // position to each GPA midpoint. Large dots settle first, with stable ties.
-  const dots = [];
-  [...plotted].sort((a, b) => b.size - a.size || a.id.localeCompare(b.id)).forEach((major) => {
-    const cx = x(major.value);
-    const preferred = y(major.gpa);
-    const r = radius(major.size);
-    const nearby = dots.filter((dot) => Math.abs(dot.x - cx) < dot.r + r + 3);
-    const candidates = [preferred];
-    nearby.forEach((dot) => {
-      const distance = Math.sqrt((dot.r + r + 3) ** 2 - (dot.x - cx) ** 2);
-      candidates.push(dot.y - distance, dot.y + distance);
-    });
-    candidates.sort((a, b) => Math.abs(a - preferred) - Math.abs(b - preferred));
-    const cy = candidates.find((candidate) => nearby.every((dot) => Math.hypot(dot.x - cx, dot.y - candidate) >= dot.r + r + 2.9));
-    dots.push({
-      ...major, x: cx, y: cy, r,
-    });
-  });
-
   // Place higher-GPA majors first. Within 15 percentage points on x,
   // subsequent lower-GPA majors must stay below their higher-GPA neighbors.
-  const orderedDots = [];
+  const dots = [];
   [...plotted].sort((a, b) => b.gpa - a.gpa || a.id.localeCompare(b.id)).forEach((major) => {
     const cx = x(major.value);
     const r = radius(major.size);
     let cy = y(major.gpa);
-    orderedDots.forEach((dot) => {
+    dots.forEach((dot) => {
       const dx = Math.abs(dot.x - cx);
       const separation = dot.r + r + 3;
       if (dx < separation) {
@@ -93,32 +73,38 @@ function makeChart(majors) {
         cy = Math.max(cy, dot.y + 2);
       }
     });
-    orderedDots.push({
+    dots.push({
       ...major, x: cx, y: cy, r,
     });
   });
-  const orderedHeight = Math.max(baseHeight, Math.ceil(max(orderedDots, (dot) => dot.y + dot.r)) + 65) + 30;
+  const height = Math.max(baseHeight, Math.ceil(max(dots, (dot) => dot.y + dot.r)) + 65) + 30;
   return {
-    items, dots, orderedDots, orderedHeight,
+    items, dots, height,
   };
 }
 const charts = Object.fromEntries(Object.entries(admissions.campuses).map(([name, data]) => [name, makeChart(data.majors)]));
 
 const campuses = ['Berkeley', 'Davis', 'Irvine', 'Los Angeles', 'Merced', 'Riverside', 'San Diego', 'Santa Barbara', 'Santa Cruz'];
 
-export default function AdmissionsDots() {
+export default function AdmissionsDots({ sourceNotes }) {
   const [campus, setCampus] = useState('Berkeley');
-  const [layout, setLayout] = useState('ordered');
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState(null);
   const [hovered, setHovered] = useState(null);
+  const [hintDismissed, setHintDismissed] = useState(false);
+  const hintTextRef = useRef(null);
+  const [hintWidth, setHintWidth] = useState(240);
+  useEffect(() => {
+    if (hintTextRef.current) setHintWidth(hintTextRef.current.getComputedTextLength() + 20);
+  }, [campus, hintDismissed]);
   const chart = charts[campus];
   const items = chart?.items || [];
-  const dots = (layout === 'ordered' ? chart?.orderedDots : chart?.dots) || [];
-  const height = layout === 'ordered' ? chart?.orderedHeight || baseHeight : baseHeight;
+  const dots = chart?.dots || [];
+  const height = chart?.height || baseHeight;
   const search = query.trim().toLowerCase();
   const matches = (m) => `${m.name} ${m.school} ${m.colorKey}`.toLowerCase().includes(search);
   const active = dots.find((m) => m.id === (hovered || selected));
+  const hintMajor = campus === 'Berkeley' && !hintDismissed ? dots.find((m) => m.name === 'Applied Mathematics') : null;
   const selectedMajor = dots.find((m) => m.id === selected);
   const clear = () => { setSelected(null); setHovered(null); };
   const shown = items.filter(matches);
@@ -163,14 +149,26 @@ export default function AdmissionsDots() {
                 ))}
                 <text className="admissions-axis-title" transform={`translate(30,${(50 + height - 65) / 2}) rotate(-90)`} textAnchor="middle">← GPA range midpoint →</text>
                 {dots.map((m) => (
-                  <circle key={m.id} cx={m.x} cy={m.y} r={m.r} fill={majorColor(m.colorKey)} fillOpacity={matches(m) ? 0.86 : 0.1} stroke={active?.id === m.id ? '#172e40' : color(majorColor(m.colorKey)).darker(0.9).formatHex()} strokeWidth={active?.id === m.id ? 3 : 1.8} tabIndex={matches(m) ? 0 : -1} role="button" aria-label={`${m.name}${m.school ? `, ${m.school}` : ''}: ${number(m.admits)} of ${number(m.applicants)} admitted, ${percent(m.value)}, GPA range midpoint ${format('.2f')(m.gpa)}`} aria-pressed={selected === m.id} onMouseEnter={() => setHovered(m.id)} onMouseLeave={() => setHovered(null)} onFocus={() => setHovered(m.id)} onBlur={() => setHovered(null)} onClick={() => setSelected(selected === m.id ? null : m.id)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(selected === m.id ? null : m.id); } if (e.key === 'Escape') clear(); }} />
+                  <circle key={m.id} cx={m.x} cy={m.y} r={m.r} fill={majorColor(m.colorKey)} fillOpacity={matches(m) ? 0.86 : 0.1} stroke={active?.id === m.id ? '#172e40' : color(majorColor(m.colorKey)).darker(0.9).formatHex()} strokeWidth={active?.id === m.id ? 3 : 1.8} tabIndex={matches(m) ? 0 : -1} role="button" aria-label={`${m.name}${m.school ? `, ${m.school}` : ''}: ${number(m.admits)} of ${number(m.applicants)} admitted, ${percent(m.value)}, GPA range midpoint ${format('.2f')(m.gpa)}`} aria-pressed={selected === m.id} onMouseEnter={() => { setHovered(m.id); setHintDismissed(true); }} onMouseLeave={() => setHovered(null)} onFocus={() => { setHovered(m.id); setHintDismissed(true); }} onBlur={() => setHovered(null)} onClick={() => { setSelected(selected === m.id ? null : m.id); setHintDismissed(true); }} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(selected === m.id ? null : m.id); } if (e.key === 'Escape') clear(); }} />
                 ))}
+                {hintMajor && (
+                  <g className="admissions-hover-hint" pointerEvents="none" aria-hidden="true">
+                    <defs>
+                      <marker id="admissions-hint-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M1,1 L9,5 L1,9" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                      </marker>
+                    </defs>
+                    <path d={`M430,${height * 0.46} C390,${height * 0.46} ${hintMajor.x - 5},${height * 0.43} ${hintMajor.x},${hintMajor.y + hintMajor.r + 8}`} fill="none" stroke="currentColor" strokeWidth="1.5" markerEnd="url(#admissions-hint-arrow)" />
+                    <rect x={440} y={height * 0.46 - 19} width={hintWidth} height={36} rx={3} fill="white" fillOpacity="0.9" />
+                    <text ref={hintTextRef} x={450} y={height * 0.46 + 4}>Hover on a dot to see details</text>
+                  </g>
+                )}
                 <text className="admissions-axis-title" x={467} y={height - 10} textAnchor="middle">Admission rate</text>
               </svg>
               {active && (
               <div className="admissions-tooltip" style={{ left: `${Math.max(1, Math.min(65, (active.x / 900) * 100 + (active.x > 580 ? -33 : 2)))}%`, top: `${Math.max(8, Math.min(65, (active.y / height) * 100 - 8))}%` }}>
                 <strong>{active.name}</strong>
-                {active.school && <span>{active.school}</span>}
+                {active.school && <span><em>{active.colorKey === 'Other' && active.school.toLowerCase() === 'not applicable' ? 'Other' : active.school}</em></span>}
                 <span>
                   {`${number(active.admits)} / ${number(active.applicants)} admitted (`}
                   <b>{percent(active.value)}</b>
@@ -195,16 +193,18 @@ export default function AdmissionsDots() {
             <p>{`${number(selectedMajor.admits)} admitted out of ${number(selectedMajor.applicants)} applicants (${percent(selectedMajor.value)}). ${number(selectedMajor.enrollees)} enrolled.${selectedMajor.admitGpa ? ` Admitted-student GPA range: ${selectedMajor.admitGpa}.` : ''}`}</p>
           </div>
           )}
-          <button className="admissions-layout-toggle" type="button" onClick={() => { setLayout(layout === 'ordered' ? 'compact' : 'ordered'); clear(); }}>
-            {layout === 'ordered' ? 'Compare compact layout' : 'Show GPA-ordered layout'}
-          </button>
-          <details className="admissions-method">
-            <summary>Source notes</summary>
-            <p>
-              UC admissions exports; year unspecified. Rates are admits divided by applicants. Vertical positions follow the admitted GPA range midpoint and shift to avoid overlapping dots. The GPA-ordered layout keeps higher-midpoint majors above lower-midpoint majors within 15 percentage points of admission rate. Exact midpoints appear on hover; they are not mean GPAs. Majors without a published range are omitted from the plot.
-              {`The ${items.length} published major rows cover ${number(sum(items, (m) => m.admits))} admits and ${number(sum(items, (m) => m.applicants))} applicants.`}
-            </p>
-          </details>
+          {sourceNotes && (
+            <div className="admissions-method">
+              <p>
+                {typeof sourceNotes === 'function' ? sourceNotes({
+                  campus,
+                  majorCount: items.length,
+                  admitCount: sum(items, (m) => m.admits),
+                  applicantCount: sum(items, (m) => m.applicants),
+                }) : sourceNotes}
+              </p>
+            </div>
+          )}
         </>
       ) : <p className="admissions-empty" role="status">{`Major-level admissions data for UC ${campus} has not been added yet.`}</p>}
     </section>
