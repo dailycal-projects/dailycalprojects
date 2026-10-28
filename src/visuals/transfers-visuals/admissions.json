@@ -1,0 +1,5670 @@
+{
+  "year": null,
+  "campuses": {
+    "Berkeley": {
+      "source": "UCB Major Table.xlsx",
+      "majors": [
+        {
+          "discipline": "Architecture",
+          "school": "Environmental Design",
+          "name": "Architecture",
+          "applicants": 294,
+          "admits": 54,
+          "enrollees": 44,
+          "admitGpa": "3.73 - 3.94",
+          "enrolleeGpa": "3.73 - 3.94"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Art",
+          "applicants": 240,
+          "admits": 55,
+          "enrollees": 32,
+          "admitGpa": "3.80 - 4.00",
+          "enrolleeGpa": "3.79 - 4.00"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Chinese Language & Literature",
+          "applicants": 39,
+          "admits": 20,
+          "enrollees": 16,
+          "admitGpa": "3.53 - 4.00",
+          "enrolleeGpa": "3.44 - 3.94"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Comparative Literature",
+          "applicants": 47,
+          "admits": 31,
+          "enrollees": 18,
+          "admitGpa": "3.53 - 3.92",
+          "enrolleeGpa": "3.53 - 3.85"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "East Asian Religion, Thought, and Culture",
+          "applicants": 55,
+          "admits": 16,
+          "enrollees": 10,
+          "admitGpa": "3.61 - 3.92",
+          "enrolleeGpa": "3.44 - 3.89"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "English",
+          "applicants": 478,
+          "admits": 373,
+          "enrollees": 208,
+          "admitGpa": "3.41 - 3.90",
+          "enrolleeGpa": "3.38 - 3.85"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Film",
+          "applicants": 365,
+          "admits": 217,
+          "enrollees": 104,
+          "admitGpa": "3.46 - 3.90",
+          "enrolleeGpa": "3.34 - 3.85"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "History",
+          "applicants": 333,
+          "admits": 102,
+          "enrollees": 48,
+          "admitGpa": "3.73 - 4.00",
+          "enrolleeGpa": "3.66 - 3.94"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "History of Art",
+          "applicants": 147,
+          "admits": 111,
+          "enrollees": 41,
+          "admitGpa": "3.36 - 3.93",
+          "enrolleeGpa": "3.25 - 3.84"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Japanese Language & Literature",
+          "applicants": 35,
+          "admits": 26,
+          "enrollees": 3,
+          "admitGpa": "3.49 - 3.93",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics",
+          "applicants": 95,
+          "admits": 57,
+          "enrollees": 24,
+          "admitGpa": "3.68 - 4.00",
+          "enrolleeGpa": "3.67 - 3.88"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Middle Eastern Languages & Cultures",
+          "applicants": 13,
+          "admits": 6,
+          "enrollees": 3,
+          "admitGpa": "3.69 - 3.90",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Music",
+          "applicants": 72,
+          "admits": 41,
+          "enrollees": 15,
+          "admitGpa": "3.50 - 3.94",
+          "enrolleeGpa": "3.54 - 3.83"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Philosophy",
+          "applicants": 288,
+          "admits": 212,
+          "enrollees": 122,
+          "admitGpa": "3.52 - 3.93",
+          "enrolleeGpa": "3.44 - 3.94"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Rhetoric",
+          "applicants": 77,
+          "admits": 53,
+          "enrollees": 37,
+          "admitGpa": "3.55 - 3.93",
+          "enrolleeGpa": "3.55 - 3.92"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "South & Southeast Asian Studies",
+          "applicants": 11,
+          "admits": 8,
+          "enrollees": 5,
+          "admitGpa": "3.66 - 3.83",
+          "enrolleeGpa": "3.61 - 3.87"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Spanish / Portuguese",
+          "applicants": 33,
+          "admits": 22,
+          "enrollees": 6,
+          "admitGpa": "3.37 - 3.95",
+          "enrolleeGpa": "3.16 - 3.46"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Theater and Performance Studies",
+          "applicants": 107,
+          "admits": 67,
+          "enrollees": 28,
+          "admitGpa": "3.47 - 3.89",
+          "enrolleeGpa": "3.45 - 3.81"
+        },
+        {
+          "discipline": "Business",
+          "school": "Business Administration",
+          "name": "Business Administration",
+          "applicants": 2413,
+          "admits": 118,
+          "enrollees": 115,
+          "admitGpa": "3.87 - 4.00",
+          "enrolleeGpa": "3.87 - 4.00"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Computing, Data Sci and Soc",
+          "name": "Computer Science",
+          "applicants": 1870,
+          "admits": 50,
+          "enrollees": 43,
+          "admitGpa": "3.98 - 4.00",
+          "enrolleeGpa": "3.98 - 4.00"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Computing, Data Sci and Soc",
+          "name": "Data Science",
+          "applicants": 752,
+          "admits": 105,
+          "enrollees": 94,
+          "admitGpa": "3.80 - 4.00",
+          "enrolleeGpa": "3.80 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Chemistry",
+          "name": "Chemical Engineering",
+          "applicants": 148,
+          "admits": 49,
+          "enrollees": 35,
+          "admitGpa": "3.79 - 3.98",
+          "enrolleeGpa": "3.75 - 3.96"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Aerospace Engineering",
+          "applicants": 229,
+          "admits": 37,
+          "enrollees": 28,
+          "admitGpa": "3.86 - 4.00",
+          "enrolleeGpa": "3.87 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Bioengineering",
+          "applicants": 176,
+          "admits": 38,
+          "enrollees": 25,
+          "admitGpa": "3.83 - 4.00",
+          "enrolleeGpa": "3.82 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Civil Engineering",
+          "applicants": 175,
+          "admits": 38,
+          "enrollees": 28,
+          "admitGpa": "3.76 - 3.94",
+          "enrolleeGpa": "3.78 - 3.94"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Electrical Engineering - Computer Science",
+          "applicants": 1171,
+          "admits": 133,
+          "enrollees": 121,
+          "admitGpa": "3.95 - 4.00",
+          "enrolleeGpa": "3.95 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Energy Engineering",
+          "applicants": 14,
+          "admits": 3,
+          "enrollees": 3,
+          "admitGpa": "3.63 - 3.82",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Industrial Engineering & Operations Research Engineering",
+          "applicants": 35,
+          "admits": 5,
+          "enrollees": 5,
+          "admitGpa": "3.70 - 3.86",
+          "enrolleeGpa": "3.70 - 3.86"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Mechanical Engineering",
+          "applicants": 698,
+          "admits": 93,
+          "enrollees": 74,
+          "admitGpa": "3.90 - 4.00",
+          "enrolleeGpa": "3.89 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Nuclear Engineering",
+          "applicants": 41,
+          "admits": 10,
+          "enrollees": 7,
+          "admitGpa": "3.78 - 3.99",
+          "enrolleeGpa": "3.75 - 3.93"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Letters & Science",
+          "name": "Analytics",
+          "applicants": 16,
+          "admits": 7,
+          "enrollees": 7,
+          "admitGpa": "3.66 - 3.94",
+          "enrolleeGpa": "3.66 - 3.94"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Environmental Earth Science",
+          "applicants": 30,
+          "admits": 17,
+          "enrollees": 10,
+          "admitGpa": "3.49 - 3.79",
+          "enrolleeGpa": "3.27 - 3.72"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Geography",
+          "applicants": 46,
+          "admits": 26,
+          "enrollees": 12,
+          "admitGpa": "3.61 - 3.93",
+          "enrolleeGpa": "3.38 - 3.92"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Integrative Biology",
+          "applicants": 230,
+          "admits": 95,
+          "enrollees": 49,
+          "admitGpa": "3.65 - 3.95",
+          "enrolleeGpa": "3.62 - 3.90"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Molecular & Cell Biology",
+          "applicants": 764,
+          "admits": 240,
+          "enrollees": 109,
+          "admitGpa": "3.69 - 3.96",
+          "enrolleeGpa": "3.58 - 3.92"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Neuroscience",
+          "applicants": 195,
+          "admits": 61,
+          "enrollees": 27,
+          "admitGpa": "3.70 - 3.98",
+          "enrolleeGpa": "3.68 - 3.98"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural Resources",
+          "name": "Conservation & Resource Studies",
+          "applicants": 51,
+          "admits": 25,
+          "enrollees": 15,
+          "admitGpa": "3.53 - 3.86",
+          "enrolleeGpa": "3.19 - 3.78"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural Resources",
+          "name": "Ecosystem Management and Forestry - Forestry",
+          "applicants": 21,
+          "admits": 10,
+          "enrollees": 8,
+          "admitGpa": "3.36 - 3.82",
+          "enrolleeGpa": "3.33 - 3.84"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural Resources",
+          "name": "Environmental Economics & Policy",
+          "applicants": 139,
+          "admits": 42,
+          "enrollees": 30,
+          "admitGpa": "3.72 - 4.00",
+          "enrolleeGpa": "3.71 - 4.00"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural Resources",
+          "name": "Environmental Science",
+          "applicants": 168,
+          "admits": 20,
+          "enrollees": 12,
+          "admitGpa": "3.35 - 3.92",
+          "enrolleeGpa": "3.35 - 3.86"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural Resources",
+          "name": "Genetics & Plant Biology",
+          "applicants": 50,
+          "admits": 12,
+          "enrollees": 5,
+          "admitGpa": "3.38 - 3.89",
+          "enrolleeGpa": "3.14 - 3.78"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural Resources",
+          "name": "Microbial Biology",
+          "applicants": 153,
+          "admits": 68,
+          "enrollees": 27,
+          "admitGpa": "3.51 - 3.96",
+          "enrolleeGpa": "3.37 - 3.81"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural Resources",
+          "name": "Molecular Environmental Biology",
+          "applicants": 116,
+          "admits": 43,
+          "enrollees": 22,
+          "admitGpa": "3.60 - 3.91",
+          "enrolleeGpa": "3.45 - 3.88"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural Resources",
+          "name": "Society and Environment",
+          "applicants": 54,
+          "admits": 19,
+          "enrollees": 11,
+          "admitGpa": "3.47 - 3.90",
+          "enrolleeGpa": "3.39 - 3.86"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Cognitive Science",
+          "applicants": 318,
+          "admits": 57,
+          "enrollees": 40,
+          "admitGpa": "3.74 - 3.96",
+          "enrolleeGpa": "3.71 - 3.95"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Global Studies",
+          "applicants": 146,
+          "admits": 86,
+          "enrollees": 49,
+          "admitGpa": "3.60 - 3.93",
+          "enrolleeGpa": "3.56 - 3.93"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Interdisciplinary Studies",
+          "applicants": 150,
+          "admits": 42,
+          "enrollees": 27,
+          "admitGpa": "3.66 - 3.96",
+          "enrolleeGpa": "3.64 - 3.96"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Legal Studies",
+          "applicants": 189,
+          "admits": 26,
+          "enrollees": 17,
+          "admitGpa": "3.76 - 4.00",
+          "enrolleeGpa": "3.70 - 4.00"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Media Studies",
+          "applicants": 467,
+          "admits": 110,
+          "enrollees": 70,
+          "admitGpa": "3.64 - 3.98",
+          "enrolleeGpa": "3.60 - 3.91"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Natural Resources",
+          "name": "Nutritional Science",
+          "applicants": 102,
+          "admits": 8,
+          "enrollees": 5,
+          "admitGpa": "3.47 - 3.85",
+          "enrolleeGpa": "3.51 - 3.83"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Chemistry",
+          "name": "Chemical Biology",
+          "applicants": 184,
+          "admits": 52,
+          "enrollees": 20,
+          "admitGpa": "3.78 - 3.96",
+          "enrolleeGpa": "3.75 - 3.93"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Chemistry",
+          "name": "Chemistry",
+          "applicants": 214,
+          "admits": 54,
+          "enrollees": 28,
+          "admitGpa": "3.78 - 4.00",
+          "enrolleeGpa": "3.70 - 3.90"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Computing, Data Sci and Soc",
+          "name": "Statistics",
+          "applicants": 309,
+          "admits": 95,
+          "enrollees": 73,
+          "admitGpa": "3.79 - 4.00",
+          "enrolleeGpa": "3.79 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Engineering",
+          "name": "Materials Science & Engineering",
+          "applicants": 35,
+          "admits": 5,
+          "enrollees": 5,
+          "admitGpa": "3.66 - 3.85",
+          "enrolleeGpa": "3.66 - 3.85"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Applied Mathematics",
+          "applicants": 727,
+          "admits": 274,
+          "enrollees": 186,
+          "admitGpa": "3.81 - 4.00",
+          "enrolleeGpa": "3.78 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Astrophysics",
+          "applicants": 70,
+          "admits": 41,
+          "enrollees": 27,
+          "admitGpa": "3.47 - 3.91",
+          "enrolleeGpa": "3.40 - 3.91"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Chemistry",
+          "applicants": 15,
+          "admits": 7,
+          "enrollees": 5,
+          "admitGpa": "3.86 - 3.98",
+          "enrolleeGpa": "3.94 - 3.98"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Geology",
+          "applicants": 24,
+          "admits": 10,
+          "enrollees": 6,
+          "admitGpa": "3.43 - 3.82",
+          "enrolleeGpa": "3.46 - 3.90"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Marine Science",
+          "applicants": 26,
+          "admits": 15,
+          "enrollees": 7,
+          "admitGpa": "3.25 - 3.79",
+          "enrolleeGpa": "3.18 - 3.62"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Mathematics",
+          "applicants": 283,
+          "admits": 74,
+          "enrollees": 51,
+          "admitGpa": "3.72 - 4.00",
+          "enrolleeGpa": "3.71 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Physics",
+          "applicants": 237,
+          "admits": 86,
+          "enrollees": 64,
+          "admitGpa": "3.62 - 3.98",
+          "enrolleeGpa": "3.60 - 3.96"
+        },
+        {
+          "discipline": "Public Admin",
+          "school": "Letters & Science",
+          "name": "Social Welfare",
+          "applicants": 96,
+          "admits": 26,
+          "enrollees": 14,
+          "admitGpa": "3.50 - 3.92",
+          "enrolleeGpa": "3.42 - 3.82"
+        },
+        {
+          "discipline": "Public Health",
+          "school": "Letters & Science",
+          "name": "Public Health",
+          "applicants": 342,
+          "admits": 32,
+          "enrollees": 12,
+          "admitGpa": "3.65 - 3.92",
+          "enrolleeGpa": "3.53 - 3.92"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Environmental Design",
+          "name": "Urban Studies",
+          "applicants": 58,
+          "admits": 19,
+          "enrollees": 10,
+          "admitGpa": "3.42 - 3.88",
+          "enrolleeGpa": "3.39 - 3.89"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "American Studies",
+          "applicants": 39,
+          "admits": 32,
+          "enrollees": 27,
+          "admitGpa": "3.19 - 3.87",
+          "enrolleeGpa": "3.06 - 3.89"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Anthropology",
+          "applicants": 297,
+          "admits": 115,
+          "enrollees": 58,
+          "admitGpa": "3.68 - 3.94",
+          "enrolleeGpa": "3.67 - 3.93"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Asian American and Asian Diaspora Studies",
+          "applicants": 22,
+          "admits": 14,
+          "enrollees": 11,
+          "admitGpa": "3.72 - 3.93",
+          "enrolleeGpa": "3.74 - 3.92"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Chicano Studies",
+          "applicants": 9,
+          "admits": 7,
+          "enrollees": 3,
+          "admitGpa": "3.30 - 3.78",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Economics",
+          "applicants": 1772,
+          "admits": 268,
+          "enrollees": 193,
+          "admitGpa": "3.84 - 4.00",
+          "enrolleeGpa": "3.80 - 4.00"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Ethnic Studies",
+          "applicants": 29,
+          "admits": 16,
+          "enrollees": 12,
+          "admitGpa": "3.51 - 3.93",
+          "enrolleeGpa": "3.49 - 3.94"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Gender & Women's Studies",
+          "applicants": 54,
+          "admits": 33,
+          "enrollees": 20,
+          "admitGpa": "3.81 - 3.94",
+          "enrolleeGpa": "3.81 - 3.94"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Political Economy",
+          "applicants": 253,
+          "admits": 31,
+          "enrollees": 22,
+          "admitGpa": "3.75 - 4.00",
+          "enrolleeGpa": "3.72 - 3.92"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Political Science",
+          "applicants": 1195,
+          "admits": 150,
+          "enrollees": 82,
+          "admitGpa": "3.79 - 4.00",
+          "enrolleeGpa": "3.74 - 4.00"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Psychology",
+          "applicants": 1934,
+          "admits": 173,
+          "enrollees": 104,
+          "admitGpa": "3.78 - 4.00",
+          "enrolleeGpa": "3.76 - 4.00"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Sociology",
+          "applicants": 837,
+          "admits": 104,
+          "enrollees": 49,
+          "admitGpa": "3.81 - 4.00",
+          "enrolleeGpa": "3.65 - 4.00"
+        },
+        {
+          "discipline": "Undeclared",
+          "school": "Letters & Science",
+          "name": "Undeclared",
+          "applicants": 137,
+          "admits": 92,
+          "enrollees": 44,
+          "admitGpa": "3.47 - 3.93",
+          "enrolleeGpa": "3.38 - 3.81"
+        }
+      ]
+    },
+    "Davis": {
+      "source": "UCD Major Table.csv",
+      "majors": [
+        {
+          "discipline": "Architecture",
+          "school": "Agric & Environ Sciences",
+          "name": "Pre-Landscape Architecture",
+          "applicants": 107,
+          "admits": 67,
+          "enrollees": 25,
+          "admitGpa": "3.32 - 3.80",
+          "enrolleeGpa": "3.21 - 3.63"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Art - Studio",
+          "applicants": 145,
+          "admits": 109,
+          "enrollees": 34,
+          "admitGpa": "3.31 - 3.85",
+          "enrolleeGpa": "3.37 - 3.84"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Art History",
+          "applicants": 75,
+          "admits": 61,
+          "enrollees": 6,
+          "admitGpa": "3.41 - 3.85",
+          "enrolleeGpa": "3.52 - 3.72"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Cinema and Digital Media",
+          "applicants": 176,
+          "admits": 123,
+          "enrollees": 16,
+          "admitGpa": "3.40 - 3.85",
+          "enrolleeGpa": "3.40 - 3.74"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Design",
+          "applicants": 252,
+          "admits": 181,
+          "enrollees": 91,
+          "admitGpa": "3.45 - 3.91",
+          "enrolleeGpa": "3.45 - 3.89"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "English",
+          "applicants": 338,
+          "admits": 267,
+          "enrollees": 43,
+          "admitGpa": "3.42 - 3.87",
+          "enrolleeGpa": "3.39 - 3.85"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "History",
+          "applicants": 228,
+          "admits": 178,
+          "enrollees": 39,
+          "admitGpa": "3.41 - 3.87",
+          "enrolleeGpa": "3.36 - 3.74"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Japanese",
+          "applicants": 21,
+          "admits": 16,
+          "enrollees": 5,
+          "admitGpa": "3.39 - 3.71",
+          "enrolleeGpa": "3.09 - 3.41"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics",
+          "applicants": 76,
+          "admits": 59,
+          "enrollees": 7,
+          "admitGpa": "3.41 - 3.91",
+          "enrolleeGpa": "3.37 - 3.48"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Music",
+          "applicants": 46,
+          "admits": 30,
+          "enrollees": 4,
+          "admitGpa": "3.21 - 3.74",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Philosophy",
+          "applicants": 159,
+          "admits": 123,
+          "enrollees": 12,
+          "admitGpa": "3.36 - 3.88",
+          "enrolleeGpa": "3.45 - 3.76"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Spanish",
+          "applicants": 20,
+          "admits": 14,
+          "enrollees": 5,
+          "admitGpa": "3.50 - 3.80",
+          "enrolleeGpa": "3.47 - 3.61"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Theatre and Dance",
+          "applicants": 54,
+          "admits": 30,
+          "enrollees": 5,
+          "admitGpa": "3.46 - 3.94",
+          "enrolleeGpa": "3.59 - 4.00"
+        },
+        {
+          "discipline": "Business",
+          "school": "Agric & Environ Sciences",
+          "name": "Managerial Economics",
+          "applicants": 748,
+          "admits": 506,
+          "enrollees": 126,
+          "admitGpa": "3.53 - 3.90",
+          "enrolleeGpa": "3.42 - 3.79"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Engineering",
+          "name": "Computer Science",
+          "applicants": 1418,
+          "admits": 274,
+          "enrollees": 53,
+          "admitGpa": "3.85 - 4.00",
+          "enrolleeGpa": "3.82 - 3.93"
+        },
+        {
+          "discipline": "Education",
+          "school": "Agric & Environ Sciences",
+          "name": "Agricultural and Environmental Education",
+          "applicants": 44,
+          "admits": 22,
+          "enrollees": 5,
+          "admitGpa": "3.19 - 3.78",
+          "enrolleeGpa": "3.23 - 3.46"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Agric & Environ Sciences",
+          "name": "Agricultural and Environmental Technology",
+          "applicants": 26,
+          "admits": 15,
+          "enrollees": 5,
+          "admitGpa": "3.44 - 3.83",
+          "enrolleeGpa": "3.53 - 3.86"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Aerospace Science and Engineering",
+          "applicants": 143,
+          "admits": 37,
+          "enrollees": 9,
+          "admitGpa": "3.68 - 3.88",
+          "enrolleeGpa": "3.43 - 3.85"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Biomedical Engineering",
+          "applicants": 102,
+          "admits": 27,
+          "enrollees": 4,
+          "admitGpa": "3.74 - 3.96",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Chemical Engineering",
+          "applicants": 89,
+          "admits": 38,
+          "enrollees": 9,
+          "admitGpa": "3.73 - 3.92",
+          "enrolleeGpa": "3.64 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Civil Engineering",
+          "applicants": 182,
+          "admits": 63,
+          "enrollees": 14,
+          "admitGpa": "3.60 - 3.89",
+          "enrolleeGpa": "3.57 - 3.92"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Computer Engineering",
+          "applicants": 221,
+          "admits": 65,
+          "enrollees": 14,
+          "admitGpa": "3.65 - 3.92",
+          "enrolleeGpa": "3.75 - 3.92"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Computer Science & Engineering",
+          "applicants": 242,
+          "admits": 69,
+          "enrollees": 21,
+          "admitGpa": "3.86 - 4.00",
+          "enrolleeGpa": "3.73 - 3.90"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Engineering",
+          "applicants": 374,
+          "admits": 200,
+          "enrollees": 47,
+          "admitGpa": "3.59 - 3.92",
+          "enrolleeGpa": "3.58 - 3.84"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Environmental Engineering",
+          "applicants": 28,
+          "admits": 6,
+          "enrollees": 4,
+          "admitGpa": "3.62 - 3.86",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Mechanical Engineering",
+          "applicants": 502,
+          "admits": 174,
+          "enrollees": 58,
+          "admitGpa": "3.61 - 3.91",
+          "enrolleeGpa": "3.51 - 3.80"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Animal Biology",
+          "applicants": 94,
+          "admits": 57,
+          "enrollees": 36,
+          "admitGpa": "3.21 - 3.64",
+          "enrolleeGpa": "3.19 - 3.60"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Animal Science & Management",
+          "applicants": 26,
+          "admits": 11,
+          "enrollees": 4,
+          "admitGpa": "3.45 - 3.83",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Animal Sciences",
+          "applicants": 281,
+          "admits": 165,
+          "enrollees": 113,
+          "admitGpa": "3.26 - 3.77",
+          "enrolleeGpa": "3.27 - 3.73"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Biotechnology",
+          "applicants": 46,
+          "admits": 28,
+          "enrollees": 14,
+          "admitGpa": "3.29 - 3.78",
+          "enrolleeGpa": "3.25 - 3.54"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Entomology",
+          "applicants": 13,
+          "admits": 8,
+          "enrollees": 3,
+          "admitGpa": "3.29 - 3.70",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Environ Policy Analysis & Planning",
+          "applicants": 57,
+          "admits": 36,
+          "enrollees": 11,
+          "admitGpa": "3.46 - 3.90",
+          "enrolleeGpa": "3.35 - 3.82"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Environmental Science and Management",
+          "applicants": 164,
+          "admits": 113,
+          "enrollees": 37,
+          "admitGpa": "3.34 - 3.83",
+          "enrolleeGpa": "3.32 - 3.89"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Environmental Toxicology",
+          "applicants": 24,
+          "admits": 15,
+          "enrollees": 8,
+          "admitGpa": "3.18 - 3.60",
+          "enrolleeGpa": "3.10 - 3.29"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Food Science",
+          "applicants": 41,
+          "admits": 27,
+          "enrollees": 17,
+          "admitGpa": "3.35 - 3.87",
+          "enrolleeGpa": "3.32 - 3.80"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Global Disease Biology",
+          "applicants": 89,
+          "admits": 61,
+          "enrollees": 34,
+          "admitGpa": "3.22 - 3.62",
+          "enrolleeGpa": "3.23 - 3.55"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Plant Sciences",
+          "applicants": 36,
+          "admits": 23,
+          "enrollees": 14,
+          "admitGpa": "3.21 - 3.83",
+          "enrolleeGpa": "3.27 - 3.84"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Sustainable Environmental Design",
+          "applicants": 36,
+          "admits": 28,
+          "enrollees": 10,
+          "admitGpa": "3.40 - 3.87",
+          "enrolleeGpa": "3.41 - 3.87"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Viticulture & Enology",
+          "applicants": 10,
+          "admits": 3,
+          "enrollees": 3,
+          "admitGpa": "3.63 - 3.84",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Wildlife, Fish & Conservation Biology",
+          "applicants": 45,
+          "admits": 27,
+          "enrollees": 13,
+          "admitGpa": "3.37 - 3.81",
+          "enrolleeGpa": "3.55 - 3.84"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Biochemistry- Molecular Biology",
+          "applicants": 306,
+          "admits": 181,
+          "enrollees": 63,
+          "admitGpa": "3.43 - 3.88",
+          "enrolleeGpa": "3.38 - 3.88"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Biological Sciences",
+          "applicants": 774,
+          "admits": 369,
+          "enrollees": 145,
+          "admitGpa": "3.42 - 3.83",
+          "enrolleeGpa": "3.36 - 3.70"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Cell Biology",
+          "applicants": 70,
+          "admits": 31,
+          "enrollees": 8,
+          "admitGpa": "3.44 - 3.87",
+          "enrolleeGpa": "3.41 - 3.75"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Evolution, Ecology & Biodiversity",
+          "applicants": 44,
+          "admits": 24,
+          "enrollees": 10,
+          "admitGpa": "3.37 - 3.83",
+          "enrolleeGpa": "3.39 - 3.90"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Genetics and Genomics",
+          "applicants": 52,
+          "admits": 24,
+          "enrollees": 17,
+          "admitGpa": "3.44 - 3.90",
+          "enrolleeGpa": "3.47 - 3.84"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Human Biology",
+          "applicants": 301,
+          "admits": 115,
+          "enrollees": 28,
+          "admitGpa": "3.45 - 3.87",
+          "enrolleeGpa": "3.35 - 3.75"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Molecular & Medical Microbiology",
+          "applicants": 150,
+          "admits": 84,
+          "enrollees": 24,
+          "admitGpa": "3.48 - 3.89",
+          "enrolleeGpa": "3.45 - 3.82"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Neurobiology, Physiology, & Behavior",
+          "applicants": 203,
+          "admits": 106,
+          "enrollees": 38,
+          "admitGpa": "3.48 - 3.89",
+          "enrolleeGpa": "3.37 - 3.82"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Plant Biology",
+          "applicants": 23,
+          "admits": 10,
+          "enrollees": 3,
+          "admitGpa": "3.34 - 3.73",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Other Health Science",
+          "school": "Letters & Science",
+          "name": "Pharmaceutical Chemistry",
+          "applicants": 56,
+          "admits": 49,
+          "enrollees": 18,
+          "admitGpa": "3.27 - 3.75",
+          "enrolleeGpa": "3.31 - 3.64"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Agric & Environ Sciences",
+          "name": "Clinical Nutrition",
+          "applicants": 57,
+          "admits": 36,
+          "enrollees": 24,
+          "admitGpa": "3.28 - 3.72",
+          "enrolleeGpa": "3.25 - 3.72"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Agric & Environ Sciences",
+          "name": "Marine and Coastal Science",
+          "applicants": 21,
+          "admits": 9,
+          "enrollees": 3,
+          "admitGpa": "3.33 - 3.55",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Agric & Environ Sciences",
+          "name": "Nutritional Science",
+          "applicants": 102,
+          "admits": 58,
+          "enrollees": 22,
+          "admitGpa": "3.25 - 3.85",
+          "enrolleeGpa": "3.12 - 3.87"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Agric & Environ Sciences",
+          "name": "Sustainable Agriculture and Food Systems",
+          "applicants": 25,
+          "admits": 12,
+          "enrollees": 7,
+          "admitGpa": "3.29 - 3.75",
+          "enrolleeGpa": "3.28 - 3.66"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Cognitive Science",
+          "applicants": 287,
+          "admits": 226,
+          "enrollees": 45,
+          "admitGpa": "3.44 - 3.91",
+          "enrolleeGpa": "3.24 - 3.78"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Communication",
+          "applicants": 568,
+          "admits": 406,
+          "enrollees": 77,
+          "admitGpa": "3.39 - 3.83",
+          "enrolleeGpa": "3.26 - 3.73"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Data Science",
+          "applicants": 414,
+          "admits": 171,
+          "enrollees": 20,
+          "admitGpa": "3.71 - 3.96",
+          "enrolleeGpa": "3.62 - 3.82"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Agric & Environ Sciences",
+          "name": "Atmospheric Sciences",
+          "applicants": 11,
+          "admits": 7,
+          "enrollees": 4,
+          "admitGpa": "3.20 - 3.73",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Applied Chemistry",
+          "applicants": 28,
+          "admits": 15,
+          "enrollees": 9,
+          "admitGpa": "3.38 - 3.65",
+          "enrolleeGpa": "3.36 - 3.50"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Applied Mathematics",
+          "applicants": 243,
+          "admits": 168,
+          "enrollees": 14,
+          "admitGpa": "3.63 - 3.98",
+          "enrolleeGpa": "3.38 - 3.80"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Applied Physics",
+          "applicants": 61,
+          "admits": 35,
+          "enrollees": 7,
+          "admitGpa": "3.37 - 3.86",
+          "enrolleeGpa": "3.48 - 3.78"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Chemistry",
+          "applicants": 158,
+          "admits": 117,
+          "enrollees": 45,
+          "admitGpa": "3.20 - 3.69",
+          "enrolleeGpa": "3.16 - 3.58"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Geology",
+          "applicants": 32,
+          "admits": 20,
+          "enrollees": 4,
+          "admitGpa": "3.40 - 3.84",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Mathematical Analytics and Operations Research",
+          "applicants": 52,
+          "admits": 34,
+          "enrollees": 9,
+          "admitGpa": "3.51 - 3.94",
+          "enrolleeGpa": "3.29 - 3.61"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Mathematics",
+          "applicants": 192,
+          "admits": 137,
+          "enrollees": 28,
+          "admitGpa": "3.54 - 4.00",
+          "enrolleeGpa": "3.49 - 3.78"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Mathematics & Science Computation",
+          "applicants": 48,
+          "admits": 28,
+          "enrollees": 3,
+          "admitGpa": "3.74 - 3.94",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Physics",
+          "applicants": 103,
+          "admits": 60,
+          "enrollees": 9,
+          "admitGpa": "3.50 - 3.94",
+          "enrolleeGpa": "3.42 - 3.51"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Statistics",
+          "applicants": 215,
+          "admits": 182,
+          "enrollees": 61,
+          "admitGpa": "3.46 - 3.92",
+          "enrolleeGpa": "3.38 - 3.78"
+        },
+        {
+          "discipline": "Public Admin",
+          "school": "Agric & Environ Sciences",
+          "name": "Community & Regional Development",
+          "applicants": 53,
+          "admits": 28,
+          "enrollees": 7,
+          "admitGpa": "3.45 - 3.81",
+          "enrolleeGpa": "3.33 - 3.73"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Agric & Environ Sciences",
+          "name": "Human Development",
+          "applicants": 208,
+          "admits": 122,
+          "enrollees": 73,
+          "admitGpa": "3.32 - 3.80",
+          "enrolleeGpa": "3.29 - 3.80"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Anthropology",
+          "applicants": 190,
+          "admits": 136,
+          "enrollees": 25,
+          "admitGpa": "3.39 - 3.84",
+          "enrolleeGpa": "3.42 - 3.68"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Economics",
+          "applicants": 1738,
+          "admits": 1162,
+          "enrollees": 180,
+          "admitGpa": "3.55 - 3.91",
+          "enrolleeGpa": "3.43 - 3.83"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "International Relations",
+          "applicants": 144,
+          "admits": 106,
+          "enrollees": 18,
+          "admitGpa": "3.41 - 3.88",
+          "enrolleeGpa": "3.30 - 3.86"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Political Science",
+          "applicants": 616,
+          "admits": 475,
+          "enrollees": 106,
+          "admitGpa": "3.48 - 3.93",
+          "enrolleeGpa": "3.28 - 3.79"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Political Science - Public Service",
+          "applicants": 203,
+          "admits": 141,
+          "enrollees": 30,
+          "admitGpa": "3.37 - 3.86",
+          "enrolleeGpa": "3.23 - 3.76"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Psychology",
+          "applicants": 1432,
+          "admits": 736,
+          "enrollees": 327,
+          "admitGpa": "3.46 - 3.89",
+          "enrolleeGpa": "3.40 - 3.84"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Sociology",
+          "applicants": 608,
+          "admits": 456,
+          "enrollees": 73,
+          "admitGpa": "3.41 - 3.86",
+          "enrolleeGpa": "3.28 - 3.67"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Sociology/Organizational Studies",
+          "applicants": 82,
+          "admits": 64,
+          "enrollees": 17,
+          "admitGpa": "3.49 - 3.85",
+          "enrolleeGpa": "3.26 - 3.68"
+        },
+        {
+          "discipline": "Undeclared",
+          "school": "Agric & Environ Sciences",
+          "name": "Undeclared/Exploratory Agricultural Science",
+          "applicants": 211,
+          "admits": 28,
+          "enrollees": 13,
+          "admitGpa": "3.77 - 4.00",
+          "enrolleeGpa": "3.67 - 3.92"
+        }
+      ]
+    },
+    "Irvine": {
+      "source": "UCI Major Table.csv",
+      "majors": [
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "Art History",
+          "applicants": 102,
+          "admits": 79,
+          "enrollees": 10,
+          "admitGpa": "3.40 - 3.92",
+          "enrolleeGpa": "3.22 - 3.73"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "Classics",
+          "applicants": 15,
+          "admits": 10,
+          "enrollees": 3,
+          "admitGpa": "3.57 - 3.86",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "Comparative Literature",
+          "applicants": 32,
+          "admits": 23,
+          "enrollees": 5,
+          "admitGpa": "3.52 - 3.84",
+          "enrolleeGpa": "3.46 - 3.58"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "English",
+          "applicants": 441,
+          "admits": 328,
+          "enrollees": 57,
+          "admitGpa": "3.42 - 3.90",
+          "enrolleeGpa": "3.25 - 3.77"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "Film and Media Studies",
+          "applicants": 511,
+          "admits": 339,
+          "enrollees": 61,
+          "admitGpa": "3.48 - 3.88",
+          "enrolleeGpa": "3.39 - 3.81"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "History",
+          "applicants": 283,
+          "admits": 219,
+          "enrollees": 39,
+          "admitGpa": "3.49 - 3.93",
+          "enrolleeGpa": "3.38 - 3.75"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "Japanese Language & Literature",
+          "applicants": 30,
+          "admits": 23,
+          "enrollees": 3,
+          "admitGpa": "3.55 - 3.88",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "Philosophy",
+          "applicants": 238,
+          "admits": 170,
+          "enrollees": 17,
+          "admitGpa": "3.50 - 3.92",
+          "enrolleeGpa": "3.17 - 3.84"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities",
+          "name": "Spanish",
+          "applicants": 37,
+          "admits": 21,
+          "enrollees": 3,
+          "admitGpa": "3.48 - 3.91",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "The Arts",
+          "name": "Art",
+          "applicants": 251,
+          "admits": 55,
+          "enrollees": 17,
+          "admitGpa": "3.38 - 3.89",
+          "enrolleeGpa": "3.35 - 3.88"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "The Arts",
+          "name": "Dance",
+          "applicants": 39,
+          "admits": 6,
+          "enrollees": 4,
+          "admitGpa": "3.45 - 3.88",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "The Arts",
+          "name": "Drama",
+          "applicants": 200,
+          "admits": 59,
+          "enrollees": 24,
+          "admitGpa": "3.52 - 3.89",
+          "enrolleeGpa": "3.42 - 3.73"
+        },
+        {
+          "discipline": "Business",
+          "school": "Administration",
+          "name": "Business Administration",
+          "applicants": 3192,
+          "admits": 490,
+          "enrollees": 161,
+          "admitGpa": "3.80 - 4.00",
+          "enrolleeGpa": "3.77 - 3.94"
+        },
+        {
+          "discipline": "Business",
+          "school": "Information & Computer Sci",
+          "name": "Business Information Management",
+          "applicants": 126,
+          "admits": 7,
+          "enrollees": 4,
+          "admitGpa": "3.81 - 3.91",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Business",
+          "school": "Social Sciences",
+          "name": "Business Economics",
+          "applicants": 1089,
+          "admits": 486,
+          "enrollees": 172,
+          "admitGpa": "3.72 - 3.95",
+          "enrolleeGpa": "3.62 - 3.91"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Information & Computer Sci",
+          "name": "Computer Science",
+          "applicants": 2012,
+          "admits": 473,
+          "enrollees": 190,
+          "admitGpa": "3.87 - 4.00",
+          "enrolleeGpa": "3.81 - 4.00"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Information & Computer Sci",
+          "name": "Game Design and Interactive Media",
+          "applicants": 210,
+          "admits": 31,
+          "enrollees": 14,
+          "admitGpa": "3.83 - 3.98",
+          "enrolleeGpa": "3.82 - 4.00"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Information & Computer Sci",
+          "name": "Informatics",
+          "applicants": 123,
+          "admits": 40,
+          "enrollees": 20,
+          "admitGpa": "3.62 - 3.92",
+          "enrolleeGpa": "3.56 - 3.92"
+        },
+        {
+          "discipline": "Education",
+          "school": "Education",
+          "name": "Education Sciences",
+          "applicants": 278,
+          "admits": 193,
+          "enrollees": 40,
+          "admitGpa": "3.43 - 3.83",
+          "enrolleeGpa": "3.39 - 3.76"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Aerospace Engineering",
+          "applicants": 249,
+          "admits": 81,
+          "enrollees": 27,
+          "admitGpa": "3.66 - 3.93",
+          "enrolleeGpa": "3.57 - 3.86"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Biomedical Engineering",
+          "applicants": 171,
+          "admits": 62,
+          "enrollees": 12,
+          "admitGpa": "3.62 - 3.98",
+          "enrolleeGpa": "3.57 - 3.95"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Biomedical Engineering: Premed",
+          "applicants": 35,
+          "admits": 14,
+          "enrollees": 4,
+          "admitGpa": "3.70 - 4.00",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Chemical Engineering",
+          "applicants": 169,
+          "admits": 96,
+          "enrollees": 17,
+          "admitGpa": "3.55 - 3.89",
+          "enrolleeGpa": "3.34 - 3.86"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Computer Engineering",
+          "applicants": 516,
+          "admits": 213,
+          "enrollees": 87,
+          "admitGpa": "3.63 - 3.93",
+          "enrolleeGpa": "3.56 - 3.80"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Engineering - Civil",
+          "applicants": 233,
+          "admits": 87,
+          "enrollees": 25,
+          "admitGpa": "3.55 - 3.87",
+          "enrolleeGpa": "3.40 - 3.74"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Engineering - Electrical",
+          "applicants": 558,
+          "admits": 208,
+          "enrollees": 57,
+          "admitGpa": "3.66 - 3.93",
+          "enrolleeGpa": "3.57 - 3.82"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Engineering - Mechanical",
+          "applicants": 884,
+          "admits": 280,
+          "enrollees": 126,
+          "admitGpa": "3.59 - 3.92",
+          "enrolleeGpa": "3.52 - 3.76"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Materials Science & Engineering",
+          "applicants": 35,
+          "admits": 13,
+          "enrollees": 3,
+          "admitGpa": "3.64 - 3.87",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Information & Computer Sci",
+          "name": "Software Engineering",
+          "applicants": 243,
+          "admits": 54,
+          "enrollees": 27,
+          "admitGpa": "3.76 - 3.94",
+          "enrolleeGpa": "3.74 - 3.92"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Interdisciplinary Studies",
+          "name": "Computer Science & Engineering",
+          "applicants": 327,
+          "admits": 62,
+          "enrollees": 18,
+          "admitGpa": "3.86 - 4.00",
+          "enrolleeGpa": "3.76 - 3.94"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Biological Sciences",
+          "name": "Biological Sciences",
+          "applicants": 2151,
+          "admits": 803,
+          "enrollees": 267,
+          "admitGpa": "3.60 - 3.91",
+          "enrolleeGpa": "3.50 - 3.85"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Physical Sciences",
+          "name": "Environmental Science and Policy",
+          "applicants": 106,
+          "admits": 59,
+          "enrollees": 12,
+          "admitGpa": "3.36 - 3.89",
+          "enrolleeGpa": "3.15 - 3.96"
+        },
+        {
+          "discipline": "Nursing",
+          "school": "Nursing",
+          "name": "Nursing Science",
+          "applicants": 371,
+          "admits": 8,
+          "enrollees": 7,
+          "admitGpa": "3.86 - 3.96",
+          "enrolleeGpa": "3.85 - 3.97"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Humanities",
+          "name": "Global Cultures",
+          "applicants": 42,
+          "admits": 27,
+          "enrollees": 8,
+          "admitGpa": "3.45 - 3.92",
+          "enrolleeGpa": "3.81 - 3.94"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Humanities",
+          "name": "Literary Journalism",
+          "applicants": 108,
+          "admits": 70,
+          "enrollees": 17,
+          "admitGpa": "3.39 - 3.89",
+          "enrolleeGpa": "3.45 - 3.84"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Information & Computer Sci",
+          "name": "Data Science",
+          "applicants": 526,
+          "admits": 120,
+          "enrollees": 16,
+          "admitGpa": "3.82 - 4.00",
+          "enrolleeGpa": "3.67 - 3.90"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Social Ecology",
+          "name": "Social Ecology",
+          "applicants": 49,
+          "admits": 27,
+          "enrollees": 10,
+          "admitGpa": "3.32 - 3.70",
+          "enrolleeGpa": "3.23 - 3.57"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Social Sciences",
+          "name": "Cognitive Sciences",
+          "applicants": 171,
+          "admits": 37,
+          "enrollees": 8,
+          "admitGpa": "3.67 - 3.92",
+          "enrolleeGpa": "3.59 - 3.92"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Social Sciences",
+          "name": "International Studies",
+          "applicants": 205,
+          "admits": 163,
+          "enrollees": 35,
+          "admitGpa": "3.47 - 3.89",
+          "enrolleeGpa": "3.23 - 3.74"
+        },
+        {
+          "discipline": "Pharmacy",
+          "school": "Pharmacy & Pharm Sciences",
+          "name": "Pharmaceutical Science",
+          "applicants": 85,
+          "admits": 13,
+          "enrollees": 7,
+          "admitGpa": "3.70 - 3.90",
+          "enrolleeGpa": "3.71 - 3.92"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Physical Sciences",
+          "name": "Applied and Computational Mathematics",
+          "applicants": 255,
+          "admits": 183,
+          "enrollees": 26,
+          "admitGpa": "3.68 - 3.97",
+          "enrolleeGpa": "3.55 - 3.78"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Physical Sciences",
+          "name": "Applied Physics",
+          "applicants": 56,
+          "admits": 29,
+          "enrollees": 10,
+          "admitGpa": "3.45 - 3.85",
+          "enrolleeGpa": "3.34 - 3.69"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Physical Sciences",
+          "name": "Chemistry",
+          "applicants": 342,
+          "admits": 184,
+          "enrollees": 67,
+          "admitGpa": "3.51 - 3.88",
+          "enrolleeGpa": "3.41 - 3.81"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Physical Sciences",
+          "name": "Earth System Science",
+          "applicants": 51,
+          "admits": 24,
+          "enrollees": 5,
+          "admitGpa": "3.53 - 3.90",
+          "enrolleeGpa": "3.15 - 3.83"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Physical Sciences",
+          "name": "Mathematics",
+          "applicants": 572,
+          "admits": 394,
+          "enrollees": 71,
+          "admitGpa": "3.64 - 3.96",
+          "enrolleeGpa": "3.46 - 3.76"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Physical Sciences",
+          "name": "Physics",
+          "applicants": 152,
+          "admits": 80,
+          "enrollees": 13,
+          "admitGpa": "3.56 - 3.93",
+          "enrolleeGpa": "3.45 - 3.65"
+        },
+        {
+          "discipline": "Public Health",
+          "school": "Population and Public Health",
+          "name": "Public Health Policy",
+          "applicants": 250,
+          "admits": 180,
+          "enrollees": 58,
+          "admitGpa": "3.37 - 3.83",
+          "enrolleeGpa": "3.28 - 3.73"
+        },
+        {
+          "discipline": "Public Health",
+          "school": "Population and Public Health",
+          "name": "Public Health Sciences",
+          "applicants": 433,
+          "admits": 177,
+          "enrollees": 75,
+          "admitGpa": "3.53 - 3.91",
+          "enrolleeGpa": "3.51 - 3.85"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities",
+          "name": "Chinese Studies",
+          "applicants": 25,
+          "admits": 15,
+          "enrollees": 4,
+          "admitGpa": "3.53 - 3.90",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities",
+          "name": "Gender and Sexuality Studies",
+          "applicants": 33,
+          "admits": 22,
+          "enrollees": 3,
+          "admitGpa": "3.58 - 3.93",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Ecology",
+          "name": "Criminolgy, Law & Society",
+          "applicants": 530,
+          "admits": 272,
+          "enrollees": 137,
+          "admitGpa": "3.54 - 3.89",
+          "enrolleeGpa": "3.51 - 3.85"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Ecology",
+          "name": "Psychology",
+          "applicants": 1231,
+          "admits": 639,
+          "enrollees": 282,
+          "admitGpa": "3.64 - 4.00",
+          "enrolleeGpa": "3.57 - 3.91"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Ecology",
+          "name": "Urban Studies",
+          "applicants": 102,
+          "admits": 72,
+          "enrollees": 14,
+          "admitGpa": "3.48 - 3.88",
+          "enrolleeGpa": "3.43 - 3.93"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Sciences",
+          "name": "Anthropology",
+          "applicants": 218,
+          "admits": 160,
+          "enrollees": 19,
+          "admitGpa": "3.40 - 3.86",
+          "enrolleeGpa": "3.22 - 3.75"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Sciences",
+          "name": "Economics",
+          "applicants": 992,
+          "admits": 327,
+          "enrollees": 60,
+          "admitGpa": "3.80 - 4.00",
+          "enrolleeGpa": "3.67 - 3.94"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Sciences",
+          "name": "Language Science",
+          "applicants": 88,
+          "admits": 67,
+          "enrollees": 6,
+          "admitGpa": "3.49 - 3.94",
+          "enrolleeGpa": "3.23 - 3.82"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Sciences",
+          "name": "Political Science",
+          "applicants": 1023,
+          "admits": 645,
+          "enrollees": 143,
+          "admitGpa": "3.63 - 3.94",
+          "enrolleeGpa": "3.51 - 3.82"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Sciences",
+          "name": "Psychology",
+          "applicants": 1011,
+          "admits": 95,
+          "enrollees": 38,
+          "admitGpa": "3.54 - 3.85",
+          "enrolleeGpa": "3.51 - 3.80"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Sciences",
+          "name": "Quantitative Economics",
+          "applicants": 82,
+          "admits": 31,
+          "enrollees": 3,
+          "admitGpa": "3.78 - 3.99",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Sciences",
+          "name": "Social Policy and Public Service",
+          "applicants": 81,
+          "admits": 64,
+          "enrollees": 8,
+          "admitGpa": "3.37 - 3.75",
+          "enrolleeGpa": "3.24 - 3.43"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Social Sciences",
+          "name": "Sociology",
+          "applicants": 872,
+          "admits": 567,
+          "enrollees": 108,
+          "admitGpa": "3.54 - 3.90",
+          "enrolleeGpa": "3.36 - 3.75"
+        }
+      ]
+    },
+    "Los Angeles": {
+      "source": "UCLA Major Table.csv",
+      "majors": [
+        {
+          "discipline": "Architecture",
+          "school": "The Arts & Architecture",
+          "name": "Architectural Studies",
+          "applicants": 344,
+          "admits": 27,
+          "enrollees": 15,
+          "admitGpa": "3.80 - 3.92",
+          "enrolleeGpa": "3.79 - 3.92"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "American Literature & Culture",
+          "applicants": 11,
+          "admits": 8,
+          "enrollees": 6,
+          "admitGpa": "3.48 - 3.76",
+          "enrolleeGpa": "3.39 - 3.70"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Art History",
+          "applicants": 163,
+          "admits": 103,
+          "enrollees": 61,
+          "admitGpa": "3.59 - 3.94",
+          "enrolleeGpa": "3.55 - 3.94"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Asian Languages and Linguistics",
+          "applicants": 21,
+          "admits": 10,
+          "enrollees": 7,
+          "admitGpa": "3.65 - 3.94",
+          "enrolleeGpa": "3.78 - 3.97"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Chinese",
+          "applicants": 25,
+          "admits": 10,
+          "enrollees": 4,
+          "admitGpa": "3.75 - 3.93",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Comparative Literature",
+          "applicants": 39,
+          "admits": 21,
+          "enrollees": 10,
+          "admitGpa": "3.61 - 3.93",
+          "enrolleeGpa": "3.70 - 3.99"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "English",
+          "applicants": 561,
+          "admits": 315,
+          "enrollees": 163,
+          "admitGpa": "3.63 - 3.95",
+          "enrolleeGpa": "3.64 - 3.98"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "European Languages and Transcultural Studies With French and Francophone",
+          "applicants": 5,
+          "admits": 4,
+          "enrollees": 3,
+          "admitGpa": "3.65 - 3.94",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Japanese",
+          "applicants": 42,
+          "admits": 26,
+          "enrollees": 21,
+          "admitGpa": "3.59 - 3.91",
+          "enrolleeGpa": "3.63 - 3.91"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics",
+          "applicants": 67,
+          "admits": 39,
+          "enrollees": 25,
+          "admitGpa": "3.62 - 3.95",
+          "enrolleeGpa": "3.66 - 3.95"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics & Anthropology",
+          "applicants": 11,
+          "admits": 6,
+          "enrollees": 4,
+          "admitGpa": "3.74 - 3.87",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics & Asian Languages & Cultures",
+          "applicants": 21,
+          "admits": 12,
+          "enrollees": 6,
+          "admitGpa": "3.61 - 3.85",
+          "enrolleeGpa": "3.54 - 3.72"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics & Computer Science",
+          "applicants": 188,
+          "admits": 76,
+          "enrollees": 58,
+          "admitGpa": "3.63 - 3.90",
+          "enrolleeGpa": "3.60 - 3.83"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics & Philosophy",
+          "applicants": 15,
+          "admits": 6,
+          "enrollees": 3,
+          "admitGpa": "3.52 - 3.98",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics & Psychology",
+          "applicants": 84,
+          "admits": 33,
+          "enrollees": 24,
+          "admitGpa": "3.58 - 3.90",
+          "enrolleeGpa": "3.62 - 3.87"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Linguistics & Spanish",
+          "applicants": 6,
+          "admits": 5,
+          "enrollees": 3,
+          "admitGpa": "3.56 - 3.80",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Philosophy",
+          "applicants": 335,
+          "admits": 199,
+          "enrollees": 99,
+          "admitGpa": "3.60 - 3.92",
+          "enrolleeGpa": "3.59 - 3.91"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Pre-History",
+          "applicants": 453,
+          "admits": 264,
+          "enrollees": 175,
+          "admitGpa": "3.68 - 4.00",
+          "enrolleeGpa": "3.70 - 4.00"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Spanish",
+          "applicants": 38,
+          "admits": 22,
+          "enrollees": 10,
+          "admitGpa": "3.48 - 3.98",
+          "enrolleeGpa": "3.53 - 3.98"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Study of Religion",
+          "applicants": 15,
+          "admits": 6,
+          "enrollees": 4,
+          "admitGpa": "3.40 - 3.80",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Music",
+          "name": "Ethnomusicology",
+          "applicants": 12,
+          "admits": 4,
+          "enrollees": 4,
+          "admitGpa": "3.48 - 3.81",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Music",
+          "name": "Music Industry",
+          "applicants": 119,
+          "admits": 35,
+          "enrollees": 26,
+          "admitGpa": "3.65 - 4.00",
+          "enrolleeGpa": "3.57 - 4.00"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "The Arts & Architecture",
+          "name": "Art",
+          "applicants": 327,
+          "admits": 17,
+          "enrollees": 14,
+          "admitGpa": "3.44 - 3.87",
+          "enrolleeGpa": "3.41 - 3.82"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "The Arts & Architecture",
+          "name": "Dance",
+          "applicants": 55,
+          "admits": 11,
+          "enrollees": 6,
+          "admitGpa": "3.72 - 3.94",
+          "enrolleeGpa": "3.70 - 3.95"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "The Arts & Architecture",
+          "name": "Design Media Arts",
+          "applicants": 360,
+          "admits": 15,
+          "enrollees": 14,
+          "admitGpa": "3.54 - 3.94",
+          "enrolleeGpa": "3.53 - 3.92"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "The Arts & Architecture",
+          "name": "World Arts & Culture",
+          "applicants": 56,
+          "admits": 8,
+          "enrollees": 7,
+          "admitGpa": "3.58 - 3.78",
+          "enrolleeGpa": "3.58 - 3.82"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Theater, Film and Television",
+          "name": "Film & Television",
+          "applicants": 632,
+          "admits": 17,
+          "enrollees": 15,
+          "admitGpa": "3.72 - 3.97",
+          "enrolleeGpa": "3.72 - 3.99"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Theater, Film and Television",
+          "name": "Theater",
+          "applicants": 263,
+          "admits": 12,
+          "enrollees": 10,
+          "admitGpa": "3.86 - 4.00",
+          "enrolleeGpa": "3.87 - 4.00"
+        },
+        {
+          "discipline": "Business",
+          "school": "Letters & Science",
+          "name": "Labor Studies",
+          "applicants": 35,
+          "admits": 16,
+          "enrollees": 12,
+          "admitGpa": "3.66 - 3.86",
+          "enrolleeGpa": "3.60 - 3.86"
+        },
+        {
+          "discipline": "Business",
+          "school": "Letters & Science",
+          "name": "Pre-Business Economics",
+          "applicants": 3379,
+          "admits": 342,
+          "enrollees": 209,
+          "admitGpa": "3.89 - 4.00",
+          "enrolleeGpa": "3.88 - 4.00"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Engineering & Applied Sci",
+          "name": "Computer Science",
+          "applicants": 1655,
+          "admits": 80,
+          "enrollees": 41,
+          "admitGpa": "4.00 - 4.00",
+          "enrolleeGpa": "3.98 - 4.00"
+        },
+        {
+          "discipline": "Education",
+          "school": "Letters & Science",
+          "name": "Pre-Education and Social Transformation",
+          "applicants": 235,
+          "admits": 130,
+          "enrollees": 70,
+          "admitGpa": "3.58 - 3.92",
+          "enrolleeGpa": "3.64 - 3.94"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Aerospace Engineering",
+          "applicants": 265,
+          "admits": 35,
+          "enrollees": 17,
+          "admitGpa": "3.88 - 4.00",
+          "enrolleeGpa": "3.93 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Bioengineering",
+          "applicants": 166,
+          "admits": 17,
+          "enrollees": 6,
+          "admitGpa": "3.96 - 4.00",
+          "enrolleeGpa": "3.86 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Chemical Engineering",
+          "applicants": 147,
+          "admits": 50,
+          "enrollees": 15,
+          "admitGpa": "3.80 - 3.97",
+          "enrolleeGpa": "3.79 - 3.95"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Civil Engineering",
+          "applicants": 177,
+          "admits": 40,
+          "enrollees": 17,
+          "admitGpa": "3.75 - 3.94",
+          "enrolleeGpa": "3.75 - 3.95"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Computer Engineering",
+          "applicants": 358,
+          "admits": 23,
+          "enrollees": 14,
+          "admitGpa": "3.94 - 4.00",
+          "enrolleeGpa": "3.93 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Computer Science & Engineering",
+          "applicants": 369,
+          "admits": 33,
+          "enrollees": 15,
+          "admitGpa": "3.94 - 4.00",
+          "enrolleeGpa": "3.93 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Electrical Engineering",
+          "applicants": 629,
+          "admits": 112,
+          "enrollees": 72,
+          "admitGpa": "3.93 - 4.00",
+          "enrolleeGpa": "3.92 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Materials Engineering",
+          "applicants": 43,
+          "admits": 17,
+          "enrollees": 11,
+          "admitGpa": "3.64 - 3.88",
+          "enrolleeGpa": "3.64 - 3.86"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering & Applied Sci",
+          "name": "Mechanical Engineering",
+          "applicants": 794,
+          "admits": 97,
+          "enrollees": 41,
+          "admitGpa": "3.92 - 4.00",
+          "enrolleeGpa": "3.87 - 4.00"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Biochemistry",
+          "applicants": 321,
+          "admits": 91,
+          "enrollees": 46,
+          "admitGpa": "3.82 - 3.97",
+          "enrolleeGpa": "3.82 - 3.97"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Biology",
+          "applicants": 1162,
+          "admits": 202,
+          "enrollees": 131,
+          "admitGpa": "3.82 - 4.00",
+          "enrolleeGpa": "3.82 - 4.00"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Biophysics",
+          "applicants": 19,
+          "admits": 6,
+          "enrollees": 3,
+          "admitGpa": "3.84 - 3.94",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Ecology, Behavior & Evolution",
+          "applicants": 52,
+          "admits": 7,
+          "enrollees": 3,
+          "admitGpa": "3.66 - 3.90",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Environmental Science",
+          "applicants": 105,
+          "admits": 35,
+          "enrollees": 19,
+          "admitGpa": "3.63 - 3.90",
+          "enrolleeGpa": "3.65 - 3.86"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Microbiology - Immunology - Molecular Genetics",
+          "applicants": 206,
+          "admits": 60,
+          "enrollees": 39,
+          "admitGpa": "3.81 - 4.00",
+          "enrolleeGpa": "3.81 - 3.99"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Molecular, Cell, & Developmental Biology",
+          "applicants": 285,
+          "admits": 86,
+          "enrollees": 57,
+          "admitGpa": "3.87 - 4.00",
+          "enrolleeGpa": "3.85 - 4.00"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Neuroscience",
+          "applicants": 226,
+          "admits": 50,
+          "enrollees": 31,
+          "admitGpa": "3.81 - 3.95",
+          "enrolleeGpa": "3.80 - 3.95"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Physiological Science",
+          "applicants": 153,
+          "admits": 31,
+          "enrollees": 26,
+          "admitGpa": "3.80 - 3.95",
+          "enrolleeGpa": "3.79 - 3.95"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Precomputational Biology",
+          "applicants": 29,
+          "admits": 16,
+          "enrollees": 8,
+          "admitGpa": "3.82 - 3.99",
+          "enrolleeGpa": "3.84 - 4.00"
+        },
+        {
+          "discipline": "Nursing",
+          "school": "Nursing",
+          "name": "Nursing - Four Year Program",
+          "applicants": 305,
+          "admits": 20,
+          "enrollees": 20,
+          "admitGpa": "3.70 - 3.95",
+          "enrolleeGpa": "3.70 - 3.95"
+        },
+        {
+          "discipline": "Other Health Science",
+          "school": "Letters & Science",
+          "name": "Pre-Public Health",
+          "applicants": 493,
+          "admits": 61,
+          "enrollees": 37,
+          "admitGpa": "3.90 - 4.00",
+          "enrolleeGpa": "3.87 - 4.00"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Applied Linguistics",
+          "applicants": 41,
+          "admits": 22,
+          "enrollees": 10,
+          "admitGpa": "3.54 - 3.91",
+          "enrolleeGpa": "3.54 - 3.95"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Classical Civilization",
+          "applicants": 15,
+          "admits": 5,
+          "enrollees": 4,
+          "admitGpa": "3.69 - 3.88",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Communication",
+          "applicants": 964,
+          "admits": 121,
+          "enrollees": 93,
+          "admitGpa": "3.92 - 4.00",
+          "enrolleeGpa": "3.92 - 4.00"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Geography/Environmental Studies",
+          "applicants": 70,
+          "admits": 38,
+          "enrollees": 24,
+          "admitGpa": "3.61 - 3.92",
+          "enrolleeGpa": "3.59 - 3.93"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Pre Human Biology and Society",
+          "applicants": 156,
+          "admits": 30,
+          "enrollees": 23,
+          "admitGpa": "3.87 - 4.00",
+          "enrolleeGpa": "3.88 - 4.00"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Pre-Cognitive Science",
+          "applicants": 306,
+          "admits": 79,
+          "enrollees": 44,
+          "admitGpa": "3.82 - 3.95",
+          "enrolleeGpa": "3.82 - 3.93"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Pre-Global Studies",
+          "applicants": 152,
+          "admits": 63,
+          "enrollees": 37,
+          "admitGpa": "3.66 - 3.93",
+          "enrolleeGpa": "3.51 - 3.92"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Astrophysics",
+          "applicants": 67,
+          "admits": 23,
+          "enrollees": 5,
+          "admitGpa": "3.77 - 3.95",
+          "enrolleeGpa": "3.75 - 3.95"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Chemistry",
+          "applicants": 216,
+          "admits": 57,
+          "enrollees": 23,
+          "admitGpa": "3.80 - 4.00",
+          "enrolleeGpa": "3.75 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Earth and Environmental Science",
+          "applicants": 45,
+          "admits": 9,
+          "enrollees": 5,
+          "admitGpa": "3.55 - 3.73",
+          "enrolleeGpa": "3.60 - 3.70"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Geology",
+          "applicants": 30,
+          "admits": 10,
+          "enrollees": 4,
+          "admitGpa": "3.64 - 3.86",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Physics",
+          "applicants": 237,
+          "admits": 74,
+          "enrollees": 24,
+          "admitGpa": "3.84 - 4.00",
+          "enrolleeGpa": "3.80 - 3.96"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Applied Mathematics",
+          "applicants": 379,
+          "admits": 135,
+          "enrollees": 65,
+          "admitGpa": "3.89 - 4.00",
+          "enrolleeGpa": "3.88 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Data Theory",
+          "applicants": 163,
+          "admits": 75,
+          "enrollees": 44,
+          "admitGpa": "3.79 - 3.93",
+          "enrolleeGpa": "3.78 - 3.90"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Financial Actuarial Mathematics",
+          "applicants": 92,
+          "admits": 18,
+          "enrollees": 14,
+          "admitGpa": "3.88 - 4.00",
+          "enrolleeGpa": "3.87 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Mathematics",
+          "applicants": 268,
+          "admits": 84,
+          "enrollees": 38,
+          "admitGpa": "3.89 - 4.00",
+          "enrolleeGpa": "3.87 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Mathematics for Teaching",
+          "applicants": 35,
+          "admits": 9,
+          "enrollees": 6,
+          "admitGpa": "3.88 - 4.00",
+          "enrolleeGpa": "3.89 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Mathematics of Computation",
+          "applicants": 217,
+          "admits": 105,
+          "enrollees": 51,
+          "admitGpa": "3.87 - 4.00",
+          "enrolleeGpa": "3.86 - 3.99"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Mathematics/Applied Science",
+          "applicants": 36,
+          "admits": 9,
+          "enrollees": 4,
+          "admitGpa": "3.97 - 4.00",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Mathematics/Economics",
+          "applicants": 149,
+          "admits": 52,
+          "enrollees": 26,
+          "admitGpa": "3.91 - 4.00",
+          "enrolleeGpa": "3.93 - 4.00"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Pre-Statistics and Data Science",
+          "applicants": 780,
+          "admits": 180,
+          "enrollees": 93,
+          "admitGpa": "3.94 - 4.00",
+          "enrolleeGpa": "3.92 - 4.00"
+        },
+        {
+          "discipline": "Public Admin",
+          "school": "Letters & Science",
+          "name": "Pre-Public Affairs",
+          "applicants": 120,
+          "admits": 55,
+          "enrollees": 45,
+          "admitGpa": "3.56 - 3.86",
+          "enrolleeGpa": "3.55 - 3.89"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "African American Studies",
+          "applicants": 21,
+          "admits": 8,
+          "enrollees": 5,
+          "admitGpa": "3.17 - 3.42",
+          "enrolleeGpa": "3.17 - 3.76"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "American Indian Studies",
+          "applicants": 12,
+          "admits": 4,
+          "enrollees": 3,
+          "admitGpa": "3.37 - 3.54",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Anthropology",
+          "applicants": 374,
+          "admits": 226,
+          "enrollees": 124,
+          "admitGpa": "3.55 - 3.92",
+          "enrolleeGpa": "3.49 - 3.89"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Asian American Studies",
+          "applicants": 30,
+          "admits": 13,
+          "enrollees": 4,
+          "admitGpa": "3.52 - 3.94",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Asian Humanities",
+          "applicants": 25,
+          "admits": 13,
+          "enrollees": 4,
+          "admitGpa": "3.73 - 3.92",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Asian Studies",
+          "applicants": 46,
+          "admits": 20,
+          "enrollees": 9,
+          "admitGpa": "3.54 - 3.96",
+          "enrolleeGpa": "3.54 - 4.00"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Chicana & Chicano Studies",
+          "applicants": 29,
+          "admits": 12,
+          "enrollees": 6,
+          "admitGpa": "3.45 - 3.76",
+          "enrolleeGpa": "3.55 - 3.79"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Gender Studies",
+          "applicants": 92,
+          "admits": 58,
+          "enrollees": 25,
+          "admitGpa": "3.62 - 3.92",
+          "enrolleeGpa": "3.75 - 3.94"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Geography",
+          "applicants": 60,
+          "admits": 37,
+          "enrollees": 20,
+          "admitGpa": "3.66 - 3.92",
+          "enrolleeGpa": "3.59 - 3.90"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Pre International Development Studies",
+          "applicants": 50,
+          "admits": 16,
+          "enrollees": 8,
+          "admitGpa": "3.80 - 3.98",
+          "enrolleeGpa": "3.80 - 3.88"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Pre-Economics",
+          "applicants": 1519,
+          "admits": 246,
+          "enrollees": 130,
+          "admitGpa": "3.91 - 4.00",
+          "enrolleeGpa": "3.90 - 4.00"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Pre-Political Science",
+          "applicants": 1517,
+          "admits": 512,
+          "enrollees": 369,
+          "admitGpa": "3.83 - 4.00",
+          "enrolleeGpa": "3.82 - 4.00"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Pre-Psychobiology",
+          "applicants": 183,
+          "admits": 31,
+          "enrollees": 27,
+          "admitGpa": "3.84 - 3.97",
+          "enrolleeGpa": "3.84 - 3.98"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Pre-Psychology",
+          "applicants": 2391,
+          "admits": 509,
+          "enrollees": 392,
+          "admitGpa": "3.79 - 4.00",
+          "enrolleeGpa": "3.79 - 4.00"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Pre-Sociology",
+          "applicants": 1199,
+          "admits": 487,
+          "enrollees": 337,
+          "admitGpa": "3.74 - 3.98",
+          "enrolleeGpa": "3.72 - 3.96"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Spanish and Community and Culture",
+          "applicants": 9,
+          "admits": 4,
+          "enrollees": 3,
+          "admitGpa": "3.53 - 4.00",
+          "enrolleeGpa": "redacted"
+        }
+      ]
+    },
+    "Merced": {
+      "source": "UCM Major Table.csv",
+      "majors": [
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Global Arts Studies",
+          "applicants": 200,
+          "admits": 166,
+          "enrollees": 3,
+          "admitGpa": "3.30 - 3.84",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "History",
+          "applicants": 109,
+          "admits": 91,
+          "enrollees": 5,
+          "admitGpa": "3.17 - 3.75",
+          "enrolleeGpa": "3.25 - 3.44"
+        },
+        {
+          "discipline": "Business",
+          "school": "Not applicable",
+          "name": "Management and Business Economics",
+          "applicants": 428,
+          "admits": 261,
+          "enrollees": 11,
+          "admitGpa": "3.16 - 3.77",
+          "enrolleeGpa": "2.94 - 3.85"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Bioengineering",
+          "applicants": 49,
+          "admits": 20,
+          "enrollees": 5,
+          "admitGpa": "3.12 - 3.59",
+          "enrolleeGpa": "3.12 - 3.18"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Civil Engineering",
+          "applicants": 79,
+          "admits": 44,
+          "enrollees": 5,
+          "admitGpa": "3.15 - 3.59",
+          "enrolleeGpa": "3.17 - 3.58"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Computer Science & Engineering",
+          "applicants": 445,
+          "admits": 223,
+          "enrollees": 35,
+          "admitGpa": "3.33 - 3.81",
+          "enrolleeGpa": "3.11 - 3.57"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Electrical Engineering - BS",
+          "applicants": 100,
+          "admits": 62,
+          "enrollees": 7,
+          "admitGpa": "3.18 - 3.73",
+          "enrolleeGpa": "3.06 - 3.35"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Mechanical Engineering",
+          "applicants": 165,
+          "admits": 104,
+          "enrollees": 22,
+          "admitGpa": "3.12 - 3.60",
+          "enrolleeGpa": "3.07 - 3.37"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Biochemistry",
+          "applicants": 59,
+          "admits": 26,
+          "enrollees": 3,
+          "admitGpa": "3.04 - 3.50",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Biological Sciences",
+          "applicants": 330,
+          "admits": 207,
+          "enrollees": 23,
+          "admitGpa": "3.12 - 3.61",
+          "enrolleeGpa": "3.13 - 3.49"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Cognitive Science",
+          "applicants": 46,
+          "admits": 33,
+          "enrollees": 5,
+          "admitGpa": "3.23 - 3.60",
+          "enrolleeGpa": "2.76 - 3.28"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Applied Mathematics",
+          "applicants": 226,
+          "admits": 118,
+          "enrollees": 5,
+          "admitGpa": "3.34 - 3.85",
+          "enrolleeGpa": "3.55 - 3.86"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Chemical Sciences",
+          "applicants": 51,
+          "admits": 19,
+          "enrollees": 3,
+          "admitGpa": "3.08 - 3.74",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Physics",
+          "applicants": 50,
+          "admits": 35,
+          "enrollees": 6,
+          "admitGpa": "3.09 - 3.66",
+          "enrolleeGpa": "3.12 - 3.61"
+        },
+        {
+          "discipline": "Public Health",
+          "school": "Not applicable",
+          "name": "Public Health",
+          "applicants": 91,
+          "admits": 61,
+          "enrollees": 6,
+          "admitGpa": "3.16 - 3.59",
+          "enrolleeGpa": "3.29 - 3.75"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Anthropology",
+          "applicants": 119,
+          "admits": 111,
+          "enrollees": 4,
+          "admitGpa": "3.23 - 3.79",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Economics",
+          "applicants": 272,
+          "admits": 192,
+          "enrollees": 4,
+          "admitGpa": "3.27 - 3.79",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Political Science",
+          "applicants": 407,
+          "admits": 369,
+          "enrollees": 18,
+          "admitGpa": "3.25 - 3.82",
+          "enrolleeGpa": "3.01 - 3.48"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Psychology",
+          "applicants": 951,
+          "admits": 847,
+          "enrollees": 59,
+          "admitGpa": "3.23 - 3.79",
+          "enrolleeGpa": "3.11 - 3.58"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology",
+          "applicants": 399,
+          "admits": 322,
+          "enrollees": 20,
+          "admitGpa": "3.20 - 3.78",
+          "enrolleeGpa": "3.07 - 3.48"
+        },
+        {
+          "discipline": "Undeclared",
+          "school": "Not applicable",
+          "name": "Undeclared",
+          "applicants": 163,
+          "admits": 131,
+          "enrollees": 15,
+          "admitGpa": "3.09 - 3.75",
+          "enrolleeGpa": "2.89 - 3.57"
+        }
+      ]
+    },
+    "Riverside": {
+      "source": "UCR Major Table.csv",
+      "majors": [
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Art",
+          "applicants": 113,
+          "admits": 19,
+          "enrollees": 5,
+          "admitGpa": "3.18 - 3.60",
+          "enrolleeGpa": "3.30 - 3.50"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Art History",
+          "applicants": 87,
+          "admits": 81,
+          "enrollees": 11,
+          "admitGpa": "3.03 - 3.77",
+          "enrolleeGpa": "2.88 - 3.41"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Creative Writing",
+          "applicants": 81,
+          "admits": 71,
+          "enrollees": 10,
+          "admitGpa": "3.20 - 3.85",
+          "enrolleeGpa": "3.11 - 3.65"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Dance",
+          "applicants": 34,
+          "admits": 26,
+          "enrollees": 3,
+          "admitGpa": "3.23 - 3.76",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "English",
+          "applicants": 278,
+          "admits": 245,
+          "enrollees": 37,
+          "admitGpa": "3.13 - 3.79",
+          "enrolleeGpa": "2.84 - 3.67"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "History",
+          "applicants": 193,
+          "admits": 170,
+          "enrollees": 24,
+          "admitGpa": "3.11 - 3.77",
+          "enrolleeGpa": "2.92 - 3.47"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Liberal Studies",
+          "applicants": 58,
+          "admits": 41,
+          "enrollees": 12,
+          "admitGpa": "3.11 - 3.64",
+          "enrolleeGpa": "2.91 - 3.57"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Linguistics",
+          "applicants": 67,
+          "admits": 58,
+          "enrollees": 4,
+          "admitGpa": "3.33 - 3.83",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Media and Cultural Studies",
+          "applicants": 170,
+          "admits": 143,
+          "enrollees": 15,
+          "admitGpa": "3.09 - 3.72",
+          "enrolleeGpa": "2.93 - 3.55"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Music",
+          "applicants": 71,
+          "admits": 60,
+          "enrollees": 6,
+          "admitGpa": "3.13 - 3.77",
+          "enrolleeGpa": "3.22 - 3.59"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Philosophy",
+          "applicants": 165,
+          "admits": 144,
+          "enrollees": 16,
+          "admitGpa": "3.11 - 3.75",
+          "enrolleeGpa": "3.06 - 3.75"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Humanities & Social Sci",
+          "name": "Theatre, Film and Digital Production",
+          "applicants": 383,
+          "admits": 312,
+          "enrollees": 39,
+          "admitGpa": "3.13 - 3.79",
+          "enrolleeGpa": "2.87 - 3.67"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Engineering",
+          "name": "Computer Science",
+          "applicants": 1285,
+          "admits": 480,
+          "enrollees": 85,
+          "admitGpa": "3.73 - 4.00",
+          "enrolleeGpa": "3.65 - 3.92"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Engineering",
+          "name": "Computer Science With Business Applications",
+          "applicants": 107,
+          "admits": 28,
+          "enrollees": 6,
+          "admitGpa": "3.51 - 3.82",
+          "enrolleeGpa": "3.42 - 3.53"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Engineering",
+          "name": "Data Science",
+          "applicants": 230,
+          "admits": 128,
+          "enrollees": 17,
+          "admitGpa": "3.43 - 3.88",
+          "enrolleeGpa": "3.25 - 3.51"
+        },
+        {
+          "discipline": "Education",
+          "school": "Education",
+          "name": "Education, Society, and Human Development",
+          "applicants": 275,
+          "admits": 227,
+          "enrollees": 62,
+          "admitGpa": "3.01 - 3.73",
+          "enrolleeGpa": "2.90 - 3.60"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Bioengineering",
+          "applicants": 86,
+          "admits": 40,
+          "enrollees": 13,
+          "admitGpa": "3.29 - 3.83",
+          "enrolleeGpa": "3.31 - 3.59"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Chemical Engineering",
+          "applicants": 89,
+          "admits": 50,
+          "enrollees": 7,
+          "admitGpa": "3.17 - 3.77",
+          "enrolleeGpa": "3.01 - 3.45"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Computer Engineering",
+          "applicants": 187,
+          "admits": 73,
+          "enrollees": 14,
+          "admitGpa": "3.59 - 3.91",
+          "enrolleeGpa": "3.41 - 3.80"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Electrical Engineering",
+          "applicants": 238,
+          "admits": 92,
+          "enrollees": 21,
+          "admitGpa": "3.23 - 3.89",
+          "enrolleeGpa": "3.10 - 3.47"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Environmental Engineering",
+          "applicants": 53,
+          "admits": 20,
+          "enrollees": 4,
+          "admitGpa": "3.47 - 3.83",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Materials Science & Engineering",
+          "applicants": 33,
+          "admits": 21,
+          "enrollees": 3,
+          "admitGpa": "3.24 - 3.61",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Mechanical Engineering",
+          "applicants": 429,
+          "admits": 161,
+          "enrollees": 38,
+          "admitGpa": "3.32 - 3.82",
+          "enrolleeGpa": "3.18 - 3.51"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Robotics",
+          "applicants": 37,
+          "admits": 15,
+          "enrollees": 6,
+          "admitGpa": "3.00 - 3.65",
+          "enrolleeGpa": "3.32 - 3.41"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Neuroscience",
+          "applicants": 38,
+          "admits": 17,
+          "enrollees": 4,
+          "admitGpa": "3.02 - 3.61",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural & Agricultural Sci",
+          "name": "Biochemistry",
+          "applicants": 178,
+          "admits": 105,
+          "enrollees": 15,
+          "admitGpa": "3.27 - 3.84",
+          "enrolleeGpa": "3.10 - 3.65"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural & Agricultural Sci",
+          "name": "Biology",
+          "applicants": 940,
+          "admits": 577,
+          "enrollees": 134,
+          "admitGpa": "3.20 - 3.74",
+          "enrolleeGpa": "3.05 - 3.54"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural & Agricultural Sci",
+          "name": "Cell, Molecular, & Developmental Biology",
+          "applicants": 147,
+          "admits": 88,
+          "enrollees": 13,
+          "admitGpa": "3.26 - 3.78",
+          "enrolleeGpa": "2.93 - 3.52"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural & Agricultural Sci",
+          "name": "Entomology",
+          "applicants": 16,
+          "admits": 9,
+          "enrollees": 6,
+          "admitGpa": "3.02 - 3.71",
+          "enrolleeGpa": "2.98 - 3.60"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural & Agricultural Sci",
+          "name": "Environmental Science",
+          "applicants": 72,
+          "admits": 36,
+          "enrollees": 6,
+          "admitGpa": "3.13 - 3.68",
+          "enrolleeGpa": "2.84 - 3.45"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural & Agricultural Sci",
+          "name": "Microbiology",
+          "applicants": 67,
+          "admits": 49,
+          "enrollees": 8,
+          "admitGpa": "3.18 - 3.82",
+          "enrolleeGpa": "2.90 - 3.47"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural & Agricultural Sci",
+          "name": "Neuroscience",
+          "applicants": 114,
+          "admits": 70,
+          "enrollees": 17,
+          "admitGpa": "3.02 - 3.70",
+          "enrolleeGpa": "3.03 - 3.47"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Natural & Agricultural Sci",
+          "name": "Plant Biology",
+          "applicants": 32,
+          "admits": 11,
+          "enrollees": 3,
+          "admitGpa": "3.12 - 3.56",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Humanities & Social Sci",
+          "name": "Global Studies",
+          "applicants": 74,
+          "admits": 62,
+          "enrollees": 6,
+          "admitGpa": "3.10 - 3.80",
+          "enrolleeGpa": "2.77 - 3.02"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Natural & Agricultural Sci",
+          "name": "Chemistry",
+          "applicants": 136,
+          "admits": 81,
+          "enrollees": 16,
+          "admitGpa": "3.17 - 3.71",
+          "enrolleeGpa": "3.06 - 3.31"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Natural & Agricultural Sci",
+          "name": "Geology",
+          "applicants": 22,
+          "admits": 16,
+          "enrollees": 4,
+          "admitGpa": "2.91 - 3.75",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Natural & Agricultural Sci",
+          "name": "Mathematics",
+          "applicants": 218,
+          "admits": 171,
+          "enrollees": 26,
+          "admitGpa": "3.23 - 3.82",
+          "enrolleeGpa": "3.09 - 3.51"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Natural & Agricultural Sci",
+          "name": "Mathematics for Secondary School",
+          "applicants": 29,
+          "admits": 21,
+          "enrollees": 6,
+          "admitGpa": "3.12 - 3.70",
+          "enrolleeGpa": "2.98 - 3.10"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Natural & Agricultural Sci",
+          "name": "Physics",
+          "applicants": 92,
+          "admits": 62,
+          "enrollees": 14,
+          "admitGpa": "3.08 - 3.78",
+          "enrolleeGpa": "2.98 - 3.61"
+        },
+        {
+          "discipline": "Public Admin",
+          "school": "Humanities & Social Sci",
+          "name": "Global and Community Health",
+          "applicants": 180,
+          "admits": 161,
+          "enrollees": 6,
+          "admitGpa": "3.34 - 3.83",
+          "enrolleeGpa": "2.93 - 3.67"
+        },
+        {
+          "discipline": "Public Admin",
+          "school": "Humanities & Social Sci",
+          "name": "Public Service - Political Science",
+          "applicants": 64,
+          "admits": 56,
+          "enrollees": 4,
+          "admitGpa": "3.04 - 3.62",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Public Admin",
+          "school": "Public Policy",
+          "name": "Public Policy",
+          "applicants": 122,
+          "admits": 100,
+          "enrollees": 9,
+          "admitGpa": "3.15 - 3.63",
+          "enrolleeGpa": "3.13 - 3.52"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Anthropology",
+          "applicants": 203,
+          "admits": 172,
+          "enrollees": 16,
+          "admitGpa": "3.16 - 3.79",
+          "enrolleeGpa": "2.54 - 3.29"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Business Economics",
+          "applicants": 466,
+          "admits": 385,
+          "enrollees": 35,
+          "admitGpa": "3.32 - 3.82",
+          "enrolleeGpa": "3.06 - 3.69"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Chicano Studies",
+          "applicants": 24,
+          "admits": 23,
+          "enrollees": 7,
+          "admitGpa": "2.80 - 3.42",
+          "enrolleeGpa": "2.42 - 3.10"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Economics",
+          "applicants": 504,
+          "admits": 437,
+          "enrollees": 38,
+          "admitGpa": "3.27 - 3.85",
+          "enrolleeGpa": "2.90 - 3.60"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Economics/Administrative Studies",
+          "applicants": 75,
+          "admits": 63,
+          "enrollees": 10,
+          "admitGpa": "3.29 - 3.83",
+          "enrolleeGpa": "3.08 - 3.60"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Political Science",
+          "applicants": 471,
+          "admits": 437,
+          "enrollees": 39,
+          "admitGpa": "3.18 - 3.82",
+          "enrolleeGpa": "2.88 - 3.55"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Political Science / International Studies",
+          "applicants": 99,
+          "admits": 91,
+          "enrollees": 19,
+          "admitGpa": "2.99 - 3.80",
+          "enrolleeGpa": "2.84 - 3.54"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Political Science/Administration Studies",
+          "applicants": 52,
+          "admits": 45,
+          "enrollees": 4,
+          "admitGpa": "3.20 - 3.72",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Psychology",
+          "applicants": 1045,
+          "admits": 520,
+          "enrollees": 132,
+          "admitGpa": "3.22 - 3.78",
+          "enrolleeGpa": "3.07 - 3.72"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Sociology",
+          "applicants": 818,
+          "admits": 714,
+          "enrollees": 90,
+          "admitGpa": "3.09 - 3.72",
+          "enrolleeGpa": "2.94 - 3.44"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Humanities & Social Sci",
+          "name": "Sociology/Administration Studies",
+          "applicants": 69,
+          "admits": 60,
+          "enrollees": 8,
+          "admitGpa": "3.04 - 3.81",
+          "enrolleeGpa": "3.20 - 3.40"
+        }
+      ]
+    },
+    "San Diego": {
+      "source": "UCSD Major Table.csv",
+      "majors": [
+        {
+          "discipline": "Architecture",
+          "school": "Not applicable",
+          "name": "Real Estate and Development",
+          "applicants": 93,
+          "admits": 52,
+          "enrollees": 25,
+          "admitGpa": "3.31 - 3.90",
+          "enrolleeGpa": "3.27 - 3.75"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Art History/Criticism",
+          "applicants": 58,
+          "admits": 44,
+          "enrollees": 6,
+          "admitGpa": "3.37 - 3.85",
+          "enrolleeGpa": "3.52 - 4.00"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Bachelor of Arts in Cinematic Arts",
+          "applicants": 205,
+          "admits": 134,
+          "enrollees": 20,
+          "admitGpa": "3.24 - 3.85",
+          "enrolleeGpa": "3.12 - 3.67"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Dance",
+          "applicants": 22,
+          "admits": 12,
+          "enrollees": 4,
+          "admitGpa": "3.22 - 3.72",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Drama",
+          "applicants": 146,
+          "admits": 88,
+          "enrollees": 21,
+          "admitGpa": "3.38 - 3.85",
+          "enrolleeGpa": "3.38 - 3.85"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "History",
+          "applicants": 295,
+          "admits": 226,
+          "enrollees": 24,
+          "admitGpa": "3.41 - 3.92",
+          "enrolleeGpa": "3.01 - 3.80"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Literature, English/American",
+          "applicants": 205,
+          "admits": 160,
+          "enrollees": 15,
+          "admitGpa": "3.33 - 3.81",
+          "enrolleeGpa": "3.04 - 3.32"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Literature/Writing",
+          "applicants": 101,
+          "admits": 72,
+          "enrollees": 8,
+          "admitGpa": "3.32 - 3.92",
+          "enrolleeGpa": "3.38 - 3.95"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Music",
+          "applicants": 54,
+          "admits": 34,
+          "enrollees": 3,
+          "admitGpa": "3.20 - 3.79",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Philosophy",
+          "applicants": 222,
+          "admits": 166,
+          "enrollees": 20,
+          "admitGpa": "3.37 - 3.91",
+          "enrolleeGpa": "3.04 - 3.80"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Speculative Design",
+          "applicants": 50,
+          "admits": 36,
+          "enrollees": 12,
+          "admitGpa": "3.64 - 3.93",
+          "enrolleeGpa": "3.69 - 4.00"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Studio Art",
+          "applicants": 165,
+          "admits": 112,
+          "enrollees": 33,
+          "admitGpa": "3.39 - 3.88",
+          "enrolleeGpa": "3.29 - 3.91"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Visual Arts - Media",
+          "applicants": 189,
+          "admits": 123,
+          "enrollees": 37,
+          "admitGpa": "3.36 - 3.85",
+          "enrolleeGpa": "3.26 - 3.92"
+        },
+        {
+          "discipline": "Business",
+          "school": "Not applicable",
+          "name": "Business Economics",
+          "applicants": 2320,
+          "admits": 1008,
+          "enrollees": 288,
+          "admitGpa": "3.63 - 3.95",
+          "enrolleeGpa": "3.47 - 3.87"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Not applicable",
+          "name": "Computer Science",
+          "applicants": 1987,
+          "admits": 339,
+          "enrollees": 174,
+          "admitGpa": "3.89 - 4.00",
+          "enrolleeGpa": "3.86 - 4.00"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Not applicable",
+          "name": "Data Science",
+          "applicants": 658,
+          "admits": 378,
+          "enrollees": 150,
+          "admitGpa": "3.64 - 4.00",
+          "enrolleeGpa": "3.54 - 3.91"
+        },
+        {
+          "discipline": "Education",
+          "school": "Not applicable",
+          "name": "Education Sciences",
+          "applicants": 172,
+          "admits": 120,
+          "enrollees": 19,
+          "admitGpa": "3.28 - 3.83",
+          "enrolleeGpa": "3.15 - 3.78"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Aerospace Engineering",
+          "applicants": 165,
+          "admits": 70,
+          "enrollees": 18,
+          "admitGpa": "3.74 - 3.92",
+          "enrolleeGpa": "3.74 - 3.91"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Aerospace Engineering With A Specialization in Astrodynamics and Space App",
+          "applicants": 61,
+          "admits": 22,
+          "enrollees": 8,
+          "admitGpa": "3.59 - 3.92",
+          "enrolleeGpa": "3.41 - 3.84"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Bioengineering",
+          "applicants": 113,
+          "admits": 47,
+          "enrollees": 18,
+          "admitGpa": "3.60 - 4.00",
+          "enrolleeGpa": "3.47 - 3.97"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Bioengineering (Biotech)",
+          "applicants": 53,
+          "admits": 24,
+          "enrollees": 12,
+          "admitGpa": "3.69 - 3.98",
+          "enrolleeGpa": "3.64 - 3.89"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Bioengineering: Biosystems",
+          "applicants": 27,
+          "admits": 16,
+          "enrollees": 7,
+          "admitGpa": "3.55 - 3.77",
+          "enrolleeGpa": "3.56 - 3.64"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "BS in Structural Engineering With A Specialization in Civil Structures",
+          "applicants": 85,
+          "admits": 34,
+          "enrollees": 12,
+          "admitGpa": "3.37 - 3.86",
+          "enrolleeGpa": "3.29 - 3.64"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Chemical Engineering",
+          "applicants": 164,
+          "admits": 73,
+          "enrollees": 17,
+          "admitGpa": "3.57 - 3.89",
+          "enrolleeGpa": "3.25 - 3.56"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Computer Engineering",
+          "applicants": 493,
+          "admits": 96,
+          "enrollees": 46,
+          "admitGpa": "3.81 - 4.00",
+          "enrolleeGpa": "3.65 - 3.90"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Electrical Engineering - BS",
+          "applicants": 599,
+          "admits": 232,
+          "enrollees": 95,
+          "admitGpa": "3.62 - 3.98",
+          "enrolleeGpa": "3.47 - 3.84"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Mechanical Engineering",
+          "applicants": 724,
+          "admits": 146,
+          "enrollees": 49,
+          "admitGpa": "3.88 - 4.00",
+          "enrolleeGpa": "3.83 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Mechanical Engineering With A Spec in Controls and Robotics",
+          "applicants": 85,
+          "admits": 14,
+          "enrollees": 3,
+          "admitGpa": "3.89 - 4.00",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Structural Engineering",
+          "applicants": 95,
+          "admits": 39,
+          "enrollees": 11,
+          "admitGpa": "3.47 - 3.91",
+          "enrolleeGpa": "3.29 - 3.77"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Bioengineering - Bioinformatics",
+          "applicants": 13,
+          "admits": 6,
+          "enrollees": 3,
+          "admitGpa": "3.70 - 3.94",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Biology",
+          "applicants": 829,
+          "admits": 393,
+          "enrollees": 142,
+          "admitGpa": "3.44 - 3.87",
+          "enrolleeGpa": "3.34 - 3.74"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Biology - Bioinformatics",
+          "applicants": 32,
+          "admits": 19,
+          "enrollees": 8,
+          "admitGpa": "3.46 - 3.97",
+          "enrolleeGpa": "3.25 - 3.78"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Ecology, Behavior & Evolution",
+          "applicants": 86,
+          "admits": 38,
+          "enrollees": 13,
+          "admitGpa": "3.47 - 3.90",
+          "enrolleeGpa": "3.32 - 3.84"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Environmental Systems - Ecology, Behavior, Evolution",
+          "applicants": 49,
+          "admits": 27,
+          "enrollees": 7,
+          "admitGpa": "3.33 - 3.83",
+          "enrolleeGpa": "3.39 - 3.93"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Human Biology",
+          "applicants": 581,
+          "admits": 302,
+          "enrollees": 111,
+          "admitGpa": "3.51 - 3.90",
+          "enrolleeGpa": "3.37 - 3.86"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Marine Biology",
+          "applicants": 130,
+          "admits": 53,
+          "enrollees": 30,
+          "admitGpa": "3.19 - 3.73",
+          "enrolleeGpa": "3.18 - 3.75"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Microbiology",
+          "applicants": 128,
+          "admits": 63,
+          "enrollees": 24,
+          "admitGpa": "3.47 - 3.92",
+          "enrolleeGpa": "3.35 - 3.82"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Molecular & Cell Biology",
+          "applicants": 343,
+          "admits": 192,
+          "enrollees": 65,
+          "admitGpa": "3.59 - 3.93",
+          "enrolleeGpa": "3.54 - 3.84"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Neurobiology",
+          "applicants": 193,
+          "admits": 96,
+          "enrollees": 33,
+          "admitGpa": "3.52 - 3.93",
+          "enrolleeGpa": "3.46 - 3.75"
+        },
+        {
+          "discipline": "Other Health Science",
+          "school": "Not applicable",
+          "name": "Bachelor of Science in Public Health W/ Concentration in Community Hlth Sci",
+          "applicants": 33,
+          "admits": 19,
+          "enrollees": 7,
+          "admitGpa": "3.28 - 3.76",
+          "enrolleeGpa": "3.32 - 3.70"
+        },
+        {
+          "discipline": "Other Health Science",
+          "school": "Not applicable",
+          "name": "Bachelor of Science in Public Health W/ Concentration in Hlth Policy and Mgmt Sc",
+          "applicants": 29,
+          "admits": 13,
+          "enrollees": 5,
+          "admitGpa": "3.34 - 3.66",
+          "enrolleeGpa": "3.05 - 3.40"
+        },
+        {
+          "discipline": "Other Health Science",
+          "school": "Not applicable",
+          "name": "Bachelor of Science in Public Health W/ Concentration in Medicine Science",
+          "applicants": 93,
+          "admits": 42,
+          "enrollees": 15,
+          "admitGpa": "3.52 - 3.93",
+          "enrolleeGpa": "3.42 - 3.91"
+        },
+        {
+          "discipline": "Other Health Science",
+          "school": "Not applicable",
+          "name": "Global Health",
+          "applicants": 80,
+          "admits": 63,
+          "enrollees": 25,
+          "admitGpa": "3.22 - 3.80",
+          "enrolleeGpa": "3.17 - 3.63"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Bachelor of Arts in Media Industries and Communication",
+          "applicants": 172,
+          "admits": 115,
+          "enrollees": 25,
+          "admitGpa": "3.40 - 3.85",
+          "enrolleeGpa": "3.27 - 3.74"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Cognitive and Behavioral Neuroscience",
+          "applicants": 116,
+          "admits": 80,
+          "enrollees": 40,
+          "admitGpa": "3.36 - 3.87",
+          "enrolleeGpa": "3.21 - 3.82"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Cognitive Science",
+          "applicants": 365,
+          "admits": 276,
+          "enrollees": 117,
+          "admitGpa": "3.51 - 3.91",
+          "enrolleeGpa": "3.42 - 3.84"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Communication Arts",
+          "applicants": 821,
+          "admits": 576,
+          "enrollees": 125,
+          "admitGpa": "3.42 - 3.87",
+          "enrolleeGpa": "3.26 - 3.75"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Interdisciplinary Computer & The Arts",
+          "applicants": 23,
+          "admits": 14,
+          "enrollees": 8,
+          "admitGpa": "3.41 - 3.96",
+          "enrolleeGpa": "3.46 - 3.86"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "International Studies - Economics",
+          "applicants": 136,
+          "admits": 87,
+          "enrollees": 23,
+          "admitGpa": "3.49 - 3.88",
+          "enrolleeGpa": "3.47 - 3.78"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "International Studies - International Business",
+          "applicants": 337,
+          "admits": 208,
+          "enrollees": 78,
+          "admitGpa": "3.37 - 3.81",
+          "enrolleeGpa": "3.19 - 3.73"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "International Studies - Political Science",
+          "applicants": 68,
+          "admits": 46,
+          "enrollees": 11,
+          "admitGpa": "3.46 - 3.92",
+          "enrolleeGpa": "3.40 - 3.87"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "International Studies - Sociology",
+          "applicants": 66,
+          "admits": 41,
+          "enrollees": 10,
+          "admitGpa": "3.52 - 4.00",
+          "enrolleeGpa": "3.79 - 3.98"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Linguistics",
+          "applicants": 38,
+          "admits": 26,
+          "enrollees": 4,
+          "admitGpa": "3.60 - 3.99",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Linguistics (Cognition & Language)",
+          "applicants": 12,
+          "admits": 9,
+          "enrollees": 3,
+          "admitGpa": "3.26 - 3.82",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Linguistics (Specialization in Speech and Language Sciences)",
+          "applicants": 37,
+          "admits": 29,
+          "enrollees": 7,
+          "admitGpa": "3.36 - 3.88",
+          "enrolleeGpa": "3.03 - 3.59"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Mathematics - Computer Science",
+          "applicants": 223,
+          "admits": 146,
+          "enrollees": 52,
+          "admitGpa": "3.61 - 3.95",
+          "enrolleeGpa": "3.43 - 3.87"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Applied Mathematics",
+          "applicants": 272,
+          "admits": 181,
+          "enrollees": 46,
+          "admitGpa": "3.67 - 3.97",
+          "enrolleeGpa": "3.34 - 3.83"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Astronomy and Astrophysics",
+          "applicants": 52,
+          "admits": 24,
+          "enrollees": 4,
+          "admitGpa": "3.45 - 3.89",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Chemistry",
+          "applicants": 200,
+          "admits": 90,
+          "enrollees": 25,
+          "admitGpa": "3.27 - 3.87",
+          "enrolleeGpa": "3.26 - 3.62"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Chemistry - Biochemistry",
+          "applicants": 239,
+          "admits": 115,
+          "enrollees": 46,
+          "admitGpa": "3.54 - 3.94",
+          "enrolleeGpa": "3.39 - 3.85"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Mathematics",
+          "applicants": 277,
+          "admits": 175,
+          "enrollees": 45,
+          "admitGpa": "3.51 - 3.96",
+          "enrolleeGpa": "3.28 - 3.81"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Mathematics - Applied Science",
+          "applicants": 48,
+          "admits": 34,
+          "enrollees": 9,
+          "admitGpa": "3.57 - 3.91",
+          "enrolleeGpa": "3.57 - 3.74"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Mathematics/Economics",
+          "applicants": 137,
+          "admits": 74,
+          "enrollees": 18,
+          "admitGpa": "3.67 - 4.00",
+          "enrolleeGpa": "3.46 - 3.72"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Pharmacological Chemistry",
+          "applicants": 58,
+          "admits": 26,
+          "enrollees": 9,
+          "admitGpa": "3.53 - 3.96",
+          "enrolleeGpa": "3.23 - 3.82"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Physics",
+          "applicants": 131,
+          "admits": 71,
+          "enrollees": 12,
+          "admitGpa": "3.46 - 3.91",
+          "enrolleeGpa": "3.36 - 3.75"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Probability and Statistics",
+          "applicants": 119,
+          "admits": 69,
+          "enrollees": 20,
+          "admitGpa": "3.72 - 4.00",
+          "enrolleeGpa": "3.39 - 3.83"
+        },
+        {
+          "discipline": "Public Health",
+          "school": "Not applicable",
+          "name": "Public Health",
+          "applicants": 274,
+          "admits": 162,
+          "enrollees": 71,
+          "admitGpa": "3.40 - 3.82",
+          "enrolleeGpa": "3.33 - 3.74"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Anthropology",
+          "applicants": 178,
+          "admits": 129,
+          "enrollees": 23,
+          "admitGpa": "3.37 - 3.89",
+          "enrolleeGpa": "3.32 - 3.78"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Anthropology With Concentration in Climate Change and Human Solutions",
+          "applicants": 23,
+          "admits": 19,
+          "enrollees": 7,
+          "admitGpa": "3.32 - 3.76",
+          "enrolleeGpa": "3.12 - 3.47"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Anthropology(Concentration in Sociocultral Anthropology)",
+          "applicants": 115,
+          "admits": 81,
+          "enrollees": 9,
+          "admitGpa": "3.38 - 3.84",
+          "enrolleeGpa": "2.92 - 3.41"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Bachelor of Science in Economics",
+          "applicants": 138,
+          "admits": 57,
+          "enrollees": 17,
+          "admitGpa": "3.48 - 3.94",
+          "enrolleeGpa": "3.63 - 3.87"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Business Psychology",
+          "applicants": 198,
+          "admits": 102,
+          "enrollees": 32,
+          "admitGpa": "3.44 - 3.86",
+          "enrolleeGpa": "3.40 - 3.73"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Economics",
+          "applicants": 989,
+          "admits": 561,
+          "enrollees": 167,
+          "admitGpa": "3.62 - 3.95",
+          "enrolleeGpa": "3.56 - 3.90"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Human Developmental Sciences",
+          "applicants": 52,
+          "admits": 36,
+          "enrollees": 12,
+          "admitGpa": "3.21 - 3.75",
+          "enrolleeGpa": "3.33 - 3.45"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Japanese Studies",
+          "applicants": 29,
+          "admits": 22,
+          "enrollees": 5,
+          "admitGpa": "3.39 - 3.87",
+          "enrolleeGpa": "3.25 - 3.47"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Political Science",
+          "applicants": 705,
+          "admits": 537,
+          "enrollees": 114,
+          "admitGpa": "3.47 - 3.93",
+          "enrolleeGpa": "3.23 - 3.75"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Political Science - American Politics",
+          "applicants": 41,
+          "admits": 26,
+          "enrollees": 10,
+          "admitGpa": "3.36 - 3.98",
+          "enrolleeGpa": "3.33 - 3.80"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Political Science - International Relations",
+          "applicants": 139,
+          "admits": 100,
+          "enrollees": 29,
+          "admitGpa": "3.43 - 3.91",
+          "enrolleeGpa": "3.24 - 3.79"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Political Science - Public Law",
+          "applicants": 234,
+          "admits": 158,
+          "enrollees": 44,
+          "admitGpa": "3.37 - 3.90",
+          "enrolleeGpa": "3.22 - 3.85"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Political Science - Public Policy",
+          "applicants": 61,
+          "admits": 48,
+          "enrollees": 9,
+          "admitGpa": "3.43 - 3.90",
+          "enrolleeGpa": "3.23 - 3.56"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Political Science /Race, Ethnicity and Politics",
+          "applicants": 20,
+          "admits": 11,
+          "enrollees": 3,
+          "admitGpa": "3.39 - 3.85",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Political Science/Data Analytics",
+          "applicants": 55,
+          "admits": 41,
+          "enrollees": 16,
+          "admitGpa": "3.30 - 3.92",
+          "enrolleeGpa": "3.04 - 3.59"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Psychology",
+          "applicants": 1475,
+          "admits": 979,
+          "enrollees": 331,
+          "admitGpa": "3.44 - 3.90",
+          "enrolleeGpa": "3.26 - 3.80"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Psychology With A Specialization in Clinical Psychology",
+          "applicants": 184,
+          "admits": 131,
+          "enrollees": 63,
+          "admitGpa": "3.38 - 3.87",
+          "enrolleeGpa": "3.24 - 3.77"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Psychology With A Specialization in Cognitive Psychology",
+          "applicants": 35,
+          "admits": 23,
+          "enrollees": 10,
+          "admitGpa": "3.48 - 3.90",
+          "enrolleeGpa": "3.42 - 3.76"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Psychology With A Specialization in Developmental Psychology",
+          "applicants": 55,
+          "admits": 32,
+          "enrollees": 12,
+          "admitGpa": "3.27 - 3.80",
+          "enrolleeGpa": "3.09 - 3.60"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Psychology With A Specialization in Human Health",
+          "applicants": 54,
+          "admits": 34,
+          "enrollees": 17,
+          "admitGpa": "3.50 - 3.83",
+          "enrolleeGpa": "3.49 - 3.82"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Psychology With A Specialization in Social Psychology",
+          "applicants": 44,
+          "admits": 30,
+          "enrollees": 11,
+          "admitGpa": "3.58 - 3.95",
+          "enrolleeGpa": "3.62 - 3.90"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology",
+          "applicants": 610,
+          "admits": 446,
+          "enrollees": 84,
+          "admitGpa": "3.40 - 3.90",
+          "enrolleeGpa": "3.08 - 3.68"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology - Culture and Communications",
+          "applicants": 32,
+          "admits": 21,
+          "enrollees": 4,
+          "admitGpa": "3.19 - 3.66",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology - Economy and Society",
+          "applicants": 42,
+          "admits": 28,
+          "enrollees": 5,
+          "admitGpa": "3.66 - 3.89",
+          "enrolleeGpa": "3.21 - 3.92"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology - International Studies",
+          "applicants": 19,
+          "admits": 12,
+          "enrollees": 3,
+          "admitGpa": "3.26 - 3.84",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology - Law and Society",
+          "applicants": 151,
+          "admits": 88,
+          "enrollees": 12,
+          "admitGpa": "3.38 - 3.85",
+          "enrolleeGpa": "3.34 - 3.60"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology - Science and Medicine",
+          "applicants": 41,
+          "admits": 30,
+          "enrollees": 5,
+          "admitGpa": "3.43 - 3.85",
+          "enrolleeGpa": "3.28 - 3.46"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology - Social Inequality",
+          "applicants": 36,
+          "admits": 25,
+          "enrollees": 5,
+          "admitGpa": "3.63 - 3.90",
+          "enrolleeGpa": "3.08 - 3.66"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Urban Studies & Planning",
+          "applicants": 100,
+          "admits": 70,
+          "enrollees": 22,
+          "admitGpa": "3.42 - 3.92",
+          "enrolleeGpa": "3.20 - 3.79"
+        }
+      ]
+    },
+    "Santa Barbara": {
+      "source": "UCSB Major Table.csv",
+      "majors": [
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Art - Studio",
+          "applicants": 171,
+          "admits": 128,
+          "enrollees": 16,
+          "admitGpa": "3.45 - 3.92",
+          "enrolleeGpa": "3.36 - 3.86"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Art History",
+          "applicants": 150,
+          "admits": 103,
+          "enrollees": 9,
+          "admitGpa": "3.35 - 3.89",
+          "enrolleeGpa": "2.86 - 3.60"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Comparative Studies - Language, Society, & Culture",
+          "applicants": 15,
+          "admits": 12,
+          "enrollees": 4,
+          "admitGpa": "3.32 - 3.93",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "English",
+          "applicants": 383,
+          "admits": 297,
+          "enrollees": 38,
+          "admitGpa": "3.41 - 3.90",
+          "enrolleeGpa": "3.18 - 3.77"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Film Studies",
+          "applicants": 463,
+          "admits": 310,
+          "enrollees": 64,
+          "admitGpa": "3.43 - 3.87",
+          "enrolleeGpa": "3.30 - 3.89"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "History",
+          "applicants": 318,
+          "admits": 245,
+          "enrollees": 23,
+          "admitGpa": "3.47 - 3.95",
+          "enrolleeGpa": "3.49 - 3.89"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "History of Public Policy and Law",
+          "applicants": 44,
+          "admits": 27,
+          "enrollees": 8,
+          "admitGpa": "3.29 - 3.60",
+          "enrolleeGpa": "3.45 - 3.61"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Music",
+          "applicants": 48,
+          "admits": 23,
+          "enrollees": 4,
+          "admitGpa": "3.48 - 3.81",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Philosophy",
+          "applicants": 250,
+          "admits": 186,
+          "enrollees": 16,
+          "admitGpa": "3.44 - 3.92",
+          "enrolleeGpa": "3.09 - 3.46"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Letters & Science",
+          "name": "Theater",
+          "applicants": 114,
+          "admits": 66,
+          "enrollees": 12,
+          "admitGpa": "3.53 - 3.93",
+          "enrolleeGpa": "3.41 - 3.85"
+        },
+        {
+          "discipline": "Business",
+          "school": "Letters & Science",
+          "name": "Actuarial Science",
+          "applicants": 73,
+          "admits": 49,
+          "enrollees": 13,
+          "admitGpa": "3.48 - 3.93",
+          "enrolleeGpa": "3.44 - 3.86"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Engineering",
+          "name": "Computer Science",
+          "applicants": 1130,
+          "admits": 186,
+          "enrollees": 16,
+          "admitGpa": "3.91 - 4.00",
+          "enrolleeGpa": "3.84 - 4.00"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Chemical Engineering",
+          "applicants": 780,
+          "admits": 153,
+          "enrollees": 19,
+          "admitGpa": "3.82 - 4.00",
+          "enrolleeGpa": "3.66 - 3.99"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Computer Engineering",
+          "applicants": 248,
+          "admits": 68,
+          "enrollees": 11,
+          "admitGpa": "3.73 - 3.90",
+          "enrolleeGpa": "3.71 - 3.80"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Engineering",
+          "name": "Electrical Engineering",
+          "applicants": 445,
+          "admits": 109,
+          "enrollees": 7,
+          "admitGpa": "3.87 - 4.00",
+          "enrolleeGpa": "3.85 - 3.98"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Biological Sciences",
+          "applicants": 1573,
+          "admits": 515,
+          "enrollees": 53,
+          "admitGpa": "3.46 - 3.87",
+          "enrolleeGpa": "3.30 - 3.78"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Letters & Science",
+          "name": "Environmental Studies",
+          "applicants": 257,
+          "admits": 169,
+          "enrollees": 52,
+          "admitGpa": "3.39 - 3.81",
+          "enrolleeGpa": "3.33 - 3.81"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Communication Studies",
+          "applicants": 1386,
+          "admits": 954,
+          "enrollees": 350,
+          "admitGpa": "3.42 - 3.86",
+          "enrolleeGpa": "3.35 - 3.81"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Letters & Science",
+          "name": "Global Studies",
+          "applicants": 177,
+          "admits": 128,
+          "enrollees": 13,
+          "admitGpa": "3.41 - 3.90",
+          "enrolleeGpa": "3.14 - 3.72"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Applied Mathematics",
+          "applicants": 407,
+          "admits": 338,
+          "enrollees": 29,
+          "admitGpa": "3.59 - 4.00",
+          "enrolleeGpa": "3.31 - 3.85"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Chemistry",
+          "applicants": 355,
+          "admits": 163,
+          "enrollees": 9,
+          "admitGpa": "3.47 - 3.93",
+          "enrolleeGpa": "3.29 - 3.87"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Earth Science",
+          "applicants": 103,
+          "admits": 64,
+          "enrollees": 14,
+          "admitGpa": "3.34 - 3.82",
+          "enrolleeGpa": "3.28 - 3.64"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Financial Mathematics & Statistics",
+          "applicants": 148,
+          "admits": 116,
+          "enrollees": 13,
+          "admitGpa": "3.61 - 3.92",
+          "enrolleeGpa": "3.52 - 3.76"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Mathematics",
+          "applicants": 349,
+          "admits": 265,
+          "enrollees": 23,
+          "admitGpa": "3.47 - 3.92",
+          "enrolleeGpa": "3.23 - 3.73"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Physics",
+          "applicants": 206,
+          "admits": 111,
+          "enrollees": 27,
+          "admitGpa": "3.64 - 3.98",
+          "enrolleeGpa": "3.46 - 3.81"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Letters & Science",
+          "name": "Statistics and Data Science",
+          "applicants": 969,
+          "admits": 843,
+          "enrollees": 125,
+          "admitGpa": "3.54 - 3.94",
+          "enrolleeGpa": "3.35 - 3.78"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Anthropology",
+          "applicants": 310,
+          "admits": 215,
+          "enrollees": 29,
+          "admitGpa": "3.40 - 3.88",
+          "enrolleeGpa": "3.23 - 3.74"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Biopsychology",
+          "applicants": 279,
+          "admits": 218,
+          "enrollees": 42,
+          "admitGpa": "3.45 - 3.84",
+          "enrolleeGpa": "3.37 - 3.61"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Economics",
+          "applicants": 2160,
+          "admits": 1383,
+          "enrollees": 257,
+          "admitGpa": "3.52 - 3.91",
+          "enrolleeGpa": "3.42 - 3.82"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Economics and Accounting",
+          "applicants": 1540,
+          "admits": 1009,
+          "enrollees": 261,
+          "admitGpa": "3.53 - 3.92",
+          "enrolleeGpa": "3.43 - 3.82"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Geography",
+          "applicants": 81,
+          "admits": 63,
+          "enrollees": 10,
+          "admitGpa": "3.46 - 3.91",
+          "enrolleeGpa": "3.52 - 3.92"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Linguistics",
+          "applicants": 123,
+          "admits": 86,
+          "enrollees": 14,
+          "admitGpa": "3.39 - 3.87",
+          "enrolleeGpa": "3.70 - 3.88"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Political Science",
+          "applicants": 1060,
+          "admits": 758,
+          "enrollees": 100,
+          "admitGpa": "3.47 - 3.92",
+          "enrolleeGpa": "3.34 - 3.80"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Psychological and Brain Science",
+          "applicants": 1209,
+          "admits": 803,
+          "enrollees": 186,
+          "admitGpa": "3.41 - 3.88",
+          "enrolleeGpa": "3.32 - 3.78"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Letters & Science",
+          "name": "Sociology",
+          "applicants": 1005,
+          "admits": 735,
+          "enrollees": 158,
+          "admitGpa": "3.41 - 3.89",
+          "enrolleeGpa": "3.30 - 3.80"
+        }
+      ]
+    },
+    "Santa Cruz": {
+      "source": "UCSC Major Table.csv",
+      "majors": [
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Applied Linguistics and Multilingualism",
+          "applicants": 29,
+          "admits": 24,
+          "enrollees": 3,
+          "admitGpa": "3.12 - 3.91",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Art",
+          "applicants": 240,
+          "admits": 186,
+          "enrollees": 33,
+          "admitGpa": "3.20 - 3.84",
+          "enrolleeGpa": "3.17 - 3.71"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Art History",
+          "applicants": 77,
+          "admits": 66,
+          "enrollees": 11,
+          "admitGpa": "3.12 - 3.87",
+          "enrolleeGpa": "2.99 - 3.77"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Film and Digital Media",
+          "applicants": 478,
+          "admits": 393,
+          "enrollees": 43,
+          "admitGpa": "3.16 - 3.80",
+          "enrolleeGpa": "2.95 - 3.66"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "History",
+          "applicants": 244,
+          "admits": 205,
+          "enrollees": 24,
+          "admitGpa": "3.12 - 3.77",
+          "enrolleeGpa": "2.99 - 3.54"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Literature",
+          "applicants": 374,
+          "admits": 331,
+          "enrollees": 44,
+          "admitGpa": "3.17 - 3.82",
+          "enrolleeGpa": "2.67 - 3.67"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Music",
+          "applicants": 69,
+          "admits": 53,
+          "enrollees": 6,
+          "admitGpa": "3.20 - 3.82",
+          "enrolleeGpa": "2.90 - 3.39"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Philosophy",
+          "applicants": 190,
+          "admits": 163,
+          "enrollees": 13,
+          "admitGpa": "3.19 - 3.82",
+          "enrolleeGpa": "2.72 - 3.29"
+        },
+        {
+          "discipline": "Arts & Humanities",
+          "school": "Not applicable",
+          "name": "Theater Arts",
+          "applicants": 128,
+          "admits": 84,
+          "enrollees": 9,
+          "admitGpa": "3.25 - 3.87",
+          "enrolleeGpa": "2.64 - 3.52"
+        },
+        {
+          "discipline": "Business",
+          "school": "Not applicable",
+          "name": "Business Management - Economics",
+          "applicants": 1213,
+          "admits": 792,
+          "enrollees": 87,
+          "admitGpa": "3.25 - 3.79",
+          "enrolleeGpa": "2.99 - 3.61"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Not applicable",
+          "name": "Computer Science",
+          "applicants": 1204,
+          "admits": 617,
+          "enrollees": 158,
+          "admitGpa": "3.50 - 3.91",
+          "enrolleeGpa": "3.28 - 3.72"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Not applicable",
+          "name": "Computer Science: Computer Game Design",
+          "applicants": 168,
+          "admits": 102,
+          "enrollees": 47,
+          "admitGpa": "3.27 - 3.84",
+          "enrolleeGpa": "3.15 - 3.73"
+        },
+        {
+          "discipline": "Computer Science",
+          "school": "Not applicable",
+          "name": "Technology and Information Management",
+          "applicants": 56,
+          "admits": 26,
+          "enrollees": 5,
+          "admitGpa": "3.27 - 3.70",
+          "enrolleeGpa": "3.46 - 3.72"
+        },
+        {
+          "discipline": "Education",
+          "school": "Not applicable",
+          "name": "Education, Democracy, and Justice",
+          "applicants": 143,
+          "admits": 111,
+          "enrollees": 10,
+          "admitGpa": "3.28 - 3.81",
+          "enrolleeGpa": "2.83 - 3.44"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Computer Engineering",
+          "applicants": 321,
+          "admits": 241,
+          "enrollees": 57,
+          "admitGpa": "3.27 - 3.83",
+          "enrolleeGpa": "3.12 - 3.74"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Electrical Engineering",
+          "applicants": 307,
+          "admits": 181,
+          "enrollees": 18,
+          "admitGpa": "3.32 - 3.84",
+          "enrolleeGpa": "3.34 - 3.76"
+        },
+        {
+          "discipline": "Engineering",
+          "school": "Not applicable",
+          "name": "Robotics Engineering BS",
+          "applicants": 105,
+          "admits": 67,
+          "enrollees": 12,
+          "admitGpa": "3.21 - 3.76",
+          "enrolleeGpa": "2.92 - 3.33"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Biochemistry- Molecular Biology",
+          "applicants": 157,
+          "admits": 95,
+          "enrollees": 18,
+          "admitGpa": "3.19 - 3.70",
+          "enrolleeGpa": "2.95 - 3.37"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Biology",
+          "applicants": 647,
+          "admits": 333,
+          "enrollees": 45,
+          "admitGpa": "3.05 - 3.71",
+          "enrolleeGpa": "2.84 - 3.32"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Biotechnology",
+          "applicants": 25,
+          "admits": 9,
+          "enrollees": 3,
+          "admitGpa": "3.21 - 3.73",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Ecology & Evolution",
+          "applicants": 76,
+          "admits": 51,
+          "enrollees": 11,
+          "admitGpa": "3.13 - 3.69",
+          "enrolleeGpa": "3.12 - 3.78"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Environmental Studies",
+          "applicants": 108,
+          "admits": 64,
+          "enrollees": 23,
+          "admitGpa": "3.20 - 3.75",
+          "enrolleeGpa": "3.14 - 3.60"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Environmental Studies/Biology",
+          "applicants": 20,
+          "admits": 12,
+          "enrollees": 6,
+          "admitGpa": "3.25 - 3.55",
+          "enrolleeGpa": "3.11 - 3.51"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Marine Biology",
+          "applicants": 128,
+          "admits": 78,
+          "enrollees": 24,
+          "admitGpa": "3.08 - 3.65",
+          "enrolleeGpa": "3.03 - 3.53"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Microbiology",
+          "applicants": 45,
+          "admits": 29,
+          "enrollees": 6,
+          "admitGpa": "3.19 - 3.72",
+          "enrolleeGpa": "3.26 - 3.71"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Molecular, Cell, & Developmental Biology",
+          "applicants": 90,
+          "admits": 61,
+          "enrollees": 6,
+          "admitGpa": "3.23 - 3.71",
+          "enrolleeGpa": "2.54 - 3.22"
+        },
+        {
+          "discipline": "Life Sciences",
+          "school": "Not applicable",
+          "name": "Neuroscience",
+          "applicants": 84,
+          "admits": 39,
+          "enrollees": 5,
+          "admitGpa": "3.19 - 3.85",
+          "enrolleeGpa": "2.92 - 3.81"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Agroecology",
+          "applicants": 25,
+          "admits": 8,
+          "enrollees": 4,
+          "admitGpa": "2.82 - 3.48",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Art and Design: Games and Playable Media",
+          "applicants": 48,
+          "admits": 46,
+          "enrollees": 42,
+          "admitGpa": "3.18 - 3.80",
+          "enrolleeGpa": "3.13 - 3.72"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Cognitive Science",
+          "applicants": 137,
+          "admits": 86,
+          "enrollees": 13,
+          "admitGpa": "3.37 - 3.91",
+          "enrolleeGpa": "2.88 - 3.92"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Global and Community Health",
+          "applicants": 333,
+          "admits": 292,
+          "enrollees": 35,
+          "admitGpa": "3.20 - 3.78",
+          "enrolleeGpa": "2.76 - 3.43"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Legal Studies",
+          "applicants": 274,
+          "admits": 246,
+          "enrollees": 31,
+          "admitGpa": "3.15 - 3.73",
+          "enrolleeGpa": "2.71 - 3.35"
+        },
+        {
+          "discipline": "Other/Interdisciplinary",
+          "school": "Not applicable",
+          "name": "Psychology",
+          "applicants": 173,
+          "admits": 170,
+          "enrollees": 153,
+          "admitGpa": "3.08 - 3.81",
+          "enrolleeGpa": "3.10 - 3.80"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Astrophysics",
+          "applicants": 81,
+          "admits": 55,
+          "enrollees": 15,
+          "admitGpa": "3.26 - 3.89",
+          "enrolleeGpa": "3.47 - 3.95"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Chemistry",
+          "applicants": 150,
+          "admits": 92,
+          "enrollees": 15,
+          "admitGpa": "3.11 - 3.63",
+          "enrolleeGpa": "2.88 - 3.65"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Earth Science",
+          "applicants": 268,
+          "admits": 253,
+          "enrollees": 24,
+          "admitGpa": "3.22 - 3.84",
+          "enrolleeGpa": "2.78 - 3.85"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Mathematics",
+          "applicants": 181,
+          "admits": 139,
+          "enrollees": 17,
+          "admitGpa": "3.34 - 3.87",
+          "enrolleeGpa": "3.20 - 3.79"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Mathematics Education",
+          "applicants": 20,
+          "admits": 17,
+          "enrollees": 3,
+          "admitGpa": "3.15 - 3.70",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Mathematics Theory & Computation",
+          "applicants": 60,
+          "admits": 57,
+          "enrollees": 9,
+          "admitGpa": "3.24 - 3.86",
+          "enrolleeGpa": "2.81 - 3.56"
+        },
+        {
+          "discipline": "Physical Sciences/Math",
+          "school": "Not applicable",
+          "name": "Physics",
+          "applicants": 82,
+          "admits": 59,
+          "enrollees": 9,
+          "admitGpa": "3.14 - 3.72",
+          "enrolleeGpa": "2.74 - 3.18"
+        },
+        {
+          "discipline": "Public Admin",
+          "school": "Not applicable",
+          "name": "Community Studies",
+          "applicants": 132,
+          "admits": 113,
+          "enrollees": 8,
+          "admitGpa": "3.07 - 3.69",
+          "enrolleeGpa": "2.91 - 3.38"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Anthropology",
+          "applicants": 295,
+          "admits": 256,
+          "enrollees": 31,
+          "admitGpa": "3.12 - 3.80",
+          "enrolleeGpa": "2.91 - 3.66"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Earth Science/Anthropology",
+          "applicants": 9,
+          "admits": 9,
+          "enrollees": 9,
+          "admitGpa": "2.41 - 3.35",
+          "enrolleeGpa": "2.41 - 3.35"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Economics",
+          "applicants": 534,
+          "admits": 415,
+          "enrollees": 27,
+          "admitGpa": "3.26 - 3.81",
+          "enrolleeGpa": "2.74 - 3.63"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Economics - Mathematics",
+          "applicants": 40,
+          "admits": 25,
+          "enrollees": 3,
+          "admitGpa": "3.11 - 3.86",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Ethnic Studies",
+          "applicants": 39,
+          "admits": 32,
+          "enrollees": 3,
+          "admitGpa": "3.14 - 3.90",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Politics",
+          "applicants": 603,
+          "admits": 518,
+          "enrollees": 41,
+          "admitGpa": "3.16 - 3.84",
+          "enrolleeGpa": "2.69 - 3.55"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Sociology",
+          "applicants": 479,
+          "admits": 329,
+          "enrollees": 47,
+          "admitGpa": "3.09 - 3.73",
+          "enrolleeGpa": "2.88 - 3.56"
+        },
+        {
+          "discipline": "Social Sciences",
+          "school": "Not applicable",
+          "name": "Women's Studies",
+          "applicants": 40,
+          "admits": 34,
+          "enrollees": 4,
+          "admitGpa": "3.28 - 3.95",
+          "enrolleeGpa": "redacted"
+        },
+        {
+          "discipline": "Undeclared",
+          "school": "Not applicable",
+          "name": "Undeclared",
+          "applicants": 423,
+          "admits": 323,
+          "enrollees": 35,
+          "admitGpa": "3.25 - 3.84",
+          "enrolleeGpa": "2.96 - 3.61"
+        }
+      ]
+    }
+  }
+}
