@@ -543,8 +543,8 @@ const MoneyFlowMap = () => {
         Donations from University of California employees to federal candidates, by the state
         of the race.
         {/* Removed from the arrows view: "Arrows start at UC Berkeley; bigger and darker
-            arrows mean more money." */}
-        {mode === 'choropleth' && ' Darker states drew more money from UC employees.'}
+            arrows mean more money." Removed from the shaded view: "Darker states drew more
+            money from UC employees." */}
         {' '}
         Hover over a state for details.
       </p>
