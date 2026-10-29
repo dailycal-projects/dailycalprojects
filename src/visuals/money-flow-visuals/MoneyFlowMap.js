@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import { feature } from 'topojson-client';
 import { withPrefix } from 'gatsby';
 import { theme } from '../../styles/theme';
+import isUnlocked from './unlock';
 import us from './data/us-states-10m.json';
 
 // Built from scripts/uc_donations_by_state.py: UC employee donations to federal
@@ -36,14 +37,13 @@ const BIN_COLORS = d3.quantize(d3.interpolateLab('#d3e4f0', '#0b3550'), BINS.len
 
 const MODES = [
   { id: 'arrows', label: 'Arrows' },
-  { id: 'choropleth', label: 'Choropleth' },
+  { id: 'choropleth', label: 'Shaded' },
 ];
 
 const FIPS = {
   AL: '01', AK: '02', AZ: '04', AR: '05', CA: '06', CO: '08', CT: '09', DE: '10', DC: '11', FL: '12', GA: '13', HI: '15', ID: '16', IL: '17', IN: '18', IA: '19', KS: '20', KY: '21', LA: '22', ME: '23', MD: '24', MA: '25', MI: '26', MN: '27', MS: '28', MO: '29', MT: '30', NE: '31', NV: '32', NH: '33', NJ: '34', NM: '35', NY: '36', NC: '37', ND: '38', OH: '39', OK: '40', OR: '41', PA: '42', RI: '44', SC: '45', SD: '46', TN: '47', TX: '48', UT: '49', VT: '50', VA: '51', WA: '53', WV: '54', WI: '55', WY: '56',
 };
 
-const UNMAPPED_NAMES = { US: 'presidential races', MP: 'Northern Mariana Islands' };
 const PARTIES = {
   DEM: 'D', REP: 'R', IND: 'I', LIB: 'L', GRE: 'G',
 };
@@ -125,7 +125,6 @@ const buttonStyle = (active) => ({
 const MoneyFlowMap = () => {
   const svgRef = useRef();
   const tooltipRef = useRef();
-  const noteRef = useRef();
   const [mode, setMode] = useState('arrows');
   const modeRef = useRef(mode);
   // Set once the data loads; switches the drawn map between modes.
@@ -186,7 +185,6 @@ const MoneyFlowMap = () => {
       const flows = rows
         .filter((r) => r.state !== ORIGIN && FIPS[r.state] && r.total > 0)
         .sort((a, b) => b.total - a.total);
-      const unmapped = rows.filter((r) => r.state !== ORIGIN && !FIPS[r.state]);
       const outOfState = d3.sum(flows, (r) => r.total);
 
       const widthScale = d3.scaleLinear()
@@ -404,28 +402,31 @@ const MoneyFlowMap = () => {
         offsets = scatterOffsets(pointer);
         applyOffsets(150);
       };
-      svg
-        .on('mousemove.scatter', (event) => {
-          pointer = d3.pointer(event, svg.node());
-          setScattering(event.shiftKey);
+      // Only wired up when the URL unlocks it.
+      if (isUnlocked()) {
+        svg
+          .on('mousemove.scatter', (event) => {
+            pointer = d3.pointer(event, svg.node());
+            setScattering(event.shiftKey);
+            if (scattering) scatter();
+          })
+          .on('mouseleave.scatter', () => {
+            pointer = null;
+            setScattering(false);
+          });
+        // Pressing or releasing Shift without moving the mouse also counts.
+        const onShift = (event) => {
+          if (event.key !== 'Shift') return;
+          setScattering(event.type === 'keydown' && pointer !== null);
           if (scattering) scatter();
-        })
-        .on('mouseleave.scatter', () => {
-          pointer = null;
-          setScattering(false);
-        });
-      // Pressing or releasing Shift without moving the mouse also counts.
-      const onShift = (event) => {
-        if (event.key !== 'Shift') return;
-        setScattering(event.type === 'keydown' && pointer !== null);
-        if (scattering) scatter();
-      };
-      window.addEventListener('keydown', onShift);
-      window.addEventListener('keyup', onShift);
-      removeListeners = () => {
-        window.removeEventListener('keydown', onShift);
-        window.removeEventListener('keyup', onShift);
-      };
+        };
+        window.addEventListener('keydown', onShift);
+        window.addEventListener('keyup', onShift);
+        removeListeners = () => {
+          window.removeEventListener('keydown', onShift);
+          window.removeEventListener('keyup', onShift);
+        };
+      }
 
       // Width legend for arrows.
       arrowLegend.append('text')
@@ -522,14 +523,6 @@ const MoneyFlowMap = () => {
         applyOffsets(0);
       };
       applyModeRef.current(modeRef.current);
-
-      const otherStates = flows.filter((r) => r.state !== 'DC').length;
-      const hasDC = flows.some((r) => r.state === 'DC');
-      const notes = [`${formatDollars(outOfState)} went to races in ${otherStates} other states${hasDC ? ' and D.C.' : '.'}`];
-      if (unmapped.length) {
-        notes.push(`Not mapped: ${unmapped.map((r) => `${UNMAPPED_NAMES[r.state] || r.state} (${formatDollars(r.total)})`).join(', ')}.`);
-      }
-      d3.select(noteRef.current).text(notes.join(' '));
     });
 
     return () => {
@@ -549,10 +542,9 @@ const MoneyFlowMap = () => {
       <p style={{ margin: '0 0 0.75rem', color: theme.palette.darkGrey }}>
         Donations from University of California employees to federal candidates, by the state
         of the race.
-        {' '}
-        {mode === 'arrows'
-          ? 'Arrows start at UC Berkeley; bigger and darker arrows mean more money.'
-          : 'Darker states drew more money from UC employees.'}
+        {/* Removed from the arrows view: "Arrows start at UC Berkeley; bigger and darker
+            arrows mean more money." */}
+        {mode === 'choropleth' && ' Darker states drew more money from UC employees.'}
         {' '}
         Hover over a state for details.
       </p>
@@ -603,10 +595,11 @@ const MoneyFlowMap = () => {
         />
       </div>
       <figcaption style={{ fontSize: 13, color: theme.palette.darkGrey, marginTop: '0.5rem' }}>
-        <span ref={noteRef} />
-        {' '}
-        Source: Federal Election Commission individual contributions, 2025–26 cycle;
-        analysis by The Daily Californian.
+        {/* Removed note, computed from the data before the source line: "$1,423,721 went to
+            races in 47 other states and D.C. Not mapped: presidential races ($569), Northern
+            Mariana Islands ($500)." */}
+        Source: Brendan Raykoff/The Daily Californian; Federal Election Commission individual
+        contributions, 2025–26 cycle
       </figcaption>
     </figure>
   );

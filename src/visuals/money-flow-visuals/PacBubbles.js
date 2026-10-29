@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { withPrefix } from 'gatsby';
 import { theme } from '../../styles/theme';
+import isUnlocked from './unlock';
 
 // Built from scripts/uc_pac_recipients.py: the top PACs by UC employee dollars,
 // plus a final OTHER row summing the rest.
@@ -379,28 +380,31 @@ const PacBubbles = () => {
           moveTo((d) => [d.x, d.y], 400);
         }
       };
-      svg
-        .on('mousemove.scatter', (event) => {
-          pointer = d3.pointer(event, svg.node());
-          setScattering(event.shiftKey);
+      // Only wired up when the URL unlocks it.
+      if (isUnlocked()) {
+        svg
+          .on('mousemove.scatter', (event) => {
+            pointer = d3.pointer(event, svg.node());
+            setScattering(event.shiftKey);
+            if (scattering) moveTo((d) => scatteredPosition(d, pointer), 150);
+          })
+          .on('mouseleave.scatter', () => {
+            pointer = null;
+            setScattering(false);
+          });
+        // Pressing or releasing Shift without moving the mouse also counts.
+        const onShift = (event) => {
+          if (event.key !== 'Shift') return;
+          setScattering(event.type === 'keydown' && pointer !== null);
           if (scattering) moveTo((d) => scatteredPosition(d, pointer), 150);
-        })
-        .on('mouseleave.scatter', () => {
-          pointer = null;
-          setScattering(false);
-        });
-      // Pressing or releasing Shift without moving the mouse also counts.
-      const onShift = (event) => {
-        if (event.key !== 'Shift') return;
-        setScattering(event.type === 'keydown' && pointer !== null);
-        if (scattering) moveTo((d) => scatteredPosition(d, pointer), 150);
-      };
-      window.addEventListener('keydown', onShift);
-      window.addEventListener('keyup', onShift);
-      removeListeners = () => {
-        window.removeEventListener('keydown', onShift);
-        window.removeEventListener('keyup', onShift);
-      };
+        };
+        window.addEventListener('keydown', onShift);
+        window.addEventListener('keyup', onShift);
+        removeListeners = () => {
+          window.removeEventListener('keydown', onShift);
+          window.removeEventListener('keyup', onShift);
+        };
+      }
 
       if (other) {
         d3.select(noteRef.current).text(
@@ -469,13 +473,13 @@ const PacBubbles = () => {
       <figcaption style={{ fontSize: 14, color: theme.palette.darkGrey, marginTop: '0.5rem' }}>
         <span ref={noteRef} />
         {' '}
-        Circles have a minimum size so the smallest PACs stay visible.
-        {' '}
-        Hybrid PACs keep both a limited account and an unlimited super PAC account; FEC
-        records don&apos;t say which one received a contribution. Contributions passed
-        through ActBlue or WinRed are counted at the PAC that received them; refunds are
-        subtracted. Source: Federal Election Commission individual contributions, 2025–26
-        cycle; analysis by The Daily Californian.
+        {/* Removed explainer: "Circles have a minimum size so the smallest PACs stay visible.
+            Hybrid PACs keep both a limited account and an unlimited super PAC account; FEC
+            records don't say which one received a contribution. Contributions passed through
+            ActBlue or WinRed are counted at the PAC that received them; refunds are
+            subtracted." */}
+        Source: Brendan Raykoff/The Daily Californian; Federal Election Commission individual
+        contributions, 2025–26 cycle
       </figcaption>
     </figure>
   );
