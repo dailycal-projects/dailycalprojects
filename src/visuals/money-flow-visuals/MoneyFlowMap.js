@@ -22,6 +22,13 @@ const EMPTY_FILL = '#eef0f2';
 const LABELED_STATES = 5;
 // Arrows start at UC Berkeley's campus.
 const SOURCE_COORDS = [-122.2585, 37.8719];
+// While Shift is held, states slide away from the cursor: one right under it
+// ends up SCATTER_CLEARANCE beyond its own rough radius, and the push fades to
+// nothing SCATTER_REACH farther out. Big states count as at most
+// SCATTER_MAX_RADIUS across so they don't fly off the map.
+const SCATTER_CLEARANCE = 30;
+const SCATTER_REACH = 110;
+const SCATTER_MAX_RADIUS = 60;
 
 // Choropleth bins, in dollars donated to races in the state.
 const BINS = [5000, 10000, 25000, 50000, 100000];
@@ -146,6 +153,7 @@ const MoneyFlowMap = () => {
     const svg = d3.select(svgRef.current);
     const tooltip = d3.select(tooltipRef.current);
     let cancelled = false;
+    let removeListeners = () => {};
 
     Promise.all([
       d3.csv(DATA_URL, (r) => ({
@@ -311,8 +319,10 @@ const MoneyFlowMap = () => {
         .on('mouseleave', () => { highlight(null); hideTooltip(); });
 
       // Light labels sit on the map with a white halo; dark ones (on dark fills) invert it.
-      const label = (x, y, lines, anchorSide = 'middle', onDark = false) => {
+      // Each label is tied to its state (abbr) so it can move with it.
+      const label = (abbr, x, y, lines, anchorSide = 'middle', onDark = false) => {
         const text = labelLayer.append('text')
+          .datum(abbr)
           .attr('x', x)
           .attr('y', y)
           .attr('text-anchor', anchorSide)
@@ -327,6 +337,94 @@ const MoneyFlowMap = () => {
           .attr('dy', i === 0 ? 0 : '1.15em')
           .attr('font-weight', i === 0 ? 700 : 400)
           .text(t));
+      };
+
+      // Holding Shift scatters states away from the cursor and turns off their
+      // hover, so none of them can be hovered. Arrows, labels and the UC
+      // Berkeley dot move with their states. Releasing Shift (or leaving the map)
+      // lets everything glide back.
+      const stateCenter = new Map(states.map((d) => [d.id, path.centroid(d)]));
+      const stateRadius = new Map(states.map((d) => [
+        d.id, Math.min(Math.sqrt(path.area(d) / Math.PI), SCATTER_MAX_RADIUS),
+      ]));
+      let pointer = null;
+      let scattering = false;
+      let offsets = new Map(); // FIPS -> [dx, dy]
+      const offsetFor = (fips) => offsets.get(fips) || [0, 0];
+      const shifted = (abbr, [x, y]) => {
+        const [dx, dy] = offsetFor(FIPS[abbr]);
+        return [x + dx, y + dy];
+      };
+      const translate = (fips) => {
+        const [dx, dy] = offsetFor(fips);
+        return `translate(${dx},${dy})`;
+      };
+      const scatterOffsets = ([mx, my]) => new Map(states.map((d) => {
+        const [cx, cy] = stateCenter.get(d.id);
+        const dx = cx - mx;
+        const dy = cy - my;
+        const dist = Math.hypot(dx, dy);
+        const near = stateRadius.get(d.id) + SCATTER_CLEARANCE;
+        if (dist >= near + SCATTER_REACH) return [d.id, [0, 0]];
+        // Ease the push off with distance, like the PAC chart's circles.
+        const angle = dist > 0 ? Math.atan2(dy, dx) : -Math.PI / 2;
+        const pushed = near + (dist / (near + SCATTER_REACH)) * SCATTER_REACH;
+        return [d.id, [mx + pushed * Math.cos(angle) - cx, my + pushed * Math.sin(angle) - cy]];
+      }));
+      const applyOffsets = (duration) => {
+        const ease = (t) => t.duration(duration).ease(d3.easeCubicOut);
+        statePaths.transition('scatter').call(ease)
+          .attr('transform', (d) => translate(d.id));
+        labelLayer.selectAll('text').transition('scatter').call(ease)
+          .attr('transform', (abbr) => translate(FIPS[abbr]));
+        const movedSource = shifted(ORIGIN, source);
+        originDot.transition('scatter').call(ease)
+          .attr('cx', movedSource[0])
+          .attr('cy', movedSource[1]);
+        flowLayer.selectAll('g.flow').each(function moveArrow(r) {
+          const geo = arrowGeometry(movedSource, shifted(r.state, anchor(r.state)), strokeWidth(r.total));
+          const parts = d3.select(this).selectAll('path');
+          parts.filter((_, i) => i < 2).transition('scatter').call(ease).attr('d', geo.line);
+          parts.filter((_, i) => i === 2).transition('scatter').call(ease).attr('d', geo.head);
+        });
+      };
+      const setScattering = (on) => {
+        if (on === scattering) return;
+        scattering = on;
+        statePaths.attr('pointer-events', on ? 'none' : null);
+        if (on) {
+          highlight(null);
+          hideTooltip();
+        } else {
+          offsets = new Map();
+          applyOffsets(500);
+        }
+      };
+      const scatter = () => {
+        offsets = scatterOffsets(pointer);
+        applyOffsets(150);
+      };
+      svg
+        .on('mousemove.scatter', (event) => {
+          pointer = d3.pointer(event, svg.node());
+          setScattering(event.shiftKey);
+          if (scattering) scatter();
+        })
+        .on('mouseleave.scatter', () => {
+          pointer = null;
+          setScattering(false);
+        });
+      // Pressing or releasing Shift without moving the mouse also counts.
+      const onShift = (event) => {
+        if (event.key !== 'Shift') return;
+        setScattering(event.type === 'keydown' && pointer !== null);
+        if (scattering) scatter();
+      };
+      window.addEventListener('keydown', onShift);
+      window.addEventListener('keyup', onShift);
+      removeListeners = () => {
+        window.removeEventListener('keydown', onShift);
+        window.removeEventListener('keyup', onShift);
       };
 
       // Width legend for arrows.
@@ -408,18 +506,20 @@ const MoneyFlowMap = () => {
         labelLayer.selectAll('*').remove();
         if (arrows) {
           if (origin) {
-            label(source[0] + 4, source[1] + 26, ['California races', formatShort(origin.total)], 'start');
+            label(ORIGIN, source[0] + 4, source[1] + 26, ['California races', formatShort(origin.total)], 'start');
           }
           flows.slice(0, LABELED_STATES).forEach((r) => {
             const [x, y] = anchor(r.state);
-            label(x, y + 22, [r.state, formatShort(r.total)]);
+            label(r.state, x, y + 22, [r.state, formatShort(r.total)]);
           });
         } else {
           [origin, ...flows.slice(0, LABELED_STATES)].filter(Boolean).forEach((r) => {
             const [x, y] = anchor(r.state);
-            label(x, y - 4, [r.state, formatShort(r.total)], 'middle', true);
+            label(r.state, x, y - 4, [r.state, formatShort(r.total)], 'middle', true);
           });
         }
+        // New labels start where their states currently are.
+        applyOffsets(0);
       };
       applyModeRef.current(modeRef.current);
 
@@ -432,7 +532,10 @@ const MoneyFlowMap = () => {
       d3.select(noteRef.current).text(notes.join(' '));
     });
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      removeListeners();
+    };
   }, []);
 
   useEffect(() => {
