@@ -4,8 +4,10 @@ import { feature } from 'topojson-client';
 import { withPrefix } from 'gatsby';
 import { theme } from '../../styles/theme';
 import isUnlocked from './unlock';
-import us from './data/us-states-10m.json';
 
+// State shapes (us-atlas states-10m) are fetched rather than imported, so they stay
+// out of the JavaScript bundle that every article page loads.
+const STATES_URL = withPrefix('/money-flow/us-states-10m.json');
 // Built from scripts/uc_donations_by_state.py: UC employee donations to federal
 // candidates, grouped by the state of the race. "US" is presidential races.
 const DATA_URL = withPrefix('/money-flow/uc_donations_by_state.csv');
@@ -133,9 +135,6 @@ const MoneyFlowMap = () => {
   useEffect(() => {
     const projection = d3.geoAlbersUsa().scale(1300).translate([WIDTH / 2, MAP_HEIGHT / 2]);
     const path = d3.geoPath(projection);
-    const states = feature(us, us.objects.states).features
-      .filter((d) => path.centroid(d).every(Number.isFinite));
-    const statesById = new Map(states.map((d) => [d.id, d]));
     const abbrByFips = new Map(Object.entries(FIPS).map(([abbr, fips]) => [fips, abbr]));
 
     // Hand-placed anchors where a centroid sits awkwardly (Florida's falls in the Gulf side,
@@ -145,9 +144,6 @@ const MoneyFlowMap = () => {
       MI: [-84.6, 43.4],
       LA: [-92.3, 31.0],
     };
-    const anchor = (abbr) => (anchorOverrides[abbr]
-      ? projection(anchorOverrides[abbr])
-      : path.centroid(statesById.get(FIPS[abbr])));
 
     const svg = d3.select(svgRef.current);
     const tooltip = d3.select(tooltipRef.current);
@@ -155,6 +151,7 @@ const MoneyFlowMap = () => {
     let removeListeners = () => {};
 
     Promise.all([
+      d3.json(STATES_URL),
       d3.csv(DATA_URL, (r) => ({
         state: r.state,
         total: +r.total_donated,
@@ -173,8 +170,15 @@ const MoneyFlowMap = () => {
         sub: formatRace(r),
         value: +r.total_received,
       })),
-    ]).then(([rows, donorRows, recipientRows]) => {
+    ]).then(([us, rows, donorRows, recipientRows]) => {
       if (cancelled) return;
+
+      const states = feature(us, us.objects.states).features
+        .filter((d) => path.centroid(d).every(Number.isFinite));
+      const statesById = new Map(states.map((d) => [d.id, d]));
+      const anchor = (abbr) => (anchorOverrides[abbr]
+        ? projection(anchorOverrides[abbr])
+        : path.centroid(statesById.get(FIPS[abbr])));
 
       const byRank = (list) => d3.group(list.sort((a, b) => a.rank - b.rank), (r) => r.state);
       const topDonors = byRank(donorRows);
@@ -199,9 +203,8 @@ const MoneyFlowMap = () => {
 
       svg.selectAll('*').remove();
 
-      const showTooltip = (event, html) => {
+      const moveTooltip = (event) => {
         const box = svgRef.current.parentNode.getBoundingClientRect();
-        tooltip.style('opacity', 1).html(html);
         const tipHeight = tooltipRef.current.offsetHeight;
         const x = event.clientX - box.left;
         const y = event.clientY - box.top;
@@ -309,11 +312,15 @@ const MoneyFlowMap = () => {
             .attr('fill', FLOW_COLOR);
         });
 
+      // The highlight and tooltip are built once per state entered; moving within it
+      // only repositions the tooltip.
       statePaths
-        .on('mouseenter mousemove', (event, d) => {
+        .on('mouseenter', (event, d) => {
           highlight(d.id);
-          showTooltip(event, stateTooltip(d));
+          tooltip.style('opacity', 1).html(stateTooltip(d));
+          moveTooltip(event);
         })
+        .on('mousemove', moveTooltip)
         .on('mouseleave', () => { highlight(null); hideTooltip(); });
 
       // Light labels sit on the map with a white halo; dark ones (on dark fills) invert it.

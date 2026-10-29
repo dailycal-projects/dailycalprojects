@@ -25,6 +25,7 @@ const PADDING = 2.5;
 // Smallest circle radius, so PACs with a few hundred dollars stay visible.
 const MIN_RADIUS = 5;
 const RING_TICKS = [1, 10, 100, 1000];
+const SIMULATION_TICKS = 600;
 
 // Legend order. Around the ring the types run clockwise from the bottom-left as
 // Traditional, Leadership, Hybrid, Super; each of those adjacent pairs passes
@@ -114,7 +115,7 @@ const PacBubbles = () => {
       total: +r.total,
       // Histogram counts, one per n_<edge> column, in column order.
       sizes: Object.keys(r).filter((k) => k.startsWith('n_')).map((k) => +r[k]),
-    })).then((rows) => {
+    })).then(async (rows) => {
       if (cancelled) return;
       const bins = rows.columns.filter((k) => k.startsWith('n_')).map((k) => +k.slice(2));
       const other = rows.find((r) => r.id === 'OTHER');
@@ -209,7 +210,23 @@ const PacBubbles = () => {
         .force('sector', keepInSector)
         .alphaDecay(0.01)
         .stop();
-      for (let i = 0; i < 600; i += 1) simulation.tick();
+      // The 600 ticks take about half a second, so run them in short slices that
+      // leave the page responsive in between. The layout comes out the same.
+      await new Promise((resolve) => {
+        let ticks = 0;
+        const step = () => {
+          if (cancelled) return;
+          const sliceEnd = performance.now() + 12;
+          while (ticks < SIMULATION_TICKS && performance.now() < sliceEnd) {
+            simulation.tick();
+            ticks += 1;
+          }
+          if (ticks < SIMULATION_TICKS) setTimeout(step, 0);
+          else resolve();
+        };
+        step();
+      });
+      if (cancelled) return;
 
       svg.selectAll('*').remove();
 
@@ -318,14 +335,8 @@ const PacBubbles = () => {
       centerText.append('tspan').attr('x', CX).attr('dy', '1.25em')
         .text(`${formatMillions(grandTotal)} to PACs`);
 
-      const showTooltip = (event, d) => {
+      const moveTooltip = (event) => {
         const box = svgRef.current.parentNode.getBoundingClientRect();
-        tooltip
-          .style('opacity', 1)
-          .html(`<strong>${d.name}</strong><br/>`
-            + `<span style="color:${theme.palette.darkGrey}">${sectorById.get(d.type).label.replace(/s$/, '')}</span><br/>`
-            + `${formatDollars(d.total)} from ${formatContributions(d.contributions)}`
-            + `${histogram(d.sizes, bins, COLORS.get(d.type))}`);
         const x = event.clientX - box.left;
         const y = event.clientY - box.top;
         tooltip
@@ -333,11 +344,20 @@ const PacBubbles = () => {
           .style('top', `${y > box.height / 2 ? y - tooltipRef.current.offsetHeight - 14 : y + 14}px`);
       };
 
+      // The tooltip and outline are built once per circle entered; moving within it
+      // only repositions the tooltip.
       bubbles
-        .on('mouseenter mousemove', function handleHover(event, d) {
+        .on('mouseenter', function handleEnter(event, d) {
           d3.select(this).attr('stroke', theme.palette.black).attr('stroke-width', 2).raise();
-          showTooltip(event, d);
+          tooltip
+            .style('opacity', 1)
+            .html(`<strong>${d.name}</strong><br/>`
+              + `<span style="color:${theme.palette.darkGrey}">${sectorById.get(d.type).label.replace(/s$/, '')}</span><br/>`
+              + `${formatDollars(d.total)} from ${formatContributions(d.contributions)}`
+              + `${histogram(d.sizes, bins, COLORS.get(d.type))}`);
+          moveTooltip(event);
         })
+        .on('mousemove', moveTooltip)
         .on('mouseleave', function handleLeave(_event, d) {
           d3.select(this).attr('stroke', baseStroke(d)).attr('stroke-width', 1);
           tooltip.style('opacity', 0);
