@@ -6,7 +6,8 @@ import { withPrefix } from 'gatsby';
 import { theme } from '../../styles/theme';
 
 // Built from scripts/uc_donor_search.py: every contribution behind the map and
-// the PAC chart, one row per donation. A blank state means a PAC.
+// the PAC chart, plus party and joint fundraising committees, one row per
+// donation. Type is Candidate, PAC, Party or JFC; only candidates have a state.
 const DATA_URL = withPrefix('/money-flow/uc_donor_search.csv');
 
 const MAX_SUGGESTIONS = 8;
@@ -33,7 +34,18 @@ const tokenize = (text) => text.toLowerCase()
   .split(/[^a-z0-9]+/)
   .filter(Boolean);
 
-const recipientKind = (state) => (state ? `Candidate, ${state}` : 'PAC');
+const KIND_LABELS = { JFC: 'Joint fundraising committee', Party: 'Party committee' };
+const recipientKind = (type, state) => (type === 'Candidate' ? `Candidate, ${state}` : KIND_LABELS[type] || type);
+
+// The summary line splits a donor's total into these groups, skipping empty ones.
+const SUMMARY_GROUPS = [
+  { label: 'candidates', types: ['Candidate'] },
+  { label: 'PACs', types: ['PAC'] },
+  { label: 'parties and joint fundraising committees', types: ['Party', 'JFC'] },
+];
+const joinList = (items) => (items.length < 3
+  ? items.join(' and ')
+  : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`);
 
 const cell = {
   padding: '6px 8px',
@@ -58,6 +70,7 @@ const DonorSearch = () => {
         name: r.name,
         date: parseDate(r.date),
         recipient: r.recipient,
+        type: r.type,
         state: r.state,
         amount: +r.amount,
       })).then((rows) => {
@@ -157,7 +170,15 @@ const DonorSearch = () => {
   };
 
   const showList = open && query.trim() !== '';
-  const toCandidates = selected ? d3.sum(selected.gifts, (g) => (g.state ? g.amount : 0)) : 0;
+  const breakdown = selected
+    ? SUMMARY_GROUPS
+      .map((group) => ({
+        ...group,
+        total: d3.sum(selected.gifts, (g) => (group.types.includes(g.type) ? g.amount : 0)),
+      }))
+      .filter((group) => group.total !== 0)
+      .map((group) => `${formatDollars(group.total)} to ${group.label}`)
+    : [];
 
   return (
     <figure
@@ -171,8 +192,8 @@ const DonorSearch = () => {
     >
       <h3 style={{ margin: '0 0 0.25rem' }}>Search UC employees’ contributions</h3>
       <p style={{ margin: '0 0 0.75rem', color: theme.palette.darkGrey }}>
-        Type a name to see every contribution that donor made to federal candidates and PACs
-        in the data above.
+        Type a name to see every contribution that donor made to federal candidates, PACs,
+        party committees and joint fundraising committees.
       </p>
       <div style={{ position: 'relative' }}>
         <input
@@ -269,7 +290,7 @@ const DonorSearch = () => {
           <p style={{ margin: '0 0 0.5rem' }}>
             <strong>{selected.label}</strong>
             {` gave ${formatDollars(selected.total)} in ${formatContributions(selected.count)}: `}
-            {`${formatDollars(toCandidates)} to candidates and ${formatDollars(selected.total - toCandidates)} to PACs.`}
+            {`${joinList(breakdown)}.`}
           </p>
           <div style={{
             maxHeight: 420, overflowY: 'auto', border: '1px solid #e3e3e3', borderRadius: 4,
@@ -306,7 +327,7 @@ const DonorSearch = () => {
                       {g.recipient}
                       <br />
                       <span style={{ fontSize: 13, color: theme.palette.darkGrey }}>
-                        {recipientKind(g.state)}
+                        {recipientKind(g.type, g.state)}
                       </span>
                       {g.amount < 0 && (
                         <span style={{
