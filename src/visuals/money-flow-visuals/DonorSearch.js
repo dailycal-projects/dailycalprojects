@@ -199,7 +199,7 @@ const DonorSearch = () => {
         <input
           type="search"
           value={query}
-          placeholder="Search by name, e.g. Shenker"
+          placeholder="Search by name, e.g. Michael Cohen"
           role="combobox"
           aria-label="Donor name"
           aria-autocomplete="list"
@@ -252,7 +252,7 @@ const DonorSearch = () => {
           >
             {!donors && <li style={{ ...cell, color: theme.palette.darkGrey }}>Loading names…</li>}
             {donors && !suggestions.length && (
-              <li style={{ ...cell, color: theme.palette.darkGrey }}>No UC employees by that name</li>
+              <li style={{ ...cell, color: theme.palette.darkGrey }}>No results</li>
             )}
             {suggestions.map((d, i) => (
               // The input handles the keyboard for the list (arrow keys and Enter).
@@ -371,12 +371,12 @@ const DonorSearch = () => {
             contributions or for commercial purposes." */}
         <p style={{ margin: '0 0 0.5rem' }}>
           Donors are counted as UC employees based on the employer they reported to the FEC.
-          Committees generally only itemize donors who give more than $200, so many smaller
+          Employees with the same name are reported as a single person here. Committees generally only itemize donors who give more than $200, so many smaller
           contributions are not in the data. Contributions are from the 2025–26 cycle as reported
           through September 2026.
         </p>
-        Source: Brendan Raykoff/The Daily Californian; Federal Election Commission individual
-        contributions, 2025–26 cycle
+        Source: The Daily Californian; Federal Election Commission individual contributions,
+        2025–26 cycle
       </figcaption>
     </figure>
   );
