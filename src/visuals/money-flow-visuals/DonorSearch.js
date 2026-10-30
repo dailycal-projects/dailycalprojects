@@ -73,6 +73,8 @@ const DonorSearch = () => {
         type: r.type,
         state: r.state,
         amount: +r.amount,
+        employer: r.employer,
+        jobTitle: r.job_title,
       })).then((rows) => {
         const list = Array.from(d3.group(rows, (r) => r.name), ([name, gifts]) => ({
           name,
@@ -302,7 +304,7 @@ const DonorSearch = () => {
             >
               <thead>
                 <tr>
-                  {['Date', 'Recipient', 'Amount'].map((h) => (
+                  {['Date', 'Recipient', 'Employer', 'Amount'].map((h) => (
                     <th
                       key={h}
                       style={{
@@ -343,6 +345,14 @@ const DonorSearch = () => {
                           refund
                         </span>
                       )}
+                    </td>
+                    {/* As the donor reported it with this contribution. */}
+                    <td style={cell}>
+                      {g.employer}
+                      <br />
+                      <span style={{ fontSize: 13, color: theme.palette.darkGrey }}>
+                        {g.jobTitle}
+                      </span>
                     </td>
                     <td style={{ ...cell, textAlign: 'right', whiteSpace: 'nowrap' }}>
                       {formatDollars(g.amount)}

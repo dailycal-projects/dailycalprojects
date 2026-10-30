@@ -41,6 +41,19 @@ const TYPES = [
 ];
 const COLORS = new Map(TYPES.map((t) => [t.id, t.color]));
 const LABELED_PACS = 4;
+const NAME_LINE_HEIGHT = 14;
+// Wrap a PAC's name onto lines that fit inside its circle. Bold capitals at
+// 12.5px run about 8.5px a character.
+const wrapName = (name, r) => {
+  const maxChars = Math.max(8, Math.floor((1.6 * r) / 8.5));
+  const lines = [];
+  name.split(/\s+/).forEach((word) => {
+    const last = lines[lines.length - 1];
+    if (last && `${last} ${word}`.length <= maxChars) lines[lines.length - 1] = `${last} ${word}`;
+    else lines.push(word);
+  });
+  return lines;
+};
 // Circles outside a hovered ring label's group fade to this.
 const MUTED_FILL = '#d9d9d9';
 const MUTED_STROKE = '#c6c6c6';
@@ -315,13 +328,20 @@ const PacBubbles = () => {
         .selectAll('text')
         .data(nodes.slice().sort((a, b) => b.total - a.total).slice(0, LABELED_PACS))
         .join('text')
-        .attr('x', (d) => d.x)
-        .attr('y', (d) => d.y + 4)
+        .attr('transform', (d) => `translate(${d.x},${d.y})`)
         .attr('text-anchor', 'middle')
         .attr('font-size', 12.5)
         .attr('font-weight', 700)
         .attr('fill', theme.palette.black)
-        .text((d) => (d.name.length > 22 ? `${d.name.slice(0, 20)}…` : d.name))
+        .each(function wrap(d) {
+          const lines = wrapName(d.name, d.r);
+          d3.select(this).selectAll('tspan')
+            .data(lines)
+            .join('tspan')
+            .attr('x', 0)
+            .attr('y', (_, i) => 4 + (i - (lines.length - 1) / 2) * NAME_LINE_HEIGHT)
+            .text((line) => line);
+        })
         .call(halo);
 
       const centerText = labels.append('text')
@@ -386,8 +406,7 @@ const PacBubbles = () => {
           .attr('cx', (d) => positions.get(d)[0])
           .attr('cy', (d) => positions.get(d)[1]);
         nameLabels.transition('scatter').duration(duration).ease(d3.easeCubicOut)
-          .attr('x', (d) => positions.get(d)[0])
-          .attr('y', (d) => positions.get(d)[1] + 4);
+          .attr('transform', (d) => `translate(${positions.get(d)})`);
       };
       const setScattering = (on) => {
         if (on === scattering) return;
