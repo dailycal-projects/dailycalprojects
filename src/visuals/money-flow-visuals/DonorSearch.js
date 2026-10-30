@@ -366,16 +366,14 @@ const DonorSearch = () => {
             political parties or joint fundraising committees. Contributions sent through ActBlue
             or WinRed are listed under the campaign or PAC that received them, and refunds are
             shown as negative amounts." "...; the most recent months may be incomplete. A
-            candidate's state is the state of the race, not the donor's." */}
+            candidate's state is the state of the race, not the donor's." Also removed: "Federal
+            law prohibits using contributor information from FEC reports to solicit
+            contributions or for commercial purposes." */}
         <p style={{ margin: '0 0 0.5rem' }}>
           Donors are counted as UC employees based on the employer they reported to the FEC.
           Committees generally only itemize donors who give more than $200, so many smaller
           contributions are not in the data. Contributions are from the 2025–26 cycle as reported
           through September 2026.
-        </p>
-        <p style={{ margin: '0 0 0.5rem' }}>
-          Federal law prohibits using contributor information from FEC reports to solicit
-          contributions or for commercial purposes.
         </p>
         Source: Brendan Raykoff/The Daily Californian; Federal Election Commission individual
         contributions, 2025–26 cycle
