@@ -602,11 +602,8 @@ const MoneyFlowMap = () => {
         />
       </div>
       <figcaption style={{ fontSize: 13, color: theme.palette.darkGrey, marginTop: '0.5rem' }}>
-        {/* Removed note, computed from the data before the source line: "$1,423,721 went to
-            races in 47 other states and D.C. Not mapped: presidential races ($569), Northern
-            Mariana Islands ($500)." */}
         Source: Brendan Raykoff/The Daily Californian; Federal Election Commission individual
-        contributions, 2025–26 cycle
+        contributions, 2025-26 cycle
       </figcaption>
     </figure>
   );

@@ -512,13 +512,8 @@ const PacBubbles = () => {
       <figcaption style={{ fontSize: 14, color: theme.palette.darkGrey, marginTop: '0.5rem' }}>
         <span ref={noteRef} />
         {' '}
-        {/* Removed explainer: "Circles have a minimum size so the smallest PACs stay visible.
-            Hybrid PACs keep both a limited account and an unlimited super PAC account; FEC
-            records don't say which one received a contribution. Contributions passed through
-            ActBlue or WinRed are counted at the PAC that received them; refunds are
-            subtracted." */}
         Source: Brendan Raykoff/The Daily Californian; Federal Election Commission individual
-        contributions, 2025–26 cycle
+        contributions, 2025-26 cycle
       </figcaption>
     </figure>
   );

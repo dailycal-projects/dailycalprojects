@@ -201,7 +201,7 @@ const DonorSearch = () => {
         <input
           type="search"
           value={query}
-          placeholder="Search by name, e.g. Michael Cohen"
+          placeholder="Search by name"
           role="combobox"
           aria-label="Donor name"
           aria-autocomplete="list"
@@ -366,27 +366,14 @@ const DonorSearch = () => {
       )}
 
       <figcaption style={{ fontSize: 14, color: theme.palette.darkGrey, marginTop: '0.75rem' }}>
-        {/* Removed: an "About the data:" label, and these sentences: "...so employees who
-            listed a different employer or none are missing, and a few donors may be
-            misattributed. Employers that may or may not be part of UC, such as affiliated
-            institutes and hospitals, are counted only when the donor lives in California. Donors
-            are grouped by name exactly as reported: one person may appear under more than one
-            spelling, and different people with the same name are combined." "Only contributions
-            to candidates' campaign committees and to PACs are included, not money given to
-            political parties or joint fundraising committees. Contributions sent through ActBlue
-            or WinRed are listed under the campaign or PAC that received them, and refunds are
-            shown as negative amounts." "...; the most recent months may be incomplete. A
-            candidate's state is the state of the race, not the donor's." Also removed: "Federal
-            law prohibits using contributor information from FEC reports to solicit
-            contributions or for commercial purposes." */}
         <p style={{ margin: '0 0 0.5rem' }}>
           Donors are counted as UC employees based on the employer they reported to the FEC.
           Employees with the same name are reported as a single person here. Committees generally only itemize donors who give more than $200, so many smaller
-          contributions are not in the data. Contributions are from the 2025–26 cycle as reported
+          contributions are not in the data. Contributions are from the 2025-26 cycle as reported
           through September 2026.
         </p>
         Source: The Daily Californian; Federal Election Commission individual contributions,
-        2025–26 cycle
+        2025-26 cycle
       </figcaption>
     </figure>
   );

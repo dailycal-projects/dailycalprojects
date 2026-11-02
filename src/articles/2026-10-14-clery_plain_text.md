@@ -2,7 +2,6 @@ In compliance with the Clery Act, which requires universities to release informa
 
 The Daily Californian analyzed more than 20,000 crime log entries from the past seven years and created an interactive map which visualizes recent crime log activity as it is published. Keep scrolling to read our analysis, or click the button to explore the live-updating tool.
 
-
 [link to dashboard: Explore the interactive crime log]
 
 Here are crimes reported to UCPD from the past year. Note that locations are approximate and derived from location descriptions from the crime log. You can hover on a dot to see more information about the crime.
@@ -11,7 +10,7 @@ Here are crimes reported to UCPD from the past year. Note that locations are app
 
 [layout is text scrolling on the side, map doesn't move while text comes up]
 
-When a reported crime violates the California Penal or Vehicle Code, the relevant section and article are cited. 
+When a reported crime violates the California Penal or Vehicle Code, the relevant section and article are cited.
 
 In some cases, the crime descriptions, which are populated by UCPD’s records management system, are self-explanatory.
 
@@ -27,15 +26,15 @@ In these cases, reading the linked code definition can help you interpret the lo
 
 Information-only report incidents make up a large portion of the log entries. They represent incidents that did not constitute a penal code violation but are still worthy of documentation, according to UCPD.
 
- [only show INFO: reports; lower opacity on all other dots; highlight Information Only Report in the text box and incident popup]
+[only show INFO: reports; lower opacity on all other dots; highlight Information Only Report in the text box and incident popup]
 
-Rules violation incidents document violations of campus policies and regulations. 
+Rules violation incidents document violations of campus policies and regulations.
 
- [only show RULES: reports; lower opacity on all other dots; highlight Rules Violation in the text box and incident popup]
+[only show RULES: reports; lower opacity on all other dots; highlight Rules Violation in the text box and incident popup]
 
 Civil information report incidents are when someone requests information or guidance on a civil matter such as a roommate dispute.
 
- [only show Civil: reports; lower opacity on all other dots; highlight Civil Information Report in the text box and incident popup]
+[only show Civil: reports; lower opacity on all other dots; highlight Civil Information Report in the text box and incident popup]
 
 Most crime reports are centered around campus and University Village, a family housing community for UC Berkeley students.
 
@@ -48,5 +47,3 @@ Outside assist incidents can take place outside of UCPD’s normal jurisdiction 
 Our interactive tool automatically adds data from the Daily Crime Log as it is added to UCPD’s website. Check it out below.
 
 [same button to interactive version, map zoomed back to original view with data from the most recent 100 dots]
-
-
