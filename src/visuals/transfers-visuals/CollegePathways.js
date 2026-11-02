@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import {
   format, group, max, scaleLinear, sum,
 } from 'd3';
+import useHoverCard from './useHoverCard';
 import data from './data.json';
 import './college-pathways.css';
 
@@ -59,6 +60,7 @@ export default function CollegePathways({ sourceNotes }) {
     });
   });
   const active = segments.find((segment) => segment.key === (hovered || selected));
+  const { card, exiting } = useHoverCard(active, active ? `${year}/${mode}/${active.key}` : null);
   const chosen = segments.find((segment) => segment.key === selected);
   const clear = () => { setHovered(null); setSelected(null); };
   return (
@@ -111,20 +113,20 @@ export default function CollegePathways({ sourceNotes }) {
               {segments.map((segment) => <rect key={segment.key} x={segment.x} y={16 + segment.index * 46} width={segment.width} height={28} fill={campuses[segment.campus].color} stroke={active?.key === segment.key ? '#111' : 'white'} strokeWidth={active?.key === segment.key ? 2 : 0.7} tabIndex={0} role="button" aria-pressed={selected === segment.key} aria-label={`${segment.college.name}, ${campuses[segment.campus].name}: ${count(segment.value)} published enrollees, ${percent(segment.value / segment.college.total)} of published college total`} onMouseEnter={() => setHovered(segment.key)} onMouseLeave={() => setHovered(null)} onFocus={() => setHovered(segment.key)} onBlur={() => setHovered(null)} onClick={() => setSelected(selected === segment.key ? null : segment.key)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(selected === segment.key ? null : segment.key); } if (e.key === 'Escape') clear(); }} />)}
               <text className="college-pathways-axis" x={570} y={height - 8} textAnchor="middle">{mode === 'share' ? 'Share of published college enrollment' : 'Published transfer enrollments'}</text>
             </svg>
-            {active && (
-            <div className="college-pathways-tooltip" style={{ top: `${Math.max(0, Math.min(70, ((active.index * 46 + 45) / height) * 100))}%`, left: `${Math.min(64, Math.max(34, (active.x / 900) * 100))}%` }}>
-              <strong>{active.college.name}</strong>
-              <em>{`UC ${campuses[active.campus].name}`}</em>
+            {card && (
+            <div key={card.key} className={`college-pathways-tooltip${exiting ? ' is-exiting' : ''}`} style={{ top: `${Math.max(0, Math.min(70, ((card.index * 46 + 45) / height) * 100))}%`, left: `${Math.min(64, Math.max(34, (card.x / 900) * 100))}%` }}>
+              <strong>{card.college.name}</strong>
+              <em>{`UC ${campuses[card.campus].name}`}</em>
               <span>
-                {count(active.value)}
+                {count(card.value)}
                 {' '}
                 published enrollees ·
                 {' '}
-                <b>{percent(active.value / active.college.total)}</b>
+                <b>{percent(card.value / card.college.total)}</b>
                 {' '}
                 of published college total
               </span>
-              {active.fields.slice(0, 3).map((field) => (
+              {card.fields.slice(0, 3).map((field) => (
                 <span key={field.name}>
                   {field.name}
                   :

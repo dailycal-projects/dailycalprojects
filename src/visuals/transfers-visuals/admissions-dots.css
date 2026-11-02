@@ -58,7 +58,7 @@
 }
 .admissions-canvas circle {
   cursor: pointer;
-  transition: fill-opacity 120ms;
+  transition: fill-opacity 120ms, opacity 120ms;
 }
 .admissions-tooltip {
   position: absolute;
@@ -239,4 +239,39 @@
 /* Focused dots use the chart's darker circular stroke instead of a browser box. */
 .admissions-canvas circle:focus {
   outline: none;
+}
+
+.admissions-tooltip { animation: admissions-hover-enter 180ms ease-out both; }
+@keyframes admissions-hover-enter {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .admissions-tooltip { animation: none; }
+}
+
+.admissions-tooltip.is-exiting { animation: admissions-hover-exit 180ms ease-in both; }
+@keyframes admissions-hover-exit {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .admissions-tooltip.is-exiting { animation: none; opacity: 0; }
+}
+
+.admissions-hover-test { margin-top: 12px; }
+
+.admissions-tooltip.is-wide { width: max-content; max-width: calc(50% - 40px); }
+
+.admissions-campus-select > .admissions-campus-in { visibility: visible; animation: admissions-campus-fade-in 350ms ease-in-out both; }
+.admissions-campus-select > .admissions-campus-out { position: absolute; top: 0; left: 0; visibility: visible; white-space: nowrap; animation: admissions-campus-fade-out 350ms ease-in-out both; }
+.admissions-dots-in { animation: admissions-campus-fade-in 350ms ease-in-out both; }
+.admissions-dots-out { animation: admissions-campus-fade-out 350ms ease-in-out both; }
+@keyframes admissions-campus-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes admissions-campus-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .admissions-campus-select > .admissions-campus-in,
+  .admissions-campus-select > .admissions-campus-out,
+  .admissions-dots-in, .admissions-dots-out { animation: none; }
+  .admissions-campus-select > .admissions-campus-out, .admissions-dots-out { opacity: 0; }
 }
