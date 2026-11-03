@@ -39,11 +39,12 @@ snaps the selected range to that date. Panning preserves the selected dates.
 The orange band still moves the selection, and its left edge resizes it.
 Dragging that selection beyond the visible four months brings the dates into view.
 
-Dashboard reports sharing coordinates occupy fixed slots in concentric rings,
-16 pixels apart, with newest reports nearest the original location. Slots are
-assigned using the full archive, so dragging the selected time range does not
-rearrange surviving dots. Thin lines connect displaced dots to their original
-coordinates. Screen offsets are reapplied after zooming. The story is unaffected.
+Dashboard reports sharing coordinates occupy compact slots in concentric rings,
+16 pixels apart. Only reports in the selected time range occupy slots. Surviving
+dots keep their slots when possible; outer dots fill inner gaps when the group
+shrinks, and newly appearing reports fill available slots. Hidden reports never
+reserve space. Thin lines connect displaced dots to their original coordinates.
+Screen offsets are reapplied after zooming. The story is unaffected.
 
 The page scripts now have explicit mount/cleanup functions, scoped DOM queries,
 and view links within this article. Map instances, tours, listeners, requests,

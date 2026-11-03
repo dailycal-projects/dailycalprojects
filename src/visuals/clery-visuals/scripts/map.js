@@ -69,19 +69,20 @@ export default function mountMap({ root, data }) {
   let listKey = null;
 
   function render() {
-    shown = [];
+    shown = incidents.filter((i) => i.t >= start && i.t <= end);
+    offsets.setVisible(shown);
     for (const i of incidents) {
       const on = i.t >= start && i.t <= end;
-      if (on) shown.push(i);
       if (i.m && on !== layer.hasLayer(i.m)) {
         if (on) {
-          offsets.update(i);
-          if (i.offsetLine) layer.addLayer(i.offsetLine);
           layer.addLayer(i.m);
         } else {
           layer.removeLayer(i.m);
-          if (i.offsetLine) layer.removeLayer(i.offsetLine);
         }
+      }
+      if (i.offsetLine) {
+        const showLine = on && i.dotSlot > 0;
+        if (showLine !== layer.hasLayer(i.offsetLine)) showLine ? layer.addLayer(i.offsetLine) : layer.removeLayer(i.offsetLine);
       }
     }
     const key = shown.length ? `${shown[0].idx}-${shown.at(-1).idx}-${shown.length}` : '';
@@ -252,7 +253,7 @@ export default function mountMap({ root, data }) {
       }
       return Object.assign(i, { idx });
     });
-    offsets = createDashboardOffsets(map, incidents);
+    offsets = createDashboardOffsets(map);
     const latest = incidents[0]?.t ?? Date.now();
     t0 = Math.min(...incidents.map((i) => i.t), latest - 72 * HOUR) - 6 * HOUR; t1 = latest;
     end = t1; start = end - 72 * HOUR;
