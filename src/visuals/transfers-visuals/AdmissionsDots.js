@@ -87,41 +87,16 @@ const charts = Object.fromEntries(Object.entries(admissions.campuses).map(([name
 
 const campuses = ['Berkeley', 'Davis', 'Irvine', 'Los Angeles', 'Merced', 'Riverside', 'San Diego', 'Santa Barbara', 'Santa Cruz'];
 
-// Keep the canvas steady while campus datasets crossfade.
+// Keep the canvas steady when switching campuses.
 const chartHeight = max(Object.values(charts), (chart) => chart.height);
 
 export default function AdmissionsDots({ sourceNotes }) {
   const [campus, setCampus] = useState('Berkeley');
   const [query, setQuery] = useState('');
-  const [testRunning, setTestRunning] = useState(true);
-  const [outgoingCampus, setOutgoingCampus] = useState(null);
-  useEffect(() => {
-    if (!testRunning) return undefined;
-    const timer = setTimeout(() => {
-      setOutgoingCampus(campus);
-      setCampus(campuses[(campuses.indexOf(campus) + 1) % campuses.length]);
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, [testRunning, campus]);
-  useEffect(() => {
-    if (!outgoingCampus) return undefined;
-    const timer = setTimeout(() => setOutgoingCampus(null), 350);
-    return () => clearTimeout(timer);
-  }, [outgoingCampus]);
   const [selected, setSelected] = useState(null);
   const [hovered, setHovered] = useState(null);
-  useEffect(() => {
-    if (testRunning || hovered || query.trim()) return undefined;
-    const timer = setTimeout(() => {
-      setSelected(null);
-      setTestRunning(true);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [campus, testRunning, hovered, query]);
   const [hintDismissed, setHintDismissed] = useState(false);
   const hoverDot = (id) => {
-    setTestRunning(false);
-    setOutgoingCampus(null);
     setHovered(id);
     setHintDismissed(true);
   };
@@ -136,10 +111,10 @@ export default function AdmissionsDots({ sourceNotes }) {
   const height = chartHeight;
   const search = query.trim().toLowerCase();
   const matches = (m) => `${m.name} ${m.school} ${m.colorKey}`.toLowerCase().includes(search);
-  const activeId = testRunning ? null : hovered || selected;
+  const activeId = hovered || selected;
   const active = dots.find((m) => m.id === activeId);
   const { card, exiting } = useHoverCard(active ? { ...active, campus } : null, active ? `${campus}/${active.id}` : null);
-  const hintMajor = campus === 'Berkeley' && !testRunning && !hintDismissed ? dots.find((m) => m.name === 'Applied Mathematics') : null;
+  const hintMajor = campus === 'Berkeley' && !hintDismissed ? dots.find((m) => m.name === 'Applied Mathematics') : null;
   const selectedMajor = dots.find((m) => m.id === selected);
   const clear = () => { setSelected(null); setHovered(null); };
   const shown = items.filter(matches);
@@ -149,13 +124,10 @@ export default function AdmissionsDots({ sourceNotes }) {
         Latest transfer admissions rates for
         {' '}
         <span className="admissions-campus-select">
-          <span key={campus} className={testRunning ? 'admissions-campus-in' : undefined} aria-hidden={!testRunning}>{`UC ${campus}`}</span>
-          {outgoingCampus && <span className="admissions-campus-out" aria-hidden="true">{`UC ${outgoingCampus}`}</span>}
-          {!testRunning && (
-          <select aria-label="UC campus" value={campus} onChange={(e) => { setCampus(e.target.value); setOutgoingCampus(null); setQuery(''); clear(); }}>
+          <span aria-hidden="true">{`UC ${campus}`}</span>
+          <select aria-label="UC campus" value={campus} onChange={(e) => { setCampus(e.target.value); setQuery(''); clear(); }}>
             {campuses.map((name) => <option key={name} value={name}>{`UC ${name}`}</option>)}
           </select>
-          )}
 
         </span>
       </h2>
@@ -164,7 +136,7 @@ export default function AdmissionsDots({ sourceNotes }) {
           <div className="admissions-controls">
             <label className="admissions-search" htmlFor="admission-dots-search">
               Filter by major
-              <input id="admission-dots-search" type="search" value={query} onChange={(e) => { setQuery(e.target.value); setTestRunning(false); }} placeholder="Try Engineering or Psychology" />
+              <input id="admission-dots-search" type="search" value={query} onChange={(e) => { setQuery(e.target.value); }} placeholder="Try Engineering or Psychology" />
             </label>
           </div>
           <div className="admissions-legend" aria-label="Major group colors">
@@ -181,18 +153,13 @@ export default function AdmissionsDots({ sourceNotes }) {
                 <line x1={78} x2={856} y1={height - 65} y2={height - 65} stroke="#888" />
                 {x.ticks(10).map((v) => (
                   <g key={v}>
-                    {!testRunning && <line x1={x(v)} x2={x(v)} y1={50} y2={height - 65} stroke="#d1d0ce" strokeDasharray="4 5" />}
+                    <line x1={x(v)} x2={x(v)} y1={50} y2={height - 65} stroke="#d1d0ce" strokeDasharray="4 5" />
                     <line x1={x(v)} x2={x(v)} y1={height - 65} y2={height - 59} stroke="#888" />
                     <text x={x(v)} y={height - 40} textAnchor="middle">{format('.0%')(v)}</text>
                   </g>
                 ))}
                 <text className="admissions-axis-title" transform={`translate(30,${(50 + height - 65) / 2}) rotate(-90)`} textAnchor="middle">← GPA range midpoint →</text>
-                {outgoingCampus && (
-                <g key={`outgoing-${outgoingCampus}`} className="admissions-dots-out" pointerEvents="none" aria-hidden="true">
-                  {charts[outgoingCampus].dots.map((m) => <circle key={m.id} cx={m.x} cy={m.y} r={m.r} fill={majorColor(m.colorKey)} fillOpacity={0.86} stroke={color(majorColor(m.colorKey)).darker(0.9).formatHex()} strokeWidth={1.8} />)}
-                </g>
-                )}
-                <g key={campus} className={testRunning ? 'admissions-dots-in' : undefined}>
+                <g key={campus}>
                   {dots.map((m) => (
                     <circle key={m.id} cx={m.x} cy={m.y} r={m.r} fill={majorColor(m.colorKey)} fillOpacity={matches(m) ? 0.86 : 0.1} opacity={active && active.id !== m.id ? 0.5 : 1} stroke={active?.id === m.id ? '#172e40' : color(majorColor(m.colorKey)).darker(0.9).formatHex()} strokeWidth={active?.id === m.id ? 3 : 1.8} tabIndex={matches(m) ? 0 : -1} role="button" aria-label={`${m.name}${m.school ? `, ${m.school}` : ''}: ${number(m.admits)} of ${number(m.applicants)} admitted, ${percent(m.value)}, GPA range midpoint ${format('.2f')(m.gpa)}`} aria-pressed={selected === m.id} onMouseEnter={() => hoverDot(m.id)} onMouseLeave={() => setHovered(null)} onFocus={() => hoverDot(m.id)} onBlur={() => setHovered(null)} onClick={() => { setSelected(selected === m.id ? null : m.id); hoverDot(m.id); }} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(selected === m.id ? null : m.id); } if (e.key === 'Escape') clear(); }} />
                   ))}
@@ -247,24 +214,6 @@ export default function AdmissionsDots({ sourceNotes }) {
             <p>{`${number(selectedMajor.admits)} admitted out of ${number(selectedMajor.applicants)} applicants (${percent(selectedMajor.value)}). ${number(selectedMajor.enrollees)} enrolled.${selectedMajor.admitGpa ? ` Admitted-student GPA IQR: ${selectedMajor.admitGpa}.` : ''}`}</p>
           </div>
           )}
-          <button
-            className="admissions-hover-test"
-            type="button"
-            aria-pressed={testRunning}
-            onClick={() => {
-              clear();
-              if (testRunning) {
-                setTestRunning(false);
-                setOutgoingCampus(null);
-              } else {
-                setQuery('');
-                setHintDismissed(true);
-                setTestRunning(true);
-              }
-            }}
-          >
-            {testRunning ? 'Stop campus test' : 'Test campus sequence'}
-          </button>
           {sourceNotes && (
             <div className="admissions-method">
               <p>
