@@ -173,20 +173,41 @@
   }
 }
 
-.college-pathways-tooltip { animation: pathways-hover-enter 180ms ease-out both; }
+.college-pathways-tooltip {
+  animation: pathways-hover-enter 180ms ease-out both;
+}
 @keyframes pathways-hover-enter {
-  from { opacity: 0; transform: translateY(2px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .college-pathways-tooltip { animation: none; }
+  .college-pathways-tooltip {
+    animation: none;
+  }
 }
 
-.college-pathways-tooltip.is-exiting { animation: pathways-hover-exit 180ms ease-in both; }
+.college-pathways-tooltip.is-exiting {
+  animation: pathways-hover-exit 180ms ease-in both;
+}
 @keyframes pathways-hover-exit {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(2px); }
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(2px);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .college-pathways-tooltip.is-exiting { animation: none; opacity: 0; }
+  .college-pathways-tooltip.is-exiting {
+    animation: none;
+    opacity: 0;
+  }
 }
