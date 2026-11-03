@@ -465,7 +465,7 @@ const PacBubbles = () => {
       <h3 style={{ margin: '0 0 0.25rem' }}>Which PACs UC employees fund</h3>
       <p style={{ margin: '0 0 0.75rem', color: theme.palette.darkGrey }}>
         Each circle is a PAC that received money from University of California employees.
-        Bigger circles received more dollars; circles farther from the center received more
+        Bigger circles received more dollars; circles further from the center received more
         individual contributions. Hover over a circle for details.
       </p>
       <div style={{
