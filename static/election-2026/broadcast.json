@@ -1,0 +1,11 @@
+{
+  "_how": "Settings for broadcast.html, the vertical results loop for Instagram Live. Edit and the page picks it up on its next refresh (no rebuild). parties: candidates whose party the feeds don't carry, for blue/red coloring; a race is colored by party only when every candidate shown has one. stateProps: propositions shown on the State slide (Prop 40 always is).",
+  "slideSeconds": 8,
+  "stateProps": [
+    "39",
+    "40"
+  ],
+  "parties": {
+    "Lateefah Simon": "Dem"
+  }
+}

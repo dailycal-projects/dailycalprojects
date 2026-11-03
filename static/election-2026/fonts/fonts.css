@@ -1,0 +1,4 @@
+/* rent-o-meter's typefaces, the Daily Cal's own (copied from data.dailycal.org/rent-o-meter/fonts/). Only these two
+   cuts exist here: Tiempos Headline Bold and Plantin Regular, so the page uses no italics or other weights. */
+@font-face { font-family: "Tiempos Headline"; src: url("tiempos-headline-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plantin"; src: url("plantin-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
