@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
   color, format, max, min, sum, scaleLinear, scaleSqrt,
 } from 'd3';
+import useHoverCard from './useHoverCard';
 import admissions from './admissions.json';
 import './admissions-dots.css';
 
@@ -86,12 +87,44 @@ const charts = Object.fromEntries(Object.entries(admissions.campuses).map(([name
 
 const campuses = ['Berkeley', 'Davis', 'Irvine', 'Los Angeles', 'Merced', 'Riverside', 'San Diego', 'Santa Barbara', 'Santa Cruz'];
 
+// Keep the canvas steady while campus datasets crossfade.
+const chartHeight = max(Object.values(charts), (chart) => chart.height);
+
 export default function AdmissionsDots({ sourceNotes }) {
   const [campus, setCampus] = useState('Berkeley');
   const [query, setQuery] = useState('');
+  const [testRunning, setTestRunning] = useState(true);
+  const [outgoingCampus, setOutgoingCampus] = useState(null);
+  useEffect(() => {
+    if (!testRunning) return undefined;
+    const timer = setTimeout(() => {
+      setOutgoingCampus(campus);
+      setCampus(campuses[(campuses.indexOf(campus) + 1) % campuses.length]);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, [testRunning, campus]);
+  useEffect(() => {
+    if (!outgoingCampus) return undefined;
+    const timer = setTimeout(() => setOutgoingCampus(null), 350);
+    return () => clearTimeout(timer);
+  }, [outgoingCampus]);
   const [selected, setSelected] = useState(null);
   const [hovered, setHovered] = useState(null);
+  useEffect(() => {
+    if (testRunning || hovered || query.trim()) return undefined;
+    const timer = setTimeout(() => {
+      setSelected(null);
+      setTestRunning(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [campus, testRunning, hovered, query]);
   const [hintDismissed, setHintDismissed] = useState(false);
+  const hoverDot = (id) => {
+    setTestRunning(false);
+    setOutgoingCampus(null);
+    setHovered(id);
+    setHintDismissed(true);
+  };
   const hintTextRef = useRef(null);
   const [hintWidth, setHintWidth] = useState(240);
   useEffect(() => {
@@ -100,11 +133,13 @@ export default function AdmissionsDots({ sourceNotes }) {
   const chart = charts[campus];
   const items = chart?.items || [];
   const dots = chart?.dots || [];
-  const height = chart?.height || baseHeight;
+  const height = chartHeight;
   const search = query.trim().toLowerCase();
   const matches = (m) => `${m.name} ${m.school} ${m.colorKey}`.toLowerCase().includes(search);
-  const active = dots.find((m) => m.id === (hovered || selected));
-  const hintMajor = campus === 'Berkeley' && !hintDismissed ? dots.find((m) => m.name === 'Applied Mathematics') : null;
+  const activeId = testRunning ? null : hovered || selected;
+  const active = dots.find((m) => m.id === activeId);
+  const { card, exiting } = useHoverCard(active ? { ...active, campus } : null, active ? `${campus}/${active.id}` : null);
+  const hintMajor = campus === 'Berkeley' && !testRunning && !hintDismissed ? dots.find((m) => m.name === 'Applied Mathematics') : null;
   const selectedMajor = dots.find((m) => m.id === selected);
   const clear = () => { setSelected(null); setHovered(null); };
   const shown = items.filter(matches);
@@ -114,10 +149,14 @@ export default function AdmissionsDots({ sourceNotes }) {
         Latest transfer admissions rates for
         {' '}
         <span className="admissions-campus-select">
-          <span aria-hidden="true">{`UC ${campus}`}</span>
-          <select aria-label="UC campus" value={campus} onChange={(e) => { setCampus(e.target.value); setQuery(''); clear(); }}>
+          <span key={campus} className={testRunning ? 'admissions-campus-in' : undefined} aria-hidden={!testRunning}>{`UC ${campus}`}</span>
+          {outgoingCampus && <span className="admissions-campus-out" aria-hidden="true">{`UC ${outgoingCampus}`}</span>}
+          {!testRunning && (
+          <select aria-label="UC campus" value={campus} onChange={(e) => { setCampus(e.target.value); setOutgoingCampus(null); setQuery(''); clear(); }}>
             {campuses.map((name) => <option key={name} value={name}>{`UC ${name}`}</option>)}
           </select>
+          )}
+
         </span>
       </h2>
       {chart ? (
@@ -125,7 +164,7 @@ export default function AdmissionsDots({ sourceNotes }) {
           <div className="admissions-controls">
             <label className="admissions-search" htmlFor="admission-dots-search">
               Filter by major
-              <input id="admission-dots-search" type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Try Engineering or Psychology" />
+              <input id="admission-dots-search" type="search" value={query} onChange={(e) => { setQuery(e.target.value); setTestRunning(false); }} placeholder="Try Engineering or Psychology" />
             </label>
           </div>
           <div className="admissions-legend" aria-label="Major group colors">
@@ -142,15 +181,22 @@ export default function AdmissionsDots({ sourceNotes }) {
                 <line x1={78} x2={856} y1={height - 65} y2={height - 65} stroke="#888" />
                 {x.ticks(10).map((v) => (
                   <g key={v}>
-                    <line x1={x(v)} x2={x(v)} y1={50} y2={height - 65} stroke="#d1d0ce" strokeDasharray="4 5" />
+                    {!testRunning && <line x1={x(v)} x2={x(v)} y1={50} y2={height - 65} stroke="#d1d0ce" strokeDasharray="4 5" />}
                     <line x1={x(v)} x2={x(v)} y1={height - 65} y2={height - 59} stroke="#888" />
                     <text x={x(v)} y={height - 40} textAnchor="middle">{format('.0%')(v)}</text>
                   </g>
                 ))}
                 <text className="admissions-axis-title" transform={`translate(30,${(50 + height - 65) / 2}) rotate(-90)`} textAnchor="middle">← GPA range midpoint →</text>
-                {dots.map((m) => (
-                  <circle key={m.id} cx={m.x} cy={m.y} r={m.r} fill={majorColor(m.colorKey)} fillOpacity={matches(m) ? 0.86 : 0.1} stroke={active?.id === m.id ? '#172e40' : color(majorColor(m.colorKey)).darker(0.9).formatHex()} strokeWidth={active?.id === m.id ? 3 : 1.8} tabIndex={matches(m) ? 0 : -1} role="button" aria-label={`${m.name}${m.school ? `, ${m.school}` : ''}: ${number(m.admits)} of ${number(m.applicants)} admitted, ${percent(m.value)}, GPA range midpoint ${format('.2f')(m.gpa)}`} aria-pressed={selected === m.id} onMouseEnter={() => { setHovered(m.id); setHintDismissed(true); }} onMouseLeave={() => setHovered(null)} onFocus={() => { setHovered(m.id); setHintDismissed(true); }} onBlur={() => setHovered(null)} onClick={() => { setSelected(selected === m.id ? null : m.id); setHintDismissed(true); }} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(selected === m.id ? null : m.id); } if (e.key === 'Escape') clear(); }} />
-                ))}
+                {outgoingCampus && (
+                <g key={`outgoing-${outgoingCampus}`} className="admissions-dots-out" pointerEvents="none" aria-hidden="true">
+                  {charts[outgoingCampus].dots.map((m) => <circle key={m.id} cx={m.x} cy={m.y} r={m.r} fill={majorColor(m.colorKey)} fillOpacity={0.86} stroke={color(majorColor(m.colorKey)).darker(0.9).formatHex()} strokeWidth={1.8} />)}
+                </g>
+                )}
+                <g key={campus} className={testRunning ? 'admissions-dots-in' : undefined}>
+                  {dots.map((m) => (
+                    <circle key={m.id} cx={m.x} cy={m.y} r={m.r} fill={majorColor(m.colorKey)} fillOpacity={matches(m) ? 0.86 : 0.1} opacity={active && active.id !== m.id ? 0.5 : 1} stroke={active?.id === m.id ? '#172e40' : color(majorColor(m.colorKey)).darker(0.9).formatHex()} strokeWidth={active?.id === m.id ? 3 : 1.8} tabIndex={matches(m) ? 0 : -1} role="button" aria-label={`${m.name}${m.school ? `, ${m.school}` : ''}: ${number(m.admits)} of ${number(m.applicants)} admitted, ${percent(m.value)}, GPA range midpoint ${format('.2f')(m.gpa)}`} aria-pressed={selected === m.id} onMouseEnter={() => hoverDot(m.id)} onMouseLeave={() => setHovered(null)} onFocus={() => hoverDot(m.id)} onBlur={() => setHovered(null)} onClick={() => { setSelected(selected === m.id ? null : m.id); hoverDot(m.id); }} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(selected === m.id ? null : m.id); } if (e.key === 'Escape') clear(); }} />
+                  ))}
+                </g>
                 {hintMajor && (
                   <g className="admissions-hover-hint" pointerEvents="none" aria-hidden="true">
                     <defs>
@@ -165,16 +211,24 @@ export default function AdmissionsDots({ sourceNotes }) {
                 )}
                 <text className="admissions-axis-title" x={467} y={height - 10} textAnchor="middle">Admission rate</text>
               </svg>
-              {active && (
-              <div className="admissions-tooltip" style={{ left: `${Math.max(1, Math.min(65, (active.x / 900) * 100 + (active.x > 580 ? -33 : 2)))}%`, top: `${Math.max(8, Math.min(65, (active.y / height) * 100 - 8))}%` }}>
-                <strong>{active.name}</strong>
-                {active.school && <span><em>{active.colorKey === 'Other' && active.school.toLowerCase() === 'not applicable' ? 'Other' : active.school}</em></span>}
+              {card && (
+              <div
+                key={card.id}
+                className={`admissions-tooltip${card.name === 'Computer Science' && card.campus === 'Berkeley' ? ' is-wide' : ''}${exiting ? ' is-exiting' : ''}`}
+                style={{
+                  left: card.x <= 450 ? `calc(${((card.x + card.r + 1.5) / 900) * 100}% + 12px)` : undefined,
+                  right: card.x > 450 ? `calc(${((900 - card.x + card.r + 1.5) / 900) * 100}% + 12px)` : undefined,
+                  top: `${Math.max(8, Math.min(65, (card.y / height) * 100 - 8))}%`,
+                }}
+              >
+                <strong>{`${card.name} at UC ${card.campus}`}</strong>
+                {card.school && <span><em>{card.colorKey === 'Other' && card.school.toLowerCase() === 'not applicable' ? 'Other' : card.school}</em></span>}
                 <span>
-                  {`${number(active.admits)} / ${number(active.applicants)} admitted (`}
-                  <b>{percent(active.value)}</b>
+                  {`${number(card.admits)} / ${number(card.applicants)} admitted (`}
+                  <b>{percent(card.value)}</b>
                   )
                 </span>
-                <span>{`Admitted GPA: ${active.admitGpa}`}</span>
+                <span>{`Admitted GPA: ${card.admitGpa}`}</span>
 
               </div>
               )}
@@ -190,9 +244,27 @@ export default function AdmissionsDots({ sourceNotes }) {
               </h4>
               <button type="button" onClick={clear}>Clear selection</button>
             </div>
-            <p>{`${number(selectedMajor.admits)} admitted out of ${number(selectedMajor.applicants)} applicants (${percent(selectedMajor.value)}). ${number(selectedMajor.enrollees)} enrolled.${selectedMajor.admitGpa ? ` Admitted-student GPA range: ${selectedMajor.admitGpa}.` : ''}`}</p>
+            <p>{`${number(selectedMajor.admits)} admitted out of ${number(selectedMajor.applicants)} applicants (${percent(selectedMajor.value)}). ${number(selectedMajor.enrollees)} enrolled.${selectedMajor.admitGpa ? ` Admitted-student GPA IQR: ${selectedMajor.admitGpa}.` : ''}`}</p>
           </div>
           )}
+          <button
+            className="admissions-hover-test"
+            type="button"
+            aria-pressed={testRunning}
+            onClick={() => {
+              clear();
+              if (testRunning) {
+                setTestRunning(false);
+                setOutgoingCampus(null);
+              } else {
+                setQuery('');
+                setHintDismissed(true);
+                setTestRunning(true);
+              }
+            }}
+          >
+            {testRunning ? 'Stop campus test' : 'Test campus sequence'}
+          </button>
           {sourceNotes && (
             <div className="admissions-method">
               <p>

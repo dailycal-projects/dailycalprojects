@@ -97,6 +97,13 @@ import CleryStory, { CleryScrolly } from '../visuals/clery-visuals/CleryStory';
 import MoneyFlowMap from '../visuals/money-flow-visuals/MoneyFlowMap';
 import PacBubbles from '../visuals/money-flow-visuals/PacBubbles';
 import DonorSearch from '../visuals/money-flow-visuals/DonorSearch';
+import Topics from '../visuals/citybloc-visuals/Topics';
+import Dissents from '../visuals/citybloc-visuals/Dissents';
+import Agreement from '../visuals/citybloc-visuals/Agreement';
+import BlocUnity from '../visuals/citybloc-visuals/BlocUnity';
+import BlocMoves from '../visuals/citybloc-visuals/BlocMoves';
+import SplitSides from '../visuals/citybloc-visuals/SplitSides';
+import MotionExplorer from '../visuals/citybloc-visuals/MotionExplorer';
 /*
 To avoid using exact paths in MDX files, import your components here
 and add them to the shortcodes list to be globally accessible.ß
@@ -208,6 +215,13 @@ const shortcodes = {
   MoneyFlowMap,
   PacBubbles,
   DonorSearch,
+  Topics,
+  Dissents,
+  Agreement,
+  BlocUnity,
+  BlocMoves,
+  SplitSides,
+  MotionExplorer,
 };
 
 export default function Layout({ children }) {

@@ -1,0 +1,97 @@
+{
+  "info": {
+    "date_range": ["2024-12-10", "2026-08-16"],
+    "n_motions_total": 1093,
+    "n_contested": 54,
+    "n_bloc_split": 10,
+    "blocs": {
+      "A": ["Tregub", "Bartlett", "Ishii"],
+      "B": ["Kesarwani", "Taplin", "Blackaby", "Humbert"]
+    },
+    "swing": ["Lunaparra", "O'Keefe"],
+    "definitions": {
+      "contested": "at least one member voted differently",
+      "bloc_split": "bloc A's and bloc B's majorities (Aye share >= 0.5) differed",
+      "dissent": "No or Abstain; Absent/Recused excluded",
+      "agreement": "share of shared contested votes where both members cast the same vote (min 5 shared)"
+    },
+    "excluded_motion_types": [
+      "Ceremonial",
+      "Committee vote",
+      "Council business",
+      "Unclear"
+    ]
+  },
+  "order": [
+    "Tregub",
+    "Bartlett",
+    "Ishii",
+    "Kesarwani",
+    "Taplin",
+    "Blackaby",
+    "Humbert",
+    "Lunaparra",
+    "O'Keefe"
+  ],
+  "topic_blocs": [
+    [
+      "Policing & surveillance",
+      17,
+      4,
+      [
+        [["Tregub", "Bartlett", "Ishii"], 0.62],
+        [["Blackaby", "Humbert", "O'Keefe"], 0.74],
+        [["Kesarwani", "Taplin"], 0.97],
+        [["Lunaparra"], null]
+      ]
+    ],
+    [
+      "Land use & zoning",
+      10,
+      1,
+      [
+        [["Ishii", "Kesarwani", "Humbert", "Lunaparra"], 0.6],
+        [["Tregub", "Bartlett", "Taplin"], 0.7],
+        [["Blackaby"], null],
+        [["O'Keefe"], null]
+      ]
+    ],
+    [
+      "Housing",
+      8,
+      1,
+      [
+        [["Tregub", "Bartlett", "Ishii", "Kesarwani", "Taplin"], 0.77],
+        [["Blackaby", "O'Keefe"], 0.71],
+        [["Humbert"], null],
+        [["Lunaparra"], null]
+      ]
+    ],
+    [
+      "Advocacy & resolutions",
+      5,
+      1,
+      [
+        [["Kesarwani", "Taplin", "Humbert", "O'Keefe"], 0.57],
+        [["Tregub", "Bartlett", "Ishii"], 0.83],
+        [["Blackaby"], null],
+        [["Lunaparra"], null]
+      ]
+    ],
+    [
+      "Streets & transport",
+      5,
+      1,
+      [
+        [
+          ["Ishii", "Kesarwani", "Taplin", "Blackaby", "Humbert", "Lunaparra"],
+          0.78
+        ],
+        [["Tregub"], null],
+        [["Bartlett"], null],
+        [["O'Keefe"], null]
+      ]
+    ]
+  ],
+  "topic_bloc_min": 5
+}
