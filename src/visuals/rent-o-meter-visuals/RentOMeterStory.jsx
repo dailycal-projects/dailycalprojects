@@ -23,9 +23,9 @@ const RentOMeterStory = () => {
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         {/* the paper's fonts (Tiempos Headline, Plantin), copied from dc_app/public/fonts by sync.js */}
-        <link rel="preload" href="/rent-o-meter/fonts/tiempos-headline-bold.woff2" as="font" type="font/woff2" crossOrigin="" />
-        <link rel="preload" href="/rent-o-meter/fonts/plantin-regular.woff2" as="font" type="font/woff2" crossOrigin="" />
-        <link rel="stylesheet" href="/rent-o-meter/fonts/fonts.css" />
+        <link rel="preload" href="/data/2026-10-13-rent-o-meter/fonts/tiempos-headline-bold.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/data/2026-10-13-rent-o-meter/fonts/plantin-regular.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="stylesheet" href="/data/2026-10-13-rent-o-meter/fonts/fonts.css" />
       </Helmet>
       <div className="rom">{App && <App />}</div>
     </>

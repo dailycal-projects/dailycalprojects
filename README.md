@@ -41,7 +41,7 @@ src/
   visuals/            Articles' visuals (React components), one folder per project (see "Visuals")
 scripts/optimize.ts   Command-line image optimizer
 public/               Static files served as-is: the favicon, and standalone interactives
-                      (e.g. public/election-2026/ is served at /election-2026/)
+                      (in public/data/<article slug>/, e.g. public/data/2026-11-03-election-2026/)
 legacy/               The old Gatsby site's leftover source, for reference (see "Visuals")
 ```
 

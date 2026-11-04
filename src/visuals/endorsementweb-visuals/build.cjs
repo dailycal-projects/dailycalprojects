@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const esbuild = require('esbuild');
-const output = path.resolve(__dirname, '../../../static/endorsementweb');
+const output = path.resolve(__dirname, '../../../public/data/2026-11-02-endorsementweb');
 esbuild.buildSync({
   entryPoints: [path.join(__dirname, 'main.ts')],
   bundle: true,

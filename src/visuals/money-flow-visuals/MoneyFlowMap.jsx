@@ -7,12 +7,12 @@ import isUnlocked from './unlock';
 
 // State shapes (us-atlas states-10m) are fetched rather than imported, so they stay
 // out of the JavaScript bundle that every article page loads.
-const STATES_URL = withPrefix('/money-flow/us-states-10m.json');
+const STATES_URL = withPrefix('/data/2026-10-30-money-flow/us-states-10m.json');
 // Built from scripts/uc_donations_by_state.py: UC employee donations to federal
 // candidates, grouped by the state of the race. "US" is presidential races.
-const DATA_URL = withPrefix('/money-flow/uc_donations_by_state.csv');
-const DONORS_URL = withPrefix('/money-flow/uc_top_donors_by_state.csv');
-const RECIPIENTS_URL = withPrefix('/money-flow/uc_top_recipients_by_state.csv');
+const DATA_URL = withPrefix('/data/2026-10-30-money-flow/uc_donations_by_state.csv');
+const DONORS_URL = withPrefix('/data/2026-10-30-money-flow/uc_top_donors_by_state.csv');
+const RECIPIENTS_URL = withPrefix('/data/2026-10-30-money-flow/uc_top_recipients_by_state.csv');
 
 const WIDTH = 975;
 const MAP_HEIGHT = 610;

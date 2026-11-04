@@ -17,4 +17,4 @@ To rebuild after editing source or intentionally replacing the snapshot:
     npm install --prefix src/visuals/endorsementweb-visuals
     npm run build --prefix src/visuals/endorsementweb-visuals
 
-Commit the generated files in `static/endorsementweb/` with source changes.
+Commit the generated files in `public/data/2026-11-02-endorsementweb/` with source changes.

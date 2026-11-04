@@ -6,7 +6,7 @@ import isUnlocked from './unlock';
 
 // Built from scripts/uc_pac_recipients.py: the top PACs by UC employee dollars,
 // plus a final OTHER row summing the rest.
-const DATA_URL = withPrefix('/money-flow/uc_pac_recipients.csv');
+const DATA_URL = withPrefix('/data/2026-10-30-money-flow/uc_pac_recipients.csv');
 
 // Wider than tall so the type labels beside the ring have room.
 const WIDTH = 1140;
