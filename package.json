@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "lint": "eslint --no-error-on-unmatched-pattern \"src/**/*.{js,ts,jsx,tsx,astro,mdx,json}\" \"scripts/**/*.ts\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\" && prettier --check --no-error-on-unmatched-pattern \"src/**/*.{js,ts,jsx,tsx,astro,mdx,json,css}\" \"scripts/**/*.ts\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\"",
     "lint:fix": "eslint --no-error-on-unmatched-pattern \"src/**/*.{js,ts,jsx,tsx,astro,mdx,json}\" \"scripts/**/*.ts\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\" --fix && prettier --write --no-error-on-unmatched-pattern \"src/**/*.{js,ts,jsx,tsx,astro,mdx,json,css}\" \"scripts/**/*.ts\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\"",
-    "optimize": "node scripts/optimize-image.mjs"
+    "optimize": "node scripts/optimize-image.mjs",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.6",
@@ -65,13 +66,16 @@
     "prettier": "^3.9.10",
     "prettier-plugin-astro": "^1.1.2",
     "sharp": "^0.35.5",
-    "typescript-eslint": "^8.72.1"
+    "typescript-eslint": "^8.72.1",
+    "wrangler": "^4.157.0"
   },
   "overrides": {
     "glob": "^14.0.3",
     "minimatch": "^11.0.4"
   },
   "allowScripts": {
-    "fsevents": false
+    "fsevents": false,
+    "esbuild": true,
+    "workerd": true
   }
 }

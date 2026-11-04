@@ -11,6 +11,7 @@ import { satteri } from "@astrojs/markdown-satteri";
 
 import { articleDates } from "./src/lib/article-dates.mjs";
 import { browserOnlyPackages } from "./src/lib/browser-only-packages.mjs";
+import { redirectsFile } from "./src/lib/redirects.mjs";
 import { keepD3SideEffects } from "./src/lib/keep-d3-side-effects.mjs";
 import { unwrapJsxParagraphs } from "./src/lib/unwrap-jsx-paragraphs.mjs";
 
@@ -37,10 +38,6 @@ const sitePath = (page) => `/${new URL(page).pathname.slice(base.length).replace
 export default defineConfig({
   site: isFork ? `https://${owner}.github.io` : MAIN_SITE,
   base,
-
-  redirects: {
-    "/article": "/",
-  },
 
   markdown: {
     // <p>...</p> etc. in .mdx render like MDX 1 did; see src/lib/unwrap-jsx-paragraphs.mjs
@@ -69,16 +66,8 @@ export default defineConfig({
     react(),
     mdx(),
     sitemap({
-      // /editors/ holds internal tools that robots.txt disallows. Leave out redirects: /article,
-      // and old Gatsby article URLs (/<yyyy-mm-dd>-<slug>/, see src/pages/[legacySlug].astro)
-      filter: (page) => {
-        const path = sitePath(page);
-        return (
-          !path.startsWith("/editors/") &&
-          !/^\/article\/?$/.test(path) &&
-          !/^\/\d{4}-\d{2}-\d{2}-[^/]+\/?$/.test(path)
-        );
-      },
+      // /editors/ holds internal tools that robots.txt disallows
+      filter: (page) => !sitePath(page).startsWith("/editors/"),
       serialize(item) {
         const path = sitePath(item.url);
         const date =
@@ -86,5 +75,7 @@ export default defineConfig({
         return date ? { ...item, lastmod: date } : item;
       },
     }),
+    // Old article URLs etc.: dist/_redirects, for Cloudflare (wrangler.jsonc); see src/lib/redirects.mjs
+    redirectsFile(),
   ],
 });

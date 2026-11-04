@@ -15,10 +15,13 @@ Source for [data.dailycal.org](https://data.dailycal.org/): investigative storie
 | `npm run lint` | Check code style with ESLint and Prettier |
 | `npm run lint:fix` | Fix ESLint and Prettier style errors |
 | `npm run optimize -- <image> [<image> ...]` | Optimize images (see [Optimizing images](#optimizing-images)) |
+| `npm run deploy` | Build and deploy the site to Cloudflare (see [Deploying](#install-build-deploy)) |
 
 Always run `npm run build` and `npm run lint` before pushing. The build fails on content problems (a misspelled frontmatter field, a badly named file, etc.), and says exactly what to fix.
 
-**Deploying** is automatic: Netlify builds and publishes every push to `master` to data.dailycal.org, using the settings in [`netlify.toml`](netlify.toml).
+**Deploying:** the site is entirely static, with nothing running on a server. It's moving to Cloudflare, as a Worker named `data` that only serves static assets (configured in [`wrangler.jsonc`](wrangler.jsonc)), so hosting it costs nothing. `npm run deploy` builds the site and uploads `dist/` with `wrangler deploy` (run `npx wrangler login` first). Until then, Netlify builds and publishes every push to `master` to data.dailycal.org, using [`netlify.toml`](netlify.toml).
+
+**Redirects** are real HTTP 301s, from a `_redirects` file that the build writes to `dist/` ([`src/lib/redirects.mjs`](src/lib/redirects.mjs)), which both Cloudflare and Netlify read.
 
 **Subpaths:** when `GITHUB_REPOSITORY` names a fork (e.g. a build in a fork's GitHub Actions), `astro.config.mjs` builds the site for `https://<owner>.github.io/<repo>/` instead of `data.dailycal.org`. Because the site can live under a subpath like that, every internal link and `public/` file reference must go through `withBase()` (`src/lib/path.ts`), or the `<Link>` component (`src/components/Link.jsx`) in `.mdx`/`.jsx` files. Images imported through `astro:assets` handle this on their own.
 
@@ -46,7 +49,7 @@ legacy/               The old Gatsby site's leftover source, for reference (see 
 | :-- | :-- |
 | `/` | Homepage: every article, newest first |
 | `/article/<yyyy-mm-dd>-<slug>/` | An article |
-| `/<yyyy-mm-dd>-<slug>/` | Redirects to `/article/<yyyy-mm-dd>-<slug>/` (the old site's article URLs) |
+| `/<yyyy-mm-dd>-<slug>/` | 301 redirect to `/article/<yyyy-mm-dd>-<slug>/` (the old site's article URLs) |
 | `/editors/image-optimization/` | In-browser image optimizer for editors (hidden from search engines) |
 | `/sitemap-index.xml`, `/robots.txt` | Generated at build time from `site`/`base` in `astro.config.mjs`. Don't add a `public/robots.txt` |
 
@@ -190,7 +193,7 @@ The old site also listed articles that were published on dailycal.org (their `ol
 
 ### Old URLs
 
-The old site served articles at `/<file name>/` instead of `/article/<file name>/`. [`src/pages/[legacySlug].astro`](src/pages/[legacySlug].astro) redirects those old URLs for every article in `src/content/articles/`, so existing links to them (e.g. from dailycal.org) keep working.
+The old site served articles at `/<file name>/` instead of `/article/<file name>/`. The build's `_redirects` file ([`src/lib/redirects.mjs`](src/lib/redirects.mjs)) 301-redirects those old URLs for every article in `src/content/articles/`, so existing links to them (e.g. from dailycal.org) and search results keep working. Don't add a page or a `public/` file at an old article URL: it would be served instead of the redirect on Netlify.
 
 ## Layouts
 
