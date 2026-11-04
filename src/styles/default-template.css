@@ -1,0 +1,71 @@
+/* Styling for the default template, inherited from the old Daily Cal Data website's styling */
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.45rem;
+  color: inherit;
+  font-family: var(--font-list);
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+}
+
+.content h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.content h2 {
+  font-size: 1.51572rem;
+  line-height: 1.1;
+}
+
+.content h3 {
+  font-size: 1.31951rem;
+  line-height: 1.1;
+}
+
+.content h4 {
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.content h5 {
+  font-size: 0.87055rem;
+  line-height: 1.1;
+}
+
+.content h6 {
+  font-size: 0.81225rem;
+  line-height: 1.1;
+}
+
+.content p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.45rem;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  color: rgb(14, 20, 27);
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+}

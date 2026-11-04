@@ -1,0 +1,239 @@
+---
+/**
+ * Image optimization, for editors: converts an image to a web-optimized AVIF entirely in the
+ * browser (nothing is uploaded) and offers it as a download. The same settings as
+ * `npm run optimize` (scripts/optimize.ts), from src/config/images.ts.
+ *
+ * Kept out of search engines (noindex, robots.txt, and filtered out of the sitemap).
+ * See README.md's "Optimizing images" section.
+ */
+import { imageOptimization } from "../../config/images";
+import PageLayout from "../../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Image optimization" noindex>
+  <div class="tool" data-settings={JSON.stringify(imageOptimization)}>
+    <h1>Image optimization</h1>
+    <p>
+      Choose a JPEG or PNG to convert it to a web-optimized AVIF, scaled down to at most
+      {imageOptimization.maxWidth}px wide. It's converted on your own computer, nothing is uploaded.
+      Put the downloaded <code>.avif</code> in <code>src/assets/images/</code> instead of the
+      original.
+    </p>
+
+    <input type="file" id="file" accept={imageOptimization.inputExtensions.join(",")} />
+    <pre id="out"></pre>
+
+    {/* Rendered result */}
+    <div id="result" hidden>
+      <p>
+        <a id="download">Download optimized image</a>
+      </p>
+      <p>
+        Show:
+        <label>
+          <input type="radio" name="view" id="show-original" /> Original
+        </label>
+        <label>
+          <input type="radio" name="view" id="show-optimized" /> Optimized
+        </label>
+      </p>
+      <img id="original" alt="Original" />
+      <img id="optimized" alt="Optimized" />
+    </div>
+  </div>
+</PageLayout>
+
+<script>
+  import encode from "@jsquash/avif/encode.js";
+  import initResize, { resize } from "@jsquash/resize/lib/resize/pkg/squoosh_resize.js";
+  import type { imageOptimization } from "../../config/images";
+
+  // libavif encoder speed, 0 (slowest, smallest) to 10. sharp's effort 9 (scripts/optimize.ts) is
+  // speed 0, which takes minutes for a large photo in the browser; 4 is a few seconds and only a
+  // few percent bigger.
+  const AVIF_SPEED = 4;
+
+  // libavif's chroma subsampling: 1 is 4:2:0, which halves chroma resolution (imperceptible on
+  // photos), matching scripts/optimize.ts.
+  const SUBSAMPLE_420 = 1;
+
+  // Index of lanczos3 in the resizer's method list (the same kernel sharp uses)
+  const LANCZOS3 = 3;
+
+  const $ = (id: string) => document.getElementById(id)!;
+  const tool = document.querySelector<HTMLElement>(".tool")!;
+  const settings = JSON.parse(tool.dataset.settings!) as typeof imageOptimization;
+  const input = $("file") as HTMLInputElement;
+  const out = $("out");
+  const result = $("result");
+  const originalImg = $("original") as HTMLImageElement;
+  const optimizedImg = $("optimized") as HTMLImageElement;
+  const showOriginal = $("show-original") as HTMLInputElement;
+  const showOptimized = $("show-optimized") as HTMLInputElement;
+  const download = $("download") as HTMLAnchorElement;
+
+  // Formats a number of bytes into human-readable form
+  function formatBytes(bytes: number) {
+    if (bytes < 1024) {
+      return `${bytes} B`;
+    }
+    const kb = bytes / 1024;
+    return kb < 1024 ? `${kb.toFixed(1)} KB` : `${(kb / 1024).toFixed(2)} MB`;
+  }
+
+  // Percent change from before to after, e.g. "-91.3%"
+  function change(before: number, after: number) {
+    const sign = after <= before ? "-" : "+";
+    return `${sign}${Math.abs((1 - after / before) * 100).toFixed(1)}%`;
+  }
+
+  // Optimize a single image file
+  async function optimize(file: File, originalUrl: string) {
+    const dot = file.name.lastIndexOf(".");
+    const ext = dot > 0 ? file.name.slice(dot).toLowerCase() : "";
+    const base = dot > 0 ? file.name.slice(0, dot) : file.name;
+
+    if (!settings.inputExtensions.includes(ext)) {
+      throw new Error(
+        `Unsupported format "${ext}". Provide one of: ${settings.inputExtensions.join(", ")}.`,
+      );
+    }
+
+    // Decoding through an <img> applies the EXIF orientation, like sharp's .rotate(), and drawing
+    // it to a canvas converts any color profile to sRGB and drops all metadata (EXIF GPS, etc.).
+    const img = new Image();
+    img.src = originalUrl;
+    try {
+      await img.decode();
+    } catch {
+      throw new Error(`This browser couldn't read this ${ext} file.`);
+    }
+    const width = img.naturalWidth;
+    const height = img.naturalHeight;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d")!;
+    ctx.drawImage(img, 0, 0);
+    let pixels = ctx.getImageData(0, 0, width, height).data;
+
+    // Scale down to maxWidth without enlarging, rounding the same way scripts/optimize.ts does
+    const needsResize = width > settings.maxWidth;
+    const newWidth = needsResize ? settings.maxWidth : width;
+    const newHeight = needsResize ? Math.round(height * (settings.maxWidth / width)) : height;
+    if (needsResize) {
+      await initResize();
+      // Resize in sRGB rather than linear light, as sharp does. The result is a fresh copy out of
+      // wasm memory, so it's backed by a plain ArrayBuffer; the resizer's types just predate typed
+      // array generics.
+      pixels = resize(
+        new Uint8Array(pixels.buffer),
+        width,
+        height,
+        newWidth,
+        newHeight,
+        LANCZOS3,
+        true,
+        false,
+      ) as Uint8ClampedArray<ArrayBuffer>;
+    }
+
+    const avif = await encode(new ImageData(pixels, newWidth, newHeight), {
+      quality: settings.avifQuality,
+      speed: AVIF_SPEED,
+      subsample: SUBSAMPLE_420,
+    });
+
+    return {
+      blob: new Blob([avif], { type: "image/avif" }),
+      outputName: `${base}.avif`,
+      width,
+      height,
+      newWidth,
+      newHeight,
+    };
+  }
+
+  function show(optimized: boolean) {
+    originalImg.hidden = optimized;
+    optimizedImg.hidden = !optimized;
+    showOriginal.checked = !optimized;
+    showOptimized.checked = optimized;
+  }
+  showOriginal.onchange = () => show(false);
+  showOptimized.onchange = () => show(true);
+
+  let run = 0;
+  input.onchange = async () => {
+    const thisRun = ++run;
+    const file = input.files?.[0];
+    result.hidden = true;
+    URL.revokeObjectURL(originalImg.src);
+    URL.revokeObjectURL(optimizedImg.src);
+    if (!file) {
+      out.textContent = "";
+      return;
+    }
+
+    out.textContent = `Optimizing ${file.name}… (this can take a few seconds)`;
+    const originalUrl = URL.createObjectURL(file);
+    try {
+      const r = await optimize(file, originalUrl);
+      // A newer file was chosen while this one was processing
+      if (thisRun !== run) {
+        URL.revokeObjectURL(originalUrl);
+        return;
+      }
+
+      const optimizedUrl = URL.createObjectURL(r.blob);
+      originalImg.src = originalUrl;
+      optimizedImg.src = optimizedUrl;
+      download.href = optimizedUrl;
+      download.download = r.outputName;
+      out.textContent =
+        `${file.name} -> ${r.outputName}\n` +
+        `original:  ${r.width}x${r.height}, ${formatBytes(file.size)}\n` +
+        `optimized: ${r.newWidth}x${r.newHeight}, ${formatBytes(r.blob.size)}\n` +
+        `change:    ${change(file.size, r.blob.size)} file size`;
+      show(true);
+      result.hidden = false;
+    } catch (err) {
+      URL.revokeObjectURL(originalUrl);
+      if (thisRun === run) {
+        out.textContent = `${file.name}: FAILED — ${(err as Error).message}`;
+      }
+    }
+  };
+</script>
+
+<style>
+  .tool {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 12px;
+    font-family: var(--font-list);
+    color: var(--palette-black);
+  }
+  h1 {
+    font-family: Georgia, sans-serif;
+    font-size: 32px;
+  }
+  pre {
+    white-space: pre-wrap;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  img[hidden] {
+    display: none;
+  }
+  label {
+    margin-left: 12px;
+  }
+  a {
+    color: var(--palette-dark-blue);
+  }
+</style>

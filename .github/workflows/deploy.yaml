@@ -1,0 +1,56 @@
+# Deploys forks to GitHub Pages (https://<owner>.github.io/<repo>/), so changes can be previewed
+# before they're merged. The main repo is built and hosted by Netlify instead (see netlify.toml).
+name: Deploy Astro to GitHub Pages
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    # Only run in forks, on any branch
+    if: github.repository != 'dailycal-projects/dailycalprojects'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npm run build
+
+      # Deploy to gh-pages branch, and orphan it
+      - name: Deploy to gh-pages
+        run: |
+          cd dist
+
+          git init
+          git checkout --orphan gh-pages
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          touch .nojekyll
+
+          git add .
+          git commit -m "Deploy site"
+
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+          git push --force origin gh-pages

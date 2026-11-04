@@ -1,0 +1,33 @@
+---
+import { render } from "astro:content";
+import type { TemplateName } from "../../config/templates";
+import DefaultTemplate from "../../layouts/templates/DefaultTemplate.astro";
+import { type Article, getArticles } from "../../lib/articles";
+
+/** Get a list of paths to generate */
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+interface Props {
+  article: Article;
+}
+
+// The component for each template name in src/config/templates.ts. Add a template to both.
+const templates: Record<TemplateName, typeof DefaultTemplate> = {
+  default: DefaultTemplate,
+};
+
+// Render article
+const { article } = Astro.props;
+const { Content } = await render(article);
+const Template = templates[article.data.template];
+---
+
+<Template article={article}>
+  <Content />
+</Template>

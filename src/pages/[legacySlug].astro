@@ -1,0 +1,37 @@
+---
+/**
+ * The old Gatsby site served articles at /<file name>/ instead of /article/<file name>/. This
+ * redirects those URLs, so existing links to articles (e.g. from dailycal.org) keep working.
+ */
+import { articlePath, getArticles } from "../lib/articles";
+import { withBase } from "../lib/path";
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    params: { legacySlug: article.id },
+    props: { destination: withBase(articlePath(article)) },
+  }));
+}
+
+interface Props {
+  destination: string;
+}
+
+const { destination } = Astro.props;
+const canonical = new URL(destination, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting to {destination}</title>
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body>
+    <a href={destination}>Redirecting to {destination}</a>
+  </body>
+</html>

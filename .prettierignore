@@ -1,4 +1,6 @@
-.cache
-package.json
+dist
+.astro
+node_modules
 package-lock.json
+legacy
 public

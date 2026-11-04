@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import circleLogo from "../assets/site/dclogo-circle.png";
+import ArticleCard from "../components/ArticleCard.astro";
+import { site } from "../config/site";
+import PageLayout from "../layouts/PageLayout.astro";
+import { getArticles } from "../lib/articles";
+
+// Every article, newest first
+const articles = await getArticles();
+---
+
+<PageLayout title={site.name} imageAlt="The Daily Californian logo">
+  <div class="content">
+    {/* Intro */}
+    <div class="intro">
+      <Image src={circleLogo} alt="" class="logo" width={100} loading="eager" />
+      <div class="description">
+        <h1>Data</h1>
+        <p>{site.description}</p>
+      </div>
+    </div>
+
+    {/* Articles */}
+    <div class="index">
+      {articles.map((article, i) => (
+        <ArticleCard article={article} eager={i < 3} />
+      ))}
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  .content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    margin: 0 auto;
+  }
+
+  /* Intro */
+  .intro {
+    font-family: Georgia, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px;
+  }
+
+  .intro .logo {
+    width: 100px;
+    height: auto;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .intro .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .intro .description h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--palette-black);
+    padding-bottom: 7px;
+  }
+
+  .intro .description p {
+    margin: 0;
+    color: var(--palette-dark-gray);
+  }
+
+  /* Articles */
+  .index {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 1200px) {
+    .content {
+      width: 1200px;
+      align-items: normal;
+    }
+    .index {
+      justify-content: flex-start;
+    }
+  }
+</style>
