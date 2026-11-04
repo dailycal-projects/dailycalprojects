@@ -4,6 +4,11 @@
 /article / 301
 /article/ / 301
 
+/2026-09-3-ai /article/2026-09-03-ai 301
+/2026-09-3-ai/ /article/2026-09-03-ai 301
+/map-clean.html /article/2026-01-23-too-sexy 301
+/map-clean /article/2026-01-23-too-sexy 301
+
 # Pages in public/ that moved to public/data/<slug>/ (people may have shared their URLs)
 /gghenge_interactive.html /data/2026-09-17-gghenge/gghenge_interactive 301
 /gghenge_interactive /data/2026-09-17-gghenge/gghenge_interactive 301
@@ -12,14 +17,7 @@
 /endorsementweb /data/2026-11-02-endorsementweb/ 301
 /endorsementweb/* /data/2026-11-02-endorsementweb/:splat 301
 
-# Old URLs with a typo'd or old name
-/2026-09-3-ai /article/2026-09-03-ai 301
-/2026-09-3-ai/ /article/2026-09-03-ai 301
-/map-clean.html /article/2026-01-23-too-sexy 301
-/map-clean /article/2026-01-23-too-sexy 301
-
 # The old Gatsby site served articles at /<slug>/ (and /<slug>); they're now at /article/<slug>.
-# Both forms are needed: Cloudflare matches each source path exactly, trailing slash included.
 /2018-04-13-campus-sex /article/2018-04-13-campus-sex 301
 /2018-04-13-campus-sex/ /article/2018-04-13-campus-sex 301
 /2021-07-10-redlining /article/2021-07-10-redlining 301
