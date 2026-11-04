@@ -67,7 +67,7 @@ const astroClientScripts = ["**/*.astro/*.js", "**/*.astro/*.ts"];
 // Code carried over unchanged from the old Gatsby site (also in .prettierignore)
 const legacyCode = [
   "src/visuals/**",
-  "src/components/articleFooter.jsx",
+  "src/components/ArticleFooter.jsx",
   "src/components/ButtonList.jsx",
   "src/styles/customTheme.js",
   "src/styles/theme.js",

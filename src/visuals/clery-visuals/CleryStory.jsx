@@ -2,7 +2,7 @@ import React, {
   Suspense, lazy, useEffect, useLayoutEffect, useRef, useState,
 } from 'react';
 import { withBase } from '../../lib/path';
-import ArticleFooter from '../../components/articleFooter';
+import ArticleFooter from '../../components/ArticleFooter';
 import logo from '../../assets/images/dclogo.png?url';
 import { routeFromUrl, viewHref } from './views';
 import StoryMap from './StoryMap';

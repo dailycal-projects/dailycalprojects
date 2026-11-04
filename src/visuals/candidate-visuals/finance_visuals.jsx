@@ -4,7 +4,7 @@ import { withBase } from '../../lib/path';
 import logo from '../../assets/images/dclogoblack.png?url';
 import { FinanceTreemap } from './treemap';
 import { FinanaceVizElement, FinanceDatawrapperCharts } from './extra_graphs';
-import ArticleFooter from '../../components/articleFooter';
+import ArticleFooter from '../../components/ArticleFooter';
 
 const TEXT_STYLING = {
   fontSize: '0.95rem',
