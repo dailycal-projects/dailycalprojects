@@ -64,10 +64,27 @@ const scriptsTs = "scripts/**/*.ts";
 const tsLikeFiles = [srcTs, srcTsx, scriptsTs];
 const astroClientScripts = ["**/*.astro/*.js", "**/*.astro/*.ts"];
 
+// Code carried over unchanged from the old Gatsby site (also in .prettierignore)
+const legacyCode = [
+  "src/visuals/**",
+  "src/components/articleFooter.js",
+  "src/components/buttonList.js",
+  "src/styles/customTheme.js",
+  "src/styles/theme.js",
+  "src/styles/button.module.css",
+];
+
 /** @type {import("eslint").Linter.Config[]} */
 export default [
   {
-    ignores: ["dist/**", ".astro/**", "node_modules/**", "package-lock.json"],
+    ignores: [
+      "dist/**",
+      ".astro/**",
+      "node_modules/**",
+      "package-lock.json",
+      // Articles' visuals and the old Gatsby components they use, kept as they were written
+      ...legacyCode,
+    ],
   },
 
   {

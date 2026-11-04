@@ -11,13 +11,13 @@
     "preview": "astro preview",
     "lint": "eslint --no-error-on-unmatched-pattern \"src/**/*.{js,ts,jsx,tsx,astro,mdx,json}\" \"scripts/**/*.ts\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\" && prettier --check --no-error-on-unmatched-pattern \"src/**/*.{js,ts,jsx,tsx,astro,mdx,json,css}\" \"scripts/**/*.ts\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\"",
     "lint:fix": "eslint --no-error-on-unmatched-pattern \"src/**/*.{js,ts,jsx,tsx,astro,mdx,json}\" \"scripts/**/*.ts\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\" --fix && prettier --write --no-error-on-unmatched-pattern \"src/**/*.{js,ts,jsx,tsx,astro,mdx,json,css}\" \"scripts/**/*.ts\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\"",
-    "optimize": "node scripts/optimize.ts"
+    "optimize": "node scripts/optimize-image.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.2",
     "@astrojs/react": "^7.1.2",
     "@astrojs/sitemap": "^3.7.4",
-    "@jsquash/avif": "^2.1.1",
+    "@jsquash/jpeg": "^1.6.0",
     "@jsquash/resize": "^2.1.1",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",

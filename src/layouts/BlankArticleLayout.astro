@@ -1,0 +1,63 @@
+---
+/**
+ * The layout for articles with `layout: false`: the article's body alone is the whole page, with
+ * no header, title, byline or footer. For articles that are one full-page visual, which handle
+ * their own layout and scrolling, like the old Gatsby site's blank template: the page itself
+ * doesn't scroll, and the body fills the window.
+ */
+import Seo from "../components/Seo.astro";
+import { site } from "../config/site";
+import { type Article, featuredImageAlt } from "../lib/articles";
+import { withBase } from "../lib/path";
+import "../styles/global.css";
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const { title, subhead, description, featuredImage, date, byline, keywords } = article.data;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href={withBase("/favicon.ico")} />
+
+    <Seo
+      title={`${title} | ${site.articleTitleSuffix}`}
+      headline={title}
+      description={description ?? subhead}
+      image={featuredImage}
+      imageAlt={featuredImageAlt(article)}
+      type="article"
+      publishedTime={date}
+      authors={byline}
+      keywords={keywords}
+    />
+  </head>
+  <body>
+    <div class="page">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  html,
+  body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<style>
+  .page {
+    width: 100vw;
+    height: 100vh;
+  }
+</style>

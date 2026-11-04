@@ -1,7 +1,7 @@
 ---
 import { render } from "astro:content";
-import type { TemplateName } from "../../config/templates";
-import DefaultTemplate from "../../layouts/templates/DefaultTemplate.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import BlankArticleLayout from "../../layouts/BlankArticleLayout.astro";
 import { type Article, getArticles } from "../../lib/articles";
 
 /** Get a list of paths to generate */
@@ -17,17 +17,12 @@ interface Props {
   article: Article;
 }
 
-// The component for each template name in src/config/templates.ts. Add a template to both.
-const templates: Record<TemplateName, typeof DefaultTemplate> = {
-  default: DefaultTemplate,
-};
-
-// Render article
+// Render article, in the article layout or (layout: false) as a blank page
 const { article } = Astro.props;
 const { Content } = await render(article);
-const Template = templates[article.data.template];
+const Layout = article.data.layout ? ArticleLayout : BlankArticleLayout;
 ---
 
-<Template article={article}>
+<Layout article={article}>
   <Content />
-</Template>
+</Layout>

@@ -4,3 +4,11 @@ node_modules
 package-lock.json
 legacy
 public
+
+# Code carried over unchanged from the old Gatsby site (also in eslint.config.js)
+src/visuals
+src/components/articleFooter.js
+src/components/buttonList.js
+src/styles/customTheme.js
+src/styles/theme.js
+src/styles/button.module.css

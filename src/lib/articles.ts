@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 export type Article = CollectionEntry<"articles">;
 
 // `<yyyy-mm-dd>-<slug>`: the slug is lowercase words/numbers joined by single hyphens
-const FILE_NAME = /^(\d{4}-\d{2}-\d{2})-[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const FILE_NAME = /^\d{4}-\d{2}-\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 /** Formats dates like "March 3, 2026". UTC, because frontmatter dates are parsed as UTC midnight. */
 export const dateFormat = new Intl.DateTimeFormat("en-US", {
@@ -13,14 +13,12 @@ export const dateFormat = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
 });
 
-/** The UTC calendar date of a frontmatter date, as yyyy-mm-dd. */
-function isoDay(date: Date): string {
-  return date.toISOString().slice(0, 10);
-}
-
 /**
- * Throws if any article's file name isn't `<yyyy-mm-dd>-<slug>.mdx` with the date matching its
- * `date` frontmatter. Lists every problem at once, so they can all be fixed in one go.
+ * Throws if any article's file name isn't `<yyyy-mm-dd>-<slug>.mdx`. Lists every problem at once,
+ * so they can all be fixed in one go.
+ *
+ * The file name's date is normally the publish date, but it isn't checked against `date`: some
+ * older articles were renamed or republished after their file (and so their URL) was created.
  */
 function validate(articles: Article[]): void {
   const problems: string[] = [];
@@ -28,15 +26,9 @@ function validate(articles: Article[]): void {
   for (const article of articles) {
     const file = article.filePath ?? article.id;
     const name = file.replace(/^.*\//, "").replace(/\.mdx$/, "");
-    const match = FILE_NAME.exec(name);
-
-    if (!match) {
+    if (!FILE_NAME.test(name)) {
       problems.push(
         `${file}: the file name must be <yyyy-mm-dd>-<slug>.mdx, with a lowercase, hyphenated slug (e.g. 2026-03-03-my-story.mdx).`,
-      );
-    } else if (match[1] !== isoDay(article.data.date)) {
-      problems.push(
-        `${file}: the file name's date (${match[1]}) doesn't match its date frontmatter (${isoDay(article.data.date)}).`,
       );
     }
   }

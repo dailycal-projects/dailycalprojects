@@ -14,9 +14,9 @@ Source for [data.dailycal.org](https://data.dailycal.org/): investigative storie
 | `npm run preview` | Serve the built `dist/` locally, to check the real production output |
 | `npm run lint` | Check code style with ESLint and Prettier |
 | `npm run lint:fix` | Fix ESLint and Prettier style errors |
-| `npm run optimize <image>` | Optimize an image (see [Optimizing images](#optimizing-images)) |
+| `npm run optimize -- <image> [<image> ...]` | Optimize images (see [Optimizing images](#optimizing-images)) |
 
-Always run `npm run build` and `npm run lint` before pushing. The build fails on content problems (a misspelled frontmatter field, a file name that doesn't match its date, etc.), and says exactly what to fix.
+Always run `npm run build` and `npm run lint` before pushing. The build fails on content problems (a misspelled frontmatter field, a badly named file, etc.), and says exactly what to fix.
 
 **Deploying** is automatic: Netlify builds and publishes every push to `master` to data.dailycal.org, using the settings in [`netlify.toml`](netlify.toml).
 
@@ -31,10 +31,11 @@ src/
   assets/site/        Site logos
   components/         Reusable components (charts, images, links, SEO)
   config/             Site-wide settings (see "Site configuration")
-  layouts/            PageLayout (header/footer/<head>) and article templates
+  layouts/            PageLayout (header/footer/<head>) and the article layouts
   lib/                Helpers: article loading/validation, withBase()
   pages/              Every page and its URL (file-based routing)
-  styles/             Global and template CSS
+  styles/             Global and article CSS
+  visuals/            Articles' visuals (React components), one folder per project
 scripts/optimize.ts   Command-line image optimizer
 public/               Static files served as-is: the favicon, and standalone interactives
                       (e.g. public/election-2026/ is served at /election-2026/)
@@ -53,11 +54,11 @@ legacy/               The old Gatsby site's source, for articles not yet ported 
 
 Every article is one `.mdx` file (frontmatter + body) in `src/content/articles/`, named `<yyyy-mm-dd>-<slug>.mdx`, e.g. `src/content/articles/2026-03-03-ophdreport.mdx`:
 
-- The date must match the article's `date` frontmatter.
+- The date should be the article's publish date (its `date` frontmatter).
 - The slug must be lowercase words and numbers joined by hyphens.
-- It's served at `/article/<yyyy-mm-dd>-<slug>/`.
+- It's served at `/article/<yyyy-mm-dd>-<slug>/`, so don't rename it once it's published.
 
-The build fails if either rule is broken, listing every bad file name.
+The build fails if a file name isn't in this form, listing every bad file name.
 
 ### Frontmatter
 
@@ -65,22 +66,23 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 
 | Field | Description | Required |
 | :-- | :-- | :-- |
-| `date` | Publish date, `"YYYY-MM-DD"`. Must match the file name. Determines the order on the homepage. | Yes |
+| `date` | Publish date, `"YYYY-MM-DD"`. Determines the order on the homepage. | Yes |
 | `title` | The headline. | Yes |
 | `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. | Yes |
-| `featuredImage` | The featured (hero) image: a path relative to the `.mdx` file, e.g. `"../../assets/images/my-story.avif"`. Also used on homepage cards and in social previews. | Yes |
-| `imageAttribution` | Credit for the featured image, e.g. `"Jane Doe \| Staff"`. | Yes |
+| `featuredImage` | The featured (hero) image: a path relative to the `.mdx` file, e.g. `"../../assets/images/my-story.jpg"`. Also used on homepage cards and in social previews. | Yes |
 | `featuredImageAlt` | Alt text describing the featured image, for screen readers and social previews. Defaults to `Featured image for "<title>"`, so please set it. | No |
 | `description` | Short summary for search results and social previews. Defaults to `subhead`, then the site description. | No |
 | `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`. | No |
-| `template` | The template to render the article with (see [Templates](#templates)). Default `"default"`. | No |
+| `layout` | `true` (the default) renders the article in the [article layout](#layouts). `false` renders the article's body alone as the whole page, for an article that's one full-page visual. | No |
 
-These are for the default template:
+These are only used by the article layout (`layout: true`):
 
 | Field | Description |
 | :-- | :-- |
 | `subhead` | A short subheading under the title. |
+| `imageAttribution` | Credit for the featured image, e.g. `"Jane Doe \| Staff"`. |
 | `hideHeroImage` | `true` hides the featured image on the article page itself (it still shows on cards and in social previews). Use this when the body opens with its own image or graphic. Default `false`. |
+| `secondaryFeaturedImage` | An image to show at the top of the article page instead of `featuredImage` (which is still used for cards and social previews). |
 | `imageCaption` | Caption shown under the featured image. |
 | `bylineLinks` | One URL per `byline` name, in the same order. Use `""` for an author who should link to their Daily Cal profile (the default for everyone when this is left out). Must be the same length as `byline`, or the build fails. |
 | `aboutStory` | Extra text for the "About this Story" box at the end, e.g. where the data came from. |
@@ -96,7 +98,7 @@ subhead: "A short dek explaining the piece"
 description: "One or two sentences for search results and social previews."
 byline: ["Jane Doe", "John Smith"]
 bylineLinks: ["", "https://example.com/john"]
-featuredImage: "../../assets/images/2026-05-01-my-story/cover.avif"
+featuredImage: "../../assets/images/2026-05-01-my-story/cover.jpg"
 featuredImageAlt: "Students walk past Sather Gate"
 imageAttribution: "Jane Doe | Staff"
 aboutStory: "Data for this story came from the UC Office of the President."
@@ -104,7 +106,7 @@ aboutStory: "Data for this story came from the UC Office of the President."
 
 import DatawrapperChart from "../../components/DatawrapperChart.jsx";
 import ArticleImage from "../../components/ArticleImage.astro";
-import protest from "../../assets/images/2026-05-01-my-story/protest.avif";
+import protest from "../../assets/images/2026-05-01-my-story/protest.jpg";
 
 The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](https://dailycal.org) all work.
 
@@ -123,19 +125,25 @@ The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](ht
 
 Put an article's images in `src/assets/images/` (in a folder named after the article if it has several, e.g. `src/assets/images/2026-05-01-my-story/`), [optimize](#optimizing-images) them first, and reference them by a path relative to the `.mdx` file:
 
-- `featuredImage` as a plain string in frontmatter: `featuredImage: "../../assets/images/2026-05-01-my-story/cover.avif"`, and
+- `featuredImage` as a plain string in frontmatter: `featuredImage: "../../assets/images/2026-05-01-my-story/cover.jpg"`, and
 - inline images with an `import` at the top of the `.mdx` file, passed to `<ArticleImage src={...} />`.
 
 Astro builds resized WebP versions of these for each screen size, so the original is only stored in the repository.
 
 ## Optimizing images
 
-Source photos straight off a camera or phone are often 10–25 MB, which bloats the repository. Before committing an image, convert it to an AVIF at most 1280px wide (twice the article column width), quality 62, with all metadata (including GPS location) removed. Either:
+Source photos straight off a camera or phone are typically 10-25MB, which is a lot to store in the repository for something that renders at a few hundred pixels wide. Before committing an image, convert it to a web-optimized JPEG:
 
-- **In the browser:** open [data.dailycal.org/editors/image-optimization](https://data.dailycal.org/editors/image-optimization/) (or `http://localhost:4321/editors/image-optimization/` while `npm run dev` is running), choose a JPEG or PNG, compare the original and optimized versions, and download the `.avif`. Nothing is uploaded: the conversion runs on your own computer. Or,
-- **On the command line:** `npm run optimize path/to/image.jpg` writes `path/to/image.avif` next to it. It compresses slightly harder (smaller files, but slower).
+- it's scaled down so its long edge is at most 2560px (never scaled up),
+- any transparent areas are flattened onto white, since JPEG has no transparency, and
+- it's compressed with mozjpeg at quality 85, keeping full-resolution color (4:4:4) so colored edges in illustrations and text stay crisp.
 
-Both read their settings from `src/config/images.ts`. Don't optimize SVGs; they're already small.
+Either:
+
+- **In the browser:** open [data.dailycal.org/editors/image-optimization](https://data.dailycal.org/editors/image-optimization/) (or `http://localhost:4321/editors/image-optimization/` while `npm run dev` is running) and choose an image. Your browser converts it on your own machine, without uploading it anywhere. The page shows the old and new resolution and file size; switch between Original and Optimized to compare the two, then download the optimized `.jpg`. Use Chrome or Safari: Firefox ignores some embedded color profiles, which shifts colors slightly. HEIC (iPhone photos) and TIFF files only open in Safari. Or,
+- **On the command line:** `npm run optimize -- path/to/image.png [more images...]` converts each image to a `.jpg` next to it with the same settings, and deletes the original (add `--keep-original` to keep it).
+
+Don't optimize SVGs (they're already small), or images that need their transparency (e.g. a logo or map icon drawn over something that isn't white): keep those as PNGs.
 
 ## Legacy articles
 
@@ -150,19 +158,28 @@ To port an article, e.g. `legacy/articles/2025-06-18-campus-busyness.mdx`:
 
 The old site served articles at `/<file name>/` instead of `/article/<file name>/`. [`src/pages/[legacySlug].astro`](src/pages/[legacySlug].astro) redirects those old URLs for every article in `src/content/articles/`, so existing links to a ported article (e.g. from dailycal.org) keep working.
 
-## Templates
+## Layouts
 
-An article's `template` frontmatter picks the layout it renders into. `"default"` is [`src/layouts/templates/DefaultTemplate.astro`](src/layouts/templates/DefaultTemplate.astro). To add a template for a project that needs a custom layout:
+An article's `layout` frontmatter picks how it's rendered:
 
-1. Create `src/layouts/templates/MyTemplate.astro`. It receives the article as an `article` prop and its body in a `<slot />`, and should render into `PageLayout` (see `DefaultTemplate.astro`).
-2. Add its name to `templateNames` in `src/config/templates.ts`.
-3. Add it to the `templates` map in `src/pages/article/[...slug].astro`.
+- **`layout: true`** (the default): [`src/layouts/ArticleLayout.astro`](src/layouts/ArticleLayout.astro), the site header and footer around the title, date, hero image, byline, body and "About this Story" box.
+- **`layout: false`**: [`src/layouts/BlankArticleLayout.astro`](src/layouts/BlankArticleLayout.astro), the article's body alone as the whole page (with the article's SEO tags, but no header, title, byline or footer). The page itself doesn't scroll and the body fills the window, so the visual handles its own layout and scrolling. The body is usually just one component:
+
+  ```mdx
+  ---
+  title: "See how AC Transit ridership recovered from the pandemic"
+  layout: false
+  # ...the other required fields
+  ---
+
+  import AcTransitStory from "../../visuals/ac-transit-visuals/AcTransitStory";
+
+  <AcTransitStory client:load />
+  ```
 
 ## Site configuration (`src/config/`)
 
 - **`site.ts`**: the site name, default description, contact email, GitHub/donate links, and where author bylines link by default.
-- **`templates.ts`**: the article template names (see [Templates](#templates)).
-- **`images.ts`**: image optimization settings.
 
 ## Other configuration
 
