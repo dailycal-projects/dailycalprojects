@@ -58,6 +58,12 @@ export function browserOnlyPackages({ sourceGlob }) {
     name: "browser-only-packages",
     enforce: "pre",
 
+    // In development, Vite hands packages straight to Node on the server instead of through plugins
+    // like this one; noExternal makes it resolve these through plugins too
+    config() {
+      return { ssr: { noExternal: [BROWSER_ONLY] } };
+    },
+
     buildStart() {
       names = importedNames(sourceGlob);
     },
