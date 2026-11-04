@@ -1,4 +1,4 @@
-# Redirects, read by Cloudflare (wrangler.jsonc) and Netlify. Copied to dist/ as-is.
+# Redirects, read by Cloudflare (wrangler.jsonc). Copied to dist/ as-is.
 
 # /article has no page of its own
 /article / 301

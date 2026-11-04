@@ -1,9 +1,0 @@
-# data.dailycal.org is built and hosted by Netlify. These settings override the ones in Netlify's
-# UI, which were for the old Gatsby site (that published public/ instead of dist/).
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[build.environment]
-  # Astro 7 needs Node >=22.23.4 (see "engines" in package.json)
-  NODE_VERSION = "22"

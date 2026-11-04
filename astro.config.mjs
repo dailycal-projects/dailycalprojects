@@ -14,7 +14,7 @@ import { browserOnlyPackages } from "./src/lib/browser-only-packages.mjs";
 import { keepD3SideEffects } from "./src/lib/keep-d3-side-effects.mjs";
 import { unwrapJsxParagraphs } from "./src/lib/unwrap-jsx-paragraphs.mjs";
 
-// Get git repo info (GITHUB_REPOSITORY is set in GitHub Actions; elsewhere, e.g. on Netlify or
+// Get git repo info (GITHUB_REPOSITORY is set in GitHub Actions; elsewhere, e.g. on Cloudflare or
 // locally, this builds for the main site)
 const MAIN_REPO = "dailycal-projects/dailycalprojects";
 const MAIN_SITE = "https://data.dailycal.org";

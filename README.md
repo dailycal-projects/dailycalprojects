@@ -19,9 +19,9 @@ Source for [data.dailycal.org](https://data.dailycal.org/): investigative storie
 
 Always run `npm run build` and `npm run lint` before pushing. The build fails on content problems (a misspelled frontmatter field, a badly named file, etc.), and says exactly what to fix.
 
-**Deploying:** the site is entirely static, with nothing running on a server. It's moving to Cloudflare, as a Worker named `data` that only serves static assets (configured in [`wrangler.jsonc`](wrangler.jsonc)), so hosting it costs nothing. `npm run deploy` builds the site and uploads `dist/` with `wrangler deploy` (run `npx wrangler login` first). Until then, Netlify builds and publishes every push to `master` to data.dailycal.org, using [`netlify.toml`](netlify.toml).
+**Deploying:** the site is entirely static, with nothing running on a server. It's hosted on Cloudflare as a Worker named `data` that only serves static assets (configured in [`wrangler.jsonc`](wrangler.jsonc)), so hosting it costs nothing. `npm run deploy` builds the site and uploads `dist/` with `wrangler deploy` (run `npx wrangler login` first).
 
-**Redirects** are real HTTP 301s, listed in [`public/_redirects`](public/_redirects), which both Cloudflare and Netlify read.
+**Redirects** are real HTTP 301s, listed in [`public/_redirects`](public/_redirects), which Cloudflare reads.
 
 **Subpaths:** when `GITHUB_REPOSITORY` names a fork (e.g. a build in a fork's GitHub Actions), `astro.config.mjs` builds the site for `https://<owner>.github.io/<repo>/` instead of `data.dailycal.org`. Because the site can live under a subpath like that, every internal link and `public/` file reference must go through `withBase()` (`src/lib/path.ts`), or the `<Link>` component (`src/components/Link.jsx`) in `.mdx`/`.jsx` files. Images imported through `astro:assets` handle this on their own.
 
@@ -193,7 +193,7 @@ The old site also listed articles that were published on dailycal.org (their `ol
 
 ### Old URLs
 
-The old site served articles at `/<file name>/` instead of `/article/<file name>/`. [`public/_redirects`](public/_redirects) 301-redirects those old URLs for every article the old site hosted, so existing links to them (e.g. from dailycal.org) and search results keep working. Don't add a page or a `public/` file at an old article URL: it would be served instead of the redirect on Netlify.
+The old site served articles at `/<file name>/` instead of `/article/<file name>/`. [`public/_redirects`](public/_redirects) 301-redirects those old URLs for every article the old site hosted, so existing links to them (e.g. from dailycal.org) and search results keep working. 
 
 ## Layouts
 
