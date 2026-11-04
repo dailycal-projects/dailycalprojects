@@ -51,7 +51,9 @@ if (type === "article" && (!publishedTime || authors.length === 0)) {
 
 // astro.config.mjs always sets `site`
 const siteURL = Astro.site!;
-const canonicalURL = new URL(Astro.url.pathname, siteURL).href;
+// Pages are built as <path>.html but served at <path> (see trailingSlash in astro.config.mjs)
+const pagePath = Astro.url.pathname.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "");
+const canonicalURL = new URL(pagePath, siteURL).href;
 
 interface ResolvedImage {
   url: string;

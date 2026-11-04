@@ -38,6 +38,13 @@ export default defineConfig({
   site: isFork ? `https://${owner}.github.io` : MAIN_SITE,
   base,
 
+  // Pages have no trailing slash: /article/x, built as article/x.html (Cloudflare serves it there,
+  // and redirects /article/x/ to it)
+  trailingSlash: "never",
+  build: {
+    format: "file",
+  },
+
   markdown: {
     // <p>...</p> etc. in .mdx render like MDX 1 did; see src/lib/unwrap-jsx-paragraphs.mjs
     processor: satteri({ mdastPlugins: [unwrapJsxParagraphs] }),
@@ -70,7 +77,7 @@ export default defineConfig({
       serialize(item) {
         const path = sitePath(item.url);
         const date =
-          path === "/" ? newestDate : dates.get(path.match(/^\/article\/([^/]+)\/$/)?.[1]);
+          path === "/" ? newestDate : dates.get(path.match(/^\/article\/([^/]+)$/)?.[1]);
         return date ? { ...item, lastmod: date } : item;
       },
     }),

@@ -48,9 +48,9 @@ legacy/               The old Gatsby site's leftover source, for reference (see 
 | URL | Page |
 | :-- | :-- |
 | `/` | Homepage: every article, newest first |
-| `/article/<yyyy-mm-dd>-<slug>/` | An article |
-| `/<yyyy-mm-dd>-<slug>/` | 301 redirect to `/article/<yyyy-mm-dd>-<slug>/` (the old site's article URLs) |
-| `/editors/image-optimization/` | In-browser image optimizer for editors (hidden from search engines) |
+| `/article/<yyyy-mm-dd>-<slug>` | An article (pages have no trailing slash; `/article/<slug>/` redirects to it) |
+| `/<yyyy-mm-dd>-<slug>/` | 301 redirect to `/article/<yyyy-mm-dd>-<slug>` (the old site's article URLs) |
+| `/editors/image-optimization` | In-browser image optimizer for editors (hidden from search engines) |
 | `/sitemap-index.xml`, `/robots.txt` | Generated at build time from `site`/`base` in `astro.config.mjs`. Don't add a `public/robots.txt` |
 
 ## Adding an article
@@ -59,7 +59,7 @@ Every article is one `.mdx` file (frontmatter + body) in `src/content/articles/`
 
 - The date should be the article's publish date (its `date` frontmatter).
 - The slug must be lowercase words and numbers joined by hyphens.
-- It's served at `/article/<yyyy-mm-dd>-<slug>/`, so don't rename it once it's published.
+- It's served at `/article/<yyyy-mm-dd>-<slug>`, so don't rename it once it's published.
 
 The build fails if a file name isn't in this form, listing every bad file name.
 
@@ -144,7 +144,7 @@ Source photos straight off a camera or phone are typically 10-25MB, which is a l
 
 Either:
 
-- **In the browser:** open [data.dailycal.org/editors/image-optimization](https://data.dailycal.org/editors/image-optimization/) (or `http://localhost:4321/editors/image-optimization/` while `npm run dev` is running) and choose an image. Your browser converts it on your own machine, without uploading it anywhere. The page shows the old and new resolution and file size; switch between Original and Optimized to compare the two, then download the optimized `.jpg`. Use Chrome or Safari: Firefox ignores some embedded color profiles, which shifts colors slightly. HEIC (iPhone photos) and TIFF files only open in Safari. Or,
+- **In the browser:** open [data.dailycal.org/editors/image-optimization](https://data.dailycal.org/editors/image-optimization) (or `http://localhost:4321/editors/image-optimization` while `npm run dev` is running) and choose an image. Your browser converts it on your own machine, without uploading it anywhere. The page shows the old and new resolution and file size; switch between Original and Optimized to compare the two, then download the optimized `.jpg`. Use Chrome or Safari: Firefox ignores some embedded color profiles, which shifts colors slightly. HEIC (iPhone photos) and TIFF files only open in Safari. Or,
 - **On the command line:** `npm run optimize -- path/to/image.png [more images...]` converts each image to a `.jpg` next to it with the same settings, and deletes the original (add `--keep-original` to keep it).
 
 Don't optimize SVGs (they're already small), or images that need their transparency (e.g. a logo or map icon drawn over something that isn't white): keep those as PNGs.
@@ -193,7 +193,7 @@ The old site also listed articles that were published on dailycal.org (their `ol
 
 ### Old URLs
 
-The old site served articles at `/<file name>/` instead of `/article/<file name>/`. [`public/_redirects`](public/_redirects) 301-redirects those old URLs for every article the old site hosted, so existing links to them (e.g. from dailycal.org) and search results keep working. 
+The old site served articles at `/<file name>/` instead of `/article/<file name>`. [`public/_redirects`](public/_redirects) 301-redirects those old URLs for every article the old site hosted, so existing links to them (e.g. from dailycal.org) and search results keep working.
 
 ## Layouts
 
