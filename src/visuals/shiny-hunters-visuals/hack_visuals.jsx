@@ -4,9 +4,8 @@ import {
 } from 'react-leaflet';
 
 // import logo from '../../images/dclogoblack.png';
-// import { Link } from 'gatsby';
 
-import { Link } from '../../lib/compat/gatsby';
+import { withBase } from '../../lib/path';
 import logo from '../../assets/images/dclogoblack.png?url';
 
 import 'leaflet/dist/leaflet.css';
@@ -75,7 +74,7 @@ const HackVisuals = () => {
             alignItems: 'center',
           }}
         >
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <a href={withBase("/")} style={{ textDecoration: 'none' }}>
             <img
               src={logo}
               alt="The Daily Californian"
@@ -86,7 +85,7 @@ const HackVisuals = () => {
                 borderBottom: '2px solid #ccc',
               }}
             />
-          </Link>
+          </a>
         </div>
 
         <h1

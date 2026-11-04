@@ -1,7 +1,7 @@
 import React, {
   Suspense, lazy, useEffect, useLayoutEffect, useRef, useState,
 } from 'react';
-import { Link } from '../../lib/compat/gatsby';
+import { withBase } from '../../lib/path';
 import ArticleFooter from '../../components/articleFooter';
 import logo from '../../assets/images/dclogo.png?url';
 import { routeFromUrl, viewHref } from './views';
@@ -80,9 +80,9 @@ export default function CleryStory({
 
   return (
     <div className={`clery-root dark-story${route.view === 'story' ? '' : ' clery-root--viewer'}`} ref={rootRef} onClick={onClick}>
-      <Link className="clery-masthead dark-story-masthead" to="/">
+      <a className="clery-masthead dark-story-masthead" href={withBase("/")}>
         <img src={logo} alt="The Daily Californian" />
-      </Link>
+      </a>
       {route.view === 'story' ? (
         <>
           <main className="clery-story dark-story-content">

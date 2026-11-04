@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from '../lib/compat/mui-styles';
-import { Link } from '../lib/compat/gatsby';
 import { styles } from '../styles/customTheme';
 
 const ArticleFooter = ({ classes, about, jointDept }) => (
@@ -28,12 +27,12 @@ const ArticleFooter = ({ classes, about, jointDept }) => (
       { jointDept
         ? (
           <p>
-            <Link
-              to="https://www.dailycal.org/site/contact-us.html"
+            <a
+              href="https://www.dailycal.org/site/contact-us.html"
               style={{ color: 'gray', fontSize: '14px' }}
             >
               Contact the Daily Californian
-            </Link>
+            </a>
           </p>
         )
         : (

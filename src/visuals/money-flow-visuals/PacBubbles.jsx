@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import { withPrefix } from '../../lib/compat/gatsby';
+import { withBase } from '../../lib/path';
 import { theme } from '../../styles/theme';
 import isUnlocked from './unlock';
 
 // Built from scripts/uc_pac_recipients.py: the top PACs by UC employee dollars,
 // plus a final OTHER row summing the rest.
-const DATA_URL = withPrefix('/data/2026-10-30-money-flow/uc_pac_recipients.csv');
+const DATA_URL = withBase('/data/2026-10-30-money-flow/uc_pac_recipients.csv');
 
 // Wider than tall so the type labels beside the ring have room.
 const WIDTH = 1140;

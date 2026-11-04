@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Link } from '../../lib/compat/gatsby';
+import { withBase } from '../../lib/path';
 import logo from '../../assets/images/dclogoblack.png?url';
 import { FinanceTreemap } from './treemap';
 import { FinanaceVizElement, FinanceDatawrapperCharts } from './extra_graphs';
@@ -50,7 +50,7 @@ const CandidateFinanceVisuals = () => {
           flexShrink: 0,
         }}
       >
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <a href={withBase("/")} style={{ textDecoration: 'none' }}>
           <img
             src={logo}
             alt="The Daily Californian"
@@ -60,7 +60,7 @@ const CandidateFinanceVisuals = () => {
               margin: 0,
             }}
           />
-        </Link>
+        </a>
       </div>
       <div
         style={{

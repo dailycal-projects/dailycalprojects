@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from '../../lib/compat/react-helmet';
+import { preinit, preload } from 'react-dom';
 import './styles/app.css';
 import './host.css';
 
@@ -16,17 +16,21 @@ const RentOMeterStory = () => {
     };
   }, []);
 
+  // <html class="rom-page">
+  useEffect(() => {
+    document.documentElement.classList.add('rom-page');
+    return () => document.documentElement.classList.remove('rom-page');
+  }, []);
+
+  // the paper's fonts (Tiempos Headline, Plantin), copied from dc_app/public/fonts by sync.js
+  preload('/data/2026-10-13-rent-o-meter/fonts/tiempos-headline-bold.woff2', { as: 'font', type: 'font/woff2', crossOrigin: '' });
+  preload('/data/2026-10-13-rent-o-meter/fonts/plantin-regular.woff2', { as: 'font', type: 'font/woff2', crossOrigin: '' });
+  preinit('/data/2026-10-13-rent-o-meter/fonts/fonts.css', { as: 'style' });
+
   return (
     <>
-      <Helmet>
-        <html className="rom-page" lang="en" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        {/* the paper's fonts (Tiempos Headline, Plantin), copied from dc_app/public/fonts by sync.js */}
-        <link rel="preload" href="/data/2026-10-13-rent-o-meter/fonts/tiempos-headline-bold.woff2" as="font" type="font/woff2" crossOrigin="" />
-        <link rel="preload" href="/data/2026-10-13-rent-o-meter/fonts/plantin-regular.woff2" as="font" type="font/woff2" crossOrigin="" />
-        <link rel="stylesheet" href="/data/2026-10-13-rent-o-meter/fonts/fonts.css" />
-      </Helmet>
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       <div className="rom">{App && <App />}</div>
     </>
   );

@@ -3,7 +3,7 @@ import React, {
   useCallback,
   useEffect, useImperativeHandle, useRef, useState,
 } from 'react';
-import { Helmet } from '../../../lib/compat/react-helmet';
+import { preload as preloadResource } from 'react-dom';
 import * as styles from '../styling/dc-video-player.module.css';
 import muteIcon from '../icons/volume-xmark-solid-full.svg?url';
 import fullVolumeIcon from '../icons/volume-solid-full.svg?url';
@@ -255,17 +255,15 @@ export const DCVideoPlayer = forwardRef(({
     }
   }, []);
 
+  // Head preload
+  if (preloadInHead) {
+    preloadResource(src, { as: 'video', type });
+  }
+
   return (
     <div
       className={styles.container}
     >
-      {/* Head preload */}
-      {preloadInHead && (
-      <Helmet>
-        <link rel="preload" href={src} as="video" type={type} />
-      </Helmet>
-      )}
-
       {/* Video */}
       <video
         className={styles.video}

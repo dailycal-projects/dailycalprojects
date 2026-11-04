@@ -176,7 +176,7 @@ A few things to know when writing or porting a visual:
 
 Until 2026 this site was built with Gatsby. Its articles' visuals were moved into `src/visuals/` with as few changes as possible, so a few pieces of compatibility infrastructure keep that code working:
 
-- **`src/lib/compat/`**: stand-ins for APIs that no longer exist or changed, so the old code only needed its imports changed: `gatsby.jsx` (`Link`, `withPrefix`), `react-helmet.jsx` (`Helmet`), `mui-styles.js` (Material UI's old `makeStyles`/`withStyles`), and `material-ui.jsx` (Material UI with v4's default look, for the visuals written for v4).
+- **`src/lib/compat/`**: stand-ins for APIs that no longer exist or changed, so the old code only needed its imports changed: `mui-styles.js` (Material UI's old `makeStyles`/`withStyles`) and `material-ui.jsx` (Material UI with v4's default look, for the visuals written for v4). Gatsby's `Link`/`withPrefix` became plain links and `withBase()`, and `react-helmet` became React 19's `<meta>`/`<link>` handling and `react-dom`'s `preload()`/`preinit()`.
 - **`src/styles/legacy-typography.css`**: the old site's global base styles, which those visuals were designed on top of, scoped to article bodies and blank pages.
 - **`src/lib/browser-only-packages.mjs`**: replaces Leaflet, react-leaflet and sigma with an inert stand-in when pages are rendered at build time, since they crash outside a browser even when only imported.
 - **`src/lib/keep-d3-side-effects.mjs`**: keeps d3-transition in the bundle, so `d3.select(...).transition()` works.

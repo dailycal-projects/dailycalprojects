@@ -2,13 +2,13 @@ import React, {
   useEffect, useMemo, useRef, useState,
 } from 'react';
 import * as d3 from 'd3';
-import { withPrefix } from '../../lib/compat/gatsby';
+import { withBase } from '../../lib/path';
 import { theme } from '../../styles/theme';
 
 // Built from scripts/uc_donor_search.py: every contribution behind the map and
 // the PAC chart, plus party and joint fundraising committees, one row per
 // donation. Type is Candidate, PAC, Party or JFC; only candidates have a state.
-const DATA_URL = withPrefix('/data/2026-10-30-money-flow/uc_donor_search.csv');
+const DATA_URL = withBase('/data/2026-10-30-money-flow/uc_donor_search.csv');
 
 const MAX_SUGGESTIONS = 8;
 const LISTBOX_ID = 'donor-search-suggestions';
