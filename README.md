@@ -17,7 +17,7 @@ Source for [data.dailycal.org](https://data.dailycal.org/): investigative storie
 | `npm run optimize -- <image> [<image> ...]` | Optimize images (see [Optimizing images](#optimizing-images)) |
 | `npm run deploy` | Build and deploy the site to Cloudflare (see [Deploying](#install-build-deploy)) |
 
-Always run `npm run build` and `npm run lint` before pushing. The build fails on content problems (a misspelled frontmatter field, a badly named file, etc.), and says exactly what to fix.
+Always run `npm run build` and `npm run lint` before pushing. GitHub Actions also runs both on every commit and pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)). The build fails on content problems (a misspelled frontmatter field, a badly named file, etc.), and says exactly what to fix.
 
 **Deploying:** the site is entirely static, with nothing running on a server. It's hosted on Cloudflare as a Worker named `data` that only serves static assets (configured in [`wrangler.jsonc`](wrangler.jsonc)), so hosting it costs nothing. `npm run deploy` builds the site and uploads `dist/` with `wrangler deploy` (run `npx wrangler login` first).
 
