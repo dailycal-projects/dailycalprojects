@@ -1,17 +1,21 @@
 ---
 date: "2026-04-30"
 title: "Berkeley Dining, Decoded"
-bylineName:
+byline:
   - "Antara Gangwal"
   - "Anika Bhutani"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/antara%20gangwal/"
   - "https://www.dailycal.org/users/profile/anika%20bhutani"
-featuredImage: "../images/diningmenus.jpg"
+featuredImage: "../../assets/images/diningmenus.jpg"
 imageAttribution: "Pranav Chittharanjan | Staff"
 aboutStory: "Data from this project came from Berkeley Dining."
-noTemplate: false
 ---
+
+import MichVis from "../../visuals/dining-visuals/MichVis";
+import ScrollyNew from "../../visuals/dining-visuals/ScrollyNew";
+import NutritionVis from "../../visuals/dining-visuals/NutritionVis";
+import DatawrapperChart from "../../components/DatawrapperChart.jsx";
 
 With four dining commons and four campus restaurants, Berkeley Dining serves a diverse group of students.
 
@@ -31,7 +35,7 @@ The Daily Californian analyzed the most common menu items served across differen
 
 <br />
 
-<michVis />
+<MichVis client:load />
 
 <br />
 
@@ -53,7 +57,7 @@ There were high percentages of vegan and vegetarian offerings at most stations a
 
 <br />
 
-<scrollyNew />
+<ScrollyNew client:load />
 
 <br />
 
@@ -71,7 +75,7 @@ We analyzed how many unique grains, proteins and greens were served at the dinin
 
 <br />
 
-<nutritionVis />
+<NutritionVis client:load />
 
 <br />
 
@@ -85,7 +89,7 @@ Aside from the dining halls, restaurants located on campus are open during weekd
 
 <br />
 
-<DatawrapperChart chartId="xPUEA/2/" />
+<DatawrapperChart client:load chartId="xPUEA/2/" />
 
 <br />
 
@@ -111,7 +115,7 @@ The Daily Californian analyzed the percentage of food at each dining hall and re
 
 <br />
 
-<DatawrapperChart chartId="HtT2Z/2/" />
+<DatawrapperChart client:load chartId="HtT2Z/2/" />
 
 <br />
 

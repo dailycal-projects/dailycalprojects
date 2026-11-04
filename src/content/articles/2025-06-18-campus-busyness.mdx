@@ -1,19 +1,23 @@
 ---
 date: "2025-06-18"
 title: "What are the busiest classrooms on campus?"
-bylineName:
+byline:
   - "Mark Verzhbinsky"
   - "Lauren Lee"
   - "Emile Shah"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/Mark%20Verzhbinsky/"
   - "https://www.dailycal.org/users/profile/Lauren%20Lee/"
   - "https://www.dailycal.org/users/profile/Emile%20Shah/"
 subhead: "We web scraped more than 20,000 undergraduate course listings from 2019 to 2024. See what we found."
-featuredImage: "../images/campusbusyness.png"
+featuredImage: "../../assets/images/campusbusyness.jpg"
 imageAttribution: "Cole Mortensen | Senior Staff"
 aboutStory: "Data from this project came from Berkeley Academic Guide."
 ---
+
+import ClassDayMap from "../../visuals/campus-busyness-visuals/visuals/ClassDayMap";
+import ClassSizeBarChart from "../../visuals/campus-busyness-visuals/visuals/ClassSizeBarChart";
+import ClassEnrollmentLineChart from "../../visuals/campus-busyness-visuals/visuals/ClassEnrollmentLineChart";
 
 UC Berkeley students are familiar with the university’s large class sizes and sometimes unforgiving waitlists. To shed more light on enrollment, accessibility and scheduling logistics, we web scraped classes.berkeley.edu and analyzed more than 20,000 undergraduate course listings from 2019 to 2024. Here’s what we found.
 
@@ -33,7 +37,7 @@ Walking through campus, students might encounter hotspots such as Sproul Plaza, 
 
 <br />
 
-<ClassDayMap />
+<ClassDayMap client:only="react" />
 
 <br />
 
@@ -45,7 +49,7 @@ The south side of campus, which includes buildings such as Dwinelle Hall, often 
 
 <br />
 
-<ClassSizeBarChart />
+<ClassSizeBarChart client:load />
 
 <br />
 
@@ -65,7 +69,7 @@ Enrollment in English 45A, one of the requirements for the English major, has al
 
 <br />
 
-<ClassEnrollmentLineChart />
+<ClassEnrollmentLineChart client:load />
 
 <br />
 

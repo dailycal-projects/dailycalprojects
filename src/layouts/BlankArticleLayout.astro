@@ -10,6 +10,7 @@ import { site } from "../config/site";
 import { type Article, featuredImageAlt } from "../lib/articles";
 import { withBase } from "../lib/path";
 import "../styles/global.css";
+import "../styles/legacy-typography.css";
 
 interface Props {
   article: Article;
@@ -20,7 +21,7 @@ const { title, subhead, description, featuredImage, date, byline, keywords } = a
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="blank-article">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -47,8 +48,9 @@ const { title, subhead, description, featuredImage, date, byline, keywords } = a
 </html>
 
 <style is:global>
-  html,
-  body {
+  /* html.blank-article: more specific than src/styles/legacy-typography.css's html rule */
+  html.blank-article,
+  html.blank-article body {
     overflow: hidden;
     margin: 0;
     padding: 0;

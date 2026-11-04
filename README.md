@@ -35,11 +35,11 @@ src/
   lib/                Helpers: article loading/validation, withBase()
   pages/              Every page and its URL (file-based routing)
   styles/             Global and article CSS
-  visuals/            Articles' visuals (React components), one folder per project
+  visuals/            Articles' visuals (React components), one folder per project (see "Visuals")
 scripts/optimize.ts   Command-line image optimizer
 public/               Static files served as-is: the favicon, and standalone interactives
                       (e.g. public/election-2026/ is served at /election-2026/)
-legacy/               The old Gatsby site's source, for articles not yet ported (see below)
+legacy/               The old Gatsby site's leftover source, for reference (see "Visuals")
 ```
 
 | URL | Page |
@@ -117,6 +117,7 @@ The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](ht
 
 ### Components
 
+- **Visuals** in `src/visuals/`: see [Visuals](#visuals).
 - **`<DatawrapperChart>`** (`src/components/DatawrapperChart.jsx`): embeds a Datawrapper chart by its ID, resizing to fit the chart. It needs `client:load`.
 - **`<ArticleImage>`** (`src/components/ArticleImage.astro`): an image with an optional `caption` and `attribution`. Or a **group** of images side by side, sharing one caption: `<ArticleImage images={[{ src: a, alt: "..." }, { src: b, alt: "..." }]} columns={2} caption="..." />`. Groups stack into one column on phones. `src` can be an imported image (recommended, since Astro resizes it for each screen) or an external URL.
 - **`<Link>`** (`src/components/Link.jsx`): a link that works under a fork's subpath. Use it for links to other pages on this site.
@@ -145,18 +146,51 @@ Either:
 
 Don't optimize SVGs (they're already small), or images that need their transparency (e.g. a logo or map icon drawn over something that isn't white): keep those as PNGs.
 
-## Legacy articles
+## Visuals
 
-Until 2026 this site was built with Gatsby. Its source is kept in `legacy/` (with the same layout it had under `src/`, so the relative imports between its folders still read correctly) until every article is ported to the new site. Nothing in `legacy/` is built, linted or deployed: an article only appears on the site once it's in `src/content/articles/`.
+An article's interactive graphics are React components in `src/visuals/<project>/`, one folder per project, imported at the top of its `.mdx` file like any other component:
 
-To port an article, e.g. `legacy/articles/2025-06-18-campus-busyness.mdx`:
+```mdx
+import BikeTheftMap from "../../visuals/theft-visuals/bikeTheftMap";
 
-1. Move it with `git mv legacy/articles/<file>.mdx src/content/articles/<file>.mdx`, so git keeps its history.
-2. Convert its frontmatter to the [new fields](#frontmatter): `bylineName` becomes `byline`, `bylineUrl` becomes `bylineLinks`, and Gatsby-only fields like `noTemplate` are removed. Run `npm run build` to see what's left to fix.
-3. [Optimize](#optimizing-images) its images into `src/assets/images/`, and delete the originals from `legacy/images/` once no other legacy article uses them.
-4. Rewrite any visuals it imports from `legacy/visuals/` as components in `src/components/` (Datawrapper charts can use `<DatawrapperChart>`), or as a standalone page in `public/`.
+<BikeTheftMap client:only="react" />
+```
 
-The old site served articles at `/<file name>/` instead of `/article/<file name>/`. [`src/pages/[legacySlug].astro`](src/pages/[legacySlug].astro) redirects those old URLs for every article in `src/content/articles/`, so existing links to a ported article (e.g. from dailycal.org) keep working.
+Astro renders components to HTML at build time and doesn't send their JavaScript to the browser unless told to. Give a visual a directive if it needs to run in the browser:
+
+- **`client:load`**: for anything interactive (state, effects, event handlers, charts that measure the page, d3). It's rendered at build time and then made interactive as the page loads.
+- **`client:only="react"`**: for visuals that can't render outside a browser at all, e.g. Leaflet maps. Rendered only in the browser.
+- **No directive**: for visuals that are only HTML (an iframe, a static timeline), which then cost no JavaScript.
+
+A few things to know when writing or porting a visual:
+
+- **JSX goes in `.jsx`/`.tsx` files**, not `.js`.
+- **Props passed to a `client:` visual must be plain data** (strings, numbers, arrays, objects): a function can't be sent to the browser.
+- **An `.mdx` file can read its own frontmatter** as `props.frontmatter`, e.g. `<Story title={props.frontmatter.title} />`. `date` is `"yyyy-mm-dd"`, and the byline is also available under the old site's names, `bylineName`/`bylineUrl`.
+- **Images imported for use as a URL** (`<img src={icon} />`) need `?url`: `import icon from "../../assets/images/icon.png?url"`. Without it, Astro imports an object with the image's details.
+- **Files in `public/`** are referenced by their site path through `withBase()` (or `<Link>`), e.g. `fetch(withBase("/money-flow/data.csv"))`.
+
+### Visuals from the old Gatsby site
+
+Until 2026 this site was built with Gatsby. Its articles' visuals were moved into `src/visuals/` with as few changes as possible, so a few pieces of compatibility infrastructure keep that code working:
+
+- **`src/lib/compat/`**: stand-ins for APIs that no longer exist or changed, so the old code only needed its imports changed: `gatsby.jsx` (`Link`, `withPrefix`), `react-helmet.jsx` (`Helmet`), `mui-styles.js` (Material UI's old `makeStyles`/`withStyles`), and `material-ui.jsx` (Material UI with v4's default look, for the visuals written for v4).
+- **`src/styles/legacy-typography.css`**: the old site's global base styles, which those visuals were designed on top of, scoped to article bodies and blank pages.
+- **`src/lib/browser-only-packages.mjs`**: replaces Leaflet, react-leaflet and sigma with an inert stand-in when pages are rendered at build time, since they crash outside a browser even when only imported.
+- **`src/lib/keep-d3-side-effects.mjs`**: keeps d3-transition in the bundle, so `d3.select(...).transition()` works.
+- **`src/lib/unwrap-jsx-paragraphs.mjs`**: renders text inside JSX elements like `<p>...</p>` in `.mdx` the way the old site did (without wrapping it in another paragraph).
+- Some charts set recharts props marked `// recharts 3: ...` where recharts 3 changed a default, so they look the same as before.
+- `leaflet.heat` stays on 0.2: the Clery story map extends its 0.2 internals, and 1.0 is a rewrite.
+
+`src/visuals/`, the old Gatsby components in `src/components/` and `src/styles/` that some visuals use (`articleFooter.jsx`, `buttonList.jsx`, `customTheme.js`, `theme.js`, `button.module.css`, `darkStory.css`), and the articles themselves are excluded from formatting (see `.prettierignore` and `eslint.config.js`), so they stay as they were written.
+
+### Old articles that only linked to dailycal.org
+
+The old site also listed articles that were published on dailycal.org (their `oldLink` frontmatter). Those aren't hosted here, and are kept, unused, in `legacy/articles/`, with the old site's components, templates, pages and images in `legacy/` for reference. Nothing in `legacy/` is built, linted or deployed.
+
+### Old URLs
+
+The old site served articles at `/<file name>/` instead of `/article/<file name>/`. [`src/pages/[legacySlug].astro`](src/pages/[legacySlug].astro) redirects those old URLs for every article in `src/content/articles/`, so existing links to them (e.g. from dailycal.org) keep working.
 
 ## Layouts
 

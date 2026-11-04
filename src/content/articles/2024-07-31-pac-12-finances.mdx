@@ -1,15 +1,21 @@
 ---
 date: "2024-07-31"
 title: "Analyzing the final two decades of Cal Athletics finances under Pac-12"
-bylineName:
+byline:
   - "Lauren Lee"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/Lauren%20Lee/"
 subhead: "See how Cal performed financially before we bid farewell"
-featuredImage: "../images/pac12.png"
+featuredImage: "../../assets/images/pac12.jpg"
 imageAttribution: "Caroline Lobel | Senior Staff"
 aboutStory: "Data for this project come from Cal Athletics."
 ---
+
+import ConferenceMap from "../../visuals/pac-12-finances-visuals/visuals/Map";
+import ConferenceBarChart from "../../visuals/pac-12-finances-visuals/visuals/ConferenceBarChart";
+import AreaCharts from "../../visuals/pac-12-finances-visuals/visuals/AreaCharts";
+import DebtBarChart from "../../visuals/pac-12-finances-visuals/visuals/DebtBarChart";
+import DropdownBudgetOverTime from "../../visuals/pac-12-finances-visuals/visuals/DropdownBudgetOverTime";
 
 On Friday, the Golden Bears will have officially left the Pac-12 athletic conference, beginning their first season as part of the Atlantic Coast Conference, or ACC. The move is widely regarded as an attempt to remain afloat in the competitive collegiate athletic scene after the financial struggles that the Pac-12 faced in its last years of life.
 
@@ -21,7 +27,7 @@ The beginning of the Pac-12's end came decisively June 30, 2022, when the Big Te
 
 <br />
 
-<ConferenceMap />
+<ConferenceMap client:only="react" />
 
 <br />
 
@@ -49,7 +55,7 @@ In contrast to media rights, revenue distributed from the conference and NCAA to
 
 <br />
 
-<ConferenceBarChart />
+<ConferenceBarChart client:load />
 
 <br />
 
@@ -63,7 +69,7 @@ Membership in the ACC ensures Cal football’s participation in a major conferen
 
 <br />
 
-<AreaCharts />
+<AreaCharts client:load />
 
 <br />
 
@@ -73,7 +79,7 @@ Still, football has left a financial deficit for the school. On the public finan
 
 <br />
 
-<DebtBarChart />
+<DebtBarChart client:load />
 
 <br />
 
@@ -85,7 +91,7 @@ An analysis of the different categories listed under the financial statements re
 
 <br />
 
-<DropdownBudgetOverTime />
+<DropdownBudgetOverTime client:load />
 
 <br />
 

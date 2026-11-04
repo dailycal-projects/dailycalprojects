@@ -4,16 +4,18 @@ subhead: ""
 # title: "Inside UCPD’s Daily Crime Log"
 title: "Inside UCPD’s Daily Crime Log"
 # Metadata below is passed to CleryStory and CleryScrolly. Add featuredImage when available.
-bylineName:
+byline:
   - "Ajith Araiza-Singh"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/ajith%20araiza-singh/"
 aboutStory: "Data for this project came from UCPD’s Daily Crime Log"
-noTemplate: true
-featuredImage: "../images/clery_center.png"
+layout: false
+featuredImage: "../../assets/images/clery_center.jpg"
 ---
 
-<CleryStory
+import CleryStory, { CleryScrolly } from "../../visuals/clery-visuals/CleryStory";
+
+<CleryStory client:load
   title={props.frontmatter.title}
   date={props.frontmatter.date}
   bylineName={props.frontmatter.bylineName}
@@ -45,7 +47,7 @@ featuredImage: "../images/clery_center.png"
   </a>
 </section>
 
-<CleryScrolly date={props.frontmatter.date}>
+<CleryScrolly client:only="react" date={props.frontmatter.date}>
   <section className="clery-story-step" data-scene="all-incidents">
     <div className="clery-story-card dark-story-card">
       <p className="dark-story-copy">

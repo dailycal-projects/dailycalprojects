@@ -1,13 +1,15 @@
 ---
 date: "2022-09-15"
 title: "Mapping UC Berkeley study abroad programs"
-bylineName:
+byline:
   - "Cameron Fozi"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/cfozi"
-featuredImage: "../images/study-abroad.png"
+featuredImage: "../../assets/images/study-abroad.jpg"
 imageAttribution: "RVACAPINTA | Creative Commons"
 ---
+
+import StudyAbroadMap from "../../visuals/study-abroad-visuals/studyAbroadMap";
 
 With hundreds of program listings over six continents, Berkeley Study Abroad boasts a variety of opportunities for students.
 
@@ -15,7 +17,7 @@ The 348 listings differ in location, topic, provider and study abroad length, wi
 
 <br />
 
-<StudyAbroadMap />
+<StudyAbroadMap client:only="react" />
 
 _The map above plots Berkeley Study Abroad destinations. Each dot represents one national destination, and its size represents the number of programs there. Virtual programs and programs within the U.S. are omitted from the map. Data come from the Berkeley Study Abroad [website](https://studyabroad.berkeley.edu/explore)._
 

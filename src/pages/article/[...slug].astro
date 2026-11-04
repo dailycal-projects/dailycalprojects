@@ -21,8 +21,18 @@ interface Props {
 const { article } = Astro.props;
 const { Content } = await render(article);
 const Layout = article.data.layout ? ArticleLayout : BlankArticleLayout;
+
+// The article's frontmatter, available in its .mdx as `props.frontmatter`, the way the old Gatsby
+// site passed it (e.g. <Story title={props.frontmatter.title} />): the date as "yyyy-mm-dd", and
+// the byline under its old names too.
+const frontmatter = {
+  ...article.data,
+  date: article.data.date.toISOString().slice(0, 10),
+  bylineName: article.data.byline,
+  bylineUrl: article.data.bylineLinks,
+};
 ---
 
 <Layout article={article}>
-  <Content />
+  <Content frontmatter={frontmatter} />
 </Layout>

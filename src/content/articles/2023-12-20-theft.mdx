@@ -1,27 +1,32 @@
 ---
 date: "2023-12-20"
 title: "Bike and scooter thieves have Berkeley on lock"
-bylineName:
+byline:
   - "Isabella Borkovic"
   - "Clara Brownstein"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/isabella%20borkovic/"
   - "https://www.dailycal.org/users/profile/clara%20brownstein/"
 subhead: "Mapping the rise in bike and scooter theft on campus"
-featuredImage: "../images/theft.png"
+featuredImage: "../../assets/images/theft.jpg"
 imageAttribution: "Clarissa Arceo | Senior Staff"
 aboutStory: "Data for this project come from UCPD."
 ---
+
+import TheftsPerYearBarChart from "../../visuals/theft-visuals/theftsPerYearBarChart";
+import MarkerClusterMap from "../../visuals/theft-visuals/bikeTheftMap";
+import TheftsPerHourLineChart from "../../visuals/theft-visuals/theftsPerHourLineChart";
+import BikeTheftTips from "../../visuals/theft-visuals/bikeTheftTips";
 
 Many Berkeley residents opt to shorten their daily commutes with bikes and electric scooters. But this convenience comes with a risk: theft.
 
 <br />
 
-<TheftsPerYearBarChart />
+<TheftsPerYearBarChart client:load />
 
 <br />
 
-_Data come from UCPD data on reported bike, e-bike, and e-scooter thefts on the UC Berkeley campus ​​from Aug. 1, 2019 to Oct. 31, 2023. _
+_Data come from UCPD data on reported bike, e-bike, and e-scooter thefts on the UC Berkeley campus ​​from Aug. 1, 2019 to Oct. 31, 2023._
 
 Bike and e-scooter theft has risen since student’s return to campus post-pandemic. As of October 2023, there have been 459 reported thefts this year, compared to 60 in 2020, according to UCPD data.
 
@@ -33,11 +38,11 @@ White linked the rise in recent thefts to the return to in-person activities aft
 
 <br />
 
-<MarkerClusterMap />
+<MarkerClusterMap client:only="react" />
 
 <br />
 
-_The interactive map above displays all bike, e-scooter and e-bike theft reported to UCPD from August 1, 2019 to Oct. 31, 2023. The locations with the most theft are the Recreational Sports Facility (100 thefts), Moffitt Library (80 thefts), Evans Hall (59 thefts), Dwinelle Hall (47 thefts) and Unit 2 Residence Hall (38 thefts). _
+_The interactive map above displays all bike, e-scooter and e-bike theft reported to UCPD from August 1, 2019 to Oct. 31, 2023. The locations with the most theft are the Recreational Sports Facility (100 thefts), Moffitt Library (80 thefts), Evans Hall (59 thefts), Dwinelle Hall (47 thefts) and Unit 2 Residence Hall (38 thefts)._
 
 Ben Tefry, a campus senior and mechanic at BicyCal — a campus organization that teaches Berkeley students, faculty and staff to fix and maintain their bikes — said he has seen numerous bike thefts around campus.
 
@@ -47,11 +52,11 @@ Tefry has witnessed thefts outside of Moffitt Library, which has a high volume o
 
 <br />
 
-<TheftsPerHourLineChart />
+<TheftsPerHourLineChart client:load />
 
 <br />
 
-_The line chart above visualizes the number of reported thefts that occurred at each hour of the day from Aug. 1, 2019 to Oct. 31, 2023, with reported times rounded down to the nearest hour. _
+_The line chart above visualizes the number of reported thefts that occurred at each hour of the day from Aug. 1, 2019 to Oct. 31, 2023, with reported times rounded down to the nearest hour._
 
 Much like foot traffic, daylight is not always a successful deterrent against theft. The majority of thefts take place during daytime hours, with 64% of thefts reported to UCPD occurring between 9 a.m. and 5 p.m. The most popular hour was 4 p.m. with 123 thefts from September 2019 to November 2023.
 
@@ -101,4 +106,4 @@ _Isabella Borkovic is a projects developer. Contact her at [iborkovic@dailycal.o
 
 _Clara Brownstein is a projects developer. Contact her at [cbrownstein@dailycal.org](mailto:cbrownsteinc@dailycal.org)_
 
-_ Shahan Nawaz, a former projects developer, contributed to this story._
+_Shahan Nawaz, a former projects developer, contributed to this story._

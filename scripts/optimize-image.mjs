@@ -80,7 +80,8 @@ async function optimizeOne(inputPath, { keepOriginal }) {
 
   const originalStat = await stat(resolvedInput);
   const dir = path.dirname(resolvedInput);
-  const base = path.basename(resolvedInput, ext);
+  // extname() keeps the original case (ext is lowercased), so .JPG files lose their extension too
+  const base = path.basename(resolvedInput, path.extname(resolvedInput));
   const outputPath = path.join(dir, `${base}.jpg`);
 
   const tempPath = path.join(dir, `.${base}.${randomBytes(4).toString("hex")}.tmp.jpg`);

@@ -1,25 +1,29 @@
 ---
 date: "2025-12-24"
 title: "We traced hundreds of thousands of Wikipedia edits back to UC networks"
-bylineName:
+byline:
   - "Ajith Araiza-Singh"
   - "John Bragado"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/ajith%20araiza-singh/"
   - "https://www.dailycal.org/users/profile/john%20bragado"
 subhead: "We scraped Wikipedia edits made by UC staff, students and guests to see which articles were edited and how."
-featuredImage: "../images/wikiedits.jpg"
+featuredImage: "../../assets/images/wikiedits.jpg"
 imageAttribution: "Noelle Chang | Staff"
 aboutStory: "Data from this project came from Wikipedia, scraped using Wikimedia REST API."
-embeddedImages:
-  - "../images/wikiedits-brandonkline.png"
-  - "../images/wikiedits-kliner916.png"
-  - "../images/wikiedits-talk1.png"
-  - "../images/wikiedits-talk2.png"
-  - "../images/wikiedits-mgedits.png"
 ---
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { Image } from "astro:assets";
+import embeddedImage0 from "../../assets/images/wikiedits-brandonkline.jpg";
+import embeddedImage1 from "../../assets/images/wikiedits-kliner916.jpg";
+import embeddedImage2 from "../../assets/images/wikiedits-talk1.jpg";
+import embeddedImage3 from "../../assets/images/wikiedits-talk2.jpg";
+import embeddedImage4 from "../../assets/images/wikiedits-mgedits.jpg";
+import TopEditsPerSchool from "../../visuals/wikiedits-visuals/top_edits_per_school";
+import EditsOverTime from "../../visuals/wikiedits-visuals/edits_over_time";
+import EditsPerSchool from "../../visuals/wikiedits-visuals/edits_per_school";
+import SemanticMap from "../../visuals/wikiedits-visuals/semantic_map";
+import Wikidiff from "../../visuals/wikiedits-visuals/wikidiff";
 
 Despite never-ending debates about its viewpoint bias and reliability, Wikipedia is still read by billions of people each month who largely trust what’s written in it.
 
@@ -43,7 +47,7 @@ There are lots of metrics to quantify this anonymous Wikipedia editing activity,
 
 <br />
 
-<TopEditsPerSchool />
+<TopEditsPerSchool client:load />
 
 <br />
 
@@ -53,7 +57,7 @@ The amount of edits made from a UC IP address have been steadily increasing sinc
 
 <br />
 
-<EditsOverTime metric="edit_volume" />
+<EditsOverTime client:load metric="edit_volume" />
 
 <br />
 
@@ -61,7 +65,7 @@ The majority of changes on Wikipedia come from a small percentage of edits. This
 
 <br />
 
-<EditsOverTime metric="edit_count" />
+<EditsOverTime client:load metric="edit_count" />
 
 <br />
 
@@ -69,7 +73,7 @@ UCLA’s network has been the host of several such vandalous edits, making it th
 
 <br />
 
-<EditsPerSchool />
+<EditsPerSchool client:load />
 
 <br />
 
@@ -195,7 +199,7 @@ Now counsel for the California Air Resources Board, Kline said the edits were ma
 <br />
 
 <body>
-  <GatsbyImage image={getImage(props.localImages[0])} />
+  <Image alt="" src={embeddedImage0} />
   <div
     style={{
       color: "#707070",
@@ -224,7 +228,7 @@ Now counsel for the California Air Resources Board, Kline said the edits were ma
 <br />
 
 <body>
-  <GatsbyImage image={getImage(props.localImages[1])} />
+  <Image alt="" src={embeddedImage1} />
   <div
     style={{
       color: "#707070",
@@ -263,13 +267,13 @@ The text added by Brandonkline and Kliner916 was eventually removed by other con
 <br />
 
 <body>
-  <GatsbyImage image={getImage(props.localImages[2])} />
+  <Image alt="" src={embeddedImage2} />
 </body>
 
 <br />
 
 <body>
-  <GatsbyImage image={getImage(props.localImages[3])} />
+  <Image alt="" src={embeddedImage3} />
   <div
     style={{
       color: "#707070",
@@ -336,7 +340,7 @@ Current UC Berkeley Chancellor Rich Lyons’ Wikipedia article has also been edi
 <br />
 
 <body>
-  <GatsbyImage image={getImage(props.localImages[4])} />
+  <Image alt="" src={embeddedImage4} />
   <div
     style={{
       color: "#707070",

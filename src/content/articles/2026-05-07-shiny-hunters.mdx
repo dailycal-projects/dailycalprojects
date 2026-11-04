@@ -1,16 +1,18 @@
 ---
 date: "2026-05-07"
 title: "Data released by hackers shows wide spread compromise of ed-tech company"
-bylineName:
+byline:
   - "Ajith Araiza-Singh"
   - "Luca Vicisano"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/ajith%20araiza-singh/"
   - "https://www.dailycal.org/users/profile/luca%20vicisano/"
-featuredImage: "../images/shiny-hunters.png"
+featuredImage: "../../assets/images/shiny-hunters.jpg"
 imageAttribution: "The Daily Californian"
 aboutStory: ""
-noTemplate: True
+layout: false
 ---
 
-<HackVisuals />
+import HackVisuals from "../../visuals/shiny-hunters-visuals/hack_visuals";
+
+<HackVisuals client:only="react" />

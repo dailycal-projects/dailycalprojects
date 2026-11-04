@@ -1,16 +1,19 @@
 ---
 date: "2026-01-06"
 title: "Breaking down the $1.2 million in UC Berkeley student organization funds"
-bylineName:
+byline:
   - "Smrithi Senthilnathan"
   - "Antara Gangwal"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/Smrithi%Senthilnathan/"
   - "https://www.dailycal.org/users/profile/Antara%20Gangwal/"
 subhead: "We investigated how 400+ RSOs are funded by the ASUC or independently generate revenue."
-featuredImage: "../images/asucspending.png"
+featuredImage: "../../assets/images/asucspending.jpg"
 aboutStory: "Data from this project came from ABSA."
 ---
+
+import ASUCFunding from "../../visuals/club-finances-visuals/asucFunding";
+import DatawrapperChart from "../../components/DatawrapperChart.jsx";
 
 On a campus where some clubs operate on shoestring budgets and others jet off to Hawaii or have yacht parties in Bali, the flow of money through UC Berkeley’s student organizations is anything but equal.
 
@@ -38,7 +41,7 @@ The Daily Californian organized the 413 RSOs receiving ABSA funding for the fisc
 
 <br />
 
-<ASUCFunding />
+<ASUCFunding client:load />
 
 <br />
 
@@ -50,7 +53,7 @@ RSOs focused on <span style={{ backgroundColor: "#95c361", borderRadius: "5px", 
 
 <br />
 
-<DatawrapperChart chartId="rCjgk/5/" />
+<DatawrapperChart client:load chartId="rCjgk/5/" />
 
 <br />
 
@@ -88,16 +91,7 @@ Most <span style={{ backgroundColor: "#fed23b", borderRadius: "5px", padding: "1
 
 Consulting clubs, which fall under the business and technology category, typically fund themselves through projects with industry clients, including Google, Oracle, Amazon and Adobe, instead. It is possible for industry clients to donate to the ASUC and ASUC-sponsored organizations. However, the CFO’s office stated this information is currently not publicly available.
 
-<span
-  style={{
-    backgroundColor: "#fed23b",
-    borderRadius: "5px",
-    padding: "1.5px 4px",
-    color: "white",
-  }}
->
-  DiversaTech
-</span> president Marcus Romundset stated in an email that the organization receives
+<span style={{ backgroundColor: "#fed23b", borderRadius: "5px", padding: "1.5px 4px", color: "white" }}>DiversaTech</span> president Marcus Romundset stated in an email that the organization receives
 all its funding from “client donations associated with consulting services we offer
 them,” and thus its funding is “dependent on the willingness to pay from industry,
 not federal or school funding.” <br />
@@ -113,16 +107,7 @@ Some RSOs have expanded their revenue streams beyond client projects. For exampl
 
 Optimir Consulting External Vice President Pranav Ramesh described three types of dues: a one-time new member fee, retreat fees for those who want to participate in the club’s semesterly retreat and a general membership fee, which add up to between $70 and $80 altogether. Ramesh said approximately 90% of the club’s $2,000 budget this semester went toward the organization’s retreat, with the other 10% paying for smaller socials and an end-of-semester banquet.
 
-<span
-  style={{
-    backgroundColor: "#fed23b",
-    borderRadius: "5px",
-    padding: "1.5px 4px",
-    color: "white",
-  }}
->
-  Blockchain at Berkeley
-</span> developed the “Blockchain Fundamentals Professional Certificate” offered
+<span style={{ backgroundColor: "#fed23b", borderRadius: "5px", padding: "1.5px 4px", color: "white" }}>Blockchain at Berkeley</span> developed the “Blockchain Fundamentals Professional Certificate” offered
 through EdX and Teachable, two online learning platforms. Created in collaboration
 with faculty from the Electrical Engineering and Computer Sciences department, the
 course had more than 150,000 enrollments, according to its website. Though no longer

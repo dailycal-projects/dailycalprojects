@@ -1,17 +1,21 @@
 ---
 date: "2024-07-02"
 title: "Amidst growing opioid crisis, campus groups take action"
-bylineName:
+byline:
   - "Claire Roach"
   - "Mark Verzhbinsky"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/Claire%20Roach/"
   - "https://www.dailycal.org/users/profile/Mark%20Verzhbinsky/"
 subhead: ""
-featuredImage: "../images/opioids.png"
+featuredImage: "../../assets/images/opioids.jpg"
 imageAttribution: "Long Hei Ma | Staff"
 aboutStory: "Data for this project come from California Department of Health."
 ---
+
+import AgeBarChart from "../../visuals/opioids-visuals/AgeBarChart";
+import RatesMap from "../../visuals/opioids-visuals/RatesMap/Choropleth";
+import TestStripMap from "../../visuals/opioids-visuals/TestStripMap";
 
 The opioid crisis has had its impact in the Bay Area since the pandemic, and illegal use of these drugs has caused reason for enhanced harm reduction strategies, specifically in UC Berkeley’s campus safety programs.
 
@@ -23,7 +27,7 @@ Since the pandemic, fentanyl-related overdose rates in Alameda County have skyro
 
 <br />
 
-<AgeBarChart />
+<AgeBarChart client:load />
 
 <br />
 
@@ -35,7 +39,7 @@ Unequal access to health insurance — especially among marginalized groups — 
 
 <br />
 
-<RatesMap />
+<RatesMap client:only="react" />
 
 <br />
 
@@ -53,7 +57,7 @@ There are several sites on campus that provide free fentanyl test strips, and se
 
 <br />
 
-<TestStripMap />
+<TestStripMap client:only="react" />
 
 <br />
 

@@ -1,24 +1,28 @@
 ---
 date: "2022-03-17"
 title: "Cal chases conference crown"
-bylineName:
+byline:
   - "Jocelyn Huang"
   - "Mia Wachtel"
   - "Cameron Fozi"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/jocelynhuang"
   - "https://www.dailycal.org/author/mwachtel"
   - "https://www.dailycal.org/author/cfozi"
 subhead: "After posting season high, Bears enter Pac-12 championships as No. 2 seed"
-featuredImage: "../images/gym-nevaeh.png"
+featuredImage: "../../assets/images/gym-nevaeh.jpg"
 imageAttribution: "Theo Wyss-Flamm | Senior Staff"
-imageCaption1: "Junior Nevaeh DeSouza has competed in the all-around in all of Cal’s meets this season, posting a career-high 39.625 in the Bears’ upset win against Utah, which enters the Pac-12 championships this weekend as the No. 1 seed.  She and her teammates will look to replicate their performance to capture Cal’s first conference championship."
-embeddedImages:
-  - "../images/gym-grace.png"
-  - "../images/gym-milan.png"
+imageCaption: "Junior Nevaeh DeSouza has competed in the all-around in all of Cal’s meets this season, posting a career-high 39.625 in the Bears’ upset win against Utah, which enters the Pac-12 championships this weekend as the No. 1 seed.  She and her teammates will look to replicate their performance to capture Cal’s first conference championship."
 ---
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { Image } from "astro:assets";
+import embeddedImage0 from "../../assets/images/gym-grace.jpg";
+import embeddedImage1 from "../../assets/images/gym-milan.jpg";
+import GymTotals from "../../visuals/gym-pac-12-visuals/gymTotals";
+import GymVault from "../../visuals/gym-pac-12-visuals/gymVault";
+import GymBars from "../../visuals/gym-pac-12-visuals/gymBars";
+import GymBeam from "../../visuals/gym-pac-12-visuals/gymBeam";
+import GymFloor from "../../visuals/gym-pac-12-visuals/gymFloor";
 
 After securing its first Pac-12 regular-season championship, Cal women’s gymnastics will look to continue its record-breaking year. The next goal: a conference title at the Pac-12 championships Saturday.
 
@@ -27,7 +31,7 @@ After securing its first Pac-12 regular-season championship, Cal women’s gymna
 The Bears, who with a national qualifying score of 197.22 are the No. 2 seed, beat out No. 1 seed Utah earlier in the season. But with a strong slate of competition ahead, Cal is not only vying for the crown but also fending off teams to be at the very least the runner-up. If the Bears stumble, another team will likely be there to take their place.
 
 <br />
-<GymTotals />
+<GymTotals client:load />
 <br />
 
 For the first time ever, all four teams in the evening session own a share of the regular-season championship. Utah, Cal, Oregon State and Arizona State all enter Saturday with 5-2 conference records and have each lost to at least one other team in the same session: Utah to Cal, Cal to Arizona State, Oregon State to Cal and Utah, Arizona State to Utah and Oregon State.
@@ -37,16 +41,16 @@ Despite upset losses to Cal and Arizona during the regular season, the champions
 Aside from Utah, only one other team in the Pac-12 posted a 198 during the regular season. No. 5 seed UCLA hit 198.05 during its March 6 meet against Cal, spoiling the Bears’ sole ownership of the Pac-12 regular-season title. In recent weeks, the Bruins have arguably experienced the greatest growth in the conference, achieving numbers remarkably different from their 194.85 season opening score. Their position in the afternoon session, however, allows Utah, Cal, Oregon State and Arizona State to see the score to beat when they enter the evening session Saturday.
 
 <br />
-<GymVault />
+<GymVault client:load />
 <br />
 <br />
-<GymBars />
+<GymBars client:load />
 <br />
 <br />
-<GymBeam />
+<GymBeam client:load />
 <br />
 <br />
-<GymFloor />
+<GymFloor client:load />
 <br />
 
 For individual titles, Oregon State’s Jade Carey will be the gymnast to watch. The Olympic gold medalist for Team USA has scored 9.9-plus in 34 out of 36 routines this season and reached perfection three times, earning two 10s on floor and one on bars. The freshman phenom is No. 1 in the country in the all-around and on bars, tied for No. 3 on floor, No. 5 on vault and No. 11 on beam.
@@ -61,9 +65,9 @@ For the Bears, all eyes will be on Bordas, sophomore Andi Li and junior Nevaeh D
 
 Senior Grace Quinn, Cal’s longtime floor anchor, is No. 4 on her event and will likely leave a mark at the championships.
 
-<GatsbyImage
+<Image
   alt="Photo of Senior Grace Quinn on floor"
-  image={getImage(props.localImages[0])}
+  src={embeddedImage0}
 />
 <body>
   <em>
@@ -83,9 +87,9 @@ In a new environment without the roar of a home crowd, teams generally do not pe
 
 “Pac-12 championships is in my hometown, so it's always one of my favorite meets,” said senior Milan Clausi, who was named the Pac-12 Specialist of the Week after posting a 9.925 on beam and 9.95 on floor Sunday. “I get to see a lot of family and perform in front of family and friends, and so it’s the closest thing to competing at home, and I love that.”
 
-<GatsbyImage
+<Image
   alt="Photo of Senior Milan Clausi on beam"
-  image={getImage(props.localImages[1])}
+  src={embeddedImage1}
 />
 
 <body>

@@ -1,19 +1,22 @@
 ---
 date: "2021-12-13"
 title: "Rising rents"
-bylineName:
+byline:
   - "Cameron Fozi"
   - "Veronica Roseborough"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/cfozi"
   - "https://www.dailycal.org/author/vroseborough"
 subhead: "Displacement and density amid dizzying costs"
-featuredImage: "../images/rentshelter-feature.png"
+featuredImage: "../../assets/images/rentshelter-feature.jpg"
 imageAttribution: "William Bennett | File"
 aboutStory: "Data for this project come from the California Department of Education, Berkeley's Rent Stabilization Board, the U.S. Census and EveryOne Home."
 ---
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import RentChart from "../../visuals/rent-shelter-visuals/berkeleyAlamedaRent";
+import LunchChart from "../../visuals/rent-shelter-visuals/berkeleyAlamedaLunch";
+import BerkeleyShelterChart from "../../visuals/rent-shelter-visuals/berkeleyShelter";
+import AlamedaShelterChart from "../../visuals/rent-shelter-visuals/alamedaShelter";
 
 ## Why’s the rent so high?
 
@@ -28,7 +31,7 @@ Vacancy control allows the board to prohibit or limit rent increases while a uni
 ## Visualizing rising rent prices
 
 <br />
-<RentChart />
+<RentChart client:load />
 <br />
 
 From 2010 to 2019, gross median rents grew yearly in Alameda County and in the city of Berkeley. Across units of all sizes, gross median rents increased 65% in Alameda County, and median rents in Berkeley increased 63% between 2010 and 2019.
@@ -47,7 +50,7 @@ According to both Simon-Weisberg and Rent Stabilization Board commissioner John 
 
 The decline in the percentage of Berkeley Unified School District, or BUSD, students participating in California’s free or reduced-priced meals program may be a result of this displacement.
 
-<LunchChart />
+<LunchChart client:load />
 <br />
 
 In the 2009-10 school year, 41.2% of BUSD students received free or reduced-price meals. By the 2020-21 school year, it sank to 25.8%. In contrast, the percent of students in the free or reduced-priced meals program across Alameda County show less of a trend. Across 11 years, the percentage has remained fairly consistent.
@@ -56,9 +59,9 @@ The trend we see in Berkeley suggests low-income families are being priced out o
 
 Aside from displacement to other cities, the data suggest that there is an association between rising rents and the increasing homeless population.
 
-<BerkeleyShelterChart />
+<BerkeleyShelterChart client:load />
 <br />
-<AlamedaShelterChart />
+<AlamedaShelterChart client:load />
 
 <br />
 

@@ -1,19 +1,24 @@
 ---
 date: "2026-04-16"
 title: "Body camera footage reveals confrontation between UCPD and protesters ahead of Turning Point spectacle at UC Berkeley"
-bylineName:
+byline:
   - "Jackson Woodward"
   - "Ajith Araiza-Singh"
   - "Brendan Raykoff"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/Jackson%20Woodward/"
   - "https://www.dailycal.org/users/profile/ajith%20araiza-singh/"
   - "https://www.dailycal.org/users/profile/Brendan%20Raykoff"
-featuredImage: "../images/bug-video.jpg"
+featuredImage: "../../assets/images/bug-video.jpg"
 imageAttribution: "UCPD body camera footage obtained via public records request"
 aboutStory: ""
 jointDept: "News"
 ---
+
+import { TextImage } from "../../visuals/bug-bodycam-visuals/components/text-image";
+import { BugVideoExpander } from "../../visuals/bug-bodycam-visuals/bug-video-expander";
+import { BugVideoScroller } from "../../visuals/bug-bodycam-visuals/bug-video-scroller";
+import { DCVideoPlayer } from "../../visuals/bug-bodycam-visuals/components/dc-video-player";
 
 After UCPD <a href="https://www.dailycal.org/news/campus/4-uc-berkeley-students-arrested-on-felony-vandalism-charges-for-anti-tpusa-art-installation/article_c65ad4c0-2c69-4d6f-b630-ba111573fd5a.html">arrested</a> four protesters in November for felony vandalism while they were attempting to hang a giant cardboard mosquito from Sather Gate in protest of a Turning Point USA <a href="https://www.dailycal.org/news/campus/protesters-armed-police-swarm-uc-berkeley-at-turbulent-turning-point-usa-event/article_fbff1cf4-206d-4a74-901e-61b7fc3a5a49.html">event</a>, various campus groups began working to determine whether UCPD needed to pursue felony charges.
 
@@ -53,7 +58,7 @@ Tinney noted that one of the students on the scene “was wearing a black and wh
 
 As seen in the body camera footage, Tinney approaches this student first.
 
-<BugVideoExpander />
+<BugVideoExpander client:load />
 
 George Tran, a current trial lawyer and former prosecutor with the U.S. Department of Justice, wrote in his analysis of the footage that Tinney’s comment before arriving on scene and his apparent failure to confirm whether the protesters had actually pasted the flyers on Sather Gate before stopping them “strongly suggests that the stop was influenced by perceived race, religion, or political expression.”
 
@@ -69,7 +74,7 @@ Ben Nisenbaum, a Bay Area civil rights lawyer, wrote in an email to The Daily Ca
 
 According to Nisenbaum, there remained enough suspicion for a valid stop. Officers also collected evidence that the protesters had committed the alleged crime after stopping them, including a confession from one of them that they had put up the posters.
 
-<BugVideoScroller />
+<BugVideoScroller client:load />
 
 While on the scene, Tinney estimated that cleanup of the 28 posters would exceed $400, placing the crime beyond the bar for felony vandalism in California.
 
@@ -87,7 +92,7 @@ The Demonstrations and Student Action Committee of the UC Berkeley Division of t
 
 “You can guess I am quite upset,” Petersen said. “This is not a good way to spend my time for me or for the university. But it’s much worse. Think about it for the three students.”
 
-<DCVideoPlayer
+<DCVideoPlayer client:load
   src="https://media.dailycal.org/data/bug-bodycam/santa_rita_clip.mp4"
   aspectRatio="1.778"
   externalSourceLink="https://www.youtube.com/watch?v=rbhCGXOTsng"

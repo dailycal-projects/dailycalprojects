@@ -1,26 +1,28 @@
 ---
 date: "2022-02-24"
 title: "Black exodus from Berkeley"
-bylineName:
+byline:
   - "Cameron Fozi"
   - "Veronica Roseborough"
   - "Annie Lin"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/cfozi"
   - "https://www.dailycal.org/author/vroseborough"
   - "https://www.dailycal.org/author/annielin"
 subhead: "Amid gentrification and displacement, opportunity heads elsewhere"
-featuredImage: "../images/exodus-visual.JPG"
+featuredImage: "../../assets/images/exodus-visual.JPG"
 imageAttribution: "Aishwarya Jayadeep | Senior Staff"
 aboutStory: "Data for this project come from the California Department of Education and the U.S. Census."
 ---
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import BlackPopulationCensus from "../../visuals/exodus-visuals/BlackPopulationCensus";
+import BUSDBlackEnrollment from "../../visuals/exodus-visuals/BlackEnrollmentBUSD";
+import DistrictMap from "../../visuals/exodus-visuals/district-map-materials/districtMap";
 
 In 1970, Berkeley was home to more than 27,000 Black residents. Today, less than half remain.
 
 <br />
-<BlackPopulationCensus />
+<BlackPopulationCensus client:load />
 <br />
 
 The charts show the change in Berkeley and Alameda County’s Black population from 1950 to 2020, according to US Census data. As reflected in both graphs, the population steadily increased from 1950-1970. However, in Berkeley specifically, there is a sharp decline after 1970. In Alameda County, we see the population start to level off after 1990, hovering at about 185,000 today. (Note: data do not include residents who reported two or more races.)
@@ -45,7 +47,7 @@ Only 20 years later, Berkeley’s Black population leveled off and began to decl
 
 <br />
 
-<BUSDBlackEnrollment />
+<BUSDBlackEnrollment client:load />
 
 <br />
 
@@ -69,7 +71,7 @@ Amid the lessening opportunity of majority-Black neighborhoods in the East Bay, 
 
 <br />
 
-<DistrictMap />
+<DistrictMap client:only="react" />
 
 <br />
 

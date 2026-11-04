@@ -1,17 +1,19 @@
 ---
 date: "2026-09-24"
 title: "See how AC Transit ridership recovered from the pandemic"
-bylineName:
+byline:
   - "John Schultz"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/john%20schultz/"
-featuredImage: "../images/ac-transit-cover.png"
+featuredImage: "../../assets/images/ac-transit-cover.jpg"
 imageAttribution: "The Daily Californian"
 aboutStory: ""
-noTemplate: True
+layout: false
 ---
 
-<AcTransitStory
+import AcTransitStory from "../../visuals/ac-transit-visuals/AcTransitStory";
+
+<AcTransitStory client:load
   date="2026-09-24"
   about="Ridership figures come from AC Transit's automatic passenger counters, 2019-2026. The methodology page describes how they were made."
 />

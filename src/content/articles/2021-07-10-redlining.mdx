@@ -1,23 +1,27 @@
 ---
 date: "2021-07-18"
 title: "Reading between the redlines"
-bylineName:
+byline:
   - "Shannon Bonet"
   - "Cameron Fozi"
   - "Veronica Roseborough"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/sbonet"
   - "https://www.dailycal.org/author/cfozi"
   - "https://www.dailycal.org/author/vroseborough"
 subhead: "How 1934 redlining policies meet Berkeley's housing burdens of today"
-featuredImage: "../images/zip-codes.png"
-embeddedImages:
-  - "../images/holc.png"
-  - "../images/zip-codes.png"
+featuredImage: "../../assets/images/zip-codes.jpg"
 aboutStory: "Data for this project come from the California Office of Environmental Health Hazard Assessment's CalEnviroScreen 4.0 dataset."
 ---
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { Image } from "astro:assets";
+import embeddedImage0 from "../../assets/images/holc.jpg";
+import embeddedImage1 from "../../assets/images/zip-codes.jpg";
+import RedlineMap from "../../visuals/redlining-charts/map-materials/map";
+import WaterPlot from "../../visuals/redlining-charts/scatterplots/waterPlot";
+import ChemPlot from "../../visuals/redlining-charts/scatterplots/chemPlot";
+import HealthPlot from "../../visuals/redlining-charts/scatterplots/healthPlot";
+import EconPlot from "../../visuals/redlining-charts/scatterplots/econPlot";
 
 What began as an attempt to aid homebuyers and stimulate the economy resulted in the segregation of neighborhoods across the country, with lasting impacts that are still felt by marginalized Americans today.
 
@@ -39,7 +43,7 @@ These designations resulted in a physical division between Berkeley’s resident
 
 Though the Fair Housing Act of 1968 made it illegal to discriminate against individuals seeking a mortgage or housing assistance on the basis of race, it ended redlining “in name only,” according to Owens. He claims that the redline still exists in Berkeley but has shifted, preventing Black people from living north of University Avenue and east of Sacramento Street.
 
-<GatsbyImage alt="HOLC Map" image={getImage(props.localImages[0])} />
+<Image alt="HOLC Map" src={embeddedImage0} />
 <body>
   Mapping Inequality |{" "}
   <a href="https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58">
@@ -47,7 +51,7 @@ Though the Fair Housing Act of 1968 made it illegal to discriminate against indi
   </a>
 </body>
 
-<RedlineMap />
+<RedlineMap client:only="react" />
 
 On the left, a HOLC redlining map shows the East Bay geographically color-coded by lending security grade.
 
@@ -57,9 +61,9 @@ The interactive map displays the housing burden of each ZIP code area in Alameda
 
 Every few years, the OEHHA releases new data for its pioneering screening tool, CalEnviroScreen, which tracks various burdens that California communities face. We downloaded the CalEnviroScreen dataset and filtered for Alameda County census tracts. We grouped tracts by ZIP code (see the map below for all eight ZIP codes within the city of Berkeley), then plotted results for each noteworthy indicator. Our scatter plots also feature a z-axis attribute, reflected by dot size and color, that represents the housing burden percentile of each data point. Unknown or blank values were omitted.
 
-<GatsbyImage
+<Image
   alt="Berkeley ZIP code map"
-  image={getImage(props.localImages[1])}
+  src={embeddedImage1}
 />
 
 <br />
@@ -67,11 +71,11 @@ Every few years, the OEHHA releases new data for its pioneering screening tool, 
 
 In the following plots, housing burden refers to the housing burden percentile of one census tract in relation to all other census tracts in California. For example, one census tract that falls in 94705 has a housing burden percentile of 57.15, so its proportion of housing-burdened households is the same as or larger than 57.15% of census tracts in California. All values used in the plots reflect the percentile of a census tract for a given indicator.
 
-<WaterPlot />
+<WaterPlot client:load />
 
 Trends in groundwater threats across ZIP codes illustrate a strong association between housing burden and contamination. For the North Berkeley neighborhoods 94707 and 94708, the approximate median household income is $150,000 as of 2019. Our plot shows that most of the tracts in this area have a housing burden percentile that is less than 15%. Contamination burdens in these areas range from as low as the 0th to 41st percentile and are significantly less than those in 94702, 94703 and 94710 — areas directly west of MLK Jr. Way, the original redline.
 
-<ChemPlot />
+<ChemPlot client:load />
 
 Lead risk percentiles seem high across the board, with only five ZIP code areas falling below the 50th percentile. Similarly, toxic release is high across all ZIP codes measured, with almost all being between the 60-80th percentile. These measurements may indicate the existence of citywide issues rather than those that affect redlined communities.
 
@@ -79,7 +83,7 @@ Meanwhile, greater pollution and cleanup sites seem correlated with increased ho
 
 Hazardous waste sites paint a similar story to cleanup sites. Aside from a few outliers, census tracts that rise above the 75th percentile are concentrated in 94702, 94703 and 94710, all of which are west of MLK Jr. Way, the “old redline.” However, it is important to note these outliers and recognize that even though some communities are higher income and less burdened by housing cost, there are still hazardous waste sites within or near them.
 
-<HealthPlot />
+<HealthPlot client:load />
 
 The cardiovascular disease plot appears to support the well-documented racial and ethnic disparities in cardiovascular health. Areas in the previously redlined communities of 94710 and 94702 see a larger proportion of residents in the emergency room for heart attacks, while the percentiles of the predominantly white population of 94707 and 94708 fall below the 7th percentile.
 
@@ -87,7 +91,7 @@ The low birth weight plot seems more scattered across the board. However, an int
 
 Though asthma emergency room visits trend high for all areas of Berkeley except the Berkeley Hills and Thousand Oaks, a joint UC Berkeley-UCSF [study](https://www.atsjournals.org/doi/10.1164/ajrccm-conference.2019.199.1_MeetingAbstracts.A7054) found a link between historically redlined communities and asthma-related emergency room visit rates. The study highlighted factors such as increased diesel particulate matter and the psychological stresses of poverty and high crime rates.
 
-<EconPlot />
+<EconPlot client:load />
 
 Unsurprisingly, poverty and housing burden appear highly correlated. South and Central Berkeley, represented by 94704 and 94703, hold some of the highest poverty percentiles in Alameda County, with a larger proportion of the population living below double the federal poverty line of $26,500. These areas also hold the highest housing burden percentiles, suggesting a positive linear relationship between income level and housing condition.
 

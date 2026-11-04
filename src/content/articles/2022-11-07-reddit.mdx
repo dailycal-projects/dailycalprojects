@@ -1,19 +1,25 @@
 ---
 date: "2022-12-09"
 title: "We scraped Berkeley’s Reddit page r/berkeley"
-bylineName:
+byline:
   - "Isabella Borkovic"
   - "Erica Jean"
   - "Ekansh Agrawal"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/iborkovic"
   - "https://www.dailycal.org/author/ejean"
   - "https://www.dailycal.org/author/eagarwal"
 subhead: "Here is what we found"
-featuredImage: "../images/Reddit_KGT_ss.png"
+featuredImage: "../../assets/images/Reddit_KGT_ss.jpg"
 imageAttribution: "Kyle Garcia Takata | Senior Staff"
 aboutStory: "Data for this project come from information webscraped from the r/Berkeley subreddit on Oct. 10, 2022."
 ---
+
+import SubscriberLineChart from "../../visuals/reddit-visuals/subscriberCount";
+import DailyCommentLineChart from "../../visuals/reddit-visuals/dailyCommentCount";
+import PostsPerHourBarChart from "../../visuals/reddit-visuals/postsPerHourBarChart";
+import PostsPerDayBarChart from "../../visuals/reddit-visuals/postsPerDayBarChart";
+import PostsPerFlairBarChart from "../../visuals/reddit-visuals/postsPerFlairBarChart";
 
 Logoed with the UC Berkeley crest and covered in a sunset view centered around the Campanile, the Berkeley subreddit has become the community’s go-to spot to ask questions and share opinions.
 
@@ -27,7 +33,7 @@ Over the course of multiple years, Christ has answered dozens of questions on th
 
 <br />
 
-<SubscriberLineChart />
+<SubscriberLineChart client:load />
 
 <br />
 
@@ -37,7 +43,7 @@ Most notably, the page’s following started skyrocketing in 2020 — as student
 
 <br />
 
-<DailyCommentLineChart />
+<DailyCommentLineChart client:load />
 
 <br />
 
@@ -45,7 +51,7 @@ Parallel to the number of members, the total number of daily comments model a si
 
 <br />
 
-<PostsPerHourBarChart />
+<PostsPerHourBarChart client:load />
 
 <br />
 
@@ -55,7 +61,7 @@ In contrast, 5 a.m. is the least popular time to post. Presumably, most users ar
 
 <br />
 
-<PostsPerDayBarChart />
+<PostsPerDayBarChart client:load />
 
 <br />
 
@@ -63,7 +69,7 @@ Compared to Saturdays and Sundays, weekdays seem to be slightly more active time
 
 <br />
 
-<PostsPerFlairBarChart />
+<PostsPerFlairBarChart client:load />
 
 <br />
 

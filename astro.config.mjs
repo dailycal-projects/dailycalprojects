@@ -7,6 +7,12 @@ import mdx from "@astrojs/mdx";
 
 import sitemap from "@astrojs/sitemap";
 
+import { satteri } from "@astrojs/markdown-satteri";
+
+import { browserOnlyPackages } from "./src/lib/browser-only-packages.mjs";
+import { keepD3SideEffects } from "./src/lib/keep-d3-side-effects.mjs";
+import { unwrapJsxParagraphs } from "./src/lib/unwrap-jsx-paragraphs.mjs";
+
 // Get git repo info (GITHUB_REPOSITORY is set in GitHub Actions; elsewhere, e.g. on Netlify or
 // locally, this builds for the main site)
 const MAIN_REPO = "dailycal-projects/dailycalprojects";
@@ -31,8 +37,27 @@ export default defineConfig({
     "/article": "/",
   },
 
+  markdown: {
+    // <p>...</p> etc. in .mdx render like MDX 1 did; see src/lib/unwrap-jsx-paragraphs.mjs
+    processor: satteri({ mdastPlugins: [unwrapJsxParagraphs] }),
+  },
+
   devToolbar: {
     enabled: false,
+  },
+
+  vite: {
+    plugins: [
+      // Leaflet etc. can't be imported on the server; see src/lib/browser-only-packages.mjs
+      browserOnlyPackages({ sourceGlob: "src/visuals/**/*.{js,jsx,ts,tsx}" }),
+      // d3.select(...).transition() needs d3-transition kept; see src/lib/keep-d3-side-effects.mjs
+      keepD3SideEffects(),
+    ],
+    build: {
+      // Some articles' visuals bundle their data into their JavaScript (up to ~4 MB). Each only
+      // loads on its own article, so the default 500 kB warning doesn't apply.
+      chunkSizeWarningLimit: 4096,
+    },
   },
 
   integrations: [

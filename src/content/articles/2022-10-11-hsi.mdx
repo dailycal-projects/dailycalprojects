@@ -1,21 +1,21 @@
 ---
 date: "2022-10-13"
 title: "In Latine-dominant California, campus demographics, resources lag"
-bylineName:
+byline:
   - "Paloma Torres"
   - "Cameron Fozi"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/ptorres"
   - "https://www.dailycal.org/author/cfozi"
 subhead: "With a troubled history, how will UC Berkeley serve its underrepresented Latine and Hispanic students?"
-featuredImage: "../images/HSI-Alison-Xiong-staff.png"
+featuredImage: "../../assets/images/HSI-Alison-Xiong-staff.jpg"
 imageAttribution: "Alison Xiong | Staff"
 aboutStory: "Data for this project come from CalAnswers and the California Department of Education."
-embeddedImages:
-  - "../images/1999-protest-danjungfile.png"
 ---
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { Image } from "astro:assets";
+import embeddedImage0 from "../../assets/images/1999-protest-danjungfile.jpg";
+import HSILineChart from "../../visuals/HSI-visuals/HSILineChart";
 
 _Content warning: police brutality_
 
@@ -79,7 +79,7 @@ However, the HSI designation has its complications. In 2021, California’s popu
 
 <br />
 
-<HSILineChart />
+<HSILineChart client:load />
 
 <br />
 
@@ -141,9 +141,9 @@ He said he did not see a future in which campus takes an equal part as students 
     position: "relative",
   }}
 >
-  <GatsbyImage
+  <Image
     alt="Photo of three student protesters with locked arms being held in chokeholds by various UCPD officers in the campus Social Sciences Building."
-    image={getImage(props.localImages[0])}
+    src={embeddedImage0}
   />
   <div
     style={{

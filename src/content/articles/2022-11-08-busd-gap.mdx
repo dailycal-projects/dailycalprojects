@@ -1,17 +1,17 @@
 ---
 date: "2022-11-08"
 title: "Score gaps between Black and white BUSD students among highest in state"
-bylineName:
+byline:
   - "Cameron Fozi"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/cfozi"
 subhead: "Statewide test score data for 2022 reveal imbalance in math and English performance"
-featuredImage: "../images/gaps-kimberly-fong-staff.png"
+featuredImage: "../../assets/images/gaps-kimberly-fong-staff.jpg"
 imageAttribution: "Kimberly Fong | Staff"
 aboutStory: "Data for this project come from the California Department of Education."
 ---
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import GapStackedBarChart from "../../visuals/gap-visuals/gapStackedBarChart";
 
 In 1968, Berkeley Unified School District, or BUSD, was among the first in the United States to implement a busing plan to fully racially integrate its schools. More than 50 years later, school board officials still grapple with how to advance equity for its underserved students.
 
@@ -20,7 +20,7 @@ California students from third through eighth grades as well as 11th grade took 
 The racial performance gaps in math and ELA are the fourth and fifth highest in the state, a Daily Californian analysis of California Department of Education data found.
 
 <br />
-<GapStackedBarChart />
+<GapStackedBarChart client:load />
 <br />
 
 _The charts above show the five California school districts with the largest score gaps between Black and white students in ELA and math across all grade levels._

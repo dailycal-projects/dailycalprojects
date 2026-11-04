@@ -1,19 +1,21 @@
 ---
 date: "2023-06-30"
 title: "Sound the alarm: A look inside WarnMe notifications"
-bylineName:
+byline:
   - "Arfa Momin"
   - "Anishi Patel"
   - "Lydia Sidhom"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/amomin"
   - "https://dailycal.org/author/anishipatel"
   - "https://dailycal.org/author/lsidhom"
 subhead: Campus community, UCPD and the data weigh in
-featuredImage: "../images/warnme.png"
+featuredImage: "../../assets/images/warnme.jpg"
 imageAttribution: "Esmeralda Velasquez | Staff"
 aboutStory: "Information for this project comes from the UCPD Daily Crime Logs."
 ---
+
+import WarnmeHistogram from "../../visuals/warnme-visuals/warnmeHistogram";
 
 _Content warning: gun violence_
 
@@ -57,11 +59,11 @@ Baum-Harvey alleged that WarnMe emails are oftentimes delayed, sometimes by hour
 
 <br />
 
-<WarnmeHistogram />
+<WarnmeHistogram client:load />
 
 <br />
 
-_This visualization was created from 98 WarnMes sent from the fall 2021 to spring 2023 semesters, excluding summer months and winter break. Only emergency notifications and timely warnings are included with community advisories excluded. Data points for incidents where time and date reported were missing on UCPD and BPD public crime logs were also excluded. _
+_This visualization was created from 98 WarnMes sent from the fall 2021 to spring 2023 semesters, excluding summer months and winter break. Only emergency notifications and timely warnings are included with community advisories excluded. Data points for incidents where time and date reported were missing on UCPD and BPD public crime logs were also excluded._
 
 The average time lag between when an incident is reported to the police department and when the UC Berkeley community is notified via a WarnMe email is about 2 hours and 35 minutes, based on data extracted from WarnMe emails and the UCPD crime log.
 

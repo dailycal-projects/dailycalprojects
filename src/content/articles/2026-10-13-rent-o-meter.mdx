@@ -1,15 +1,17 @@
 ---
 date: "2026-10-13"
 title: "Paying too much for rent? See how it stacks up against Berkeley"
-bylineName:
+byline:
   - "John Schultz"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/john%20schultz/"
 subhead: "Look up your Berkeley apartment and see how your rent compares to the rest of your building and to tenants in the city like you."
-featuredImage: "../images/rent-o-meter-cover.png"
+featuredImage: "../../assets/images/rent-o-meter-cover.jpg"
 imageAttribution: "The Daily Californian"
 aboutStory: ""
-noTemplate: True
+layout: false
 ---
 
-<RentOMeterStory />
+import RentOMeterStory from "../../visuals/rent-o-meter-visuals/RentOMeterStory";
+
+<RentOMeterStory client:load />

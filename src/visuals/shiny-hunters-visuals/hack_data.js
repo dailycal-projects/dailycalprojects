@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-webpack-loader-syntax
-import rawCsv from '!!raw-loader!./data.csv';
+import rawCsv from './data.csv?raw';
 
 function parseCsv(csv) {
   const rows = [];

@@ -1,15 +1,17 @@
 ---
 date: "2026-08-19"
 title: "Fare-free Clipper card saves students $5M, new BayPass referendum projected to break even"
-bylineName:
+byline:
   - "Smrithi Senthilnathan"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/smrithi%20senthilnathan/"
-featuredImage: "../images/clipper_Sydney Wolfe_ss.jpg"
+featuredImage: "../../assets/images/clipper_Sydney Wolfe_ss.jpg"
 imageAttribution: "Sydney Wolfe | File"
 aboutStory: "Data from this project came from the Metropolitan Transportation Commission and UC Berkeley."
-noTemplate: False
 ---
+
+import DatawrapperChart from "../../components/DatawrapperChart.jsx";
+import BayPassCalculator from "../../visuals/clipper-visuals/baypasscalculator";
 
 The UC Berkeley BayPass program, which includes the similarly named Clipper BayPass and AC Transit EasyPass, has currently saved students $5 million. A year after the program’s implementation, the new Clipper BayPass portion, which includes 23 Bay Area public transit agencies excluding AC Transit, is projected to break even next month, based on the previous 11 months of available data.
 
@@ -17,26 +19,26 @@ In the 2025 ASUC election, students voted on the BayPass Referendum to grant unl
 
 The Daily Californian analyzed data on public transit ridership trends from the first year of the BayPass Referendum’s operation, to see if the referendum was worth it for UC Berkeley students. Data was obtained from campus and the Metropolitan Transportation Commission, which coordinates Bay Area transit.
 
-<DatawrapperChart chartId="AFMdM" />
+<DatawrapperChart client:load chartId="AFMdM" />
 Students paid roughly $14.8 million in transit fees overall, while generating $20.1
 million in total ride value. This netted $5.3 million in savings for the student
 body. On average, each cardholder saved $124.{" "}
 
 However, a disproportionate number of rides came through AC Transit EasyPass. When looking at Clipper BayPass in isolation, students have spent roughly $10.7 million, while only taking $10.3 million worth of rides. When including data for July 2026, costs are expected to break even with the value of rides taken, a year after the inception of the program. Some transit agencies have varying fares depending on the length of the trip, and costs were averaged for calculation purposes.
 
-<DatawrapperChart chartId="pxjnp" />
+<DatawrapperChart client:load chartId="pxjnp" />
 
 Trips on AC Transit and BART make up about 90% of all trips taken. In total, students have taken more than 6 million trips in the past year, across more than 40,000 active cardholders. As of last fall, 94% of eligible card holders had used their BayPass card.
 
-<DatawrapperChart chartId="uzR9I" />
+<DatawrapperChart client:load chartId="uzR9I" />
 
 Ridership trends are not equal across students. While most students take an average of 67 trips per semester, there are some outliers with more than 1,000 trips in the span of a semester.
 
-<DatawrapperChart chartId="zC2kp" />
+<DatawrapperChart client:load chartId="zC2kp" />
 
 We built a tool to calculate if the BayPass fee was worth it for you, based on your average weekly ridership trends. Although the tool only includes AC Transit and BART, it can help identify BayPass’s usefulness to you.
 
-<BayPassCalculator />
+<BayPassCalculator client:only="react" />
 
 <br />
 

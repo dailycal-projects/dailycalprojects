@@ -67,11 +67,12 @@ const astroClientScripts = ["**/*.astro/*.js", "**/*.astro/*.ts"];
 // Code carried over unchanged from the old Gatsby site (also in .prettierignore)
 const legacyCode = [
   "src/visuals/**",
-  "src/components/articleFooter.js",
-  "src/components/buttonList.js",
+  "src/components/articleFooter.jsx",
+  "src/components/buttonList.jsx",
   "src/styles/customTheme.js",
   "src/styles/theme.js",
   "src/styles/button.module.css",
+  "src/styles/darkStory.css",
 ];
 
 /** @type {import("eslint").Linter.Config[]} */
@@ -214,6 +215,10 @@ export default [
       ...reactJsxRules,
       "mdx/remark": "off",
       "no-unused-expressions": "off",
+      // Articles are prose: reflowing it can change how it renders (e.g. a line ending in two
+      // spaces is a line break), and older articles' markup is kept as it was written
+      "prettier/prettier": "off",
+      "@stylistic/jsx-self-closing-comp": "off",
     },
   },
 

@@ -1,17 +1,20 @@
 ---
 date: "2022-09-22"
 title: "UC Berkeley’s repatriation process remains far from over"
-bylineName:
+byline:
   - "Paloma Torres"
   - "Nibras Suliman"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/author/ptorres"
   - "https://www.dailycal.org/author/nsuliman"
 subhead: "More than 100,000 Native American artifacts left in limbo"
-featuredImage: "../images/uni-hall.png"
+featuredImage: "../../assets/images/uni-hall.jpg"
 imageAttribution: "Celine Bellegarda | Senior Staff"
 aboutStory: "Data for this project come from the National Park Service. Museums and federal agencies with collections subject to the Native American Graves Protection and Repatriation Act must submit inventories of human remains and objects."
 ---
+
+import ArtifactsBarChart from "../../visuals/artifacts-visuals/artifactsBarChart";
+import ArtifactsPieChart from "../../visuals/artifacts-visuals/artifactsPieChart";
 
 According to the National Park Service, UC Berkeley has the largest collection of Native American cultural artifacts and human remains in the country with more than 9,000 ancestors and more than 113,000 cultural objects.
 
@@ -21,7 +24,7 @@ Factors that built UC Berkeley’s extensive collection include a slew of Bay Ar
 
 <br />
 
-<ArtifactsBarChart />
+<ArtifactsBarChart client:load />
 
 <br />
 
@@ -53,7 +56,7 @@ When asked about the changes made following the 2021 University of California po
 
 <br />
 
-<ArtifactsPieChart />
+<ArtifactsPieChart client:load />
 
 <br />
 

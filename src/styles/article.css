@@ -69,3 +69,35 @@
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+
+/* Images in the article body (e.g. <Image> in .mdx) fit the column */
+.content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+ * The old site's article body text (its articleContent styles), which the visuals in older articles
+ * inherit. article.content: more specific than legacy-typography.css's base font for .content.
+ */
+article.content {
+  font-family: Georgia, sans-serif;
+  font-size: 17px;
+}
+
+/*
+ * recharts measures axis labels in a hidden span on <body> to decide which ones fit (at the labels'
+ * own font size). On the old site that span had the old body font (see legacy-typography.css);
+ * measure in it too, so the same labels fit.
+ */
+#recharts_measurement_span {
+  font-family:
+    "Open Sans",
+    -apple-system,
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica",
+    "Arial",
+    sans-serif;
+}

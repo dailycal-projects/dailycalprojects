@@ -2,14 +2,22 @@
 date: "2026-11-03"
 title: "Analysis reveals Berkeley City Council voting blocs"
 subhead: ""
-bylineName:
+byline:
   - "Esha Bansiya"
-bylineUrl:
+bylineLinks:
   - "https://www.dailycal.org/users/profile/Esha%20Bansiya/"
 aboutStory: "Data for this project came from the City of Berkeley's Records Online system"
-featuredImage: "../images/citybloc_3.png"
+featuredImage: "../../assets/images/citybloc_3.jpg"
 hideHeroImage: true
 ---
+
+import Topics from "../../visuals/citybloc-visuals/Topics";
+import Dissents from "../../visuals/citybloc-visuals/Dissents";
+import Agreement from "../../visuals/citybloc-visuals/Agreement";
+import BlocUnity from "../../visuals/citybloc-visuals/BlocUnity";
+import BlocMoves from "../../visuals/citybloc-visuals/BlocMoves";
+import SplitSides from "../../visuals/citybloc-visuals/SplitSides";
+import MotionExplorer from "../../visuals/citybloc-visuals/MotionExplorer";
 
 Since December 1, 2024 the Berkeley City Council has voted on more than a thousand motions. Eight City Council members and Mayor Adena Ishii weigh in, each getting their own vote. The Daily Californian analyzed City Council meeting minutes over the past term until August to see how City Council members voted.
 
@@ -25,30 +33,30 @@ Seventy-five procedural & agenda items, ceremonial votes and committee votes wer
 
 Policing & surveillance and advocacy & resolutions had the highest percentage of dissents.
 
-<Topics />
+<Topics client:load />
 
 A dissent is counted if even one council member votes differently. Thirty of the 54 had only one member disagree. District 7 Councilmember Cecilia Lunaparra was the sole dissent for 15 motions, and dissented on 9 other motions with at least one other person.
 
-<Dissents />
+<Dissents client:load />
 
 The other council members generally made most of their dissents with other council members, often the same set of them. Coordinated dissents can form a bloc in specific groups of motions. The chart below shows how often each pair of council members voted the same for dissented motions.
 
-<Agreement />
+<Agreement client:load />
 
 Using hierarchical clustering, a statistical method that builds a tree linking the members who most often vote the same way, we found voting blocs that account for a majority of the split decisions.
 
 District 3 Councilmember Ben Bartlett, District 4 Councilmember Igor Tregub and Ishii form Bloc A; District 1 Councilmember Rashi Kesarwani, District 2 Councilmember Terry Taplin, District 6 Councilmember Brent Blackaby and District 8 Councilmember Mark Humbert form Bloc B and Lunaparra and District 5 Councilmember Shoshana O’Keefe do not statistically align with either bloc. Bloc A has voted the same in 70% of motions, and Bloc B has for 65% of motions.
 
-<BlocUnity />
+<BlocUnity client:load />
 
 While these blocs are consistent when analyzed over all contested motions, council members form different blocs when looking at subsets of contested motions in specific topics.
 
-<BlocMoves />
+<BlocMoves client:load />
 
 On 10 motions, the two blocs took opposite sides. The bloc splits are most visible in these decisive motions.
 
-<SplitSides />
+<SplitSides client:load />
 
 View the table below to see every motion and filter for specific dissenting members.
 
-<MotionExplorer />
+<MotionExplorer client:load />

@@ -1,16 +1,18 @@
 ---
 date: "2026-10-12"
 title: "The Nobel Laureates of UC Berkeley"
-bylineName:
+byline:
   - "Esha Bansiya"
   - "Philip Park"
-bylineUrl:
+bylineLinks:
   - ""
   - ""
-featuredImage: "../images/nobel-cover-grid.png"
+featuredImage: "../../assets/images/nobel-cover-grid.jpg"
 hideHeroImage: true
 aboutStory: "This story uses Berkeley Inspire’s list of 63 Nobel laureates, with award and affiliation data spanning 1934–2025. Biographies and informti"
 ---
+
+import NobelScrolly, { NobelNote } from "../../visuals/nobel-visuals/NobelScrolly";
 
 <section className="nobel-opening">
 
@@ -24,7 +26,7 @@ The campus’s list includes laureates who hold a degree from UC Berkeley, held 
 
 </section>
 
-<NobelScrolly>
+<NobelScrolly client:load>
 
 <section
   className="intro-scrolly__step"
@@ -124,7 +126,7 @@ The campus’s list includes laureates who hold a degree from UC Berkeley, held 
     <p>
       Sixteen laureates have worked at{" "}
       <strong>
-        <NobelNote kind="lab">Lawrence Berkeley National Laboratory.</NobelNote>
+        <NobelNote client:load kind="lab">Lawrence Berkeley National Laboratory.</NobelNote>
       </strong>{" "}
       All of them received prizes in physics or chemistry, beginning with Ernest
       Lawrence’s award for the cyclotron. Their discoveries range from finding
@@ -140,7 +142,7 @@ The campus’s list includes laureates who hold a degree from UC Berkeley, held 
   <div className="intro-scrolly__box intro-scrolly__box--story">
     <p>
       Several laureates also contributed to the{" "}
-      <NobelNote kind="manhattan">Manhattan Project</NobelNote>, the United
+      <NobelNote client:load kind="manhattan">Manhattan Project</NobelNote>, the United
       States’ project during World War II to develop the first atomic bomb.
     </p>
   </div>
