@@ -1,64 +1,19 @@
-/* Styling for article bodies (src/layouts/ArticleLayout.astro), inherited from the old Daily Cal Data website's styling */
+/*
+ * Styling for article bodies (.content in src/layouts/ArticleLayout.astro), on top of the old
+ * site's base styles (legacy-typography.css), which already set headings, spacing and image widths.
+ */
 
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: var(--font-list);
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
+/*
+ * The old site's article body text (its articleContent styles), which the visuals in older articles
+ * inherit. article.content: more specific than legacy-typography.css's base font for .content.
+ */
+article.content {
+  font-family: Georgia, sans-serif;
+  font-size: 17px;
 }
 
-.content h1 {
-  font-size: 2rem;
-  line-height: 1.1;
-}
-
-.content h2 {
-  font-size: 1.51572rem;
-  line-height: 1.1;
-}
-
-.content h3 {
-  font-size: 1.31951rem;
-  line-height: 1.1;
-}
-
-.content h4 {
-  font-size: 1rem;
-  line-height: 1.1;
-}
-
-.content h5 {
-  font-size: 0.87055rem;
-  line-height: 1.1;
-}
-
-.content h6 {
-  font-size: 0.81225rem;
-  line-height: 1.1;
-}
-
+/* Paragraphs, as the old site's article template styled them */
 .content p {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
   font-size: 17px;
   font-family: "Georgia", sans-serif;
   line-height: 1.43;
@@ -70,19 +25,9 @@
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
-/* Images in the article body (e.g. <Image> in .mdx) fit the column */
+/* Images in the article body keep their proportions when scaled to the column */
 .content img {
-  max-width: 100%;
   height: auto;
-}
-
-/*
- * The old site's article body text (its articleContent styles), which the visuals in older articles
- * inherit. article.content: more specific than legacy-typography.css's base font for .content.
- */
-article.content {
-  font-family: Georgia, sans-serif;
-  font-size: 17px;
 }
 
 /*

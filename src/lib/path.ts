@@ -6,7 +6,7 @@
 const EXTERNAL_OR_SPECIAL = /^(?:[a-z][a-z\d+\-.]*:|\/\/|#)/i;
 
 /** Returns true if a URL points off-site (or is an in-page anchor), so it shouldn't get the base. */
-export function isExternal(url: string): boolean {
+function isExternal(url: string): boolean {
   return EXTERNAL_OR_SPECIAL.test(url);
 }
 
