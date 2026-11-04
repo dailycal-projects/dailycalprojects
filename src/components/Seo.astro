@@ -1,0 +1,148 @@
+---
+/**
+ * Per-page SEO: title/description, canonical link, robots directive, Open Graph + X (Twitter)
+ * card tags, and JSON-LD structured data. Rendered once in PageLayout's <head>, so every page gets
+ * it automatically; pages pass their values as PageLayout props.
+ */
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+import logo from "../assets/site/dclogo-circle.png";
+import { site } from "../config/site";
+import { withBase } from "../lib/path";
+
+export interface Props {
+  title: string;
+  /**
+   * The article's plain headline for JSON-LD, without the " | The Daily Californian" suffix
+   * (Google's structured-data guidelines flag that as boilerplate). Defaults to `title`.
+   */
+  headline?: string;
+  description?: string;
+  /** Social share image. Defaults to the Daily Cal logo. */
+  image?: ImageMetadata | string;
+  imageAlt?: string;
+  type?: "website" | "article";
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  authors?: string[];
+  /** Keep a page out of search results (e.g. the 404 page). */
+  noindex?: boolean;
+  /** Populates <meta name="keywords">; the tag is omitted entirely when unset. */
+  keywords?: string[];
+}
+
+const {
+  title,
+  headline = title,
+  description = site.description,
+  image = logo,
+  imageAlt,
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  authors = [],
+  noindex = false,
+  keywords,
+} = Astro.props;
+
+if (type === "article" && (!publishedTime || authors.length === 0)) {
+  throw new Error(`SEO for article "${title}" needs publishedTime and authors.`);
+}
+
+// astro.config.mjs always sets `site`
+const siteURL = Astro.site!;
+const canonicalURL = new URL(Astro.url.pathname, siteURL).href;
+
+interface ResolvedImage {
+  url: string;
+  width?: number;
+  height?: number;
+}
+
+// Absolute URL (and size, when known) of an image. Local images are converted to WebP, which
+// every social platform supports (AVIF isn't).
+async function resolveImage(source: ImageMetadata | string): Promise<ResolvedImage> {
+  if (typeof source === "string") {
+    // withBase() leaves external URLs alone and base-prefixes a public/ root path
+    return { url: new URL(withBase(source), siteURL).href };
+  }
+  const optimized = await getImage({ src: source, format: "webp" });
+  return {
+    // Astro already includes the base in optimized image URLs
+    url: new URL(optimized.src, siteURL).href,
+    width: Number(optimized.attributes.width ?? source.width),
+    height: Number(optimized.attributes.height ?? source.height),
+  };
+}
+
+const ogImage = await resolveImage(image);
+const publisherLogo = await resolveImage(logo);
+
+const publisher = {
+  "@type": "Organization",
+  name: site.name,
+  url: new URL(withBase("/"), siteURL).href,
+  logo: { "@type": "ImageObject", url: publisherLogo.url },
+};
+
+const structuredData =
+  type === "article" && publishedTime
+    ? {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        headline,
+        description,
+        image: [ogImage.url],
+        datePublished: publishedTime.toISOString(),
+        dateModified: (modifiedTime ?? publishedTime).toISOString(),
+        author: authors.map((name) => ({ "@type": "Person", name })),
+        publisher,
+        mainEntityOfPage: { "@type": "WebPage", "@id": canonicalURL },
+      }
+    : {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: site.name,
+        description,
+        url: new URL(withBase("/"), siteURL).href,
+        publisher,
+      };
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+{keywords && keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}
+<link rel="canonical" href={canonicalURL} />
+<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+
+{/* Open Graph */}
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content={ogImage.url} />
+{ogImage.width && <meta property="og:image:width" content={String(ogImage.width)} />}
+{ogImage.height && <meta property="og:image:height" content={String(ogImage.height)} />}
+{imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+{type === "article" && publishedTime && (
+  <meta property="article:published_time" content={publishedTime.toISOString()} />
+)}
+{type === "article" && modifiedTime && (
+  <meta property="article:modified_time" content={modifiedTime.toISOString()} />
+)}
+{type === "article" && authors.map((name) => <meta property="article:author" content={name} />)}
+
+{/* X (formerly Twitter) card */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage.url} />
+{imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
+
+{/* Structured data ("<" escaped so a value can't close the script tag early) */}
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")}
+/>

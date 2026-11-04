@@ -1,0 +1,16 @@
+// Cloudflare Workers config: the site is deployed as static assets only. There's no Worker script
+// ("main"), so every request is served straight from Cloudflare's asset storage, which isn't billed
+// per request. Deploy with `npm run deploy` (builds, then `wrangler deploy`).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "data",
+  "compatibility_date": "2026-11-04",
+  "assets": {
+    // Astro's build output, including the generated _redirects (see src/lib/redirects.mjs)
+    "directory": "./dist",
+    // Pages are built as <path>/index.html and served at <path>/
+    "html_handling": "auto-trailing-slash",
+    // Unknown paths get the site's 404 page (src/pages/404.astro)
+    "not_found_handling": "404-page",
+  },
+}

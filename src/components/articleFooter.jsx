@@ -1,0 +1,78 @@
+import React from 'react';
+import { withStyles } from '../lib/compat/mui-styles';
+import { Link } from '../lib/compat/gatsby';
+import { styles } from '../styles/customTheme';
+
+const ArticleFooter = ({ classes, about, jointDept }) => (
+  <div className={classes.footerContainer}>
+    <br />
+    <div className={classes.footerCard}>
+      <h3>
+        <b> About this story </b>
+      </h3>
+      {jointDept
+        ? (
+          <p>
+            This project was developed jointly by the Data Department and the
+            {' '}
+            {jointDept}
+            {' '}
+            Department at The Daily Californian.
+          </p>
+        )
+        : <p>This project was developed by the Data Department at The Daily Californian.</p>}
+      <p>
+        {about}
+      </p>
+
+      { jointDept
+        ? (
+          <p>
+            <Link
+              to="https://www.dailycal.org/site/contact-us.html"
+              style={{ color: 'gray', fontSize: '14px' }}
+            >
+              Contact the Daily Californian
+            </Link>
+          </p>
+        )
+        : (
+          <p>
+            Questions, comments or corrections? Email
+            {' '}
+            <a href="mailto: projects@dailycal.org.">projects@dailycal.org</a>
+            . Code, data and text are open-source on
+            {' '}
+            <a href="https://github.com/dailycal-projects/dailycalprojects">GitHub</a>
+            .
+          </p>
+        )}
+    </div>
+
+    <div className={classes.footerCard}>
+      <h3>
+        <b>
+          Support us
+        </b>
+      </h3>
+      <p>
+        We are a nonprofit, student-run newsroom. Please consider
+        {' '}
+        <a href="https://givebutter.com/w68cQv">donating</a>
+        {' '}
+        to support our coverage.
+      </p>
+    </div>
+    <p style={{ fontSize: '14px' }}>
+      {' '}
+      Copyright ©
+      {' '}
+      {new Date().getFullYear()}
+      {' '}
+      The Daily Californian, The Independent Berkeley Student Publishing Co., Inc.
+      {' '}
+    </p>
+  </div>
+);
+
+export default withStyles(styles)(ArticleFooter);

@@ -1,0 +1,212 @@
+---
+/** The layout for articles (layout: true): header, title, hero image, byline, body and footer. */
+import { Image } from "astro:assets";
+import PageLayout from "./PageLayout.astro";
+import { Link } from "../components/Link";
+import { site } from "../config/site";
+import { type Article, articleDescription, dateFormat, featuredImageAlt } from "../lib/articles";
+import "../styles/article.css";
+// The old site's base styles, which the visuals in older articles were designed for
+import "../styles/legacy-typography.css";
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const {
+  date,
+  title,
+  byline,
+  featuredImage,
+  secondaryFeaturedImage,
+  imageAttribution,
+  keywords,
+  subhead,
+  hideHeroImage,
+  bylineLinks,
+  imageCaption,
+  aboutStory,
+  jointDept,
+} = article.data;
+
+const imageAlt = featuredImageAlt(article);
+
+// Check if is joint-department article
+const isJointDept = typeof jointDept === "string" && jointDept.trim().length > 0;
+
+// Each author's byline link: their bylineLinks entry if set, otherwise their profile
+const authorLink = (author: string, i: number) => {
+  const link = bylineLinks[i]?.trim();
+  return link ? link : site.authorProfileUrl(author);
+};
+---
+
+<PageLayout
+  title={`${title} | ${site.articleTitleSuffix}`}
+  headline={title}
+  description={articleDescription(article)}
+  image={featuredImage}
+  imageAlt={imageAlt}
+  type="article"
+  publishedTime={date}
+  authors={byline}
+  keywords={keywords}
+>
+  <div class="article">
+    <div class="centeredItems">
+      {/* Header */}
+      <h1 class="title">{title}</h1>
+      {subhead && <h3 class="subhead">{subhead}</h3>}
+      <h5 class="date">
+        <time datetime={date.toISOString()}>{dateFormat.format(date)}</time>
+      </h5>
+
+      {/* Featured image */}
+      {!hideHeroImage && (
+        <div class="imageContainer">
+          <Image
+            src={secondaryFeaturedImage ?? featuredImage}
+            alt={imageAlt}
+            class="image"
+            loading="eager"
+          />
+
+          {imageCaption && (
+            <div class="imageCaption">
+              <em class="caption">{imageCaption}</em>
+            </div>
+          )}
+
+          {imageAttribution && <h5 class="imageAttribution">{imageAttribution}</h5>}
+        </div>
+      )}
+    </div>
+
+    {/* Byline (flatMap avoids whitespace between authors) */}
+    <div class="byline">
+      <span>By </span>
+      {byline.flatMap((author: string, i: number) => [
+        ...(i > 0 ? [i === byline.length - 1 ? " & " : ", "] : []),
+        <Link href={authorLink(author, i)}>{author}</Link>,
+      ])}
+    </div>
+
+    {/* Article */}
+    <article class="content">
+      <slot />
+    </article>
+
+    {/* About story */}
+    <div class="footerCard content">
+      <h3>About this Story</h3>
+      {isJointDept ? (
+        <p>
+          This project was developed jointly by the Data Department and the {jointDept} Department
+          at The Daily Californian.
+        </p>
+      ) : (
+        <p>This project was developed by the Data Department at The Daily Californian.</p>
+      )}
+      {aboutStory && <p>{aboutStory}</p>}
+
+      {isJointDept ? (
+        <p>
+          <Link href={site.contactUrl} style={{ color: "gray", fontSize: "14px" }}>
+            Contact the Daily Californian
+          </Link>
+        </p>
+      ) : (
+        <p>
+          Questions, comments or corrections? Email{" "}
+          <Link href={`mailto:${site.contactEmail}`}>{site.contactEmail}</Link>. Code, data and text
+          are open-source on <Link href={site.githubUrl}>GitHub</Link>.
+        </p>
+      )}
+    </div>
+
+    <div class="footerCard content">
+      <h3>Support us</h3>
+      <p>
+        We are a nonprofit, student-run newsroom. Please consider{" "}
+        <Link href={site.donateUrl}>donating</Link> to support our coverage.
+      </p>
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  .article {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    margin: 0 auto;
+    max-width: 640px;
+    font-family: Georgia, sans-serif;
+  }
+  /* Header */
+  .centeredItems {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .imageContainer .image {
+    width: 100%;
+    height: auto;
+  }
+  .imageContainer .caption,
+  .imageContainer h5 {
+    margin-top: 10px;
+  }
+  .byline {
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  .caption {
+    font-family: var(--font-list);
+    color: var(--palette-dark-gray);
+  }
+  .title {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: normal;
+    text-align: center;
+  }
+  .subhead {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: normal;
+    margin-top: 0;
+    color: var(--palette-dark-gray);
+    font-family: var(--font-list);
+    text-align: center;
+  }
+  .date {
+    text-align: center;
+  }
+  .date,
+  .imageAttribution {
+    margin: 0 0 1.45rem 0;
+    color: var(--palette-dark-gray);
+    font-family: var(--font-list);
+    font-weight: 500;
+    font-size: 0.87055rem;
+    line-height: 1.1;
+  }
+  /* Footer */
+  .footerCard {
+    padding: 20px 20px 0 20px;
+    margin: 10px 0 20px 0px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  .footerCard p {
+    color: var(--palette-dark-gray);
+    font-family: var(--font-list);
+    font-weight: 500;
+    font-size: 15px;
+  }
+</style>

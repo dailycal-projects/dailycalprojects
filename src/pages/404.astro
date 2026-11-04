@@ -1,0 +1,47 @@
+---
+import { site } from "../config/site";
+import PageLayout from "../layouts/PageLayout.astro";
+import { withBase } from "../lib/path";
+---
+
+<PageLayout
+  title={`Page Not Found — ${site.name}`}
+  description="The page you're looking for couldn't be found."
+  noindex
+>
+  <div class="notFound">
+    <h1>404: Not Found</h1>
+    <p>The page you're looking for doesn't exist or has moved.</p>
+    <nav aria-label="Where to go instead">
+      <a href={withBase("/")}>Home</a>
+    </nav>
+  </div>
+</PageLayout>
+
+<style>
+  .notFound {
+    text-align: center;
+    padding: 60px 12px;
+    font-family: Georgia, sans-serif;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: var(--palette-black);
+  }
+  p {
+    color: var(--palette-dark-gray);
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    font-family: var(--font-list);
+    font-size: 18px;
+  }
+  a {
+    color: var(--palette-dark-blue);
+  }
+</style>

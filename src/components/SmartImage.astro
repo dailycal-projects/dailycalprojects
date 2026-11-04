@@ -1,0 +1,26 @@
+---
+/**
+ * Renders an optimized <Image> for an imported image (ImageMetadata), or a plain <img> for a URL
+ * string: an external URL, or a site-root path to a file in public/. astro:assets's <Image> only
+ * accepts imported images (or remote ones with explicit dimensions), so strings get a plain <img>.
+ */
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { withBase } from "../lib/path";
+
+interface Props {
+  src: ImageMetadata | string;
+  alt: string;
+  /** The `sizes` attribute for an imported image: how wide it renders on the page. */
+  sizes?: string;
+}
+
+const { src, alt, sizes = "(max-width: 640px) 100vw, 640px" } = Astro.props;
+---
+
+{typeof src === "string" ? (
+  // withBase() leaves external URLs alone and base-prefixes a public/ root path
+  <img src={withBase(src)} alt={alt} loading="lazy" decoding="async" />
+) : (
+  <Image src={src} alt={alt} widths={[640, 1280]} sizes={sizes} />
+)}

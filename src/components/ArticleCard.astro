@@ -1,0 +1,71 @@
+---
+/** A linked card for an article (date, featured image, title), used on the homepage. */
+import { Image } from "astro:assets";
+import { type Article, articlePath, dateFormat, featuredImageAlt } from "../lib/articles";
+import { withBase } from "../lib/path";
+
+interface Props {
+  article: Article;
+  /** Load the image eagerly (for cards visible without scrolling). */
+  eager?: boolean;
+}
+
+const { article, eager = false } = Astro.props;
+---
+
+<a href={withBase(articlePath(article))} class="articleCard">
+  <time class="date" datetime={article.data.date.toISOString()}>
+    {dateFormat.format(article.data.date)}
+  </time>
+  <Image
+    src={article.data.featuredImage}
+    alt={featuredImageAlt(article)}
+    class="featuredImage"
+    widths={[360, 720]}
+    sizes="360px"
+    loading={eager ? "eager" : "lazy"}
+  />
+  <span class="title">{article.data.title}</span>
+</a>
+
+<style>
+  .articleCard {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    max-width: 100%;
+    margin: 20px;
+    font-size: 15px;
+    font-family: Georgia, sans-serif;
+    text-decoration: none;
+  }
+
+  .articleCard:hover .title {
+    text-decoration: underline;
+  }
+
+  .date {
+    color: var(--palette-gray);
+    border-top: 1px solid var(--palette-dark-gray);
+    font-weight: 400;
+    line-height: normal;
+    font-size: 12px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .featuredImage {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 360 / 200;
+    object-fit: cover;
+  }
+
+  .title {
+    font-weight: 400;
+    line-height: normal;
+    color: var(--palette-black);
+    font-size: 24px;
+    margin-top: 10px;
+  }
+</style>

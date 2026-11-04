@@ -1,0 +1,38 @@
+---
+import { render } from "astro:content";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import BlankArticleLayout from "../../layouts/BlankArticleLayout.astro";
+import { type Article, getArticles } from "../../lib/articles";
+
+/** Get a list of paths to generate */
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+interface Props {
+  article: Article;
+}
+
+// Render article, in the article layout or (layout: false) as a blank page
+const { article } = Astro.props;
+const { Content } = await render(article);
+const Layout = article.data.layout ? ArticleLayout : BlankArticleLayout;
+
+// The article's frontmatter, available in its .mdx as `props.frontmatter`, the way the old Gatsby
+// site passed it (e.g. <Story title={props.frontmatter.title} />): the date as "yyyy-mm-dd", and
+// the byline under its old names too.
+const frontmatter = {
+  ...article.data,
+  date: article.data.date.toISOString().slice(0, 10),
+  bylineName: article.data.byline,
+  bylineUrl: article.data.bylineLinks,
+};
+---
+
+<Layout article={article}>
+  <Content frontmatter={frontmatter} />
+</Layout>

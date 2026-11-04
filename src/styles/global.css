@@ -1,0 +1,11 @@
+:root {
+  --palette-black: #0e141b;
+  --palette-dark-gray: rgba(67, 67, 67, 1);
+  --palette-gray: #949494;
+  --palette-light-gray: #f8f8f8;
+  --palette-dark-blue: #1d6a92;
+
+  --font-list:
+    "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial",
+    sans-serif;
+}
