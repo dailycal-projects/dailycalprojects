@@ -76,8 +76,7 @@ export default defineConfig({
       filter: (page) => !sitePath(page).startsWith("/editors/"),
       serialize(item) {
         const path = sitePath(item.url);
-        const date =
-          path === "/" ? newestDate : dates.get(path.match(/^\/article\/([^/]+)$/)?.[1]);
+        const date = path === "/" ? newestDate : dates.get(path.match(/^\/article\/([^/]+)$/)?.[1]);
         return date ? { ...item, lastmod: date } : item;
       },
     }),
