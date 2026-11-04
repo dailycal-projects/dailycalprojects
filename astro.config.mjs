@@ -11,7 +11,6 @@ import { satteri } from "@astrojs/markdown-satteri";
 
 import { articleDates } from "./src/lib/article-dates.mjs";
 import { browserOnlyPackages } from "./src/lib/browser-only-packages.mjs";
-import { redirectsFile } from "./src/lib/redirects.mjs";
 import { keepD3SideEffects } from "./src/lib/keep-d3-side-effects.mjs";
 import { unwrapJsxParagraphs } from "./src/lib/unwrap-jsx-paragraphs.mjs";
 
@@ -75,7 +74,5 @@ export default defineConfig({
         return date ? { ...item, lastmod: date } : item;
       },
     }),
-    // Old article URLs etc.: dist/_redirects, for Cloudflare (wrangler.jsonc); see src/lib/redirects.mjs
-    redirectsFile(),
   ],
 });
