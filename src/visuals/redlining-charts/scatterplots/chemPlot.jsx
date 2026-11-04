@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import allData from '../data';
 import ScatterPlot from '../scatterPlot';
 import Key from '../dataKey';
-import ButtonList from '../../../components/buttonList';
+import ButtonList from '../../../components/ButtonList';
 
 const ChemPlot = () => {
   const data = allData;

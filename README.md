@@ -182,7 +182,7 @@ Until 2026 this site was built with Gatsby. Its articles' visuals were moved int
 - Some charts set recharts props marked `// recharts 3: ...` where recharts 3 changed a default, so they look the same as before.
 - `leaflet.heat` stays on 0.2: the Clery story map extends its 0.2 internals, and 1.0 is a rewrite.
 
-`src/visuals/`, the old Gatsby components in `src/components/` and `src/styles/` that some visuals use (`articleFooter.jsx`, `buttonList.jsx`, `customTheme.js`, `theme.js`, `button.module.css`, `darkStory.css`), and the articles themselves are excluded from formatting (see `.prettierignore` and `eslint.config.js`), so they stay as they were written.
+`src/visuals/`, the old Gatsby components in `src/components/` and `src/styles/` that some visuals use (`articleFooter.jsx`, `ButtonList.jsx`, `customTheme.js`, `theme.js`, `button.module.css`, `darkStory.css`), and the articles themselves are excluded from formatting (see `.prettierignore` and `eslint.config.js`), so they stay as they were written.
 
 ### Old articles that only linked to dailycal.org
 

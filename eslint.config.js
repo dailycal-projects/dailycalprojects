@@ -68,7 +68,7 @@ const astroClientScripts = ["**/*.astro/*.js", "**/*.astro/*.ts"];
 const legacyCode = [
   "src/visuals/**",
   "src/components/articleFooter.jsx",
-  "src/components/buttonList.jsx",
+  "src/components/ButtonList.jsx",
   "src/styles/customTheme.js",
   "src/styles/theme.js",
   "src/styles/button.module.css",
