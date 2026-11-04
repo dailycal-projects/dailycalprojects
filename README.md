@@ -20,7 +20,7 @@ Always run `npm run build` and `npm run lint` before pushing. The build fails on
 
 **Deploying** is automatic: Netlify builds and publishes every push to `master` to data.dailycal.org, using the settings in [`netlify.toml`](netlify.toml).
 
-**Forks** deploy to GitHub Pages for previewing changes before they're merged: in a fork, [`.github/workflows/deploy.yaml`](.github/workflows/deploy.yaml) runs on every branch, and `astro.config.mjs` builds the site for `https://<owner>.github.io/<repo>/` instead of `data.dailycal.org`. In your fork, set Settings → Pages to deploy from the `gh-pages` branch. Because the site can live under a subpath like that, every internal link and `public/` file reference must go through `withBase()` (`src/lib/path.ts`), or the `<Link>` component (`src/components/Link.jsx`) in `.mdx`/`.jsx` files. Images imported through `astro:assets` handle this on their own.
+**Subpaths:** when `GITHUB_REPOSITORY` names a fork (e.g. a build in a fork's GitHub Actions), `astro.config.mjs` builds the site for `https://<owner>.github.io/<repo>/` instead of `data.dailycal.org`. Because the site can live under a subpath like that, every internal link and `public/` file reference must go through `withBase()` (`src/lib/path.ts`), or the `<Link>` component (`src/components/Link.jsx`) in `.mdx`/`.jsx` files. Images imported through `astro:assets` handle this on their own.
 
 ## Project structure
 
