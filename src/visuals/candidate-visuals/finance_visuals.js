@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import logo from '../../images/dclogoblack.png';
 import { FinanceTreemap } from './treemap';
 import { FinanaceVizElement, FinanceDatawrapperCharts } from './extra_graphs';
-import ArticleFooter from '../../components/articleFooter';
+import ArticleFooter from '../../components/ArticleFooter';
 
 const TEXT_STYLING = {
   fontSize: '0.95rem',

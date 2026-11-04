@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { styles } from '../styles/customTheme';
 import { theme } from '../styles/theme';
-import ArticleFooter from '../components/articleFooter';
+import ArticleFooter from '../components/ArticleFooter';
 import logo from '../images/dclogoblack.png';
 
 const ArticlePost = ({ classes, data, location }) => { // data.markdownRemark holds your article data

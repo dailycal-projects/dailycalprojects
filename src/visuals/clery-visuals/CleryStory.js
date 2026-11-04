@@ -2,7 +2,7 @@ import React, {
   Suspense, lazy, useEffect, useLayoutEffect, useRef, useState,
 } from 'react';
 import { Link } from 'gatsby';
-import ArticleFooter from '../../components/articleFooter';
+import ArticleFooter from '../../components/ArticleFooter';
 import logo from '../../images/dclogo.png';
 import { routeFromUrl, viewHref } from './views';
 import StoryMap from './StoryMap';
