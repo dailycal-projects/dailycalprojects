@@ -55,6 +55,14 @@ export default defineConfig({
   },
 
   vite: {
+    // Gatsby-style environment variables that some visuals read (Gatsby exposed GATSBY_* variables
+    // to the browser as process.env.GATSBY_*), from the build's environment
+    define: Object.fromEntries(
+      ["GATSBY_CARTO_KEY", "GATSBY_PACK_BASE"].map((key) => [
+        `process.env.${key}`,
+        JSON.stringify(process.env[key] ?? ""),
+      ]),
+    ),
     plugins: [
       // Leaflet etc. can't be imported on the server; see src/lib/browser-only-packages.mjs
       browserOnlyPackages({ sourceGlob: "src/visuals/**/*.{js,jsx,ts,tsx}" }),

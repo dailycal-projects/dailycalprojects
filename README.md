@@ -170,6 +170,7 @@ A few things to know when writing or porting a visual:
 - **Props passed to a `client:` visual must be plain data** (strings, numbers, arrays, objects): a function can't be sent to the browser.
 - **An `.mdx` file can read its own frontmatter** as `props.frontmatter`, e.g. `<Story title={props.frontmatter.title} />`. `date` is `"yyyy-mm-dd"`, and the byline is also available under the old site's names, `bylineName`/`bylineUrl`.
 - **Images imported for use as a URL** (`<img src={icon} />`) need `?url`: `import icon from "../../assets/images/icon.png?url"`. Without it, Astro imports an object with the image's details.
+- **Environment variables:** two AC Transit visuals read Gatsby-style `GATSBY_CARTO_KEY` (a Carto basemap key) and `GATSBY_PACK_BASE` (where its data bundle is hosted) as `process.env.*`; `astro.config.mjs` passes them in from the build's environment. Both are optional.
 - **Files in `public/`** are referenced by their site path through `withBase()` (or `<Link>`), e.g. `fetch(withBase("/money-flow/data.csv"))`.
 
 ### Visuals from the old Gatsby site
