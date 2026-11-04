@@ -71,7 +71,7 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 | `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. | Yes |
 | `featuredImage` | The featured (hero) image: a path relative to the `.mdx` file, e.g. `"../../assets/images/my-story.jpg"`. Also used on homepage cards and in social previews. | Yes |
 | `featuredImageAlt` | Alt text describing the featured image, for screen readers and social previews. Defaults to `Featured image for "<title>"`, so please set it. | No |
-| `description` | Short summary for search results and social previews. Defaults to `subhead`, then the site description. | No |
+| `description` | Short summary for search results and social previews. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
 | `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`. | No |
 | `layout` | `true` (the default) renders the article in the [article layout](#layouts). `false` renders the article's body alone as the whole page, for an article that's one full-page visual. | No |
 

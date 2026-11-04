@@ -9,6 +9,7 @@ import sitemap from "@astrojs/sitemap";
 
 import { satteri } from "@astrojs/markdown-satteri";
 
+import { articleDates } from "./src/lib/article-dates.mjs";
 import { browserOnlyPackages } from "./src/lib/browser-only-packages.mjs";
 import { keepD3SideEffects } from "./src/lib/keep-d3-side-effects.mjs";
 import { unwrapJsxParagraphs } from "./src/lib/unwrap-jsx-paragraphs.mjs";
@@ -25,6 +26,10 @@ const isFork = repository !== MAIN_REPO;
 const base = isFork ? `/${name}` : "/";
 
 console.log(`Building for repo ${repository} (fork: ${isFork})`);
+
+// Each article's publish date, for the sitemap's <lastmod>; the homepage changes with the newest
+const dates = articleDates();
+const newestDate = [...dates.values()].sort().at(-1);
 
 /** A built page's path, without the base: "https://x.github.io/repo/a/" -> "/a/" */
 const sitePath = (page) => `/${new URL(page).pathname.slice(base.length).replace(/^\//, "")}`;
@@ -73,6 +78,12 @@ export default defineConfig({
           !/^\/article\/?$/.test(path) &&
           !/^\/\d{4}-\d{2}-\d{2}-[^/]+\/?$/.test(path)
         );
+      },
+      serialize(item) {
+        const path = sitePath(item.url);
+        const date =
+          path === "/" ? newestDate : dates.get(path.match(/^\/article\/([^/]+)\/$/)?.[1]);
+        return date ? { ...item, lastmod: date } : item;
       },
     }),
   ],

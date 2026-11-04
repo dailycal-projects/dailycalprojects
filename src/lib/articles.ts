@@ -56,3 +56,73 @@ export function articlePath(article: Article): string {
 export function featuredImageAlt(article: Article): string {
   return article.data.featuredImageAlt ?? `Featured image for "${article.data.title}"`;
 }
+
+// Search results show about 155-160 characters of a description
+const DESCRIPTION_LENGTH = 160;
+
+/** Plain text of a paragraph of Markdown/MDX: without tags, expressions, links' URLs or emphasis. */
+function plainText(markdown: string): string {
+  return markdown
+    .replace(/\{\s*["'`]\s*["'`]\s*\}/g, " ") // {" "}
+    .replace(/\{[^{}]*\}/g, "") // other {expressions}
+    .replace(/<[^>]*>/g, "") // <tags>
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "") // images
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1") // [links](...)
+    .replace(/(\*\*|__|\*|_|`)/g, "") // emphasis, code
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&(apos|#39);/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * The first paragraph of prose in an article's body: skipping imports, components, headings, and
+ * notes that are entirely in italics (e.g. "_Note: this is part of a series..._").
+ */
+function firstParagraph(body: string): string | undefined {
+  const paragraphs: string[][] = [[]];
+  for (const raw of body.split("\n")) {
+    const line = raw.trim();
+    const isProse =
+      line.length > 0 &&
+      !/^(import|export)\s/.test(line) &&
+      !/^[<{#>|!]/.test(line) && // components/tags, expressions, headings, quotes, tables, images
+      !/^\/?>$/.test(line) && // the end of a multi-line tag
+      !/^[\w-]+=/.test(line); // a component's attribute on its own line
+    if (isProse) {
+      paragraphs[paragraphs.length - 1].push(line);
+    } else if (paragraphs[paragraphs.length - 1].length > 0) {
+      paragraphs.push([]);
+    }
+  }
+  return paragraphs
+    .map((lines) => lines.join(" "))
+    .filter((text) => !/^(_.*_|\*.*\*)$/.test(text)) // italic notes
+    .map(plainText)
+    .find((text) => text.length >= 40);
+}
+
+/**
+ * An article's description for search results and social previews: its `description`, or its
+ * subhead, or else the start of its first paragraph.
+ */
+export function articleDescription(article: Article): string | undefined {
+  const { description, subhead } = article.data;
+  if (description?.trim()) {
+    return description.trim();
+  }
+  if (subhead?.trim()) {
+    return subhead.trim();
+  }
+
+  const paragraph = firstParagraph(article.body ?? "");
+  if (!paragraph || paragraph.length <= DESCRIPTION_LENGTH) {
+    return paragraph;
+  }
+  // Cut at a word boundary; end with an ellipsis unless that's the end of a sentence
+  const cut = paragraph.slice(0, DESCRIPTION_LENGTH - 1);
+  const words = cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:\s]+$/, "");
+  return /[.!?]["”’]?$/.test(words) ? words : `${words}…`;
+}

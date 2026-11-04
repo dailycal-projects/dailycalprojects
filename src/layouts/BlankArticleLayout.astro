@@ -7,7 +7,7 @@
  */
 import Seo from "../components/Seo.astro";
 import { site } from "../config/site";
-import { type Article, featuredImageAlt } from "../lib/articles";
+import { type Article, articleDescription, featuredImageAlt } from "../lib/articles";
 import { withBase } from "../lib/path";
 import "../styles/global.css";
 import "../styles/legacy-typography.css";
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { title, subhead, description, featuredImage, date, byline, keywords } = article.data;
+const { title, featuredImage, date, byline, keywords } = article.data;
 ---
 
 <!doctype html>
@@ -31,7 +31,7 @@ const { title, subhead, description, featuredImage, date, byline, keywords } = a
     <Seo
       title={`${title} | ${site.articleTitleSuffix}`}
       headline={title}
-      description={description ?? subhead}
+      description={articleDescription(article)}
       image={featuredImage}
       imageAlt={featuredImageAlt(article)}
       type="article"
