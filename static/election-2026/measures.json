@@ -1,0 +1,103 @@
+{
+  "_how": "Each measure links to the Daily Californian article that describes it: source is the link, story its headline, shown under “About the measure.” Measure Z and Props. 40-42 have their own articles; the other Berkeley measures and RTM link to the Oct. 29, 2026 roundup “Berkeley voters to decide on 8 measures,” and the other propositions to the Oct. 29 state propositions guide. short is a one-line label written by the desk (the broadcast uses it too); propositions without one show the Secretary of State's ballot label. Keys: \"Measure V\" (no \"Bond\", no \" - City of ...\") or \"Prop 40\".",
+  "measures": {
+    "Measure RTM": {
+      "short": "Bay Area sales tax for BART, Muni, AC Transit and Caltrain operations",
+      "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
+      "story": "Berkeley voters to decide on 8 measures"
+    },
+    "Measure U": {
+      "short": "$300M bond for infrastructure and facilities",
+      "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
+      "story": "Berkeley voters to decide on 8 measures"
+    },
+    "Measure V": {
+      "short": "0.5% sales tax for the general fund",
+      "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
+      "story": "Berkeley voters to decide on 8 measures"
+    },
+    "Measure W": {
+      "short": "Charter amendment: administrative provisions",
+      "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
+      "story": "Berkeley voters to decide on 8 measures"
+    },
+    "Measure X": {
+      "short": "Rent ordinance: 10% cap on annual increases",
+      "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
+      "story": "Berkeley voters to decide on 8 measures"
+    },
+    "Measure Y": {
+      "short": "Parcel tax for arts grants",
+      "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
+      "story": "Berkeley voters to decide on 8 measures"
+    },
+    "Measure Z": {
+      "short": "Parcel tax to fund a public bank",
+      "source": "https://www.dailycal.org/news/city/city-government/berkeley-measure-z-would-fund-public-bank-through-parcel-tax/article_8f29d54f-4aa0-4bf4-9930-1c33e6ca1bad.html",
+      "story": "Berkeley Measure Z would fund public bank through parcel tax"
+    },
+    "Measure AA": {
+      "short": "Soda tax doubled to 2¢/oz, made a special tax",
+      "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
+      "story": "Berkeley voters to decide on 8 measures"
+    },
+    "Prop 1": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 2": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 3": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 4": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 5": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 37": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 38": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 39": {
+      "short": "Adds voter ID requirement",
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 40": {
+      "short": "5% wealth tax for California billionaires",
+      "source": "https://www.dailycal.org/news/state/californians-to-weigh-first-of-its-kind-billionaire-tax-against-possible-poison-pills-props-41/article_9dcba7af-4b5c-466f-bf7a-43382b1b7103.html",
+      "story": "Californians to weigh first-of-its-kind Billionaire Tax against possible ‘poison pills’ Props. 41 and 42"
+    },
+    "Prop 41": {
+      "source": "https://www.dailycal.org/news/state/californians-to-weigh-first-of-its-kind-billionaire-tax-against-possible-poison-pills-props-41/article_9dcba7af-4b5c-466f-bf7a-43382b1b7103.html",
+      "story": "Californians to weigh first-of-its-kind Billionaire Tax against possible ‘poison pills’ Props. 41 and 42"
+    },
+    "Prop 42": {
+      "source": "https://www.dailycal.org/news/state/californians-to-weigh-first-of-its-kind-billionaire-tax-against-possible-poison-pills-props-41/article_9dcba7af-4b5c-466f-bf7a-43382b1b7103.html",
+      "story": "Californians to weigh first-of-its-kind Billionaire Tax against possible ‘poison pills’ Props. 41 and 42"
+    },
+    "Prop 43": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 44": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 45": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    }
+  }
+}
