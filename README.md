@@ -30,8 +30,7 @@ Always run `npm run build` and `npm run lint` before pushing. The build fails on
 ```
 src/
   content/articles/   One .mdx file per article
-  assets/images/      Article images (featured and inline)
-  assets/site/        Site logos
+  assets/images/      Images that visuals import (article images are in public/assets/images/)
   components/         Reusable components (charts, images, links, SEO)
   config/             Site-wide settings (see "Site configuration")
   layouts/            PageLayout (header/footer/<head>) and the article layouts
@@ -39,9 +38,10 @@ src/
   pages/              Every page and its URL (file-based routing)
   styles/             Global and article CSS
   visuals/            Articles' visuals (React components), one folder per project (see "Visuals")
-scripts/optimize.ts   Command-line image optimizer
-public/               Static files served as-is: the favicon, and standalone interactives
-                      (in public/data/<article slug>/, e.g. public/data/2026-11-03-election-2026/)
+scripts/              optimize-image.mjs: the command-line image optimizer
+public/               Static files served as-is: the favicon, images (assets/images/: articles',
+                      assets/site/: logos), and each article's data files and standalone pages
+                      (data/<article slug>/, e.g. public/data/2026-11-03-election-2026/)
 legacy/               The old Gatsby site's leftover source, for reference (see "Visuals")
 ```
 
@@ -72,7 +72,7 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 | `date` | Publish date, `"YYYY-MM-DD"`. Determines the order on the homepage. | Yes |
 | `title` | The headline. | Yes |
 | `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. | Yes |
-| `featuredImage` | The featured (hero) image: a path relative to the `.mdx` file, e.g. `"../../assets/images/my-story.jpg"`. Also used on homepage cards and in social previews. | Yes |
+| `featuredImage` | The featured (hero) image: its path in `public/`, e.g. `"/assets/images/my-story.jpg"` (or a full URL). Also used on homepage cards and in social previews. | Yes |
 | `featuredImageAlt` | Alt text describing the featured image, for screen readers and social previews. Defaults to `Featured image for "<title>"`, so please set it. | No |
 | `description` | Short summary for search results and social previews. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
 | `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`. | No |
@@ -101,7 +101,7 @@ subhead: "A short dek explaining the piece"
 description: "One or two sentences for search results and social previews."
 byline: ["Jane Doe", "John Smith"]
 bylineLinks: ["", "https://example.com/john"]
-featuredImage: "../../assets/images/2026-05-01-my-story/cover.jpg"
+featuredImage: "/assets/images/2026-05-01-my-story/cover.jpg"
 featuredImageAlt: "Students walk past Sather Gate"
 imageAttribution: "Jane Doe | Staff"
 aboutStory: "Data for this story came from the UC Office of the President."
@@ -109,30 +109,29 @@ aboutStory: "Data for this story came from the UC Office of the President."
 
 import DatawrapperChart from "../../components/DatawrapperChart.jsx";
 import ArticleImage from "../../components/ArticleImage.astro";
-import protest from "../../assets/images/2026-05-01-my-story/protest.jpg";
 
 The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](https://dailycal.org) all work.
 
 <DatawrapperChart client:load chartId="MvImD/7/" />
 
-<ArticleImage src={protest} alt="Students march on Sproul Plaza" caption="Students march on Sproul Plaza." attribution="Jane Doe | Staff" />
+<ArticleImage src="/assets/images/2026-05-01-my-story/protest.jpg" alt="Students march on Sproul Plaza" caption="Students march on Sproul Plaza." attribution="Jane Doe | Staff" />
 ```
 
 ### Components
 
 - **Visuals** in `src/visuals/`: see [Visuals](#visuals).
 - **`<DatawrapperChart>`** (`src/components/DatawrapperChart.jsx`): embeds a Datawrapper chart by its ID, resizing to fit the chart. It needs `client:load`.
-- **`<ArticleImage>`** (`src/components/ArticleImage.astro`): an image with an optional `caption` and `attribution`. Or a **group** of images side by side, sharing one caption: `<ArticleImage images={[{ src: a, alt: "..." }, { src: b, alt: "..." }]} columns={2} caption="..." />`. Groups stack into one column on phones. `src` can be an imported image (recommended, since Astro resizes it for each screen) or an external URL.
+- **`<ArticleImage>`** (`src/components/ArticleImage.astro`): an image with an optional `caption` and `attribution`. Or a **group** of images side by side, sharing one caption: `<ArticleImage images={[{ src: a, alt: "..." }, { src: b, alt: "..." }]} columns={2} caption="..." />`. Groups stack into one column on phones. `src` is a path in `public/` or an external URL.
 - **`<Link>`** (`src/components/Link.jsx`): a link that works under a fork's subpath. Use it for links to other pages on this site.
 
 ### Adding images
 
-Put an article's images in `src/assets/images/` (in a folder named after the article if it has several, e.g. `src/assets/images/2026-05-01-my-story/`), [optimize](#optimizing-images) them first, and reference them by a path relative to the `.mdx` file:
+[Optimize](#optimizing-images) an article's images, put them in `public/assets/images/` (in a folder named after the article if it has several, e.g. `public/assets/images/2026-05-01-my-story/`), and reference them by their path without `public`:
 
-- `featuredImage` as a plain string in frontmatter: `featuredImage: "../../assets/images/2026-05-01-my-story/cover.jpg"`, and
-- inline images with an `import` at the top of the `.mdx` file, passed to `<ArticleImage src={...} />`.
+- `featuredImage` in frontmatter: `featuredImage: "/assets/images/2026-05-01-my-story/cover.jpg"`, and
+- inline images with `<ArticleImage src="/assets/images/2026-05-01-my-story/protest.jpg" ... />` (or a plain `<img>`).
 
-Astro builds resized WebP versions of these for each screen size, so the original is only stored in the repository.
+They're served exactly as they are, never processed at build time, which keeps builds fast: that's why they're optimized once, before they're committed. The build fails if an article refers to a file in `public/assets/` or `public/data/` that doesn't exist.
 
 ## Optimizing images
 

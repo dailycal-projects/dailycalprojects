@@ -1,10 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import circleLogo from "../assets/site/dclogo-circle.png";
 import ArticleCard from "../components/ArticleCard.astro";
 import { site } from "../config/site";
 import PageLayout from "../layouts/PageLayout.astro";
 import { getArticles } from "../lib/articles";
+import { withBase } from "../lib/path";
 
 // Every article, newest first
 const articles = await getArticles();
@@ -14,7 +13,13 @@ const articles = await getArticles();
   <div class="content">
     {/* Intro */}
     <div class="intro">
-      <Image src={circleLogo} alt="" class="logo" width={100} loading="eager" />
+      <img
+        src={withBase("/assets/site/dclogo-circle.png")}
+        alt=""
+        class="logo"
+        width="100"
+        height="95"
+      />
       <div class="description">
         <h1>Data</h1>
         <p>{site.description}</p>

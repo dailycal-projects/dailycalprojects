@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { type CollectionEntry, getCollection } from "astro:content";
 
 export type Article = CollectionEntry<"articles">;
@@ -14,8 +15,8 @@ export const dateFormat = new Intl.DateTimeFormat("en-US", {
 });
 
 /**
- * Throws if any article's file name isn't `<yyyy-mm-dd>-<slug>.mdx`. Lists every problem at once,
- * so they can all be fixed in one go.
+ * Throws if any article's file name isn't `<yyyy-mm-dd>-<slug>.mdx`, or it uses a file in public/
+ * that doesn't exist. Lists every problem at once, so they can all be fixed in one go.
  *
  * The file name's date is normally the publish date, but it isn't checked against `date`: some
  * older articles were renamed or republished after their file (and so their URL) was created.
@@ -31,10 +32,24 @@ function validate(articles: Article[]): void {
         `${file}: the file name must be <yyyy-mm-dd>-<slug>.mdx, with a lowercase, hyphenated slug (e.g. 2026-03-03-my-story.mdx).`,
       );
     }
+
+    // Files in public/ the article uses: its images, and /assets/ or /data/ paths in its body
+    const paths = [
+      article.data.featuredImage,
+      article.data.secondaryFeaturedImage,
+      ...(article.body ?? "").matchAll(/["'(](\/(?:assets|data)\/[^"')\s?#]+)/g).map((m) => m[1]),
+    ];
+    for (const path of paths) {
+      // Pages are served without .html, and folders by their index.html
+      const local = path?.startsWith("/") && !path.startsWith("//") && `public${decodeURI(path)}`;
+      if (local && ![local, `${local}.html`, `${local}/index.html`].some((f) => existsSync(f))) {
+        problems.push(`${file}: ${path} doesn't exist in public/.`);
+      }
+    }
   }
 
   if (problems.length > 0) {
-    throw new Error(`Invalid article file names:\n  ${problems.join("\n  ")}`);
+    throw new Error(`Problems with articles:\n  ${problems.join("\n  ")}`);
   }
 }
 

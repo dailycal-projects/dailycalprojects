@@ -4,10 +4,8 @@
  * card tags, and JSON-LD structured data. Rendered once in PageLayout's <head>, so every page gets
  * it automatically; pages pass their values as PageLayout props.
  */
-import type { ImageMetadata } from "astro";
-import { getImage } from "astro:assets";
-import logo from "../assets/site/dclogo-circle.png";
 import { site } from "../config/site";
+import { publicImageSize } from "../lib/images";
 import { withBase } from "../lib/path";
 
 export interface Props {
@@ -18,8 +16,8 @@ export interface Props {
    */
   headline?: string;
   description?: string;
-  /** Social share image. Defaults to the Daily Cal logo. */
-  image?: ImageMetadata | string;
+  /** Social share image: a public/ path or URL. Defaults to the Daily Cal logo. */
+  image?: string;
   imageAlt?: string;
   type?: "website" | "article";
   publishedTime?: Date;
@@ -31,11 +29,13 @@ export interface Props {
   keywords?: string[];
 }
 
+const LOGO = "/assets/site/dclogo-circle.png";
+
 const {
   title,
   headline = title,
   description = site.description,
-  image = logo,
+  image = LOGO,
   imageAlt,
   type = "website",
   publishedTime,
@@ -61,24 +61,14 @@ interface ResolvedImage {
   height?: number;
 }
 
-// Absolute URL (and size, when known) of an image. Local images are converted to WebP, which
-// every social platform supports (AVIF isn't).
-async function resolveImage(source: ImageMetadata | string): Promise<ResolvedImage> {
-  if (typeof source === "string") {
-    // withBase() leaves external URLs alone and base-prefixes a public/ root path
-    return { url: new URL(withBase(source), siteURL).href };
-  }
-  const optimized = await getImage({ src: source, format: "webp" });
-  return {
-    // Astro already includes the base in optimized image URLs
-    url: new URL(optimized.src, siteURL).href,
-    width: Number(optimized.attributes.width ?? source.width),
-    height: Number(optimized.attributes.height ?? source.height),
-  };
+// Absolute URL (and size, for an image in public/) of an image
+async function resolveImage(path: string): Promise<ResolvedImage> {
+  // withBase() leaves external URLs alone and base-prefixes a public/ root path
+  return { url: new URL(withBase(path), siteURL).href, ...(await publicImageSize(path)) };
 }
 
 const ogImage = await resolveImage(image);
-const publisherLogo = await resolveImage(logo);
+const publisherLogo = await resolveImage(LOGO);
 
 const publisher = {
   "@type": "Organization",

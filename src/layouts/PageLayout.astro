@@ -3,9 +3,6 @@
  * The layout every page renders into: <head> (with SEO tags built from these props), the fixed
  * header, the page content, and the footer.
  */
-// A plain URL rather than an astro:assets image: some articles' visuals import an identical copy of
-// this logo by URL, and Astro would delete the shared original after converting it for <Image>.
-import logoUrl from "../assets/site/dclogo-black.png?url";
 import Seo, { type Props as SeoProps } from "../components/Seo.astro";
 import { site } from "../config/site";
 import { withBase } from "../lib/path";
@@ -38,7 +35,13 @@ const footerLinks = [
     {/* Header */}
     <header class="header">
       <a href={withBase("/")} class="logoLink" aria-label="The Daily Californian: Data home">
-        <img src={logoUrl} alt="The Daily Californian" class="logo" width="1000" height="68" />
+        <img
+          src={withBase("/assets/site/dclogo-black.png")}
+          alt="The Daily Californian"
+          class="logo"
+          width="1000"
+          height="68"
+        />
       </a>
     </header>
 

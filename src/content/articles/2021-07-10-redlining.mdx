@@ -10,13 +10,10 @@ bylineLinks:
   - "https://www.dailycal.org/author/cfozi"
   - "https://www.dailycal.org/author/vroseborough"
 subhead: "How 1934 redlining policies meet Berkeley's housing burdens of today"
-featuredImage: "../../assets/images/zip-codes.jpg"
+featuredImage: "/assets/images/zip-codes.jpg"
 aboutStory: "Data for this project come from the California Office of Environmental Health Hazard Assessment's CalEnviroScreen 4.0 dataset."
 ---
 
-import { Image } from "astro:assets";
-import embeddedImage0 from "../../assets/images/holc.jpg";
-import embeddedImage1 from "../../assets/images/zip-codes.jpg";
 import RedlineMap from "../../visuals/redlining-charts/map-materials/map";
 import WaterPlot from "../../visuals/redlining-charts/scatterplots/waterPlot";
 import ChemPlot from "../../visuals/redlining-charts/scatterplots/chemPlot";
@@ -43,7 +40,7 @@ These designations resulted in a physical division between Berkeley’s resident
 
 Though the Fair Housing Act of 1968 made it illegal to discriminate against individuals seeking a mortgage or housing assistance on the basis of race, it ended redlining “in name only,” according to Owens. He claims that the redline still exists in Berkeley but has shifted, preventing Black people from living north of University Avenue and east of Sacramento Street.
 
-<Image alt="HOLC Map" src={embeddedImage0} />
+<img alt="HOLC Map" src="/assets/images/holc.jpg" />
 <body>
   Mapping Inequality |{" "}
   <a href="https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58">
@@ -61,9 +58,9 @@ The interactive map displays the housing burden of each ZIP code area in Alameda
 
 Every few years, the OEHHA releases new data for its pioneering screening tool, CalEnviroScreen, which tracks various burdens that California communities face. We downloaded the CalEnviroScreen dataset and filtered for Alameda County census tracts. We grouped tracts by ZIP code (see the map below for all eight ZIP codes within the city of Berkeley), then plotted results for each noteworthy indicator. Our scatter plots also feature a z-axis attribute, reflected by dot size and color, that represents the housing burden percentile of each data point. Unknown or blank values were omitted.
 
-<Image
+<img
   alt="Berkeley ZIP code map"
-  src={embeddedImage1}
+  src="/assets/images/zip-codes.jpg"
 />
 
 <br />

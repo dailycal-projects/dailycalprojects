@@ -1,6 +1,5 @@
 ---
 /** A linked card for an article (date, featured image, title), used on the homepage. */
-import { Image } from "astro:assets";
 import { type Article, articlePath, dateFormat, featuredImageAlt } from "../lib/articles";
 import { withBase } from "../lib/path";
 
@@ -17,13 +16,12 @@ const { article, eager = false } = Astro.props;
   <time class="date" datetime={article.data.date.toISOString()}>
     {dateFormat.format(article.data.date)}
   </time>
-  <Image
-    src={article.data.featuredImage}
+  <img
+    src={withBase(article.data.featuredImage)}
     alt={featuredImageAlt(article)}
     class="featuredImage"
-    widths={[360, 720]}
-    sizes="360px"
     loading={eager ? "eager" : "lazy"}
+    decoding="async"
   />
   <span class="title">{article.data.title}</span>
 </a>
