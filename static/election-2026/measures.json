@@ -1,55 +1,103 @@
 {
-  "_how": "The question field contains copy-edited descriptions from The Daily Californian’s Oct. 29, 2026 article “Berkeley voters to decide on 8 measures,” shown under “About the measure.” This is article text, not official ballot wording. The source field links to the article. Keys are stable measure identifiers. The short field supplies the broadcast label. Propositions without a question use the Secretary of State feed’s label.",
+  "_how": "Each measure links to the Daily Californian article that describes it: source is the link, story its headline, shown under “About the measure.” Measure Z and Props. 40-42 have their own articles; the other Berkeley measures and RTM link to the Oct. 29, 2026 roundup “Berkeley voters to decide on 8 measures,” and the other propositions to the Oct. 29 state propositions guide. short is a one-line label written by the desk (the broadcast uses it too); propositions without one show the Secretary of State's ballot label. Keys: \"Measure V\" (no \"Bond\", no \" - City of ...\") or \"Prop 40\".",
   "measures": {
     "Measure RTM": {
-      "question": "Originally termed the Connect Bay Area Measure, the Regional Transit Measure would impose a half-cent sales tax in Alameda, Contra Costa, San Mateo and Santa Clara counties if passed. It would also impose a one-cent sales tax in San Francisco.\n\nSupporters include state Sens. Jesse Arreguín and Scott Wiener, U.S. Rep. Nancy Pelosi and the Service Employees International Union Local 1021, according to KQED.\n\n“BART, perhaps more than any other transit agency in the country pre-pandemic, relied on fares to pay for its operating costs. That just simply doesn’t work in a new reality when people are riding transit less,” said BART spokesperson Chris Filippi to the Daily Cal for an earlier article. “What we need is a new funding model going forward. But in the meantime, what we can focus on is what we can control, which is providing the best BART experience possible to get as many riders as possible.”",
+      "short": "Bay Area sales tax for BART, Muni, AC Transit and Caltrain operations",
       "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
-      "short": "Bay Area sales tax for BART, Muni, AC Transit and Caltrain operations"
+      "story": "Berkeley voters to decide on 8 measures"
     },
     "Measure U": {
-      "question": "If passed, the measure will approve up to $300 million in general obligation bonds for response facilities, parks and seismic and climate resilience upgrades, as well as replacing natural gas infrastructure. The measure was unanimously placed on the ballot by the Berkeley City Council earlier this year.\n\nA general obligation bond is a type of loan taken out by a city, county or state to pay for public projects, which is then paid back using the government’s power to collect taxes meant to pay bondholders, if necessary. For local governments, this usually comes in the form of property taxes.\n\nOne endorsement for Measure U comes from Berkeley Architectural Heritage Association, which is a proponent of the seismic retrofitting of some of Berkeley’s historic landmark buildings. However, coalition Affordable Berkeley opposes on the grounds that $550 million to $600 million will be the total cost of this measure, with no commitment to specific projects.",
+      "short": "$300M bond for infrastructure and facilities",
       "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
-      "short": "$300M bond for infrastructure and facilities"
+      "story": "Berkeley voters to decide on 8 measures"
     },
     "Measure V": {
-      "question": "If passed, Measure V would add 0.5% to Berkeley’s sales tax in order to reflect the rate in most Alameda County cities. Berkeley’s sales tax rate is currently 10.25%, while most other cities in Alameda County, including Alameda, Albany, Hayward, Newark, Oakland, San Leandro and Union City are all at 10.75%.\n\nThis measure will help to close Berkeley’s General Fund budget gap, generating an estimated $9 million to $10 million per year.\n\nOpponents of Measure V, such as Affordable Berkeley, say it creates a regressive tax which would hurt the most vulnerable. Regressive taxes are those that create a larger burden on lower-income taxpayers than on middle- or higher-income taxpayers.",
+      "short": "0.5% sales tax for the general fund",
       "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
-      "short": "0.5% sales tax for the general fund"
+      "story": "Berkeley voters to decide on 8 measures"
     },
     "Measure W": {
-      "question": "This measure, if passed, would drop the filing fee from $150 to $25; it would also raise the public financing cap from $250,000 to $400,000.\n\nFurther, it would remove the requirement to list place of birth, taxpayer status or place of residence on candidate statements. This update would prevent nativism and wealth screening and increase safety by not disclosing addresses of candidates, according to the League of Women Voters of Berkeley Albany Emeryville.",
+      "short": "Charter amendment: administrative provisions",
       "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
-      "short": "Charter amendment: administrative provisions"
+      "story": "Berkeley voters to decide on 8 measures"
     },
     "Measure X": {
-      "question": "Rent is expensive throughout Berkeley, especially for students living close to campus. Measure X, if passed, would amend Berkeley’s Rent Stabilization and Eviction for Just Cause Ordinance in several ways, including capping any periodic rent increase at 10% even when a landlord has banked prior annual adjustments. Berkeley’s current Rent Stabilization and Eviction for Just Cause Ordinance, commonly known as the Rent Ordinance, is meant to maintain affordable housing and community diversity.\n\nThough opponents argue that tighter rent controls might discourage development and managing the new rules could strain municipal budgets, the measure is supported by the Berkeley Tenants Union because it protects tenants to a larger capacity.",
+      "short": "Rent ordinance: 10% cap on annual increases",
       "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
-      "short": "Rent ordinance: 10% cap on annual increases"
+      "story": "Berkeley voters to decide on 8 measures"
     },
     "Measure Y": {
-      "question": "If passed, this 12-year parcel tax would create a new Arts Vitality Fund. The funds generated would go toward local performing arts organizations and civic arts programs. The measure would establish a parcel tax of $0.07 per square foot on properties and is expected to generate more than $5.5 million annually.\n\n“It’s a tax, but there will be a net gain in property values for folks, because it keeps the city a vibrant place to live, and it’s also great for all the surrounding businesses,” said Shotgun Players artistic director Patrick Dooley to The Daily Californian for an earlier article.\n\nWhile organizations such as The UC Theatre, Berkeley Playhouse and Berkeley Symphony all support the measure, opponents say that this alignment makes Measure Y a special-interest tax.",
+      "short": "Parcel tax for arts grants",
       "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
-      "short": "Parcel tax for arts grants"
+      "story": "Berkeley voters to decide on 8 measures"
     },
     "Measure Z": {
-      "question": "This second parcel tax measure proposes a tax to create a new public bank. This bank would invest in long-term affordable housing, green energy and infrastructure and small businesses in Berkeley. The tax sunsets after six years.\n\nOpponents Stop Measure Z and Affordable Berkeley claim that the measure would entail that Berkeley homes and businesses are taxed a total of $58 million over six years, while Oakland and Alameda County would pay nothing.\n\nDespite this, Aaryaman “Sunny” Singhal, a board member for Public Bank East Bay — the recipient of the tax revenue — said to the Daily Cal in a previous article that the bank is a “low-cost model,” lending to institutions rather than individuals. He explained that the bank would therefore likely be able to provide loans at interest rates lower than those of typical private banks.",
-      "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
-      "short": "Parcel tax to fund a public bank"
+      "short": "Parcel tax to fund a public bank",
+      "source": "https://www.dailycal.org/news/city/city-government/berkeley-measure-z-would-fund-public-bank-through-parcel-tax/article_8f29d54f-4aa0-4bf4-9930-1c33e6ca1bad.html",
+      "story": "Berkeley Measure Z would fund public bank through parcel tax"
     },
     "Measure AA": {
-      "question": "Measure AA, if passed, would up the existing soda tax from 1 cent to 2 cents per fluid ounce.\n\nProceeds from the tax, first passed in 2014, will be reserved for projects that fight diet-related conditions such as Type 2 diabetes, obesity, heart disease and tooth decay, and provide public health and nutrition education.\n\nThe sugar-sweetened beverage special tax is supported by the Alameda-Contra Costa Medical Association and, according to KQED, opposed by the American Beverage Association California.",
+      "short": "Soda tax doubled to 2¢/oz, made a special tax",
       "source": "https://www.dailycal.org/news/city/berkeley-voters-to-decide-on-8-measures/article_2e2e8fc9-be1d-4e97-91e9-5cf4876ebb52.html",
-      "short": "Soda tax doubled to 2¢/oz, made a special tax"
+      "story": "Berkeley voters to decide on 8 measures"
     },
-    "Prop 40": {
-      "question": "",
-      "source": "",
-      "short": "5% wealth tax for California billionaires"
+    "Prop 1": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 2": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 3": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 4": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 5": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 37": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 38": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
     },
     "Prop 39": {
-      "question": "",
-      "source": "",
-      "short": "Adds voter ID requirement"
+      "short": "Adds voter ID requirement",
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 40": {
+      "short": "5% wealth tax for California billionaires",
+      "source": "https://www.dailycal.org/news/state/californians-to-weigh-first-of-its-kind-billionaire-tax-against-possible-poison-pills-props-41/article_9dcba7af-4b5c-466f-bf7a-43382b1b7103.html",
+      "story": "Californians to weigh first-of-its-kind Billionaire Tax against possible ‘poison pills’ Props. 41 and 42"
+    },
+    "Prop 41": {
+      "source": "https://www.dailycal.org/news/state/californians-to-weigh-first-of-its-kind-billionaire-tax-against-possible-poison-pills-props-41/article_9dcba7af-4b5c-466f-bf7a-43382b1b7103.html",
+      "story": "Californians to weigh first-of-its-kind Billionaire Tax against possible ‘poison pills’ Props. 41 and 42"
+    },
+    "Prop 42": {
+      "source": "https://www.dailycal.org/news/state/californians-to-weigh-first-of-its-kind-billionaire-tax-against-possible-poison-pills-props-41/article_9dcba7af-4b5c-466f-bf7a-43382b1b7103.html",
+      "story": "Californians to weigh first-of-its-kind Billionaire Tax against possible ‘poison pills’ Props. 41 and 42"
+    },
+    "Prop 43": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 44": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
+    },
+    "Prop 45": {
+      "source": "https://www.dailycal.org/news/state/voting-in-california-what-you-need-to-know-about-the-state-propositions/article_523255f1-807d-46b0-9c2a-13a2098f9437.html",
+      "story": "Voting in California? What you need to know about the state propositions"
     }
   }
 }
