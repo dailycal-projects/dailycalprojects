@@ -1,0 +1,23 @@
+.endorsementweb-visual {
+  width: min(1200px, calc(100vw - 32px));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 28px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.endorsementweb-visual iframe {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: clamp(560px, 80vh, 820px);
+  border: 0;
+  background: transparent;
+}
+@media (max-width: 640px) {
+  .endorsementweb-visual { width: calc(100vw - 24px); }
+  .endorsementweb-visual iframe { height: clamp(520px, 82svh, 760px); }
+}

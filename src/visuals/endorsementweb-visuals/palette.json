@@ -1,0 +1,27 @@
+{
+  "_note": "Node colours. Candidates by race, endorsers by type group (the filter chips). Shared by src/text.ts and scripts/render_static.py.",
+  "race": {
+    "Auditor": "#5b5b5b",
+    "Council D1": "#a50f15",
+    "Council D4": "#8a4f0b",
+    "Council D7": "#5e2a84",
+    "Council D8": "#08306b",
+    "Rent Board": "#00553a",
+    "School Board": "#c2410c"
+  },
+  "group": {
+    "people": "#a6a6a6",
+    "officials": "#d67fb2",
+    "unions": "#2bb38a",
+    "clubs": "#4ea3e0",
+    "advocacy": "#e9a92a"
+  },
+  "groupTypes": {
+    "people": ["Individual"],
+    "officials": ["Current elected official", "Former elected official"],
+    "unions": ["Union"],
+    "clubs": ["Democratic club", "Club", "Political party"],
+    "advocacy": ["Political/advocacy org"]
+  },
+  "other": "#8c8c8c"
+}

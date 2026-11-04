@@ -1,3 +1,4 @@
+import EndorsementWeb from '../visuals/endorsementweb-visuals/EndorsementWeb';
 /* eslint-disable react/jsx-props-no-spreading */
 
 import React from 'react';
@@ -113,6 +114,7 @@ by an array of React components, so we must include them in the same array.
 */
 
 const shortcodes = {
+  EndorsementWeb,
   // style MDX files for any html element here!!
   a: (props) => (
     <a {...props} style={{ textDecoration: 'underline', color: theme.palette.black }} />), // styles MDX hyperlinks

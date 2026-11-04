@@ -1,0 +1,24 @@
+/* Article embed: transparent canvas, contained controls, and a screen-sized layout. */
+html, body.app, .appbar, .appmain, .app .graph-col, .sheet, .app .panel, #graph { background: transparent; }
+body.app { overflow: hidden; }
+.appbar { padding: 12px 16px; gap: 10px 20px; }
+.embed-title { margin: 0; font: 700 24px/1.2 var(--sans); }
+.appbar .ab-tools { width: auto; flex: 1 1 300px; }
+.appmain { grid-template-columns: minmax(0, 1fr) 340px; }
+.app .graph-col { min-width: 0; }
+.sheet, .panel { min-width: 0; }
+@media (max-width: 899px) {
+  .appmain { display: block; position: relative; }
+  .app .graph-col { height: 100%; border-right: 0; }
+  .sheet { background: #f4f4f4; }
+}
+@media (max-width: 640px) {
+  .appbar { padding: 10px 12px; gap: 8px; }
+  .embed-title { font-size: 21px; }
+  .appbar .ab-tools { width: 100%; flex-basis: 100%; }
+}
+@media (max-width: 420px) {
+  .search { min-width: 0; flex-basis: 150px; }
+  .appbar .ab-tools { gap: 6px; }
+  .sheet .panel { padding-left: 10px; padding-right: 10px; }
+}
