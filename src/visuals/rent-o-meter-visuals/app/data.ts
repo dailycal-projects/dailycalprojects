@@ -84,7 +84,7 @@ export function normalizeAddress(s: string): string {
 
 export async function loadDataset(): Promise<Dataset> {
   const [res, dres, lres, ores, rres] = await Promise.all(
-    ["buildings", "districts", "landlords", "owners", "rentometer"].map((f) => fetch(`${base}data/${f}.json`)),
+    ["buildings", "districts", "landlords", "owners", "rentometer"].map((f) => fetch(`${base}${f}.json`)),
   );
   for (const r of [res, dres, lres, ores, rres]) if (!r.ok) throw new Error(fmt(strings.errors.data, { status: r.status }));
   const owners = (await ores.json()) as Owners & { of: number[] };
@@ -186,7 +186,7 @@ function loadTile(tx: number, ty: number): Promise<Parcel[]> {
   const key = `${tx}_${ty}`;
   let p = tileCache.get(key);
   if (!p) {
-    p = fetch(`${base}data/tiles/${key}.json`)
+    p = fetch(`${base}tiles/${key}.json`)
       .then((r) => (r.ok ? (r.json() as Promise<number[][]>) : []))
       .then((rows) => rows.map((row) => ({ b: row[0], pts: decode(row, 1) })))
       .catch(() => []);
@@ -216,7 +216,7 @@ export type Street = { major: boolean; pts: [number, number][] };
 let streetsPromise: Promise<Street[]> | null = null;
 
 export function loadStreets(): Promise<Street[]> {
-  streetsPromise ??= fetch(`${base}data/streets.json`)
+  streetsPromise ??= fetch(`${base}streets.json`)
     .then((r) => r.json() as Promise<number[][]>)
     .then((rows) => rows.map((row) => ({ major: row[0] === 1, pts: decode(row, 1) })));
   return streetsPromise;
@@ -229,7 +229,7 @@ export type Block = { members: number[]; rings: [number, number][][] }; // rings
 let blocksPromise: Promise<Block[]> | null = null;
 
 export function loadBlocks(): Promise<Block[]> {
-  blocksPromise ??= fetch(`${base}data/blocks.json`)
+  blocksPromise ??= fetch(`${base}blocks.json`)
     .then((r) => r.json() as Promise<[number[], ...number[][]][]>)
     .then((rows) => rows.map(([members, ...rings]) => ({ members, rings: rings.map((r) => decode(r, 0)) })));
   return blocksPromise;

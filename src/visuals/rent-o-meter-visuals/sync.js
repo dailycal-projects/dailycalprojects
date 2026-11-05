@@ -6,9 +6,10 @@
 //
 // What it writes, none of which should be edited by hand:
 //   app/              dc_app/src as is, except host.ts (written below), the wordmark in Banner.tsx (the site's
-//                     own copy, src/assets/site/dclogoblack.webp) and the Vite-only entry and stylesheet
+//                     own copy, src/assets/site/dclogoblack.webp), the data paths in data.ts (below) and the
+//                     Vite-only entry and stylesheet
 //   styles/app.css    dc_app/src/styles.css, every rule scoped to .rom, the root RentOMeterStory renders
-//   public/data/rent-o-meter/   the data files the app fetches at run time
+//   public/data/rent-o-meter/   the data files the app fetches at run time (dc_app's public/data/, flattened)
 //   public/fonts/               the fonts (shared with other stories, so files are overwritten, never removed)
 //
 // Gatsby puts every imported stylesheet on every page of the site, and the app's CSS was written for a page
@@ -63,6 +64,15 @@ if (!patchedBanner.includes('wordmark.src') || patchedBanner.includes('assetBase
   throw new Error('dc_app/src/components/Banner.tsx changed: update the wordmark patch in sync.js');
 }
 fs.writeFileSync(banner, patchedBanner);
+
+// dc_app serves its data from public/data/; here it's in public/data/rent-o-meter/ itself, with no data/ inside
+const dataTs = path.join(app, 'data.ts');
+const dataSrc = fs.readFileSync(dataTs, 'utf8');
+const patchedData = dataSrc.replaceAll('`${base}data/', '`${base}');
+if (patchedData === dataSrc || patchedData.includes('data/tiles/') || /\bdata\/\$\{/.test(patchedData)) {
+  throw new Error('dc_app/src/data.ts changed: update the data path patch in sync.js');
+}
+fs.writeFileSync(dataTs, patchedData);
 console.log(`src -> ${path.relative(SITE, app)}`);
 
 // --- styles -------------------------------------------------------------------------------------------
@@ -124,10 +134,10 @@ console.log('styles.css -> styles/app.css');
 const DATA = ['buildings', 'districts', 'landlords', 'owners', 'rentometer', 'streets', 'blocks'];
 const pub = path.join(SITE, 'public', PUBLIC_DIR);
 fs.rmSync(pub, { recursive: true, force: true });
-fs.mkdirSync(path.join(pub, 'data/tiles'), { recursive: true });
-for (const f of DATA) fs.copyFileSync(path.join(source, `public/data/${f}.json`), path.join(pub, `data/${f}.json`));
+fs.mkdirSync(path.join(pub, 'tiles'), { recursive: true });
+for (const f of DATA) fs.copyFileSync(path.join(source, `public/data/${f}.json`), path.join(pub, `${f}.json`));
 const tiles = path.join(source, 'public/data/tiles');
-for (const f of fs.readdirSync(tiles)) fs.copyFileSync(path.join(tiles, f), path.join(pub, 'data/tiles', f));
+for (const f of fs.readdirSync(tiles)) fs.copyFileSync(path.join(tiles, f), path.join(pub, 'tiles', f));
 const fonts = path.join(source, 'public/fonts');
 const siteFonts = path.join(SITE, 'public/fonts');
 fs.mkdirSync(siteFonts, { recursive: true });
