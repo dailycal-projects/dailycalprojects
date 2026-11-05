@@ -30,8 +30,9 @@ Always run `npm run build` and `npm run lint` before pushing. GitHub Actions als
 ```
 src/
   content/articles/   One .mdx file per article
-  assets/images/      Every image, in a folder per article named after its short slug (its file
-                      name without the date, e.g. nobel/), and the site's logos (site/)
+  assets/images/      Every article's images, in a folder per article named after its short slug
+                      (its file name without the date, e.g. nobel/)
+  assets/site/        Images used across the site (the logos)
   components/         Reusable components (charts, images, links, SEO)
   config/             Site-wide settings (see "Site configuration")
   layouts/            PageLayout (header/footer/<head>) and the article layouts
@@ -127,7 +128,7 @@ The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](ht
 
 ### Adding images
 
-Every image goes in `src/assets/images/<short slug>/`, where the short slug is the article's file name without the date (e.g. `src/assets/images/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Images used across the site, like the logos, are in `src/assets/images/site/`. [Optimize](#optimizing-images) it first, then:
+Every image goes in `src/assets/images/<short slug>/`, where the short slug is the article's file name without the date (e.g. `src/assets/images/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Images used across the site, like the logos, are in `src/assets/site/`. [Optimize](#optimizing-images) it first, then:
 
 - `featuredImage` (and `secondaryFeaturedImage`) in frontmatter: its path relative to the article, `featuredImage: "../../assets/images/my-story/cover.jpg"`, and
 - inline images: import the image at the top of the article, then pass it to `<ArticleImage>`, or to Astro's `<Image>` (`import { Image } from "astro:assets"`) for an image without a caption:

@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import { withBase } from '../../lib/path';
 import ArticleFooter from '../../components/ArticleFooter';
-import logo from '../../assets/images/site/dclogo.webp?url';
+import logo from '../../assets/site/dclogo.webp?url';
 import { routeFromUrl, viewHref } from './views';
 import StoryMap from './StoryMap';
 import './styles/dashboard.css';
