@@ -4,13 +4,15 @@ import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import BlankArticleLayout from "../../layouts/BlankArticleLayout.astro";
 import { type Article, getArticles } from "../../lib/articles";
 
-/** Get a list of paths to generate */
+/** Get a list of paths to generate: every article but those with a link, which have no page */
 export async function getStaticPaths() {
   const articles = await getArticles();
-  return articles.map((article) => ({
-    params: { slug: article.id },
-    props: { article },
-  }));
+  return articles
+    .filter((article) => article.data.link === undefined)
+    .map((article) => ({
+      params: { slug: article.id },
+      props: { article },
+    }));
 }
 
 interface Props {

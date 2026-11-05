@@ -72,12 +72,13 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 | :-- | :-- | :-- |
 | `date` | Publish date, `"YYYY-MM-DD"`. Determines the order on the homepage. | Yes |
 | `title` | The headline. | Yes |
-| `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. | Yes |
+| `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. | Yes, unless the article has a `link` |
 | `featuredImage` | The featured (hero) image: its path relative to the article, e.g. `"../../assets/images/my-story/cover.jpg"`. Also used on homepage cards and in social previews. | Yes |
 | `featuredImageAlt` | Alt text describing the featured image, for screen readers and social previews. Defaults to `Featured image for "<title>"`, so please set it. | No |
 | `description` | Short summary for search results and social previews. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
 | `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`. | No |
 | `layout` | `true` (the default) renders the article in the [article layout](#layouts). `false` renders the article's body alone as the whole page, for an article that's one full-page visual. | No |
+| `link` | Where the article's homepage card goes instead of its own page: a page in `public/` (e.g. `"/data/election-2026/index.html"`, which must exist or the build fails; link a folder by its `index.html`, since the dev server doesn't serve folders) or a URL on another site. An article with a `link` gets no page of its own, so it needs only `date`, `title` and `featuredImage`, and its body isn't shown. | No |
 
 These are only used by the article layout (`layout: true`):
 

@@ -18,7 +18,8 @@ const articles = defineCollection({
       .strictObject({
         date: z.coerce.date(),
         title: z.string().trim().min(1),
-        byline: z.array(z.string().trim().min(1)).min(1, "byline needs at least one author."),
+        // Required unless the article has a link (checked below)
+        byline: z.array(z.string().trim().min(1)).default([]),
         featuredImage: image(),
         featuredImageAlt: z.string().trim().min(1).optional(),
         imageAttribution: z.string().optional(),
@@ -27,6 +28,10 @@ const articles = defineCollection({
         // false renders the article's body alone as the whole page, with no header, title,
         // byline or footer (for articles that are one full-page visual)
         layout: z.boolean().default(true),
+        // Where the article's homepage card goes instead of its own page: a page in public/ (e.g.
+        // "/data/election-2026/index.html") or a URL on another site. An article with a link gets no
+        // page of its own, so its body isn't shown; the old site's oldLink.
+        link: z.string().trim().min(1).optional(),
 
         // Only used by the article layout (layout: true)
         subhead: z.string().optional(),
@@ -38,6 +43,10 @@ const articles = defineCollection({
         bylineLinks: z.array(z.string()).default([]),
         aboutStory: z.string().optional(),
         jointDept: z.string().optional(),
+      })
+      .refine((data) => data.link !== undefined || data.byline.length > 0, {
+        message: "byline needs at least one author.",
+        path: ["byline"],
       })
       .refine(
         (data) => data.bylineLinks.length === 0 || data.bylineLinks.length === data.byline.length,

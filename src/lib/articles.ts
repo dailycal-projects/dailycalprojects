@@ -33,11 +33,13 @@ function validate(articles: Article[]): void {
       );
     }
 
-    // Files in public/ the article's body uses: /data/ paths (and /assets/ paths, which were
+    // Files in public/ the article's body or link uses: /data/ paths (and /assets/ paths, which were
     // images before they moved to src/assets/images/, so a leftover one fails the build)
-    const paths = (article.body ?? "")
-      .matchAll(/["'(](\/(?:assets|data)\/[^"')\s?#]+)/g)
-      .map((m) => m[1]);
+    const { link } = article.data;
+    const paths = [
+      ...(article.body ?? "").matchAll(/["'(](\/(?:assets|data)\/[^"')\s?#]+)/g).map((m) => m[1]),
+      ...(link && /^\/(?:assets|data)\//.test(link) ? [link] : []),
+    ];
     for (const path of paths) {
       // Pages are served without .html, and folders by their index.html
       const local = path?.startsWith("/") && !path.startsWith("//") && `public${decodeURI(path)}`;
@@ -61,9 +63,12 @@ export async function getArticles(): Promise<Article[]> {
   );
 }
 
-/** The site path of an article's page (pass it through withBase() before using it in a link). */
+/**
+ * Where an article's card links: its own page, or its `link` if it has one (pass it through withBase()
+ * before using it in a link).
+ */
 export function articlePath(article: Article): string {
-  return `/article/${article.id}`;
+  return article.data.link ?? `/article/${article.id}`;
 }
 
 /** An article's featured image alt text, falling back to a description built from its title. */
