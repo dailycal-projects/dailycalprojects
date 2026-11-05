@@ -1,24 +1,15 @@
 ---
 /**
  * The layout every page renders into: <head> (with SEO tags built from these props), the fixed
- * header, the page content, and the footer.
+ * header, and the page content.
  */
 import { Image } from "astro:assets";
 import wordmark from "../assets/site/dclogoblack.webp";
 import Seo, { type Props as SeoProps } from "../components/Seo.astro";
-import { site } from "../config/site";
 import { withBase } from "../lib/path";
 import "../styles/global.css";
 
 type Props = SeoProps;
-
-// Footer navigation
-const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: `mailto:${site.contactEmail}`, label: "Contact" },
-  { href: site.githubUrl, label: "GitHub" },
-  { href: site.donateUrl, label: "Donate" },
-];
 ---
 
 <!doctype html>
@@ -52,19 +43,6 @@ const footerLinks = [
     <main>
       <slot />
     </main>
-
-    {/* Footer */}
-    <footer class="footer">
-      <nav class="footerLinks" aria-label="Footer">
-        {footerLinks.map((link) => (
-          <a href={withBase(link.href)}>{link.label}</a>
-        ))}
-      </nav>
-      <p>
-        A project of the Data Department at <a href={site.mainSiteUrl}>The Daily Californian</a>,
-        Berkeley's independent, student-run newspaper.
-      </p>
-    </footer>
   </body>
 </html>
 
@@ -104,29 +82,5 @@ const footerLinks = [
   .logo {
     height: 20px;
     width: auto;
-  }
-  /* Footer */
-  .footer {
-    margin-top: 40px;
-    padding: 24px 16px 32px;
-    border-top: 1px solid #d3d3d3;
-    background-color: white;
-    text-align: center;
-    font-family: var(--font-list);
-    font-size: 14px;
-    color: var(--palette-dark-gray);
-  }
-  .footer a {
-    color: var(--palette-dark-gray);
-  }
-  .footerLinks {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px 20px;
-    margin-bottom: 12px;
-  }
-  .footer p {
-    margin: 0;
   }
 </style>
