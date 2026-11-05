@@ -14,18 +14,22 @@
 /gghenge_interactive /data/gghenge/gghenge_interactive 301
 /election-2026 /data/election-2026/ 301
 /election-2026/* /data/election-2026/:splat 301
-/endorsementweb /data/endorsementweb/ 301
-/endorsementweb/* /data/endorsementweb/:splat 301
 
 # public/data/<yyyy-mm-dd>-<slug>/ folders that were renamed to public/data/<slug>/
 /data/2026-09-17-gghenge /data/gghenge/ 301
 /data/2026-09-17-gghenge/* /data/gghenge/:splat 301
 /data/2026-10-13-rent-o-meter /data/rent-o-meter/ 301
 /data/2026-10-13-rent-o-meter/* /data/rent-o-meter/:splat 301
-/data/2026-11-02-endorsementweb /data/endorsementweb/ 301
-/data/2026-11-02-endorsementweb/* /data/endorsementweb/:splat 301
 /data/2026-11-03-election-2026 /data/election-2026/ 301
 /data/2026-11-03-election-2026/* /data/election-2026/:splat 301
+
+# The endorsement web's standalone page (it's now part of its article)
+/endorsementweb /article/2026-11-02-endorsementweb 301
+/endorsementweb/* /article/2026-11-02-endorsementweb 301
+/data/endorsementweb /article/2026-11-02-endorsementweb 301
+/data/endorsementweb/* /article/2026-11-02-endorsementweb 301
+/data/2026-11-02-endorsementweb /article/2026-11-02-endorsementweb 301
+/data/2026-11-02-endorsementweb/* /article/2026-11-02-endorsementweb 301
 
 # The old Gatsby site served articles at /<slug>/ (and /<slug>); they're now at /article/<slug>.
 /2018-04-13-campus-sex /article/2018-04-13-campus-sex 301

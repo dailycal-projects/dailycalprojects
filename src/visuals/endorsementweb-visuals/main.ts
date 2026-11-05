@@ -1,7 +1,10 @@
-import './fonts.css';
+// The endorsement web: a sigma graph with a search box, filters and a details panel. mount() renders it into a
+// shadow root on the element EndorsementWeb.jsx gives it, which keeps the article's styles and the app's apart.
+// Breakpoints follow that element's width, not the window's (the app was built to fill a page of its own).
 import snapshot from './graph.json';
-import './style.css';
-import './embed.css';
+import appCss from './style.css?inline';
+import embedCss from './embed.css?inline';
+import template from './template.html?raw';
 import Graph from 'graphology';
 import Sigma from 'sigma';
 import { createNormalizationFunction, graphExtent, matrixFromCamera, multiplyVec2 } from 'sigma/utils';
@@ -15,24 +18,48 @@ import {
 
 const LEAF = '#c4c4c4', DIM = '#f1f1f1', DIM_BORDER = '#e2e2e2';
 type View = 'cands' | 'race';
-const $ = <T extends HTMLElement = HTMLElement>(s: string) => document.querySelector(s) as T;
 const fmtDate = (iso: string) => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const norm = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-const narrowMQ = window.matchMedia('(max-width: 640px)');
-const stackMQ = window.matchMedia('(max-width: 899px)');
 const hoverMQ = window.matchMedia('(hover: hover) and (pointer: fine)');
-const midMQ = window.matchMedia('(max-width: 1279px)');   // below 1280 px, ring names show only on hover, focus or tap
 
 const tick = () => new Promise<void>((r) => setTimeout(r, 0));
 
-async function main() {
+/** Render the endorsement web into `host`. Returns a function that removes it. */
+export function mount(host: HTMLElement): () => void {
+  const root = host.shadowRoot ?? host.attachShadow({ mode: 'open' });
+  root.innerHTML = `<style>${appCss}\n${embedCss}</style><div class="app">${template}</div>`;
+  const app = root.querySelector<HTMLElement>('.app')!;
+  const abort = new AbortController();
+  main(host, root, app, abort.signal).catch((err) => {
+    if (abort.signal.aborted) return;
+    console.error(err);
+    const p = root.getElementById('panel'); if (p) p.innerHTML = '<p>Could not load the graphic data.</p>';
+  });
+  return () => { abort.abort(); root.innerHTML = ''; };
+}
+
+/** A max-width breakpoint on the host's width, shaped like a MediaQueryList (matches, a 'change' listener). */
+function widthQuery(host: HTMLElement, max: number, signal: AbortSignal) {
+  const test = () => host.clientWidth <= max;
+  let last = test(); const fns: (() => void)[] = [];
+  const ro = new ResizeObserver(() => { const now = test(); if (now !== last) { last = now; fns.forEach((f) => f()); } });
+  ro.observe(host); signal.addEventListener('abort', () => ro.disconnect());
+  return { get matches() { return test(); }, addEventListener: (_: 'change', f: () => void) => { fns.push(f); } };
+}
+
+async function main(host: HTMLElement, root: ShadowRoot, app: HTMLElement, signal: AbortSignal) {
+  const $ = <T extends HTMLElement = HTMLElement>(s: string) => root.querySelector(s) as T;
+  const on = { signal };
+  const narrowMQ = widthQuery(host, 640, signal);
+  const stackMQ = widthQuery(host, 899, signal);
+  const midMQ = widthQuery(host, 1279, signal);   // below 1280 px, ring names show only on hover, focus or tap
   const d: Data = JSON.parse(JSON.stringify(snapshot));
   // the graph shows groups only (plus candidates and the slate); the downloads keep every endorser
   const byIdAll = new Map(d.nodes.map((n) => [n.id, n]));
   d.nodes = d.nodes.filter((n) => n.grp || n.isTarget);
   const kept = new Set(d.nodes.map((n) => n.id));
   d.edges = d.edges.filter((e) => kept.has(e.s) && kept.has(e.t) && (e.kind === 'member' || !!byIdAll.get(e.s)?.grp));
-  await tick();
+  await tick(); if (signal.aborted) return;
   const ix = index(d);
   const { byId } = ix;
   const S = d.summary;
@@ -55,7 +82,7 @@ async function main() {
   for (const n of d.nodes) if (!isoSet.has(n.id)) g.addNode(n.id, { x: n.x, y: n.y, size: baseSize(n), label: n.name, color: nodeColor(n) });
   for (const e of d.edges) if (g.hasNode(e.s) && g.hasNode(e.t) && !g.hasEdge(e.s, e.t)) g.addDirectedEdgeWithKey(e.id, e.s, e.t, { size: 1, kind: e.kind });
 
-  await tick();
+  await tick(); if (signal.aborted) return;
   const raceSet = () => new Set(d.races.find((r) => r.race === state.race)?.candidates || []);
   const neighbors = (id: string) => (g.hasNode(id) ? new Set([id, ...g.neighbors(id)]) : new Set([id]));
   const isCand = (n: GNode) => n.isTarget && !n.analysisEndorser;
@@ -221,7 +248,7 @@ async function main() {
   /** redraw: sigma once it exists, the preview until then */
   const refresh = (opts?: any) => { if (renderer) renderer.refresh(opts); else if (!pvFrame) pvFrame = requestAnimationFrame(drawPreview); };
 
-  await tick();
+  await tick(); if (signal.aborted) return;
   // ---------- overlay: collision-aware labels, rings, letters ----------
   const overlay = document.createElement('canvas'); overlay.className = 'overlay'; overlay.setAttribute('aria-hidden', 'true');
   container.appendChild(overlay);
@@ -333,8 +360,7 @@ async function main() {
         placed.push([x - 3, y - th, x + tw + 3, y + 4]); draws.push([text, x, y, L.weight, !!L.dim, L.id]);
       }
     }
-    (window as any).__labels = draws.map((x) => x[5]);
-    octx.lineWidth = 1; octx.strokeStyle = '#444';
+        octx.lineWidth = 1; octx.strokeStyle = '#444';
     for (const [x1, y1, x2, y2] of leaders) { octx.beginPath(); octx.moveTo(x1, y1); octx.lineTo(x2, y2); octx.stroke(); }
     // labels sit above lines: a white backing box under each label
     for (const [text, x, y, wgt, dim] of draws) {
@@ -344,7 +370,8 @@ async function main() {
       octx.strokeText(text, x, y); octx.fillStyle = dim ? '#6b6b6b' : '#111'; octx.fillText(text, x, y);
     }
   }
-  new ResizeObserver(() => { sizeOverlay(); refresh(); }).observe(container);
+  const ro = new ResizeObserver(() => { sizeOverlay(); refresh(); }); ro.observe(container);
+  signal.addEventListener('abort', () => { ro.disconnect(); cancelAnimationFrame(pvFrame); renderer?.kill(); });
 
   // ---------- camera ----------
   let cam: ReturnType<Sigma['getCamera']> | null = null;
@@ -418,8 +445,8 @@ async function main() {
     renderer.refresh();
   }
   const wake = () => ensureSigma();
-  for (const ev of ['pointerdown', 'keydown', 'wheel', 'touchstart', 'focusin']) document.addEventListener(ev, wake, { capture: true, once: true, passive: true });
-  for (const ev of ['pointermove', 'pointerover']) container.addEventListener(ev, wake, { once: true, passive: true });
+  for (const ev of ['pointerdown', 'keydown', 'wheel', 'touchstart', 'focusin']) root.addEventListener(ev, wake, { capture: true, once: true, passive: true, signal });
+  for (const ev of ['pointermove', 'pointerover']) container.addEventListener(ev, wake, { once: true, passive: true, signal });
   function onEnter({ node, event }: { node: string; event: { x: number; y: number } }) {
     if (!hoverMQ.matches) return;
     state.hovered = node; recompute(); refresh({ skipIndexation: true });
@@ -429,7 +456,7 @@ async function main() {
     container.style.cursor = 'pointer';
   }
   function onLeave() { if (!state.hovered) return; state.hovered = null; recompute(); refresh({ skipIndexation: true }); hideTip(); container.style.cursor = ''; }
-  container.addEventListener('touchstart', hideTip, { passive: true });
+  container.addEventListener('touchstart', hideTip, { passive: true, signal });
 
   // ---------- panel helpers ----------
   const panel = $('#panel');
@@ -463,7 +490,7 @@ async function main() {
     const px = size === 'lg' ? 48 : 24;
     return `<span class="av av-${size} av-i av-logo" style="--c:#eeeeee;--t:#333">${esc(initials(n))}<img src="${esc(u)}" alt="" width="${px}" height="${px}" loading="lazy" decoding="async"></span>`;
   };
-  document.addEventListener('error', (e) => { const t = e.target as HTMLElement; if (t instanceof HTMLImageElement && t.parentElement?.classList.contains('av-logo')) t.remove(); }, true);
+  root.addEventListener('error', (e) => { const t = e.target as HTMLElement; if (t instanceof HTMLImageElement && t.parentElement?.classList.contains('av-logo')) t.remove(); }, { capture: true, signal });
   const avatar = (n: GNode, size: 'lg' | 'sm' = 'lg') => logoAv(n, size) || (photos[n.id]
     ? `<img class="av av-${size}" src="${esc(photos[n.id])}" alt="" width="${size === 'lg' ? 48 : 24}" height="${size === 'lg' ? 48 : 24}" loading="lazy" decoding="async">`
     : `<span class="av av-${size} av-i" aria-hidden="true" style="--c:${nodeColor(n)};--t:${onColor(nodeColor(n))}">${esc(initials(n))}</span>`);
@@ -646,7 +673,7 @@ async function main() {
   let capNote = false;
   function setMulti(m: string[], announce: boolean) {
     state.selected = null; state.multi = m.slice(0, MAXSEL);
-    computeHidden(); renderFilter(); recompute(); refresh({ skipIndexation: true }); renderPanel(); syncHash();
+    computeHidden(); renderFilter(); recompute(); refresh({ skipIndexation: true }); renderPanel();
     if (!m.length) goHome();
     if (announce) panel.querySelector<HTMLElement>('#ctitle')?.focus({ preventScroll: true });
   }
@@ -722,37 +749,38 @@ async function main() {
   // ---------- bottom sheet (narrow screens) ----------
   const sheet = $('#sheet'); const handle = $<HTMLButtonElement>('#sheetbtn');
   function setSheet(open: boolean) {
-    sheet.classList.toggle('open', open); document.body.classList.toggle('sheet-open', open); handle.setAttribute('aria-expanded', String(open));
+    sheet.classList.toggle('open', open); app.classList.toggle('sheet-open', open); handle.setAttribute('aria-expanded', String(open));
     handle.querySelector('span')!.textContent = open ? 'Hide details' : comparing() ? `Comparing ${state.multi.length}` : state.selected ? `Details: ${N(state.selected).name}` : 'Candidates and races';
   }
-  handle.addEventListener('click', () => setSheet(!sheet.classList.contains('open')));
+  handle.addEventListener('click', () => setSheet(!sheet.classList.contains('open')), on);
   function updatePill() { if (stackMQ.matches) setSheet(sheet.classList.contains('open') || !!state.selected || comparing()); }
   // ---------- interactions ----------
   function select(id: string | null, fly = true) {
     const had = state.selected || comparing();
     state.multi = [];
-    state.selected = id; computeHidden(); renderFilter(); recompute(); refresh({ skipIndexation: true }); renderPanel(); syncHash();
+    state.selected = id; computeHidden(); renderFilter(); recompute(); refresh({ skipIndexation: true }); renderPanel();
     if (id && fly) { if (stackMQ.matches) setTimeout(() => flyTo(id), 260); else flyTo(id); }
     if (!id && had) goHome();
   }
-  const tabs = [...document.querySelectorAll<HTMLButtonElement>('[role=tab]')];
+  const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role=tab]')];
   function setView(v: View) {
     state.view = v; state.selected = null; state.multi = [];
     tabs.forEach((b) => { const on = b.dataset.view === v; b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1; });
     panel.setAttribute('aria-labelledby', `tab-${v}`);
-    recompute(); refresh({ skipIndexation: true }); renderPanel(); renderLegend(); syncHash();
+    recompute(); refresh({ skipIndexation: true }); renderPanel(); renderLegend();
   }
   tabs.forEach((b) => {
-    b.addEventListener('click', () => { setView(b.dataset.view as View); goHome(); });
+    b.addEventListener('click', () => { setView(b.dataset.view as View); goHome(); }, on);
     b.addEventListener('keydown', (ev) => {
       const i = tabs.indexOf(b); let j = -1;
       if (ev.key === 'ArrowRight') j = (i + 1) % tabs.length; else if (ev.key === 'ArrowLeft') j = (i + tabs.length - 1) % tabs.length;
       else if (ev.key === 'Home') j = 0; else if (ev.key === 'End') j = tabs.length - 1;
       if (j >= 0) { ev.preventDefault(); tabs[j].focus(); tabs[j].click(); }
-    });
+    }, on);
   });
-  document.addEventListener('click', (ev) => {
+  root.addEventListener('click', (ev) => {
     const t = ev.target as HTMLElement;
+    if (t.closest('.skip')) { ev.preventDefault(); $('#q').focus(); return; }   // its #q href would go to the article's URL
     const nb = t.closest<HTMLElement>('[data-node]');
     if (nb) {
       ev.preventDefault(); const id = nb.dataset.node!;
@@ -763,41 +791,45 @@ async function main() {
     if (t.closest('[data-compare]')) { if (state.selected) setMulti([state.selected], true); return; }
     const un = t.closest<HTMLElement>('[data-unsel]'); if (un) { setMulti(state.multi.filter((x) => x !== un.dataset.unsel), true); return; }
     if (t.closest('[data-clear]')) { select(null); return; }
-    const rb = t.closest<HTMLElement>('[data-race]'); if (rb) { state.race = rb.dataset.race!; recompute(); refresh({ skipIndexation: true }); renderPanel(); syncHash(); return; }
+    const rb = t.closest<HTMLElement>('[data-race]'); if (rb) { state.race = rb.dataset.race!; recompute(); refresh({ skipIndexation: true }); renderPanel(); return; }
     if (t.closest('[data-ref]')) return;   // citation numbers open their source in a new tab
     const sm = t.closest<HTMLButtonElement>('.showmore');
     if (sm) { sm.previousElementSibling?.querySelectorAll('li.more').forEach((li) => { (li as HTMLElement).hidden = false; delete (li as HTMLElement).dataset.h; }); sm.remove(); }
     const ec = t.closest<HTMLElement>('[data-efclear]');
     if (ec) { const inp = ec.parentElement!.querySelector<HTMLInputElement>('.efq')!; inp.value = ''; filterEndorsers(inp); inp.focus(); }
-  });
-  panel.addEventListener('input', (ev) => { const t = ev.target as HTMLElement; if (t.classList.contains('efq')) filterEndorsers(t as HTMLInputElement); });
-  $<HTMLInputElement>('#showall').addEventListener('change', (e) => { state.showAll = (e.target as HTMLInputElement).checked; setFrame(); fitSheet(); cam?.setState(home()); recompute(); refresh(); renderLegend(); });
-  document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape') return;
+  }, on);
+  panel.addEventListener('input', (ev) => { const t = ev.target as HTMLElement; if (t.classList.contains('efq')) filterEndorsers(t as HTMLInputElement); }, on);
+  $<HTMLInputElement>('#showall').addEventListener('change', (e) => { state.showAll = (e.target as HTMLInputElement).checked; setFrame(); fitSheet(); cam?.setState(home()); recompute(); refresh(); renderLegend(); }, on);
+  root.addEventListener('keydown', (e) => {
+    if ((e as KeyboardEvent).key !== 'Escape') return;
     const ef = e.target as HTMLInputElement | null;
     if (ef?.classList?.contains('efq') && ef.value) { ef.value = ''; filterEndorsers(ef); return; }   // Escape first clears the group search
-    const fb = document.getElementById('filterbox') as HTMLDetailsElement | null;
+    const fb = root.getElementById('filterbox') as HTMLDetailsElement | null;
     if (fb?.open) { fb.open = false; fb.querySelector('summary')?.focus(); return; }   // close the filter first
     if (state.selected || comparing()) select(null);
-  });
+  }, on);
   const setPeek = (ev: Event) => { const t = (ev.target as HTMLElement)?.closest?.<HTMLElement>('[data-node]'); const id = t && ev.type !== 'focusout' && ev.type !== 'mouseout' ? t.dataset.node! : null; if (id !== peek) { peek = id; drawOverlay(); } };
-  for (const ev of ['focusin', 'focusout', 'mouseover', 'mouseout']) document.addEventListener(ev, setPeek, { passive: true });
+  for (const ev of ['focusin', 'focusout', 'mouseover', 'mouseout']) root.addEventListener(ev, setPeek, { passive: true, signal });
   midMQ.addEventListener('change', () => drawOverlay());
   // portrait phones: the upright network is about as wide as it is tall, so it cannot fill the screen's height without
   // cropping its sides. Give the leftover height to the bottom sheet, which then shows the panel (a peek) instead of empty canvas.
   function fitSheet() {
-    const root = document.documentElement;
-    root.style.removeProperty('--peek'); sheet.classList.remove('peek'); homeMemo = null;
-    if (!narrowMQ.matches || state.showAll) { document.body.classList.add('sheet-ready'); return; }
+    app.style.removeProperty('--peek'); sheet.classList.remove('peek'); homeMemo = null;
+    if (!narrowMQ.matches || state.showAll) { app.classList.add('sheet-ready'); return; }
     home(); const spare = container.clientHeight - (homeBottom + 64);
-    if (spare >= 120) { root.style.setProperty('--peek', `${Math.round(52 + spare)}px`); sheet.classList.add('peek'); }
+    if (spare >= 120) { app.style.setProperty('--peek', `${Math.round(52 + spare)}px`); sheet.classList.add('peek'); }
     homeMemo = null;
     if (renderer) { renderer.resize(); cam?.setState(home()); }
     refresh();
-    document.body.classList.add('sheet-ready');
+    app.classList.add('sheet-ready');
   }
   fitSheet();
-  let rsz = 0; window.addEventListener('resize', () => { cancelAnimationFrame(rsz); rsz = requestAnimationFrame(fitSheet); });
+  let rsz = 0; let lastSize = `${host.clientWidth}x${host.clientHeight}`;
+  const hostRO = new ResizeObserver(() => {
+    const size = `${host.clientWidth}x${host.clientHeight}`; if (size === lastSize) return; lastSize = size;
+    cancelAnimationFrame(rsz); rsz = requestAnimationFrame(fitSheet);
+  });
+  hostRO.observe(host); signal.addEventListener('abort', () => { hostRO.disconnect(); cancelAnimationFrame(rsz); });
   narrowMQ.addEventListener('change', () => { setFrame(); fitSheet(); cam?.setState(home()); recompute(); refresh(); renderLegend(); });
 
   // ---------- search (ARIA combobox) ----------
@@ -826,54 +858,23 @@ async function main() {
     hits = s ? searchIdx.filter((x) => x.key.includes(s) && !HIDDEN.has(x.id)).map((x) => x.id)
       .sort((a, b) => (Number(norm(N(b).name).startsWith(s)) - Number(norm(N(a).name).startsWith(s))) || (N(b).outDeg + N(b).inDeg - N(a).outDeg - N(a).inDeg)).slice(0, 8) : [];
     renderHits();
-  });
+  }, on);
   q.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown') { hi = Math.min(hi + 1, opts.length - 1); renderHits(); e.preventDefault(); }
     else if (e.key === 'ArrowUp') { hi = Math.max(hi - 1, 0); renderHits(); e.preventDefault(); }
     else if (e.key === 'Enter' && opts[hi]) { e.preventDefault(); const o = opts[hi]; if (o.add || e.shiftKey) addFromSearch(o.id); else choose(o.id); }
     else if (e.key === 'Escape') { qres.hidden = true; q.setAttribute('aria-expanded', 'false'); }
-  });
+  }, on);
   qres.addEventListener('mousedown', (e) => {
     const ad = (e.target as HTMLElement).closest<HTMLElement>('[data-add]'); if (ad) { e.preventDefault(); addFromSearch(ad.dataset.add!); return; }
     const li = (e.target as HTMLElement).closest<HTMLElement>('[data-hit]'); if (li) { e.preventDefault(); const me = e as MouseEvent; if (me.shiftKey || me.metaKey || me.ctrlKey) addFromSearch(li.dataset.hit!); else choose(li.dataset.hit!); }
-  });
-  q.addEventListener('blur', () => setTimeout(() => { qres.hidden = true; q.setAttribute('aria-expanded', 'false'); }, 120));
+  }, on);
+  q.addEventListener('blur', () => setTimeout(() => { qres.hidden = true; q.setAttribute('aria-expanded', 'false'); }, 120), on);
   function choose(id: string) { q.value = N(id).name; qres.hidden = true; q.setAttribute('aria-expanded', 'false'); if (comparing()) toggle(id); else select(id); }
   function addFromSearch(id: string) { q.value = ''; qres.hidden = true; q.setAttribute('aria-expanded', 'false'); toggle(id); }
 
-  // ---------- hash ----------
-  let applying = false;
-  function syncHash() {
-    if (applying) return;
-    const p = new URLSearchParams();
-    if (state.view === 'race') p.set('view', 'race');
-    if (state.view === 'race' && state.race !== 'Rent Board') p.set('race', state.race);
-    if (filt.hideT.size) p.set('hide', [...filt.hideT].join(','));
-    if (filt.hideR.size) p.set('races', RACES.filter((r) => !filt.hideR.has(r)).join(',') || 'none');
-    if (comparing()) p.set('select', state.multi.join(','));
-    else if (state.selected) p.set('node', state.selected);
-    const h = p.toString().replace(/%2C/g, ','); const want = location.pathname + (h ? '?' + h : '');
-    if (location.pathname + location.search + location.hash !== want) history.replaceState(null, '', want);
-  }
-  function applyHash() {
-    applying = true;
-    const hp = new URLSearchParams(location.search.slice(1) || location.hash.slice(1));
-    const v = hp.get('view'); const race = hp.get('race');
-    if (race && d.races.some((r) => r.race === race)) state.race = race;
-    filt.hideT.clear(); filt.hideR.clear();
-    for (const k of (hp.get('hide') || '').split(',').filter(Boolean)) {
-      if (FTYPES.some((f) => f.k === k)) filt.hideT.add(k);   // old 'individuals', 'people', 'officials' keys: nothing to hide
-    }
-    const rs = hp.get('races'); if (rs) { const on = new Set(rs.split(',')); for (const r of RACES) if (!on.has(r)) filt.hideR.add(r); }
-    computeHidden(); renderFilter();
-    setView(v === 'race' ? 'race' : 'cands');   // any other view (old ?view=coalitions or ?view=bridges links) opens the default
-    const node = hp.get('node');
-    const sel = (hp.get('select') || '').split(',').filter((x, i, a) => byId.has(x) && a.indexOf(x) === i).slice(0, MAXSEL);
-    if (sel.length) setMulti(sel, false);
-    else if (node && byId.has(node)) select(node, true);
-    applying = false;
-  }
-  window.addEventListener('popstate', applyHash);
+  /** the starting state: everyone shown, the candidates view */
+  function initState() { computeHidden(); renderFilter(); setView('cands'); }
 
   // ---------- filter control ----------
   const fbox = $<HTMLDetailsElement>('#filterbox');
@@ -892,7 +893,7 @@ async function main() {
     if (state.selected && filt.hideR.has(N(state.selected).race || '')) state.selected = null;
     state.multi = state.multi.filter((x) => !filt.hideR.has(N(x).race || ''));
     computeHidden(); renderFilter(); homeMemo = null;
-    recompute(); refresh(); renderPanel(); syncHash();
+    recompute(); refresh(); renderPanel();
     if (narrowMQ.matches) cam?.setState(home());
   }
   fbox.addEventListener('click', (e) => {
@@ -900,23 +901,12 @@ async function main() {
     if (b.dataset.ft) { const k = b.dataset.ft; filt.hideT.has(k) ? filt.hideT.delete(k) : filt.hideT.add(k); applyFilter(); }
     else if (b.dataset.fr) { const r = b.dataset.fr; filt.hideR.has(r) ? filt.hideR.delete(r) : filt.hideR.add(r); applyFilter(); }
     else if (b.id === 'freset') { filt.hideT.clear(); filt.hideR.clear(); applyFilter(); }
-  });
-  document.addEventListener('click', (e) => { if (fbox.open && !fbox.contains(e.target as Node)) fbox.open = false; });
+  }, on);
+  // clicks inside the shadow root reach the document retargeted to the host, so check the event's path instead
+  document.addEventListener('click', (e) => { if (fbox.open && !e.composedPath().includes(fbox)) fbox.open = false; }, on);
 
-  ($('#legendbox') as HTMLDetailsElement).open = window.innerWidth >= 1280;   // collapsed below 1280 px so it never covers the graph
-  await tick(); applyHash();
-  (window as any).__test = {
-    pos: (id: string) => { if (!renderer) { const p = pvPos.get(id); return p ? { x: p.x, y: p.y } : null; } const dd: any = renderer.getNodeDisplayData(id); return dd ? renderer.framedGraphToViewport({ x: dd.x, y: dd.y }) : null; },
-    sigma: () => !!renderer, home: () => home(),
-    byName: (n: string) => ix.byName.get(n)?.id, state, filt: () => ({ hideT: [...filt.hideT], hideR: [...filt.hideR], hidden: HIDDEN.size }),
-    visible: (id: string) => g.hasNode(id) && !HIDDEN.has(id),
-    cands: () => d.nodes.filter((n) => n.isTarget && g.hasNode(n.id)).map((n) => n.id),
-    leaf: (id: string) => !!byId.get(id)?.leaf,
-    nbrs: () => (state.selected && g.hasNode(state.selected) ? g.neighbors(state.selected) : []),
-    multi: () => [...state.multi], allLinked: () => [...ALLN], someLinked: () => [...SOMEN],
-  };
-  (window as any).__ready = true;
+  ($('#legendbox') as HTMLDetailsElement).open = host.clientWidth >= 1280;   // collapsed below 1280 px so it never covers the graph
+  await tick(); if (signal.aborted) return;
+  initState();
 }
 
-
-main().catch((err) => { console.error(err); const p = document.getElementById('panel'); if (p) p.innerHTML = '<p>Could not load the graphic data.</p>'; });

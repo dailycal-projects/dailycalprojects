@@ -1,20 +1,18 @@
 # Endorsement web
 
 Adapted from https://github.com/rexheng/nganalysis for the November 2, 2026 story.
-`EndorsementWeb` embeds the locally bundled application to isolate the graph's
-viewport, keyboard listeners, styles and URL state from the article.
 
-`graph.json` is a fixed snapshot copied from the source repository. It is imported
-into the JavaScript bundle; the graphic does not fetch data or poll for updates.
-Organization logo services are disabled. Fonts and runtime assets are local.
+`EndorsementWeb.jsx` renders a box (`host.css`) and, in the browser, calls `mount()` from `main.ts`, which
+draws the app (`template.html`, `style.css`, `embed.css`) into a shadow root on that box. The shadow root keeps
+the article's styles out of the app and the app's styles out of the article, the job an iframe did before.
 
-The source title and analysis navigation were removed. The article wrapper uses
-up to 1200px on desktop, shrinks with the viewport and gives phone users a
-contained expandable details panel. The main background is transparent.
+The app was built to fill a page of its own, so inside the box:
 
-To rebuild after editing source or intentionally replacing the snapshot:
+- its breakpoints and `cqh`/`cqw` units measure the box (`container-type: size` in `host.css`), as they measured
+  the iframe's viewport. `@container` rules in the CSS and `widthQuery()` in `main.ts` stand in for media queries.
+- the mobile details sheet is positioned in the box, not fixed to the window.
+- it doesn't keep its state in the URL (that would rewrite the article's URL), and its keyboard shortcuts only
+  apply while focus is inside it.
 
-    npm install --prefix src/visuals/endorsementweb-visuals
-    npm run build --prefix src/visuals/endorsementweb-visuals
-
-Commit the generated files in `public/data/endorsementweb/` with source changes.
+`graph.json` is a fixed snapshot copied from the source repository, bundled into the app's JavaScript, which only
+loads on this article. Organization logo services are disabled. Fonts are in `public/fonts/` (`fonts.css`).

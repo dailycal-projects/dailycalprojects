@@ -28,7 +28,7 @@
     "@mui/icons-material": "^9.5.0",
     "@mui/lab": "^9.0.0-beta.10",
     "@mui/material": "^9.5.0",
-    "@sigma/node-border": "^4.0.0",
+    "@sigma/node-border": "^3.0.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "astro": "^7.4.5",
@@ -47,7 +47,7 @@
     "react-leaflet": "^5.0.0",
     "react-leaflet-markercluster": "^5.0.0-rc.0",
     "recharts": "^3.10.1",
-    "sigma": "^4.0.4",
+    "sigma": "^3.0.3",
     "topojson-client": "^3.1.0",
     "tss-react": "^4.9.21"
   },

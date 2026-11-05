@@ -1,23 +1,22 @@
+/* The element the app renders into (its shadow root holds the app and its styles). It sets the size the app
+ * fills; the app's breakpoints and cqh/cqw units measure this box (container-type), as they measured its
+ * iframe's viewport before. */
 .endorsementweb-visual {
+  display: block;
   width: min(1200px, calc(100vw - 32px));
+  height: clamp(560px, 80vh, 820px);
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   margin: 28px 0;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+  box-sizing: content-box;
   overflow: hidden;
-}
-.endorsementweb-visual iframe {
-  display: block;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: clamp(560px, 80vh, 820px);
-  border: 0;
-  background: transparent;
+  container-type: size;
 }
 @media (max-width: 640px) {
-  .endorsementweb-visual { width: calc(100vw - 24px); }
-  .endorsementweb-visual iframe { height: clamp(520px, 82svh, 760px); }
+  .endorsementweb-visual {
+    width: calc(100vw - 24px);
+    height: clamp(520px, 82svh, 760px);
+  }
 }
