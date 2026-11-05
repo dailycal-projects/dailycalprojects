@@ -5,9 +5,10 @@
 //   node src/visuals/rent-o-meter-visuals/sync.js <path-to-dc_app>
 //
 // What it writes, none of which should be edited by hand:
-//   app/              dc_app/src as is, except host.ts (written below) and the Vite-only entry and stylesheet
+//   app/              dc_app/src as is, except host.ts (written below), the wordmark in Banner.tsx (the site's
+//                     own copy, src/assets/site/dclogoblack.webp) and the Vite-only entry and stylesheet
 //   styles/app.css    dc_app/src/styles.css, every rule scoped to .rom, the root RentOMeterStory renders
-//   public/data/rent-o-meter/   the data files and images the app fetches at run time
+//   public/data/rent-o-meter/   the data files the app fetches at run time
 //   public/fonts/               the fonts (shared with other stories, so files are overwritten, never removed)
 //
 // Gatsby puts every imported stylesheet on every page of the site, and the app's CSS was written for a page
@@ -51,6 +52,17 @@ export function portalTarget(): HTMLElement {
   return document.querySelector<HTMLElement>("${ROOT}") ?? document.body;
 }
 `);
+// dc_app's wordmark (public/dailycal-wordmark.webp) is the same image as the site's header logo, so the banner
+// imports that instead of fetching a copy
+const banner = path.join(app, 'components/Banner.tsx');
+const bannerSrc = fs.readFileSync(banner, 'utf8');
+const patchedBanner = bannerSrc
+  .replace('import { assetBase } from "../host";', 'import wordmark from "../../../../assets/site/dclogoblack.webp";')
+  .replace('src={`${assetBase}dailycal-wordmark.webp`}', 'src={wordmark.src}');
+if (!patchedBanner.includes('wordmark.src') || patchedBanner.includes('assetBase')) {
+  throw new Error('dc_app/src/components/Banner.tsx changed: update the wordmark patch in sync.js');
+}
+fs.writeFileSync(banner, patchedBanner);
 console.log(`src -> ${path.relative(SITE, app)}`);
 
 // --- styles -------------------------------------------------------------------------------------------
@@ -116,7 +128,6 @@ fs.mkdirSync(path.join(pub, 'data/tiles'), { recursive: true });
 for (const f of DATA) fs.copyFileSync(path.join(source, `public/data/${f}.json`), path.join(pub, `data/${f}.json`));
 const tiles = path.join(source, 'public/data/tiles');
 for (const f of fs.readdirSync(tiles)) fs.copyFileSync(path.join(tiles, f), path.join(pub, 'data/tiles', f));
-fs.copyFileSync(path.join(source, 'public/dailycal-wordmark.webp'), path.join(pub, 'dailycal-wordmark.webp'));
 const fonts = path.join(source, 'public/fonts');
 const siteFonts = path.join(SITE, 'public/fonts');
 fs.mkdirSync(siteFonts, { recursive: true });
