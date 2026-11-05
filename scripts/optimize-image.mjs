@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 /**
  * Image optimization pipeline.
- * Converts one or more images in place to web-optimized JPEG, deleting the 
- * original unless --keep-original is given.
+ * Converts one or more images in place to web-optimized JPEG (or, for images with
+ * transparent pixels, WebP), deleting the original unless --keep-original is
+ * given. An image that's already optimized (re-encoding it would save less than
+ * MIN_SAVINGS) is left as it is, so it's safe to run on every image.
  *
  * Usage:
  *   npm run optimize -- <image> [<image> ...] [--keep-original]
@@ -24,9 +26,17 @@ const MAX_DIMENSION = 2560;
 // resolution (4:4:4) so colored edges in illustrations and text stay crisp.
 const JPEG_QUALITY = 85;
 
-// JPEG has no transparency, so transparent pixels are flattened onto the
-// site's white page background.
-const FLATTEN_BACKGROUND = "#ffffff";
+// Opaque images become JPEGs. JPEG has no transparency, so an image with any
+// transparent pixels (an icon, logo or cutout drawn over something) becomes a
+// WebP instead, which keeps it: lossy color at the same quality as JPEG, and
+// lossless transparency so edges stay clean. (Lossless PNG only saves a few
+// percent on these, and WebP works in every current browser.)
+const WEBP_QUALITY = 85;
+
+// An image already in the right format and within MAX_DIMENSION is left as it
+// is unless re-encoding it saves at least this much: re-encoding a lossy image
+// loses a little quality each time, which isn't worth a few percent.
+const MIN_SAVINGS = 0.1;
 
 // Raw camera formats aren't decodable, so we will throw specifically for these.
 const KNOWN_RAW_EXTENSIONS = new Set([
@@ -79,28 +89,53 @@ async function optimizeOne(inputPath, { keepOriginal }) {
   }
 
   const originalStat = await stat(resolvedInput);
+  const input = sharp(resolvedInput, { failOn: "none" });
+  const { format, autoOrient } = await input.metadata();
+  const { isOpaque } = await input.stats();
+  const outputFormat = isOpaque ? "jpeg" : "webp";
+  const outputExt = isOpaque ? ".jpg" : ".webp";
+
   const dir = path.dirname(resolvedInput);
   // extname() keeps the original case (ext is lowercased), so .JPG files lose their extension too
   const base = path.basename(resolvedInput, path.extname(resolvedInput));
-  const outputPath = path.join(dir, `${base}.jpg`);
+  const outputPath = path.join(dir, `${base}${outputExt}`);
 
-  const tempPath = path.join(dir, `.${base}.${randomBytes(4).toString("hex")}.tmp.jpg`);
+  const tempPath = path.join(dir, `.${base}.${randomBytes(4).toString("hex")}.tmp${outputExt}`);
 
-  await sharp(resolvedInput, { failOn: "none" })
-    .rotate()
-    .resize({
-      width: MAX_DIMENSION,
-      height: MAX_DIMENSION,
-      fit: "inside",
-      withoutEnlargement: true,
-    })
-    .flatten({ background: FLATTEN_BACKGROUND })
-    .jpeg({ quality: JPEG_QUALITY, mozjpeg: true, chromaSubsampling: "4:4:4" })
-    .toFile(tempPath);
+  const resized = sharp(resolvedInput, { failOn: "none" }).rotate().resize({
+    width: MAX_DIMENSION,
+    height: MAX_DIMENSION,
+    fit: "inside",
+    withoutEnlargement: true,
+  });
+  await (isOpaque
+    ? resized.jpeg({ quality: JPEG_QUALITY, mozjpeg: true, chromaSubsampling: "4:4:4" })
+    : resized.webp({ quality: WEBP_QUALITY, alphaQuality: 100, smartSubsample: true, effort: 6 })
+  ).toFile(tempPath);
 
   const newStat = await stat(tempPath);
 
   const replacingSelf = resolvedInput === outputPath;
+
+  // Already optimized: within MAX_DIMENSION, and either already in the output format with
+  // re-encoding saving less than MIN_SAVINGS, or (e.g. a tiny transparent PNG icon) re-encoding
+  // would make it bigger
+  const withinSize = Math.max(autoOrient.width, autoOrient.height) <= MAX_DIMENSION;
+  const savings = 1 - newStat.size / originalStat.size;
+  const alreadyOptimized =
+    withinSize &&
+    ((replacingSelf && format === outputFormat && savings < MIN_SAVINGS) || savings <= 0);
+  if (alreadyOptimized) {
+    await unlink(tempPath);
+    return {
+      inputPath: resolvedInput,
+      outputPath,
+      originalSize: originalStat.size,
+      newSize: originalStat.size,
+      keptOriginal: false,
+      alreadyOptimized: true,
+    };
+  }
   if (!keepOriginal && !replacingSelf) {
     await unlink(resolvedInput);
   }
@@ -140,6 +175,10 @@ async function main() {
       ).toFixed(1);
       const sign = result.newSize <= result.originalSize ? "-" : "+";
 
+      if (result.alreadyOptimized) {
+        console.log(`\n${path.relative(process.cwd(), result.inputPath)}: already optimized, left as is`);
+        continue;
+      }
       console.log(`\n${path.relative(process.cwd(), result.inputPath)} → ${path.relative(process.cwd(), result.outputPath)}`);
       console.log(`  original: ${formatBytes(result.originalSize)}`);
       console.log(`  new:      ${formatBytes(result.newSize)}`);

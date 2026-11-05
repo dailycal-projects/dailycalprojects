@@ -8,7 +8,7 @@ bylineLinks:
   - "https://www.dailycal.org/users/profile/ajith%20araiza-singh/"
   - "https://www.dailycal.org/users/profile/john%20bragado"
 subhead: "We scraped Wikipedia edits made by UC staff, students and guests to see which articles were edited and how."
-featuredImage: "/assets/images/wikiedits.jpg"
+featuredImage: "../../assets/images/wikiedits.jpg"
 imageAttribution: "Noelle Chang | Staff"
 aboutStory: "Data from this project came from Wikipedia, scraped using Wikimedia REST API."
 ---
@@ -18,6 +18,12 @@ import EditsOverTime from "../../visuals/wikiedits-visuals/edits_over_time";
 import EditsPerSchool from "../../visuals/wikiedits-visuals/edits_per_school";
 import SemanticMap from "../../visuals/wikiedits-visuals/semantic_map";
 import Wikidiff from "../../visuals/wikiedits-visuals/wikidiff";
+import { Image } from "astro:assets";
+import imgWikieditsBrandonkline from "../../assets/images/wikiedits-brandonkline.jpg";
+import imgWikieditsKliner916 from "../../assets/images/wikiedits-kliner916.jpg";
+import imgWikieditsTalk1 from "../../assets/images/wikiedits-talk1.jpg";
+import imgWikieditsTalk2 from "../../assets/images/wikiedits-talk2.jpg";
+import imgWikieditsMgedits from "../../assets/images/wikiedits-mgedits.jpg";
 
 Despite never-ending debates about its viewpoint bias and reliability, Wikipedia is still read by billions of people each month who largely trust what’s written in it.
 
@@ -193,7 +199,12 @@ Now counsel for the California Air Resources Board, Kline said the edits were ma
 <br />
 
 <body>
-  <img alt="" src="/assets/images/wikiedits-brandonkline.jpg" />
+  <Image
+    alt=""
+    src={imgWikieditsBrandonkline}
+    layout="constrained"
+    width={640}
+  />
   <div
     style={{
       color: "#707070",
@@ -222,7 +233,12 @@ Now counsel for the California Air Resources Board, Kline said the edits were ma
 <br />
 
 <body>
-  <img alt="" src="/assets/images/wikiedits-kliner916.jpg" />
+  <Image
+    alt=""
+    src={imgWikieditsKliner916}
+    layout="constrained"
+    width={640}
+  />
   <div
     style={{
       color: "#707070",
@@ -261,13 +277,23 @@ The text added by Brandonkline and Kliner916 was eventually removed by other con
 <br />
 
 <body>
-  <img alt="" src="/assets/images/wikiedits-talk1.jpg" />
+  <Image
+    alt=""
+    src={imgWikieditsTalk1}
+    layout="constrained"
+    width={640}
+  />
 </body>
 
 <br />
 
 <body>
-  <img alt="" src="/assets/images/wikiedits-talk2.jpg" />
+  <Image
+    alt=""
+    src={imgWikieditsTalk2}
+    layout="constrained"
+    width={640}
+  />
   <div
     style={{
       color: "#707070",
@@ -334,7 +360,12 @@ Current UC Berkeley Chancellor Rich Lyons’ Wikipedia article has also been edi
 <br />
 
 <body>
-  <img alt="" src="/assets/images/wikiedits-mgedits.jpg" />
+  <Image
+    alt=""
+    src={imgWikieditsMgedits}
+    layout="constrained"
+    width={640}
+  />
   <div
     style={{
       color: "#707070",

@@ -1,23 +1,28 @@
 ---
 /**
  * An image inside an article: a single image (`src` + `alt`), or a group of images (`images`) laid
- * out side by side in `columns` columns, sharing one caption and attribution. Images are files in
- * public/ by their site path (optimize them first; see the README), or full URLs:
+ * out side by side in `columns` columns, sharing one caption and attribution. Images are imported
+ * from src/assets/images/ (optimize them first; see the README), and resized at build time:
  *
  *   import ArticleImage from "../../components/ArticleImage.astro";
+ *   import protest from "../../assets/images/protest.jpg";
  *
- *   <ArticleImage src="/assets/images/protest.jpg" alt="Students march on Sproul Plaza" caption="..." attribution="Jane Doe | Staff" />
+ *   <ArticleImage src={protest} alt="Students march on Sproul Plaza" caption="..." attribution="Jane Doe | Staff" />
  */
-import { withBase } from "../lib/path";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
 interface GroupImage {
-  src: string;
+  src: ImageMetadata;
   alt: string;
 }
 
+// The article column's width
+const COLUMN_WIDTH = 640;
+
 // Either `src` + `alt`, or `images`
 interface Props {
-  src?: string;
+  src?: ImageMetadata;
   alt?: string;
   images?: GroupImage[];
   /** Grid columns for a group of images (1 stacks them). Collapses to 1 on phones. */
@@ -33,19 +38,22 @@ if (images ? images.length === 0 : !src) {
   throw new Error("<ArticleImage> needs a src (and alt), or a non-empty images list.");
 }
 if (!images && alt === undefined) {
-  throw new Error(`<ArticleImage> for ${src} needs alt text.`);
+  throw new Error(`<ArticleImage> for ${src?.src} needs alt text.`);
 }
+
+// Each image's widest displayed width (columns collapse to one on phones, at most the column wide)
+const width = Math.round(COLUMN_WIDTH / (images ? columns : 1));
 ---
 
 <figure class="articleImage">
   {images ? (
     <div class="grid" style={`--columns: ${columns}`}>
       {images.map((image) => (
-        <img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" />
+        <Image src={image.src} alt={image.alt} layout="constrained" width={width} />
       ))}
     </div>
   ) : (
-    src && <img src={withBase(src)} alt={alt ?? ""} loading="lazy" decoding="async" />
+    src && <Image src={src} alt={alt ?? ""} layout="constrained" width={width} />
   )}
 
   {(caption || attribution) && (

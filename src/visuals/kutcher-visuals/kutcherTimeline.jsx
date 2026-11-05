@@ -6,13 +6,13 @@ import { TimelineConnector } from '../../lib/compat/material-ui';
 import { TimelineContent } from '../../lib/compat/material-ui';
 import { TimelineDot } from '../../lib/compat/material-ui';
 import { TimelineOppositeContent } from '../../lib/compat/material-ui';
-import Age4 from './kutcher-images/Kira Kutcher - Age 4.jpg?url';
-import Age6 from './kutcher-images/Kira Kutcher - Age 6.jpg?url';
-import FigureSkating from './kutcher-images/Kira Kutcher - Age 11 Figure Skating Performance.jpg?url';
-import DancePerformance from './kutcher-images/Kira Kutcher - Age 11 School Dance Performance.jpg?url';
-import Graduation from './kutcher-images/Kira Kutcher - Age 18 High School Graduation.jpg?url';
-import CollegeClass from './kutcher-images/Kira Kutcher - Age 20 Attending College Class.jpg?url';
-import BladeRave from './kutcher-images/Kira Kutcher - Age 21 Attending Blade Rave.jpg?url';
+import Age4 from '../../assets/images/kutcher/Kira Kutcher - Age 4.jpg?url';
+import Age6 from '../../assets/images/kutcher/Kira Kutcher - Age 6.jpg?url';
+import FigureSkating from '../../assets/images/kutcher/Kira Kutcher - Age 11 Figure Skating Performance.jpg?url';
+import DancePerformance from '../../assets/images/kutcher/Kira Kutcher - Age 11 School Dance Performance.jpg?url';
+import Graduation from '../../assets/images/kutcher/Kira Kutcher - Age 18 High School Graduation.jpg?url';
+import CollegeClass from '../../assets/images/kutcher/Kira Kutcher - Age 20 Attending College Class.jpg?url';
+import BladeRave from '../../assets/images/kutcher/Kira Kutcher - Age 21 Attending Blade Rave.jpg?url';
 
 export default function KutcherTimeline() {
   return (

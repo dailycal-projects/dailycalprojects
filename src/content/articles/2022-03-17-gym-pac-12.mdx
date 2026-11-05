@@ -10,7 +10,7 @@ bylineLinks:
   - "https://www.dailycal.org/author/mwachtel"
   - "https://www.dailycal.org/author/cfozi"
 subhead: "After posting season high, Bears enter Pac-12 championships as No. 2 seed"
-featuredImage: "/assets/images/gym-nevaeh.jpg"
+featuredImage: "../../assets/images/gym-nevaeh.jpg"
 imageAttribution: "Theo Wyss-Flamm | Senior Staff"
 imageCaption: "Junior Nevaeh DeSouza has competed in the all-around in all of Cal’s meets this season, posting a career-high 39.625 in the Bears’ upset win against Utah, which enters the Pac-12 championships this weekend as the No. 1 seed.  She and her teammates will look to replicate their performance to capture Cal’s first conference championship."
 ---
@@ -20,6 +20,9 @@ import GymVault from "../../visuals/gym-pac-12-visuals/gymVault";
 import GymBars from "../../visuals/gym-pac-12-visuals/gymBars";
 import GymBeam from "../../visuals/gym-pac-12-visuals/gymBeam";
 import GymFloor from "../../visuals/gym-pac-12-visuals/gymFloor";
+import { Image } from "astro:assets";
+import imgGymGrace from "../../assets/images/gym-grace.jpg";
+import imgGymMilan from "../../assets/images/gym-milan.jpg";
 
 After securing its first Pac-12 regular-season championship, Cal women’s gymnastics will look to continue its record-breaking year. The next goal: a conference title at the Pac-12 championships Saturday.
 
@@ -62,9 +65,11 @@ For the Bears, all eyes will be on Bordas, sophomore Andi Li and junior Nevaeh D
 
 Senior Grace Quinn, Cal’s longtime floor anchor, is No. 4 on her event and will likely leave a mark at the championships.
 
-<img
+<Image
   alt="Photo of Senior Grace Quinn on floor"
-  src="/assets/images/gym-grace.jpg"
+  src={imgGymGrace}
+  layout="constrained"
+  width={640}
 />
 <body>
   <em>
@@ -84,9 +89,11 @@ In a new environment without the roar of a home crowd, teams generally do not pe
 
 “Pac-12 championships is in my hometown, so it's always one of my favorite meets,” said senior Milan Clausi, who was named the Pac-12 Specialist of the Week after posting a 9.925 on beam and 9.95 on floor Sunday. “I get to see a lot of family and perform in front of family and friends, and so it’s the closest thing to competing at home, and I love that.”
 
-<img
+<Image
   alt="Photo of Senior Milan Clausi on beam"
-  src="/assets/images/gym-milan.jpg"
+  src={imgGymMilan}
+  layout="constrained"
+  width={640}
 />
 
 <body>

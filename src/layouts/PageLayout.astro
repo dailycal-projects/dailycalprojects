@@ -3,6 +3,8 @@
  * The layout every page renders into: <head> (with SEO tags built from these props), the fixed
  * header, the page content, and the footer.
  */
+import { Image } from "astro:assets";
+import wordmark from "../assets/images/dclogoblack.webp";
 import Seo, { type Props as SeoProps } from "../components/Seo.astro";
 import { site } from "../config/site";
 import { withBase } from "../lib/path";
@@ -35,12 +37,13 @@ const footerLinks = [
     {/* Header */}
     <header class="header">
       <a href={withBase("/")} class="logoLink" aria-label="The Daily Californian: Data home">
-        <img
-          src={withBase("/assets/site/dclogo-black.png")}
+        <Image
+          src={wordmark}
           alt="The Daily Californian"
           class="logo"
-          width="1000"
-          height="68"
+          height={20}
+          densities={[1, 2, 3]}
+          loading="eager"
         />
       </a>
     </header>

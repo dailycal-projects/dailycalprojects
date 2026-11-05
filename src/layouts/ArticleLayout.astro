@@ -1,9 +1,9 @@
 ---
 /** The layout for articles (layout: true): header, title, hero image, byline, body and footer. */
+import { Image } from "astro:assets";
 import PageLayout from "./PageLayout.astro";
 import { Link } from "../components/Link";
 import { site } from "../config/site";
-import { withBase } from "../lib/path";
 import { type Article, articleDescription, dateFormat, featuredImageAlt } from "../lib/articles";
 import "../styles/article.css";
 // The old site's base styles, which the visuals in older articles were designed for
@@ -65,10 +65,14 @@ const authorLink = (author: string, i: number) => {
       {/* Featured image */}
       {!hideHeroImage && (
         <div class="imageContainer">
-          <img
-            src={withBase(secondaryFeaturedImage ?? featuredImage)}
+          <Image
+            src={secondaryFeaturedImage ?? featuredImage}
             alt={imageAlt}
             class="image"
+            layout="constrained"
+            width={640}
+            loading="eager"
+            fetchpriority="high"
           />
 
           {imageCaption && (

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import asucData from './data';
-import cursorIcon from './cursor.png?url';
+import cursorIcon from '../../assets/images/club-finances/cursor.png?url';
 import './styles.css';
 
 const ASUCFunding = ({ data = asucData }) => {

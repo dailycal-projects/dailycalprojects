@@ -5,10 +5,10 @@ import React, {
 } from 'react';
 import { preload as preloadResource } from 'react-dom';
 import * as styles from '../styling/dc-video-player.module.css';
-import muteIcon from '../icons/volume-xmark-solid-full.svg?url';
-import fullVolumeIcon from '../icons/volume-solid-full.svg?url';
-import playIcon from '../icons/play-solid-full.svg?url';
-import externalSrcIcon from '../icons/arrow-up-right-from-square-solid-full.svg?url';
+import muteIcon from '../../../assets/images/bug-bodycam/volume-xmark-solid-full.svg?url';
+import fullVolumeIcon from '../../../assets/images/bug-bodycam/volume-solid-full.svg?url';
+import playIcon from '../../../assets/images/bug-bodycam/play-solid-full.svg?url';
+import externalSrcIcon from '../../../assets/images/bug-bodycam/arrow-up-right-from-square-solid-full.svg?url';
 
 export const DCVideoPlayer = forwardRef(({
   src,

@@ -1,0 +1,380 @@
+[
+  {
+    "id": "1050",
+    "name": "John Clarke",
+    "local": "photos/inspire/1050.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Clarke_John-1362x2048.2e16d0ba.fill-300x300.jpg"
+  },
+  {
+    "id": "1051",
+    "name": "Michel Devoret",
+    "local": "photos/inspire/1051.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/michel-devoret.2e16d0ba.fill-300x300.jpg"
+  },
+  {
+    "id": "1052",
+    "name": "John Martinis",
+    "local": "photos/inspire/1052.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/john-martinis.2e16d0ba.fill-300x300.jpg"
+  },
+  {
+    "id": "1055",
+    "name": "Omar Yaghi",
+    "local": "photos/inspire/1055.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/OmarYaghi_by_BHS.2e16d0ba.fill-300x300.jpg"
+  },
+  {
+    "id": "1039",
+    "name": "David Baker",
+    "local": "photos/inspire/1039.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/David-Baker-blackwhite.2e16d0ba.fill-300x300.jpg"
+  },
+  {
+    "id": "1036",
+    "name": "Gary Ruvkun",
+    "local": "photos/inspire/1036.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Ruvkun.2e16d0ba.fill-300x300.jpg"
+  },
+  {
+    "id": "1015",
+    "name": "Carolyn Bertozzi",
+    "local": "photos/inspire/1015.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/bertozzi_headshot_cicero3.1383c28d.fill-300x300_GvWEWK5.jpg"
+  },
+  {
+    "id": "1013",
+    "name": "John Clauser",
+    "local": "photos/inspire/1013.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Clauser.2e16d0ba.fill-300x300.jpg"
+  },
+  {
+    "id": "1011",
+    "name": "Svante P\u00e4\u00e4bo",
+    "local": "photos/inspire/1011.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Paabo.2e16d0ba.fill-300x300.png"
+  },
+  {
+    "id": "1007",
+    "name": "David Card",
+    "local": "photos/inspire/1007.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Card.2e16d0ba.fill-300x300_79O3gdv.jpg"
+  },
+  {
+    "id": "997",
+    "name": "David Julius",
+    "local": "photos/inspire/997.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Julius750px.19d3998d.fill-300x300_lOJeQu4.jpg"
+  },
+  {
+    "id": "992",
+    "name": "Jennifer Doudna",
+    "local": "photos/inspire/992.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/doudna-111764-portrait-mini-2x.2e16d0ba.fill-300x300_3lbXPjz.jpg"
+  },
+  {
+    "id": "989",
+    "name": "Reinhard Genzel",
+    "local": "photos/inspire/989.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/genzel-111759-portrait-mini-2x.2e16d0ba.fill-300x300_c3NhyKo.jpg"
+  },
+  {
+    "id": "963",
+    "name": "Frances Arnold",
+    "local": "photos/inspire/963.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/arnold-57918-portrait-mini-2x.2e16d0ba.fill-300x300_XLRRXh1.jpg"
+  },
+  {
+    "id": "942",
+    "name": "Barry Barish",
+    "local": "photos/inspire/942.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/barish-15224-portrait-mini-2x.2e16d0ba.fill-300x300_Prn2WP0.jpg"
+  },
+  {
+    "id": "909",
+    "name": "Eric Betzig",
+    "local": "photos/inspire/909.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Betzig_468x312.2e16d0ba.fill-300x300_cXWQhHo.jpg"
+  },
+  {
+    "id": "885",
+    "name": "Randy Schekman",
+    "local": "photos/inspire/885.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Schekman_468.7b521165.fill-300x300_2ocVuqb.jpg"
+  },
+  {
+    "id": "877",
+    "name": "David J. Wineland",
+    "local": "photos/inspire/877.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/wineland-15175-portrait-mini-2x.2e16d0ba.fill-300x300_cpheEsv.jpg"
+  },
+  {
+    "id": "864",
+    "name": "Saul Perlmutter",
+    "local": "photos/inspire/864.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Perlmutter_468.cfbae9a0.fill-300x300_YzBY4Zs.jpg"
+  },
+  {
+    "id": "866",
+    "name": "Adam Guy Riess",
+    "local": "photos/inspire/866.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/riess-15164-portrait-mini-2x.2e16d0ba.fill-300x300_08d6QvA.jpg"
+  },
+  {
+    "id": "872",
+    "name": "Thomas Sargent",
+    "local": "photos/inspire/872.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/sargent-15173-portrait-mini-2x.2e16d0ba.fill-300x300_ccBKGHp.jpg"
+  },
+  {
+    "id": "836",
+    "name": "Carol Greider",
+    "local": "photos/inspire/836.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/greider-15145-portrait-mini-2x.2e16d0ba.fill-300x300_4XqgaTa.jpg"
+  },
+  {
+    "id": "847",
+    "name": "Oliver Williamson",
+    "local": "photos/inspire/847.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Williamson_468.2e16d0ba.fill-300x300_yInjah5.jpg"
+  },
+  {
+    "id": "802",
+    "name": "Andrew Z. Fire",
+    "local": "photos/inspire/802.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/fire-13719-portrait-mini-2x.2e16d0ba.fill-300x300_fDoEVUJ.jpg"
+  },
+  {
+    "id": "804",
+    "name": "John C. Mather",
+    "local": "photos/inspire/804.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/mather-13896-portrait-mini-2x.2e16d0ba.fill-300x300_i2ixYdP.jpg"
+  },
+  {
+    "id": "805",
+    "name": "George Smoot",
+    "local": "photos/inspire/805.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Smoot_468.0d3cb910.fill-300x300_2dV7whr.jpg"
+  },
+  {
+    "id": "800",
+    "name": "Thomas C. Schelling",
+    "local": "photos/inspire/800.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/schelling-13708-portrait-mini-2x.2e16d0ba.fill-300x300_mR072bV.jpg"
+  },
+  {
+    "id": "776",
+    "name": "David Gross",
+    "local": "photos/inspire/776.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/gross-13701-portrait-mini-2x.2e16d0ba.fill-300x300_PqhfnJc.jpg"
+  },
+  {
+    "id": "759",
+    "name": "Daniel Kahneman",
+    "local": "photos/inspire/759.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/kahneman-13673-portrait-mini-2x.2e16d0ba.fill-300x300_havGlQv.jpg"
+  },
+  {
+    "id": "744",
+    "name": "George Akerlof",
+    "local": "photos/inspire/744.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/akerlof_468.2e16d0ba.fill-300x300_MmUFzqd.jpg"
+  },
+  {
+    "id": "729",
+    "name": "Alan Heeger",
+    "local": "photos/inspire/729.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/heeger-13522-portrait-mini-2x.2e16d0ba.fill-300x300_u8b9MnL.jpg"
+  },
+  {
+    "id": "733",
+    "name": "Daniel McFadden",
+    "local": "photos/inspire/733.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/McFadden_468.86dac9f2.fill-300x300_7bCmXw3.jpg"
+  },
+  {
+    "id": "155",
+    "name": "Robert Laughlin",
+    "local": "photos/inspire/155.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/laughlin-13513-portrait-mini-2x.2e16d0ba.fill-300x300_aZlA8Ku.jpg"
+  },
+  {
+    "id": "152",
+    "name": "Steven Chu",
+    "local": "photos/inspire/152.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/chu-13501-portrait-mini-2x.2e16d0ba.fill-300x300_0hadU6G.jpg"
+  },
+  {
+    "id": "284",
+    "name": "Robert Curl",
+    "local": "photos/inspire/284.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/curl-13479-portrait-mini-2x.2e16d0ba.fill-300x300_ZLPpIN8.jpg"
+  },
+  {
+    "id": "282",
+    "name": "Mario Molina",
+    "local": "photos/inspire/282.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/molina-13468-portrait-mini-2x.2e16d0ba.fill-300x300_NaU9WXe.jpg"
+  },
+  {
+    "id": "711",
+    "name": "John Harsanyi",
+    "local": "photos/inspire/711.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Harsanyi.2e16d0ba.fill-300x300_RzEkVwU.jpg"
+  },
+  {
+    "id": "278",
+    "name": "Kary Mullis",
+    "local": "photos/inspire/278.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/mullis-13444-portrait-mini-2x.2e16d0ba.fill-300x300_7PEOxdU.jpg"
+  },
+  {
+    "id": "710",
+    "name": "Douglass North",
+    "local": "photos/inspire/710.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/north-13447-portrait-mini-2x.2e16d0ba.fill-300x300_qRWCwiY.jpg"
+  },
+  {
+    "id": "274",
+    "name": "Thomas Cech",
+    "local": "photos/inspire/274.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/cech-13410-portrait-mini-2x_V4maco.2e16d0ba.fill-300x300_4sFBM9N.jpg"
+  },
+  {
+    "id": "265",
+    "name": "Yuan T. Lee",
+    "local": "photos/inspire/265.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Lee.2e16d0ba.fill-300x300_PUk8NxO.jpg"
+  },
+  {
+    "id": "697",
+    "name": "Gerard Debreu",
+    "local": "photos/inspire/697.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Debreu.2e16d0ba.fill-300x300_lWlqv6z.jpg"
+  },
+  {
+    "id": "260",
+    "name": "Henry Taube",
+    "local": "photos/inspire/260.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/taube-13352-portrait-mini-2x.2e16d0ba.fill-300x300_MrZtZ6S.jpg"
+  },
+  {
+    "id": "694",
+    "name": "Lawrence Klein",
+    "local": "photos/inspire/694.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/klein-13324-portrait-mini-2x.2e16d0ba.fill-300x300_AeBoDZE.jpg"
+  },
+  {
+    "id": "657",
+    "name": "Czes\u0142aw Mi\u0142osz",
+    "local": "photos/inspire/657.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/milosz-13325-portrait-mini-2x.2e16d0ba.fill-300x300_sXA6Vmc.jpg"
+  },
+  {
+    "id": "416",
+    "name": "Hamilton Smith",
+    "local": "photos/inspire/416.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/smith-13304-portrait-mini-2x.2e16d0ba.fill-300x300_Wtjyfoi.jpg"
+  },
+  {
+    "id": "89",
+    "name": "Luis Alvarez",
+    "local": "photos/inspire/89.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Alvarez_468.2e16d0ba.fill-300x300_ZsranEq.jpg"
+  },
+  {
+    "id": "81",
+    "name": "Charles Townes",
+    "local": "photos/inspire/81.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Townes_468.2e16d0ba.fill-300x300_khfvMJz.jpg"
+  },
+  {
+    "id": "225",
+    "name": "Melvin Calvin",
+    "local": "photos/inspire/225.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Calvin_468.2e16d0ba.fill-300x300_FUEOwW0.jpg"
+  },
+  {
+    "id": "74",
+    "name": "Donald Glaser",
+    "local": "photos/inspire/74.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Glaser_Bancroft_468.b4712a3e.fill-300x300_7UryWWj.jpg"
+  },
+  {
+    "id": "224",
+    "name": "Willard Libby",
+    "local": "photos/inspire/224.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/libby-13139-portrait-mini-2x.2e16d0ba.fill-300x300_Q17SW1K.jpg"
+  },
+  {
+    "id": "73",
+    "name": "Owen Chamberlain",
+    "local": "photos/inspire/73.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/chamberlain-13137-portrait-mini-2x.2e16d0ba.fill-300x300_5ECzqFR.jpg"
+  },
+  {
+    "id": "72",
+    "name": "Emilio Segr\u00e8",
+    "local": "photos/inspire/72.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/segre-13138-portrait-mini-2x.2e16d0ba.fill-300x300_ADse7qL.jpg"
+  },
+  {
+    "id": "63",
+    "name": "Willis Lamb",
+    "local": "photos/inspire/63.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/lamb-13107-portrait-mini-2x.2e16d0ba.fill-300x300_DDDjIt6.jpg"
+  },
+  {
+    "id": "353",
+    "name": "Selman Waksman",
+    "local": "photos/inspire/353.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/waksman-13085-portrait-mini-2x.2e16d0ba.fill-300x300_xdBB7Jp.jpg"
+  },
+  {
+    "id": "212",
+    "name": "Edwin McMillan",
+    "local": "photos/inspire/212.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/mcmillan-13075-portrait-mini-2x.2e16d0ba.fill-300x300_8ejS0Ru.jpg"
+  },
+  {
+    "id": "213",
+    "name": "Glenn Seaborg",
+    "local": "photos/inspire/213.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/seaborg-13076-portrait-mini-2x.2e16d0ba.fill-300x300_l2JFhwb.jpg"
+  },
+  {
+    "id": "209",
+    "name": "William Giauque",
+    "local": "photos/inspire/209.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Giauque468.2e16d0ba.fill-300x300_iBKxUBr.jpg"
+  },
+  {
+    "id": "205",
+    "name": "John Howard Northrop",
+    "local": "photos/inspire/205.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/northrop-13041-portrait-mini-2x.2e16d0ba.fill-300x300_vwgyvq0.jpg"
+  },
+  {
+    "id": "206",
+    "name": "Wendell Stanley",
+    "local": "photos/inspire/206.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/stanley-13042-portrait-mini-2x.2e16d0ba.fill-300x300_9pXcqzN.jpg"
+  },
+  {
+    "id": "337",
+    "name": "Joseph Erlanger",
+    "local": "photos/inspire/337.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/erlanger-13030-portrait-mini-2x.2e16d0ba.fill-300x300_Y4nTFfJ.jpg"
+  },
+  {
+    "id": "47",
+    "name": "Ernest Lawrence",
+    "local": "photos/inspire/47.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/Lawrence_468.2e16d0ba.fill-300x300_p0PgZCb.jpg"
+  },
+  {
+    "id": "192",
+    "name": "Harold Urey",
+    "local": "photos/inspire/192.jpg",
+    "source": "https://storage.googleapis.com/campaign-identity/images/urey-12989-portrait-mini-2x.2e16d0ba.fill-300x300_PIVgmix.jpg"
+  }
+]

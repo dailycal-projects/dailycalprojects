@@ -6,7 +6,7 @@ import {
 // import logo from '../../images/dclogoblack.png';
 
 import { withBase } from '../../lib/path';
-import logo from '../../assets/images/dclogoblack.png?url';
+import logo from '../../assets/images/dclogoblack.webp?url';
 
 import 'leaflet/dist/leaflet.css';
 import { hackData } from './hack_data';

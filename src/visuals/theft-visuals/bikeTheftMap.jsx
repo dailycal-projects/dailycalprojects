@@ -12,9 +12,9 @@ import MarkerClusterGroup from 'react-leaflet-markercluster';
 import L from 'leaflet';
 import { bikeTheftMapDataByYear } from './bikeTheftMapDataByYear';
 
-import scooterIconPng from '../../assets/images/scooter.png?url'; // path to your local PNG file
-import bikeIconPng from '../../assets/images/bike.png?url';
-import ebikeIconPng from '../../assets/images/ebike.png?url';
+import scooterIconPng from '../../assets/images/scooter.webp?url'; // path to your local PNG file
+import bikeIconPng from '../../assets/images/bike.webp?url';
+import ebikeIconPng from '../../assets/images/ebike.webp?url';
 // import scooterIconPng from '../../images/bike.png';
 
 // const bikeIcon = L.icon({

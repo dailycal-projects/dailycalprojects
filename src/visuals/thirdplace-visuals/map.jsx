@@ -6,10 +6,10 @@ import 'leaflet/dist/leaflet.css';
 // import L from 'leaflet';
 import L from 'leaflet';
 import { third_places } from './map_data';
-import mapViewIcon from '../../assets/images/thirdplace-icon.png?url';
-import placeIconPng from '../../assets/images/thirdplace_1.png?url';
-import publicPlaceIconPng from '../../assets/images/thirdplace_2.png?url';
-import newPinIconPng from '../../assets/images/thirdplace-icon-2.png?url';
+import mapViewIcon from '../../assets/images/thirdplace-icon.webp?url';
+import placeIconPng from '../../assets/images/thirdplace_1.webp?url';
+import publicPlaceIconPng from '../../assets/images/thirdplace_2.webp?url';
+import newPinIconPng from '../../assets/images/thirdplace-icon-2.webp?url';
 import satelliteViewIcon from '../../assets/images/2-sexy-map-sattelite.jpg?url';
 
 // LIVE: Runtime download the data from Sheet client-side

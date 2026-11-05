@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import DatawrapperChart from '../../components/DatawrapperChart.jsx';
 import * as styles from './scrollyNew.module.css';
-import clarkImg from '../../assets/images/coloredited_danalim_data_clark.png?url';
-import croadsImg from '../../assets/images/coloredited_danalim_data_croads.png?url';
-import foothillImg from '../../assets/images/coloredited_danalim_data_foothill.png?url';
-import cafe3Img from '../../assets/images/coloredited_danalim_data_cafe3.png?url';
+import clarkImg from '../../assets/images/coloredited_danalim_data_clark.webp?url';
+import croadsImg from '../../assets/images/coloredited_danalim_data_croads.webp?url';
+import foothillImg from '../../assets/images/coloredited_danalim_data_foothill.webp?url';
+import cafe3Img from '../../assets/images/coloredited_danalim_data_cafe3.webp?url';
 
 const HALLS = {
   clark: {

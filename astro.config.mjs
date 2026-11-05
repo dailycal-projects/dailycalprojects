@@ -70,9 +70,9 @@ export default defineConfig({
       keepD3SideEffects(),
     ],
     build: {
-      // Some articles' visuals bundle their data into their JavaScript (up to ~4 MB). Each only
+      // Some articles' visuals bundle their data into their JavaScript (up to ~4.1 MB). Each only
       // loads on its own article, so the default 500 kB warning doesn't apply.
-      chunkSizeWarningLimit: 4096,
+      chunkSizeWarningLimit: 4200,
     },
   },
 
