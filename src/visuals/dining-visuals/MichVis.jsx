@@ -224,7 +224,7 @@ export default function MichVis() {
   const tooltipRef = useRef(null);
 
   useEffect(() => {
-    d3.csv('/data/2026-04-30-diningmenus/allMenus.csv').then((raw) => {
+    d3.csv('/data/diningmenus/allMenus.csv').then((raw) => {
       const data = parseDataset(raw);
       const items = [...new Set(data.map((d) => d.Item_Name))].filter(Boolean).sort();
       const locs = [...new Set(data.map((d) => d._location))].sort();

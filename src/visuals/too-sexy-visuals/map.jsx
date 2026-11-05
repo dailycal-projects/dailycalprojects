@@ -7,11 +7,11 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 // import { sex_spot_icon_2018, sex_spot_icon_2026 } from './icon';
 import { sex_spots_2018, sex_spots_2026 } from './map_data';
-import sexy2018IconPng from '../../assets/images/2-sexy-2018-icon.webp?url';
-import sexy2026IconPng from '../../assets/images/2-sexy-2026-icon.webp?url';
-import sexy2026ShadowPng from '../../assets/images/2-sexy-2026-shadow.webp?url';
-import mapViewIcon from '../../assets/images/2-sexy-map-map.jpg?url';
-import satelliteViewIcon from '../../assets/images/2-sexy-map-sattelite.jpg?url';
+import sexy2018IconPng from '../../assets/images/too-sexy/2-sexy-2018-icon.webp?url';
+import sexy2026IconPng from '../../assets/images/too-sexy/2-sexy-2026-icon.webp?url';
+import sexy2026ShadowPng from '../../assets/images/too-sexy/2-sexy-2026-shadow.webp?url';
+import mapViewIcon from '../../assets/images/too-sexy/2-sexy-map-map.jpg?url';
+import satelliteViewIcon from '../../assets/images/too-sexy/2-sexy-map-sattelite.jpg?url';
 
 // LIVE: Runtime download the data from Sheet client-side
 // STATIC: Read from map_data like normal

@@ -3,18 +3,18 @@ import 'leaflet/dist/leaflet.css';
 import * as d3 from 'd3';
 import { feature } from 'topojson-client';
 import data from '../data/us-10m.json';
-import calSmallImage from '../../../assets/images/pac-12/cal_small.webp?url';
-import uclaSmallImage from '../../../assets/images/pac-12/ucla_small.webp?url';
-import stanfordSmall from '../../../assets/images/pac-12/stanford_small.webp?url';
-import uscSmallImage from '../../../assets/images/pac-12/usc_small.webp?url';
-import uwSmallImage from '../../../assets/images/pac-12/uw_small.webp?url';
-import oregonSmallImage from '../../../assets/images/pac-12/oregon_small.webp?url';
-import uofaSmallImage from '../../../assets/images/pac-12/uofa_small.webp?url';
-import asuSmallImage from '../../../assets/images/pac-12/asu_small.webp?url';
-import coloradoSmallImage from '../../../assets/images/pac-12/colorado_small.webp?url';
-import utahSmallImage from '../../../assets/images/pac-12/utah_small.webp?url';
-import oregonStateSmallImage from '../../../assets/images/pac-12/oregonstate_small.webp?url';
-import wazzuSmallImage from '../../../assets/images/pac-12/wazzu_small.webp?url';
+import calSmallImage from '../../../assets/images/pac-12-finances/cal_small.webp?url';
+import uclaSmallImage from '../../../assets/images/pac-12-finances/ucla_small.webp?url';
+import stanfordSmall from '../../../assets/images/pac-12-finances/stanford_small.webp?url';
+import uscSmallImage from '../../../assets/images/pac-12-finances/usc_small.webp?url';
+import uwSmallImage from '../../../assets/images/pac-12-finances/uw_small.webp?url';
+import oregonSmallImage from '../../../assets/images/pac-12-finances/oregon_small.webp?url';
+import uofaSmallImage from '../../../assets/images/pac-12-finances/uofa_small.webp?url';
+import asuSmallImage from '../../../assets/images/pac-12-finances/asu_small.webp?url';
+import coloradoSmallImage from '../../../assets/images/pac-12-finances/colorado_small.webp?url';
+import utahSmallImage from '../../../assets/images/pac-12-finances/utah_small.webp?url';
+import oregonStateSmallImage from '../../../assets/images/pac-12-finances/oregonstate_small.webp?url';
+import wazzuSmallImage from '../../../assets/images/pac-12-finances/wazzu_small.webp?url';
 
 const pac12Universities = [
   // Note: added some jitter (in lat and long) for Standford, Cal, UCLA, USC so images so not appear completely on top of each other

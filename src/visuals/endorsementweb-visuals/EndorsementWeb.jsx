@@ -6,7 +6,7 @@ export default function EndorsementWeb() {
     <div className="endorsementweb-visual">
       <iframe
         title="Explore Berkeley election endorsements by candidate and race"
-        src="/data/2026-11-02-endorsementweb/index.html"
+        src="/data/endorsementweb/index.html"
         loading="lazy"
       />
     </div>

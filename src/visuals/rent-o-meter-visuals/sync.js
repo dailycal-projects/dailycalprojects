@@ -7,7 +7,7 @@
 // What it writes, none of which should be edited by hand:
 //   app/              dc_app/src as is, except host.ts (written below) and the Vite-only entry and stylesheet
 //   styles/app.css    dc_app/src/styles.css, every rule scoped to .rom, the root RentOMeterStory renders
-//   public/data/2026-10-13-rent-o-meter/   the data files, images and fonts the app fetches at run time
+//   public/data/rent-o-meter/   the data files, images and fonts the app fetches at run time
 //
 // Gatsby puts every imported stylesheet on every page of the site, and the app's CSS was written for a page
 // of its own (`:root` variables, `html, body` rules, bare element selectors, short keyframe names). Scoped,
@@ -24,7 +24,7 @@ if (!source) {
 const HERE = __dirname;
 const SITE = path.resolve(HERE, '../../..');
 const ROOT = '.rom';
-const PUBLIC_DIR = 'data/2026-10-13-rent-o-meter'; // served at /data/2026-10-13-rent-o-meter/; host.ts below must match
+const PUBLIC_DIR = 'data/rent-o-meter'; // served at /data/rent-o-meter/; host.ts below must match
 
 // --- source -------------------------------------------------------------------------------------------
 

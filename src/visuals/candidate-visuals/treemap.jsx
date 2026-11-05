@@ -6,8 +6,8 @@ import { POINTS_CSV_URLS, indexPointsByHash, pointsForHashes } from './timescale
 
 // URLs of the csv files
 const CSV_URLS = {
-  state: '/data/2026-08-19-candidate/state_finance_treemap_v5.csv',
-  federal: '/data/2026-08-19-candidate/federal_finance_treemap_v5.csv',
+  state: '/data/candidate/state_finance_treemap_v5.csv',
+  federal: '/data/candidate/federal_finance_treemap_v5.csv',
 };
 
 // Columns in source csv file

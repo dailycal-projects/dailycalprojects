@@ -66,7 +66,7 @@ export default function NutritionVis() {
   const chartBuilt = useRef(false);
 
   useEffect(() => {
-    d3.csv('/data/2026-04-30-diningmenus/allMenus.csv').then((raw) => {
+    d3.csv('/data/diningmenus/allMenus.csv').then((raw) => {
       const counts = { grains: {}, proteins: {}, greens: {} };
       raw.forEach((row) => {
         const name = (row.Item_Name || '').trim();

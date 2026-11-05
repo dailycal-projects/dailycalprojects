@@ -30,8 +30,8 @@ Always run `npm run build` and `npm run lint` before pushing. GitHub Actions als
 ```
 src/
   content/articles/   One .mdx file per article
-  assets/images/      Every image: articles' (featured and inline), visuals' (in a folder per visual
-                      when it has many, e.g. nobel/), and the site's logos
+  assets/images/      Every image, in a folder per article named after its short slug (its file
+                      name without the date, e.g. nobel/), and the site's logos (site/)
   components/         Reusable components (charts, images, links, SEO)
   config/             Site-wide settings (see "Site configuration")
   layouts/            PageLayout (header/footer/<head>) and the article layouts
@@ -41,7 +41,7 @@ src/
   visuals/            Articles' visuals (React components), one folder per project (see "Visuals")
 scripts/              optimize-image.mjs: the command-line image optimizer
 public/               Static files served as-is: the favicon, and each article's data files and
-                      standalone pages (data/<article slug>/, e.g. public/data/2026-11-03-election-2026/)
+                      standalone pages (data/<short slug>/, e.g. public/data/election-2026/)
 legacy/               The old Gatsby site's leftover source, for reference (see "Visuals")
 ```
 
@@ -72,7 +72,7 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 | `date` | Publish date, `"YYYY-MM-DD"`. Determines the order on the homepage. | Yes |
 | `title` | The headline. | Yes |
 | `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. | Yes |
-| `featuredImage` | The featured (hero) image: its path relative to the article, e.g. `"../../assets/images/my-story.jpg"`. Also used on homepage cards and in social previews. | Yes |
+| `featuredImage` | The featured (hero) image: its path relative to the article, e.g. `"../../assets/images/my-story/cover.jpg"`. Also used on homepage cards and in social previews. | Yes |
 | `featuredImageAlt` | Alt text describing the featured image, for screen readers and social previews. Defaults to `Featured image for "<title>"`, so please set it. | No |
 | `description` | Short summary for search results and social previews. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
 | `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`. | No |
@@ -101,7 +101,7 @@ subhead: "A short dek explaining the piece"
 description: "One or two sentences for search results and social previews."
 byline: ["Jane Doe", "John Smith"]
 bylineLinks: ["", "https://example.com/john"]
-featuredImage: "../../assets/images/2026-05-01-my-story/cover.jpg"
+featuredImage: "../../assets/images/my-story/cover.jpg"
 featuredImageAlt: "Students walk past Sather Gate"
 imageAttribution: "Jane Doe | Staff"
 aboutStory: "Data for this story came from the UC Office of the President."
@@ -109,7 +109,7 @@ aboutStory: "Data for this story came from the UC Office of the President."
 
 import DatawrapperChart from "../../components/DatawrapperChart.jsx";
 import ArticleImage from "../../components/ArticleImage.astro";
-import protest from "../../assets/images/2026-05-01-my-story/protest.jpg";
+import protest from "../../assets/images/my-story/protest.jpg";
 
 The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](https://dailycal.org) all work.
 
@@ -127,13 +127,13 @@ The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](ht
 
 ### Adding images
 
-Every image goes in `src/assets/images/` (in a folder named after the article if it has several, e.g. `src/assets/images/2026-05-01-my-story/`). [Optimize](#optimizing-images) it first, then:
+Every image goes in `src/assets/images/<short slug>/`, where the short slug is the article's file name without the date (e.g. `src/assets/images/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Images used across the site, like the logos, are in `src/assets/images/site/`. [Optimize](#optimizing-images) it first, then:
 
-- `featuredImage` (and `secondaryFeaturedImage`) in frontmatter: its path relative to the article, `featuredImage: "../../assets/images/2026-05-01-my-story/cover.jpg"`, and
+- `featuredImage` (and `secondaryFeaturedImage`) in frontmatter: its path relative to the article, `featuredImage: "../../assets/images/my-story/cover.jpg"`, and
 - inline images: import the image at the top of the article, then pass it to `<ArticleImage>`, or to Astro's `<Image>` (`import { Image } from "astro:assets"`) for an image without a caption:
 
   ```mdx
-  import protest from "../../assets/images/2026-05-01-my-story/protest.jpg";
+  import protest from "../../assets/images/my-story/protest.jpg";
 
   <ArticleImage src={protest} alt="Students march on Sproul Plaza" />
   ```
@@ -179,9 +179,9 @@ A few things to know when writing or porting a visual:
 - **JSX goes in `.jsx`/`.tsx` files**, not `.js`.
 - **Props passed to a `client:` visual must be plain data** (strings, numbers, arrays, objects): a function can't be sent to the browser.
 - **An `.mdx` file can read its own frontmatter** as `props.frontmatter`, e.g. `<Story title={props.frontmatter.title} />`. `date` is `"yyyy-mm-dd"`, and the byline is also available under the old site's names, `bylineName`/`bylineUrl`.
-- **Images** go in `src/assets/images/` (in a folder named after the visual if it has many). A visual imports one for use as a URL (`<img src={icon} />`) with `?url`: `import icon from "../../assets/images/icon.webp?url"`. Without it, Astro imports an object with the image's details. Visuals' images are served as they are, not resized at build time, so [optimize](#optimizing-images) them.
+- **Images** go in the article's `src/assets/images/<short slug>/` folder (see [Adding images](#adding-images)). A visual imports one for use as a URL (`<img src={icon} />`) with `?url`: `import icon from "../../assets/images/my-story/icon.webp?url"`. Without it, Astro imports an object with the image's details. Visuals' images are served as they are, not resized at build time, so [optimize](#optimizing-images) them.
 - **Environment variables:** two AC Transit visuals read Gatsby-style `GATSBY_CARTO_KEY` (a Carto basemap key) and `GATSBY_PACK_BASE` (where its data bundle is hosted) as `process.env.*`; `astro.config.mjs` passes them in from the build's environment. Both are optional.
-- **Files in `public/`** are referenced by their site path through `withBase()` (or `<Link>`), e.g. `fetch(withBase("/money-flow/data.csv"))`.
+- **Data files and standalone pages** go in `public/data/<short slug>/`, and are referenced by their site path through `withBase()` (or `<Link>`), e.g. `fetch(withBase("/data/my-story/data.csv"))`.
 
 ### Visuals from the old Gatsby site
 

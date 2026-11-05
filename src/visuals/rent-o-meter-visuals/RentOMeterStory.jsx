@@ -23,9 +23,9 @@ const RentOMeterStory = () => {
   }, []);
 
   // the paper's fonts (Tiempos Headline, Plantin), copied from dc_app/public/fonts by sync.js
-  preload('/data/2026-10-13-rent-o-meter/fonts/tiempos-headline-bold.woff2', { as: 'font', type: 'font/woff2', crossOrigin: '' });
-  preload('/data/2026-10-13-rent-o-meter/fonts/plantin-regular.woff2', { as: 'font', type: 'font/woff2', crossOrigin: '' });
-  preinit('/data/2026-10-13-rent-o-meter/fonts/fonts.css', { as: 'style' });
+  preload('/data/rent-o-meter/fonts/tiempos-headline-bold.woff2', { as: 'font', type: 'font/woff2', crossOrigin: '' });
+  preload('/data/rent-o-meter/fonts/plantin-regular.woff2', { as: 'font', type: 'font/woff2', crossOrigin: '' });
+  preinit('/data/rent-o-meter/fonts/fonts.css', { as: 'style' });
 
   return (
     <>

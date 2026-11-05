@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { withBase } from '../../lib/path';
-import logo from '../../assets/images/dclogoblack.webp?url';
+import logo from '../../assets/images/site/dclogoblack.webp?url';
 import { FinanceTreemap } from './treemap';
 import { FinanaceVizElement, FinanceDatawrapperCharts } from './extra_graphs';
 import ArticleFooter from '../../components/ArticleFooter';
