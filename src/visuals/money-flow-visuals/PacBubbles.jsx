@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import { withBase } from '../../lib/path';
 import { theme } from '../../styles/theme';
 import isUnlocked from './unlock';
-
 // Built from scripts/uc_pac_recipients.py: the top PACs by UC employee dollars,
-// plus a final OTHER row summing the rest.
-const DATA_URL = withBase('/data/money-flow/uc_pac_recipients.csv');
+// plus a final OTHER row summing the rest. Imported as a URL (?url), so it's
+// fetched at run time instead of bundled.
+import DATA_URL from './data/uc_pac_recipients.csv?url';
 
 // Wider than tall so the type labels beside the ring have room.
 const WIDTH = 1140;

@@ -1,9 +1,12 @@
 import * as d3 from 'd3';
+// Imported as URLs (?url), so they're fetched at run time instead of bundled
+import statePointsUrl from './data/finance_points_state_v2.csv?url';
+import federalPointsUrl from './data/finance_points_fec_v2.csv?url';
 
 // URLs of the csv files holding one row per individual contribution
 export const POINTS_CSV_URLS = {
-  state: '/data/candidate/finance_points_state_v2.csv',
-  federal: '/data/candidate/finance_points_fec_v2.csv',
+  state: statePointsUrl,
+  federal: federalPointsUrl,
 };
 
 // Treemap amount column

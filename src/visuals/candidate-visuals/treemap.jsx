@@ -3,11 +3,14 @@ import * as d3 from 'd3';
 
 import { TreemapTooltip, attachTreemapTooltip, hideTreemapTooltip } from './treemap_tooltip';
 import { POINTS_CSV_URLS, indexPointsByHash, pointsForHashes } from './timescales';
+// Imported as URLs (?url), so they're fetched at run time instead of bundled
+import stateTreemapUrl from './data/state_finance_treemap_v5.csv?url';
+import federalTreemapUrl from './data/federal_finance_treemap_v5.csv?url';
 
 // URLs of the csv files
 const CSV_URLS = {
-  state: '/data/candidate/state_finance_treemap_v5.csv',
-  federal: '/data/candidate/federal_finance_treemap_v5.csv',
+  state: stateTreemapUrl,
+  federal: federalTreemapUrl,
 };
 
 // Columns in source csv file

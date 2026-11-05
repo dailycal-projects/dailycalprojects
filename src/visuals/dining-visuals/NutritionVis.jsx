@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import * as styles from './nutritionVis.module.css';
+// Imported as a URL (?url), so it's fetched at run time instead of bundled
+import menusUrl from './data/allMenus.csv?url';
 
 const KEYWORDS = {
   grains: [
@@ -66,7 +68,7 @@ export default function NutritionVis() {
   const chartBuilt = useRef(false);
 
   useEffect(() => {
-    d3.csv('/data/diningmenus/allMenus.csv').then((raw) => {
+    d3.csv(menusUrl).then((raw) => {
       const counts = { grains: {}, proteins: {}, greens: {} };
       raw.forEach((row) => {
         const name = (row.Item_Name || '').trim();

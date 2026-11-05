@@ -18,16 +18,10 @@
 /endorsementweb/* /data/endorsementweb/:splat 301
 
 # public/data/<yyyy-mm-dd>-<slug>/ folders that were renamed to public/data/<slug>/
-/data/2026-04-30-diningmenus /data/diningmenus/ 301
-/data/2026-04-30-diningmenus/* /data/diningmenus/:splat 301
-/data/2026-08-19-candidate /data/candidate/ 301
-/data/2026-08-19-candidate/* /data/candidate/:splat 301
 /data/2026-09-17-gghenge /data/gghenge/ 301
 /data/2026-09-17-gghenge/* /data/gghenge/:splat 301
 /data/2026-10-13-rent-o-meter /data/rent-o-meter/ 301
 /data/2026-10-13-rent-o-meter/* /data/rent-o-meter/:splat 301
-/data/2026-10-30-money-flow /data/money-flow/ 301
-/data/2026-10-30-money-flow/* /data/money-flow/:splat 301
 /data/2026-11-02-endorsementweb /data/endorsementweb/ 301
 /data/2026-11-02-endorsementweb/* /data/endorsementweb/:splat 301
 /data/2026-11-03-election-2026 /data/election-2026/ 301

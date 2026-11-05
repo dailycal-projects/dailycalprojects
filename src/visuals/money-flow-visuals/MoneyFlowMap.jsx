@@ -1,18 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import { feature } from 'topojson-client';
-import { withBase } from '../../lib/path';
 import { theme } from '../../styles/theme';
 import isUnlocked from './unlock';
-
-// State shapes (us-atlas states-10m) are fetched rather than imported, so they stay
-// out of the JavaScript bundle that every article page loads.
-const STATES_URL = withBase('/data/money-flow/us-states-10m.json');
+// Imported as URLs (?url), so they're fetched at run time instead of bundled into the JavaScript.
+// State shapes (us-atlas states-10m)
+import STATES_URL from './data/us-states-10m.json?url';
 // Built from scripts/uc_donations_by_state.py: UC employee donations to federal
 // candidates, grouped by the state of the race. "US" is presidential races.
-const DATA_URL = withBase('/data/money-flow/uc_donations_by_state.csv');
-const DONORS_URL = withBase('/data/money-flow/uc_top_donors_by_state.csv');
-const RECIPIENTS_URL = withBase('/data/money-flow/uc_top_recipients_by_state.csv');
+import DATA_URL from './data/uc_donations_by_state.csv?url';
+import DONORS_URL from './data/uc_top_donors_by_state.csv?url';
+import RECIPIENTS_URL from './data/uc_top_recipients_by_state.csv?url';
 
 const WIDTH = 975;
 const MAP_HEIGHT = 610;

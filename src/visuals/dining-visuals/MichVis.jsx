@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import * as styles from './michVis.module.css';
+// Imported as a URL (?url), so it's fetched at run time instead of bundled
+import menusUrl from './data/allMenus.csv?url';
 
 const COLOR_LO = '#F5E6D3';
 const COLOR_MID1 = '#C4956A';
@@ -224,7 +226,7 @@ export default function MichVis() {
   const tooltipRef = useRef(null);
 
   useEffect(() => {
-    d3.csv('/data/diningmenus/allMenus.csv').then((raw) => {
+    d3.csv(menusUrl).then((raw) => {
       const data = parseDataset(raw);
       const items = [...new Set(data.map((d) => d.Item_Name))].filter(Boolean).sort();
       const locs = [...new Set(data.map((d) => d._location))].sort();

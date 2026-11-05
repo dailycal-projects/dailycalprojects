@@ -2,13 +2,12 @@ import React, {
   useEffect, useMemo, useRef, useState,
 } from 'react';
 import * as d3 from 'd3';
-import { withBase } from '../../lib/path';
 import { theme } from '../../styles/theme';
-
 // Built from scripts/uc_donor_search.py: every contribution behind the map and
 // the PAC chart, plus party and joint fundraising committees, one row per
 // donation. Type is Candidate, PAC, Party or JFC; only candidates have a state.
-const DATA_URL = withBase('/data/money-flow/uc_donor_search.csv');
+// Imported as a URL (?url), so it's fetched at run time instead of bundled.
+import DATA_URL from './data/uc_donor_search.csv?url';
 
 const MAX_SUGGESTIONS = 8;
 const LISTBOX_ID = 'donor-search-suggestions';
