@@ -40,6 +40,7 @@
     "leaflet-choropleth": "^1.1.4",
     "leaflet.heat": "^0.2.0",
     "leaflet.markercluster": "^1.5.3",
+    "maplibre-gl": "^4.7.1",
     "prop-types": "^15.8.1",
     "react": "^19.3.1",
     "react-diff-viewer-continued": "^4.4.0",
