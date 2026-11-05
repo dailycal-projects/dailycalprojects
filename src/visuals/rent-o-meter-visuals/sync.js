@@ -7,7 +7,8 @@
 // What it writes, none of which should be edited by hand:
 //   app/              dc_app/src as is, except host.ts (written below) and the Vite-only entry and stylesheet
 //   styles/app.css    dc_app/src/styles.css, every rule scoped to .rom, the root RentOMeterStory renders
-//   public/data/rent-o-meter/   the data files, images and fonts the app fetches at run time
+//   public/data/rent-o-meter/   the data files and images the app fetches at run time
+//   public/fonts/               the fonts (shared with other stories, so files are overwritten, never removed)
 //
 // Gatsby puts every imported stylesheet on every page of the site, and the app's CSS was written for a page
 // of its own (`:root` variables, `html, body` rules, bare element selectors, short keyframe names). Scoped,
@@ -116,7 +117,8 @@ for (const f of DATA) fs.copyFileSync(path.join(source, `public/data/${f}.json`)
 const tiles = path.join(source, 'public/data/tiles');
 for (const f of fs.readdirSync(tiles)) fs.copyFileSync(path.join(tiles, f), path.join(pub, 'data/tiles', f));
 fs.copyFileSync(path.join(source, 'public/dailycal-wordmark.webp'), path.join(pub, 'dailycal-wordmark.webp'));
-fs.mkdirSync(path.join(pub, 'fonts'));
 const fonts = path.join(source, 'public/fonts');
-for (const f of fs.readdirSync(fonts)) fs.copyFileSync(path.join(fonts, f), path.join(pub, 'fonts', f));
-console.log(`public -> static/${PUBLIC_DIR}`);
+const siteFonts = path.join(SITE, 'public/fonts');
+fs.mkdirSync(siteFonts, { recursive: true });
+for (const f of fs.readdirSync(fonts)) fs.copyFileSync(path.join(fonts, f), path.join(siteFonts, f));
+console.log(`public -> public/${PUBLIC_DIR}, public/fonts`);

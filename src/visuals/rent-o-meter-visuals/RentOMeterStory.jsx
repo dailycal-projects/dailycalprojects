@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { preinit, preload } from 'react-dom';
 import './styles/app.css';
 import './host.css';
+import { withBase } from '../../lib/path';
 
 const RentOMeterStory = () => {
   const [App, setApp] = useState(null);
@@ -22,10 +23,10 @@ const RentOMeterStory = () => {
     return () => document.documentElement.classList.remove('rom-page');
   }, []);
 
-  // the paper's fonts (Tiempos Headline, Plantin), copied from dc_app/public/fonts by sync.js
-  preload('/data/rent-o-meter/fonts/tiempos-headline-bold.woff2', { as: 'font', type: 'font/woff2', crossOrigin: '' });
-  preload('/data/rent-o-meter/fonts/plantin-regular.woff2', { as: 'font', type: 'font/woff2', crossOrigin: '' });
-  preinit('/data/rent-o-meter/fonts/fonts.css', { as: 'style' });
+  // the paper's fonts (Tiempos Headline, Plantin), copied from dc_app/public/fonts into public/fonts by sync.js
+  preload(withBase('/fonts/tiempos-headline-bold.woff2'), { as: 'font', type: 'font/woff2', crossOrigin: '' });
+  preload(withBase('/fonts/plantin-regular.woff2'), { as: 'font', type: 'font/woff2', crossOrigin: '' });
+  preinit(withBase('/fonts/fonts.css'), { as: 'style' });
 
   return (
     <>

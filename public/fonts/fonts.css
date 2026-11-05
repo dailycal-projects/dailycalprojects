@@ -1,5 +1,5 @@
-/* The Daily Californian's type (DC_fonts.zip from the style guide), converted to woff2. Linked from index.html,
- * and on data.dailycal.org from RentOMeterStory. Plain URLs relative to this file, so it works from either host.
+/* The Daily Californian's type (DC_fonts.zip from the style guide), converted to woff2. Copied from rent-o-meter's
+ * dc_app by its sync.js and linked from RentOMeterStory. Plain URLs relative to this file, so they work under any base path.
  *
  * Plantin comes in Regular and Bold only. The app's text weights (500-800) were set for a sans with many steps;
  * in Plantin everything up to 700 reads best as Regular, so Bold is kept for 800 (numbers, chips, buttons). Tiempos Headline is Bold
