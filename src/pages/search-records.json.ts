@@ -9,7 +9,7 @@ import { articlePath, dateFormat, featuredImageAlt, getArticles } from "../lib/a
 import { articleText, type TextBlock } from "../lib/search-text";
 
 export interface SearchRecord {
-  /** Where the result links: a site path without the base, or a URL on another site. */
+  /** Where the result links: a path on this site, or a URL on another site. */
   href: string;
   title: string;
   /** e.g. "March 3, 2026" */

@@ -8,7 +8,6 @@ import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 import logo from "../assets/site/dclogo-circle.webp";
 import { site } from "../config/site";
-import { withBase } from "../lib/path";
 
 export interface Props {
   title: string;
@@ -57,7 +56,7 @@ const canonicalURL = new URL(pagePath, siteURL).href;
 
 // An image for social previews and structured data: at most 1200px wide, and a JPEG (or a PNG, for
 // a WebP, which is only used for images with transparency), since not every site that shows link
-// previews accepts WebP. Its URL already includes the base.
+// previews accepts WebP.
 async function resolveImage(src: ImageMetadata) {
   const { src: path, attributes } = await getImage({
     src,
@@ -77,7 +76,7 @@ const publisherLogo = await resolveImage(logo);
 const publisher = {
   "@type": "Organization",
   name: site.name,
-  url: new URL(withBase("/"), siteURL).href,
+  url: new URL("/", siteURL).href,
   logo: { "@type": "ImageObject", url: publisherLogo.url },
 };
 
@@ -100,7 +99,7 @@ const structuredData =
         "@type": "WebSite",
         name: site.name,
         description,
-        url: new URL(withBase("/"), siteURL).href,
+        url: new URL("/", siteURL).href,
         publisher,
       };
 ---

@@ -4,8 +4,6 @@ import {
 } from 'react-leaflet';
 
 // import logo from '../../images/dclogoblack.png';
-
-import { withBase } from '../../lib/path';
 import logo from '../../assets/site/dclogoblack.webp?url';
 
 import 'leaflet/dist/leaflet.css';
@@ -74,7 +72,7 @@ const HackVisuals = () => {
             alignItems: 'center',
           }}
         >
-          <a href={withBase("/")} style={{ textDecoration: 'none' }}>
+          <a href="/" style={{ textDecoration: 'none' }}>
             <img
               src={logo}
               alt="The Daily Californian"

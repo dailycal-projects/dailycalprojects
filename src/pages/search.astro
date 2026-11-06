@@ -6,7 +6,6 @@
  */
 import { site } from "../config/site";
 import PageLayout from "../layouts/PageLayout.astro";
-import { withBase } from "../lib/path";
 ---
 
 <PageLayout
@@ -16,7 +15,7 @@ import { withBase } from "../lib/path";
 >
   <div class="search">
     <h1>Search</h1>
-    <form action={withBase("/search")} role="search">
+    <form action="/search" role="search">
       <input
         type="search"
         name="q"
@@ -39,8 +38,6 @@ import { withBase } from "../lib/path";
 </PageLayout>
 
 <script>
-  import { withBase } from "../lib/path";
-
   // The parts of Pagefind's browser API this page uses
   interface ResultData {
     excerpt: string;
@@ -66,7 +63,7 @@ import { withBase } from "../lib/path";
 
   let pagefind: Promise<Pagefind> | undefined;
   function loadPagefind(): Promise<Pagefind> {
-    pagefind ??= import(/* @vite-ignore */ withBase("/pagefind/pagefind.js")).then(
+    pagefind ??= import(/* @vite-ignore */ "/pagefind/pagefind.js").then(
       async (module: Pagefind) => {
         await module.options({ excerptLength: 40 });
         await module.init();
@@ -86,7 +83,7 @@ import { withBase } from "../lib/path";
     const item = document.createElement("li");
     const link = document.createElement("a");
     link.className = "result";
-    link.href = withBase(meta.href);
+    link.href = meta.href;
 
     const image = document.createElement("img");
     Object.assign(image, {

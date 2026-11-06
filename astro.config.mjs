@@ -15,29 +15,16 @@ import { keepD3SideEffects } from "./src/lib/keep-d3-side-effects.mjs";
 import searchIndex from "./src/lib/search-index.mjs";
 import { unwrapJsxParagraphs } from "./src/lib/unwrap-jsx-paragraphs.mjs";
 
-// Get git repo info (GITHUB_REPOSITORY is set in GitHub Actions; elsewhere, e.g. on Cloudflare or
-// locally, this builds for the main site)
-const MAIN_REPO = "dailycal-projects/dailycalprojects";
-const MAIN_SITE = "https://data.dailycal.org";
-
-const repository = process.env.GITHUB_REPOSITORY ?? MAIN_REPO;
-const [owner, name] = repository.split("/");
-const isFork = repository !== MAIN_REPO;
-
-const base = isFork ? `/${name}` : "/";
-
-console.log(`Building for repo ${repository} (fork: ${isFork})`);
-
 // Each article's publish date, for the sitemap's <lastmod>; the homepage changes with the newest
 const dates = articleDates();
 const newestDate = [...dates.values()].sort().at(-1);
 
-/** A built page's path, without the base: "https://x.github.io/repo/a/" -> "/a/" */
-const sitePath = (page) => `/${new URL(page).pathname.slice(base.length).replace(/^\//, "")}`;
+/** A built page's path: "https://data.dailycal.org/a" -> "/a" */
+const sitePath = (page) => new URL(page).pathname;
 
 export default defineConfig({
-  site: isFork ? `https://${owner}.github.io` : MAIN_SITE,
-  base,
+  // Canonical links, social previews and the sitemap always point here, even in a PR preview
+  site: "https://data.dailycal.org",
 
   // Pages have no trailing slash: /article/x, built as article/x.html (Cloudflare serves it there,
   // and redirects /article/x/ to it)

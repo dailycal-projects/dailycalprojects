@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
-import { withBase } from '../../lib/path';
 import logo from '../../assets/site/dclogoblack.webp?url';
 import { FinanceTreemap } from './treemap';
 import { FinanaceVizElement, FinanceDatawrapperCharts } from './extra_graphs';
@@ -50,7 +48,7 @@ const CandidateFinanceVisuals = () => {
           flexShrink: 0,
         }}
       >
-        <a href={withBase("/")} style={{ textDecoration: 'none' }}>
+        <a href="/" style={{ textDecoration: 'none' }}>
           <img
             src={logo}
             alt="The Daily Californian"

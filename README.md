@@ -23,7 +23,11 @@ Always run `npm run build` and `npm run lint` before pushing. GitHub Actions als
 
 **Redirects** are real HTTP 301s, listed in [`public/_redirects`](public/_redirects), which Cloudflare reads.
 
-**Subpaths:** when `GITHUB_REPOSITORY` names a fork (e.g. a build in a fork's GitHub Actions), `astro.config.mjs` builds the site for `https://<owner>.github.io/<repo>/` instead of `data.dailycal.org`. Because the site can live under a subpath like that, every internal link and `public/` file reference must go through `withBase()` (`src/lib/path.ts`), or the `<Link>` component (`src/components/Link.jsx`) in `.mdx`/`.jsx` files. Imported images (everything in `src/assets/images/`) handle this on their own.
+**Previews:** every pull request from a branch in this repository gets its own copy of the site at `https://pr<number>.datadev.dailycal.org` (e.g. `pr131.datadev.dailycal.org`), updated on every push and deleted when the pull request is closed or merged ([`.github/workflows/preview.yml`](.github/workflows/preview.yml)). The workflow comments the address on the pull request. Previews are [Cloudflare Workers Previews](https://developers.cloudflare.com/workers/previews/) of the `data` Worker, so they're served exactly like the real site, redirects included, but kept out of search engines. Pull requests from forks aren't previewed, since GitHub doesn't give them the repository's secrets; push the branch to this repository instead. To preview a branch from your own machine: `npm run build && npx wrangler preview --name <name>`, which serves it at `https://<name>.datadev.dailycal.org`.
+
+Previews need a one-time setup: in Cloudflare, the `data` Worker's **Domains** tab has the custom domain `datadev.dailycal.org`, enabled for **Preview** only; and the GitHub repository has the secrets `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` (an API token that can edit Workers Scripts).
+
+The site is always served from the root of its domain, so internal links are plain paths like `/article/...`.
 
 ## Project structure
 
@@ -36,7 +40,7 @@ src/
   components/         Reusable components (charts, images, links, SEO)
   config/             Site-wide settings (see "Site configuration")
   layouts/            PageLayout (header/footer/<head>) and the article layouts
-  lib/                Helpers: article loading/validation, withBase(), the search index
+  lib/                Helpers: article loading/validation, the search index, build plugins
   pages/              Every page and its URL (file-based routing); pages/interactive/ holds the
                       interactives built here (see "Interactives")
   styles/             Global and article CSS
@@ -55,7 +59,7 @@ legacy/               The old Gatsby site's leftover source, for reference (see 
 | `/interactive/<name>` | An interactive on a page of its own (see "Interactives") |
 | `/search?q=<query>` | Search (see "Search") |
 | `/editors/image-optimization` | In-browser image optimizer for editors (hidden from search engines) |
-| `/sitemap-index.xml`, `/robots.txt` | Generated at build time from `site`/`base` in `astro.config.mjs`. Don't add a `public/robots.txt` |
+| `/sitemap-index.xml`, `/robots.txt` | Generated at build time from `site` in `astro.config.mjs`. Don't add a `public/robots.txt` |
 
 ## Adding an article
 
@@ -128,7 +132,6 @@ The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](ht
 - **Visuals** in `src/visuals/`: see [Visuals](#visuals).
 - **`<DatawrapperChart>`** (`src/components/DatawrapperChart.jsx`): embeds a Datawrapper chart by its ID, resizing to fit the chart. It needs `client:load`.
 - **`<ArticleImage>`** (`src/components/ArticleImage.astro`): an image with an optional `caption` and `attribution`. Or a **group** of images side by side, sharing one caption: `<ArticleImage images={[{ src: a, alt: "..." }, { src: b, alt: "..." }]} columns={2} caption="..." />`. Groups stack into one column on phones. `src` is an imported image (see [Adding images](#adding-images)).
-- **`<Link>`** (`src/components/Link.jsx`): a link that works under a fork's subpath. Use it for links to other pages on this site.
 
 ### Adding images
 
@@ -186,7 +189,7 @@ A few things to know when writing or porting a visual:
 - **An `.mdx` file can read its own frontmatter** as `props.frontmatter`, e.g. `<Story title={props.frontmatter.title} />`. `date` is `"yyyy-mm-dd"`, and the byline is also available under the old site's names, `bylineName`/`bylineUrl`.
 - **Images** go in the article's `src/assets/images/<short slug>/` folder (see [Adding images](#adding-images)). A visual imports one for use as a URL (`<img src={icon} />`) with `?url`: `import icon from "../../assets/images/my-story/icon.webp?url"`. Without it, Astro imports an object with the image's details. Visuals' images are served as they are, not resized at build time, so [optimize](#optimizing-images) them.
 - **Environment variables:** two AC Transit visuals read Gatsby-style `GATSBY_CARTO_KEY` (a Carto basemap key) and `GATSBY_PACK_BASE` (where its data bundle is hosted) as `process.env.*`; `astro.config.mjs` passes them in from the build's environment. Both are optional.
-- **Data files** a visual imports go next to it, e.g. `import data from "./data/data.csv?url"` (Vite fingerprints them, so browsers can cache them for good). Data an app fetches by URL at run time goes in `public/data/<short slug>/`, referenced by its site path through `withBase()` (or `<Link>`), e.g. `fetch(withBase("/data/my-story/data.csv"))`.
+- **Data files** a visual imports go next to it, e.g. `import data from "./data/data.csv?url"` (Vite fingerprints them, so browsers can cache them for good). Data an app fetches by URL at run time goes in `public/data/<short slug>/`, referenced by its site path, e.g. `fetch("/data/my-story/data.csv")`.
 
 ### Interactives
 
@@ -201,7 +204,7 @@ An article can link to an interactive from its body (`[Check out the interactive
 
 Until 2026 this site was built with Gatsby. Its articles' visuals were moved into `src/visuals/` with as few changes as possible, so a few pieces of compatibility infrastructure keep that code working:
 
-- **`src/lib/compat/`**: stand-ins for APIs that no longer exist or changed, so the old code only needed its imports changed: `mui-styles.js` (Material UI's old `makeStyles`/`withStyles`) and `material-ui.jsx` (Material UI with v4's default look, for the visuals written for v4). Gatsby's `Link`/`withPrefix` became plain links and `withBase()`, and `react-helmet` became React 19's `<meta>`/`<link>` handling and `react-dom`'s `preload()`/`preinit()`.
+- **`src/lib/compat/`**: stand-ins for APIs that no longer exist or changed, so the old code only needed its imports changed: `mui-styles.js` (Material UI's old `makeStyles`/`withStyles`) and `material-ui.jsx` (Material UI with v4's default look, for the visuals written for v4). Gatsby's `Link`/`withPrefix` became plain links, and `react-helmet` became React 19's `<meta>`/`<link>` handling and `react-dom`'s `preload()`/`preinit()`.
 - **`src/styles/legacy-typography.css`**: the old site's global base styles, which those visuals were designed on top of, scoped to article bodies and blank pages.
 - **`src/lib/browser-only-packages.mjs`**: replaces Leaflet, react-leaflet and sigma with an inert stand-in when pages are rendered at build time, since they crash outside a browser even when only imported.
 - **`src/lib/keep-d3-side-effects.mjs`**: keeps d3-transition in the bundle, so `d3.select(...).transition()` works.

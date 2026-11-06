@@ -76,10 +76,7 @@ export async function getArticles(): Promise<Article[]> {
   );
 }
 
-/**
- * Where an article's card links: its own page, or its `link` if it has one (pass it through withBase()
- * before using it in a link).
- */
+/** Where an article's card links: its own page, or its `link` if it has one. */
 export function articlePath(article: Article): string {
   return article.data.link ?? `/article/${article.id}`;
 }

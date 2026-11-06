@@ -7,4 +7,7 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
   },
+  // Pull request previews (`wrangler preview`, run by .github/workflows/preview.yml) use the settings
+  // above; the site has no variables or bindings for this to override
+  "previews": {},
 }

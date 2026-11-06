@@ -1,7 +1,6 @@
 import React, {
   Suspense, lazy, useCallback, useEffect, useLayoutEffect, useRef, useState,
 } from 'react';
-import { withBase } from '../../lib/path';
 import ArticleFooter from '../../components/ArticleFooter';
 import logo from '../../assets/site/dclogo.webp?url';
 import Story from './components/story/Story';
@@ -75,7 +74,7 @@ const AcTransitStory = ({ about, date }) => {
     <div className="acpra acpra-root dark-story" ref={attach}>
       {view === 'story' ? (
         <>
-          <a href={withBase("/")} className="acpra-masthead dark-story-masthead">
+          <a href="/" className="acpra-masthead dark-story-masthead">
             <img src={logo} alt="The Daily Californian" />
           </a>
           <Story date={date} />

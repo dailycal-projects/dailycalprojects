@@ -2,7 +2,6 @@
 /** A linked card for an article (date, featured image, title), used on the homepage. */
 import { Image } from "astro:assets";
 import { type Article, articlePath, dateFormat, featuredImageAlt } from "../lib/articles";
-import { withBase } from "../lib/path";
 
 interface Props {
   article: Article;
@@ -13,7 +12,7 @@ interface Props {
 const { article, eager = false } = Astro.props;
 ---
 
-<a href={withBase(articlePath(article))} class="articleCard">
+<a href={articlePath(article)} class="articleCard">
   <time class="date" datetime={article.data.date.toISOString()}>
     {dateFormat.format(article.data.date)}
   </time>

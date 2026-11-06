@@ -2,7 +2,6 @@
 /** The layout for articles (layout: true): header, title, hero image, byline, body and footer. */
 import { Image } from "astro:assets";
 import PageLayout from "./PageLayout.astro";
-import { Link } from "../components/Link";
 import { site } from "../config/site";
 import { type Article, articleDescription, dateFormat, featuredImageAlt } from "../lib/articles";
 import "../styles/article.css";
@@ -91,7 +90,9 @@ const authorLink = (author: string, i: number) => {
       <span>By </span>
       {byline.flatMap((author: string, i: number) => [
         ...(i > 0 ? [i === byline.length - 1 ? " & " : ", "] : []),
-        <Link href={authorLink(author, i)}>{author}</Link>,
+        <a href={authorLink(author, i)} class="link">
+          {author}
+        </a>,
       ])}
     </div>
 
@@ -115,15 +116,21 @@ const authorLink = (author: string, i: number) => {
 
       {isJointDept ? (
         <p>
-          <Link href={site.contactUrl} style={{ color: "gray", fontSize: "14px" }}>
+          <a href={site.contactUrl} class="contactLink">
             Contact the Daily Californian
-          </Link>
+          </a>
         </p>
       ) : (
         <p>
           Questions, comments or corrections? Email{" "}
-          <Link href={`mailto:${site.contactEmail}`}>{site.contactEmail}</Link>. Code, data and text
-          are open-source on <Link href={site.githubUrl}>GitHub</Link>.
+          <a href={`mailto:${site.contactEmail}`} class="link">
+            {site.contactEmail}
+          </a>
+          . Code, data and text are open-source on{" "}
+          <a href={site.githubUrl} class="link">
+            GitHub
+          </a>
+          .
         </p>
       )}
     </div>
@@ -132,13 +139,23 @@ const authorLink = (author: string, i: number) => {
       <h3>Support us</h3>
       <p>
         We are a nonprofit, student-run newsroom. Please consider{" "}
-        <Link href={site.donateUrl}>donating</Link> to support our coverage.
+        <a href={site.donateUrl} class="link">
+          donating
+        </a>{" "}
+        to support our coverage.
       </p>
     </div>
   </div>
 </PageLayout>
 
 <style>
+  .link {
+    color: var(--palette-dark-blue);
+  }
+  .contactLink {
+    color: gray;
+    font-size: 14px;
+  }
   .article {
     display: flex;
     flex-direction: column;

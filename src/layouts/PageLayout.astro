@@ -6,7 +6,6 @@
 import { Image } from "astro:assets";
 import wordmark from "../assets/site/dclogoblack.webp";
 import Seo, { type Props as SeoProps } from "../components/Seo.astro";
-import { withBase } from "../lib/path";
 import "../styles/global.css";
 
 type Props = SeoProps;
@@ -19,15 +18,15 @@ type Props = SeoProps;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" href={withBase("/favicon.ico")} />
-    <link rel="sitemap" href={withBase("/sitemap-index.xml")} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <Seo {...Astro.props} />
   </head>
   <body>
     {/* Header */}
     <header class="header">
-      <a href={withBase("/")} class="logoLink" aria-label="The Daily Californian: Data home">
+      <a href="/" class="logoLink" aria-label="The Daily Californian: Data home">
         <Image
           src={wordmark}
           alt="The Daily Californian"
@@ -37,7 +36,7 @@ type Props = SeoProps;
           loading="eager"
         />
       </a>
-      <a href={withBase("/search")} class="searchLink" aria-label="Search">
+      <a href="/search" class="searchLink" aria-label="Search">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
           <circle
             cx="10.5"
