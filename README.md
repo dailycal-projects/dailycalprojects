@@ -210,9 +210,9 @@ Until 2026 this site was built with Gatsby. Its articles' visuals were moved int
 
 `src/visuals/`, the old Gatsby components in `src/components/` and `src/styles/` that some visuals use (`ArticleFooter.jsx`, `ButtonList.jsx`, `customTheme.js`, `theme.js`, `button.module.css`, `darkStory.css`), and the articles themselves are excluded from formatting (see `.prettierignore` and `eslint.config.js`), so they stay as they were written.
 
-### Old articles that only linked to dailycal.org
+### Old articles hosted on projects.dailycal.org
 
-The old site also listed articles that were published on dailycal.org (their `oldLink` frontmatter). Those aren't hosted here, and are kept, unused, in `legacy/articles/`, with the old site's components, templates, pages and images in `legacy/` for reference. Nothing in `legacy/` is built, linted or deployed.
+The old site also listed articles that were hosted elsewhere (their `oldLink` frontmatter). Those 30 now live on [projects.dailycal.org](https://projects.dailycal.org), each at `/<its file name>/`, and their articles here are only homepage cards: each one's `link` goes there. The old site's components, templates, pages and remaining images are kept in `legacy/` for reference. Nothing in `legacy/` is built, linted or deployed.
 
 ### Old URLs
 
