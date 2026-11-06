@@ -10,13 +10,13 @@
 /map-clean /article/2026-01-23-too-sexy 301
 
 # Pages the old site served from static/ (people may have shared their URLs)
-/gghenge_interactive.html /gghenge-interactive 301
-/gghenge_interactive /gghenge-interactive 301
-/election-2026 /data/election-2026/ 301
-/election-2026/* /data/election-2026/:splat 301
+/gghenge_interactive.html /interactive/gghenge 301
+/gghenge_interactive /interactive/gghenge 301
+/election-2026 /interactive/election-2026/ 301
+/election-2026/* /interactive/election-2026/:splat 301
 # The election article only linked to the results page, so it has no page of its own now
-/2026-11-03-election-2026 /data/election-2026/ 301
-/2026-11-03-election-2026/ /data/election-2026/ 301
+/2026-11-03-election-2026 /interactive/election-2026/ 301
+/2026-11-03-election-2026/ /interactive/election-2026/ 301
 # The endorsement web is now part of its article
 /endorsementweb /article/2026-11-02-endorsementweb 301
 /endorsementweb/* /article/2026-11-02-endorsementweb 301

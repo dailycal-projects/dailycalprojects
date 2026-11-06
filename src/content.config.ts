@@ -28,8 +28,8 @@ const articles = defineCollection({
         // false renders the article's body alone as the whole page, with no header, title,
         // byline or footer (for articles that are one full-page visual)
         layout: z.boolean().default(true),
-        // Where the article's homepage card goes instead of its own page: a page in public/ (e.g.
-        // "/data/election-2026/index.html") or a URL on another site. An article with a link gets no
+        // Where the article's homepage card goes instead of its own page: an interactive (e.g.
+        // "/interactive/election-2026/index.html") or a URL on another site. An article with a link gets no
         // page of its own, so its body isn't shown; the old site's oldLink.
         link: z.string().trim().min(1).optional(),
 

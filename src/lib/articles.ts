@@ -6,6 +6,11 @@ export type Article = CollectionEntry<"articles">;
 // `<yyyy-mm-dd>-<slug>`: the slug is lowercase words/numbers joined by single hyphens
 const FILE_NAME = /^\d{4}-\d{2}-\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
+// Links to files and pages on this site that validate() checks: /data/, /interactive/ or /assets/
+const LOCAL = String.raw`\/(?:assets|data|interactive)\/`;
+const LOCAL_LINK = new RegExp(`^${LOCAL}`);
+const LOCAL_IN_BODY = new RegExp(String.raw`["'(](${LOCAL}[^"')\s?#]+)`, "g");
+
 /** Formats dates like "March 3, 2026". UTC, because frontmatter dates are parsed as UTC midnight. */
 export const dateFormat = new Intl.DateTimeFormat("en-US", {
   month: "long",
@@ -15,8 +20,9 @@ export const dateFormat = new Intl.DateTimeFormat("en-US", {
 });
 
 /**
- * Throws if any article's file name isn't `<yyyy-mm-dd>-<slug>.mdx`, or it links to a file in
- * public/ that doesn't exist. (Images are checked by the content schema's image().) Lists every problem at once, so they can all be fixed in one go.
+ * Throws if any article's file name isn't `<yyyy-mm-dd>-<slug>.mdx`, or it links to a data file or
+ * interactive that doesn't exist. (Images are checked by the content schema's image().) Lists every
+ * problem at once, so they can all be fixed in one go.
  *
  * The file name's date is normally the publish date, but it isn't checked against `date`: some
  * older articles were renamed or republished after their file (and so their URL) was created.
@@ -33,18 +39,25 @@ function validate(articles: Article[]): void {
       );
     }
 
-    // Files in public/ the article's body or link uses: /data/ paths (and /assets/ paths, which were
-    // images before they moved to src/assets/images/, so a leftover one fails the build)
+    // Paths the article's body or link uses: /data/ files, /interactive/ pages (and /assets/ paths,
+    // which were images before they moved to src/assets/images/, so a leftover one fails the build)
     const { link } = article.data;
     const paths = [
-      ...(article.body ?? "").matchAll(/["'(](\/(?:assets|data)\/[^"')\s?#]+)/g).map((m) => m[1]),
-      ...(link && /^\/(?:assets|data)\//.test(link) ? [link] : []),
+      ...(article.body ?? "").matchAll(LOCAL_IN_BODY).map((m) => m[1]),
+      ...(link && LOCAL_LINK.test(link) ? [link] : []),
     ];
     for (const path of paths) {
-      // Pages are served without .html, and folders by their index.html
-      const local = path?.startsWith("/") && !path.startsWith("//") && `public${decodeURI(path)}`;
-      if (local && ![local, `${local}.html`, `${local}/index.html`].some((f) => existsSync(f))) {
-        problems.push(`${file}: ${path} doesn't exist in public/.`);
+      // In public/ (pages are served without .html, and folders by their index.html), or an
+      // interactive's Astro page in src/pages/
+      const p = decodeURI(path);
+      const files = [
+        `public${p}`,
+        `public${p}.html`,
+        `public${p}/index.html`,
+        `src/pages${p}.astro`,
+      ];
+      if (!files.some((f) => existsSync(f))) {
+        problems.push(`${file}: ${path} doesn't exist in public/ or src/pages/.`);
       }
     }
   }

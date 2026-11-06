@@ -37,12 +37,13 @@ src/
   config/             Site-wide settings (see "Site configuration")
   layouts/            PageLayout (header/footer/<head>) and the article layouts
   lib/                Helpers: article loading/validation, withBase()
-  pages/              Every page and its URL (file-based routing)
+  pages/              Every page and its URL (file-based routing); pages/interactive/ holds the
+                      interactives built here (see "Interactives")
   styles/             Global and article CSS
   visuals/            Articles' visuals (React components), one folder per project (see "Visuals")
 scripts/              optimize-image.mjs: the command-line image optimizer
-public/               Static files served as-is: the favicon, and each article's data files and
-                      standalone pages (data/<short slug>/, e.g. public/data/election-2026/)
+public/               Static files served as-is: the favicon, fonts, the data files visuals fetch
+                      (data/<short slug>/) and interactives built elsewhere (interactive/<name>/)
 legacy/               The old Gatsby site's leftover source, for reference (see "Visuals")
 ```
 
@@ -51,6 +52,7 @@ legacy/               The old Gatsby site's leftover source, for reference (see 
 | `/` | Homepage: every article, newest first |
 | `/article/<yyyy-mm-dd>-<slug>` | An article (pages have no trailing slash; `/article/<slug>/` redirects to it) |
 | `/<yyyy-mm-dd>-<slug>/` | 301 redirect to `/article/<yyyy-mm-dd>-<slug>` (the old site's article URLs) |
+| `/interactive/<name>` | An interactive on a page of its own (see "Interactives") |
 | `/editors/image-optimization` | In-browser image optimizer for editors (hidden from search engines) |
 | `/sitemap-index.xml`, `/robots.txt` | Generated at build time from `site`/`base` in `astro.config.mjs`. Don't add a `public/robots.txt` |
 
@@ -78,7 +80,7 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 | `description` | Short summary for search results and social previews. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
 | `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`. | No |
 | `layout` | `true` (the default) renders the article in the [article layout](#layouts). `false` renders the article's body alone as the whole page, for an article that's one full-page visual. | No |
-| `link` | Where the article's homepage card goes instead of its own page: a page in `public/` (e.g. `"/data/election-2026/index.html"`, which must exist or the build fails; link a folder by its `index.html`, since the dev server doesn't serve folders) or a URL on another site. An article with a `link` gets no page of its own, so it needs only `date`, `title` and `featuredImage`, and its body isn't shown. | No |
+| `link` | Where the article's homepage card goes instead of its own page: an [interactive](#interactives) (e.g. `"/interactive/election-2026/index.html"`, which must exist or the build fails; link a folder by its `index.html`, since the dev server doesn't serve folders) or a URL on another site. An article with a `link` gets no page of its own, so it needs only `date`, `title` and `featuredImage`, and its body isn't shown. | No |
 
 These are only used by the article layout (`layout: true`):
 
@@ -140,9 +142,9 @@ Every image goes in `src/assets/images/<short slug>/`, where the short slug is t
   <ArticleImage src={protest} alt="Students march on Sproul Plaza" />
   ```
 
-At build time, Astro resizes each image to the sizes it's shown at and converts it to WebP (and social previews to JPEG/PNG), so readers download a fraction of the file. Optimizing images before they're committed still matters: it keeps the repository small and the build fast, since every image is processed on every build. The build fails if an article refers to an image that doesn't exist, or to a file in `public/data/` that doesn't exist.
+At build time, Astro resizes each image to the sizes it's shown at and converts it to WebP (and social previews to JPEG/PNG), so readers download a fraction of the file. Optimizing images before they're committed still matters: it keeps the repository small and the build fast, since every image is processed on every build. The build fails if an article refers to an image that doesn't exist, or links to a file in `public/data/` or an interactive that doesn't exist.
 
-The only images outside `src/assets/images/` are inside standalone pages and apps in `public/data/` that load them by URL at run time (the 2026 election results app and the rent-o-meter, both built elsewhere and copied in), and `public/favicon.ico`.
+The only images outside `src/assets/images/` are the ones apps built elsewhere load by URL at run time (the 2026 election results in `public/interactive/` and the rent-o-meter's in `public/data/`), and `public/favicon.ico`.
 
 ## Optimizing images
 
@@ -183,7 +185,16 @@ A few things to know when writing or porting a visual:
 - **An `.mdx` file can read its own frontmatter** as `props.frontmatter`, e.g. `<Story title={props.frontmatter.title} />`. `date` is `"yyyy-mm-dd"`, and the byline is also available under the old site's names, `bylineName`/`bylineUrl`.
 - **Images** go in the article's `src/assets/images/<short slug>/` folder (see [Adding images](#adding-images)). A visual imports one for use as a URL (`<img src={icon} />`) with `?url`: `import icon from "../../assets/images/my-story/icon.webp?url"`. Without it, Astro imports an object with the image's details. Visuals' images are served as they are, not resized at build time, so [optimize](#optimizing-images) them.
 - **Environment variables:** two AC Transit visuals read Gatsby-style `GATSBY_CARTO_KEY` (a Carto basemap key) and `GATSBY_PACK_BASE` (where its data bundle is hosted) as `process.env.*`; `astro.config.mjs` passes them in from the build's environment. Both are optional.
-- **Data files and standalone pages** go in `public/data/<short slug>/`, and are referenced by their site path through `withBase()` (or `<Link>`), e.g. `fetch(withBase("/data/my-story/data.csv"))`.
+- **Data files** a visual imports go next to it, e.g. `import data from "./data/data.csv?url"` (Vite fingerprints them, so browsers can cache them for good). Data an app fetches by URL at run time goes in `public/data/<short slug>/`, referenced by its site path through `withBase()` (or `<Link>`), e.g. `fetch(withBase("/data/my-story/data.csv"))`.
+
+### Interactives
+
+An interactive that needs a page of its own, instead of a spot in an article, lives at `/interactive/<name>`. There are two kinds:
+
+- **Built here:** the code goes in `src/visuals/<project>/` like any visual, and `src/pages/interactive/<name>.astro` is a few lines that render it, only there to give it its URL (e.g. `src/pages/interactive/gghenge.astro`). Vite bundles and minifies it with the rest of the site.
+- **Built elsewhere:** an app with its own repository and build (e.g. the 2026 election results, from election-night-tracker) is copied in, as built, to `public/interactive/<name>/`, and served as it is. Copy in a new build to update it; don't edit the files here.
+
+An article can link to an interactive from its body (`[Check out the interactive map](/interactive/gghenge)`), or be nothing but a homepage card for it, with `link` set to its URL (see [Frontmatter](#frontmatter)). Either way, the build fails if the interactive doesn't exist.
 
 ### Visuals from the old Gatsby site
 
