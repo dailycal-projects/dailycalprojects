@@ -12,6 +12,7 @@ import { satteri } from "@astrojs/markdown-satteri";
 import { articleDates } from "./src/lib/article-dates.mjs";
 import { browserOnlyPackages } from "./src/lib/browser-only-packages.mjs";
 import { keepD3SideEffects } from "./src/lib/keep-d3-side-effects.mjs";
+import searchIndex from "./src/lib/search-index.mjs";
 import { unwrapJsxParagraphs } from "./src/lib/unwrap-jsx-paragraphs.mjs";
 
 // Get git repo info (GITHUB_REPOSITORY is set in GitHub Actions; elsewhere, e.g. on Cloudflare or
@@ -80,13 +81,15 @@ export default defineConfig({
     react(),
     mdx(),
     sitemap({
-      // /editors/ holds internal tools that robots.txt disallows
-      filter: (page) => !sitePath(page).startsWith("/editors/"),
+      // /editors/ holds internal tools that robots.txt disallows; /search is noindex
+      filter: (page) => !sitePath(page).startsWith("/editors/") && sitePath(page) !== "/search",
       serialize(item) {
         const path = sitePath(item.url);
         const date = path === "/" ? newestDate : dates.get(path.match(/^\/article\/([^/]+)$/)?.[1]);
         return date ? { ...item, lastmod: date } : item;
       },
     }),
+    // The /search page's index; see src/lib/search-index.mjs
+    searchIndex(),
   ],
 });

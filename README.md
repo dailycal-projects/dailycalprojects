@@ -36,7 +36,7 @@ src/
   components/         Reusable components (charts, images, links, SEO)
   config/             Site-wide settings (see "Site configuration")
   layouts/            PageLayout (header/footer/<head>) and the article layouts
-  lib/                Helpers: article loading/validation, withBase()
+  lib/                Helpers: article loading/validation, withBase(), the search index
   pages/              Every page and its URL (file-based routing); pages/interactive/ holds the
                       interactives built here (see "Interactives")
   styles/             Global and article CSS
@@ -53,6 +53,7 @@ legacy/               The old Gatsby site's leftover source, for reference (see 
 | `/article/<yyyy-mm-dd>-<slug>` | An article (pages have no trailing slash; `/article/<slug>/` redirects to it) |
 | `/<yyyy-mm-dd>-<slug>/` | 301 redirect to `/article/<yyyy-mm-dd>-<slug>` (the old site's article URLs) |
 | `/interactive/<name>` | An interactive on a page of its own (see "Interactives") |
+| `/search?q=<query>` | Search (see "Search") |
 | `/editors/image-optimization` | In-browser image optimizer for editors (hidden from search engines) |
 | `/sitemap-index.xml`, `/robots.txt` | Generated at build time from `site`/`base` in `astro.config.mjs`. Don't add a `public/robots.txt` |
 
@@ -77,8 +78,8 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 | `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. | Yes, unless the article has a `link` |
 | `featuredImage` | The featured (hero) image: its path relative to the article, e.g. `"../../assets/images/my-story/cover.jpg"`. Also used on homepage cards and in social previews. | Yes |
 | `featuredImageAlt` | Alt text describing the featured image, for screen readers and social previews. Defaults to `Featured image for "<title>"`, so please set it. | No |
-| `description` | Short summary for search results and social previews. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
-| `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`. | No |
+| `description` | Short summary for search engines' results and social previews, also searched by the site's own search. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
+| `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`, and is searched by the site's search. | No |
 | `layout` | `true` (the default) renders the article in the [article layout](#layouts). `false` renders the article's body alone as the whole page, for an article that's one full-page visual. | No |
 | `link` | Where the article's homepage card goes instead of its own page: an [interactive](#interactives) (e.g. `"/interactive/election-2026/index.html"`, which must exist or the build fails; link a folder by its `index.html`, since the dev server doesn't serve folders) or a URL on another site. An article with a `link` gets no page of its own, so it needs only `date`, `title` and `featuredImage`, and its body isn't shown. | No |
 
@@ -217,6 +218,13 @@ The old site also listed articles that were hosted elsewhere (their `oldLink` fr
 ### Old URLs
 
 The old site served articles at `/<file name>/` instead of `/article/<file name>`. [`public/_redirects`](public/_redirects) 301-redirects those old URLs for every article the old site hosted, so existing links to them (e.g. from dailycal.org) and search results keep working.
+
+## Search
+
+`/search?q=<query>` searches every article's title, byline, subhead, `description`, `keywords` and text, in the browser, with [Pagefind](https://pagefind.app). `npm run build` builds the index into `dist/pagefind/` at the end (`src/lib/search-index.mjs`), so search only works in the built site: in `npm run dev` the page says so. To try it, run `npm run build` and then `npx wrangler dev`.
+
+- **An article's text is what's written in its `.mdx`** (`src/lib/search-text.ts`): paragraphs, headings, lists and tables, including inside HTML elements and components (a scrollytelling component's steps). It never comes from the built page, so text that visuals draw (chart axes, legends, tooltips) isn't searched. An article that's one full-page visual (`layout: false`) has no text of its own, so give it a `description`, or it's found only by its title and byline.
+- **The 30 articles hosted on projects.dailycal.org** get their text from that site's search index (`https://projects.dailycal.org/search-index.json`), downloaded during the build, and each is one result that links there. If it can't be downloaded, the build warns and they're searched by title, subhead and byline only.
 
 ## Layouts
 

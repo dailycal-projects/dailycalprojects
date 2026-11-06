@@ -41,6 +41,7 @@
     "leaflet.heat": "^0.2.0",
     "leaflet.markercluster": "^1.5.3",
     "maplibre-gl": "^4.7.1",
+    "pagefind": "^1.6.0",
     "prop-types": "^15.8.1",
     "react": "^19.3.1",
     "react-diff-viewer-continued": "^4.4.0",
@@ -48,9 +49,12 @@
     "react-leaflet": "^5.0.0",
     "react-leaflet-markercluster": "^5.0.0-rc.0",
     "recharts": "^3.10.1",
+    "remark-mdx": "^3.1.1",
+    "remark-parse": "^11.0.0",
     "sigma": "^3.0.3",
     "topojson-client": "^3.1.0",
-    "tss-react": "^4.9.21"
+    "tss-react": "^4.9.21",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@eslint-react/eslint-plugin": "^5.28.8",

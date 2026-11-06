@@ -1,0 +1,318 @@
+---
+/**
+ * Search: /search?q=<query>. Searches every article's title, subhead, byline and text in the
+ * browser, with the index src/lib/search-index.mjs builds into dist/pagefind/ (so it only works in
+ * the built site, not `npm run dev`).
+ */
+import { site } from "../config/site";
+import PageLayout from "../layouts/PageLayout.astro";
+import { withBase } from "../lib/path";
+---
+
+<PageLayout
+  title={`Search — ${site.name}`}
+  description="Search The Daily Californian Data Team's stories."
+  noindex
+>
+  <div class="search">
+    <h1>Search</h1>
+    <form action={withBase("/search")} role="search">
+      <input
+        type="search"
+        name="q"
+        aria-label="Search stories"
+        placeholder="Search stories"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button type="submit">Search</button>
+    </form>
+    <noscript>
+      <p class="status">Search needs JavaScript.</p>
+    </noscript>
+    <p class="status" aria-live="polite"></p>
+    <ol class="results"></ol>
+    <button type="button" class="more" hidden>
+      More results
+    </button>
+  </div>
+</PageLayout>
+
+<script>
+  import { withBase } from "../lib/path";
+
+  // The parts of Pagefind's browser API this page uses
+  interface ResultData {
+    excerpt: string;
+    meta: Record<string, string>;
+  }
+  interface Pagefind {
+    options(options: object): Promise<void>;
+    init(): Promise<void>;
+    debouncedSearch(
+      query: string,
+      options?: object,
+      ms?: number,
+    ): Promise<{ results: { data(): Promise<ResultData> }[] } | null>;
+  }
+
+  const PAGE_SIZE = 10;
+
+  const form = document.querySelector<HTMLFormElement>(".search form")!;
+  const input = form.querySelector<HTMLInputElement>("input")!;
+  const status = document.querySelector<HTMLElement>(".search > .status")!;
+  const list = document.querySelector<HTMLOListElement>(".search .results")!;
+  const more = document.querySelector<HTMLButtonElement>(".search .more")!;
+
+  let pagefind: Promise<Pagefind> | undefined;
+  function loadPagefind(): Promise<Pagefind> {
+    pagefind ??= import(/* @vite-ignore */ withBase("/pagefind/pagefind.js")).then(
+      async (module: Pagefind) => {
+        await module.options({ excerptLength: 40 });
+        await module.init();
+        return module;
+      },
+    );
+    return pagefind;
+  }
+
+  let results: { data(): Promise<ResultData> }[] = [];
+  let shown = 0;
+  // Each search gets a number, so a slow one that finishes after a newer one is dropped
+  let latest = 0;
+
+  /** One result: the card's image, then date, title and the matching passage. */
+  function render({ meta, excerpt }: ResultData): HTMLLIElement {
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.className = "result";
+    link.href = withBase(meta.href);
+
+    const image = document.createElement("img");
+    Object.assign(image, {
+      src: meta.image,
+      srcset: meta.image_srcset,
+      alt: meta.image_alt,
+      width: 360,
+      height: 200,
+      loading: "lazy",
+    });
+
+    const text = document.createElement("div");
+    const date = document.createElement("span");
+    date.className = "date";
+    date.textContent = meta.date;
+    const title = document.createElement("span");
+    title.className = "title";
+    title.textContent = meta.title;
+    const passage = document.createElement("p");
+    passage.className = "excerpt";
+    // Pagefind's excerpt is escaped text with the matching words in <mark>
+    passage.innerHTML = excerpt;
+    text.append(date, title, passage);
+
+    link.append(image, text);
+    item.append(link);
+    return item;
+  }
+
+  async function showMore(search: number) {
+    const page = await Promise.all(
+      results.slice(shown, shown + PAGE_SIZE).map((result) => result.data()),
+    );
+    if (search !== latest) return;
+    list.append(...page.map(render));
+    shown += page.length;
+    more.hidden = shown >= results.length;
+  }
+
+  async function run(query: string, wait = 150) {
+    const search = ++latest;
+    const url = query.trim() ? `?${new URLSearchParams({ q: query })}` : location.pathname;
+    history.replaceState(null, "", url);
+
+    if (!query.trim()) {
+      results = [];
+      list.replaceChildren();
+      status.textContent = "";
+      more.hidden = true;
+      return;
+    }
+
+    let found;
+    try {
+      found = await (await loadPagefind()).debouncedSearch(query, {}, wait);
+    } catch {
+      status.textContent = import.meta.env.DEV
+        ? "Search only works in the built site: run npm run build, then npx wrangler dev."
+        : "Search couldn't load. Try reloading the page.";
+      return;
+    }
+    // null: a newer search replaced this one while it waited
+    if (!found || search !== latest) return;
+
+    results = found.results;
+    shown = 0;
+    list.replaceChildren();
+    const count = results.length;
+    status.textContent = count
+      ? `${count} ${count === 1 ? "result" : "results"} for “${query.trim()}”`
+      : `No results for “${query.trim()}”`;
+    await showMore(search);
+  }
+
+  input.addEventListener("input", () => run(input.value));
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    run(input.value, 0);
+  });
+  more.addEventListener("click", () => showMore(latest));
+
+  // /search?q=...: search for it right away
+  const query = new URLSearchParams(location.search).get("q") ?? "";
+  input.value = query;
+  if (query.trim()) {
+    run(query, 0);
+  } else {
+    input.focus();
+    // Start loading the index while they type (a failure is reported when they search)
+    loadPagefind().catch(() => undefined);
+  }
+</script>
+
+<style>
+  .search {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 8px 60px;
+    font-family: Georgia, sans-serif;
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 16px;
+    color: var(--palette-black);
+  }
+
+  form {
+    display: flex;
+    gap: 8px;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    font: inherit;
+    font-size: 18px;
+    padding: 10px 12px;
+    border: 1px solid var(--palette-gray);
+    border-radius: 0;
+    background: white;
+    color: var(--palette-black);
+  }
+
+  input:focus {
+    outline: 2px solid var(--palette-dark-blue);
+    outline-offset: -1px;
+  }
+
+  button {
+    font: inherit;
+    font-size: 16px;
+    padding: 10px 16px;
+    border: 1px solid var(--palette-black);
+    background: var(--palette-black);
+    color: white;
+    cursor: pointer;
+  }
+
+  .status {
+    color: var(--palette-dark-gray);
+    font-size: 14px;
+    min-height: 1.4em;
+    margin: 16px 0 0;
+  }
+
+  .results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* The results are added by the script, so their styles can't be scoped to this file */
+  .results :global(.result) {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-top: 1px solid #d3d3d3;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .results :global(li:first-child .result) {
+    border-top-color: var(--palette-dark-gray);
+  }
+
+  .results :global(.result img) {
+    flex-shrink: 0;
+    align-self: flex-start;
+    width: 180px;
+    height: auto;
+    aspect-ratio: 360 / 200;
+    object-fit: cover;
+  }
+
+  .results :global(.date) {
+    display: block;
+    color: var(--palette-gray);
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .results :global(.title) {
+    display: block;
+    color: var(--palette-black);
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  .results :global(.result:hover .title) {
+    text-decoration: underline;
+  }
+
+  .results :global(.excerpt) {
+    color: var(--palette-dark-gray);
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 8px 0 0;
+  }
+
+  .results :global(mark) {
+    background: #fdf1b8;
+    color: inherit;
+  }
+
+  .more {
+    display: block;
+    margin: 20px auto 0;
+    background: white;
+    color: var(--palette-black);
+  }
+
+  .more[hidden] {
+    display: none;
+  }
+
+  @media (max-width: 560px) {
+    .results :global(.result) {
+      gap: 12px;
+    }
+    .results :global(.result img) {
+      width: 112px;
+    }
+    .results :global(.title) {
+      font-size: 17px;
+    }
+  }
+</style>
