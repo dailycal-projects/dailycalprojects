@@ -210,9 +210,17 @@ export default [
       lintCodeBlocks: true,
       languageMapper: {},
     }),
+    languageOptions: {
+      ...mdx.flat.languageOptions,
+      // Astro provides <Fragment> in .mdx without an import, e.g. to pass text to a component's
+      // named slot: <Fragment slot="intro">...</Fragment>
+      globals: { ...mdx.flat.languageOptions?.globals, Fragment: "readonly" },
+    },
     rules: {
       ...logicRules,
       ...reactJsxRules,
+      // A <Fragment slot="..."> with one paragraph isn't useless: it names the slot
+      "@eslint-react/jsx-no-useless-fragment": "off",
       "mdx/remark": "off",
       "no-unused-expressions": "off",
       // Articles are prose: reflowing it can change how it renders (e.g. a line ending in two
