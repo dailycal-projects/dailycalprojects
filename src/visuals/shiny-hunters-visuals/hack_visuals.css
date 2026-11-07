@@ -1,0 +1,12 @@
+/* The intro paragraph, written in the article's .mdx and passed in as a slot */
+.shiny-prose p {
+  margin: 0;
+  font-size: 0.95rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.shiny-prose a {
+  color: #00529b;
+  text-decoration: underline;
+}

@@ -48,6 +48,10 @@
   line-height: 1.55;
 }
 
+.acpra .story-lede p {
+  margin: 0;
+}
+
 .acpra .story-error {
   margin-top: 24px;
   color: #a11f1f;
@@ -137,6 +141,12 @@
 }
 
 .acpra .scrolly-card p + p {
+  margin-top: 0.8em;
+}
+
+/* The passages come from the article's .mdx (in a slot, so the link under one
+   isn't the next sibling of its last paragraph) */
+.acpra .scrolly-card .scrolly-cta-wrap {
   margin-top: 0.8em;
 }
 

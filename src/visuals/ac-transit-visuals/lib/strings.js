@@ -22,20 +22,16 @@ export const strings = {
   /* ------------------------------------------------------------------ */
   /* Story: the scrollytelling article at /story                         */
   /* ------------------------------------------------------------------ */
+  // The story's own text (the lede, each passage over the maps and the
+  // headings between them) is written in the article's .mdx instead, so the
+  // site's search can index it; see components/story/steps.js.
   story: {
     title: "See how AC Transit ridership recovered from the pandemic",
     // <0> links to the author's Daily Californian profile.
     byline: "By <0>John Schultz</0>",
-    lede:
-      "While AC Transit ridership has increased from the worst lows during the pandemic, recovery "
-      + "has been uneven. Some neighborhoods have reached prepandemic levels of ridership, while many "
-      + "have yet to reach half of their peak.",
     // {message} is the underlying fetch error.
     error: "The ridership data could not be loaded: {message}",
 
-    // Prose between the maps.
-    headingWhereDo: "Where do people go on AC Transit?",
-    headingTraffic: "Traffic",
     seeData: "See the data →",
     seeMethodology: "See our methodology →",
     // Beside "See the data" at the foot of the story.
@@ -43,109 +39,6 @@ export const strings = {
     // Data credit at the foot of the story, which Transitland's terms require.
     // <0> links to those terms.
     transitland: "<0>Transitland</0> was used to obtain historical GTFS bus schedules",
-
-    // First map: the pandemic and the recovery.
-    one: {
-      records:
-        "Through a public records request, The Daily Californian was able to obtain trip-level "
-        + "data on AC Transit’s ridership from January 2019 to May 2026. Ridership is "
-        + "counted through automatic people counters, sensors on AC Transit buses that detect when "
-        + "people leave and enter.",
-      simulated:
-        "However, counter data was not recorded prepandemic. The Daily Cal filled in gaps in the "
-        + "data using statistical methods which sampled route-level total "
-        + "ridership estimates from AC Transit. Estimated rides make up about 40% of rides in 2019, "
-        + "but decline to under 8% of rides after 2021. For new routes created after the Realign "
-        + "service changes in 2025, 100% of rides are estimated.",
-      berkeley2020:
-        "This is the city of Berkeley’s AC Transit ridership in February 2020. Each dot represents a "
-        + "cluster of stops within a specific radius, and each line is one or more AC Transit routes. "
-        + "The size of the dots represent the number of people who boarded or left a bus.",
-      pandemic:
-        "During the pandemic, ridership sharply declined by 80% throughout the city. "
-        + "In stops near UC Berkeley, ridership declined "
-        + "by as much as 97%.",
-      sanPablo:
-        "San Pablo Avenue’s transit corridor remained at 51% of prepandemic ridership.",
-      stagnant:
-        "Even as Berkeley public schools partially reopened, ridership was largely stagnant.",
-      returned:
-        "When UC Berkeley returned to in-person instruction in August 2021, routes near campus "
-        + "returned to 60% of prepandemic ridership.",
-      breaks:
-        "During school breaks and the summer, ridership on campus stops falls to pandemic levels. "
-        + "Lines outside the university in West Berkeley are unaffected by these breaks.",
-      recovered2023:
-        "Ridership at stops near UC Berkeley only reached prepandemic levels at the start of the "
-        + "2023-24 academic year.",
-      fullyReturned:
-        "After campus relaxed COVID-19 restrictions, ridership slowly recovered throughout the city.",
-      sixYearsOn:
-        "Six years on, the landscape of ridership in Berkeley looks very different. Ridership is up "
-        + "in Central and Downtown Berkeley and down around the edges of the city. In particular, "
-        + "ridership in the Berkeley Hills sits at 30% of prepandemic ridership.",
-      eastBay:
-        "Berkeley fared similarly to the rest of the East Bay. Ridership in Berkeley this year is at 75% of "
-        + "prepandemic ridership, while Oakland is at 85%. Southern Alameda County communities hang "
-        + "between 55-70%.",
-      tempo:
-        "AC Transit’s Tempo bus rapid transit system, completed during the pandemic, led to an "
-        + "increase in local ridership along International Boulevard.",
-      transbay: "Transbay service has remained at around 48% of prepandemic levels.",
-      // {pct} comes from numbers.json, resolved by build_story_numbers.py.
-      highIncome:
-        "High-income areas saw the largest post-pandemic decline, at {pct}% of prepandemic "
-        + "ridership.",
-      lowIncome: "Low-income areas saw the best recovery, at {pct}% of prepandemic ridership.",
-    },
-
-    // Second map: inferred origins and destinations.
-    two: {
-      ipf:
-        "Current data doesn’t collect the trips that riders make, only that a certain number of "
-        + "people entered and exited the bus at a given stop. Using iterative proportional fitting, a "
-        + "statistical method that fits a distribution of trips to the known number of boardings "
-        + "and drop-offs per stop, the Daily Cal estimated the origins and destinations of bus riders.",
-      ipfAccuracy:
-        "Like all estimation methods, it’s not perfect. When tested against BART, which does collect "
-        + "these trips, our model achieves a 77% forecast accuracy. It’s important to note that the "
-        + "model can’t simulate some facets of bus usage, like transfers to other buses or BART.",
-      toCampus:
-        "These are stops that estimated riders travel from on their way to UC Berkeley on weekday mornings.",
-      marks:
-        "Commuters to UC Berkeley are estimated to come from UC Village more "
-        + "than other places.",
-      acHome:
-        "This is where AC Transit commuters are estimated to live. Riders leave there in the "
-        + "morning and come back in the evening.",
-      compare:
-        "This is AC Transit commuters as a percentage of all commuters, according to the U.S. "
-        + "Census’ LODES survey. In some areas, more than 5% of commuters commute via AC Transit.",
-      southEastBay:
-        "AC Transit is used heavily in Oakland and Alameda, but in southern Alameda County "
-        + "communities such as Fremont, less than 0.5% of commuters use AC Transit.",
-      southEastBayHint:
-        "To see estimated trips, select “commute pattern” and select one or more block groups, "
-        + "census tracts or stop groups.",
-    },
-
-    // Third map: bus speeds.
-    three: {
-      speed:
-        "Because we collected information per trip, we know the time stamp and location of each "
-        + "stop. We derived the speed, in miles per hour, at which buses travel on Berkeley streets. "
-        + "This figure is slower than the speeds cars would experience traveling through Berkeley, "
-        + "because buses must stop for passengers.",
-      pandemicTraffic:
-        "During the pandemic, bus speeds weren\u2019t as affected as bus ridership. Traffic "
-        + "spots, such as areas near campus, remained at low speeds, while arterial roads "
-        + "eased up.",
-      // {pct} is the night-versus-peak difference.
-      timeOfDay:
-        "Bus speeds differ vastly throughout the day. Surface speeds at night and at rush hour "
-        + "differ by {pct}%.",
-      timeOfDayHint: "To see traffic speeds throughout the East Bay, select “speed per corridor.”",
-    },
   },
 
   /* ------------------------------------------------------------------ */

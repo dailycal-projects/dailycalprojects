@@ -1,15 +1,14 @@
-// The story's copy and the map state each passage drives. A step's `scene`
-// is layered over the step before it, so a step only states what changes --
-// the same way the script reads ("switch to block groups", "zoom out").
+// The map state each passage drives. A step's `scene` is layered over the
+// step before it, so a step only states what changes -- the same way the
+// script reads ("switch to block groups", "zoom out").
+//
+// A passage's text is written in the article's .mdx, in the slot the step
+// names: step1 to step25, in reading order across the three maps.
 //
 // Weeks are the Monday a week starts on, as meta.weeks labels them. Each is a
 // representative week in the month the script names, clear of holidays:
 // 2020-02-03 is the app's own Feb 2020 baseline week.
-//
-// Figures quoted in the copy come from numbers.json, resolved once by
-// scripts/build_story_numbers.py rather than recomputed in the browser.
 import { t } from "../../lib/i18n";
-import NUMBERS from "./numbers.json";
 
 export const WEEKS = {
   feb2020: "2020-02-03",
@@ -37,8 +36,6 @@ export const BOUNDS = {
 
 export const RECOVERY_THRESHOLD = 5; // meta.recovery_thresholds[5] = 100%
 
-const { income, speeds } = NUMBERS;
-
 export const MAP_ONE = [
   {
     id: "records",
@@ -51,90 +48,91 @@ export const MAP_ONE = [
       week: "feb2020",
       series: "berkeley",
     },
-    text: [t("story.one.records")],
+    slot: "step1",
   },
   {
     id: "simulated",
-    text: [t("story.one.simulated")],
+    slot: "step2",
     link: { view: "methodology", label: t("story.seeMethodology") },
   },
   {
     id: "berkeley-2020",
-    text: [t("story.one.berkeley2020")],
+    slot: "step3",
   },
   {
     id: "pandemic",
     scrub: true,
     scene: { week: "apr2020", callout: "bancroft" },
-    text: [t("story.one.pandemic")],
+    slot: "step4",
   },
   {
     id: "san-pablo",
     scene: { callout: "sanPablo" },
-    text: [t("story.one.sanPablo")],
+    slot: "step5",
   },
   {
     id: "stagnant",
     scrub: true,
     scene: { week: "jul2021" },
-    text: [t("story.one.stagnant")],
+    slot: "step6",
   },
   {
     id: "returned",
     scrub: true,
     scene: { week: "nov2021" },
-    text: [t("story.one.returned")],
+    slot: "step7",
   },
   {
     id: "breaks",
     scrub: true,
     scene: { week: "jul2022" },
-    text: [t("story.one.breaks")],
+    slot: "step8",
   },
   {
     id: "recovered-2023",
     scrub: true,
     scene: { week: "aug2023" },
-    text: [t("story.one.recovered2023")],
+    slot: "step9",
   },
   {
     id: "fully-returned",
     scrub: true,
     scene: { week: "feb2026" },
-    text: [t("story.one.fullyReturned")],
+    slot: "step10",
   },
   {
     id: "six-years-on",
     scene: { level: "tract", routes: false },
-    text: [t("story.one.sixYearsOn")],
+    slot: "step11",
   },
   {
     id: "east-bay",
     scene: { mask: false, bounds: "eastBay", series: "system" },
-    text: [t("story.one.eastBay")],
+    slot: "step12",
   },
   {
     id: "tempo",
     scene: { callout: "tempo", trace: ["1T", "1"] },
-    text: [t("story.one.tempo")],
+    slot: "step13",
   },
   {
     id: "transbay",
     scene: { callout: "transbay" },
-    text: [t("story.one.transbay")],
+    slot: "step14",
   },
   {
     id: "high-income",
     // Deciles are of tract median household income (ACS 2024 5-year B19013);
-    // the recovery figure is the two groups' riders in the story's week over
-    // the same tracts' riders in the Feb 2020 baseline week.
+    // the recovery figures in the text are the two groups' riders in the
+    // story's week over the same tracts' riders in the Feb 2020 baseline week,
+    // computed by the original app's scripts/build_story_numbers.py.
     scene: { income: "high", callout: null, bounds: "incomeBay" },
-    text: [t("story.one.highIncome", { pct: income.high_recovery_pct })],
+    slot: "step15",
   },
   {
     id: "low-income",
     scene: { income: "low" },
-    text: [t("story.one.lowIncome", { pct: income.low_recovery_pct })],
+    slot: "step16",
   },
 ];
 
@@ -151,31 +149,31 @@ export const MAP_TWO = [
       week: "feb2026",
       focus: { region: "campus", mode: "to" },
     },
-    text: [t("story.two.ipf"), t("story.two.ipfAccuracy")],
+    slot: "step17",
   },
   {
     id: "to-campus",
-    text: [t("story.two.toCampus")],
+    slot: "step18",
   },
   {
     id: "marks",
     scene: { marks: ["ucVillage"] },
-    text: [t("story.two.marks")],
+    slot: "step19",
   },
   {
     id: "ac-home",
     scene: { level: "tract", commuteMeasure: "acHome", focus: null },
-    text: [t("story.two.acHome")],
+    slot: "step20",
   },
   {
     id: "compare",
     scene: { commuteMeasure: "compare", marks: ["tract4238", "tract4235"] },
-    text: [t("story.two.compare")],
+    slot: "step21",
   },
   {
     id: "south-east-bay",
     scene: { bounds: "southEastBay", marks: ["tract4425", "tract4403"] },
-    text: [t("story.two.southEastBay"), t("story.two.southEastBayHint")],
+    slot: "step22",
     link: { view: "explore", label: t("story.seeData") },
   },
 ];
@@ -194,20 +192,19 @@ export const MAP_THREE = [
       week: "feb2020",
       series: "speed",
     },
-    text: [t("story.three.speed")],
+    slot: "step23",
   },
   {
     id: "pandemic-traffic",
     scrub: true,
     scene: { week: "dec2020" },
-    text: [t("story.three.pandemicTraffic")],
+    slot: "step24",
   },
   {
     id: "time-of-day",
     scrub: true,
     scene: { week: "sep2025" },
-    text: [t("story.three.timeOfDay", { pct: speeds.night_vs_peak_pct }),
-      t("story.three.timeOfDayHint")],
+    slot: "step25",
     link: { view: "explore", label: t("story.seeData") },
   },
 ];

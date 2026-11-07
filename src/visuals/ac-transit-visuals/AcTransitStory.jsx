@@ -41,8 +41,9 @@ function viewFromUrl() {
 }
 
 // `about` is the footer's "About this story" text and `date` the publication
-// date, both set in the article's MDX.
-const AcTransitStory = ({ about, date }) => {
+// date, both set in the article's MDX. The rest of the props are the story's
+// text, written in the MDX as named slots (see Story).
+const AcTransitStory = ({ about, date, ...slots }) => {
   const [view, setView] = useState('story');
   const rootRef = useRef(null);
 
@@ -77,7 +78,7 @@ const AcTransitStory = ({ about, date }) => {
           <a href="/" className="acpra-masthead dark-story-masthead">
             <img src={logo} alt="The Daily Californian" />
           </a>
-          <Story date={date} />
+          <Story date={date} slots={slots} />
           <div className="acpra-footer dark-story-footer">
             <ArticleFooter about={about} />
           </div>

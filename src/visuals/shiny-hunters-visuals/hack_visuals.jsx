@@ -7,6 +7,7 @@ import {
 import logo from '../../assets/site/dclogoblack.webp?url';
 
 import 'leaflet/dist/leaflet.css';
+import './hack_visuals.css';
 import { hackData } from './hack_data';
 
 const MapResizer = ({ isMobile }) => {
@@ -23,7 +24,12 @@ const MapResizer = ({ isMobile }) => {
   return null;
 };
 
-const HackVisuals = () => {
+/**
+ * The story's text is written in the article's .mdx and passed in as slots (so it's searchable):
+ * `intro` (the paragraph beside the byline), `credits` (who contributed) and `note` (the caveat
+ * under the tips button).
+ */
+const HackVisuals = ({ intro, credits, note }) => {
   const [search, setSearch] = useState('');
   const [isMobile, setIsMobile] = useState(
     typeof window !== 'undefined' ? window.innerWidth <= 768 : false,
@@ -118,39 +124,7 @@ const HackVisuals = () => {
               paddingInline: '25px',
             }}
           >
-            <p
-              style={{
-                fontSize: '0.95rem',
-                margin: 0,
-                textAlign: 'justify',
-                textJustify: 'inter-word',
-                // fontFamily: 'sans-serif',
-              }}
-            >
-              In what appears to be a global attack on thousands of organizations, cybercrime group ShinyHunters has claimed credit for a massive breach of Instructure, the ed-tech company that provides the learning management system Canvas. ShinyHunters is
-              {' '}
-              <a
-                href="https://www.dailycal.org/news/campus/cybercrime-group-seizes-uc-berkeley-canvas-600k-student-staff-records-at-risk/article_5b3b01de-bcad-45a1-994b-e0d19aa88591.html"
-                target="_blank"
-                rel="noreferrer"
-                style={{ color: '#00529B', textDecoration: 'underline' }}
-              >
-                holding
-              </a>
-              {' '}
-              the data from some organizations for ransom and launched an extensive seizure of school Canvas pages Thursday. While the list includes schools and universities, it also includes public institutions, financial institutions, nonprofits, businesses, religious institutions and hospitals. This was revealed in an expansive list of purportedly breached organizations published by ShinyHunters on its dark web page, which The Daily Californian reviewed and processed.
-              {' '}
-              <a
-                href="https://www.dailycal.org/news/investigations/we-mapped-the-nationwide-instructure-breach-see-if-your-organization-could-be-at-risk/article_4cbb09e4-a112-4d0b-b8e5-2b307424fa5c.html"
-                target="_blank"
-                rel="noreferrer"
-                style={{ color: '#00529B', textDecoration: 'underline' }}
-              >
-                Read the article here.
-              </a>
-              {' '}
-              Below is a searchable map.
-            </p>
+            <div className="shiny-prose">{intro}</div>
           </div>
           <div
             style={{
@@ -213,7 +187,7 @@ const HackVisuals = () => {
                 color: '#555',
               }}
             >
-              Brendan Raykoff, Aarya Mukherjee, Antara Gangwal, Saloni Sethi, Emanuel Luo, and Jun Oh contributed to this project.
+              {credits}
             </p>
             <button
               type="button"
@@ -237,7 +211,7 @@ const HackVisuals = () => {
             >
               Submit Tips
             </button>
-            <i style={{ fontSize: '12px' }}>The Daily Cal was unable to verify the list’s accuracy, though several universities on it have begun reporting intrusions. Additionally, the geolocation of some pins may be inaccurate due to a lack of precision in the published list.</i>
+            <i style={{ fontSize: '12px' }}>{note}</i>
           </div>
         </div>
       </div>

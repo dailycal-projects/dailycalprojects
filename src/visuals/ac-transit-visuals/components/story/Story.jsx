@@ -24,7 +24,7 @@ function clamp01(value) {
 // the trigger line owns the map; on a `scrub` step the week is instead
 // interpolated across the gap before its passage, so scrolling through that
 // empty stretch drives the time bar the way dragging it in the app would.
-function ScrollySection({ data, places, steps, first = "85vh" }) {
+function ScrollySection({ data, places, steps, slots, first = "85vh" }) {
   const apiRef = useRef(null);
   const stepRefs = useRef([]);
   const cardRefs = useRef([]);
@@ -124,7 +124,7 @@ function ScrollySection({ data, places, steps, first = "85vh" }) {
               id={step.id}
               ref={(element) => { cardRefs.current[index] = element; }}
             >
-              {step.text.map((paragraph) => <p className="dark-story-copy" key={paragraph}>{paragraph}</p>)}
+              {slots[step.slot]}
               {step.link ? (
                 <p className="scrolly-cta-wrap">
                   <ViewLink className="story-cta dark-story-button" view={step.link.view}>{step.link.label}</ViewLink>
@@ -139,8 +139,11 @@ function ScrollySection({ data, places, steps, first = "85vh" }) {
   );
 }
 
-// `date` is the publication date, "YYYY-MM-DD", from the article's MDX.
-export default function Story({ date }) {
+// `date` is the publication date, "YYYY-MM-DD", from the article's MDX, and
+// `slots` the story's text, written there too: `lede`, `step1` to `step25`
+// (the passages over the maps; steps.js says which goes where) and `heading1`
+// and `heading2` (between the maps).
+export default function Story({ date, slots }) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -193,7 +196,7 @@ export default function Story({ date }) {
         <p className="story-byline dark-story-byline">
           <T id="story.byline" c={[<a href="https://www.dailycal.org/users/profile/john%20schultz/" target="_blank" rel="noreferrer" />]} />
         </p>
-        <p className="story-lede dark-story-copy dark-story-lede">{t("story.lede")}</p>
+        <div className="story-lede dark-story-copy dark-story-lede">{slots.lede}</div>
         {error ? (
           <p className="story-error">{t("story.error", { message: error.message })}</p>
         ) : null}
@@ -203,27 +206,30 @@ export default function Story({ date }) {
         data={data}
         places={places}
         steps={MAP_ONE}
+        slots={slots}
       />
 
       <div className="story-body dark-story-prose">
-        <h2>{t("story.headingWhereDo")}</h2>
+        {slots.heading1}
       </div>
 
       <ScrollySection
         data={data}
         places={places}
         steps={MAP_TWO}
+        slots={slots}
         first="70vh"
       />
 
       <div className="story-body dark-story-prose">
-        <h2>{t("story.headingTraffic")}</h2>
+        {slots.heading2}
       </div>
 
       <ScrollySection
         data={data}
         places={places}
         steps={MAP_THREE}
+        slots={slots}
         first="70vh"
       />
 

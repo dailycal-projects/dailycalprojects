@@ -191,6 +191,25 @@ A few things to know when writing or porting a visual:
 - **Environment variables:** two AC Transit visuals read Gatsby-style `GATSBY_CARTO_KEY` (a Carto basemap key) and `GATSBY_PACK_BASE` (where its data bundle is hosted) as `process.env.*`; `astro.config.mjs` passes them in from the build's environment. Both are optional.
 - **Data files** a visual imports go next to it, e.g. `import data from "./data/data.csv?url"` (Vite fingerprints them, so browsers can cache them for good). Data an app fetches by URL at run time goes in `public/data/<short slug>/`, referenced by its site path, e.g. `fetch("/data/my-story/data.csv")`.
 
+### A visual's story text goes in the `.mdx`
+
+Write a story's text in its `.mdx` and have the visual place it, instead of writing it in the component, so [search](#search) can find it and editors can edit it without touching code. Pass each piece as a named slot:
+
+```mdx
+<CandidateFinanceVisuals client:load>
+<Fragment slot="intro">
+
+First paragraph, in Markdown.
+
+Second paragraph.
+
+</Fragment>
+<Fragment slot="end">Text on one line, with no paragraph around it.</Fragment>
+</CandidateFinanceVisuals>
+```
+
+The component gets each slot as a prop of the same name (here `intro` and `end`), already rendered to HTML, and puts it where the text goes: `<div className="story-prose">{intro}</div>`. It can't change the HTML, so style the paragraphs with CSS (`.story-prose p { ... }`). Leave the blank lines inside a `<Fragment>` around paragraphs, or they won't become paragraphs. Shiny-hunters, candidate and AC Transit work this way (AC Transit numbers its passages `step1` to `step25`, and `steps.js` names each one's slot).
+
 ### Interactives
 
 An interactive that needs a page of its own, instead of a spot in an article, lives at `/interactive/<name>`. There are two kinds:
@@ -226,7 +245,7 @@ The old site served articles at `/<file name>/` instead of `/article/<file name>
 
 `/search?q=<query>` searches every article's title, byline, subhead, `description`, `keywords` and text, in the browser, with [Pagefind](https://pagefind.app). `npm run build` builds the index into `dist/pagefind/` at the end (`src/lib/search-index.mjs`), so search only works in the built site: in `npm run dev` the page says so. To try it, run `npm run build` and then `npx wrangler dev`.
 
-- **An article's text is what's written in its `.mdx`** (`src/lib/search-text.ts`): paragraphs, headings, lists and tables, including inside HTML elements and components (a scrollytelling component's steps). It never comes from the built page, so text that visuals draw (chart axes, legends, tooltips) isn't searched. An article whose story is written inside a visual's component (most full-page `layout: false` articles) has no text here, so give it a `subhead` or `description` and `keywords` (e.g. names the story mentions), or it's found only by its title and byline.
+- **An article's text is what's written in its `.mdx`** (`src/lib/search-text.ts`): paragraphs, headings, lists and tables, including inside HTML elements and components (a scrollytelling component's steps). It never comes from the built page, so text that visuals draw (chart axes, legends, tooltips) isn't searched. Text written inside a visual's component isn't searched, so [write a visual's story text in the `.mdx`](#a-visuals-story-text-goes-in-the-mdx). An article with no text of its own, like a tool or an interactive's card, is found by its title, byline, `subhead`, `description` and `keywords`.
 - **The 30 articles hosted on projects.dailycal.org** get their text from that site's search index (`https://projects.dailycal.org/search-index.json`), downloaded during the build, and each is one result that links there. If it can't be downloaded, the build warns and they're searched by title, subhead and byline only.
 
 ## Layouts
