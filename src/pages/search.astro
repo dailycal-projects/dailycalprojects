@@ -40,8 +40,11 @@ import PageLayout from "../layouts/PageLayout.astro";
 <script>
   // The parts of Pagefind's browser API this page uses
   interface ResultData {
-    excerpt: string;
+    /** The record's text: its title, byline, then the rest, as words separated by spaces */
+    content: string;
     meta: Record<string, string>;
+    /** Positions (in content's words) of the words that matched */
+    locations: number[];
   }
   interface Pagefind {
     options(options: object): Promise<void>;
@@ -54,6 +57,7 @@ import PageLayout from "../layouts/PageLayout.astro";
   }
 
   const PAGE_SIZE = 10;
+  const EXCERPT_WORDS = 40;
 
   const form = document.querySelector<HTMLFormElement>(".search form")!;
   const input = form.querySelector<HTMLInputElement>("input")!;
@@ -65,7 +69,6 @@ import PageLayout from "../layouts/PageLayout.astro";
   function loadPagefind(): Promise<Pagefind> {
     pagefind ??= import(/* @vite-ignore */ "/pagefind/pagefind.js").then(
       async (module: Pagefind) => {
-        await module.options({ excerptLength: 40 });
         await module.init();
         return module;
       },
@@ -78,8 +81,51 @@ import PageLayout from "../layouts/PageLayout.astro";
   // Each search gets a number, so a slow one that finishes after a newer one is dropped
   let latest = 0;
 
+  const wordsOf = (text = "") => text.split(/\s+/).filter(Boolean);
+
+  /**
+   * The passage shown with a result: EXCERPT_WORDS words of its text, with the matching words in
+   * <mark>. Each record's text starts with its title and byline, so they're searched, but they're
+   * already shown above the passage, so it's taken from after them: around the most matches there,
+   * or from the start of the text if only the title or byline matched. (Pagefind's own excerpt
+   * would show the title whenever it matched.)
+   */
+  function excerpt({ content, meta, locations }: ResultData): Node[] {
+    const words = content.split(" ");
+    const start = wordsOf(meta.title).length + wordsOf(meta.byline).length;
+    const matches = new Set(locations.filter((at) => at >= start));
+    let from = start;
+    let best = 0;
+    for (const at of matches) {
+      // A few words before the match, but still a full passage when it's near the end
+      const windowStart = Math.max(start, Math.min(at - 5, words.length - EXCERPT_WORDS));
+      let count = 0;
+      for (const other of matches) {
+        if (other >= windowStart && other < windowStart + EXCERPT_WORDS) count++;
+      }
+      if (count > best) [from, best] = [windowStart, count];
+    }
+
+    const nodes: Node[] = [];
+    let text = "";
+    for (let at = from; at < Math.min(words.length, from + EXCERPT_WORDS); at++) {
+      if (matches.has(at)) {
+        nodes.push(document.createTextNode(text));
+        text = "";
+        const mark = document.createElement("mark");
+        mark.textContent = words[at];
+        nodes.push(mark, document.createTextNode(" "));
+      } else {
+        text += `${words[at]} `;
+      }
+    }
+    nodes.push(document.createTextNode(text.trimEnd()));
+    return nodes;
+  }
+
   /** One result: the card's image, then date, title and the matching passage. */
-  function render({ meta, excerpt }: ResultData): HTMLLIElement {
+  function render(data: ResultData): HTMLLIElement {
+    const { meta } = data;
     const item = document.createElement("li");
     const link = document.createElement("a");
     link.className = "result";
@@ -104,9 +150,10 @@ import PageLayout from "../layouts/PageLayout.astro";
     title.textContent = meta.title;
     const passage = document.createElement("p");
     passage.className = "excerpt";
-    // Pagefind's excerpt is escaped text with the matching words in <mark>
-    passage.innerHTML = excerpt;
-    text.append(date, title, passage);
+    passage.append(...excerpt(data));
+    text.append(date, title);
+    // An article with no text but its title and byline has no passage
+    if (passage.textContent) text.append(passage);
 
     link.append(image, text);
     item.append(link);

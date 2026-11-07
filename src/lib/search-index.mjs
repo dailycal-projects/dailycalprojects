@@ -4,10 +4,11 @@
  *
  * It doesn't crawl the built pages: they include the text visuals render at build time (chart axes,
  * legends), and the projects.dailycal.org stories have no page here. Instead each article is one
- * record from dist/search-records.json (src/pages/search-records.json.ts): its subhead, description,
- * keywords and the prose of its .mdx (src/lib/search-text.ts) as its text, and its title and byline
- * as metadata, which Pagefind also searches (ranking the title highest) but leaves out of the
- * passage shown with each result, so the passage doesn't repeat the title.
+ * record from dist/search-records.json (src/pages/search-records.json.ts). Its text is its title
+ * (weighted highest) and byline, then its subhead, description, keywords and the prose of its .mdx
+ * (src/lib/search-text.ts). Pagefind only searches text, not metadata, so the title and byline have
+ * to be in it; the /search page leaves them out of the passage it shows with each result. The
+ * metadata (title, byline, date, link, image) is what the page shows for each result.
  *
  * The articles whose card links to projects.dailycal.org get their text from that site's own index
  * (PROJECTS_INDEX), so each is one result with its full text. If it can't be downloaded, the build
@@ -63,6 +64,8 @@ function recordHTML(record, text) {
   return `<html lang="en"><head>${Object.entries(meta)
     .map(([key, value]) => `<meta data-pagefind-meta="${key}[content]" content="${escape(value)}">`)
     .join("")}</head><body>
+<h1 data-pagefind-weight="10">${escape(record.title)}</h1>
+<p data-pagefind-weight="5">${escape(record.byline)}</p>
 ${record.about.map((line) => `<p>${escape(line)}</p>`).join("\n")}
 ${paragraphs
   .filter((block) => block.text.trim())
