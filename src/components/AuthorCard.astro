@@ -5,13 +5,11 @@ import { type Author, EDITOR_ROLE_LABELS, authorPath } from "../lib/authors";
 
 interface Props {
   author: Author;
-  /** A line under their role, e.g. when their latest story was. */
-  detail?: string;
   /** Load the picture eagerly (for cards visible without scrolling). */
   eager?: boolean;
 }
 
-const { author, detail, eager } = Astro.props;
+const { author, eager } = Astro.props;
 // Editors without an author file are labeled with their role on the team
 const role = author.entry?.data.role ?? (author.teamRole && EDITOR_ROLE_LABELS[author.teamRole]);
 ---
@@ -20,7 +18,6 @@ const role = author.entry?.data.role ?? (author.teamRole && EDITOR_ROLE_LABELS[a
   <AuthorPicture author={author} size={120} eager={eager} />
   <span class="name">{author.name}</span>
   {role && <span class="role">{role}</span>}
-  {detail && <span class="detail">{detail}</span>}
 </a>
 
 <style>
@@ -46,9 +43,5 @@ const role = author.entry?.data.role ?? (author.teamRole && EDITOR_ROLE_LABELS[a
   .role {
     font-size: 14px;
     color: var(--palette-dark-gray);
-  }
-  .detail {
-    font-size: 12px;
-    color: var(--palette-gray);
   }
 </style>
