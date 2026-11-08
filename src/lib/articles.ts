@@ -20,8 +20,8 @@ export const dateFormat = new Intl.DateTimeFormat("en-US", {
 });
 
 /**
- * Throws if any article's file name isn't `<yyyy-mm-dd>-<slug>.mdx`, or it links to a data file or
- * interactive that doesn't exist. (Images are checked by the content schema's image().) Lists every
+ * Throws if any article's file name isn't `<yyyy-mm-dd>-<slug>.mdx` in a folder for its year (e.g.
+ * 2026/2026-03-03-my-story.mdx), or it links to a data file or interactive that doesn't exist. (Images are checked by the content schema's image().) Lists every
  * problem at once, so they can all be fixed in one go.
  *
  * The file name's date is normally the publish date, but it isn't checked against `date`: some
@@ -37,6 +37,11 @@ function validate(articles: Article[]): void {
       problems.push(
         `${file}: the file name must be <yyyy-mm-dd>-<slug>.mdx, with a lowercase, hyphenated slug (e.g. 2026-03-03-my-story.mdx).`,
       );
+    }
+    const folder = file.match(/([^/]+)\/[^/]+$/)?.[1];
+    const year = name.slice(0, 4);
+    if (FILE_NAME.test(name) && folder !== year) {
+      problems.push(`${file}: the file must be in the folder for its year: articles/${year}/.`);
     }
 
     // Paths the article's body or link uses: /data/ files, /interactive/ pages (and /assets/ paths,

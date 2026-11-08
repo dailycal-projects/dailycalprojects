@@ -3,14 +3,22 @@ import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 /**
- * Articles: one .mdx file per article in ./src/content/articles, named `<yyyy-mm-dd>-<slug>.mdx`.
+ * Articles: one .mdx file per article in a folder for its year in ./src/content/articles, named
+ * `<yyyy>/<yyyy-mm-dd>-<slug>.mdx`.
  *
  * The frontmatter is validated here, so a typo'd or missing field fails the build instead of
- * shipping a broken page. The file name is validated in src/lib/articles.ts.
+ * shipping a broken page. The file name and folder are validated in src/lib/articles.ts.
  */
 const articles = defineCollection({
-  loader: glob({ base: "./src/content/articles", pattern: "*.mdx" }),
-  // Images are paths relative to the article file, e.g. "../../assets/images/my-story.jpg":
+  loader: glob({
+    base: "./src/content/articles",
+    // Every .mdx file, in any folder, so one in the wrong folder fails validation
+    pattern: "**/*.mdx",
+    // The id (and URL) is the file name alone, without its year folder: 2026/2026-03-03-x.mdx is
+    // /article/2026-03-03-x
+    generateId: ({ entry }) => entry.replace(/^.*\//, "").replace(/\.mdx$/, ""),
+  }),
+  // Images are paths relative to the article file, e.g. "../../../assets/images/2026/my-story/cover.jpg":
   // image() fails the build if the file doesn't exist, and optimizes it at build time
   schema: ({ image }) =>
     z

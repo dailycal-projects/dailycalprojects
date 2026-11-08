@@ -33,10 +33,10 @@ The site is always served from the root of its domain, so internal links are pla
 
 ```
 src/
-  content/articles/   One .mdx file per article
+  content/articles/   One .mdx file per article, in a folder per year (e.g. 2026/)
   content/authors/    One .mdx file per author (see "Authors and the team")
   assets/images/      Every article's images, in a folder per article named after its short slug
-                      (its file name without the date, e.g. nobel/)
+                      (its file name without the date), in a folder for its year (e.g. 2026/nobel/)
   assets/authors/     Authors' pictures, named after their .mdx files
   assets/site/        Images that aren't an article's: the logos, and /apply's puzzle hint
   components/         Reusable components (charts, images, links, SEO)
@@ -46,7 +46,8 @@ src/
   pages/              Every page and its URL (file-based routing); pages/interactive/ holds the
                       interactives built here (see "Interactives")
   styles/             Global and article CSS
-  visuals/            Articles' visuals (React components), one folder per project (see "Visuals")
+  visuals/            Articles' visuals (React components), one folder per project, in a folder for
+                      its article's year (e.g. 2026/nobel-visuals/; see "Visuals")
 scripts/              optimize-image.mjs: the command-line image optimizer
 public/               Static files served as-is: the favicon, fonts, the data files visuals fetch
                       (data/<short slug>/) and interactives built elsewhere (interactive/<name>/)
@@ -68,13 +69,13 @@ public/               Static files served as-is: the favicon, fonts, the data fi
 
 ## Adding an article
 
-Every article is one `.mdx` file (frontmatter + body) in `src/content/articles/`, named `<yyyy-mm-dd>-<slug>.mdx`, e.g. `src/content/articles/2026-03-03-ophdreport.mdx`:
+Every article is one `.mdx` file (frontmatter + body) in the folder for its year in `src/content/articles/`, named `<yyyy-mm-dd>-<slug>.mdx`, e.g. `src/content/articles/2026/2026-03-03-ophdreport.mdx`:
 
-- The date should be the article's publish date (its `date` frontmatter).
+- The date should be the article's publish date (its `date` frontmatter), and the folder is its year.
 - The slug must be lowercase words and numbers joined by hyphens.
 - It's served at `/article/<yyyy-mm-dd>-<slug>`, so don't rename it once it's published.
 
-The build fails if a file name isn't in this form, listing every bad file name.
+The build fails if a file name isn't in this form or the file isn't in the folder for its year, listing every bad file. Because articles are a folder deeper than other files in `src/content/`, paths in them start with `../../../` (e.g. `"../../../assets/images/2026/my-story/cover.jpg"`).
 
 ### Frontmatter
 
@@ -85,7 +86,7 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 | `date` | Publish date, `"YYYY-MM-DD"`. Determines the order on the homepage. | Yes |
 | `title` | The headline. | Yes |
 | `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. Each links to the author's page at `/team/<firstname-lastname>`, so spell a name the same way in every article (the build fails if it isn't; see [Authors and the team](#authors-and-the-team)). | Yes, unless the article has a `link` |
-| `featuredImage` | The featured (hero) image: its path relative to the article, e.g. `"../../assets/images/my-story/cover.jpg"`. Also used on homepage cards and in social previews. | Yes |
+| `featuredImage` | The featured (hero) image: its path relative to the article, e.g. `"../../../assets/images/2026/my-story/cover.jpg"`. Also used on homepage cards and in social previews. | Yes |
 | `featuredImageAlt` | Alt text describing the featured image, for screen readers and social previews. Defaults to `Featured image for "<title>"`, so please set it. | No |
 | `description` | Short summary for search engines' results and social previews, also searched by the site's own search. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
 | `keywords` | `["keyword one", "keyword two"]`. Populates `<meta name="keywords">`, and is searched by the site's search. | No |
@@ -113,15 +114,15 @@ title: "My Headline"
 subhead: "A short dek explaining the piece"
 description: "One or two sentences for search results and social previews."
 byline: ["Jane Doe", "John Smith"]
-featuredImage: "../../assets/images/my-story/cover.jpg"
+featuredImage: "../../../assets/images/2026/my-story/cover.jpg"
 featuredImageAlt: "Students walk past Sather Gate"
 imageAttribution: "Jane Doe | Staff"
 aboutStory: "Data for this story came from the UC Office of the President."
 ---
 
-import DatawrapperChart from "../../components/DatawrapperChart.jsx";
-import ArticleImage from "../../components/ArticleImage.astro";
-import protest from "../../assets/images/my-story/protest.jpg";
+import DatawrapperChart from "../../../components/DatawrapperChart.jsx";
+import ArticleImage from "../../../components/ArticleImage.astro";
+import protest from "../../../assets/images/2026/my-story/protest.jpg";
 
 The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](https://dailycal.org) all work.
 
@@ -138,13 +139,13 @@ The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](ht
 
 ### Adding images
 
-Every image goes in `src/assets/images/<short slug>/`, where the short slug is the article's file name without the date (e.g. `src/assets/images/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Authors' pictures are in `src/assets/authors/` (see [Authors and the team](#authors-and-the-team)), and other images that aren't an article's, like the logos, are in `src/assets/site/`. [Optimize](#optimizing-images) it first, then:
+Every image goes in `src/assets/images/<yyyy>/<short slug>/`, where the year is the article's and the short slug is its file name without the date (e.g. `src/assets/images/2026/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Authors' pictures are in `src/assets/authors/` (see [Authors and the team](#authors-and-the-team)), and other images that aren't an article's, like the logos, are in `src/assets/site/`. [Optimize](#optimizing-images) it first, then:
 
-- `featuredImage` (and `secondaryFeaturedImage`) in frontmatter: its path relative to the article, `featuredImage: "../../assets/images/my-story/cover.jpg"`, and
+- `featuredImage` (and `secondaryFeaturedImage`) in frontmatter: its path relative to the article, `featuredImage: "../../../assets/images/2026/my-story/cover.jpg"`, and
 - inline images: import the image at the top of the article, then pass it to `<ArticleImage>`, or to Astro's `<Image>` (`import { Image } from "astro:assets"`) for an image without a caption:
 
   ```mdx
-  import protest from "../../assets/images/my-story/protest.jpg";
+  import protest from "../../../assets/images/2026/my-story/protest.jpg";
 
   <ArticleImage src={protest} alt="Students march on Sproul Plaza" />
   ```
@@ -219,10 +220,10 @@ Don't optimize SVGs: they're already small.
 
 ## Visuals
 
-An article's interactive graphics are React components in `src/visuals/<project>/`, one folder per project, imported at the top of its `.mdx` file like any other component:
+An article's interactive graphics are React components in `src/visuals/<yyyy>/<project>/`, one folder per project in the folder for its article's year, imported at the top of its `.mdx` file like any other component:
 
 ```mdx
-import BikeTheftMap from "../../visuals/theft-visuals/bikeTheftMap";
+import BikeTheftMap from "../../../visuals/2023/theft-visuals/bikeTheftMap";
 
 <BikeTheftMap client:only="react" />
 ```
@@ -238,7 +239,7 @@ A few things to know when writing or porting a visual:
 - **JSX goes in `.jsx`/`.tsx` files**, not `.js`.
 - **Props passed to a `client:` visual must be plain data** (strings, numbers, arrays, objects): a function can't be sent to the browser.
 - **An `.mdx` file can read its own frontmatter** as `props.frontmatter`, e.g. `<Story title={props.frontmatter.title} />`. `date` is `"yyyy-mm-dd"`, and the byline is also available under the old site's names, `bylineName`/`bylineUrl`.
-- **Images** go in the article's `src/assets/images/<short slug>/` folder (see [Adding images](#adding-images)). A visual imports one for use as a URL (`<img src={icon} />`) with `?url`: `import icon from "../../assets/images/my-story/icon.webp?url"`. Without it, Astro imports an object with the image's details. Visuals' images are served as they are, not resized at build time, so [optimize](#optimizing-images) them.
+- **Images** go in the article's `src/assets/images/<yyyy>/<short slug>/` folder (see [Adding images](#adding-images)). A visual imports one for use as a URL (`<img src={icon} />`) with `?url`: `import icon from "../../../assets/images/2026/my-story/icon.webp?url"`. Without it, Astro imports an object with the image's details. Visuals' images are served as they are, not resized at build time, so [optimize](#optimizing-images) them.
 - **Environment variables:** two AC Transit visuals read Gatsby-style `GATSBY_CARTO_KEY` (a Carto basemap key) and `GATSBY_PACK_BASE` (where its data bundle is hosted) as `process.env.*`; `astro.config.mjs` passes them in from the build's environment. Both are optional.
 - **Data files** a visual imports go next to it, e.g. `import data from "./data/data.csv?url"` (Vite fingerprints them, so browsers can cache them for good). Data an app fetches by URL at run time goes in `public/data/<short slug>/`, referenced by its site path, e.g. `fetch("/data/my-story/data.csv")`.
 
@@ -265,7 +266,7 @@ The component gets each slot as a prop of the same name (here `intro` and `end`)
 
 An interactive that needs a page of its own, instead of a spot in an article, lives at `/interactive/<name>`. There are two kinds:
 
-- **Built here:** the code goes in `src/visuals/<project>/` like any visual, and `src/pages/interactive/<name>.astro` is a few lines that render it, only there to give it its URL (e.g. `src/pages/interactive/gghenge.astro`). Vite bundles and minifies it with the rest of the site.
+- **Built here:** the code goes in `src/visuals/<yyyy>/<project>/` like any visual, and `src/pages/interactive/<name>.astro` is a few lines that render it, only there to give it its URL (e.g. `src/pages/interactive/gghenge.astro`). Vite bundles and minifies it with the rest of the site.
 - **Built elsewhere:** an app with its own repository and build (e.g. the 2026 election results, from election-night-tracker) is copied in, as built, to `public/interactive/<name>/`, and served as it is. Copy in a new build to update it; don't edit the files here.
 
 An article can link to an interactive from its body (`[Check out the interactive map](/interactive/gghenge)`), or be nothing but a homepage card for it, with `link` set to its URL (see [Frontmatter](#frontmatter)). Either way, the build fails if the interactive doesn't exist.
@@ -317,7 +318,7 @@ An article's `layout` frontmatter picks how it's rendered:
   # ...the other required fields
   ---
 
-  import AcTransitStory from "../../visuals/ac-transit-visuals/AcTransitStory";
+  import AcTransitStory from "../../../visuals/2026/ac-transit-visuals/AcTransitStory";
 
   <AcTransitStory client:load />
   ```
