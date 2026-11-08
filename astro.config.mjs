@@ -9,6 +9,7 @@ import sitemap from "@astrojs/sitemap";
 
 import { satteri } from "@astrojs/markdown-satteri";
 
+import analytics from "./src/lib/analytics.mjs";
 import { articleDates } from "./src/lib/article-dates.mjs";
 import { browserOnlyPackages } from "./src/lib/browser-only-packages.mjs";
 import { keepD3SideEffects } from "./src/lib/keep-d3-side-effects.mjs";
@@ -68,8 +69,10 @@ export default defineConfig({
     react(),
     mdx(),
     sitemap({
-      // /editors/ holds internal tools that robots.txt disallows; /search is noindex
-      filter: (page) => !sitePath(page).startsWith("/editors/") && sitePath(page) !== "/search",
+      // /editors/ holds internal tools that robots.txt disallows; /search and /apply (the recruiting
+      // flyer's page) are noindex
+      filter: (page) =>
+        !sitePath(page).startsWith("/editors/") && !["/search", "/apply"].includes(sitePath(page)),
       serialize(item) {
         const path = sitePath(item.url);
         const date = path === "/" ? newestDate : dates.get(path.match(/^\/article\/([^/]+)$/)?.[1]);
@@ -78,5 +81,7 @@ export default defineConfig({
     }),
     // The /search page's index; see src/lib/search-index.mjs
     searchIndex(),
+    // Google Tag Manager on every page; see src/lib/analytics.mjs
+    analytics(),
   ],
 });

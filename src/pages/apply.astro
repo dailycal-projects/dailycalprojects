@@ -1,0 +1,138 @@
+---
+/**
+ * /apply: where the Data Department's recruiting flyer points. It links to the application, and
+ * takes answers to the flyer's optional puzzle with a form that submits to a Google Form.
+ */
+import { Image } from "astro:assets";
+import puzzleHint from "../assets/site/puzzle-hint.jpg";
+import { site } from "../config/site";
+import PageLayout from "../layouts/PageLayout.astro";
+
+// The Google Form that collects puzzle answers, and its fields' names
+const FORM_ENDPOINT =
+  "https://docs.google.com/forms/u/1/d/e/1FAIpQLSePLXRqoC3Vq_Q2OqvOyao0pbZdSS6_9Ysuc1pQ24oN_hnyOA/formResponse";
+const APPLICATION_URL =
+  "https://docs.google.com/document/d/1jPmAR61Rlja7NTKzlBAPDng3xCfBVSrnasSsemI_v34/edit?tab=t.0#bookmark=id.lwr8lo59nvj2";
+---
+
+<PageLayout
+  title={`Puzzle — ${site.name}`}
+  description="Apply to The Daily Californian's Data Department, and submit an answer to our flyer's puzzle."
+  noindex
+>
+  <div class="apply">
+    <p>
+      Thanks for checking out our flyer. We are the Data Department of The Daily Californian, UC
+      Berkeley’s student newspaper. We work on long-form investigative pieces as well as interactive
+      visualizations of interesting data. Check out our work by clicking the logo above.
+    </p>
+    <p>
+      Find <a href={APPLICATION_URL}>application materials and instructions here</a>. The flyer you
+      found also contains a supplemental puzzle which is not required to apply. If you figure it
+      out, use the form below to submit your answer, along with the name you submitted on your
+      application.
+    </p>
+
+    {/* Without JavaScript, this submits to Google Forms directly, which shows its own confirmation */}
+    <form method="post" action={FORM_ENDPOINT}>
+      <label>
+        Name
+        <input name="entry.470059188" type="text" autocomplete="name" required />
+      </label>
+      <label>
+        Puzzle solution
+        <input name="entry.1075183610" type="text" autocomplete="off" required />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <p class="status" aria-live="polite"></p>
+
+    <i>P.S. This might help!</i>
+    <Image
+      src={puzzleHint}
+      alt="The puzzle's hint: four tall rectangles, each with one thick side, above the letters Y, X, V and Z."
+      widths={[320, 683]}
+      sizes="(max-width: 600px) 42.5vw, 25vw"
+    />
+  </div>
+</PageLayout>
+
+<script>
+  // Submits the answer in the background, so the reader stays here. Google Forms doesn't allow
+  // reading its response from another site, so a submission that reaches it counts as sent.
+  const form = document.querySelector<HTMLFormElement>(".apply form")!;
+  const button = form.querySelector("button")!;
+  const status = document.querySelector<HTMLElement>(".apply .status")!;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    button.disabled = true;
+    button.textContent = "Submitting...";
+    status.textContent = "";
+    const body = new URLSearchParams([...new FormData(form)] as [string, string][]);
+    body.append("fvv", "1");
+    body.append("pageHistory", "0");
+    body.append("submissionTimestamp", String(Date.now()));
+    try {
+      await fetch(form.action, { method: "POST", mode: "no-cors", body });
+      status.textContent = "Puzzle submitted";
+      form.reset();
+    } catch {
+      status.textContent = "Something went wrong. Please try again.";
+    }
+    button.disabled = false;
+    button.textContent = "Submit";
+  });
+</script>
+
+<style>
+  .apply {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 85px 0 40px;
+  }
+  .apply > p {
+    width: 50vw;
+  }
+  a {
+    color: var(--palette-black);
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+    transition: color 300ms ease-out;
+  }
+  a:hover {
+    color: var(--palette-dark-blue);
+  }
+  form {
+    margin-top: 16px;
+    padding: 20px;
+    border: 1px solid var(--palette-black);
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .status:empty {
+    display: none;
+  }
+  i {
+    margin-top: 32px;
+  }
+  img {
+    width: 25vw;
+    height: auto;
+    margin: 16px 0;
+    border: 1px solid var(--palette-black);
+  }
+  @media (max-width: 600px) {
+    .apply > p {
+      width: 85%;
+    }
+    img {
+      width: 42.5%;
+    }
+  }
+</style>

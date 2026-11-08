@@ -36,7 +36,7 @@ src/
   content/articles/   One .mdx file per article
   assets/images/      Every article's images, in a folder per article named after its short slug
                       (its file name without the date, e.g. nobel/)
-  assets/site/        Images used across the site (the logos)
+  assets/site/        Images that aren't an article's: the logos, and /apply's puzzle hint
   components/         Reusable components (charts, images, links, SEO)
   config/             Site-wide settings (see "Site configuration")
   layouts/            PageLayout (header/footer/<head>) and the article layouts
@@ -48,7 +48,6 @@ src/
 scripts/              optimize-image.mjs: the command-line image optimizer
 public/               Static files served as-is: the favicon, fonts, the data files visuals fetch
                       (data/<short slug>/) and interactives built elsewhere (interactive/<name>/)
-legacy/               The old Gatsby site's leftover source, for reference (see "Visuals")
 ```
 
 | URL | Page |
@@ -58,6 +57,7 @@ legacy/               The old Gatsby site's leftover source, for reference (see 
 | `/<yyyy-mm-dd>-<slug>/` | 301 redirect to `/article/<yyyy-mm-dd>-<slug>` (the old site's article URLs) |
 | `/interactive/<name>` | An interactive on a page of its own (see "Interactives") |
 | `/search?q=<query>` | Search (see "Search") |
+| `/apply` | Where the Data Department's recruiting flyer points: the application, and a form for the flyer's puzzle (hidden from search engines) |
 | `/editors/image-optimization` | In-browser image optimizer for editors (hidden from search engines) |
 | `/sitemap-index.xml`, `/robots.txt` | Generated at build time from `site` in `astro.config.mjs`. Don't add a `public/robots.txt` |
 
@@ -135,7 +135,7 @@ The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](ht
 
 ### Adding images
 
-Every image goes in `src/assets/images/<short slug>/`, where the short slug is the article's file name without the date (e.g. `src/assets/images/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Images used across the site, like the logos, are in `src/assets/site/`. [Optimize](#optimizing-images) it first, then:
+Every image goes in `src/assets/images/<short slug>/`, where the short slug is the article's file name without the date (e.g. `src/assets/images/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Images that aren't an article's, like the logos, are in `src/assets/site/`. [Optimize](#optimizing-images) it first, then:
 
 - `featuredImage` (and `secondaryFeaturedImage`) in frontmatter: its path relative to the article, `featuredImage: "../../assets/images/my-story/cover.jpg"`, and
 - inline images: import the image at the top of the article, then pass it to `<ArticleImage>`, or to Astro's `<Image>` (`import { Image } from "astro:assets"`) for an image without a caption:
@@ -148,7 +148,7 @@ Every image goes in `src/assets/images/<short slug>/`, where the short slug is t
 
 At build time, Astro resizes each image to the sizes it's shown at and converts it to WebP (and social previews to JPEG/PNG), so readers download a fraction of the file. Optimizing images before they're committed still matters: it keeps the repository small and the build fast, since every image is processed on every build. The build fails if an article refers to an image that doesn't exist, or links to a file in `public/data/` or an interactive that doesn't exist.
 
-The only images outside `src/assets/images/` are the ones apps built elsewhere load by URL at run time (the 2026 election results in `public/interactive/` and the rent-o-meter's in `public/data/`), and `public/favicon.ico`.
+The only images outside `src/assets/` are the ones apps built elsewhere load by URL at run time (the 2026 election results in `public/interactive/` and the rent-o-meter's in `public/data/`), and `public/favicon.ico`.
 
 ## Optimizing images
 
@@ -235,7 +235,7 @@ Until 2026 this site was built with Gatsby. Its articles' visuals were moved int
 
 ### Old articles hosted on projects.dailycal.org
 
-The old site also listed articles that were hosted elsewhere (their `oldLink` frontmatter). Those 30 now live on [projects.dailycal.org](https://projects.dailycal.org), each at `/<its file name>/`, and their articles here are only homepage cards: each one's `link` goes there. The old site's components, templates, pages and remaining images are kept in `legacy/` for reference. Nothing in `legacy/` is built, linted or deployed.
+The old site also listed articles that were hosted elsewhere (their `oldLink` frontmatter). Those 30 now live on [projects.dailycal.org](https://projects.dailycal.org), each at `/<its file name>/`, and their articles here are only homepage cards: each one's `link` goes there.
 
 ### Old URLs
 
@@ -247,6 +247,10 @@ The old site served articles at `/<file name>/` instead of `/article/<file name>
 
 - **An article's text is what's written in its `.mdx`** (`src/lib/search-text.ts`): paragraphs, headings, lists and tables, including inside HTML elements and components (a scrollytelling component's steps). It never comes from the built page, so text that visuals draw (chart axes, legends, tooltips) isn't searched. Text written inside a visual's component isn't searched, so [write a visual's story text in the `.mdx`](#a-visuals-story-text-goes-in-the-mdx). An article with no text of its own, like a tool or an interactive's card, is found by its title, byline, `subhead`, `description` and `keywords`.
 - **The 30 articles hosted on projects.dailycal.org** get their text from that site's search index (`https://projects.dailycal.org/search-index.json`), downloaded during the build, and each is one result that links there. If it can't be downloaded, the build warns and they're searched by title, subhead and byline only.
+
+## Analytics
+
+Every page loads Google Tag Manager (container `GTM-W9R66S6S`), which loads Google Analytics; set up what's tracked in Tag Manager, not here. `npm run build` adds the loader to the top of each page's `<head>` once the site is built (`src/lib/analytics.mjs`), so it's in every page however its `<head>` is written, including interactives copied in prebuilt, and no layout or component needs it. It only runs on `data.dailycal.org`, so pull request previews, `npx wrangler dev` and `npm run dev` don't count as visits. It leaves out `/editors/` and the election results' Instagram Live loop (`EXCLUDE` in that file).
 
 ## Layouts
 
