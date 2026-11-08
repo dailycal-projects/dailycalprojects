@@ -43,7 +43,7 @@ const reactJsxRules = {
   "@eslint-react/jsx-no-useless-fragment": "error",
 };
 
-const srcJs = "src/**/*.js";
+const srcJs = "src/**/*.{js,mjs}";
 const srcTs = "src/**/*.ts";
 const srcJsx = "src/**/*.jsx";
 const srcTsx = "src/**/*.tsx";
@@ -59,9 +59,9 @@ const rootConfigs = [
   "prettier.config.js",
 ];
 
-const jsLikeFiles = [srcJs, ...rootConfigs];
-const scriptsTs = "scripts/**/*.ts";
-const tsLikeFiles = [srcTs, srcTsx, scriptsTs];
+const scripts = "scripts/**/*.mjs";
+const jsLikeFiles = [srcJs, scripts, ...rootConfigs];
+const tsLikeFiles = [srcTs, srcTsx];
 const astroClientScripts = ["**/*.astro/*.js", "**/*.astro/*.ts"];
 
 // Code carried over unchanged from the old Gatsby site (also in .prettierignore)
@@ -151,13 +151,6 @@ export default [
     rules: {
       ...logicRules,
       ...tsLogicRuleOverrides,
-    },
-  },
-
-  {
-    files: [scriptsTs],
-    languageOptions: {
-      globals: globals.node,
     },
   },
 

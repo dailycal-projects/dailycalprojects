@@ -68,11 +68,12 @@ export function browserOnlyPackages({ sourceGlob }) {
       names = importedNames(sourceGlob);
     },
 
-    resolveId(id, _importer, options) {
-      const onServer = this.environment
-        ? this.environment.config.consumer === "server"
-        : options?.ssr;
-      if (onServer && BROWSER_ONLY.test(id) && !id.endsWith(".css")) {
+    resolveId(id) {
+      if (
+        this.environment.config.consumer === "server" &&
+        BROWSER_ONLY.test(id) &&
+        !id.endsWith(".css")
+      ) {
         return STUB_PREFIX + id;
       }
       return null;

@@ -1,6 +1,5 @@
 ---
 /** The layout of /team and /team/past: a title, an intro, rows of author cards and a footer. */
-import { site } from "../config/site";
 import PageLayout from "./PageLayout.astro";
 
 interface Props {
@@ -13,7 +12,7 @@ interface Props {
 const { title, description, heading = true } = Astro.props;
 ---
 
-<PageLayout title={`${title} — ${site.name}`} description={description}>
+<PageLayout title={title} description={description}>
   <div class:list={["team", { headless: !heading }]}>
     <h1 class:list={{ hidden: !heading }}>{title}</h1>
     {heading && Astro.slots.has("intro") && (

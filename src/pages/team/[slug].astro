@@ -3,7 +3,6 @@
 import { render } from "astro:content";
 import ArticleCard from "../../components/ArticleCard.astro";
 import AuthorPicture from "../../components/AuthorPicture.astro";
-import { site } from "../../config/site";
 import PageLayout from "../../layouts/PageLayout.astro";
 import { type Author, EDITOR_ROLE_LABELS, authorLinks, getAuthors } from "../../lib/authors";
 
@@ -28,7 +27,7 @@ const description = entry
   : `Stories by ${author.name} for The Daily Californian's Data Team.`;
 ---
 
-<PageLayout title={`${author.name} — ${site.name}`} description={description}>
+<PageLayout title={author.name} description={description}>
   <div class="author">
     {/* Picture with name, role and links beside it, and the bio underneath */}
     <div class="intro">

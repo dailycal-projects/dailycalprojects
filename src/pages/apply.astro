@@ -5,7 +5,6 @@
  */
 import { Image } from "astro:assets";
 import puzzleHint from "../assets/site/puzzle-hint.jpg";
-import { site } from "../config/site";
 import PageLayout from "../layouts/PageLayout.astro";
 
 // The Google Form that collects puzzle answers, and its fields' names
@@ -16,7 +15,7 @@ const APPLICATION_URL =
 ---
 
 <PageLayout
-  title={`Puzzle — ${site.name}`}
+  title="Puzzle"
   description="Apply to The Daily Californian's Data Department, and submit an answer to our flyer's puzzle."
   noindex
 >

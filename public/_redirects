@@ -4,26 +4,78 @@
 /article / 301
 /article/ / 301
 
+# The old site's "Meet The Team" page
+/about /team 301
+/about/ /team 301
+
+# Pages the old site served from static/
 /2026-09-3-ai /article/2026-09-03-ai 301
 /2026-09-3-ai/ /article/2026-09-03-ai 301
-/map-clean.html /article/2026-01-23-too-sexy 301
 /map-clean /article/2026-01-23-too-sexy 301
-
-# Pages the old site served from static/ (people may have shared their URLs)
-/gghenge_interactive.html /interactive/gghenge 301
+/map-clean.html /article/2026-01-23-too-sexy 301
 /gghenge_interactive /interactive/gghenge 301
+/gghenge_interactive.html /interactive/gghenge 301
 /election-2026 /interactive/election-2026/ 301
-/election-2026/* /interactive/election-2026/:splat 301
-# The election article only linked to the results page, so it has no page of its own now
-/2026-11-03-election-2026 /interactive/election-2026/ 301
-/2026-11-03-election-2026/ /interactive/election-2026/ 301
-# The endorsement web is now part of its article
+/election-2026/index.html /interactive/election-2026/ 301
+/election-2026/broadcast.html /interactive/election-2026/broadcast 301
 /endorsementweb /article/2026-11-02-endorsementweb 301
-/endorsementweb/* /article/2026-11-02-endorsementweb 301
 
-# The old Gatsby site served articles at /<slug>/ (and /<slug>); they're now at /article/<slug>.
+# Every article the old site had, at /<file name>/: to its page here, or to where its card links
+# (its story on projects.dailycal.org, or an interactive)
+/2015-11-11-public-trust https://projects.dailycal.org/2015-11-11-public-trust/ 301
+/2015-11-11-public-trust/ https://projects.dailycal.org/2015-11-11-public-trust/ 301
+/2015-11-23-crime https://projects.dailycal.org/2015-11-23-crime/ 301
+/2015-11-23-crime/ https://projects.dailycal.org/2015-11-23-crime/ 301
+/2015-12-11-lowest-grades https://projects.dailycal.org/2015-12-11-lowest-grades/ 301
+/2015-12-11-lowest-grades/ https://projects.dailycal.org/2015-12-11-lowest-grades/ 301
+/2016-06-29-aff-action https://projects.dailycal.org/2016-06-29-aff-action/ 301
+/2016-06-29-aff-action/ https://projects.dailycal.org/2016-06-29-aff-action/ 301
+/2016-09-20-paychecker https://projects.dailycal.org/2016-09-20-paychecker/ 301
+/2016-09-20-paychecker/ https://projects.dailycal.org/2016-09-20-paychecker/ 301
+/2016-11-04-hacker https://projects.dailycal.org/2016-11-04-hacker/ 301
+/2016-11-04-hacker/ https://projects.dailycal.org/2016-11-04-hacker/ 301
+/2016-11-21-tumult https://projects.dailycal.org/2016-11-21-tumult/ 301
+/2016-11-21-tumult/ https://projects.dailycal.org/2016-11-21-tumult/ 301
+/2017-02-28-sexual-misconduct https://projects.dailycal.org/2017-02-28-sexual-misconduct/ 301
+/2017-02-28-sexual-misconduct/ https://projects.dailycal.org/2017-02-28-sexual-misconduct/ 301
+/2017-03-28-building-berkeley https://projects.dailycal.org/2017-03-28-building-berkeley/ 301
+/2017-03-28-building-berkeley/ https://projects.dailycal.org/2017-03-28-building-berkeley/ 301
+/2017-10-12-private-research https://projects.dailycal.org/2017-10-12-private-research/ 301
+/2017-10-12-private-research/ https://projects.dailycal.org/2017-10-12-private-research/ 301
+/2017-11-08-campus-meme https://projects.dailycal.org/2017-11-08-campus-meme/ 301
+/2017-11-08-campus-meme/ https://projects.dailycal.org/2017-11-08-campus-meme/ 301
+/2017-11-27-where-we-cry https://projects.dailycal.org/2017-11-27-where-we-cry/ 301
+/2017-11-27-where-we-cry/ https://projects.dailycal.org/2017-11-27-where-we-cry/ 301
+/2017-11-28-bus-delay https://projects.dailycal.org/2017-11-28-bus-delay/ 301
+/2017-11-28-bus-delay/ https://projects.dailycal.org/2017-11-28-bus-delay/ 301
 /2018-04-13-campus-sex /article/2018-04-13-campus-sex 301
 /2018-04-13-campus-sex/ /article/2018-04-13-campus-sex 301
+/2018-04-24-great-equalizer https://projects.dailycal.org/2018-04-24-great-equalizer/ 301
+/2018-04-24-great-equalizer/ https://projects.dailycal.org/2018-04-24-great-equalizer/ 301
+/2018-04-24-rack-location https://projects.dailycal.org/2018-04-24-rack-location/ 301
+/2018-04-24-rack-location/ https://projects.dailycal.org/2018-04-24-rack-location/ 301
+/2018-09-22-peoples-park https://projects.dailycal.org/2018-09-22-peoples-park/ 301
+/2018-09-22-peoples-park/ https://projects.dailycal.org/2018-09-22-peoples-park/ 301
+/2019-03-18-berkeley-rent https://projects.dailycal.org/2019-03-18-berkeley-rent/ 301
+/2019-03-18-berkeley-rent/ https://projects.dailycal.org/2019-03-18-berkeley-rent/ 301
+/2020-05-17-graduation-2020 https://projects.dailycal.org/2020-05-17-graduation-2020/ 301
+/2020-05-17-graduation-2020/ https://projects.dailycal.org/2020-05-17-graduation-2020/ 301
+/2020-06-22-post-grad https://projects.dailycal.org/2020-06-22-post-grad/ 301
+/2020-06-22-post-grad/ https://projects.dailycal.org/2020-06-22-post-grad/ 301
+/2020-07-24-college-plans https://projects.dailycal.org/2020-07-24-college-plans/ 301
+/2020-07-24-college-plans/ https://projects.dailycal.org/2020-07-24-college-plans/ 301
+/2020-09-13-diversity https://projects.dailycal.org/2020-09-13-diversity/ 301
+/2020-09-13-diversity/ https://projects.dailycal.org/2020-09-13-diversity/ 301
+/2020-10-12-police-stops https://projects.dailycal.org/2020-10-12-police-stops/ 301
+/2020-10-12-police-stops/ https://projects.dailycal.org/2020-10-12-police-stops/ 301
+/2020-10-26-voting https://projects.dailycal.org/2020-10-26-voting/ 301
+/2020-10-26-voting/ https://projects.dailycal.org/2020-10-26-voting/ 301
+/2021-03-01-admissions-audit https://projects.dailycal.org/2021-03-01-admissions-audit/ 301
+/2021-03-01-admissions-audit/ https://projects.dailycal.org/2021-03-01-admissions-audit/ 301
+/2021-06-04-150-timeline https://projects.dailycal.org/2021-06-04-150-timeline/ 301
+/2021-06-04-150-timeline/ https://projects.dailycal.org/2021-06-04-150-timeline/ 301
+/2021-06-18-uc-berkeley-pride-quantified https://projects.dailycal.org/2021-06-18-uc-berkeley-pride-quantified/ 301
+/2021-06-18-uc-berkeley-pride-quantified/ https://projects.dailycal.org/2021-06-18-uc-berkeley-pride-quantified/ 301
 /2021-07-10-redlining /article/2021-07-10-redlining 301
 /2021-07-10-redlining/ /article/2021-07-10-redlining 301
 /2021-08-22-berkeley-guide-orientation /article/2021-08-22-berkeley-guide-orientation 301
@@ -32,6 +84,8 @@
 /2021-11-22-rent-shelter/ /article/2021-11-22-rent-shelter 301
 /2021-11-23-hate-crimes /article/2021-11-23-hate-crimes 301
 /2021-11-23-hate-crimes/ /article/2021-11-23-hate-crimes 301
+/2021-6-14-online-classes-suck https://projects.dailycal.org/2021-6-14-online-classes-suck/ 301
+/2021-6-14-online-classes-suck/ https://projects.dailycal.org/2021-6-14-online-classes-suck/ 301
 /2022-01-21-exodus /article/2022-01-21-exodus 301
 /2022-01-21-exodus/ /article/2022-01-21-exodus 301
 /2022-03-17-gym-pac-12 /article/2022-03-17-gym-pac-12 301
@@ -68,8 +122,14 @@
 /2023-12-20-theft/ /article/2023-12-20-theft 301
 /2024-02-18-internal-audit /article/2024-02-18-internal-audit 301
 /2024-02-18-internal-audit/ /article/2024-02-18-internal-audit 301
+/2024-03-20-construction https://projects.dailycal.org/2024-03-20-construction/ 301
+/2024-03-20-construction/ https://projects.dailycal.org/2024-03-20-construction/ 301
+/2024-04-19-coffee https://projects.dailycal.org/2024-04-19-coffee/ 301
+/2024-04-19-coffee/ https://projects.dailycal.org/2024-04-19-coffee/ 301
 /2024-05-02-external-audit /article/2024-05-02-external-audit 301
 /2024-05-02-external-audit/ /article/2024-05-02-external-audit 301
+/2024-05-22-baypass https://projects.dailycal.org/2024-05-22-baypass/ 301
+/2024-05-22-baypass/ https://projects.dailycal.org/2024-05-22-baypass/ 301
 /2024-07-02-opioids /article/2024-07-02-opioids 301
 /2024-07-02-opioids/ /article/2024-07-02-opioids 301
 /2024-07-31-pac-12-finances /article/2024-07-31-pac-12-finances 301
@@ -136,3 +196,9 @@
 /2026-10-30-money-flow/ /article/2026-10-30-money-flow 301
 /2026-11-02-endorsementweb /article/2026-11-02-endorsementweb 301
 /2026-11-02-endorsementweb/ /article/2026-11-02-endorsementweb 301
+/2026-11-03-election-2026 /interactive/election-2026/ 301
+/2026-11-03-election-2026/ /interactive/election-2026/ 301
+
+# Everything else in the old site's election-2026/ and endorsementweb/ folders
+/election-2026/* /interactive/election-2026/:splat 301
+/endorsementweb/* /article/2026-11-02-endorsementweb 301

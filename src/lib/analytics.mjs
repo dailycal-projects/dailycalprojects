@@ -43,7 +43,8 @@ export default function analytics() {
           if (html.includes(CONTAINER_ID)) continue;
           // The opening <head> tag (not <header>)
           const head = /<head(?=[\s>])[^>]*>/i.exec(html);
-          if (!head) throw new Error(`Analytics: ${path} has no <head> to add Google Tag Manager to.`);
+          if (!head)
+            throw new Error(`Analytics: ${path} has no <head> to add Google Tag Manager to.`);
           const at = head.index + head[0].length;
           await writeFile(file, html.slice(0, at) + script + html.slice(at));
         }

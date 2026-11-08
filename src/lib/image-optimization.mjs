@@ -31,7 +31,7 @@ export const WEBP_QUALITY = 85;
 export const MIN_SAVINGS = 0.1;
 
 /** File types either optimizer reads. (In the browser, HEIC/HEIF and TIFF only open in Safari.) */
-export const SUPPORTED_EXTENSIONS = new Set([
+const SUPPORTED_EXTENSIONS = new Set([
   ".jpg",
   ".jpeg",
   ".png",

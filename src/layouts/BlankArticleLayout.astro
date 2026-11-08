@@ -5,9 +5,8 @@
  * their own layout and scrolling, like the old Gatsby site's blank template: the page itself
  * doesn't scroll, and the body fills the window.
  */
-import Seo from "../components/Seo.astro";
-import { site } from "../config/site";
-import { type Article, articleDescription, featuredImageAlt } from "../lib/articles";
+import Head from "../components/Head.astro";
+import { type Article, articleHead } from "../lib/articles";
 import "../styles/global.css";
 import "../styles/legacy-typography.css";
 
@@ -16,28 +15,12 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { title, featuredImage, date, byline, keywords } = article.data;
 ---
 
 <!doctype html>
 <html lang="en" class="blank-article">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" href="/favicon.ico" />
-
-    <Seo
-      title={`${title} | ${site.articleTitleSuffix}`}
-      headline={title}
-      description={articleDescription(article)}
-      image={featuredImage}
-      imageAlt={featuredImageAlt(article)}
-      type="article"
-      publishedTime={date}
-      authors={byline}
-      keywords={keywords}
-    />
+    <Head article={articleHead(article)} />
   </head>
   <body>
     <div class="page">

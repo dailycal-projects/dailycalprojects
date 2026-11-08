@@ -291,7 +291,9 @@ The old site also listed articles that were hosted elsewhere (their `oldLink` fr
 
 ### Old URLs
 
-The old site served articles at `/<file name>/` instead of `/article/<file name>`. [`public/_redirects`](public/_redirects) 301-redirects those old URLs for every article the old site hosted, so existing links to them (e.g. from dailycal.org) and search results keep working.
+The old site served every article at `/<file name>/`, including the ones whose card links elsewhere, and served a few pages (`/about/`, the gghenge map, the election results) at other URLs. [`public/_redirects`](public/_redirects) 301-redirects each of them straight to where it is now (`/article/<file name>`, or the article's `link`, e.g. its story on projects.dailycal.org), so links to them (e.g. from dailycal.org) and search results keep working. A new article never had an old URL, so it needs no redirect.
+
+Cloudflare reads the rules in order, and ignores all but the first 100 that come after a rule with a `*`, so those go at the end.
 
 ## Search
 
@@ -331,7 +333,7 @@ An article's `layout` frontmatter picks how it's rendered:
 ## Other configuration
 
 - **Footer links** are the `footerLinks` array in `src/layouts/PageLayout.astro`.
-- **SEO** (title, description, canonical URL, Open Graph/X cards, JSON-LD) is rendered by `src/components/Seo.astro` from the props each page passes to `PageLayout`. The default social image is the Daily Cal logo; articles use their featured image.
+- **`<head>` and SEO** (title, description, canonical URL, Open Graph/X cards, JSON-LD) are rendered by `src/components/Head.astro` from the props each page passes to `PageLayout`: a page passes its name (`title="Search"` becomes "Search — The Daily Californian: Data"), and an article's layout passes `articleHead(article)`. The default social image is the Daily Cal logo; articles use their featured image.
 - **Colors and fonts** are CSS variables in `src/styles/global.css`.
 
 ## Contact

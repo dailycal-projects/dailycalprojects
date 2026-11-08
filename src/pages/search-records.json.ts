@@ -8,7 +8,7 @@ import { getImage } from "astro:assets";
 import { articlePath, dateFormat, featuredImageAlt, getArticles } from "../lib/articles";
 import { articleText, type TextBlock } from "../lib/search-text";
 
-export interface SearchRecord {
+interface SearchRecord {
   /** Where the result links: a path on this site, or a URL on another site. */
   href: string;
   title: string;

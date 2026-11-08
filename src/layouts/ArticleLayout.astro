@@ -3,7 +3,7 @@
 import { Image } from "astro:assets";
 import PageLayout from "./PageLayout.astro";
 import { site } from "../config/site";
-import { type Article, articleDescription, dateFormat, featuredImageAlt } from "../lib/articles";
+import { type Article, articleHead, dateFormat, featuredImageAlt } from "../lib/articles";
 import { bylinePath } from "../lib/authors";
 import "../styles/article.css";
 // The old site's base styles, which the visuals in older articles were designed for
@@ -21,7 +21,6 @@ const {
   featuredImage,
   secondaryFeaturedImage,
   imageAttribution,
-  keywords,
   subhead,
   hideHeroImage,
   imageCaption,
@@ -35,17 +34,7 @@ const imageAlt = featuredImageAlt(article);
 const isJointDept = typeof jointDept === "string" && jointDept.trim().length > 0;
 ---
 
-<PageLayout
-  title={`${title} | ${site.articleTitleSuffix}`}
-  headline={title}
-  description={articleDescription(article)}
-  image={featuredImage}
-  imageAlt={imageAlt}
-  type="article"
-  publishedTime={date}
-  authors={byline}
-  keywords={keywords}
->
+<PageLayout article={articleHead(article)}>
   <div class="article">
     <div class="centeredItems">
       {/* Header */}

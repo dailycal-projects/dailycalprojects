@@ -14,6 +14,8 @@ import { unified } from "unified";
 export interface TextBlock {
   /** A heading in the article (ranked higher by search). */
   heading: boolean;
+  /** A paragraph entirely in italics, usually a note, e.g. "_This is part of a series..._". */
+  note?: boolean;
   text: string;
 }
 
@@ -65,7 +67,11 @@ function collect(node: Node, blocks: TextBlock[]): void {
     case "paragraph":
     case "tableCell": {
       const text = inlineText(node).replace(/\s+/g, " ").trim();
-      if (text) blocks.push({ heading: false, text });
+      const content = (node.children ?? []).filter(
+        (child) => !(child.type === "text" && !child.value?.trim()),
+      );
+      const note = content.length > 0 && content.every((child) => child.type === "emphasis");
+      if (text) blocks.push({ heading: false, note, text });
       return;
     }
     case "heading": {

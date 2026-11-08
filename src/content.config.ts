@@ -58,7 +58,7 @@ const articles = defineCollection({
 });
 
 /** The longest an author's role can be, so it fits on one line of their card on /team. */
-export const ROLE_MAX_LENGTH = 40;
+const ROLE_MAX_LENGTH = 40;
 
 /**
  * Authors: one .mdx file per person in ./src/content/authors, named `<firstname-lastname>.mdx`

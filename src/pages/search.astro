@@ -4,15 +4,10 @@
  * browser, with the index src/lib/search-index.mjs builds into dist/pagefind/ (so it only works in
  * the built site, not `npm run dev`).
  */
-import { site } from "../config/site";
 import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<PageLayout
-  title={`Search — ${site.name}`}
-  description="Search The Daily Californian Data Team's stories."
-  noindex
->
+<PageLayout title="Search" description="Search The Daily Californian Data Team's stories." noindex>
   <div class="search">
     <h1>Search</h1>
     <form action="/search" role="search">

@@ -56,9 +56,10 @@ async function optimizeOne(inputPath, { keepOriginal }) {
     fit: "inside",
     withoutEnlargement: true,
   });
-  await (isOpaque
-    ? resized.jpeg({ quality: JPEG_QUALITY, mozjpeg: true, chromaSubsampling: "4:4:4" })
-    : resized.webp({ quality: WEBP_QUALITY, alphaQuality: 100, smartSubsample: true, effort: 6 })
+  await (
+    isOpaque
+      ? resized.jpeg({ quality: JPEG_QUALITY, mozjpeg: true, chromaSubsampling: "4:4:4" })
+      : resized.webp({ quality: WEBP_QUALITY, alphaQuality: 100, smartSubsample: true, effort: 6 })
   ).toFile(tempPath);
 
   const newStat = await stat(tempPath);
@@ -118,10 +119,14 @@ async function main() {
       results.push(result);
 
       if (result.alreadyOptimized) {
-        console.log(`\n${path.relative(process.cwd(), result.inputPath)}: already optimized, left as is`);
+        console.log(
+          `\n${path.relative(process.cwd(), result.inputPath)}: already optimized, left as is`,
+        );
         continue;
       }
-      console.log(`\n${path.relative(process.cwd(), result.inputPath)} → ${path.relative(process.cwd(), result.outputPath)}`);
+      console.log(
+        `\n${path.relative(process.cwd(), result.inputPath)} → ${path.relative(process.cwd(), result.outputPath)}`,
+      );
       console.log(`  original: ${formatBytes(result.originalSize)}`);
       console.log(`  new:      ${formatBytes(result.newSize)}`);
       console.log(`  change:   ${formatChange(result.originalSize, result.newSize)}`);

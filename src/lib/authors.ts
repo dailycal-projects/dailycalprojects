@@ -4,11 +4,11 @@ import { site } from "../config/site";
 import team from "../config/team.json";
 import { type Article, getArticles } from "./articles";
 
-export type AuthorEntry = CollectionEntry<"authors">;
+type AuthorEntry = CollectionEntry<"authors">;
 
 /** A role on the team now, from src/config/team.json, highest first. */
-export const TEAM_ROLES = ["editor", "deputyEditor", "reporter"] as const;
-export type TeamRole = (typeof TEAM_ROLES)[number];
+const TEAM_ROLES = ["editor", "deputyEditor", "reporter"] as const;
+type TeamRole = (typeof TEAM_ROLES)[number];
 
 /** The editors' roles, as shown on their cards and pages. */
 export const EDITOR_ROLE_LABELS: Partial<Record<TeamRole, string>> = {
@@ -46,7 +46,7 @@ const TeamSchema = z.strictObject({
 });
 
 /** "Ji Yeon Woo" -> "ji-yeon-woo" (and "José" -> "jose"). */
-export function authorSlug(name: string): string {
+function authorSlug(name: string): string {
   return name
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")
@@ -63,7 +63,7 @@ export function bylinePath(name: string): string | undefined {
 }
 
 /** Sorts by last name (the name's last word), then by full name. */
-export function byLastName(a: Author, b: Author): number {
+function byLastName(a: Author, b: Author): number {
   const last = (author: Author) => author.name.split(/\s+/).at(-1) ?? "";
   return last(a).localeCompare(last(b)) || a.name.localeCompare(b.name);
 }

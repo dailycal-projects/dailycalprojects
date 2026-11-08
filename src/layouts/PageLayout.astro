@@ -1,27 +1,20 @@
 ---
 /**
- * The layout every page renders into: <head> (with SEO tags built from these props), the fixed
+ * The layout every page renders into: <head> (see src/components/Head.astro), the fixed
  * header (a link to the team, the logo, and a link to search), and the page content.
  */
 import { Image } from "astro:assets";
 import wordmark from "../assets/site/dclogoblack.webp";
-import Seo, { type Props as SeoProps } from "../components/Seo.astro";
+import Head, { type Props as HeadProps } from "../components/Head.astro";
 import "../styles/global.css";
 
-type Props = SeoProps;
+type Props = HeadProps;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <Seo {...Astro.props} />
+    <Head {...Astro.props} />
   </head>
   <body>
     {/* Header */}
