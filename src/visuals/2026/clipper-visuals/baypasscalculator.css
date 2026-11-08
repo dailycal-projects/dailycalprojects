@@ -22,15 +22,6 @@
   margin: 0;
 }
 
-.leaflet-container {
-  height: 90vw;
-  width: 90vw;
-  margin: 10px auto;
-  border-radius: 15px;
-  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
-  z-index: 0 !important;
-}
-
 .bp-fare-output {
   margin-top: 10px;
   padding: 5px 20px;
@@ -145,12 +136,6 @@
 
   .bp-controls-div {
     margin-left: 20px;
-  }
-
-  .leaflet-container {
-    height: 85vh;
-    width: 70vh;
-    margin: 10px auto;
   }
 
   .bp-fare-output-grid > p,

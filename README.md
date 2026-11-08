@@ -224,6 +224,8 @@ An article's interactive graphics are React components in `src/visuals/<yyyy>/<p
 
 ```mdx
 import BikeTheftMap from "../../../visuals/2023/theft-visuals/bikeTheftMap";
+import "../../../styles/leaflet.css";
+import "../../../visuals/2023/theft-visuals/BikeTheftMap.css";
 
 <BikeTheftMap client:only="react" />
 ```
@@ -231,7 +233,7 @@ import BikeTheftMap from "../../../visuals/2023/theft-visuals/bikeTheftMap";
 Astro renders components to HTML at build time and doesn't send their JavaScript to the browser unless told to. Give a visual a directive if it needs to run in the browser:
 
 - **`client:load`**: for anything interactive (state, effects, event handlers, charts that measure the page, d3). It's rendered at build time and then made interactive as the page loads.
-- **`client:only="react"`**: for visuals that can't render outside a browser at all, e.g. Leaflet maps. Rendered only in the browser.
+- **`client:only="react"`**: for visuals that can't render outside a browser at all, e.g. Leaflet maps. Rendered only in the browser. **Its CSS is imported by the `.mdx`, not by the visual** (as above): Astro adds the CSS a `client:only` visual imports to every page that lists articles (the homepage, `/team`, every article), not just its own. A Leaflet map's article imports `src/styles/leaflet.css`, which has Leaflet's CSS and the frame every map on the site has. A `client:load` visual can import its own CSS.
 - **No directive**: for visuals that are only HTML (an iframe, a static timeline), which then cost no JavaScript.
 
 A few things to know when writing or porting a visual:

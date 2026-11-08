@@ -3,7 +3,6 @@ import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
 // import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 // import { sex_spot_icon_2018, sex_spot_icon_2026 } from './icon';
 import { sex_spots_2018, sex_spots_2026 } from './map_data';

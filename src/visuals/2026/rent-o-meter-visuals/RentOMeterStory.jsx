@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { preinit, preload } from 'react-dom';
-import './styles/app.css';
-import './host.css';
 
 const RentOMeterStory = () => {
   const [App, setApp] = useState(null);

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import 'leaflet/dist/leaflet.css';
 import { viewHref } from './views';
 
 export default function StoryMap({ publicationDate }) {

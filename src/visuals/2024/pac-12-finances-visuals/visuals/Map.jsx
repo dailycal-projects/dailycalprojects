@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import 'leaflet/dist/leaflet.css';
 import * as d3 from 'd3';
 import { feature } from 'topojson-client';
 import data from '../data/us-10m.json';

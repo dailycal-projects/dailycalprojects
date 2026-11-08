@@ -5,7 +5,6 @@ import {
   CircleMarker,
   Tooltip,
 } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 import classMapData from '../data/classMapData';
 
 // Helper function to convert 12-hour format to 24-hour for sorting

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import 'leaflet/dist/leaflet.css';
 import { bindSharing, load } from './scripts/data';
 import { viewHref } from './views';
 

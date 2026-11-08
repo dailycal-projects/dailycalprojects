@@ -6,8 +6,6 @@ import {
 // import logo from '../../images/dclogoblack.png';
 import logo from '../../../assets/site/dclogoblack.webp?url';
 
-import 'leaflet/dist/leaflet.css';
-import './hack_visuals.css';
 import { hackData } from './hack_data';
 
 const MapResizer = ({ isMobile }) => {

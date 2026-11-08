@@ -5,9 +5,6 @@ import ArticleFooter from '../../../components/ArticleFooter';
 import logo from '../../../assets/site/dclogo.webp?url';
 import { routeFromUrl, viewHref } from './views';
 import StoryMap from './StoryMap';
-import './styles/dashboard.css';
-import './host.css';
-import '../../../styles/darkStory.css';
 
 const Dashboard = lazy(() => import('./Dashboard'));
 const useClientLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;

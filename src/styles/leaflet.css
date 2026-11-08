@@ -1,0 +1,27 @@
+/*
+ * Leaflet's styles, for an article with a Leaflet map: its .mdx imports this file (not
+ * leaflet/dist/leaflet.css, and not from the visual; see the README's "Visuals").
+ */
+@import "leaflet/dist/leaflet.css";
+
+/*
+ * Every map's frame. These rules came from the Clipper calculator's CSS, which the old site (and
+ * this one, until its visuals' CSS stopped loading on every page) applied to every Leaflet map on
+ * the site, so every map has looked like this since it was published.
+ */
+.leaflet-container {
+  height: 90vw;
+  width: 90vw;
+  margin: 10px auto;
+  border-radius: 15px;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+  z-index: 0 !important;
+}
+
+@media only screen and (min-width: 1024px) {
+  .leaflet-container {
+    height: 85vh;
+    width: 70vh;
+    margin: 10px auto;
+  }
+}

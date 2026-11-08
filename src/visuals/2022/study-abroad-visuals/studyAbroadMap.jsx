@@ -2,7 +2,6 @@ import React from 'react';
 import {
   MapContainer, Popup, CircleMarker, TileLayer, Tooltip,
 } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 import studyAbroadData from './studyAbroadCoordinates';
 
 const StudyAbroadMap = () => {

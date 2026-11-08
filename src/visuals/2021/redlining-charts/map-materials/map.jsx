@@ -2,7 +2,6 @@ import React from 'react';
 import {
   MapContainer, CircleMarker, TileLayer, Tooltip, Popup, // Map is outdated; Leaflet now uses MapContainer
 } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 import data from './coordinates';
 
 const MyMap = () => {

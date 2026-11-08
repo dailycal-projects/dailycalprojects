@@ -25,8 +25,6 @@ import BART_stops from './data/BART_stops_leaflet.json';
 import BART_fares from './data/BART_fares.json';
 
 // styles
-import 'leaflet/dist/leaflet.css';
-import './baypasscalculator.css';
 
 // bay pass fare option parameters [OLD]
 // const bayPassFareMin = 200;

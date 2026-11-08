@@ -2,8 +2,6 @@ import React from 'react';
 import {
   MapContainer, TileLayer, Tooltip, Polygon,
 } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import './universityRentMapCSS.css';
 import data from './universityRentData';
 
 const MyMap = () => {

@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 // import L from 'leaflet';
 import L from 'leaflet';
 import { third_places } from './map_data';
