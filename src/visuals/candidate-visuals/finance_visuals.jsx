@@ -127,9 +127,7 @@ const CandidateFinanceVisuals = ({ intro, middle, end }) => {
               By
               {' '}
               <a
-                href="https://www.dailycal.org/users/profile/antara%20gangwal/"
-                target="_blank"
-                rel="noreferrer"
+                href="/team/antara-gangwal"
                 style={{ color: '#00529B', textDecoration: 'underline' }}
               >
                 Antara Gangwal
@@ -138,9 +136,7 @@ const CandidateFinanceVisuals = ({ intro, middle, end }) => {
               &
               {' '}
               <a
-                href="https://www.dailycal.org/users/profile/brendan%20raykoff/"
-                target="_blank"
-                rel="noreferrer"
+                href="/team/brendan-raykoff"
                 style={{ color: '#00529B', textDecoration: 'underline' }}
               >
                 Brendan Raykoff

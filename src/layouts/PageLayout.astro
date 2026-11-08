@@ -1,7 +1,7 @@
 ---
 /**
  * The layout every page renders into: <head> (with SEO tags built from these props), the fixed
- * header (the logo, and a link to search), and the page content.
+ * header (a link to the team, the logo, and a link to search), and the page content.
  */
 import { Image } from "astro:assets";
 import wordmark from "../assets/site/dclogoblack.webp";
@@ -26,6 +26,9 @@ type Props = SeoProps;
   <body>
     {/* Header */}
     <header class="header">
+      <a href="/team" class="teamLink">
+        Team
+      </a>
       <a href="/" class="logoLink" aria-label="The Daily Californian: Data home">
         <Image
           src={wordmark}
@@ -107,16 +110,35 @@ type Props = SeoProps;
     padding: 6px;
     color: var(--palette-black);
   }
-  .searchLink:hover {
+  .teamLink {
+    position: absolute;
+    left: 16px;
+    padding: 6px;
+    font-family: Georgia, sans-serif;
+    font-size: 16px;
+    color: var(--palette-black);
+    text-decoration: none;
+  }
+  .searchLink:hover,
+  .teamLink:hover {
     color: var(--palette-dark-blue);
   }
-  /* Leaves room for the search link on narrow phones */
+  /* Leaves room for the team and search links on narrow phones */
   @media (max-width: 440px) {
     .logo {
       height: 16px;
     }
     .searchLink {
       right: 6px;
+    }
+    .teamLink {
+      left: 6px;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 360px) {
+    .logo {
+      height: 13px;
     }
   }
 </style>

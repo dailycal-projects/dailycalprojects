@@ -3,6 +3,7 @@ import { render } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import BlankArticleLayout from "../../layouts/BlankArticleLayout.astro";
 import { type Article, getArticles } from "../../lib/articles";
+import { bylinePath } from "../../lib/authors";
 
 /** Get a list of paths to generate: every article but those with a link, which have no page */
 export async function getStaticPaths() {
@@ -26,12 +27,12 @@ const Layout = article.data.layout ? ArticleLayout : BlankArticleLayout;
 
 // The article's frontmatter, available in its .mdx as `props.frontmatter`, the way the old Gatsby
 // site passed it (e.g. <Story title={props.frontmatter.title} />): the date as "yyyy-mm-dd", and
-// the byline under its old names too.
+// the byline under its old names too, with bylineUrl linking to each author's page.
 const frontmatter = {
   ...article.data,
   date: article.data.date.toISOString().slice(0, 10),
   bylineName: article.data.byline,
-  bylineUrl: article.data.bylineLinks,
+  bylineUrl: article.data.byline.map((name) => bylinePath(name) ?? ""),
 };
 ---
 

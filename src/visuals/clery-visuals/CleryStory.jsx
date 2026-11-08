@@ -93,7 +93,7 @@ export default function CleryStory({
                   By{' '}
                   {bylineName.map((author, index) => (
                     <React.Fragment key={author}>
-                      <a href={bylineUrl?.[index] || ''} target="_blank" rel="noreferrer">{author}</a>
+                      <a href={bylineUrl?.[index] || ''}>{author}</a>
                       {index < bylineName.length - 2 ? ', ' : ''}
                       {index === bylineName.length - 2 ? ' & ' : ''}
                     </React.Fragment>

@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import PageLayout from "./PageLayout.astro";
 import { site } from "../config/site";
 import { type Article, articleDescription, dateFormat, featuredImageAlt } from "../lib/articles";
+import { bylinePath } from "../lib/authors";
 import "../styles/article.css";
 // The old site's base styles, which the visuals in older articles were designed for
 import "../styles/legacy-typography.css";
@@ -23,7 +24,6 @@ const {
   keywords,
   subhead,
   hideHeroImage,
-  bylineLinks,
   imageCaption,
   aboutStory,
   jointDept,
@@ -33,12 +33,6 @@ const imageAlt = featuredImageAlt(article);
 
 // Check if is joint-department article
 const isJointDept = typeof jointDept === "string" && jointDept.trim().length > 0;
-
-// Each author's byline link: their bylineLinks entry if set, otherwise their profile
-const authorLink = (author: string, i: number) => {
-  const link = bylineLinks[i]?.trim();
-  return link ? link : site.authorProfileUrl(author);
-};
 ---
 
 <PageLayout
@@ -85,15 +79,22 @@ const authorLink = (author: string, i: number) => {
       )}
     </div>
 
-    {/* Byline (flatMap avoids whitespace between authors) */}
+    {/* Byline, linking to each author's page (flatMap avoids whitespace between authors) */}
     <div class="byline">
       <span>By </span>
-      {byline.flatMap((author: string, i: number) => [
-        ...(i > 0 ? [i === byline.length - 1 ? " & " : ", "] : []),
-        <a href={authorLink(author, i)} class="link">
-          {author}
-        </a>,
-      ])}
+      {byline.flatMap((author: string, i: number) => {
+        const path = bylinePath(author);
+        return [
+          ...(i > 0 ? [i === byline.length - 1 ? " & " : ", "] : []),
+          path ? (
+            <a href={path} class="link">
+              {author}
+            </a>
+          ) : (
+            author
+          ),
+        ];
+      })}
     </div>
 
     {/* Article */}

@@ -159,9 +159,7 @@ const HackVisuals = ({ intro, credits, note }) => {
               By
               {' '}
               <a
-                href="https://www.dailycal.org/users/profile/ajith%20araiza-singh/"
-                target="_blank"
-                rel="noreferrer"
+                href="/team/ajith-araiza-singh"
                 style={{ color: '#00529B', textDecoration: 'underline' }}
               >
                 Ajith Araiza-Singh
@@ -170,9 +168,7 @@ const HackVisuals = ({ intro, credits, note }) => {
               &
               {' '}
               <a
-                href="https://www.dailycal.org/users/profile/luca%20vicisano/"
-                target="_blank"
-                rel="noreferrer"
+                href="/team/luca-vicisano"
                 style={{ color: '#00529B', textDecoration: 'underline' }}
               >
                 Luca Vicisano

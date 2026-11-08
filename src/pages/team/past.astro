@@ -1,0 +1,35 @@
+---
+/** /team/past: everyone with an author file or a byline who isn't on the team now. */
+import AuthorCard from "../../components/AuthorCard.astro";
+import AuthorGroup from "../../components/AuthorGroup.astro";
+import TeamLayout from "../../layouts/TeamLayout.astro";
+import { getAuthors, pastTeam } from "../../lib/authors";
+
+const past = pastTeam(await getAuthors());
+
+const monthYear = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
+---
+
+<TeamLayout
+  title="Past Contributors"
+  description="The Daily Californian Data Team's past members and contributors."
+>
+  <AuthorGroup>
+    {past.map((author, i) => (
+      <AuthorCard
+        author={author}
+        detail={
+          author.articles[0] && `Latest story: ${monthYear.format(author.articles[0].data.date)}`
+        }
+        eager={i < 5}
+      />
+    ))}
+  </AuthorGroup>
+  <Fragment slot="footer">
+    <a href="/team">The team now</a>
+  </Fragment>
+</TeamLayout>

@@ -14,7 +14,7 @@ export const site = {
   donateUrl: "https://givebutter.com/w68cQv",
   mainSiteUrl: "https://www.dailycal.org",
   contactUrl: "https://www.dailycal.org/site/contact-us.html",
-  /** Where an author's byline links when the article doesn't set a bylineLinks entry for them. */
+  /** An author's Daily Californian profile, linked from their page unless their links include it. */
   authorProfileUrl: (author: string) =>
     `https://www.dailycal.org/users/profile/${encodeURIComponent(author)}/`,
 };

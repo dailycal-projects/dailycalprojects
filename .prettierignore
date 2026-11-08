@@ -4,8 +4,9 @@ node_modules
 package-lock.json
 public
 
-# Articles are prose, which reflowing can change (see eslint.config.js)
+# Articles and authors' bios are prose, which reflowing can change (see eslint.config.js)
 src/content/articles
+src/content/authors
 
 # Code carried over unchanged from the old Gatsby site (also in eslint.config.js)
 src/visuals

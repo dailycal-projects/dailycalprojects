@@ -1,0 +1,60 @@
+---
+/** An author's picture, in a circle: theirs, or their initials if they don't have one. */
+import { Image } from "astro:assets";
+import type { Author } from "../lib/authors";
+
+interface Props {
+  author: Author;
+  /** Its width and height, in pixels. */
+  size: number;
+  /** Load the picture eagerly (for pictures visible without scrolling). */
+  eager?: boolean;
+}
+
+const { author, size, eager = false } = Astro.props;
+const image = author.entry?.data.image;
+const initials = author.name
+  .split(/\s+/)
+  .filter((word) => /^\p{L}/u.test(word))
+  .map((word) => word[0])
+  .filter((_, i, all) => i === 0 || i === all.length - 1)
+  .join("")
+  .toUpperCase();
+---
+
+{image ? (
+  <Image
+    src={image}
+    alt=""
+    class="picture"
+    width={size}
+    height={size}
+    densities={[1, 2, 3]}
+    loading={eager ? "eager" : "lazy"}
+    style={`--size: ${size}px`}
+  />
+) : (
+  <span class="picture initials" style={`--size: ${size}px`} aria-hidden="true">
+    {initials}
+  </span>
+)}
+
+<style>
+  .picture {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e4e4e4;
+    color: var(--palette-dark-gray);
+    font-family: Georgia, sans-serif;
+    font-size: calc(var(--size) * 0.36);
+    letter-spacing: 0.02em;
+  }
+</style>

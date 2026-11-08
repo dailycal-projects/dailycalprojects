@@ -1,0 +1,169 @@
+---
+/** /team/<firstname-lastname>: an author's picture, role, links and bio, and their articles. */
+import { render } from "astro:content";
+import ArticleCard from "../../components/ArticleCard.astro";
+import AuthorPicture from "../../components/AuthorPicture.astro";
+import { site } from "../../config/site";
+import PageLayout from "../../layouts/PageLayout.astro";
+import { type Author, authorLinks, getAuthors } from "../../lib/authors";
+
+/** A page for everyone with an author file or a byline */
+export async function getStaticPaths() {
+  const authors = await getAuthors();
+  return authors.map((author) => ({ params: { slug: author.slug }, props: { author } }));
+}
+
+interface Props {
+  author: Author;
+}
+
+const { author } = Astro.props;
+const { entry, articles } = author;
+const Bio = entry && (await render(entry)).Content;
+const links = authorLinks(author);
+const description = entry
+  ? `${author.name}, ${entry.data.role} at The Daily Californian's Data Team.`
+  : `Stories by ${author.name} for The Daily Californian's Data Team.`;
+---
+
+<PageLayout title={`${author.name} — ${site.name}`} description={description}>
+  <div class="author">
+    {/* Picture with name, role and links beside it, and the bio underneath */}
+    <div class="intro">
+      <div class="profile">
+        <AuthorPicture author={author} size={140} eager />
+        <div class="details">
+          <h1>{author.name}</h1>
+          {entry && <p class="role">{entry.data.role}</p>}
+          {entry && (
+            <p class="joined">
+              {author.teamRole ? "On the Data Team since" : "Joined the Data Team in"}{" "}
+              {entry.data.joined}
+            </p>
+          )}
+          <ul class="links">
+            {links.map(([label, url]) => (
+              <li>
+                <a href={url}>{label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {Bio && (
+        <div class="bio">
+          <Bio />
+        </div>
+      )}
+    </div>
+
+    {articles.length > 0 && (
+      <>
+        <h2>Articles</h2>
+        <div class="stories">
+          {articles.map((article) => (
+            <ArticleCard article={article} />
+          ))}
+        </div>
+      </>
+    )}
+
+    <p class="back">
+      <a href={author.teamRole ? "/team" : "/team/past"}>
+        {author.teamRole ? "The team" : "Past contributors"}
+      </a>
+    </p>
+  </div>
+</PageLayout>
+
+<style>
+  .author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 0 48px;
+    font-family: Georgia, sans-serif;
+    color: var(--palette-black);
+  }
+  .intro {
+    width: 100%;
+    max-width: 760px;
+    box-sizing: border-box;
+    padding: 0 12px;
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .role {
+    margin: 0;
+    font-size: 18px;
+    color: var(--palette-dark-gray);
+  }
+  .joined {
+    margin: 0;
+    font-size: 14px;
+    color: var(--palette-gray);
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+  }
+  a {
+    color: var(--palette-dark-blue);
+  }
+  .bio {
+    margin-top: 24px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  /* A smaller picture and name, so they fit side by side on phones */
+  @media (max-width: 480px) {
+    .profile {
+      gap: 16px;
+    }
+    .profile :global(.picture) {
+      --size: 96px !important;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    .role {
+      font-size: 16px;
+    }
+  }
+  h2 {
+    margin: 32px 0 0;
+    font-size: 24px;
+  }
+  .stories {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .back {
+    margin-top: 24px;
+  }
+</style>

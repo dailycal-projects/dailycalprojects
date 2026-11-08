@@ -34,8 +34,10 @@ The site is always served from the root of its domain, so internal links are pla
 ```
 src/
   content/articles/   One .mdx file per article
+  content/authors/    One .mdx file per author (see "Authors and the team")
   assets/images/      Every article's images, in a folder per article named after its short slug
                       (its file name without the date, e.g. nobel/)
+  assets/authors/     Authors' pictures, named after their .mdx files
   assets/site/        Images that aren't an article's: the logos, and /apply's puzzle hint
   components/         Reusable components (charts, images, links, SEO)
   config/             Site-wide settings (see "Site configuration")
@@ -57,6 +59,9 @@ public/               Static files served as-is: the favicon, fonts, the data fi
 | `/<yyyy-mm-dd>-<slug>/` | 301 redirect to `/article/<yyyy-mm-dd>-<slug>` (the old site's article URLs) |
 | `/interactive/<name>` | An interactive on a page of its own (see "Interactives") |
 | `/search?q=<query>` | Search (see "Search") |
+| `/team` | The Data Team now (see "Authors and the team") |
+| `/team/past` | Everyone else with a byline or an author file, by their latest story |
+| `/team/<firstname-lastname>` | An author's page: their picture, role, links, bio and stories |
 | `/apply` | Where the Data Department's recruiting flyer points: the application, and a form for the flyer's puzzle (hidden from search engines) |
 | `/editors/image-optimization` | In-browser image optimizer for editors (hidden from search engines) |
 | `/sitemap-index.xml`, `/robots.txt` | Generated at build time from `site` in `astro.config.mjs`. Don't add a `public/robots.txt` |
@@ -79,7 +84,7 @@ Unknown fields fail the build, so a misspelled field can't be silently ignored.
 | :-- | :-- | :-- |
 | `date` | Publish date, `"YYYY-MM-DD"`. Determines the order on the homepage. | Yes |
 | `title` | The headline. | Yes |
-| `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. | Yes, unless the article has a `link` |
+| `byline` | Author names, e.g. `["Jane Doe", "John Smith"]`. At least one. Each links to the author's page at `/team/<firstname-lastname>`, so spell a name the same way in every article (the build fails if it isn't; see [Authors and the team](#authors-and-the-team)). | Yes, unless the article has a `link` |
 | `featuredImage` | The featured (hero) image: its path relative to the article, e.g. `"../../assets/images/my-story/cover.jpg"`. Also used on homepage cards and in social previews. | Yes |
 | `featuredImageAlt` | Alt text describing the featured image, for screen readers and social previews. Defaults to `Featured image for "<title>"`, so please set it. | No |
 | `description` | Short summary for search engines' results and social previews, also searched by the site's own search. Defaults to `subhead`, then the start of the article's first paragraph (then the site description, for an article with no prose). | No |
@@ -96,7 +101,6 @@ These are only used by the article layout (`layout: true`):
 | `hideHeroImage` | `true` hides the featured image on the article page itself (it still shows on cards and in social previews). Use this when the body opens with its own image or graphic. Default `false`. |
 | `secondaryFeaturedImage` | An image to show at the top of the article page instead of `featuredImage` (which is still used for cards and social previews). |
 | `imageCaption` | Caption shown under the featured image. |
-| `bylineLinks` | One URL per `byline` name, in the same order. Use `""` for an author who should link to their Daily Cal profile (the default for everyone when this is left out). Must be the same length as `byline`, or the build fails. |
 | `aboutStory` | Extra text for the "About this Story" box at the end, e.g. where the data came from. |
 | `jointDept` | Another department's name, e.g. `"News"`, for an article made jointly with the Data Department. |
 
@@ -109,7 +113,6 @@ title: "My Headline"
 subhead: "A short dek explaining the piece"
 description: "One or two sentences for search results and social previews."
 byline: ["Jane Doe", "John Smith"]
-bylineLinks: ["", "https://example.com/john"]
 featuredImage: "../../assets/images/my-story/cover.jpg"
 featuredImageAlt: "Students walk past Sather Gate"
 imageAttribution: "Jane Doe | Staff"
@@ -135,7 +138,7 @@ The body is regular Markdown/MDX. Paragraphs, **bold**, _italics_ and [links](ht
 
 ### Adding images
 
-Every image goes in `src/assets/images/<short slug>/`, where the short slug is the article's file name without the date (e.g. `src/assets/images/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Images that aren't an article's, like the logos, are in `src/assets/site/`. [Optimize](#optimizing-images) it first, then:
+Every image goes in `src/assets/images/<short slug>/`, where the short slug is the article's file name without the date (e.g. `src/assets/images/my-story/` for `2026-05-01-my-story.mdx`), including images its visuals use. Authors' pictures are in `src/assets/authors/` (see [Authors and the team](#authors-and-the-team)), and other images that aren't an article's, like the logos, are in `src/assets/site/`. [Optimize](#optimizing-images) it first, then:
 
 - `featuredImage` (and `secondaryFeaturedImage`) in frontmatter: its path relative to the article, `featuredImage: "../../assets/images/my-story/cover.jpg"`, and
 - inline images: import the image at the top of the article, then pass it to `<ArticleImage>`, or to Astro's `<Image>` (`import { Image } from "astro:assets"`) for an image without a caption:
@@ -149,6 +152,54 @@ Every image goes in `src/assets/images/<short slug>/`, where the short slug is t
 At build time, Astro resizes each image to the sizes it's shown at and converts it to WebP (and social previews to JPEG/PNG), so readers download a fraction of the file. Optimizing images before they're committed still matters: it keeps the repository small and the build fast, since every image is processed on every build. The build fails if an article refers to an image that doesn't exist, or links to a file in `public/data/` or an interactive that doesn't exist.
 
 The only images outside `src/assets/` are the ones apps built elsewhere load by URL at run time (the 2026 election results in `public/interactive/` and the rent-o-meter's in `public/data/`), and `public/favicon.ico`.
+
+## Authors and the team
+
+Everyone in an article's `byline` gets a page at `/team/<firstname-lastname>` (e.g. "Ji Yeon Woo" is `/team/ji-yeon-woo`) listing their stories, newest first, and a link to their Daily Californian profile. Bylines link there. "Daily Cal Staff" and "Editorial Board" credit groups, so they don't link anywhere (`GROUP_BYLINES` in `src/lib/authors.ts`).
+
+To give someone a picture, a role and a bio, add `src/content/authors/<firstname-lastname>.mdx`, named after the name as it's spelled in bylines. The body is the bio:
+
+```mdx
+---
+name: "Ji Yeon Woo"
+role: "Deputy Data Editor"
+joined: "Fall 2024"
+image: "../../assets/authors/ji-yeon-woo.jpg"
+email: "jwoo@dailycal.org"
+links:
+  LinkedIn: "https://www.linkedin.com/in/..."
+---
+
+Ji Yeon covers campus finances and housing...
+```
+
+| Field | Description | Required |
+| :-- | :-- | :-- |
+| `name` | Their name, spelled as in their bylines. | Yes |
+| `role` | Shown on their card and page, whether or not they're on the team now, e.g. `"Data Reporter"`. At most 40 characters. | Yes |
+| `joined` | The semester they joined: `"Spring 2025"`, `"Summer 2025"` or `"Fall 2025"`. | Yes |
+| `image` | A square picture in `src/assets/authors/`, named after their file: `"../../assets/authors/ji-yeon-woo.jpg"` ([optimize](#optimizing-images) it first). Without one, their initials are shown. | No |
+| `email` | Their email address, linked as "Email" on their page. | No |
+| `links` | Links shown on their page, by label, e.g. `LinkedIn: "https://..."` (`http(s)` URLs). Their Daily Californian profile is added unless one of these is on dailycal.org. | No |
+
+An author file is optional, for team members too: without one, their page has their name, their stories and their Daily Californian profile link.
+
+Who's on the team now is [`src/config/team.json`](src/config/team.json), by name, spelled as in their bylines. `/team` shows them in this order, each role by last name; everyone else is on `/team/past`:
+
+```json
+{
+  "editor": "Jane Doe",
+  "deputyEditors": ["Ji Yeon Woo"],
+  "reporters": ["John Smith", "Alex Lee"]
+}
+```
+
+The build fails, listing every problem, if:
+
+- an author file's frontmatter is missing a field or has one that's misspelled or invalid,
+- an author file isn't named after the `name` in it, or its picture isn't square or isn't named after it,
+- two bylines, author files or `team.json` entries spell the same name differently, e.g. "Ian Macgregor" and "Ian MacGregor",
+- `team.json` doesn't have one `editor` and one to three `deputyEditors`, or lists someone twice.
 
 ## Optimizing images
 
@@ -273,7 +324,8 @@ An article's `layout` frontmatter picks how it's rendered:
 
 ## Site configuration (`src/config/`)
 
-- **`site.ts`**: the site name, default description, contact email, GitHub/donate links, and where author bylines link by default.
+- **`site.ts`**: the site name, default description, contact email, GitHub/donate links, and authors' Daily Californian profile URLs.
+- **`team.json`**: who's on the team now (see [Authors and the team](#authors-and-the-team)).
 
 ## Other configuration
 

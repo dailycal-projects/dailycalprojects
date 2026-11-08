@@ -40,22 +40,67 @@ const articles = defineCollection({
         // for cards and social previews
         secondaryFeaturedImage: image().optional(),
         imageCaption: z.string().optional(),
-        bylineLinks: z.array(z.string()).default([]),
         aboutStory: z.string().optional(),
         jointDept: z.string().optional(),
       })
       .refine((data) => data.link !== undefined || data.byline.length > 0, {
         message: "byline needs at least one author.",
         path: ["byline"],
-      })
-      .refine(
-        (data) => data.bylineLinks.length === 0 || data.bylineLinks.length === data.byline.length,
-        {
-          message:
-            'bylineLinks must have one entry per byline name (use "" for an author with no custom link), or be left out.',
-          path: ["bylineLinks"],
-        },
-      ),
+      }),
 });
 
-export const collections = { articles };
+/** The longest an author's role can be, so it fits on one line of their card on /team. */
+export const ROLE_MAX_LENGTH = 40;
+
+/**
+ * Authors: one .mdx file per person in ./src/content/authors, named `<firstname-lastname>.mdx`
+ * after their name (e.g. "Ji Yeon Woo" is ji-yeon-woo.mdx). The body is their bio. Who's on the
+ * team now is in src/config/team.json. The file name, picture and the team are validated in
+ * src/lib/authors.ts.
+ */
+const authors = defineCollection({
+  loader: glob({ base: "./src/content/authors", pattern: "*.mdx" }),
+  schema: ({ image }) =>
+    z.strictObject({
+      // As it's written in article bylines, e.g. "Ian MacGregor"
+      name: z.string().trim().min(1),
+      // Shown on their card, whether they're on the team now or not, e.g. "Deputy Data Editor"
+      role: z
+        .string()
+        .trim()
+        .min(1)
+        .max(
+          ROLE_MAX_LENGTH,
+          `role must be at most ${ROLE_MAX_LENGTH} characters, to fit on its card.`,
+        ),
+      // The semester they joined the Data Team, e.g. "Fall 2024"
+      joined: z
+        .string()
+        .trim()
+        .regex(/^(Spring|Summer|Fall) \d{4}$/, 'joined must be a semester, e.g. "Fall 2024".'),
+      // Their picture: a square .jpg or .webp in src/assets/authors/ named after their file, e.g.
+      // "../../assets/authors/ji-yeon-woo.jpg"
+      image: z
+        .string()
+        .regex(
+          /^\.\.\/\.\.\/assets\/authors\/[a-z0-9-]+\.(jpg|webp)$/,
+          'image must be a .jpg or .webp in src/assets/authors/, e.g. "../../assets/authors/ji-yeon-woo.jpg".',
+        )
+        .pipe(image())
+        .optional(),
+      // Their email address, linked as "Email" after their links
+      email: z.email("email must be an email address, e.g. jwoo@dailycal.org.").optional(),
+      // Links shown on their page, by label, e.g. { LinkedIn: "https://www.linkedin.com/in/..." }
+      links: z
+        .record(
+          z.string().trim().min(1),
+          z.url({
+            protocol: /^https?$/,
+            error: "links must be http(s) URLs (put an email in email).",
+          }),
+        )
+        .default({}),
+    }),
+});
+
+export const collections = { articles, authors };

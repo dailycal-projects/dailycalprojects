@@ -1,0 +1,58 @@
+---
+/** A linked card for an author (picture, name and role), used on /team and /team/past. */
+import AuthorPicture from "./AuthorPicture.astro";
+import { type Author, type TeamRole, authorPath } from "../lib/authors";
+
+interface Props {
+  author: Author;
+  /** A line under their role, e.g. when their latest story was. */
+  detail?: string;
+  /** Load the picture eagerly (for cards visible without scrolling). */
+  eager?: boolean;
+}
+
+const { author, detail, eager } = Astro.props;
+// Editors without an author file are labeled with their role on the team
+const TEAM_ROLE_LABELS: Partial<Record<TeamRole, string>> = {
+  editor: "Editor",
+  deputyEditor: "Deputy Editor",
+};
+const role = author.entry?.data.role ?? (author.teamRole && TEAM_ROLE_LABELS[author.teamRole]);
+---
+
+<a href={authorPath(author.slug)} class="authorCard">
+  <AuthorPicture author={author} size={120} eager={eager} />
+  <span class="name">{author.name}</span>
+  {role && <span class="role">{role}</span>}
+  {detail && <span class="detail">{detail}</span>}
+</a>
+
+<style>
+  .authorCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 180px;
+    margin: 16px 10px;
+    font-family: Georgia, sans-serif;
+    text-align: center;
+    text-decoration: none;
+  }
+  .authorCard:hover .name {
+    text-decoration: underline;
+  }
+  .name {
+    margin-top: 8px;
+    font-size: 18px;
+    color: var(--palette-black);
+  }
+  .role {
+    font-size: 14px;
+    color: var(--palette-dark-gray);
+  }
+  .detail {
+    font-size: 12px;
+    color: var(--palette-gray);
+  }
+</style>
