@@ -10,6 +10,12 @@ export type AuthorEntry = CollectionEntry<"authors">;
 export const TEAM_ROLES = ["editor", "deputyEditor", "reporter"] as const;
 export type TeamRole = (typeof TEAM_ROLES)[number];
 
+/** The editors' roles, as shown on their cards and pages. */
+export const EDITOR_ROLE_LABELS: Partial<Record<TeamRole, string>> = {
+  editor: "Editor",
+  deputyEditor: "Deputy Editor",
+};
+
 /** Everyone who has a file in src/content/authors/ or a byline on an article. */
 export interface Author {
   /** Their name in lowercase words joined by hyphens, e.g. "ji-yeon-woo": their page's URL. */

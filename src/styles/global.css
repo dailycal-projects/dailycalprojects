@@ -4,6 +4,8 @@
   --palette-gray: #949494;
   --palette-light-gray: #f8f8f8;
   --palette-dark-blue: #1d6a92;
+  /* The Daily Californian's blue */
+  --palette-dc-blue: #00529b;
 
   --font-list:
     "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial",

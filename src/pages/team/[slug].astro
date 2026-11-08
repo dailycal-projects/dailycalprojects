@@ -5,7 +5,7 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import AuthorPicture from "../../components/AuthorPicture.astro";
 import { site } from "../../config/site";
 import PageLayout from "../../layouts/PageLayout.astro";
-import { type Author, authorLinks, getAuthors } from "../../lib/authors";
+import { type Author, EDITOR_ROLE_LABELS, authorLinks, getAuthors } from "../../lib/authors";
 
 /** A page for everyone with an author file or a byline */
 export async function getStaticPaths() {
@@ -21,6 +21,8 @@ const { author } = Astro.props;
 const { entry, articles } = author;
 const Bio = entry && (await render(entry)).Content;
 const links = authorLinks(author);
+// A tag by an editor's name with their role on the team
+const editorRole = author.teamRole && EDITOR_ROLE_LABELS[author.teamRole];
 const description = entry
   ? `${author.name}, ${entry.data.role} at The Daily Californian's Data Team.`
   : `Stories by ${author.name} for The Daily Californian's Data Team.`;
@@ -33,7 +35,10 @@ const description = entry
       <div class="profile">
         <AuthorPicture author={author} size={140} eager />
         <div class="details">
-          <h1>{author.name}</h1>
+          <div class="nameRow">
+            <h1>{author.name}</h1>
+            {editorRole && <span class="editorTag">{editorRole}</span>}
+          </div>
           {entry && <p class="role">{entry.data.role}</p>}
           {entry && (
             <p class="joined">
@@ -105,11 +110,27 @@ const description = entry
     gap: 6px;
     min-width: 0;
   }
+  .nameRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+  }
   h1 {
     margin: 0;
     font-size: 36px;
     font-weight: 800;
     line-height: 1.1;
+  }
+  .editorTag {
+    padding: 3px 10px;
+    border-radius: 999px;
+    background-color: var(--palette-dc-blue);
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
   .role {
     margin: 0;
