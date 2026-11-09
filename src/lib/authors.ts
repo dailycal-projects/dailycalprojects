@@ -214,9 +214,7 @@ export function currentTeam(authors: Author[]): Author[] {
     .filter((author) => author.teamRole)
     .sort(
       (a, b) =>
-        rank(a) - rank(b) ||
-        unpublishedReporter(a) - unpublishedReporter(b) ||
-        byLastName(a, b),
+        rank(a) - rank(b) || unpublishedReporter(a) - unpublishedReporter(b) || byLastName(a, b),
     );
 }
 
