@@ -14,6 +14,7 @@ const PAGE = "dist/editors/build.html";
 // Astro's command, run with this Node (so it works outside `npm run` too)
 const ASTRO = fileURLToPath(new URL("../node_modules/astro/bin/astro.mjs", import.meta.url));
 
+const started = new Date();
 const output = [];
 const astro = spawn(process.execPath, [ASTRO, "build", ...process.argv.slice(2)], {
   stdio: ["inherit", "pipe", "pipe"],
@@ -30,7 +31,15 @@ astro.stderr.on("data", (chunk) => {
 });
 
 astro.on("close", (code) => {
-  const log = stripVTControlCharacters(Buffer.concat(output).toString())
+  // e.g. "November 9, 2026 at 1:25:57 AM PST" (Berkeley's time, wherever it was built)
+  const startTime = started.toLocaleString("en-US", {
+    dateStyle: "long",
+    timeStyle: "long",
+    timeZone: "America/Los_Angeles",
+  });
+  const duration = `${((Date.now() - started.valueOf()) / 1000).toFixed(1)}s`;
+  const header = `DAILY CAL DATA\nBuilt at ${startTime} in ${duration}\n${"=".repeat(30)}\n\n`;
+  const log = (header + stripVTControlCharacters(Buffer.concat(output).toString()))
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
