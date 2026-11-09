@@ -2,6 +2,7 @@
 /** A linked card for an article (date, featured image, title), used on the homepage. */
 import { Image } from "astro:assets";
 import { type Article, articlePath, dateFormat, featuredImageAlt } from "../lib/articles";
+import { cardImage } from "../lib/images";
 
 interface Props {
   article: Article;
@@ -10,26 +11,23 @@ interface Props {
 }
 
 const { article, eager = false } = Astro.props;
+const { width, height, position } = await cardImage(article.data.featuredImage);
 ---
 
 <a href={articlePath(article)} class="articleCard">
   <time class="date" datetime={article.data.date.toISOString()}>
     {dateFormat.format(article.data.date)}
   </time>
-  {/* Cropped to the card's shape at build time around its most eye-catching part (sharp's
-      "attention" strategy) rather than its center, as the old Gatsby site's cards were. Where
-      that part is depends on the crop's size, so these are the old site's sizes, 450 and 900px
-      wide, shown at 360px, to crop each image the same way it did. */}
+  {/* Cropped to the card's shape by object-fit and object-position (see cardImage()) */}
   <Image
     src={article.data.featuredImage}
     alt={featuredImageAlt(article)}
     class="featuredImage"
-    layout="constrained"
-    width={450}
-    height={250}
-    widths={[450, 900]}
-    position="attention"
+    width={width}
+    height={height}
+    densities={[1, 2]}
     loading={eager ? "eager" : "lazy"}
+    style={`object-position: ${position}`}
   />
   <span class="title">{article.data.title}</span>
 </a>

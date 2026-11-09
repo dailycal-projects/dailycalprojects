@@ -3,6 +3,7 @@ import { z } from "astro/zod";
 import { site } from "../config/site";
 import team from "../config/team.json";
 import { type Article, getArticles } from "./articles";
+import { imageFile } from "./images";
 
 type AuthorEntry = CollectionEntry<"authors">;
 
@@ -83,11 +84,6 @@ export function authorLinks(author: Author): [label: string, url: string][] {
       ? []
       : [["The Daily Californian", site.authorProfileUrl(author.name)] as [string, string]]),
   ];
-}
-
-/** The file an image was imported from, e.g. "/.../src/assets/authors/ji-yeon-woo.jpg". */
-function imageFile(image: ImageMetadata): string {
-  return (image as ImageMetadata & { fsPath?: string }).fsPath ?? image.src.split("?")[0];
 }
 
 /**

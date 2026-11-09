@@ -57,6 +57,7 @@ function recordHTML(record, text) {
     image: record.image,
     image_srcset: record.imageSrcset,
     image_alt: record.imageAlt,
+    image_position: record.imagePosition,
   };
   const paragraphs = text
     ? text.split("\n").map((line) => ({ heading: false, text: line }))

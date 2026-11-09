@@ -131,10 +131,9 @@ import PageLayout from "../layouts/PageLayout.astro";
       src: meta.image,
       srcset: meta.image_srcset,
       alt: meta.image_alt,
-      width: 450,
-      height: 250,
       loading: "lazy",
     });
+    image.style.objectPosition = meta.image_position;
 
     const text = document.createElement("div");
     const date = document.createElement("span");
