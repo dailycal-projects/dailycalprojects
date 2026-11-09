@@ -202,21 +202,40 @@ export async function getAuthors(): Promise<Author[]> {
   return [...authors.values()];
 }
 
-/** The team now: the editor, then deputy editors, then reporters, each by last name. */
+/**
+ * The team now: the editor, then deputy editors, then reporters, each by last name, except that
+ * reporters with a byline come before those without one.
+ */
 export function currentTeam(authors: Author[]): Author[] {
   const rank = (author: Author) => TEAM_ROLES.indexOf(author.teamRole!);
+  const unpublishedReporter = (author: Author) =>
+    Number(author.teamRole === "reporter" && author.articles.length === 0);
   return authors
     .filter((author) => author.teamRole)
-    .sort((a, b) => rank(a) - rank(b) || byLastName(a, b));
+    .sort(
+      (a, b) =>
+        rank(a) - rank(b) ||
+        unpublishedReporter(a) - unpublishedReporter(b) ||
+        byLastName(a, b),
+    );
 }
 
 /**
- * Everyone who isn't on the team now, by their latest article, newest first (and those with no
- * articles last, by last name).
+ * Everyone who isn't on the team now, grouped by the year of their latest article, newest first,
+ * and in each year by their latest article, newest first. Those with no articles come last, in a
+ * group with no year, by last name.
  */
-export function pastTeam(authors: Author[]): Author[] {
+export function pastTeam(authors: Author[]): { year?: number; authors: Author[] }[] {
   const latest = (author: Author) => author.articles[0]?.data.date.valueOf() ?? -Infinity;
-  return authors
+  const groups: { year?: number; authors: Author[] }[] = [];
+  for (const author of authors
     .filter((author) => !author.teamRole)
-    .sort((a, b) => latest(b) - latest(a) || byLastName(a, b));
+    .sort((a, b) => latest(b) - latest(a) || byLastName(a, b))) {
+    // In UTC, like the dates the site shows
+    const year = author.articles[0]?.data.date.getUTCFullYear();
+    let group = groups.at(-1);
+    if (!group || group.year !== year) groups.push((group = { year, authors: [] }));
+    group.authors.push(author);
+  }
+  return groups;
 }

@@ -61,7 +61,7 @@ public/               Static files served as-is: the favicon, fonts, the data fi
 | `/interactive/<name>` | An interactive on a page of its own (see "Interactives") |
 | `/search?q=<query>` | Search (see "Search") |
 | `/team` | The Data Team now (see "Authors and the team") |
-| `/team/past` | Everyone else with a byline or an author file, by their latest story |
+| `/team/past` | Everyone else with a byline or an author file, by their latest story, grouped by its year |
 | `/team/<firstname-lastname>` | An author's page: their picture, role, links, bio and stories |
 | `/apply` | Where the Data Department's recruiting flyer points: the application, and a form for the flyer's puzzle (hidden from search engines) |
 | `/editors/image-optimization` | In-browser image optimizer for editors (hidden from search engines) |
@@ -185,7 +185,7 @@ Ji Yeon covers campus finances and housing...
 
 An author file is optional, for team members too: without one, their page has their name, their stories and their Daily Californian profile link.
 
-Who's on the team now is [`src/config/team.json`](src/config/team.json), by name, spelled as in their bylines. `/team` shows them in this order, each role by last name; everyone else is on `/team/past`:
+Who's on the team now is [`src/config/team.json`](src/config/team.json), by name, spelled as in their bylines. `/team` shows them in this order, each role by last name (reporters with a byline first, then those without one); everyone else is on `/team/past`, grouped by the year of their latest story:
 
 ```json
 {
