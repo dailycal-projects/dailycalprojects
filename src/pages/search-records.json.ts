@@ -1,7 +1,8 @@
 /**
  * Every article as a search record, for src/lib/search-index.mjs, which builds the search index from
  * this file after the build and then deletes it (so it's never deployed). Its images are the
- * homepage card's size, so search results can show them.
+ * homepage card's size and crop (see src/components/ArticleCard.astro), so search results can show
+ * them.
  */
 import type { APIRoute } from "astro";
 import { getImage } from "astro:assets";
@@ -32,9 +33,10 @@ export const GET: APIRoute = async () => {
         article.data;
       const image = await getImage({
         src: featuredImage,
-        width: 360,
-        height: 200,
+        width: 450,
+        height: 250,
         fit: "cover",
+        position: "attention",
         densities: [1, 2],
       });
       return {
