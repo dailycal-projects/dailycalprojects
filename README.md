@@ -10,7 +10,7 @@ Source for [data.dailycal.org](https://data.dailycal.org/): investigative storie
 | :-- | :-- |
 | `npm install` | Install dependencies |
 | `npm run dev` | Start the dev server at `http://localhost:4321` (runs in the background; stop it with `npx astro dev stop`) |
-| `npm run build` | Build the static site to `dist/` |
+| `npm run build` | Build the static site to `dist/`, saving its output to `dist/editors/build.txt` (served at `/editors/build.txt`) |
 | `npm run preview` | Serve the built `dist/` locally, to check the real production output |
 | `npm run lint` | Check code style with ESLint and Prettier |
 | `npm run lint:fix` | Fix ESLint and Prettier style errors |

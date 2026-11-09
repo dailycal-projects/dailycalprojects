@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/build.mjs",
     "preview": "astro preview",
     "lint": "eslint --no-error-on-unmatched-pattern \"src/**/*.{js,mjs,ts,jsx,tsx,astro,mdx,json}\" \"scripts/**/*.mjs\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\" && prettier --check --no-error-on-unmatched-pattern \"src/**/*.{js,mjs,ts,jsx,tsx,astro,mdx,json,css}\" \"scripts/**/*.mjs\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\"",
     "lint:fix": "eslint --no-error-on-unmatched-pattern \"src/**/*.{js,mjs,ts,jsx,tsx,astro,mdx,json}\" \"scripts/**/*.mjs\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\" --fix && prettier --write --no-error-on-unmatched-pattern \"src/**/*.{js,mjs,ts,jsx,tsx,astro,mdx,json,css}\" \"scripts/**/*.mjs\" \"astro.config.mjs\" \"eslint.config.js\" \"prettier.config.js\" \"*.config.js\" \"*.config.mjs\" \"*.config.ts\"",
