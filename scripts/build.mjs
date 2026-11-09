@@ -1,7 +1,7 @@
 /**
- * `npm run build`: runs `astro build`, showing its output as it goes, and saves that output, as plain
- * text, to dist/editors/build.txt, which the site serves at /editors/build.txt.
- * So the deployed site shows the log of the build that made it, warnings included.
+ * `npm run build`: runs `astro build`, showing its output as it goes, and saves that output as a page,
+ * dist/editors/build.html, which the site serves at /editors/build. So the deployed site shows the
+ * log of the build that made it, warnings included, as it looked in the console.
  *
  * Arguments are passed on to `astro build`.
  */
@@ -10,14 +10,14 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { stripVTControlCharacters } from "node:util";
 
-const LOG = "dist/editors/build.txt";
+const PAGE = "dist/editors/build.html";
 // Astro's command, run with this Node (so it works outside `npm run` too)
 const ASTRO = fileURLToPath(new URL("../node_modules/astro/bin/astro.mjs", import.meta.url));
 
 const output = [];
 const astro = spawn(process.execPath, [ASTRO, "build", ...process.argv.slice(2)], {
   stdio: ["inherit", "pipe", "pipe"],
-  // Its output is piped, which turns its colors off; keep them in a terminal (the log drops them)
+  // Its output is piped, which turns its colors off; keep them in a terminal (the page drops them)
   env: process.stdout.isTTY ? { ...process.env, FORCE_COLOR: "1" } : process.env,
 });
 astro.stdout.on("data", (chunk) => {
@@ -30,7 +30,36 @@ astro.stderr.on("data", (chunk) => {
 });
 
 astro.on("close", (code) => {
+  const log = stripVTControlCharacters(Buffer.concat(output).toString())
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
   mkdirSync("dist/editors", { recursive: true });
-  writeFileSync(LOG, stripVTControlCharacters(Buffer.concat(output).toString()));
+  writeFileSync(
+    PAGE,
+    `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Build log</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 16px; }
+  pre {
+    margin: 0;
+    font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+</style>
+</head>
+<body>
+<pre>${log}</pre>
+</body>
+</html>
+`,
+  );
   process.exit(code ?? 1);
 });
